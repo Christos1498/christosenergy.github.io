@@ -7,133 +7,217 @@
 
 <style>
 
+/* GLOBAL */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: linear-gradient(180deg, #0b2a4a 0%, #1c4f7a 100%);
-    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+    background: radial-gradient(circle at top, #1e5a8a, #0b2a4a 70%);
+    color: white;
 }
 
-/* HERO SECTION */
+/* NAVBAR */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
 .hero {
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 140px 20px 80px;
 }
 
 .hero img {
-    width: 220px;
-    margin-bottom: 20px;
+    width: 320px;
+    filter: drop-shadow(0 0 30px rgba(255,215,0,0.7));
 }
 
 .hero h1 {
-    font-size: 34px;
-    margin: 10px 0;
-    letter-spacing: 1px;
+    font-size: 36px;
+    margin-top: 20px;
 }
 
 .hero p {
-    font-size: 16px;
-    color: #d6e4f0;
+    font-size: 18px;
+    color: #cfe6ff;
+    max-width: 750px;
+    margin: 15px auto;
 }
 
-/* MAIN CONTENT CARD */
+/* MAIN CARD */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 40px auto;
+    padding: 50px;
     background: white;
-    color: #111;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    color: black;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 /* HEADINGS */
 h2 {
-    margin-top: 40px;
+    margin-top: 50px;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 8px;
+}
+
+/* BUTTON LINKS */
+.link-btn {
+    display: block;
+    padding: 14px;
+    margin: 10px 0;
+    background: #f4f7fb;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.link-btn:hover {
+    background: #e2ecf7;
+    transform: translateY(-2px);
+}
+
+/* DESCRIPTION */
+.desc {
+    font-size: 14px;
+    color: #555;
+}
+
+/* FEATURE BOX */
+.feature {
+    background: linear-gradient(135deg, #0b2a4a, #1e5a8a);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: white;
     color: #0b2a4a;
-}
-
-/* LINKS */
-a {
-    color: #0a58ca;
+    border-radius: 6px;
     text-decoration: none;
+    margin-top: 15px;
+    font-weight: bold;
 }
 
-a:hover {
-    text-decoration: underline;
+/* FOUNDER */
+.founder {
+    margin-top: 60px;
+    padding: 30px;
+    background: #f7f9fc;
+    border-radius: 10px;
 }
 
 /* FOOTER */
 .footer {
     margin-top: 60px;
-    font-size: 14px;
-    color: #888;
     text-align: center;
+    color: #777;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="hero">
-    <img src="christos_logo.jpg.png" alt="Christos Logo">
-    <h1>Christos™ Energy, Technology & Harmonic Design Consulting, LLC</h1>
-    <p>Engineering the Harmonic Architecture of Tomorrow</p>
+<!-- NAV -->
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book (Coming Soon)</a>
+    <a href="#contact">Contact</a>
 </div>
 
+<!-- HERO -->
+<div class="hero">
+    <img src="christos_logo.jpg.png">
+    <h1>Christos™ Energy, Technology & Harmonic Design Consulting, LLC</h1>
+    <p>
+        Engineering the Harmonic Architecture of Tomorrow —  
+        where physics, consciousness, and living systems converge.
+    </p>
+</div>
+
+<!-- CONTENT -->
 <div class="container">
 
-<p><strong>Research, Engineering, and Applied Systems Development</strong></p>
+<!-- FEATURE -->
+<div class="feature">
+<h2>Featured Work</h2>
+<p><strong>Magnus Opus</strong></p>
+<p>
+A unified framework integrating physics, consciousness, geometry, and biological systems into a single harmonic architecture of reality.
+</p>
+<a class="btn" href="Magnus_Opus_Joshua_Farrior.pdf">Open Full Document</a>
+</div>
+
+<h2>Foundational Research</h2>
+
+<a class="link-btn">
+<strong>Toroidal Cosmology</strong>
+<div class="desc">Field-based model of reality using toroidal systems.</div>
+</a>
+
+<a class="link-btn">
+<strong>The Inevitable Convergence</strong>
+<div class="desc">Attractor states and convergence mechanics.</div>
+</a>
+
+<a class="link-btn">
+<strong>Architecture of Infinity</strong>
+<div class="desc">Infinite systems structured through geometry.</div>
+</a>
+
+<h2>Applied Systems</h2>
+
+<a class="link-btn">
+<strong>Harmonic Periodic Table</strong>
+<div class="desc">Element behavior through resonance.</div>
+</a>
+
+<a class="link-btn">
+<strong>Medical Framework</strong>
+<div class="desc">Coherence-based biological systems.</div>
+</a>
+
+<a class="link-btn">
+<strong>Agriculture Systems</strong>
+<div class="desc">Regenerative harmonic environments.</div>
+</a>
+
+<div class="founder">
+<h2>Founder</h2>
+
+<p><strong>Joshua Farrior</strong></p>
 
 <p>
-This body of work explores the mathematical, physical, and biological foundations of reality,
-with applications spanning health, materials science, agriculture, and advanced systems engineering.
+Independent researcher and systems architect focused on unifying physics, biology, and consciousness through harmonic field theory.
 </p>
 
-<h2>Foundational Papers</h2>
-<ul>
-<li><a href="Magnus_Opus_Joshua_Farrior.pdf">Magnus Opus</a></li>
-<li><a href="#">Toroidal Cosmology (Complete)</a></li>
-<li><a href="#">Toroidal Cosmology Part 2 — The Inevitable Convergence</a></li>
-<li><a href="#">Architecture of Infinity</a></li>
-<li><a href="#">Collatz Paper</a></li>
-</ul>
-
-<h2>Geometric & Structural Systems</h2>
-<ul>
-<li><a href="#">Harmonic Periodic Table</a></li>
-<li><a href="#">Field Structure Models</a></li>
-</ul>
-
-<h2>Biological & Medical Frameworks</h2>
-<ul>
-<li><a href="#">Coherence-Based Health Model</a></li>
-<li><a href="#">Anti-Aging (Public Version)</a></li>
-<li><a href="#">Inner Geometry of Healing</a></li>
-<li><a href="#">Harmonic Medical Framework</a></li>
-</ul>
-
-<h2>Agriculture & Environmental Systems</h2>
-<ul>
-<li><a href="#">Harmonic Agricultural Framework</a></li>
-<li><a href="#">Coherence Garden Research Framework</a></li>
-</ul>
-
-<h2>Advanced Research</h2>
 <p>
-Additional work in advanced systems, materials, and applied physics exists but is not publicly detailed.
+Work includes theoretical modeling, experimental system design, and applied technology frameworks.
 </p>
+</div>
 
-<h2>Access & Collaboration</h2>
-<p>
-For research collaboration, licensing, or private technical access, contact directly:
-</p>
-<p><strong>Email:</strong> joshuafarrior@sbcglobal.net</p>
+<h2 id="contact">Access & Collaboration</h2>
+<p>Email: joshuafarrior@sbcglobal.net</p>
 
 <div class="footer">
-<p>© 2026 Christos Energy, Technology & Harmonic Design Consulting, LLC</p>
+<p>© 2026 Christos Energy</p>
 </div>
 
 </div>
