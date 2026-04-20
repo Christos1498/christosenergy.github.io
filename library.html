@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Library — Christos™ Energy, Technology & Harmonic Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background-color: #08111E; color: #F0EBE0; font-family: 'Cormorant Garamond', Georgia, serif; overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: #0A1628; border-bottom: 1px solid #C9A84C; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.nav-logo { font-family: ‘Cinzel’, serif; font-size: 17px; font-weight: 700; color: #C9A84C; letter-spacing: 0.12em; }
+.nav-logo span { display: block; font-size: 11px; font-weight: 400; color: rgba(201,168,76,0.7); letter-spacing: 0.2em; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a { font-family: ‘Raleway’, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #C9A84C; }
+.nav-cta { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 10px 22px; border-radius: 2px; }
+.nav-cta:hover { background: #E8C97A; color: #08111E; }
+
+/* PAGE HEADER */
+.page-header {
+background: #08111E;
+padding: 130px 40px 70px;
+border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.page-header-inner { max-width: 1160px; margin: 0 auto; }
+.page-eyebrow { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.page-eyebrow::before { content: ‘’; width: 28px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
+.page-title { font-family: ‘Cinzel’, serif; font-size: clamp(32px, 4vw, 52px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 16px; }
+.page-sub { font-size: 20px; color: #C8C0B0; line-height: 1.75; max-width: 780px; margin-bottom: 40px; }
+.lib-stats { display: flex; gap: 48px; flex-wrap: wrap; }
+.lib-stat-num { font-family: ‘Cinzel’, serif; font-size: 32px; font-weight: 700; color: #C9A84C; line-height: 1; }
+.lib-stat-label { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #8A9BAD; margin-top: 4px; }
+
+/* SEARCH + FILTER BAR */
+.filter-bar {
+background: #0D1B2A;
+border-bottom: 1px solid rgba(201,168,76,0.15);
+padding: 24px 40px;
+position: sticky; top: 68px; z-index: 900;
+}
+.filter-inner { max-width: 1160px; margin: 0 auto; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.search-box {
+flex: 1; min-width: 240px;
+background: #111F30; border: 1px solid rgba(201,168,76,0.2);
+border-radius: 3px; padding: 10px 16px;
+font-family: ‘Raleway’, sans-serif; font-size: 13px; font-weight: 500;
+letter-spacing: 0.08em; color: #FFFFFF;
+outline: none; transition: border-color 0.2s;
+}
+.search-box::placeholder { color: #505A64; }
+.search-box:focus { border-color: rgba(201,168,76,0.5); }
+.filter-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter-btn {
+font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 600;
+letter-spacing: 0.15em; text-transform: uppercase;
+background: #111F30; border: 1px solid rgba(201,168,76,0.15);
+color: #8A9BAD; padding: 8px 16px; border-radius: 2px;
+cursor: pointer; transition: all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active { background: rgba(201,168,76,0.12); border-color: #C9A84C; color: #C9A84C; }
+.result-count { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #505A64; margin-left: auto; white-space: nowrap; }
+
+/* LIBRARY BODY */
+.library-body { max-width: 1160px; margin: 0 auto; padding: 60px 40px 100px; }
+
+/* CATEGORY SECTION */
+.cat-section { margin-bottom: 72px; }
+.cat-header {
+display: flex; align-items: baseline; gap: 20px;
+border-bottom: 1px solid rgba(201,168,76,0.2);
+padding-bottom: 16px; margin-bottom: 28px;
+}
+.cat-header-num { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(201,168,76,0.4); }
+.cat-header-title { font-family: ‘Cinzel’, serif; font-size: clamp(18px,2.5vw,26px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; }
+.cat-header-count { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF; margin-left: auto; }
+.cat-diagram-ref {
+background: #0D1B2A; border: 1px solid rgba(42,127,127,0.2);
+border-left: 3px solid #2A7F7F;
+border-radius: 4px; padding: 12px 18px;
+font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 600;
+letter-spacing: 0.15em; text-transform: uppercase; color: #3AAFAF;
+margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.cat-diagram-ref a { color: #C9A84C; transition: color 0.2s; }
+.cat-diagram-ref a:hover { color: #E8C97A; }
+
+/* PAPER LIST */
+.paper-list { display: grid; gap: 12px; }
+.paper-row {
+display: grid; grid-template-columns: 1fr auto;
+gap: 20px; align-items: center;
+background: #111F30; border: 1px solid rgba(201,168,76,0.1);
+border-radius: 5px; padding: 20px 24px;
+transition: all 0.25s; cursor: pointer;
+}
+.paper-row:hover { border-color: rgba(201,168,76,0.35); transform: translateX(4px); background: #142030; }
+.paper-row-left {}
+.paper-row-tag { font-family: ‘Raleway’, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 6px; }
+.paper-row-title { font-family: ‘Cinzel’, serif; font-size: clamp(14px,1.5vw,17px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.03em; margin-bottom: 6px; line-height: 1.3; }
+.paper-row-desc { font-size: 15px; color: #A8A098; line-height: 1.55; }
+.paper-row-right { text-align: right; flex-shrink: 0; }
+.paper-row-link { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
+.paper-row-link::after { content: ‘→’; }
+.paper-protected {
+font-family: ‘Raleway’, sans-serif; font-size: 9px; font-weight: 600;
+letter-spacing: 0.15em; text-transform: uppercase;
+color: rgba(201,168,76,0.4); margin-top: 6px;
+}
+
+/* NO RESULTS */
+.no-results { text-align: center; padding: 80px 20px; display: none; }
+.no-results-title { font-family: ‘Cinzel’, serif; font-size: 24px; color: #FFFFFF; margin-bottom: 12px; }
+.no-results-sub { font-size: 17px; color: #8A9BAD; }
+
+/* BOTTOM CTA */
+.library-cta {
+background: #0D1B2A; border: 1px solid rgba(201,168,76,0.2);
+border-radius: 8px; padding: 56px; text-align: center; margin-top: 20px;
+}
+.library-cta-title { font-family: ‘Cinzel’, serif; font-size: clamp(22px,3vw,34px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.06em; margin-bottom: 16px; }
+.library-cta-body { font-size: 19px; color: #C8C0B0; line-height: 1.8; max-width: 640px; margin: 0 auto 36px; }
+.btn-primary { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 14px 32px; border-radius: 2px; display: inline-block; transition: background 0.2s; }
+.btn-primary:hover { background: #E8C97A; }
+.btn-ghost { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; display: inline-block; margin-left: 16px; transition: all 0.2s; }
+.btn-ghost:hover { background: rgba(201,168,76,0.1); }
+
+/* FOOTER */
+.footer { background: #0D1B2A; border-top: 1px solid rgba(201,168,76,0.2); padding: 50px 40px 36px; }
+.footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo { font-family: ‘Cinzel’, serif; font-size: 18px; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
+.footer-links-row { display: flex; gap: 28px; flex-wrap: wrap; }
+.footer-links-row a { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #8A9BAD; transition: color 0.2s; }
+.footer-links-row a:hover { color: #C9A84C; }
+.footer-copy { font-family: ‘Raleway’, sans-serif; font-size: 11px; color: #3A4A54; letter-spacing: 0.08em; width: 100%; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,168,76,0.1); }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav { padding: 0 20px; }
+.nav-links { display: none; }
+.page-header { padding: 110px 20px 50px; }
+.filter-bar { padding: 16px 20px; }
+.library-body { padding: 40px 20px 80px; }
+.paper-row { grid-template-columns: 1fr; gap: 12px; }
+.paper-row-right { text-align: left; }
+.library-cta { padding: 36px 24px; }
+.btn-ghost { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav class="nav">
+<div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="library.html" class="active">Research Library</a>
+<a href="diagrams.html">System Diagrams</a>
+<a href="book.html">Book</a>
+<a href="contact.html" class="nav-cta">Request Access</a>
+</div>
+</nav>
+
+<!-- PAGE HEADER -->
+
+<div class="page-header">
+<div class="page-header-inner">
+<div class="page-eyebrow">Christos™ Research Platform</div>
+<h1 class="page-title">Research Library</h1>
+<p class="page-sub">The complete public catalog of Christos™ research — 75 original papers spanning 14 domains. All pages present abstract-level visibility only. Full technical architecture is available through protected collaboration pathways.</p>
+<div class="lib-stats">
+<div><div class="lib-stat-num">75</div><div class="lib-stat-label">Total Papers</div></div>
+<div><div class="lib-stat-num">14</div><div class="lib-stat-label">Domains</div></div>
+<div><div class="lib-stat-num">400+</div><div class="lib-stat-label">Inventions</div></div>
+<div><div class="lib-stat-num">1</div><div class="lib-stat-label">Unified Architecture</div></div>
+</div>
+</div>
+</div>
+
+<!-- FILTER BAR -->
+
+<div class="filter-bar">
+<div class="filter-inner">
+<input type="text" class="search-box" placeholder="Search papers by title or keyword..." oninput="filterPapers(this.value)" id="search-input">
+<div class="filter-btns">
+<button class="filter-btn active" onclick="filterCat('all', this)">All</button>
+<button class="filter-btn" onclick="filterCat('core', this)">Core</button>
+<button class="filter-btn" onclick="filterCat('math', this)">Math</button>
+<button class="filter-btn" onclick="filterCat('civ', this)">Civilization</button>
+<button class="filter-btn" onclick="filterCat('bio', this)">Biology</button>
+<button class="filter-btn" onclick="filterCat('med', this)">Medicine</button>
+<button class="filter-btn" onclick="filterCat('mat', this)">Materials</button>
+<button class="filter-btn" onclick="filterCat('transport', this)">Transport</button>
+<button class="filter-btn" onclick="filterCat('ai', this)">AI</button>
+</div>
+<div class="result-count" id="result-count">75 Papers</div>
+</div>
+</div>
+
+<!-- LIBRARY BODY -->
+
+<div class="library-body">
+<div id="no-results" class="no-results">
+<div class="no-results-title">No papers found</div>
+<div class="no-results-sub">Try adjusting your search or filter</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 01 — CORE FOUNDATIONS -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="core" id="cat-core">
+<div class="cat-header">
+<div class="cat-header-num">01</div>
+<div class="cat-header-title">Core Foundations</div>
+<div class="cat-header-count">10 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#architecture">The Christos Architecture</a> &nbsp;·&nbsp; <a href="diagrams.html#toroidal">Reality as a Loop</a> &nbsp;·&nbsp; <a href="diagrams.html#geometry">Coherence Geometry System</a>
+</div>
+<div class="paper-list">
+<a href="papers/core-foundations/magnus-opus.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-01</div>
+<div class="paper-row-title">Magnus Opus — Unified System</div>
+<div class="paper-row-desc">The overarching integration layer of the Christos platform. Physics, consciousness, geometry, and biological systems interpreted as parts of a single structured whole.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/unified-coherence-framework.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-02</div>
+<div class="paper-row-title">Unified Coherence Framework</div>
+<div class="paper-row-desc">The formal governing framework establishing coherence as a measurable, field-based property applicable across all physical and biological systems.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/physics-of-metaphysics.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-03</div>
+<div class="paper-row-title">The Physics of Metaphysics — Volume I</div>
+<div class="paper-row-desc">A systematic reframing of 62 metaphysical and philosophical concepts — including consciousness, karma, healing, and time — as quantifiable coherence-field dynamics.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/gravity-reinterpreted.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-04</div>
+<div class="paper-row-title">Gravity Reinterpreted</div>
+<div class="paper-row-desc">A coherence-modified gravity model proposing that gravitational phenomena emerge from field-level coherence gradients rather than mass-curvature relationships alone.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/toroidal-cosmology.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-05</div>
+<div class="paper-row-title">Toroidal Cosmology</div>
+<div class="paper-row-desc">A field-based cosmological model in which space, time, matter, and consciousness are understood as expressions of a single toroidal dynamic — Emergence, Stillpoint, Collapse, Rebirth.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/field-resonance-vacuum-dynamics.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-06</div>
+<div class="paper-row-title">Field Resonance & Vacuum Dynamics</div>
+<div class="paper-row-desc">An investigation into the structural properties of the vacuum field and how resonance patterns within it give rise to observable physical phenomena.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/light-speed-coherence-boundary.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-07</div>
+<div class="paper-row-title">Light-Speed Coherence Boundary</div>
+<div class="paper-row-desc">A theoretical framework proposing that the speed of light represents a coherence-phase boundary rather than an absolute physical constant.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/time-dimensional-architecture.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-08</div>
+<div class="paper-row-title">Time Dimensional Architecture</div>
+<div class="paper-row-desc">A multi-dimensional model of time in which linear time is a secondary emergent property of a primary toroidal temporal field structure.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/consciousness-dimensional-phenomenon.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-09</div>
+<div class="paper-row-title">Consciousness as a Dimensional Phenomenon</div>
+<div class="paper-row-desc">Consciousness reframed not as an emergent property of biological complexity, but as a primary dimensional field that modulates coherence across all physical systems.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/core-foundations/sleep-dream-architecture.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Core Foundations · CF-10</div>
+<div class="paper-row-title">Sleep & Dream Architecture</div>
+<div class="paper-row-desc">Sleep and dreaming reinterpreted as coherence-phase reset cycles — essential field maintenance processes operating across biological and consciousness dimensions simultaneously.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 02 — MATHEMATICS & STRUCTURE -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="math" id="cat-math">
+<div class="cat-header">
+<div class="cat-header-num">02</div>
+<div class="cat-header-title">Mathematics & Structure</div>
+<div class="cat-header-count">7 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#geometry">Coherence Geometry System</a> &nbsp;·&nbsp; <a href="diagrams.html#architecture">The Christos Architecture</a>
+</div>
+<div class="paper-list">
+<a href="papers/mathematics-structure/collatz-convergence.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-01</div>
+<div class="paper-row-title">Collatz Convergence Paper</div>
+<div class="paper-row-desc">A conditional supermartingale framework for the Collatz dynamics — presenting a probabilistic coherence interpretation of the 3n+1 problem as a toroidal attractor system.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/mathematics-structure/inevitable-convergence.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-02</div>
+<div class="paper-row-title">The Inevitable Convergence</div>
+<div class="paper-row-desc">A civilization coherence analysis tracking six domains across 75 years of data — demonstrating measurable convergence toward coherence-dominant states across all measured systems.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/mathematics-structure/architecture-of-infinity.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-03</div>
+<div class="paper-row-title">Architecture of Infinity</div>
+<div class="paper-row-desc">A structural research program identifying toroidal incompleteness across eleven of mathematics' most significant unsolved problems — proposing that each models only half of a complete toroidal system.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/mathematics-structure/coherence-quantification-index.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-04</div>
+<div class="paper-row-title">Coherence Quantification Index (CQI)</div>
+<div class="paper-row-desc">The formal mathematical instrument for measuring coherence states across biological, physical, and systemic domains — the core measurement tool of the Christos platform.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/mathematics-structure/cqi-technical-specification.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-05</div>
+<div class="paper-row-title">CQI Technical Specification</div>
+<div class="paper-row-desc">The engineering-level technical specification for the Coherence Quantification Index — defining measurement protocols, threshold standards, and validation architecture.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/mathematics-structure/cqi-unified-civilization-integration.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-06</div>
+<div class="paper-row-title">CQI Unified Civilization Integration</div>
+<div class="paper-row-desc">Application of the CQI measurement framework at civilization scale — integrating coherence tracking across infrastructure, governance, health, and environmental systems simultaneously.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/mathematics-structure/recursive-field-structures.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Mathematics & Structure · MS-07</div>
+<div class="paper-row-title">Recursive Field Structures & Attractors</div>
+<div class="paper-row-desc">A mathematical treatment of self-similar field patterns and coherence attractors — establishing the formal basis for toroidal recursion across scales from quantum to cosmic.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 03 — CIVILIZATION SYSTEMS -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="civ" id="cat-civ">
+<div class="cat-header">
+<div class="cat-header-num">03</div>
+<div class="cat-header-title">Civilization Systems</div>
+<div class="cat-header-count">7 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#civilization">The Coherent Civilization System</a> &nbsp;·&nbsp; <a href="diagrams.html#cqi">CQI / AI System</a>
+</div>
+<div class="paper-list">
+<a href="papers/civilization-systems/unified-civilization-system.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-01</div>
+<div class="paper-row-title">Unified Civilization System</div>
+<div class="paper-row-desc">Medicine, infrastructure, intelligence, architecture, transport, and materials — not as separate sectors, but as interdependent layers of one coherent platform.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/civilization-systems/applied-domains-framework.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-02</div>
+<div class="paper-row-title">Applied Domains Framework</div>
+<div class="paper-row-desc">The formal cross-domain application layer of the Christos system — mapping coherence principles across 33 domains and 343+ identified applications via the Universal Coherence Gradient Map.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/civilization-systems/ancient-city-coherence-node.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-03</div>
+<div class="paper-row-title">Ancient City as Coherence Node</div>
+<div class="paper-row-desc">A re-examination of ancient urban design — including Sophianic architecture, star forts, and sacred geometry — as intentional coherence-field engineering at city scale.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/civilization-systems/civilization-coherence-operating-system.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-04</div>
+<div class="paper-row-title">Civilization Coherence Operating System</div>
+<div class="paper-row-desc">A systems-architecture framework for running civilization itself as a coherent, self-regulating operating system — with defined inputs, outputs, feedback loops, and optimization protocols.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/civilization-systems/research-operating-system.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-05</div>
+<div class="paper-row-title">Research Operating System</div>
+<div class="paper-row-desc">A coherence-based framework for organizing, prioritizing, and executing scientific research at institutional and planetary scale.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/civilization-systems/collective-coherence-systems.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-06</div>
+<div class="paper-row-title">Collective Coherence Systems</div>
+<div class="paper-row-desc">Group coherence dynamics at community, city, and planetary scale — including field-level models of collective consciousness and social coherence architecture.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/civilization-systems/coherence-based-governance.html" class="paper-row">
+<div class="paper-row-left">
+<div class="paper-row-tag">Civilization Systems · CS-07</div>
+<div class="paper-row-title">Coherence-Based Governance Models</div>
+<div class="paper-row-desc">Governance frameworks redesigned around coherence optimization — replacing fragmented institutional structures with integrated, feedback-driven systems of collective coordination.</div>
+</div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 04 — BIOLOGY & MEDICINE -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="bio" id="cat-bio">
+<div class="cat-header">
+<div class="cat-header-num">04</div>
+<div class="cat-header-title">Biology & Medicine</div>
+<div class="cat-header-count">10 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#human">Human System Stack</a> &nbsp;·&nbsp; <a href="diagrams.html#agriculture">Coherent Agricultural / Biological System</a>
+</div>
+<div class="paper-list">
+<a href="papers/biology-medicine/unified-coherence-medicine.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-01</div><div class="paper-row-title">Unified Coherence Medicine System</div><div class="paper-row-desc">A comprehensive framework integrating 14 medical sub-systems through the lens of biological coherence — from cellular function to full-body protocol and systemic healing architecture.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/cellular-coherence-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-02</div><div class="paper-row-title">Cellular Coherence Framework</div><div class="paper-row-desc">A model of cellular behavior governed by coherence-field dynamics — reframing cellular communication, signaling, and dysfunction as coherence-state variations.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/organ-communication-network.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-03</div><div class="paper-row-title">Organ Communication Network</div><div class="paper-row-desc">The architecture of inter-organ communication through coherence-field coupling — including 80 organ-level coherence profiles and a unified field map of human biological signaling.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/lymphatic-coherence-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-04</div><div class="paper-row-title">Lymphatic Coherence Framework</div><div class="paper-row-desc">The lymphatic system reframed as the body's primary coherence distribution network — governing field-level immune function and systemic waste regulation.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/cardiovascular-coherence-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-05</div><div class="paper-row-title">Cardiovascular Coherence Framework</div><div class="paper-row-desc">Heart-field dynamics, cardiac coherence thresholds, and a complete cardiovascular reframing — positioning the heart as the primary coherence generator of the human biological system.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/microbiome-dimensional-mapping.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-06</div><div class="paper-row-title">Microbiome Dimensional Mapping</div><div class="paper-row-desc">The human microbiome mapped as a coherence-active dimensional layer — exploring how microbial field states influence systemic coherence across biological and cognitive domains.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/trauma-coherence-fracture-model.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-07</div><div class="paper-row-title">Trauma Coherence Fracture Model</div><div class="paper-row-desc">Trauma reframed as a coherence-field fracture event — with a structured model of how physical, emotional, and psychological trauma disrupts and can be restored to coherent field states.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/coherence-based-health-model.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-08</div><div class="paper-row-title">Coherence-Based Health Model</div><div class="paper-row-desc">Health redefined not as the absence of disease, but as the sustained presence of high-coherence field states across biological, neurological, and consciousness dimensions.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/anti-aging-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-09</div><div class="paper-row-title">Anti-Aging Framework</div><div class="paper-row-desc">A coherence-field model of biological aging — positioning cellular senescence as coherence entropy, and restoration of coherence states as the pathway to biological regeneration and longevity.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/biology-medicine/biological-energy-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Biology & Medicine · BM-10</div><div class="paper-row-title">Biological Energy Systems</div><div class="paper-row-desc">A unified model of biological energy generation, storage, and distribution — integrating ATP dynamics, bioelectric fields, and coherence-field energy coupling into one architecture.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 05 — MEDICAL APPLICATIONS -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="med" id="cat-med">
+<div class="cat-header">
+<div class="cat-header-num">05</div>
+<div class="cat-header-title">Medical Applications</div>
+<div class="cat-header-count">8 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#human">Human System Stack</a>
+</div>
+<div class="paper-list">
+<a href="papers/medical-applications/organ-regeneration-system.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-01</div><div class="paper-row-title">Organ Regeneration System</div><div class="paper-row-desc">A coherence-based regenerative framework for organ-level restoration — including 80 organ profiles, an 11-phase full-body protocol, and a complete healing chamber architecture.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/complete-organ-regeneration-architecture.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-02</div><div class="paper-row-title">Complete Organ Regeneration Architecture</div><div class="paper-row-desc">The full technical architecture for organ regeneration — integrating 36+ healing fluids, 40+ gels, 28 resonator specifications, and 12 chamber programs into one unified system.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/field-guided-tissue-regeneration.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-03</div><div class="paper-row-title">Field-Guided Tissue Regeneration</div><div class="paper-row-desc">A coherence-field approach to directing biological tissue repair — using structured field geometries to guide cellular differentiation and tissue reconstruction processes.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/acoustic-dissolution-surgery.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-04</div><div class="paper-row-title">Acoustic Dissolution Surgery</div><div class="paper-row-desc">A non-invasive surgical modality using coherence-targeted acoustic frequencies to dissolve pathological formations — tumors, calcifications, and fibrous tissue — without physical incision.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/auditory-regeneration-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-05</div><div class="paper-row-title">Auditory Regeneration Framework</div><div class="paper-row-desc">A coherence-based protocol for restoring hearing function — including cochlear hair cell regeneration, auditory nerve repair, and full auditory pathway reconstruction architecture.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/pulmolife-healing-fluid.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-06</div><div class="paper-row-title">PulmoLife Healing Fluid Architecture</div><div class="paper-row-desc">A family of 20 organ-specific healing fluids on structured DDW base — formulated with 24-hour Solfeggio frequency imprinting protocols for targeted biological coherence restoration.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/healing-gel-line.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-07</div><div class="paper-row-title">Healing Gel Line</div><div class="paper-row-desc">14 organ-specific coherence gels in two base formulations — including DMSO-enhanced penetration variants designed for deep-tissue coherence delivery and field-guided restoration.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/medical-applications/maternal-child-coherence-medicine.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Medical Applications · MA-08</div><div class="paper-row-title">Maternal & Child Coherence Medicine</div><div class="paper-row-desc">A preconception-through-postnatal coherence medicine framework — covering birth defect correction at three severity levels, stillbirth prevention protocols, and neonatal coherence support.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 06 — PHARMACOLOGY & FLUIDS -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="med" id="cat-pharm">
+<div class="cat-header">
+<div class="cat-header-num">06</div>
+<div class="cat-header-title">Pharmacology & Fluids</div>
+<div class="cat-header-count">4 Papers</div>
+</div>
+<div class="paper-list">
+<a href="papers/pharmacology-fluids/field-matter-bridge-pharmacology.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Pharmacology & Fluids · PF-01</div><div class="paper-row-title">Field–Matter Bridge Pharmacology</div><div class="paper-row-desc">A pharmacological framework based on field-matter coherence coupling — introducing a new class of therapeutic agents that interact with biological systems through coherence-field resonance rather than chemical binding alone.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/pharmacology-fluids/organ-fluid-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Pharmacology & Fluids · PF-02</div><div class="paper-row-title">Organ Fluid Systems Family</div><div class="paper-row-desc">A complete family of organ-targeted fluid systems for coherence-based therapeutic delivery — formulated to match organ-specific resonance signatures and biological field requirements.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/pharmacology-fluids/structured-water-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Pharmacology & Fluids · PF-03</div><div class="paper-row-title">Structured Water Framework</div><div class="paper-row-desc">Water as an active coherence-carrying medium — a framework for understanding and engineering the fourth phase of water as a biological, environmental, and infrastructure systems layer.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/pharmacology-fluids/microplastic-elimination.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Pharmacology & Fluids · PF-04</div><div class="paper-row-title">Human Microplastic Elimination System</div><div class="paper-row-desc">A coherence-based protocol for identifying and eliminating microplastic accumulation from human biological systems — integrating field-targeted resonance with structured fluid delivery.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 07 — SOUND / FREQUENCY / RESONANCE -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="mat" id="cat-sound">
+<div class="cat-header">
+<div class="cat-header-num">07</div>
+<div class="cat-header-title">Sound / Frequency / Resonance</div>
+<div class="cat-header-count">4 Papers</div>
+</div>
+<div class="paper-list">
+<a href="papers/sound-frequency/sound-medicine-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Sound & Frequency · SF-01</div><div class="paper-row-title">Sound Medicine Framework</div><div class="paper-row-desc">A comprehensive framework for therapeutic application of acoustic frequencies — establishing coherence-based protocols for using sound as a primary biological healing modality.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/sound-frequency/resonant-dentistry.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Sound & Frequency · SF-02</div><div class="paper-row-title">Resonant Dentistry Framework</div><div class="paper-row-desc">Dental restoration and oral health reframed through coherence-field acoustics — including frequency-guided enamel restoration, root regeneration, and periodontal coherence protocols.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/sound-frequency/acoustic-biomedical-fabrication.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Sound & Frequency · SF-03</div><div class="paper-row-title">Acoustic Biomedical Fabrication</div><div class="paper-row-desc">A manufacturing framework using acoustic standing waves and coherence-field geometries to assemble biological and biomedical structures at the cellular and tissue scale.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/sound-frequency/morphogenic-resonator-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Sound & Frequency · SF-04</div><div class="paper-row-title">Morphogenic Resonator Systems</div><div class="paper-row-desc">19 organ-specific resonator devices plus Blueprint and Womb Resonators — each using a 12-node crystal array to deliver targeted morphogenic field patterns for biological restoration.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 08 — MATERIALS & MANUFACTURING -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="mat" id="cat-mat">
+<div class="cat-header">
+<div class="cat-header-num">08</div>
+<div class="cat-header-title">Materials & Manufacturing</div>
+<div class="cat-header-count">6 Papers</div>
+</div>
+<div class="paper-list">
+<a href="papers/materials-manufacturing/advanced-manufacturing-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Materials & Manufacturing · MM-01</div><div class="paper-row-title">Advanced Manufacturing Framework</div><div class="paper-row-desc">A coherence-based manufacturing architecture spanning conventional, additive, acoustic, and field-phase production methods — with a unified quality framework based on coherence integrity scoring.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/materials-manufacturing/programmable-matter.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Materials & Manufacturing · MM-02</div><div class="paper-row-title">Programmable Matter Systems</div><div class="paper-row-desc">Matter engineered to change structural, optical, and mechanical properties in response to coherence-field inputs — including programmable water as a foundational active materials substrate.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/materials-manufacturing/crystal-engineering-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Materials & Manufacturing · MM-03</div><div class="paper-row-title">Crystal Engineering Systems</div><div class="paper-row-desc">A coherence-based approach to crystal growth and engineering — including phi-crystalline structures, frequency-seeded lattice formation, and coherence-active crystal arrays for device and medical applications.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/materials-manufacturing/materials-science-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Materials & Manufacturing · MM-04</div><div class="paper-row-title">Materials Science Framework</div><div class="paper-row-desc">The foundational coherence-based materials science framework — establishing how field-level coherence governs material properties, behavior under stress, and long-term structural integrity.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/materials-manufacturing/weavers-loom.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Materials & Manufacturing · MM-05</div><div class="paper-row-title">Weaver's Loom</div><div class="paper-row-desc">Flagship fabrication architecture bridging coherence theory to real-world production — spanning tissue engineering, crystal engineering, metamaterials, acoustic holography, and plasma-phase fabrication across 28 application domains.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/materials-manufacturing/loom-advanced-materials.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Materials & Manufacturing · MM-06</div><div class="paper-row-title">Loom Advanced Materials</div><div class="paper-row-desc">The advanced materials extension of the Weaver's Loom platform — including Phi-Steel (translucent phi-crystalline iron), coherence-active composites, and next-generation structural material specifications.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 09 — AGRICULTURE / WATER / FOOD -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="mat" id="cat-agr">
+<div class="cat-header">
+<div class="cat-header-num">09</div>
+<div class="cat-header-title">Agriculture, Water & Food</div>
+<div class="cat-header-count">4 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#agriculture">Coherent Agricultural / Biological System</a> &nbsp;·&nbsp; <a href="diagrams.html#water">Coherent Water / Thermal System</a>
+</div>
+<div class="paper-list">
+<a href="papers/agriculture-water-food/christos-food-system.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Agriculture, Water & Food · AW-01</div><div class="paper-row-title">Christos Food System</div><div class="paper-row-desc">A coherence-based food systems architecture covering production, processing, distribution, and consumption — optimized for biological coherence delivery rather than caloric or nutritional metrics alone.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/agriculture-water-food/complete-food-system-architecture.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Agriculture, Water & Food · AW-02</div><div class="paper-row-title">Complete Food System Architecture</div><div class="paper-row-desc">The full technical architecture of the Christos food system — integrating field-coherence agriculture, structured water irrigation, frequency-enhanced processing, and coherence-preserving distribution.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/agriculture-water-food/harmonic-agricultural-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Agriculture, Water & Food · AW-03</div><div class="paper-row-title">Harmonic Agricultural Framework</div><div class="paper-row-desc">Coherence-based agriculture — including bio-piezoelectric soil circuits, resonance-enhanced growing protocols, structured water irrigation, and field-level soil restoration systems.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/agriculture-water-food/coherence-garden-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Agriculture, Water & Food · AW-04</div><div class="paper-row-title">Coherence Garden Systems</div><div class="paper-row-desc">Small-scale coherence-optimized growing systems — from personal garden applications to community-scale coherence food production environments using harmonic growing protocols.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 10 — ARCHITECTURE & BUILT ENVIRONMENT -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="civ" id="cat-arch">
+<div class="cat-header">
+<div class="cat-header-num">10</div>
+<div class="cat-header-title">Architecture & Built Environment</div>
+<div class="cat-header-count">2 Papers</div>
+</div>
+<div class="paper-list">
+<a href="papers/architecture-built-environment/resonant-architecture.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Architecture · AB-01</div><div class="paper-row-title">Resonant Architecture Systems</div><div class="paper-row-desc">A framework for designing built environments as active coherence-field generators — using geometric ratios, material resonance, and spatial acoustics to create structures that actively support biological and cognitive coherence.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/architecture-built-environment/architectural-coherence-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Architecture · AB-02</div><div class="paper-row-title">Architectural Coherence Framework</div><div class="paper-row-desc">The governing design principles for coherence-optimized built environments — covering site selection, structural geometry, material specifications, acoustic design, and field-integration protocols.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 11 — TRANSPORT / TIME SYSTEMS -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="transport" id="cat-transport">
+<div class="cat-header">
+<div class="cat-header-num">11</div>
+<div class="cat-header-title">Transport & Time Systems</div>
+<div class="cat-header-count">5 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#transport">Coherent Transport System</a>
+</div>
+<div class="paper-list">
+<a href="papers/transport-time-systems/aether-skiff.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Transport & Time · TT-01</div><div class="paper-row-title">Aether Skiff Transportation System</div><div class="paper-row-desc">Flagship personal mobility architecture within the Christos Transportation Family — spanning 18 vehicles across 5 tiers, 4 infrastructure systems, and the Chicago Deployment Model.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/transport-time-systems/transportation-master-architecture.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Transport & Time · TT-02</div><div class="paper-row-title">Transportation Master Architecture</div><div class="paper-row-desc">The complete Christos Transportation Family — the full 18-vehicle, 5-tier, 4-infrastructure system unified architecture for coherence-based personal and mass mobility.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/transport-time-systems/christos-gate-teleportation-network.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Transport & Time · TT-03</div><div class="paper-row-title">Christos™ Gate & Global Teleportation Network</div><div class="paper-row-desc">A coherence-field based transportation architecture using a seven-coordinate position system, 12 Zodiac Gate network, and C ≥ 0.91 translation threshold for field-phase transport.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/transport-time-systems/teleportation-temple-system.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Transport & Time · TT-04</div><div class="paper-row-title">Teleportation Temple System</div><div class="paper-row-desc">The architectural integration of transportation and built environment — the Teleportation Temple as a unified coherence node combining transit, energy, and structural function.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/transport-time-systems/temporal-navigation-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Transport & Time · TT-05</div><div class="paper-row-title">Temporal Navigation Systems</div><div class="paper-row-desc">A theoretical and applied framework for navigation within the Time Dimensional Architecture — including field-phase temporal coordination and toroidal time-loop stabilization protocols.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 12 — DEVICES / WEARABLES -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="mat" id="cat-dev">
+<div class="cat-header">
+<div class="cat-header-num">12</div>
+<div class="cat-header-title">Devices, Wearables & Interfaces</div>
+<div class="cat-header-count">3 Papers</div>
+</div>
+<div class="paper-list">
+<a href="papers/devices-wearables/resonance-suit-system.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Devices & Wearables · DW-01</div><div class="paper-row-title">Resonance Suit System</div><div class="paper-row-desc">A five-layer wearable coherence architecture — Foundation Suit, PST-Micro, 144-Node AMPA, Phi-Aluminum Exoskeleton, and Field Envelope — with CI-gated operational modes and Neuro-Dynamic Command Interface.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/devices-wearables/biological-interface-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Devices & Wearables · DW-02</div><div class="paper-row-title">Biological Interface Systems</div><div class="paper-row-desc">A family of coherence-based biological interface devices — bridging human biological field states to the broader Christos platform for monitoring, optimization, and therapeutic application.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/devices-wearables/coherence-aging-system.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Devices & Wearables · DW-03</div><div class="paper-row-title">Coherence Aging System</div><div class="paper-row-desc">A wearable and environmental device architecture specifically designed to maintain and restore biological coherence thresholds as a proactive aging-reversal and longevity support system.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 13 — AI / NETWORK / DIGITAL -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="ai" id="cat-ai">
+<div class="cat-header">
+<div class="cat-header-num">13</div>
+<div class="cat-header-title">AI, Network & Digital</div>
+<div class="cat-header-count">3 Papers</div>
+</div>
+<div class="cat-diagram-ref">
+System Diagram: <a href="diagrams.html#cqi">CQI / AI System — The Intelligence Layer</a>
+</div>
+<div class="paper-list">
+<a href="papers/ai-network-digital/quantum-internet-framework.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">AI & Network · AN-01</div><div class="paper-row-title">Quantum Internet Framework</div><div class="paper-row-desc">A coherence-based network architecture exploring identity, verification, and distributed coordination at civilization scale — including the Resonance Ledger as the classical-layer authentication solution.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/ai-network-digital/field-ai-volume-one.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">AI & Network · AN-02</div><div class="paper-row-title">Field AI — Volume I</div><div class="paper-row-desc">An artificial intelligence architecture built on coherence-field principles — CQI Core as the Coherent Intelligence Engine, enabling real-time cross-system optimization across all platform domains.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/ai-network-digital/human-ai-coherence-systems.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">AI & Network · AN-03</div><div class="paper-row-title">Human–AI Coherence Systems</div><div class="paper-row-desc">A framework for coherence-aligned human-AI collaboration — ensuring AI systems operate within and enhance human biological and cognitive coherence rather than disrupting it.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+
+<!-- 14 — INVENTION LIBRARY -->
+
+<!-- ═══════════════════════════════════════════ -->
+
+<div class="cat-section" data-cat="core" id="cat-inv">
+<div class="cat-header">
+<div class="cat-header-num">14</div>
+<div class="cat-header-title">Invention Library & Meta Systems</div>
+<div class="cat-header-count">2 Papers</div>
+</div>
+<div class="paper-list">
+<a href="papers/invention-library/new-inventions-master-library.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Invention Library · IL-01</div><div class="paper-row-title">New Inventions Master Library</div><div class="paper-row-desc">The master catalog of Christos™ inventions — INV-293 through INV-400 confirmed, INV-401+ pending — organized by domain, system layer, and application category across the full platform.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+<a href="papers/invention-library/core-architecture-master-blueprint.html" class="paper-row">
+<div class="paper-row-left"><div class="paper-row-tag">Invention Library · IL-02</div><div class="paper-row-title">Core Architecture Master Blueprint</div><div class="paper-row-desc">The master architectural blueprint integrating all 14 platform domains — the single document showing how every paper, invention, and system layer connects into one unified Christos architecture.</div></div>
+<div class="paper-row-right"><div class="paper-row-link">View Abstract</div><div class="paper-protected">Full specs: NDA required</div></div>
+</a>
+</div>
+</div>
+
+<!-- BOTTOM CTA -->
+
+<div class="library-cta">
+<div class="library-cta-title">Ready to Go Deeper?</div>
+<p class="library-cta-body">All papers on this site present abstract-level visibility only. Full technical architecture, engineering specifications, and implementation detail are available through protected collaboration pathways. Begin by submitting an access request.</p>
+<a href="contact.html" class="btn-primary">Request Access</a>
+<a href="diagrams.html" class="btn-ghost">View System Diagrams</a>
+</div>
+
+</div><!-- end library-body -->
+
+<!-- FOOTER -->
+
+<footer class="footer">
+<div class="footer-inner">
+<div class="footer-logo">CHRISTOS™</div>
+<div class="footer-links-row">
+<a href="index.html">Home</a>
+<a href="library.html">Library</a>
+<a href="diagrams.html">Diagrams</a>
+<a href="book.html">Book</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+</div>
+</footer>
+
+<script>
+// Search + filter logic
+const allSections = document.querySelectorAll('.cat-section');
+const allRows = document.querySelectorAll('.paper-row');
+const resultCount = document.getElementById('result-count');
+const noResults = document.getElementById('no-results');
+let activeCat = 'all';
+let searchTerm = '';
+
+function updateDisplay() {
+let visible = 0;
+allSections.forEach(section => {
+const cat = section.getAttribute('data-cat');
+const rows = section.querySelectorAll('.paper-row');
+let sectionVisible = 0;
+rows.forEach(row => {
+const text = row.textContent.toLowerCase();
+const catMatch = activeCat === 'all' || cat === activeCat;
+const searchMatch = searchTerm === '' || text.includes(searchTerm);
+if (catMatch && searchMatch) {
+row.style.display = 'grid';
+sectionVisible++;
+visible++;
+} else {
+row.style.display = 'none';
+}
+});
+section.style.display = sectionVisible > 0 ? 'block' : 'none';
+});
+resultCount.textContent = visible + ' Paper' + (visible !== 1 ? 's' : '');
+noResults.style.display = visible === 0 ? 'block' : 'none';
+}
+
+function filterPapers(val) {
+searchTerm = val.toLowerCase();
+updateDisplay();
+}
+
+function filterCat(cat, btn) {
+activeCat = cat;
+document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+btn.classList.add('active');
+updateDisplay();
+}
+</script>
+
+</body>
+</html>
