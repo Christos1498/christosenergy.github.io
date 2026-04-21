@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -15,67 +14,67 @@ img { max-width: 100%; display: block; }
 
 /* NAV */
 .nav {
-position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-background: #0A1628;
-border-bottom: 1px solid #C9A84C;
-padding: 0 40px;
-display: flex; align-items: center; justify-content: space-between;
-height: 68px;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: #0A1628;
+  border-bottom: 1px solid #C9A84C;
+  padding: 0 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
 }
-.nav-logo { font-family: ‘Cinzel’, serif; font-size: 17px; font-weight: 700; color: #C9A84C; letter-spacing: 0.12em; }
+.nav-logo { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: #C9A84C; letter-spacing: 0.12em; }
 .nav-logo span { display: block; font-size: 11px; font-weight: 400; color: rgba(201,168,76,0.7); letter-spacing: 0.2em; }
 .nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { font-family: ‘Raleway’, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
+.nav-links a { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
 .nav-links a:hover { color: #C9A84C; }
-.nav-cta { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 10px 22px; border-radius: 2px; transition: background 0.2s; }
+.nav-cta { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 10px 22px; border-radius: 2px; transition: background 0.2s; }
 .nav-cta:hover { background: #E8C97A; color: #08111E; }
 
 /* HERO */
 .hero { min-height: 100vh; background: #08111E; display: flex; align-items: center; padding: 120px 40px 80px; }
 .hero-inner { max-width: 1160px; width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.hero-eyebrow { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 22px; display: flex; align-items: center; gap: 14px; }
-.hero-eyebrow::before { content: ‘’; width: 36px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
-.hero-title { font-family: ‘Cinzel’, serif; font-size: clamp(32px,4.2vw,54px); font-weight: 700; line-height: 1.15; letter-spacing: 0.04em; color: #FFFFFF; margin-bottom: 16px; }
+.hero-eyebrow { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 22px; display: flex; align-items: center; gap: 14px; }
+.hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
+.hero-title { font-family: 'Cinzel', serif; font-size: clamp(32px,4.2vw,54px); font-weight: 700; line-height: 1.15; letter-spacing: 0.04em; color: #FFFFFF; margin-bottom: 16px; }
 .hero-title .gold { color: #C9A84C; }
 .hero-divider { width: 80px; height: 2px; background: #C9A84C; margin-bottom: 26px; opacity: 0.5; }
 .hero-tagline { font-size: 20px; font-weight: 400; font-style: italic; color: #E8E0D4; line-height: 1.7; margin-bottom: 18px; }
 .hero-desc { font-size: 18px; font-weight: 400; color: #DDD5C8; line-height: 1.85; margin-bottom: 40px; }
 .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-primary { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 14px 32px; border-radius: 2px; transition: background 0.2s; display: inline-block; }
+.btn-primary { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 14px 32px; border-radius: 2px; transition: background 0.2s; display: inline-block; }
 .btn-primary:hover { background: #E8C97A; }
-.btn-ghost { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+.btn-ghost { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; transition: all 0.2s; display: inline-block; }
 .btn-ghost:hover { background: rgba(201,168,76,0.12); }
 .hero-img-box { background: #111F30; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; overflow: hidden; box-shadow: 0 0 80px rgba(201,168,76,0.1); }
 .hero-img-box img { width: 100%; }
-.hero-img-label { font-family: ‘Raleway’, sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(201,168,76,0.6); text-align: center; padding: 12px; background: #0D1B2A; }
+.hero-img-label { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(201,168,76,0.6); text-align: center; padding: 12px; background: #0D1B2A; }
 
 /* STATS */
 .stats-bar { background: #0D1B2A; border-top: 1px solid rgba(201,168,76,0.25); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 44px 40px; }
 .stats-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .stat { text-align: center; }
-.stat-num { font-family: ‘Cinzel’, serif; font-size: clamp(36px,4vw,52px); font-weight: 700; color: #C9A84C; line-height: 1; margin-bottom: 10px; }
-.stat-label { font-family: ‘Raleway’, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #FFFFFF; }
+.stat-num { font-family: 'Cinzel', serif; font-size: clamp(36px,4vw,52px); font-weight: 700; color: #C9A84C; line-height: 1; margin-bottom: 10px; }
+.stat-label { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #FFFFFF; }
 
 /* SECTIONS */
 .section { padding: 100px 40px; background: #08111E; }
 .section-alt { padding: 100px 40px; background: #0D1B2A; }
 .section-inner { max-width: 1160px; margin: 0 auto; }
-.section-eyebrow { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
-.section-eyebrow::before { content: ‘’; width: 28px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
-.section-title { font-family: ‘Cinzel’, serif; font-size: clamp(24px,3vw,38px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 14px; }
+.section-eyebrow { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+.section-eyebrow::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
+.section-title { font-family: 'Cinzel', serif; font-size: clamp(24px,3vw,38px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 14px; }
 .section-sub { font-size: 19px; font-weight: 400; color: #DDD5C8; line-height: 1.8; max-width: 720px; margin-bottom: 56px; }
 
 /* PAPER CARDS */
 .papers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 44px; }
 .paper-card { display: block; background: #111F30; border: 1px solid rgba(201,168,76,0.15); border-radius: 6px; padding: 28px; transition: all 0.3s; position: relative; overflow: hidden; }
-.paper-card::before { content: ‘’; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #C9A84C, #2A7F7F, transparent); opacity: 0; transition: opacity 0.3s; }
+.paper-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, #C9A84C, #2A7F7F, transparent); opacity: 0; transition: opacity 0.3s; }
 .paper-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.5); }
 .paper-card:hover::before { opacity: 1; }
-.pc-cat { font-family: ‘Raleway’, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 10px; }
-.pc-title { font-family: ‘Cinzel’, serif; font-size: clamp(15px,1.6vw,19px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 12px; }
+.pc-cat { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 10px; }
+.pc-title { font-family: 'Cinzel', serif; font-size: clamp(15px,1.6vw,19px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 12px; }
 .pc-desc { font-size: 16px; color: #E0D8CC; line-height: 1.65; margin-bottom: 18px; }
-.pc-link { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C; display: inline-flex; align-items: center; gap: 8px; }
-.pc-link::after { content: ‘→’; }
+.pc-link { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C; display: inline-flex; align-items: center; gap: 8px; }
+.pc-link::after { content: '→'; }
 
 /* DIAGRAM CARDS */
 .diag-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 40px; }
@@ -84,336 +83,326 @@ height: 68px;
 .diag-card:hover { border-color: rgba(201,168,76,0.4); transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
 .diag-card img { width: 100%; display: block; }
 .diag-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,17,30,0.92) 0%, transparent 55%); display: flex; flex-direction: column; justify-content: flex-end; padding: 22px; }
-.diag-title { font-family: ‘Cinzel’, serif; font-size: 15px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 4px; }
-.diag-sub { font-family: ‘Raleway’, sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C; }
+.diag-title { font-family: 'Cinzel', serif; font-size: 15px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 4px; }
+.diag-sub { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C; }
 
 /* CATEGORY CARDS */
 .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 16px; }
 .cat-card { display: block; background: #111F30; border: 1px solid rgba(201,168,76,0.1); border-radius: 6px; padding: 24px; transition: all 0.25s; }
 .cat-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-2px); }
-.cat-num { font-family: ‘Raleway’, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 10px; }
-.cat-title { font-family: ‘Cinzel’, serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px; letter-spacing: 0.03em; line-height: 1.3; }
+.cat-num { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 10px; }
+.cat-title { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px; letter-spacing: 0.03em; line-height: 1.3; }
 .cat-desc { font-size: 15px; color: #D8D0C0; line-height: 1.6; margin-bottom: 14px; }
-.cat-count { font-family: ‘Raleway’, sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF; font-weight: 700; }
+.cat-count { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF; font-weight: 700; }
 
 /* ACCESS */
 .access-band { background: #0D1B2A; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 90px 40px; text-align: center; }
 .access-inner { max-width: 740px; margin: 0 auto; }
-.access-eyebrow { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 16px; }
-.access-title { font-family: ‘Cinzel’, serif; font-size: clamp(26px,4vw,42px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.06em; margin-bottom: 20px; }
+.access-eyebrow { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 16px; }
+.access-title { font-family: 'Cinzel', serif; font-size: clamp(26px,4vw,42px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.06em; margin-bottom: 20px; }
 .access-body { font-size: 19px; font-weight: 400; color: #DDD5C8; line-height: 1.8; margin-bottom: 44px; }
 .access-steps { display: flex; margin-bottom: 44px; border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; overflow: hidden; }
 .access-step { flex: 1; padding: 22px 16px; border-right: 1px solid rgba(201,168,76,0.2); }
 .access-step:last-child { border-right: none; }
-.as-num { font-family: ‘Cinzel’, serif; font-size: 26px; font-weight: 700; color: #C9A84C; margin-bottom: 8px; }
-.as-label { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF; }
+.as-num { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: #C9A84C; margin-bottom: 8px; }
+.as-label { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF; }
 
 /* FOUNDER */
 .founder-wrap { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; }
 .founder-card { background: #111F30; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 44px; text-align: center; }
-.founder-initials { font-family: ‘Cinzel’, serif; font-size: 72px; font-weight: 700; color: #C9A84C; opacity: 0.35; line-height: 1; margin-bottom: 20px; }
-.founder-name { font-family: ‘Cinzel’, serif; font-size: 20px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.07em; margin-bottom: 8px; }
-.founder-role { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; }
+.founder-initials { font-family: 'Cinzel', serif; font-size: 72px; font-weight: 700; color: #C9A84C; opacity: 0.35; line-height: 1; margin-bottom: 20px; }
+.founder-name { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.07em; margin-bottom: 8px; }
+.founder-role { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; }
 .founder-bio { font-size: 19px; color: #DDD5C8; line-height: 1.85; margin-bottom: 18px; }
 .fm-row { margin-bottom: 14px; }
-.fm-label { font-family: ‘Raleway’, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C8D8E4; margin-bottom: 3px; }
+.fm-label { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C8D8E4; margin-bottom: 3px; }
 .fm-value { font-size: 16px; color: #FFFFFF; }
 
 /* FOOTER */
 .footer { background: #0D1B2A; border-top: 1px solid rgba(201,168,76,0.2); padding: 64px 40px 40px; }
 .footer-inner { max-width: 1160px; margin: 0 auto; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 56px; margin-bottom: 40px; border-bottom: 1px solid rgba(201,168,76,0.15); }
-.footer-logo { font-family: ‘Cinzel’, serif; font-size: 20px; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; margin-bottom: 16px; }
+.footer-logo { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; margin-bottom: 16px; }
 .footer-tagline { font-size: 16px; color: #D8D0C0; line-height: 1.7; margin-bottom: 16px; }
-.footer-site { font-family: ‘Raleway’, sans-serif; font-size: 12px; letter-spacing: 0.15em; color: #3AAFAF; font-weight: 600; }
-.footer-col-title { font-family: ‘Raleway’, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C; margin-bottom: 20px; }
+.footer-site { font-family: 'Raleway', sans-serif; font-size: 12px; letter-spacing: 0.15em; color: #3AAFAF; font-weight: 600; }
+.footer-col-title { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C; margin-bottom: 20px; }
 .footer-links { display: flex; flex-direction: column; gap: 10px; }
 .footer-links a { font-size: 15px; color: #D8D0C0; transition: color 0.2s; }
 .footer-links a:hover { color: #C9A84C; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-.footer-copy { font-family: ‘Raleway’, sans-serif; font-size: 12px; letter-spacing: 0.08em; color: #AABFCC; }
-.footer-tm { font-family: ‘Raleway’, sans-serif; font-size: 11px; letter-spacing: 0.12em; color: rgba(201,168,76,0.4); }
+.footer-copy { font-family: 'Raleway', sans-serif; font-size: 12px; letter-spacing: 0.08em; color: #AABFCC; }
+.footer-tm { font-family: 'Raleway', sans-serif; font-size: 11px; letter-spacing: 0.12em; color: rgba(201,168,76,0.4); }
 
 /* RESPONSIVE */
 @media(max-width:1024px){
-.hero-inner { grid-template-columns: 1fr; gap: 50px; }
-.stats-inner { grid-template-columns: repeat(2,1fr); }
-.papers-grid { grid-template-columns: 1fr; }
-.diag-grid { grid-template-columns: 1fr; }
-.founder-wrap { grid-template-columns: 1fr; }
-.footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+  .stats-inner { grid-template-columns: repeat(2,1fr); }
+  .papers-grid { grid-template-columns: 1fr; }
+  .diag-grid { grid-template-columns: 1fr; }
+  .founder-wrap { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media(max-width:640px){
-.nav { padding: 0 20px; }
-.nav-links { display: none; }
-.hero { padding: 100px 20px 60px; }
-.section, .section-alt { padding: 70px 20px; }
-.stats-bar, .access-band { padding: 44px 20px; }
-.access-steps { flex-direction: column; }
-.access-step { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
-.access-step:last-child { border-bottom: none; }
-.footer { padding: 50px 20px 32px; }
-.footer-top { grid-template-columns: 1fr; gap: 36px; }
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .section, .section-alt { padding: 70px 20px; }
+  .stats-bar, .access-band { padding: 44px 20px; }
+  .access-steps { flex-direction: column; }
+  .access-step { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
+  .access-step:last-child { border-bottom: none; }
+  .footer { padding: 50px 20px 32px; }
+  .footer-top { grid-template-columns: 1fr; gap: 36px; }
 }
 </style>
-
 </head>
 <body>
 
 <!-- NAV -->
-
 <nav class="nav">
-<div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="library.html">Research Library</a>
-<a href="diagrams.html">System Diagrams</a>
-<a href="book.html">Book</a>
-<a href="contact.html" class="nav-cta">Request Access</a>
-</div>
+  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="library.html">Research Library</a>
+    <a href="diagrams.html">System Diagrams</a>
+    <a href="book.html">Book</a>
+    <a href="contact.html" class="nav-cta">Request Access</a>
+  </div>
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
-<div class="hero-inner">
-<div>
-<div class="hero-eyebrow">Christos™ Research Platform</div>
-<h1 class="hero-title">Engineering the<br><span class="gold">Harmonic Architecture</span><br>of Tomorrow</h1>
-<div class="hero-divider"></div>
-<p class="hero-tagline">A unified research platform spanning physics, biology, materials, transport, intelligence, and civilization-scale design.</p>
-<p class="hero-desc">75 original research papers. 400+ inventions. One coherent architecture. Everything built on a single governing principle — coherence — applied across every domain of human knowledge.</p>
-<div class="hero-btns">
-<a href="library.html" class="btn-primary">Explore the Library</a>
-<a href="contact.html" class="btn-ghost">Request Access</a>
-</div>
-</div>
-<div>
-<div class="hero-img-box">
-<img src="assets/images/diagrams/christos-architecture.png" alt="The Christos Architecture">
-<div class="hero-img-label">The Christos Architecture — Master System Map</div>
-</div>
-</div>
-</div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Christos™ Research Platform</div>
+      <h1 class="hero-title">Engineering the<br><span class="gold">Harmonic Architecture</span><br>of Tomorrow</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-tagline">A unified research platform spanning physics, biology, materials, transport, intelligence, and civilization-scale design.</p>
+      <p class="hero-desc">75 original research papers. 400+ inventions. One coherent architecture. Everything built on a single governing principle — coherence — applied across every domain of human knowledge.</p>
+      <div class="hero-btns">
+        <a href="library.html" class="btn-primary">Explore the Library</a>
+        <a href="contact.html" class="btn-ghost">Request Access</a>
+      </div>
+    </div>
+    <div>
+      <div class="hero-img-box">
+        <img src="assets/images/diagrams/christos-architecture.png" alt="The Christos Architecture">
+        <div class="hero-img-label">The Christos Architecture — Master System Map</div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- STATS -->
-
 <div class="stats-bar">
-<div class="stats-inner">
-<div class="stat"><div class="stat-num">77</div><div class="stat-label">Research Papers</div></div>
-<div class="stat"><div class="stat-num">400+</div><div class="stat-label">Original Inventions</div></div>
-<div class="stat"><div class="stat-num">15</div><div class="stat-label">System Domains</div></div>
-<div class="stat"><div class="stat-num">1</div><div class="stat-label">Unified Architecture</div></div>
-</div>
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">106</div><div class="stat-label">Research Papers</div></div>
+    <div class="stat"><div class="stat-num">1,000+</div><div class="stat-label">Original Inventions</div></div>
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">System Domains</div></div>
+    <div class="stat"><div class="stat-num">1</div><div class="stat-label">Unified Architecture</div></div>
+  </div>
 </div>
 
 <!-- FEATURED PAPERS -->
-
 <section class="section">
-<div class="section-inner">
-<div class="section-eyebrow">Featured Research</div>
-<h2 class="section-title">Entry Points Into the System</h2>
-<p class="section-sub">These papers serve as the primary public-facing introduction to the Christos architecture. Each abstract provides a high-level overview. Full technical materials are available through protected access pathways only.</p>
-<div class="papers-grid">
-<a href="papers/core-foundations/magnus-opus.html" class="paper-card">
-<div class="pc-cat">Core Foundations</div>
-<div class="pc-title">Magnus Opus — Unified System</div>
-<div class="pc-desc">The overarching integration layer of the Christos platform. Physics, consciousness, geometry, and biological systems interpreted as parts of a single structured whole.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/biology-medicine/unified-coherence-medicine.html" class="paper-card">
-<div class="pc-cat">Biology & Medicine</div>
-<div class="pc-title">Unified Coherence Medicine System</div>
-<div class="pc-desc">A comprehensive framework integrating 14 medical sub-systems through the lens of biological coherence — from cellular function to full-body protocol.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/mathematics-structure/architecture-of-infinity.html" class="paper-card">
-<div class="pc-cat">Mathematics & Structure</div>
-<div class="pc-title">Architecture of Infinity</div>
-<div class="pc-desc">A structural research program identifying toroidal incompleteness across eleven of mathematics' most significant unsolved problems.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/civilization-systems/unified-civilization-system.html" class="paper-card">
-<div class="pc-cat">Civilization Systems</div>
-<div class="pc-title">Unified Civilization System</div>
-<div class="pc-desc">Medicine, infrastructure, intelligence, architecture, transport, and materials — not as separate sectors, but as interdependent layers of one coherent platform.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/transport-time-systems/aether-skiff.html" class="paper-card">
-<div class="pc-cat">Transport / Time Systems</div>
-<div class="pc-title">Aether Skiff Transportation System</div>
-<div class="pc-desc">Flagship personal mobility architecture within the larger Christos transportation family — spanning 18 vehicles across 5 tiers of infrastructure.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/materials-manufacturing/weavers-loom.html" class="paper-card">
-<div class="pc-cat">Materials & Manufacturing</div>
-<div class="pc-title">Weaver's Loom</div>
-<div class="pc-desc">Flagship fabrication architecture bridging coherence theory to real-world production — spanning tissue engineering, crystal engineering, and plasma-phase fabrication.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/core-foundations/toroidal-cosmology.html" class="paper-card">
-<div class="pc-cat">Core Foundations</div>
-<div class="pc-title">Toroidal Cosmology</div>
-<div class="pc-desc">A field-based cosmological model in which space, time, matter, and consciousness are understood as expressions of a single toroidal dynamic.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-<a href="papers/ai-network-digital/quantum-internet-framework.html" class="paper-card">
-<div class="pc-cat">AI / Network / Digital</div>
-<div class="pc-title">Quantum Internet Framework</div>
-<div class="pc-desc">A coherence-based network architecture exploring identity, verification, and distributed coordination at civilization scale.</div>
-<div class="pc-link">View Abstract</div>
-</a>
-</div>
-<div style="text-align:center"><a href="library.html" class="btn-ghost">View All 75 Papers →</a></div>
-</div>
+  <div class="section-inner">
+    <div class="section-eyebrow">Featured Research</div>
+    <h2 class="section-title">Entry Points Into the System</h2>
+    <p class="section-sub">These papers serve as the primary public-facing introduction to the Christos architecture. Each abstract provides a high-level overview. Full technical materials are available through protected access pathways only.</p>
+    <div class="papers-grid">
+      <a href="papers/core-foundations/magnus-opus.html" class="paper-card">
+        <div class="pc-cat">Core Foundations</div>
+        <div class="pc-title">Magnus Opus — Unified System</div>
+        <div class="pc-desc">The overarching integration layer of the Christos platform. Physics, consciousness, geometry, and biological systems interpreted as parts of a single structured whole.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/biology-medicine/unified-coherence-medicine.html" class="paper-card">
+        <div class="pc-cat">Biology & Medicine</div>
+        <div class="pc-title">Unified Coherence Medicine System</div>
+        <div class="pc-desc">A comprehensive framework integrating 14 medical sub-systems through the lens of biological coherence — from cellular function to full-body protocol.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/mathematics-structure/architecture-of-infinity.html" class="paper-card">
+        <div class="pc-cat">Mathematics & Structure</div>
+        <div class="pc-title">Architecture of Infinity</div>
+        <div class="pc-desc">A structural research program identifying toroidal incompleteness across eleven of mathematics' most significant unsolved problems.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/civilization-systems/unified-civilization-system.html" class="paper-card">
+        <div class="pc-cat">Civilization Systems</div>
+        <div class="pc-title">Unified Civilization System</div>
+        <div class="pc-desc">Medicine, infrastructure, intelligence, architecture, transport, and materials — not as separate sectors, but as interdependent layers of one coherent platform.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/transport-time-systems/aether-skiff.html" class="paper-card">
+        <div class="pc-cat">Transport / Time Systems</div>
+        <div class="pc-title">Aether Skiff Transportation System</div>
+        <div class="pc-desc">Flagship personal mobility architecture within the larger Christos transportation family — spanning 18 vehicles across 5 tiers of infrastructure.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/materials-manufacturing/weavers-loom.html" class="paper-card">
+        <div class="pc-cat">Materials & Manufacturing</div>
+        <div class="pc-title">Weaver's Loom</div>
+        <div class="pc-desc">Flagship fabrication architecture bridging coherence theory to real-world production — spanning tissue engineering, crystal engineering, and plasma-phase fabrication.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/core-foundations/toroidal-cosmology.html" class="paper-card">
+        <div class="pc-cat">Core Foundations</div>
+        <div class="pc-title">Toroidal Cosmology</div>
+        <div class="pc-desc">A field-based cosmological model in which space, time, matter, and consciousness are understood as expressions of a single toroidal dynamic.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+      <a href="papers/ai-network-digital/quantum-internet-framework.html" class="paper-card">
+        <div class="pc-cat">AI / Network / Digital</div>
+        <div class="pc-title">Quantum Internet Framework</div>
+        <div class="pc-desc">A coherence-based network architecture exploring identity, verification, and distributed coordination at civilization scale.</div>
+        <div class="pc-link">View Abstract</div>
+      </a>
+    </div>
+    <div style="text-align:center"><a href="library.html" class="btn-ghost">View All 75 Papers →</a></div>
+  </div>
 </section>
 
 <!-- SYSTEM DIAGRAMS -->
-
 <section class="section-alt">
-<div class="section-inner">
-<div class="section-eyebrow">System Diagrams</div>
-<h2 class="section-title">The Architecture Visualized</h2>
-<p class="section-sub">Each diagram maps a distinct layer of the Christos system — from foundational geometry to civilization-scale infrastructure. Together they show how the entire platform connects into one.</p>
-<div class="diag-grid">
-<div class="diag-card" onclick="location.href='diagrams.html'" style="min-height:440px">
-<img src="assets/images/diagrams/civilization-system.png" alt="Coherent Civilization System">
-<div class="diag-overlay">
-<div class="diag-title">The Coherent Civilization System</div>
-<div class="diag-sub">Master Architecture Diagram</div>
-</div>
-</div>
-<div class="diag-right">
-<div class="diag-card" onclick="location.href='diagrams.html'">
-<img src="assets/images/diagrams/toroidal-reality.png" alt="Reality as a Loop">
-<div class="diag-overlay"><div class="diag-title">Reality as a Loop</div><div class="diag-sub">Toroidal Cosmology</div></div>
-</div>
-<div class="diag-card" onclick="location.href='diagrams.html'">
-<img src="assets/images/diagrams/human-system-stack.png" alt="Human System Stack">
-<div class="diag-overlay"><div class="diag-title">Human System Stack</div><div class="diag-sub">Biology & Medicine</div></div>
-</div>
-<div class="diag-card" onclick="location.href='diagrams.html'">
-<img src="assets/images/diagrams/coherence-geometry.png" alt="Coherence Geometry">
-<div class="diag-overlay"><div class="diag-title">Coherence Geometry System</div><div class="diag-sub">Core Foundations</div></div>
-</div>
-</div>
-</div>
-<div style="text-align:center;margin-top:12px"><a href="diagrams.html" class="btn-ghost">View All 10 System Diagrams →</a></div>
-</div>
+  <div class="section-inner">
+    <div class="section-eyebrow">System Diagrams</div>
+    <h2 class="section-title">The Architecture Visualized</h2>
+    <p class="section-sub">Each diagram maps a distinct layer of the Christos system — from foundational geometry to civilization-scale infrastructure. Together they show how the entire platform connects into one.</p>
+    <div class="diag-grid">
+      <div class="diag-card" onclick="location.href='diagrams.html'" style="min-height:440px">
+        <img src="assets/images/diagrams/civilization-system.png" alt="Coherent Civilization System">
+        <div class="diag-overlay">
+          <div class="diag-title">The Coherent Civilization System</div>
+          <div class="diag-sub">Master Architecture Diagram</div>
+        </div>
+      </div>
+      <div class="diag-right">
+        <div class="diag-card" onclick="location.href='diagrams.html'">
+          <img src="assets/images/diagrams/toroidal-reality.png" alt="Reality as a Loop">
+          <div class="diag-overlay"><div class="diag-title">Reality as a Loop</div><div class="diag-sub">Toroidal Cosmology</div></div>
+        </div>
+        <div class="diag-card" onclick="location.href='diagrams.html'">
+          <img src="assets/images/diagrams/human-system-stack.png" alt="Human System Stack">
+          <div class="diag-overlay"><div class="diag-title">Human System Stack</div><div class="diag-sub">Biology & Medicine</div></div>
+        </div>
+        <div class="diag-card" onclick="location.href='diagrams.html'">
+          <img src="assets/images/diagrams/coherence-geometry.png" alt="Coherence Geometry">
+          <div class="diag-overlay"><div class="diag-title">Coherence Geometry System</div><div class="diag-sub">Core Foundations</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:12px"><a href="diagrams.html" class="btn-ghost">View All 10 System Diagrams →</a></div>
+  </div>
 </section>
 
 <!-- CATEGORIES -->
-
 <section class="section">
-<div class="section-inner">
-<div class="section-eyebrow">Research Library</div>
-<h2 class="section-title">75 Papers Across 14 Domains</h2>
-<p class="section-sub">Browse the full library by domain. Public pages provide abstract-level visibility. Full technical architecture and implementation materials are available through protected collaboration pathways only.</p>
-<div class="cat-grid">
-<a href="categories/core-foundations.html" class="cat-card"><div class="cat-num">01</div><div class="cat-title">Core Foundations</div><div class="cat-desc">Coherence theory, field physics, consciousness, cosmology, and the governing principles underlying the entire platform.</div><div class="cat-count">10 Papers</div></a>
-<a href="categories/mathematics-structure.html" class="cat-card"><div class="cat-num">02</div><div class="cat-title">Mathematics & Structure</div><div class="cat-desc">Recursive systems, attractor frameworks, geometric architecture, the Collatz study, and formal system logic.</div><div class="cat-count">7 Papers</div></a>
-<a href="categories/civilization-systems.html" class="cat-card"><div class="cat-num">03</div><div class="cat-title">Civilization Systems</div><div class="cat-desc">Planetary infrastructure, applied domains, governance models, and large-scale coherence coordination.</div><div class="cat-count">7 Papers</div></a>
-<a href="categories/biology-medicine.html" class="cat-card"><div class="cat-num">04</div><div class="cat-title">Biology & Medicine</div><div class="cat-desc">Health models, biological coherence, organ communication, trauma, aging, and systemic medical architecture.</div><div class="cat-count">10 Papers</div></a>
-<a href="categories/medical-applications.html" class="cat-card"><div class="cat-num">05</div><div class="cat-title">Medical Applications</div><div class="cat-desc">Organ regeneration, tissue repair, auditory restoration, healing fluids, and maternal care systems.</div><div class="cat-count">8 Papers</div></a>
-<a href="categories/pharmacology-fluids.html" class="cat-card"><div class="cat-num">06</div><div class="cat-title">Pharmacology & Fluids</div><div class="cat-desc">Fluid-based medical systems, structured water, pharmacological bridge frameworks, and microplastic elimination.</div><div class="cat-count">4 Papers</div></a>
-<a href="categories/sound-frequency.html" class="cat-card"><div class="cat-num">07</div><div class="cat-title">Sound / Frequency / Resonance</div><div class="cat-desc">Sound medicine, acoustic fabrication, resonant dentistry, and morphogenic resonator systems.</div><div class="cat-count">4 Papers</div></a>
-<a href="categories/materials-manufacturing.html" class="cat-card"><div class="cat-num">08</div><div class="cat-title">Materials & Manufacturing</div><div class="cat-desc">Weaver's Loom fabrication, programmable matter, crystal engineering, and advanced manufacturing frameworks.</div><div class="cat-count">6 Papers</div></a>
-<a href="categories/agriculture-water-food.html" class="cat-card"><div class="cat-num">09</div><div class="cat-title">Agriculture, Water & Food</div><div class="cat-desc">Food systems architecture, harmonic agriculture, structured water, and coherence garden systems.</div><div class="cat-count">4 Papers</div></a>
-<a href="categories/architecture-built-environment.html" class="cat-card"><div class="cat-num">10</div><div class="cat-title">Architecture & Built Environment</div><div class="cat-desc">Resonant architecture, built environment as active systems layer, and structural coherence frameworks.</div><div class="cat-count">2 Papers</div></a>
-<a href="categories/transport-time-systems.html" class="cat-card"><div class="cat-num">11</div><div class="cat-title">Transport & Time Systems</div><div class="cat-desc">Aether Skiff, master transportation architecture, teleportation systems, and temporal navigation.</div><div class="cat-count">5 Papers</div></a>
-<a href="categories/devices-wearables.html" class="cat-card"><div class="cat-num">12</div><div class="cat-title">Devices, Wearables & Interfaces</div><div class="cat-desc">Resonance suit system, biological interface architecture, and personal coherence support systems.</div><div class="cat-count">3 Papers</div></a>
-<a href="categories/ai-network-digital.html" class="cat-card"><div class="cat-num">13</div><div class="cat-title">AI, Network & Digital</div><div class="cat-desc">Coherence-based intelligence architecture, quantum internet framework, and human-AI systems.</div><div class="cat-count">3 Papers</div></a>
-<a href="categories/invention-library.html" class="cat-card"><div class="cat-num">14</div><div class="cat-title">Invention Library & Meta Systems</div><div class="cat-desc">Master invention catalog, cross-system architecture blueprints, and umbrella meta-system documents.</div><div class="cat-count">2 Papers</div></a>
-</div>
-</div>
+  <div class="section-inner">
+    <div class="section-eyebrow">Research Library</div>
+    <h2 class="section-title">106 Papers Across 18 Domains</h2>
+    <p class="section-sub">Browse the full library by domain — 18 research domains including a dedicated Expected Next Frontiers section. Public pages provide abstract-level visibility. Full technical architecture and implementation materials are available through protected collaboration pathways only.</p>
+    <div class="cat-grid">
+      <a href="categories/core-foundations.html" class="cat-card"><div class="cat-num">01</div><div class="cat-title">Core Foundations</div><div class="cat-desc">Coherence theory, field physics, consciousness, cosmology, and the governing principles underlying the entire platform.</div><div class="cat-count">10 Papers</div></a>
+      <a href="categories/mathematics-structure.html" class="cat-card"><div class="cat-num">02</div><div class="cat-title">Mathematics & Structure</div><div class="cat-desc">Recursive systems, attractor frameworks, geometric architecture, the Collatz study, and formal system logic.</div><div class="cat-count">7 Papers</div></a>
+      <a href="categories/civilization-systems.html" class="cat-card"><div class="cat-num">03</div><div class="cat-title">Civilization Systems</div><div class="cat-desc">Planetary infrastructure, applied domains, governance models, and large-scale coherence coordination.</div><div class="cat-count">7 Papers</div></a>
+      <a href="categories/biology-medicine.html" class="cat-card"><div class="cat-num">04</div><div class="cat-title">Biology & Medicine</div><div class="cat-desc">Health models, biological coherence, organ communication, trauma, aging, and systemic medical architecture.</div><div class="cat-count">10 Papers</div></a>
+      <a href="categories/medical-applications.html" class="cat-card"><div class="cat-num">05</div><div class="cat-title">Medical Applications</div><div class="cat-desc">Organ regeneration, tissue repair, auditory restoration, healing fluids, and maternal care systems.</div><div class="cat-count">8 Papers</div></a>
+      <a href="categories/pharmacology-fluids.html" class="cat-card"><div class="cat-num">06</div><div class="cat-title">Pharmacology & Fluids</div><div class="cat-desc">Fluid-based medical systems, structured water, pharmacological bridge frameworks, and microplastic elimination.</div><div class="cat-count">4 Papers</div></a>
+      <a href="categories/sound-frequency.html" class="cat-card"><div class="cat-num">07</div><div class="cat-title">Sound / Frequency / Resonance</div><div class="cat-desc">Sound medicine, acoustic fabrication, resonant dentistry, and morphogenic resonator systems.</div><div class="cat-count">4 Papers</div></a>
+      <a href="categories/materials-manufacturing.html" class="cat-card"><div class="cat-num">08</div><div class="cat-title">Materials & Manufacturing</div><div class="cat-desc">Weaver's Loom fabrication, programmable matter, crystal engineering, and advanced manufacturing frameworks.</div><div class="cat-count">6 Papers</div></a>
+      <a href="categories/agriculture-water-food.html" class="cat-card"><div class="cat-num">09</div><div class="cat-title">Agriculture, Water & Food</div><div class="cat-desc">Food systems architecture, harmonic agriculture, structured water, and coherence garden systems.</div><div class="cat-count">4 Papers</div></a>
+      <a href="categories/architecture-built-environment.html" class="cat-card"><div class="cat-num">10</div><div class="cat-title">Architecture & Built Environment</div><div class="cat-desc">Resonant architecture, built environment as active systems layer, and structural coherence frameworks.</div><div class="cat-count">2 Papers</div></a>
+      <a href="categories/transport-time-systems.html" class="cat-card"><div class="cat-num">11</div><div class="cat-title">Transport & Time Systems</div><div class="cat-desc">Aether Skiff, master transportation architecture, teleportation systems, and temporal navigation.</div><div class="cat-count">5 Papers</div></a>
+      <a href="categories/devices-wearables.html" class="cat-card"><div class="cat-num">12</div><div class="cat-title">Devices, Wearables & Interfaces</div><div class="cat-desc">Resonance suit system, biological interface architecture, and personal coherence support systems.</div><div class="cat-count">3 Papers</div></a>
+      <a href="categories/ai-network-digital.html" class="cat-card"><div class="cat-num">13</div><div class="cat-title">AI, Network & Digital</div><div class="cat-desc">Coherence-based intelligence architecture, quantum internet framework, and human-AI systems.</div><div class="cat-count">3 Papers</div></a>
+      <a href="categories/invention-library.html" class="cat-card"><div class="cat-num">14</div><div class="cat-title">Invention Library & Meta Systems</div><div class="cat-desc">Master invention catalog, cross-system architecture blueprints, and umbrella meta-system documents.</div><div class="cat-count">2 Papers</div></a>
+    </div>
+  </div>
 </section>
 
 <!-- ACCESS -->
-
 <div class="access-band">
-<div class="access-inner">
-<div class="access-eyebrow">Access & Collaboration</div>
-<h2 class="access-title">Protected by Design</h2>
-<p class="access-body">Public pages present abstract-level visibility only. Full technical architecture, implementation specifications, and proprietary system detail are not published openly. Collaboration proceeds through a structured, vetted process.</p>
-<div class="access-steps">
-<div class="access-step"><div class="as-num">01</div><div class="as-label">Review Abstracts</div></div>
-<div class="access-step"><div class="as-num">02</div><div class="as-label">Request Access</div></div>
-<div class="access-step"><div class="as-num">03</div><div class="as-label">Execute NDA</div></div>
-<div class="access-step"><div class="as-num">04</div><div class="as-label">Controlled Review</div></div>
-</div>
-<a href="contact.html" class="btn-primary">Request Access</a>
-</div>
+  <div class="access-inner">
+    <div class="access-eyebrow">Access & Collaboration</div>
+    <h2 class="access-title">Protected by Design</h2>
+    <p class="access-body">Public pages present abstract-level visibility only. Full technical architecture, implementation specifications, and proprietary system detail are not published openly. Collaboration proceeds through a structured, vetted process.</p>
+    <div class="access-steps">
+      <div class="access-step"><div class="as-num">01</div><div class="as-label">Review Abstracts</div></div>
+      <div class="access-step"><div class="as-num">02</div><div class="as-label">Request Access</div></div>
+      <div class="access-step"><div class="as-num">03</div><div class="as-label">Execute NDA</div></div>
+      <div class="access-step"><div class="as-num">04</div><div class="as-label">Controlled Review</div></div>
+    </div>
+    <a href="contact.html" class="btn-primary">Request Access</a>
+  </div>
 </div>
 
 <!-- FOUNDER -->
-
 <section class="section">
-<div class="founder-wrap">
-<div class="founder-card">
-<div class="founder-initials">JF</div>
-<div class="founder-name">Joshua Farrior</div>
-<div class="founder-role">Founder & Chief Architect</div>
-</div>
-<div>
-<div class="section-eyebrow">The Founder</div>
-<h2 class="section-title">Joshua Farrior</h2>
-<p class="founder-bio">Independent researcher and inventor developing integrated systems across coherence theory, physics, biology, materials science, artificial intelligence, transportation, and civilization-scale architecture.</p>
-<p class="founder-bio">What began as a unified framework has grown into a 75-paper research platform containing over 400 original inventions spanning every major domain of applied science and infrastructure design.</p>
-<div style="margin-top:28px">
-<div class="fm-row"><div class="fm-label">Organization</div><div class="fm-value">Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div></div>
-<div class="fm-row"><div class="fm-label">Location</div><div class="fm-value">Indianapolis, Indiana</div></div>
-<div class="fm-row"><div class="fm-label">Contact</div><div class="fm-value">joshuafarrior@sbcglobal.net</div></div>
-</div>
-</div>
-</div>
+  <div class="founder-wrap">
+    <div class="founder-card">
+      <div class="founder-initials">JF</div>
+      <div class="founder-name">Joshua Farrior</div>
+      <div class="founder-role">Founder & Chief Architect</div>
+    </div>
+    <div>
+      <div class="section-eyebrow">The Founder</div>
+      <h2 class="section-title">Joshua Farrior</h2>
+      <p class="founder-bio">Independent researcher and inventor developing integrated systems across coherence theory, physics, biology, materials science, artificial intelligence, transportation, and civilization-scale architecture.</p>
+      <p class="founder-bio">What began as a unified framework has grown into a 75-paper research platform containing over 400 original inventions spanning every major domain of applied science and infrastructure design.</p>
+      <div style="margin-top:28px">
+        <div class="fm-row"><div class="fm-label">Organization</div><div class="fm-value">Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div></div>
+        <div class="fm-row"><div class="fm-label">Location</div><div class="fm-value">Indianapolis, Indiana</div></div>
+        <div class="fm-row"><div class="fm-label">Contact</div><div class="fm-value">joshuafarrior@sbcglobal.net</div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
-
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-top">
-<div>
-<div class="footer-logo">CHRISTOS™</div>
-<p class="footer-tagline">Engineering the Harmonic Architecture of Tomorrow. 75 original research papers spanning physics, biology, materials, transport, intelligence, and civilization-scale design.</p>
-<div class="footer-site">christosenergy.com</div>
-</div>
-<div>
-<div class="footer-col-title">Research</div>
-<div class="footer-links">
-<a href="library.html">Full Library</a>
-<a href="categories/core-foundations.html">Core Foundations</a>
-<a href="categories/biology-medicine.html">Biology & Medicine</a>
-<a href="categories/transport-time-systems.html">Transport Systems</a>
-<a href="categories/civilization-systems.html">Civilization Systems</a>
-</div>
-</div>
-<div>
-<div class="footer-col-title">Diagrams</div>
-<div class="footer-links">
-<a href="diagrams.html">All Diagrams</a>
-<a href="diagrams.html">Christos Architecture</a>
-<a href="diagrams.html">Reality as a Loop</a>
-<a href="diagrams.html">Human System Stack</a>
-<a href="diagrams.html">Civilization System</a>
-</div>
-</div>
-<div>
-<div class="footer-col-title">Access</div>
-<div class="footer-links">
-<a href="contact.html">Request Access</a>
-<a href="book.html">Book (Coming Soon)</a>
-<a href="contact.html">Collaboration</a>
-<a href="contact.html">Licensing</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923</div>
-<div class="footer-tm">Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-</div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">CHRISTOS™</div>
+        <p class="footer-tagline">Engineering the Harmonic Architecture of Tomorrow. 75 original research papers spanning physics, biology, materials, transport, intelligence, and civilization-scale design.</p>
+        <div class="footer-site">christosenergy.com</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Research</div>
+        <div class="footer-links">
+          <a href="library.html">Full Library</a>
+          <a href="categories/core-foundations.html">Core Foundations</a>
+          <a href="categories/biology-medicine.html">Biology & Medicine</a>
+          <a href="categories/transport-time-systems.html">Transport Systems</a>
+          <a href="categories/civilization-systems.html">Civilization Systems</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Diagrams</div>
+        <div class="footer-links">
+          <a href="diagrams.html">All Diagrams</a>
+          <a href="diagrams.html">Christos Architecture</a>
+          <a href="diagrams.html">Reality as a Loop</a>
+          <a href="diagrams.html">Human System Stack</a>
+          <a href="diagrams.html">Civilization System</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Access</div>
+        <div class="footer-links">
+          <a href="contact.html">Request Access</a>
+          <a href="book.html">Book (Coming Soon)</a>
+          <a href="contact.html">Collaboration</a>
+          <a href="contact.html">Licensing</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923</div>
+      <div class="footer-tm">Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    </div>
+  </div>
 </footer>
 
 </body>
