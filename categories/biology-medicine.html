@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -25,26 +24,32 @@ a{text-decoration:none;color:inherit;}
 .page-header-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;}
 .eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.page-title{font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
+.page-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
 .page-sub{font-size:18px;color:#D8D0C0;line-height:1.8;max-width:680px;}
 .page-meta{text-align:right;}
 .meta-num{font-family:'Cinzel',serif;font-size:52px;font-weight:700;color:#C9A84C;line-height:1;}
 .meta-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#AABFCC;margin-top:4px;}
-.diag-ref{background-color:#0D1B2A !important;border-left:3px solid #2A7F7F;padding:12px 20px;margin:24px auto 0;max-width:1160px;}
+.diag-wrap{padding:0 40px;}
+.diag-ref{background-color:#0D1B2A !important;border-left:3px solid #2A7F7F;padding:12px 20px;margin:20px auto 0;max-width:1160px;}
 .diag-ref-text{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3AAFAF;}
 .diag-ref-text a{color:#C9A84C;}.diag-ref-text a:hover{color:#E8C97A;}
-.diag-wrap{padding:0 40px;}
+.frontier-banner{background-color:#0D1B2A !important;border:1px solid rgba(42,127,127,0.3);border-left:3px solid #3AAFAF;border-radius:4px;padding:16px 20px;margin:20px 40px 0;max-width:1160px;margin-left:auto;margin-right:auto;}
+.frontier-banner-title{font-family:'Cinzel',serif;font-size:14px;color:#3AAFAF;margin-bottom:6px;}
+.frontier-banner-text{font-size:15px;color:#D0C8B8;line-height:1.6;}
 .body-wrap{background-color:#08111E !important;padding:60px 40px 100px;}
 .body-inner{max-width:1160px;margin:0 auto;}
 .paper-list{display:grid;gap:12px;margin-bottom:60px;}
-.paper-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.12);border-radius:5px;padding:22px 26px;transition:all 0.25s;cursor:pointer;}
+.paper-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.12);border-radius:5px;padding:22px 26px;transition:all 0.25s;}
 .paper-row:hover{border-color:rgba(201,168,76,0.4);transform:translateX(4px);background-color:#142030 !important;}
+.paper-row.frontier{border-color:rgba(42,127,127,0.15);}
+.paper-row.frontier:hover{border-color:rgba(42,127,127,0.4);}
 .pr-tag{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#3AAFAF;margin-bottom:6px;}
 .pr-title{font-family:'Cinzel',serif;font-size:clamp(15px,1.6vw,18px);font-weight:600;color:#FFFFFF;letter-spacing:0.03em;margin-bottom:7px;line-height:1.3;}
 .pr-desc{font-size:15px;color:#D0C8B8;line-height:1.55;}
 .pr-right{text-align:right;flex-shrink:0;}
 .pr-link{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;}
 .pr-link::after{content:'→';}
+.pr-link.teal{color:#3AAFAF;}
 .pr-protected{font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(201,168,76,0.4);margin-top:6px;}
 .bottom-nav{display:flex;justify-content:space-between;align-items:center;padding-top:40px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;}
 .btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
@@ -60,59 +65,63 @@ a{text-decoration:none;color:inherit;}
 .footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
 .footer-nav a:hover{color:#C9A84C;}
 .footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:50px 20px 40px;}.page-header-inner{grid-template-columns:1fr;}.page-meta{text-align:left;}.breadcrumb{padding:12px 20px;}.diag-wrap{padding:0 20px;}.body-wrap{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.bottom-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:50px 20px 40px;}.page-header-inner{grid-template-columns:1fr;}.page-meta{text-align:left;}.breadcrumb{padding:12px 20px;}.diag-wrap{padding:0 20px;}.frontier-banner{margin:16px 20px 0;}.body-wrap{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.bottom-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
 </style>
 </head>
 <body style="background-color:#08111E !important;">
 <nav class="nav">
-<div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-<div class="nav-links">
-<a href="../../index.html">Home</a>
-<a href="../../library.html">Research Library</a>
-<a href="../../diagrams.html">System Diagrams</a>
-<a href="../../book.html">Book</a>
-<a href="../../contact.html" class="nav-cta">Request Access</a>
-</div>
+  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+  <div class="nav-links">
+    <a href="../../index.html">Home</a>
+    <a href="../../library.html">Research Library</a>
+    <a href="../../diagrams.html">System Diagrams</a>
+    <a href="../../book.html">Book</a>
+    <a href="../../contact.html" class="nav-cta">Request Access</a>
+  </div>
 </nav>
 <div class="breadcrumb"><div class="breadcrumb-inner"><a href="../../index.html">Home</a><span>›</span><a href="../../library.html">Research Library</a><span>›</span>Biology & Medicine</div></div>
 <div class="page-header">
-<div class="page-header-inner">
-<div>
-<div class="eyebrow">Category 04 of 15</div>
-<h1 class="page-title">Biology & Medicine</h1>
-<p class="page-sub">Health models, biological coherence, organ communication, trauma, aging, and systemic medical architecture. The ten papers in this domain establish the complete coherence-based theory of human biological function.</p>
-</div>
-<div class="page-meta"><div class="meta-num">10</div><div class="meta-label">Papers</div></div>
-</div>
-<div class="diag-wrap"><div class="diag-ref"><div class="diag-ref-text">System Diagrams: <a href="../../diagrams.html#human">Human System Stack</a> &nbsp;·&nbsp; <a href="../../diagrams.html#agriculture">Coherent Agricultural / Biological System</a></div></div></div>
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow">Category 04 of 18</div>
+      <h1 class="page-title">Biology & Medicine</h1>
+      <p class="page-sub">Health models, biological coherence, organ communication, trauma, aging, consciousness, and systemic medical architecture. These thirteen papers establish the complete coherence-based theory of human biological function.</p>
+    </div>
+    <div class="page-meta"><div class="meta-num">13</div><div class="meta-label">Papers</div></div>
+  </div>
+  <div class="diag-wrap"><div class="diag-ref"><div class="diag-ref-text">System Diagrams: <a href="../../diagrams.html#human">Human System Stack</a> · <a href="../../diagrams.html#agriculture">Coherent Agricultural / Biological System</a></div></div></div>
+  
 </div>
 <div class="body-wrap" style="background-color:#08111E !important;">
 <div class="body-inner">
 <div class="paper-list">
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-01</div><div class="pr-title">Unified Coherence Medicine System</div><div class="pr-desc">A comprehensive framework integrating 14 medical sub-systems through biological coherence — from cellular function to full-body protocol and systemic healing architecture.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-02</div><div class="pr-title">Cellular Coherence Framework</div><div class="pr-desc">A model of cellular behavior governed by coherence-field dynamics — reframing cellular communication, signaling, and dysfunction as coherence-state variations.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-03</div><div class="pr-title">Organ Communication Network</div><div class="pr-desc">The architecture of inter-organ communication through coherence-field coupling — including 80 organ-level coherence profiles and a unified field map of human biological signaling.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-04</div><div class="pr-title">Lymphatic Coherence Framework</div><div class="pr-desc">The lymphatic system reframed as the body's primary coherence distribution network — governing field-level immune function and systemic waste regulation.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-05</div><div class="pr-title">Cardiovascular Coherence Framework</div><div class="pr-desc">Heart-field dynamics, cardiac coherence thresholds, and a complete cardiovascular reframing — the heart as the primary coherence generator of the human biological system.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-06</div><div class="pr-title">Microbiome Dimensional Mapping</div><div class="pr-desc">The human microbiome mapped as a coherence-active dimensional layer — exploring how microbial field states influence systemic coherence across biological and cognitive domains.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-07</div><div class="pr-title">Trauma Coherence Fracture Model</div><div class="pr-desc">Trauma reframed as a coherence-field fracture event — with a structured model of how physical, emotional, and psychological trauma disrupts and can be restored to coherent field states.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-08</div><div class="pr-title">Coherence-Based Health Model</div><div class="pr-desc">Health redefined not as the absence of disease, but as the sustained presence of high-coherence field states across biological, neurological, and consciousness dimensions.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-09</div><div class="pr-title">Anti-Aging Framework</div><div class="pr-desc">A coherence-field model of biological aging — positioning cellular senescence as coherence entropy, and restoration of coherence states as the pathway to biological regeneration.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">BM-10</div><div class="pr-title">Biological Energy Systems</div><div class="pr-desc">A unified model of biological energy generation, storage, and distribution — integrating ATP dynamics, bioelectric fields, and coherence-field energy coupling into one architecture.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/unified-coherence-medicine.html" class="paper-row"><div><div class="pr-tag">BM-01</div><div class="pr-title">Unified Coherence Medicine System</div><div class="pr-desc">The first unified theory of medicine grounded in a single testable principle: all chronic disease is coherence loss, all healing is coherence restoration. Fourteen integrated frameworks. Seven therapeutic tiers. 30+ proposed RCTs.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/cellular-coherence-architecture.html" class="paper-row"><div><div class="pr-tag">BM-02</div><div class="pr-title">Cellular Coherence Architecture</div><div class="pr-desc">The cell as a precision coherence device. Every organelle has a dimensional address. Every cellular process is a coherence event. Disease at its earliest form is coherence failure at the cellular level — years before symptoms, decades before standard diagnostics detect it.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/organ-communication-network.html" class="paper-row"><div><div class="pr-tag">BM-03</div><div class="pr-title">Organ Communication Network</div><div class="pr-desc">Organs as nodes in a living coherence network — continuously broadcasting and receiving field signals through seven distinct communication highways simultaneously. The complete inter-organ coherence failure cascade mapped for the first time.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/lymphatic-coherence-framework.html" class="paper-row"><div><div class="pr-tag">BM-04</div><div class="pr-title">Lymphatic Coherence Framework</div><div class="pr-desc">The lymphatic system as the body's coherence maintenance infrastructure — the critical missing link. No Christos restoration protocol achieves full potential without restoring the lymphatic system first.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/cardiovascular-coherence-framework.html" class="paper-row"><div><div class="pr-tag">BM-05</div><div class="pr-title">Cardiovascular Coherence Framework</div><div class="pr-desc">The four major cardiovascular conditions share a common root: progressive loss of mineral-electrical coherence. Evidence-based coherence-restoring protocols for hypertension, heart failure, arrhythmia, and atherosclerosis.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/microbiome-dimensional-mapping.html" class="paper-row"><div><div class="pr-tag">BM-06</div><div class="pr-title">Microbiome Dimensional Mapping</div><div class="pr-desc">The human microbiome as a distributed coherence organ — 38 trillion organisms generating and broadcasting field coherence across every system simultaneously. The gut-field interface as the body's primary mechanism for translating environmental frequency input into internal coherence.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/trauma-coherence-fracture-model.html" class="paper-row"><div><div class="pr-tag">BM-07</div><div class="pr-title">Trauma as Coherence Fracture</div><div class="pr-desc">Trauma as a coherence fracture — a sudden incoherence event causing the field to fragment rather than integrate. Every symptom is a predictable consequence. Every effective therapy works by the same mechanism: increasing local coherence until the isolated pocket reintegrates.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/coherence-based-health-model.html" class="paper-row"><div><div class="pr-tag">BM-08</div><div class="pr-title">Coherence-Based Health Model</div><div class="pr-desc">Drawing on 25,000+ HRV studies — coherence as the common factor linking heart rate variability to diverse health outcomes. A framework for transforming HRV from a research variable into the sixth vital sign.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/anti-aging-framework.html" class="paper-row"><div><div class="pr-tag">BM-09</div><div class="pr-title">Anti-Aging Framework</div><div class="pr-desc">Aging as the progressive loss of coherence — not passive damage accumulation. A 7-tier intervention protocol from zero-cost lifestyle modifications to advanced therapeutic technologies. A structured protocol may reduce biological aging rate and extend healthspan significantly.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/coherence-of-aging.html" class="paper-row"><div><div class="pr-tag">BM-10</div><div class="pr-title">Coherence of Aging — Complete Framework</div><div class="pr-desc">The complete 3-volume, 32-chapter unified theory — every hallmark of aging explained through coherence loss. The 7-Tier Protocol from accessible daily practice to advanced device-based protocols. The theoretical pathway toward biological regeneration formally established.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/biological-energy-systems.html" class="paper-row"><div><div class="pr-tag">BM-11</div><div class="pr-title">Biological Energy & Coherence</div><div class="pr-desc">The human body as the most sophisticated coherence-generative energy system ever observed — a 1.5-billion-year proof of concept. Mitochondria achieving ~90% efficiency. The heart as the central power generator. Biophotonic energy as the light-speed internal power grid.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/sound-as-medicine.html" class="paper-row"><div><div class="pr-tag">BM-12</div><div class="pr-title">Sound as Medicine</div><div class="pr-desc">Sound as the most direct physical expression of the pure tone dimension. The first systematic account of why specific frequencies produce specific healing effects. The cymatics proof: sound organizes matter. The body is the cymatic plate.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/biology-medicine/inner-geometry-of-healing.html" class="paper-row"><div><div class="pr-tag">BM-13</div><div class="pr-title">Inner Geometry of Healing — Volume 2</div><div class="pr-desc">A comprehensive reimagining of human anatomy — the body as a living harmonic instrument. Every structure serves both a biochemical and a geometric field function. Volume 1 shows what to do; Volume 2 shows why it works.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
 </div>
 <div class="bottom-nav">
-<div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="civilization-systems.html" class="cat-nav-btn">← 03 — Civilization Systems</a><a href="../../library.html" class="btn-outline">Full Library</a></div>
-<div><a href="medical-applications.html" class="cat-nav-btn">05 — Medical Applications →</a></div>
-<a href="../../contact.html" class="btn-gold">Request Access</a>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="civilization-systems.html" class="cat-nav-btn">← 03 — Civilization Systems</a><a href="../../library.html" class="btn-outline">Full Library</a></div>
+  <div><a href="medical-applications.html" class="cat-nav-btn">05 — Medical Applications →</a></div>
+  <a href="../../contact.html" class="btn-gold">Request Access</a>
 </div>
 </div>
 </div>
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-logo">CHRISTOS™</div>
-<div class="footer-nav"><a href="../../index.html">Home</a><a href="../../library.html">Library</a><a href="../../diagrams.html">Diagrams</a><a href="../../book.html">Book</a><a href="../../contact.html">Contact</a></div>
-<div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <div class="footer-nav"><a href="../../index.html">Home</a><a href="../../library.html">Library</a><a href="../../diagrams.html">Diagrams</a><a href="../../book.html">Book</a><a href="../../contact.html">Contact</a></div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
 </footer>
 </body>
 </html>
