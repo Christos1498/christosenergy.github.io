@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -25,26 +24,32 @@ a{text-decoration:none;color:inherit;}
 .page-header-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;}
 .eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.page-title{font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
+.page-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
 .page-sub{font-size:18px;color:#D8D0C0;line-height:1.8;max-width:680px;}
 .page-meta{text-align:right;}
 .meta-num{font-family:'Cinzel',serif;font-size:52px;font-weight:700;color:#C9A84C;line-height:1;}
 .meta-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#AABFCC;margin-top:4px;}
-.diag-ref{background-color:#0D1B2A !important;border-left:3px solid #2A7F7F;padding:12px 20px;margin:24px auto 0;max-width:1160px;}
+.diag-wrap{padding:0 40px;}
+.diag-ref{background-color:#0D1B2A !important;border-left:3px solid #2A7F7F;padding:12px 20px;margin:20px auto 0;max-width:1160px;}
 .diag-ref-text{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3AAFAF;}
 .diag-ref-text a{color:#C9A84C;}.diag-ref-text a:hover{color:#E8C97A;}
-.diag-wrap{padding:0 40px;}
+.frontier-banner{background-color:#0D1B2A !important;border:1px solid rgba(42,127,127,0.3);border-left:3px solid #3AAFAF;border-radius:4px;padding:16px 20px;margin:20px 40px 0;max-width:1160px;margin-left:auto;margin-right:auto;}
+.frontier-banner-title{font-family:'Cinzel',serif;font-size:14px;color:#3AAFAF;margin-bottom:6px;}
+.frontier-banner-text{font-size:15px;color:#D0C8B8;line-height:1.6;}
 .body-wrap{background-color:#08111E !important;padding:60px 40px 100px;}
 .body-inner{max-width:1160px;margin:0 auto;}
 .paper-list{display:grid;gap:12px;margin-bottom:60px;}
-.paper-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.12);border-radius:5px;padding:22px 26px;transition:all 0.25s;cursor:pointer;}
+.paper-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.12);border-radius:5px;padding:22px 26px;transition:all 0.25s;}
 .paper-row:hover{border-color:rgba(201,168,76,0.4);transform:translateX(4px);background-color:#142030 !important;}
+.paper-row.frontier{border-color:rgba(42,127,127,0.15);}
+.paper-row.frontier:hover{border-color:rgba(42,127,127,0.4);}
 .pr-tag{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#3AAFAF;margin-bottom:6px;}
 .pr-title{font-family:'Cinzel',serif;font-size:clamp(15px,1.6vw,18px);font-weight:600;color:#FFFFFF;letter-spacing:0.03em;margin-bottom:7px;line-height:1.3;}
 .pr-desc{font-size:15px;color:#D0C8B8;line-height:1.55;}
 .pr-right{text-align:right;flex-shrink:0;}
 .pr-link{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;}
 .pr-link::after{content:'→';}
+.pr-link.teal{color:#3AAFAF;}
 .pr-protected{font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(201,168,76,0.4);margin-top:6px;}
 .bottom-nav{display:flex;justify-content:space-between;align-items:center;padding-top:40px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;}
 .btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
@@ -60,55 +65,60 @@ a{text-decoration:none;color:inherit;}
 .footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
 .footer-nav a:hover{color:#C9A84C;}
 .footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:50px 20px 40px;}.page-header-inner{grid-template-columns:1fr;}.page-meta{text-align:left;}.breadcrumb{padding:12px 20px;}.diag-wrap{padding:0 20px;}.body-wrap{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.bottom-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:50px 20px 40px;}.page-header-inner{grid-template-columns:1fr;}.page-meta{text-align:left;}.breadcrumb{padding:12px 20px;}.diag-wrap{padding:0 20px;}.frontier-banner{margin:16px 20px 0;}.body-wrap{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.bottom-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
 </style>
 </head>
 <body style="background-color:#08111E !important;">
 <nav class="nav">
-<div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-<div class="nav-links">
-<a href="../../index.html">Home</a>
-<a href="../../library.html">Research Library</a>
-<a href="../../diagrams.html">System Diagrams</a>
-<a href="../../book.html">Book</a>
-<a href="../../contact.html" class="nav-cta">Request Access</a>
-</div>
+  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+  <div class="nav-links">
+    <a href="../../index.html">Home</a>
+    <a href="../../library.html">Research Library</a>
+    <a href="../../diagrams.html">System Diagrams</a>
+    <a href="../../book.html">Book</a>
+    <a href="../../contact.html" class="nav-cta">Request Access</a>
+  </div>
 </nav>
 <div class="breadcrumb"><div class="breadcrumb-inner"><a href="../../index.html">Home</a><span>›</span><a href="../../library.html">Research Library</a><span>›</span>Materials & Manufacturing</div></div>
 <div class="page-header">
-<div class="page-header-inner">
-<div>
-<div class="eyebrow">Category 08 of 15</div>
-<h1 class="page-title">Materials & Manufacturing</h1>
-<p class="page-sub">Weaver's Loom fabrication, programmable matter, crystal engineering, Phi-Steel, and advanced manufacturing frameworks. These six papers constitute the complete Christos materials science and production architecture.</p>
-</div>
-<div class="page-meta"><div class="meta-num">6</div><div class="meta-label">Papers</div></div>
-</div>
-
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow">Category 08 of 18</div>
+      <h1 class="page-title">Materials & Manufacturing</h1>
+      <p class="page-sub">Weaver's Loom fabrication, programmable matter, crystal engineering, Phi-Steel, Frequency Substrate Transfer, and advanced manufacturing frameworks. Ten papers constituting the complete Christos materials science and production architecture.</p>
+    </div>
+    <div class="page-meta"><div class="meta-num">10</div><div class="meta-label">Papers</div></div>
+  </div>
+  
+  
 </div>
 <div class="body-wrap" style="background-color:#08111E !important;">
 <div class="body-inner">
 <div class="paper-list">
-<a href="#" class="paper-row"><div><div class="pr-tag">MM-01</div><div class="pr-title">Advanced Manufacturing Framework</div><div class="pr-desc">A coherence-based manufacturing architecture spanning conventional, additive, acoustic, and field-phase production methods — with a unified quality framework based on coherence integrity scoring.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MM-02</div><div class="pr-title">Programmable Matter Systems</div><div class="pr-desc">Matter engineered to change structural, optical, and mechanical properties in response to coherence-field inputs — including programmable water as a foundational active materials substrate.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MM-03</div><div class="pr-title">Crystal Engineering Systems</div><div class="pr-desc">A coherence-based approach to crystal growth and engineering — phi-crystalline structures, frequency-seeded lattice formation, and coherence-active crystal arrays for device and medical applications.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MM-04</div><div class="pr-title">Materials Science Framework</div><div class="pr-desc">The foundational coherence-based materials science framework — establishing how field-level coherence governs material properties, behavior under stress, and long-term structural integrity.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MM-05</div><div class="pr-title">Weaver's Loom</div><div class="pr-desc">Flagship fabrication architecture bridging coherence theory to real-world production — spanning tissue engineering, crystal engineering, metamaterials, acoustic holography, and plasma-phase fabrication across 28 application domains.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MM-06</div><div class="pr-title">Loom Advanced Materials</div><div class="pr-desc">The advanced materials extension of the Weaver's Loom platform — including Phi-Steel (translucent phi-crystalline iron), coherence-active composites, and next-generation structural material specifications.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/advanced-manufacturing-framework.html" class="paper-row"><div><div class="pr-tag">MM-01</div><div class="pr-title">Advanced Manufacturing Framework</div><div class="pr-desc">A coherence-based manufacturing architecture spanning conventional, additive, acoustic, and field-phase production methods. Properties not fixed at fabrication but dynamically addressable through coherence field control.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/programmable-matter.html" class="paper-row"><div><div class="pr-tag">MM-02</div><div class="pr-title">Programmable Matter Systems</div><div class="pr-desc">The Christos fabrication platform — Weaver's Loom, Singularis, PST, Research Operating System, and Starship Geometry — as the most complete realization of programmable matter yet assembled: a unified, scale-invariant Reality Engineering Platform.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/coherence-programmable-matter-water.html" class="paper-row"><div><div class="pr-tag">MM-03</div><div class="pr-title">Coherence-Programmable Matter & Water</div><div class="pr-desc">A 16-layer coherence-responsive metamaterial architecture with Programmable Water. Each layer independently addressable and dynamically reconfigurable. Prototype cost: $6,920 for a 10×10 cm panel, scaling to $5,175/m² at production volume.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/crystal-engineering-systems.html" class="paper-row"><div><div class="pr-tag">MM-04</div><div class="pr-title">Crystal Engineering Systems</div><div class="pr-desc">Coherent acoustic and electromagnetic fields applied during the nucleation window directly bias crystalline geometry selection — producing designed polymorphs and non-Euclidean crystal geometries that conventional nucleation cannot access. The PhiChron Crystal Dating Algorithm.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/materials-science-framework.html" class="paper-row"><div><div class="pr-tag">MM-05</div><div class="pr-title">Materials Science Framework</div><div class="pr-desc">The foundational coherence-based materials science framework — establishing how field-level coherence governs material properties. You do not discover new materials by mixing compounds. You compose them — in a resonant field, at a specific frequency, with specific geometric boundary conditions.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/christos-materials-science-12d.html" class="paper-row"><div><div class="pr-tag">MM-06</div><div class="pr-title">Christos Materials Science — 12-Dimensional Framework</div><div class="pr-desc">The first complete dimensional classification of material properties across all 12 dimensions. The Resonant Materials Decalogue — ten foundational material classes. The complete Phi-Phase Metal Family beginning with Phi-Steel.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/weavers-loom.html" class="paper-row"><div><div class="pr-tag">MM-07</div><div class="pr-title">Weaver's Loom & The Singularis</div><div class="pr-desc">A unified field-guided self-assembly fabrication system: the Weaver's Loom standing-wave fabrication platform, the Singularis field-mediated material synthesis system, and a comprehensive self-improving Research Operating System — the world's first integrated adaptive fabrication intelligence platform.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/loom-advanced-materials.html" class="paper-row"><div><div class="pr-tag">MM-08</div><div class="pr-title">Loom Advanced Materials</div><div class="pr-desc">Complete production protocol guide for manufacturing every material in the Resonant Materials Decalogue using the RSC + Loom combined architecture. The materials engineer's recipe book for the coherence civilization's material infrastructure.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/phi-steel.html" class="paper-row"><div><div class="pr-tag">MM-09</div><div class="pr-title">Phi-Steel — Phi-Crystalline Iron</div><div class="pr-desc">A novel iron-based material: optically transparent (70–90% visible light transmission), hardness exceeding conventional diamond, self-healing under acoustic resonance, and inherent electromagnetic levitation compatibility. Total addressable market: $161.6B/year.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/materials-manufacturing/frequency-substrate-transfer.html" class="paper-row"><div><div class="pr-tag">MM-10</div><div class="pr-title">Frequency Substrate Transfer</div><div class="pr-desc">Transferring the 12-dimensional coherence profile of one element onto the atomic lattice of a different element without changing atomic number. Rare earth performance from abundant base metals. The end of critical mineral dependency as a technology deployment.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
 </div>
 <div class="bottom-nav">
-<div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="sound-frequency.html" class="cat-nav-btn">← 07 — Sound / Frequency / Resonance</a><a href="../../library.html" class="btn-outline">Full Library</a></div>
-<div><a href="agriculture-water-food.html" class="cat-nav-btn">09 — Agriculture, Water & Food →</a></div>
-<a href="../../contact.html" class="btn-gold">Request Access</a>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="sound-frequency.html" class="cat-nav-btn">← 07 — Sound / Frequency / Resonance</a><a href="../../library.html" class="btn-outline">Full Library</a></div>
+  <div><a href="agriculture-water-food.html" class="cat-nav-btn">09 — Agriculture, Water & Food →</a></div>
+  <a href="../../contact.html" class="btn-gold">Request Access</a>
 </div>
 </div>
 </div>
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-logo">CHRISTOS™</div>
-<div class="footer-nav"><a href="../../index.html">Home</a><a href="../../library.html">Library</a><a href="../../diagrams.html">Diagrams</a><a href="../../book.html">Book</a><a href="../../contact.html">Contact</a></div>
-<div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <div class="footer-nav"><a href="../../index.html">Home</a><a href="../../library.html">Library</a><a href="../../diagrams.html">Diagrams</a><a href="../../book.html">Book</a><a href="../../contact.html">Contact</a></div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
 </footer>
 </body>
 </html>
