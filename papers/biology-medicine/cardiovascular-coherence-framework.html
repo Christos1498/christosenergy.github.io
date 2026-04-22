@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardiovascular Coherence Framework — Christos™ Research Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background-color:#08111E !important;}
+body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
+.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
+.nav-links{display:flex;gap:28px;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
+.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
+.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
+.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
+.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
+.paper-header-inner{max-width:1000px;margin:0 auto;}
+.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
+.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
+.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
+.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
+.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
+.paper-body-inner{max-width:1000px;margin:0 auto;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
+.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
+.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
+.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
+.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
+.clinical-notice{background-color:#0D1B2A !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
+.clinical-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
+.clinical-notice-text{font-size:14px;color:#AABFCC;line-height:1.65;}
+.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
+.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
+.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
+.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
+.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
+.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
+.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
+.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
+.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
+.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
+.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
+.footer-nav a:hover{color:#C9A84C;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
+@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+</style>
+</head>
+<body style="background-color:#08111E !important;">
+<nav class="nav">
+  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+  <div class="nav-links">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../library.html">Research Library</a>
+    <a href="../../../diagrams.html">System Diagrams</a>
+    <a href="../../../book.html">Book</a>
+    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../../../index.html">Home</a><span>›</span>
+    <a href="../../../library.html">Research Library</a><span>›</span>
+    <a href="../../../categories/biology-medicine.html">Biology & Medicine</a><span>›</span>
+    Cardiovascular Coherence Framework
+  </div>
+</div>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <div class="paper-tag">Biology & Medicine · BM-05</div>
+    <h1 class="paper-title">Cardiovascular Coherence Framework</h1>
+    <div class="paper-meta-row">
+      <div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
+      <div><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
+      <div><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Harmonic Framework Series — Paper 6</div></div>
+      <div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+    </div>
+  </div>
+</div>
+<div class="paper-body" style="background-color:#08111E !important;">
+  <div class="paper-body-inner">
+    <div class="abstract-label">Abstract</div>
+    <p class="abstract-text">Cardiovascular disease remains the leading cause of mortality globally, accounting for 17.9 million deaths annually despite five decades of pharmaceutical intervention targeting blood pressure, cholesterol, and thrombosis. This paper presents the Christos™ Cardiovascular Coherence Framework (CCCF), proposing that the four major cardiovascular conditions — hypertension, heart failure, arrhythmia, and atherosclerosis — share a common mechanistic root: the progressive loss of mineral-electrical coherence in the cardiovascular system.</p>
+<p class="abstract-text">The framework establishes that the heart functions as the primary coherence generator of the human body, producing an electromagnetic field detectable up to several meters, whose spectral organization — heart rate variability coherence — predicts all-cause cardiovascular mortality independently of ejection fraction, cholesterol, and blood pressure. Against this framework, the extensive peer-reviewed evidence base for mineral-electrical interventions is reviewed: the INTERSALT study establishing sodium-potassium ratio as the primary dietary predictor of hypertension, the Aburto meta-analysis documenting blood pressure reduction with potassium increase, and the Q-SYMBIO trial demonstrating a 43% reduction in major cardiovascular events with CoQ10 supplementation in heart failure.</p>
+<p class="abstract-text">Coherence-restoring clinical protocols are presented for each of the four conditions, with explicit falsifiable predictions and proposed trial designs. The mineral-electrical coherence model is shown to be consistent with and explanatory of all major findings from conventional cardiovascular research, while extending the treatment framework beyond pharmaceutical management to include mineral optimization, HRV biofeedback, autonomic rebalancing, and field-based cardiac coherence restoration.</p>
+<p class="abstract-text">All protocols are presented as adjunctive to standard care. The paper does not argue against conventional cardiovascular medicine — it proposes that coherence restoration, implemented alongside standard care, can accelerate recovery, reduce medication dependence, and in early-stage cases, reverse the underlying coherence failure that conventional medicine manages but does not address.</p>
+    <div class="clinical-notice">
+  <div class="clinical-notice-title">Clinical & Research Disclaimer</div>
+  <div class="clinical-notice-text">This framework is presented for research and educational purposes only. All protocols discussed herein are proposed as adjunctive to standard medical care and require physician supervision. Patients should not alter medications or treatment plans without consulting a qualified healthcare provider. Proposed studies have not yet been conducted unless explicitly stated.</div>
+</div>
+    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Cardiovascular coherence, CCCF, heart rate variability, hypertension, heart failure, arrhythmia, atherosclerosis, mineral-electrical coherence, magnesium, potassium, CoQ10, HRV coherence</div></div>
+    <div class="ip-notice">
+      <div class="ip-notice-title">Intellectual Property Notice</div>
+      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
+    </div>
+    <div class="paper-nav">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="lymphatic-coherence-framework.html" class="nav-paper-btn">← Lymphatic Coherence Framework</a><a href="../../../categories/biology-medicine.html" class="btn-outline">← Biology & Medicine</a></div>
+      <div><a href="microbiome-dimensional-mapping.html" class="nav-paper-btn">Microbiome Dimensional Mapping →</a></div>
+      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <div class="footer-nav">
+      <a href="../../../index.html">Home</a>
+      <a href="../../../library.html">Library</a>
+      <a href="../../../diagrams.html">Diagrams</a>
+      <a href="../../../book.html">Book</a>
+      <a href="../../../contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+</body>
+</html>
