@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -25,26 +24,32 @@ a{text-decoration:none;color:inherit;}
 .page-header-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end;}
 .eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
 .eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.page-title{font-family:'Cinzel',serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
+.page-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
 .page-sub{font-size:18px;color:#D8D0C0;line-height:1.8;max-width:680px;}
 .page-meta{text-align:right;}
 .meta-num{font-family:'Cinzel',serif;font-size:52px;font-weight:700;color:#C9A84C;line-height:1;}
 .meta-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#AABFCC;margin-top:4px;}
-.diag-ref{background-color:#0D1B2A !important;border-left:3px solid #2A7F7F;padding:12px 20px;margin:24px auto 0;max-width:1160px;}
+.diag-wrap{padding:0 40px;}
+.diag-ref{background-color:#0D1B2A !important;border-left:3px solid #2A7F7F;padding:12px 20px;margin:20px auto 0;max-width:1160px;}
 .diag-ref-text{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#3AAFAF;}
 .diag-ref-text a{color:#C9A84C;}.diag-ref-text a:hover{color:#E8C97A;}
-.diag-wrap{padding:0 40px;}
+.frontier-banner{background-color:#0D1B2A !important;border:1px solid rgba(42,127,127,0.3);border-left:3px solid #3AAFAF;border-radius:4px;padding:16px 20px;margin:20px 40px 0;max-width:1160px;margin-left:auto;margin-right:auto;}
+.frontier-banner-title{font-family:'Cinzel',serif;font-size:14px;color:#3AAFAF;margin-bottom:6px;}
+.frontier-banner-text{font-size:15px;color:#D0C8B8;line-height:1.6;}
 .body-wrap{background-color:#08111E !important;padding:60px 40px 100px;}
 .body-inner{max-width:1160px;margin:0 auto;}
 .paper-list{display:grid;gap:12px;margin-bottom:60px;}
-.paper-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.12);border-radius:5px;padding:22px 26px;transition:all 0.25s;cursor:pointer;}
+.paper-row{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.12);border-radius:5px;padding:22px 26px;transition:all 0.25s;}
 .paper-row:hover{border-color:rgba(201,168,76,0.4);transform:translateX(4px);background-color:#142030 !important;}
+.paper-row.frontier{border-color:rgba(42,127,127,0.15);}
+.paper-row.frontier:hover{border-color:rgba(42,127,127,0.4);}
 .pr-tag{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#3AAFAF;margin-bottom:6px;}
 .pr-title{font-family:'Cinzel',serif;font-size:clamp(15px,1.6vw,18px);font-weight:600;color:#FFFFFF;letter-spacing:0.03em;margin-bottom:7px;line-height:1.3;}
 .pr-desc{font-size:15px;color:#D0C8B8;line-height:1.55;}
 .pr-right{text-align:right;flex-shrink:0;}
 .pr-link{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;}
 .pr-link::after{content:'→';}
+.pr-link.teal{color:#3AAFAF;}
 .pr-protected{font-family:'Raleway',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:rgba(201,168,76,0.4);margin-top:6px;}
 .bottom-nav{display:flex;justify-content:space-between;align-items:center;padding-top:40px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;}
 .btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
@@ -60,57 +65,59 @@ a{text-decoration:none;color:inherit;}
 .footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
 .footer-nav a:hover{color:#C9A84C;}
 .footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:50px 20px 40px;}.page-header-inner{grid-template-columns:1fr;}.page-meta{text-align:left;}.breadcrumb{padding:12px 20px;}.diag-wrap{padding:0 20px;}.body-wrap{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.bottom-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:50px 20px 40px;}.page-header-inner{grid-template-columns:1fr;}.page-meta{text-align:left;}.breadcrumb{padding:12px 20px;}.diag-wrap{padding:0 20px;}.frontier-banner{margin:16px 20px 0;}.body-wrap{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.bottom-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
 </style>
 </head>
 <body style="background-color:#08111E !important;">
 <nav class="nav">
-<div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-<div class="nav-links">
-<a href="../../index.html">Home</a>
-<a href="../../library.html">Research Library</a>
-<a href="../../diagrams.html">System Diagrams</a>
-<a href="../../book.html">Book</a>
-<a href="../../contact.html" class="nav-cta">Request Access</a>
-</div>
+  <a href="../index.html" style="text-decoration:none;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
+  <div class="nav-links">
+    <a href="../../index.html">Home</a>
+    <a href="../../library.html">Research Library</a>
+    <a href="../../diagrams.html">System Diagrams</a>
+    <a href="../../book.html">Book</a>
+    <a href="../../contact.html" class="nav-cta">Request Access</a>
+  </div>
 </nav>
 <div class="breadcrumb"><div class="breadcrumb-inner"><a href="../../index.html">Home</a><span>›</span><a href="../../library.html">Research Library</a><span>›</span>Medical Applications</div></div>
 <div class="page-header">
-<div class="page-header-inner">
-<div>
-<div class="eyebrow">Category 05 of 15</div>
-<h1 class="page-title">Medical Applications</h1>
-<p class="page-sub">Organ regeneration, tissue repair, auditory restoration, healing fluids, and maternal care systems. These eight papers translate coherence theory into direct clinical and therapeutic application architectures.</p>
-</div>
-<div class="page-meta"><div class="meta-num">8</div><div class="meta-label">Papers</div></div>
-</div>
-<div class="diag-wrap"><div class="diag-ref"><div class="diag-ref-text">System Diagrams: <a href="../../diagrams.html#human">Human System Stack</a></div></div></div>
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow">Category 05 of 18</div>
+      <h1 class="page-title">Medical Applications</h1>
+      <p class="page-sub">Organ regeneration, tissue repair, auditory restoration, healing fluids, gels, resonators, and maternal care systems. These nine papers translate coherence theory into direct clinical and therapeutic application architectures.</p>
+    </div>
+    <div class="page-meta"><div class="meta-num">9</div><div class="meta-label">Papers</div></div>
+  </div>
+  <div class="diag-wrap"><div class="diag-ref"><div class="diag-ref-text">System Diagrams: <a href="../../diagrams.html#human">Human System Stack</a></div></div></div>
+  
 </div>
 <div class="body-wrap" style="background-color:#08111E !important;">
 <div class="body-inner">
 <div class="paper-list">
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-01</div><div class="pr-title">Organ Regeneration System</div><div class="pr-desc">A coherence-based regenerative framework for organ-level restoration — including 80 organ profiles, an 11-phase full-body protocol, and a complete healing chamber architecture.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-02</div><div class="pr-title">Complete Organ Regeneration Architecture</div><div class="pr-desc">The full technical architecture for organ regeneration — integrating 36+ healing fluids, 40+ gels, 28 resonator specifications, and 12 chamber programs into one unified system.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-03</div><div class="pr-title">Field-Guided Tissue Regeneration</div><div class="pr-desc">A coherence-field approach to directing biological tissue repair — using structured field geometries to guide cellular differentiation and tissue reconstruction.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-04</div><div class="pr-title">Acoustic Dissolution Surgery</div><div class="pr-desc">A non-invasive surgical modality using coherence-targeted acoustic frequencies to dissolve pathological formations — tumors, calcifications, and fibrous tissue — without physical incision.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-05</div><div class="pr-title">Auditory Regeneration Framework</div><div class="pr-desc">A coherence-based protocol for restoring hearing function — cochlear hair cell regeneration, auditory nerve repair, and full auditory pathway reconstruction.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-06</div><div class="pr-title">PulmoLife Healing Fluid Architecture</div><div class="pr-desc">A family of 20 organ-specific healing fluids on structured DDW base — formulated with 24-hour Solfeggio frequency imprinting for targeted biological coherence restoration.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-07</div><div class="pr-title">Healing Gel Line</div><div class="pr-desc">14 organ-specific coherence gels in two base formulations — including DMSO-enhanced penetration variants designed for deep-tissue coherence delivery and field-guided restoration.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-<a href="#" class="paper-row"><div><div class="pr-tag">MA-08</div><div class="pr-title">Maternal & Child Coherence Medicine</div><div class="pr-desc">A preconception-through-postnatal coherence medicine framework — birth defect correction at three severity levels, stillbirth prevention protocols, and neonatal coherence support.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/organ-regeneration-system.html" class="paper-row"><div><div class="pr-tag">MA-01</div><div class="pr-title">Organ Regeneration System</div><div class="pr-desc">A five-layer coherence-based regenerative protocol grounded in peer-reviewed research across LIPUS, photobiomodulation, PEMF, structured water biophysics, and acoustic medicine.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/complete-organ-regeneration-architecture.html" class="paper-row"><div><div class="pr-tag">MA-02</div><div class="pr-title">Complete Organ Regeneration Architecture</div><div class="pr-desc">All 80 organs. Every fluid. Every gel. Every resonator. Every frequency. Every protocol. 11 organ systems, 35+ healing fluids, 40+ healing gels, 28 morphogenic resonators, 12 chamber programs, and an 11-phase full-body protocol.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/field-guided-tissue-regeneration.html" class="paper-row"><div><div class="pr-tag">MA-03</div><div class="pr-title">Field-Guided Tissue Regeneration</div><div class="pr-desc">A coherence-field approach to directing biological tissue repair — using structured field geometries to guide cellular differentiation and tissue reconstruction at the level of biological self-organization.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/acoustic-dissolution-surgery.html" class="paper-row"><div><div class="pr-tag">MA-04</div><div class="pr-title">Acoustic Dissolution Surgery</div><div class="pr-desc">Focused acoustic tissue intervention extended with resonant frequency selectivity and coherent field geometry programming. Target tissue's specific acoustic resonant signature used to tune the intervention for maximum effect with minimum collateral involvement.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/auditory-regeneration-framework.html" class="paper-row"><div><div class="pr-tag">MA-05</div><div class="pr-title">Auditory Regeneration Framework</div><div class="pr-desc">A coherence-based multi-modal protocol for hearing restoration. AudiaFlux structured fluid, 12-crystal resonator, seven condition-specific protocols. The cochlea reestablished as a living coherent piezoelectric crystal system.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/pulmolife-healing-fluid.html" class="paper-row"><div><div class="pr-tag">MA-06</div><div class="pr-title">PulmoLife & Complete Healing Fluid Architecture</div><div class="pr-desc">20 organ-specific coherence fluids on structured DDW base with 24-hour Solfeggio frequency imprinting. Each fluid delivers coherent field information alongside bioactive materials. Not supplementation — coherence restoration delivered in liquid form.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/healing-gel-line.html" class="paper-row"><div><div class="pr-tag">MA-07</div><div class="pr-title">Healing Gel Line</div><div class="pr-desc">14 organ-specific coherence gels in two base formulations. The skin reframed as a coherence interface. Topical delivery bypasses hepatic metabolism, delivering compounds directly to local tissues at higher concentrations than oral routes permit.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/morphogenic-resonator-family.html" class="paper-row"><div><div class="pr-tag">MA-08</div><div class="pr-title">Morphogenic Resonator Family</div><div class="pr-desc">19 organ-specific wearable field devices — each containing a primary healing crystal and a 12-node piezoelectric array broadcasting the organ's correct coherence frequency 24 hours per day. They do not force tissue to change. They remind it what it is.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+<a href="../papers/medical-applications/maternal-child-coherence-medicine.html" class="paper-row"><div><div class="pr-tag">MA-09</div><div class="pr-title">Maternal & Child Coherence Medicine</div><div class="pr-desc">A preconception-through-postnatal coherence medicine framework — five phases covering preconception, trimester-by-trimester support, birth, the postnatal blueprint-lock period, and birth defect correction protocols. Parental biofield coherence as a primary determinant of fetal developmental outcomes.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
 </div>
 <div class="bottom-nav">
-<div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="biology-medicine.html" class="cat-nav-btn">← 04 — Biology & Medicine</a><a href="../../library.html" class="btn-outline">Full Library</a></div>
-<div><a href="pharmacology-fluids.html" class="cat-nav-btn">06 — Pharmacology & Fluids →</a></div>
-<a href="../../contact.html" class="btn-gold">Request Access</a>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="biology-medicine.html" class="cat-nav-btn">← 04 — Biology & Medicine</a><a href="../../library.html" class="btn-outline">Full Library</a></div>
+  <div><a href="pharmacology-fluids.html" class="cat-nav-btn">06 — Pharmacology & Fluids →</a></div>
+  <a href="../../contact.html" class="btn-gold">Request Access</a>
 </div>
 </div>
 </div>
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-logo">CHRISTOS™</div>
-<div class="footer-nav"><a href="../../index.html">Home</a><a href="../../library.html">Library</a><a href="../../diagrams.html">Diagrams</a><a href="../../book.html">Book</a><a href="../../contact.html">Contact</a></div>
-<div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <div class="footer-nav"><a href="../../index.html">Home</a><a href="../../library.html">Library</a><a href="../../diagrams.html">Diagrams</a><a href="../../book.html">Book</a><a href="../../contact.html">Contact</a></div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
 </footer>
 </body>
 </html>
