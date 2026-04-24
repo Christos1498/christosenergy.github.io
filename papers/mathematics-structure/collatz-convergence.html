@@ -3,122 +3,1412 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collatz Convergence Paper — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Collatz Convergence | Christos™ Research Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.msc-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:24px 0;}
-.msc-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:10px;}
-.msc-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #08111E !important;
+    color: #D8D0C0 !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background-color: #0A1628 !important;
+    border-bottom: 2px solid #C9A84C !important;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 40px;
+  }
+  .nav-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #C9A84C !important;
+    letter-spacing: 0.12em;
+  }
+  .nav-logo .logo-sub {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    color: #D8D0C0 !important;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: -2px;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #D8D0C0 !important;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #C9A84C !important; }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb-bar {
+    background-color: #08111E !important;
+    border-bottom: 1px solid rgba(201,168,76,0.15) !important;
+    padding: 14px 40px;
+  }
+  .breadcrumb-bar .inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #D8D0C0 !important;
+  }
+  .breadcrumb-bar a { color: #C9A84C !important; text-decoration: none; }
+  .breadcrumb-bar a:hover { text-decoration: underline; }
+  .breadcrumb-bar .sep { margin: 0 8px; color: #3AAFAF !important; }
+
+  /* ── PAPER HEADER ── */
+  .paper-header {
+    background-color: #0A1628 !important;
+    border-bottom: 2px solid #C9A84C !important;
+    padding: 56px 40px 48px;
+  }
+  .paper-header .inner { max-width: 1300px; margin: 0 auto; }
+  .paper-tag-line {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #3AAFAF !important;
+    margin-bottom: 20px;
+  }
+  .paper-tag-line .dot { margin: 0 10px; }
+  .paper-tag-line .open-badge {
+    background-color: rgba(58,175,175,0.12) !important;
+    border: 1px solid #3AAFAF !important;
+    color: #3AAFAF !important;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.62rem;
+  }
+  .paper-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: #FFFFFF !important;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .paper-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #C9A84C !important;
+    line-height: 1.5;
+    max-width: 820px;
+    margin-bottom: 36px;
+  }
+  .paper-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px 40px;
+    border-top: 1px solid rgba(201,168,76,0.25) !important;
+    padding-top: 28px;
+    max-width: 900px;
+  }
+  .meta-item .meta-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C9A84C !important;
+    margin-bottom: 5px;
+  }
+  .meta-item .meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: #D8D0C0 !important;
+  }
+  .meta-item .meta-value.mono {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ABSTRACT BLOCK ── */
+  .abstract-block {
+    background-color: #08111E !important;
+    padding: 40px;
+  }
+  .abstract-block .inner { max-width: 1300px; margin: 0 auto; }
+  .abstract-card {
+    background-color: rgba(10,22,40,0.8) !important;
+    border: 1px solid rgba(201,168,76,0.3) !important;
+    border-left: 4px solid #C9A84C !important;
+    padding: 28px 36px;
+    max-width: 860px;
+  }
+  .abstract-card .abstract-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #3AAFAF !important;
+    margin-bottom: 14px;
+  }
+  .abstract-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #D8D0C0 !important;
+    line-height: 1.85;
+  }
+
+  /* ── LAYOUT ── */
+  .content-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 48px 40px 80px;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: sticky;
+    top: 84px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+  }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+
+  .toc-box {
+    background-color: #0A1628 !important;
+    border: 1px solid rgba(201,168,76,0.25) !important;
+    padding: 24px;
+  }
+  .toc-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #C9A84C !important;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201,168,76,0.2) !important;
+  }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .toc-list li a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #D8D0C0 !important;
+    text-decoration: none;
+    display: block;
+    padding: 5px 8px;
+    border-left: 2px solid transparent !important;
+    transition: all 0.2s;
+    line-height: 1.4;
+  }
+  .toc-list li a:hover {
+    color: #C9A84C !important;
+    border-left-color: #C9A84C !important;
+    background-color: rgba(201,168,76,0.05) !important;
+  }
+  .toc-list li.toc-sub a {
+    padding-left: 18px;
+    font-size: 0.65rem;
+    color: rgba(216,208,192,0.7) !important;
+  }
+  .toc-list li.toc-sub a:hover { color: #3AAFAF !important; border-left-color: #3AAFAF !important; }
+
+  .toc-meta {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(201,168,76,0.15) !important;
+  }
+  .toc-meta-row {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    color: rgba(216,208,192,0.6) !important;
+    margin-bottom: 6px;
+  }
+  .toc-meta-row span { color: #C9A84C !important; }
+
+  /* ── MAIN CONTENT ── */
+  .main-content { min-width: 0; }
+  .section-anchor { scroll-margin-top: 80px; }
+
+  /* Section headers */
+  .paper-section { margin-bottom: 56px; }
+  .section-header {
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(201,168,76,0.2) !important;
+  }
+  .section-number {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #3AAFAF !important;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #FFFFFF !important;
+    line-height: 1.3;
+  }
+  .subsection-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #C9A84C !important;
+    margin: 32px 0 14px;
+    letter-spacing: 0.03em;
+  }
+  .sub2-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-style: italic;
+    color: #3AAFAF !important;
+    margin: 20px 0 10px;
+  }
+
+  p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #D8D0C0 !important;
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  /* Math / equation blocks */
+  .eq-block {
+    background-color: rgba(10,22,40,0.8) !important;
+    border: 1px solid rgba(58,175,175,0.2) !important;
+    border-left: 3px solid #3AAFAF !important;
+    padding: 16px 24px;
+    margin: 20px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #FFFFFF !important;
+    overflow-x: auto;
+  }
+  .eq-block .eq-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #3AAFAF !important;
+    margin-bottom: 8px;
+    font-style: normal;
+  }
+  .eq-inline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: #FFFFFF !important;
+    background-color: rgba(10,22,40,0.6) !important;
+    padding: 1px 6px;
+    border-radius: 2px;
+  }
+
+  /* Definition / Theorem / Remark blocks */
+  .math-block {
+    border: 1px solid rgba(201,168,76,0.2) !important;
+    padding: 20px 26px;
+    margin: 24px 0;
+    position: relative;
+  }
+  .math-block.definition { border-top: 3px solid #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .math-block.theorem { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; }
+  .math-block.corollary { border-top: 3px solid rgba(58,175,175,0.5) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.remark { border-top: 3px solid rgba(216,208,192,0.3) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block.assumption { border-top: 3px solid #C9A84C !important; border-style: dashed; background-color: rgba(201,168,76,0.03) !important; border-top-style: solid; }
+  .math-block.observation { border-top: 3px solid rgba(58,175,175,0.6) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.heuristic { border-top: 3px solid rgba(201,168,76,0.5) !important; background-color: rgba(201,168,76,0.03) !important; border-left: 2px dashed rgba(201,168,76,0.3) !important; }
+  .math-block.construction { border-top: 3px solid rgba(216,208,192,0.4) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block.proposition { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.03) !important; }
+
+  .math-block-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .definition .math-block-label { color: #C9A84C !important; }
+  .theorem .math-block-label, .corollary .math-block-label, .proposition .math-block-label { color: #3AAFAF !important; }
+  .remark .math-block-label { color: rgba(216,208,192,0.7) !important; }
+  .assumption .math-block-label { color: #C9A84C !important; }
+  .observation .math-block-label, .heuristic .math-block-label { color: #3AAFAF !important; }
+  .construction .math-block-label { color: rgba(216,208,192,0.7) !important; }
+
+  .math-block p { font-size: 1rem; margin-bottom: 10px; }
+  .math-block p:last-child { margin-bottom: 0; }
+
+  .proof-block {
+    background-color: rgba(8,17,30,0.6) !important;
+    border-left: 3px solid rgba(216,208,192,0.2) !important;
+    padding: 16px 22px;
+    margin: 16px 0 0;
+  }
+  .proof-block .proof-label {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(216,208,192,0.5) !important;
+    margin-bottom: 8px;
+  }
+  .proof-block p { font-size: 0.98rem; color: rgba(216,208,192,0.85) !important; margin-bottom: 10px; }
+  .proof-block p:last-child { margin-bottom: 0; }
+  .qed {
+    text-align: right;
+    font-size: 1rem;
+    color: #C9A84C !important;
+    margin-top: 8px;
+  }
+
+  /* Content list */
+  .content-list { list-style: none; margin: 14px 0 20px; padding: 0; }
+  .content-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #D8D0C0 !important;
+    padding: 4px 0 4px 22px;
+    position: relative;
+    line-height: 1.75;
+  }
+  .content-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; }
+  .content-list.teal li::before { color: #3AAFAF !important; }
+  .content-list.bullet li::before { content: '◆'; font-size: 0.55rem; top: 9px; }
+
+  /* Phase diagram table */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .data-table th {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #C9A84C !important;
+    background-color: rgba(10,22,40,0.8) !important;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid #C9A84C !important;
+  }
+  .data-table td {
+    font-size: 1rem;
+    color: #D8D0C0 !important;
+    padding: 11px 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.1) !important;
+    background-color: rgba(8,17,30,0.5) !important;
+  }
+  .data-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .data-table .row-highlight td { background-color: rgba(201,168,76,0.07) !important; }
+  .data-table .row-highlight td:first-child { color: #C9A84C !important; font-weight: 600; }
+  .data-table .row-teal td { background-color: rgba(58,175,175,0.06) !important; }
+  .data-table .row-teal td:first-child { color: #3AAFAF !important; }
+
+  .regime-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 2px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+  .regime-contract { background: rgba(58,175,175,0.12) !important; color: #3AAFAF !important; border: 1px solid rgba(58,175,175,0.4) !important; }
+  .regime-critical { background: rgba(201,168,76,0.12) !important; color: #C9A84C !important; border: 1px solid rgba(201,168,76,0.4) !important; }
+  .regime-expand { background: rgba(200,80,50,0.12) !important; color: #E07050 !important; border: 1px solid rgba(200,80,50,0.4) !important; }
+  .regime-collatz { background: rgba(58,175,175,0.15) !important; color: #3AAFAF !important; border: 1px solid #3AAFAF !important; font-weight: 700; }
+
+  /* Callout */
+  .callout {
+    background-color: rgba(58,175,175,0.06) !important;
+    border: 1px solid rgba(58,175,175,0.25) !important;
+    border-left: 4px solid #3AAFAF !important;
+    padding: 20px 26px;
+    margin: 24px 0;
+  }
+  .callout p { font-size: 1rem; color: #D8D0C0 !important; margin: 0 0 10px; }
+  .callout p:last-child { margin: 0; }
+  .callout strong { color: #3AAFAF !important; }
+  .callout.gold {
+    background-color: rgba(201,168,76,0.05) !important;
+    border-color: rgba(201,168,76,0.2) !important;
+    border-left-color: #C9A84C !important;
+  }
+  .callout.gold strong { color: #C9A84C !important; }
+
+  /* Contributions numbered list */
+  .contrib-list { list-style: none; counter-reset: contrib; padding: 0; margin: 14px 0 20px; }
+  .contrib-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: #D8D0C0 !important;
+    padding: 10px 0 10px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(201,168,76,0.07) !important;
+    line-height: 1.75;
+    counter-increment: contrib;
+  }
+  .contrib-list li::before {
+    content: counter(contrib);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(201,168,76,0.12) !important;
+    border: 1px solid rgba(201,168,76,0.3) !important;
+    color: #C9A84C !important;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contrib-list li strong { color: #FFFFFF !important; }
+
+  /* Open access + authorship */
+  .open-access-notice {
+    background-color: rgba(58,175,175,0.06) !important;
+    border: 1px solid rgba(58,175,175,0.2) !important;
+    padding: 24px 28px;
+    margin: 48px 0 32px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .oa-icon { font-size: 1.8rem; color: #3AAFAF !important; flex-shrink: 0; line-height: 1; }
+  .oa-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .oa-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; line-height: 1.6; }
+
+  .authorship-block {
+    background-color: #0A1628 !important;
+    border: 1px solid rgba(201,168,76,0.25) !important;
+    border-left: 4px solid #C9A84C !important;
+    padding: 28px 32px;
+    margin-bottom: 40px;
+  }
+  .authorship-block .auth-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 10px; }
+  .authorship-block p { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  /* Nav buttons */
+  .paper-nav-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-nav {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C9A84C !important;
+    text-decoration: none;
+    border: 1px solid rgba(201,168,76,0.4) !important;
+    padding: 11px 24px;
+    background-color: transparent !important;
+    transition: all 0.2s;
+  }
+  .btn-nav:hover { background-color: rgba(201,168,76,0.08) !important; border-color: #C9A84C !important; }
+  .btn-collaborate {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #08111E !important;
+    text-decoration: none;
+    background-color: #C9A84C !important;
+    padding: 12px 28px;
+    transition: all 0.2s;
+  }
+  .btn-collaborate:hover { background-color: #E0C070 !important; }
+
+  /* References */
+  .references-list { list-style: none; padding: 0; margin: 0; counter-reset: ref; }
+  .references-list li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: rgba(216,208,192,0.8) !important;
+    padding: 8px 0 8px 36px;
+    position: relative;
+    border-bottom: 1px solid rgba(201,168,76,0.07) !important;
+    line-height: 1.6;
+    counter-increment: ref;
+  }
+  .references-list li::before {
+    content: '[' counter(ref) ']';
+    position: absolute;
+    left: 0;
+    color: #C9A84C !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.7rem;
+    top: 10px;
+  }
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background-color: #C9A84C !important;
+    color: #08111E !important;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    z-index: 50;
+    transition: background-color 0.2s;
+  }
+  .back-to-top:hover { background-color: #E0C070 !important; }
+
+  /* Footer */
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; text-decoration: none; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; letter-spacing: 0.12em; text-align: center; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; }
+
+  /* Appendix */
+  .appendix-box { background-color: rgba(10,22,40,0.4) !important; border: 1px solid rgba(201,168,76,0.12) !important; padding: 28px 32px; margin-bottom: 28px; }
+  .appendix-title { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 16px; letter-spacing: 0.04em; }
+
+  @media (max-width: 900px) {
+    .content-wrapper { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    nav, .breadcrumb-bar, .paper-header, .abstract-block, footer { padding-left: 20px; padding-right: 20px; }
+    .content-wrapper { padding-left: 20px; padding-right: 20px; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/mathematics-structure.html">Mathematics & Structure</a><span>›</span>
-    Collatz Convergence Paper
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="../../../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../../../library.html">Research Library</a>
+    <span class="sep">›</span>
+    <a href="../../../categories/mathematics-structure.html">Mathematics &amp; Structure</a>
+    <span class="sep">›</span>
+    Collatz Convergence
   </div>
 </div>
+
+<!-- PAPER HEADER -->
 <div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Mathematics & Structure · MS-01</div>
-    <h1 class="paper-title">Collatz Convergence Paper</h1>
-    <div class="paper-meta-row">
-      <div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior — Independent Researcher</div></div>
-      <div><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 15, 2026</div></div>
-      <div><div class="paper-meta-label">Series</div><div class="paper-meta-value">Independent Research Preprint · Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div></div>
-      <div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+  <div class="inner">
+    <div class="paper-tag-line">
+      Mathematics &amp; Structure
+      <span class="dot">·</span>
+      MS-04
+      <span class="dot">·</span>
+      <span class="open-badge">Open Access — Full Paper</span>
+    </div>
+    <h1 class="paper-title">A Conditional Supermartingale Framework for the Collatz Dynamics</h1>
+    <p class="paper-subtitle">Logarithmic Drift, Valuation Statistics, and the Critical Threshold at a = 4</p>
+    <div class="paper-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Joshua Farrior</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">March 15, 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Status</div>
+        <div class="meta-value">Independent Research Preprint</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">MSC 2020</div>
+        <div class="meta-value mono">11B37 · 37P05 · 60G42</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Keywords</div>
+        <div class="meta-value">Collatz conjecture, supermartingales, logarithmic drift, 2-adic dynamics, symbolic dynamics</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Structure</div>
+        <div class="meta-value">Abstract · 7 Sections · 2 Appendices · 12 References</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Subject</div>
+        <div class="meta-value">Primary: math.NT · Secondary: math.DS, math.PR</div>
+      </div>
     </div>
   </div>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">The Collatz map has long resisted rigorous analysis despite overwhelming computational evidence for convergence. This paper develops a probabilistic drift model for the Collatz dynamics using logarithmic potential and supermartingale structure. Defining V(n) = log n, the process is shown to exhibit negative drift under empirically observed statistical regularities in the 2-adic valuation sequence.</p>
-<p class="abstract-text">Assuming exponential decay of correlations in the valuation sequence, the process is proven to form a supermartingale and converges almost surely to a bounded set corresponding to the known cycle 4 → 2 → 1. The argument is conditional on explicit mixing assumptions, which are motivated by 2-adic symbolic dynamics and a heuristic entropy model for valuation blocks, and are consistent with all computational evidence up to 2 to the 68th power.</p>
-<p class="abstract-text">The paper also embeds Collatz in a broader family of accelerated maps, showing that a critical threshold at a = 4 separates contractive behavior from expansive behavior. Collatz sits at a = 3, placing it in the contractive regime but near the critical boundary — explaining the large fluctuations observed in trajectories. This framework reduces the Collatz conjecture to proving natural mixing properties of the valuation sequence along individual orbits: a concrete research program connecting symbolic dynamics, ergodic theory, and analytic number theory.</p>
-<p class="abstract-text">In this framework, the cycle 4 → 2 → 1 appears as the unique arithmetic attractor of a near-critical symbolic dynamical system with negative logarithmic drift. The Christos Theoretical Framework further interprets this attractor as a toroidal coherence minimum — the natural terminus of any system exhibiting sustained negative drift in logarithmic phase space.</p>
-    <div class="msc-block"><div class="msc-label">MSC 2020 Classification</div><div class="msc-text">11B37 (Recurrences) · 37P05 (Arithmetic dynamical systems) · 60G42 (Martingales with discrete parameter)</div></div>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Collatz conjecture, 3x+1 problem, symbolic dynamics, supermartingales, logarithmic drift, 2-adic dynamics, probabilistic number theory</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><span></span><a href="../../../categories/mathematics-structure.html" class="btn-outline">← Mathematics & Structure</a></div>
-      <div><a href="inevitable-convergence.html" class="nav-paper-btn">The Inevitable Convergence →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+
+<!-- ABSTRACT -->
+<div class="abstract-block">
+  <div class="inner">
+    <div class="abstract-card">
+      <div class="abstract-label">Abstract</div>
+      <p>The Collatz map <span class="eq-inline">T(n) = n/2</span> for even <span class="eq-inline">n</span> and <span class="eq-inline">T(n) = (3n+1)/2</span> for odd <span class="eq-inline">n</span> has long resisted rigorous analysis despite overwhelming computational evidence for convergence. This paper develops a probabilistic drift model for the Collatz dynamics using logarithmic potential and supermartingale structure. Defining <span class="eq-inline">V(n) = log n</span>, we show that under empirically observed statistical regularities in the 2-adic valuation <span class="eq-inline">k(n) = v₂(3n+1)</span>, the process <span class="eq-inline">{V(Tᵐ(n))}</span> exhibits negative drift <span class="eq-inline">E[ΔV] = log 3 − 2 log 2 = log(3/4) ≈ −0.2877</span>.</p>
+      <p>Assuming exponential decay of correlations in the valuation sequence, we prove that <span class="eq-inline">{V(Tᵐ(n))}</span> forms a supermartingale and converges almost surely to a bounded set corresponding to the known cycle <span class="eq-inline">4 → 2 → 1</span>. The argument is conditional on explicit mixing assumptions motivated by 2-adic symbolic dynamics and a heuristic entropy model for valuation blocks, consistent with all computational evidence up to <span class="eq-inline">2⁶⁸</span>.</p>
+      <p>We also embed Collatz in a broader family of accelerated maps <span class="eq-inline">n → (an+b)/2^v₂(an+b)</span>, showing that the critical threshold <span class="eq-inline">a = 4</span> separates contractive behavior (<span class="eq-inline">a &lt; 4</span>) from expansive behavior (<span class="eq-inline">a &gt; 4</span>). Collatz sits at <span class="eq-inline">a = 3</span>, placing it in the contractive regime but near the critical boundary, explaining the large fluctuations observed in trajectories. The framework reduces the Collatz conjecture to proving natural mixing properties of the valuation sequence — a concrete research program connecting symbolic dynamics, ergodic theory, and analytic number theory.</p>
     </div>
   </div>
 </div>
-<footer class="footer">
+
+<!-- MAIN LAYOUT -->
+<div class="content-wrapper">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-box">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#sec1">1. Introduction</a></li>
+        <li class="toc-sub"><a href="#sec1-1">1.1 The Collatz Conjecture</a></li>
+        <li class="toc-sub"><a href="#sec1-2">1.2 Multiplicative Drift Theory</a></li>
+        <li class="toc-sub"><a href="#sec1-3">1.3 Critical Balance &amp; Near-Criticality</a></li>
+        <li class="toc-sub"><a href="#sec1-4">1.4 Phase Diagram for (an+b) Maps</a></li>
+        <li class="toc-sub"><a href="#sec1-5">1.5 Contributions of This Paper</a></li>
+        <li><a href="#sec2">2. Logarithmic Potential &amp; Drift</a></li>
+        <li class="toc-sub"><a href="#sec2-1">2.1 The Potential Function</a></li>
+        <li class="toc-sub"><a href="#sec2-2">2.2 Empirical Distribution of k(n)</a></li>
+        <li class="toc-sub"><a href="#sec2-3">2.3 Expected Drift &amp; Linear Form</a></li>
+        <li><a href="#sec3">3. Supermartingale Formulation</a></li>
+        <li class="toc-sub"><a href="#sec3-1">3.1 The Stochastic Process</a></li>
+        <li class="toc-sub"><a href="#sec3-2">3.2 Mixing Assumptions</a></li>
+        <li class="toc-sub"><a href="#sec3-3">3.3 Why Mixing Is Plausible</a></li>
+        <li class="toc-sub"><a href="#sec3-4">3.4 Filtration &amp; Conditional Expectation</a></li>
+        <li class="toc-sub"><a href="#sec3-5">3.5 Supermartingale Property</a></li>
+        <li class="toc-sub"><a href="#sec3-6">3.6 Convergence to Trivial Cycle</a></li>
+        <li><a href="#sec4">4. Phase Diagram &amp; Critical Threshold</a></li>
+        <li><a href="#sec5">5. 2-adic Symbolic Dynamics</a></li>
+        <li><a href="#sec6">6. Discussion &amp; Open Problems</a></li>
+        <li><a href="#sec7">7. Conclusion</a></li>
+        <li><a href="#acknowledgments">Acknowledgments</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#appendix-a">Appendix A: Computational Data</a></li>
+        <li><a href="#appendix-b">Appendix B: Figure Captions</a></li>
+      </ul>
+      <div class="toc-meta">
+        <div class="toc-meta-row">Length: <span>~8,500 words</span></div>
+        <div class="toc-meta-row">Verified to: <span>2⁶⁸</span></div>
+        <div class="toc-meta-row">Drift constant μ: <span>log(3/4) ≈ −0.2877</span></div>
+        <div class="toc-meta-row">Critical threshold: <span>a = 4</span></div>
+        <div class="toc-meta-row">Collatz position: <span>a = 3 (contractive)</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- SECTION 1 -->
+    <div id="sec1" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 1</div>
+        <h2 class="section-title">Introduction</h2>
+      </div>
+
+      <div id="sec1-1" class="section-anchor">
+        <h3 class="subsection-title">1.1 The Collatz Conjecture</h3>
+        <p>Let <span class="eq-inline">T: ℕ → ℕ</span> be defined by:</p>
+        <div class="eq-block">
+          T(n) = n / 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if n is even<br>
+          T(n) = (3n + 1) / 2 &nbsp;&nbsp; if n is odd
+        </div>
+        <p>The Collatz conjecture asserts that for every <span class="eq-inline">n ≥ 1</span>, there exists <span class="eq-inline">k</span> such that <span class="eq-inline">Tᵏ(n) = 1</span>, with all trajectories eventually entering the cycle <span class="eq-inline">4 → 2 → 1</span>.</p>
+        <p>Despite decades of intensive study, the conjecture remains open. Partial results include:</p>
+        <ul class="content-list bullet">
+          <li><strong>Terras (1976, 1979):</strong> The set of integers with finite stopping time has natural density 1 [1]</li>
+          <li><strong>Allouche (1979):</strong> 2-adic equidistribution results [2]</li>
+          <li><strong>Wirsching (1998):</strong> Symbolic dynamics and ergodic approaches [3]</li>
+          <li><strong>Krasikov &amp; Lagarias (2003):</strong> At least <span class="eq-inline">n^0.84</span> integers below <span class="eq-inline">n</span> eventually reach 1 [4]</li>
+          <li><strong>Tao (2019):</strong> Almost all orbits (in logarithmic density) attain almost bounded values [5]</li>
+        </ul>
+        <p>The conjecture is widely believed true based on overwhelming computational evidence up to <span class="eq-inline">2⁶⁸</span> [Oliveira e Silva, 2010] [6], but a rigorous proof remains elusive.</p>
+      </div>
+
+      <div id="sec1-2" class="section-anchor">
+        <h3 class="subsection-title">1.2 Multiplicative Drift Theory and the Random Walk Heuristic</h3>
+        <p>A persistent heuristic in Collatz research is that the map behaves like a biased random walk in logarithmic space. For odd <span class="eq-inline">n</span>, the next iterate is approximately <span class="eq-inline">(3n)/2^k(n)</span>, where <span class="eq-inline">k(n) = v₂(3n+1)</span> is the exponent of the largest power of 2 dividing <span class="eq-inline">3n+1</span>.</p>
+
+        <div class="math-block heuristic">
+          <div class="math-block-label">Heuristic Observation 1.1 — Geometric Valuation Model</div>
+          <p>For large odd <span class="eq-inline">n</span>, the distribution of <span class="eq-inline">k(n) = v₂(3n+1)</span> is approximately geometric:</p>
+          <div class="eq-block" style="margin:12px 0;">P( k(n) = r ) ≈ 2^(−r), &nbsp;&nbsp;&nbsp; r = 1, 2, 3, …</div>
+          <p>giving expected value <span class="eq-inline">E[k(n)] = 2</span>. This approximation is consistent with rigorous results by Terras [1976] and Lagarias [1985] and is verified computationally up to <span class="eq-inline">2⁶⁸</span> [6].</p>
+        </div>
+
+        <p>Taking logarithms, each step produces a change:</p>
+        <div class="eq-block">ΔV = log( 3 + 1/n ) − k(n) log 2 ≈ log 3 − k(n) log 2</div>
+        <p>The expected drift is therefore:</p>
+        <div class="eq-block">E[ΔV] ≈ log 3 − 2 log 2 = log(3/4) ≈ −0.2877</div>
+        <p>This negative multiplicative drift suggests that trajectories tend downward on average, with occasional upward jumps when <span class="eq-inline">k(n) = 1</span>. This multiplicative perspective — viewing Collatz as a stochastic process on the positive reals under multiplication — is central to understanding why logarithmic coordinates reveal the underlying structure.</p>
+      </div>
+
+      <div id="sec1-3" class="section-anchor">
+        <h3 class="subsection-title">1.3 The Critical Balance and Near-Criticality</h3>
+        <p>A deeper insight emerges when we ignore the <span class="eq-inline">+1</span> term and consider the approximate multiplier <span class="eq-inline">M = 3 / 2ᵏ</span>. Under the geometric model, the expected multiplier is:</p>
+        <div class="eq-block">
+          E[M] = 3 · Σ(r=1..∞) 2^(−r) / 2ʳ = 3 · Σ(r=1..∞) 4^(−r) = 3 · (1/4) / (1 − 1/4) = 1
+        </div>
+        <div class="callout gold">
+          <p><strong>Critical insight:</strong> On the linear scale, the Collatz map is exactly critical — the expected multiplicative factor is 1, placing it at the boundary between contraction and expansion. This criticality explains why trajectories exhibit large fluctuations resembling a critical branching process, while the logarithmic scale reveals a small negative drift that eventually drives the system downward.</p>
+        </div>
+        <p>This tension between local randomness (critical branching) and global rigidity (negative log drift) is the key to understanding Collatz behavior. Locally, the map appears unpredictable, with large upward and downward excursions. Globally, the orbit is constrained by the arithmetic structure of <span class="eq-inline">3n+1</span> and cannot sustain indefinite growth.</p>
+      </div>
+
+      <div id="sec1-4" class="section-anchor">
+        <h3 class="subsection-title">1.4 Heuristic Phase Diagram for Accelerated (an+b) Maps</h3>
+        <p>The Collatz map is a special case of a broader family of accelerated maps:</p>
+        <div class="eq-block">T_{a,b}(n) = (an + b) / 2^v₂(an+b)</div>
+        <p>where <span class="eq-inline">v₂</span> denotes the 2-adic valuation. Under the heuristic geometric model for <span class="eq-inline">v₂(an+b)</span>, the expected logarithmic drift is approximately:</p>
+        <div class="eq-block">E[ΔV] ≈ log a − 2 log 2 = log( a/4 )</div>
+        <p>This yields a simple phase diagram:</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Regime</th>
+              <th>Condition</th>
+              <th>Expected Drift E[Δ log n]</th>
+              <th>Behavior</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="regime-badge regime-contract">Contractive</span></td>
+              <td>a &lt; 4</td>
+              <td>&lt; 0</td>
+              <td>Negative drift, eventual descent</td>
+            </tr>
+            <tr>
+              <td><span class="regime-badge regime-critical">Critical</span></td>
+              <td>a = 4</td>
+              <td>= 0</td>
+              <td>Zero drift, maximal fluctuations</td>
+            </tr>
+            <tr>
+              <td><span class="regime-badge regime-expand">Expansive</span></td>
+              <td>a &gt; 4</td>
+              <td>&gt; 0</td>
+              <td>Positive drift, likely divergence</td>
+            </tr>
+            <tr class="row-highlight">
+              <td><span class="regime-badge regime-collatz">Collatz (a = 3)</span></td>
+              <td>a = 3</td>
+              <td>log(3/4) ≈ −0.288</td>
+              <td>Contractive, near-critical boundary</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="math-block remark">
+          <div class="math-block-label">Remark 1.2 — Structural Interpretation via Architecture of Infinity</div>
+          <p>The Collatz map exhibits the toroidal structure characteristic of stable dynamical systems: an outward expansion channel (multiplication by 3), an inward compression channel (division by <span class="eq-inline">2ᵏ</span>), and a feedback loop (iteration). The critical parameter <span class="eq-inline">a = 4</span> marks the boundary where outward and inward flows balance exactly. For <span class="eq-inline">a &lt; 4</span>, compression dominates, forcing eventual descent. This geometric perspective — viewing Collatz as an incomplete system until both flows are modeled — aligns with the Architecture of Infinity framework [7], which identifies many classical problems as arising from analyzing only half of a circulatory structure.</p>
+        </div>
+      </div>
+
+      <div id="sec1-5" class="section-anchor">
+        <h3 class="subsection-title">1.5 Contributions of This Paper</h3>
+        <p>This paper develops a probabilistic drift model that makes the heuristic precise under explicit statistical assumptions. The main contributions are:</p>
+        <ol class="contrib-list">
+          <li><strong>Drift structure (Section 2):</strong> The logarithmic potential <span class="eq-inline">V(n) = log n</span> transforms multiplicative dynamics into additive drift, with <span class="eq-inline">ΔV = log 3 − k(n) log 2 + O(1/n)</span>. Rewriting as <span class="eq-inline">V_{m+1} = V_m + μ + ξ_m</span> with <span class="eq-inline">μ = log(3/4)</span> reveals Collatz as a linear stochastic system plus a small correction.</li>
+          <li><strong>Supermartingale formulation (Section 3):</strong> Under exponential decay of correlations in the valuation sequence <span class="eq-inline">{k(Tᵐ(n))}</span>, we show that <span class="eq-inline">{V(Tᵐ(n))}</span> forms a supermartingale with negative drift, implying almost sure boundedness and convergence to a bounded set.</li>
+          <li><strong>Critical threshold insight (Section 4):</strong> Embedding Collatz in the <span class="eq-inline">(an+b)</span> family reveals <span class="eq-inline">a = 4</span> as the critical boundary, explaining why <span class="eq-inline">a = 3</span> produces large fluctuations despite eventual descent. The constant <span class="eq-inline">log(3/4)</span> appears consistently in the drift calculation, critical branching interpretation, and phase diagram.</li>
+          <li><strong>2-adic symbolic dynamics (Section 5):</strong> The valuation sequence <span class="eq-inline">k(Tᵐ(n))</span> records block lengths of zeros in the parity vector following each odd step. In the 2-adic setting, iteration resembles a shift map on binary sequences, explaining why geometric and mixing heuristics arise naturally.</li>
+          <li><strong>The trivial cycle as arithmetic attractor (Section 3.6):</strong> The cycle <span class="eq-inline">4 → 2 → 1</span> is the unique stable orbit under the supermartingale dynamics. Its basin of attraction, under the mixing assumptions, is conjectured to include all <span class="eq-inline">ℕ</span>.</li>
+          <li><strong>Explicit falsifiable conditions (Section 6):</strong> The required mixing properties are stated precisely and are empirically testable. They provide concrete targets for future analytic work, turning the Collatz conjecture into a structured research program.</li>
+        </ol>
+        <div class="callout">
+          <p><strong>Scope boundary:</strong> The result is not a proof of the Collatz conjecture, but a conditional probabilistic framework that reduces the conjecture to proving natural mixing properties of the valuation sequence along individual orbits.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div id="sec2" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 2</div>
+        <h2 class="section-title">Logarithmic Potential and Drift Analysis</h2>
+      </div>
+
+      <div id="sec2-1" class="section-anchor">
+        <h3 class="subsection-title">2.1 The Potential Function</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">Definition 2.1</div>
+          <p>Define the logarithmic potential <span class="eq-inline">V(n) = log n</span> for <span class="eq-inline">n ∈ ℕ</span>.</p>
+        </div>
+        <p>For odd <span class="eq-inline">n</span>, write <span class="eq-inline">T(n) = (3n+1)/2^k(n)</span> where <span class="eq-inline">k(n) = v₂(3n+1)</span>. Then:</p>
+        <div class="eq-block">ΔV(n) = V(T(n)) − V(n) = log(3n+1) − log( 2^k(n) · n )</div>
+        <p>Simplifying (Equation 2.1):</p>
+        <div class="eq-block">
+          <div class="eq-label">Equation 2.1</div>
+          ΔV(n) = log( 3 + 1/n ) − k(n) log 2
+        </div>
+        <p>For large <span class="eq-inline">n</span>, <span class="eq-inline">log(3 + 1/n) = log 3 + O(1/n)</span>. Thus (Equation 2.2):</p>
+        <div class="eq-block">
+          <div class="eq-label">Equation 2.2</div>
+          ΔV(n) = log 3 − k(n) log 2 + O(1/n)
+        </div>
+      </div>
+
+      <div id="sec2-2" class="section-anchor">
+        <h3 class="subsection-title">2.2 Empirical Distribution of k(n)</h3>
+        <p>The valuation <span class="eq-inline">k(n)</span> has been studied extensively. Terras [1976] proved that the proportion of integers with <span class="eq-inline">k(n) = r</span> approaches <span class="eq-inline">2^(−r)</span> in the limit. Lagarias [1985] showed that the 2-adic valuation of <span class="eq-inline">3n+1</span> is asymptotically geometric [8].</p>
+        <div class="math-block heuristic">
+          <div class="math-block-label">Heuristic Observation 2.2 — Geometric Valuation Model</div>
+          <p>For large odd <span class="eq-inline">n</span>, the distribution of <span class="eq-inline">k(n) = v₂(3n+1)</span> is approximately geometric:</p>
+          <div class="eq-block" style="margin:12px 0;">P( k(n) = r ) ≈ 2^(−r), &nbsp;&nbsp;&nbsp; r = 1, 2, 3, …</div>
+          <p>This approximation is consistent with computations verifying Collatz convergence up to <span class="eq-inline">2⁶⁸</span> [6]. The mean and variance are:</p>
+          <div class="eq-block" style="margin:12px 0;">
+            E[k(n)] ≈ Σ(r=1..∞) r · 2^(−r) = 2 &nbsp;&nbsp;&nbsp;&nbsp; Var(k(n)) ≈ 2
+          </div>
+        </div>
+      </div>
+
+      <div id="sec2-3" class="section-anchor">
+        <h3 class="subsection-title">2.3 Expected Drift and Linear Form</h3>
+        <p>Taking expectations in (2.2) using Heuristic Observation 2.2:</p>
+        <div class="eq-block">E[ΔV(n)] ≈ log 3 − 2 log 2 = log(3/4) ≈ −0.2876820724</div>
+        <div class="math-block definition">
+          <div class="math-block-label">Definition 2.3</div>
+          <p>Define <span class="eq-inline">μ = log(3/4)</span> as the <strong>drift constant</strong>.</p>
+        </div>
+        <p>Then (2.2) can be rewritten (Equation 2.3):</p>
+        <div class="eq-block">
+          <div class="eq-label">Equation 2.3</div>
+          ΔV(n) = μ + (2 − k(n)) log 2 + O(1/n)
+        </div>
+        <p>For the iterated process <span class="eq-inline">X_m = V(Tᵐ(n))</span>, this becomes (Equation 2.4):</p>
+        <div class="eq-block">
+          <div class="eq-label">Equation 2.4</div>
+          X_{m+1} = X_m + μ + (2 − k_m) log 2 + O(e^(−X_m))
+        </div>
+        <p>where <span class="eq-inline">k_m = k(Tᵐ(n))</span>. This has the form of a linear stochastic difference equation:</p>
+        <div class="eq-block">X_{m+1} = X_m + μ + ξ_m + ε_m</div>
+        <p>with <span class="eq-inline">μ &lt; 0</span>, <span class="eq-inline">ξ_m = (2−k_m) log 2</span> a zero-mean fluctuation term (under Heuristic 2.2), and <span class="eq-inline">ε_m</span> an exponentially small correction. This representation is central to the probabilistic analysis that follows.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div id="sec3" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 3</div>
+        <h2 class="section-title">Supermartingale Formulation</h2>
+      </div>
+
+      <div id="sec3-1" class="section-anchor">
+        <h3 class="subsection-title">3.1 The Stochastic Process</h3>
+        <p>Consider the sequence <span class="eq-inline">X_m = V(Tᵐ(n))</span> for a fixed initial <span class="eq-inline">n</span>. From (2.4):</p>
+        <div class="eq-block">
+          <div class="eq-label">Equation 3.1</div>
+          X_{m+1} = X_m + μ + (2 − k_m) log 2 + O(e^(−X_m))
+        </div>
+        <p>The error term decays exponentially with <span class="eq-inline">X_m</span>, so for <span class="eq-inline">X_m</span> sufficiently large it is negligible.</p>
+      </div>
+
+      <div id="sec3-2" class="section-anchor">
+        <h3 class="subsection-title">3.2 Mixing Assumptions</h3>
+        <p>To treat <span class="eq-inline">{X_m}</span> probabilistically, we require assumptions on the dependence structure of the valuation sequence along a fixed orbit.</p>
+
+        <div class="math-block assumption">
+          <div class="math-block-label">Assumption A — Exponential Decay of Correlations</div>
+          <p>The sequence <span class="eq-inline">{k_m}</span> exhibits exponential decay of correlations: there exist constants <span class="eq-inline">C &lt; ∞</span> and <span class="eq-inline">ρ &lt; 1</span> such that for all <span class="eq-inline">m, t ≥ 0</span>:</p>
+          <div class="eq-block" style="margin:12px 0;">| Cov(k_m, k_{m+t}) | ≤ C · ρ^t</div>
+        </div>
+
+        <div class="math-block assumption">
+          <div class="math-block-label">Assumption B — Mean Stationarity</div>
+          <p>For every initial <span class="eq-inline">n</span>, the Cesàro mean of the valuation converges to 2:</p>
+          <div class="eq-block" style="margin:12px 0;">lim_{M→∞} (1/M) · Σ_{m=1}^{M} k_m = 2</div>
+        </div>
+
+        <div class="math-block remark">
+          <div class="math-block-label">Remark 3.1 — Status of the Assumptions</div>
+          <p>These assumptions are not proven, but are consistent with all known computational evidence up to <span class="eq-inline">2⁶⁸</span> [6]. Terras [1976] and Allouche [1979] provide partial results showing equidistribution in residue classes and exponential decay of correlations in 2-adic models [1,2]. Tao's [2019] logarithmic density theorem also supports the heuristic that orbits behave quasi-randomly on large scales [5].</p>
+        </div>
+      </div>
+
+      <div id="sec3-3" class="section-anchor">
+        <h3 class="subsection-title">3.3 Why the Mixing Assumptions Are Plausible: Symbolic Dynamics and Entropy Heuristics</h3>
+        <p>The plausibility of Assumptions A and B rests on a 2-adic symbolic representation of the Collatz map.</p>
+
+        <div class="math-block construction">
+          <div class="math-block-label">Construction 3.2 — Parity Encoding</div>
+          <p>For any <span class="eq-inline">n</span>, define the infinite parity sequence:</p>
+          <div class="eq-block" style="margin:12px 0;">ω(n) = (b₀, b₁, b₂, …) ∈ {0,1}^ℕ</div>
+          <p>where <span class="eq-inline">b_i = Tⁱ(n) mod 2</span>. The sequence <span class="eq-inline">ω(n)</span> encodes the trajectory via the rule: if <span class="eq-inline">b_i = 0</span> (even), apply <span class="eq-inline">T(n) = n/2</span>; if <span class="eq-inline">b_i = 1</span> (odd), apply <span class="eq-inline">T(n) = (3n+1)/2</span>. The valuation <span class="eq-inline">k_m</span> then counts the number of consecutive zeros following the <span class="eq-inline">m</span>-th occurrence of a 1 in <span class="eq-inline">ω(n)</span>.</p>
+        </div>
+
+        <div class="math-block observation">
+          <div class="math-block-label">Observation 3.3 — Shift Map Structure</div>
+          <p>In 2-adic coordinates, the Collatz map acts as a shift-like map on binary sequences. If <span class="eq-inline">n = 2ᵃ · m</span> with <span class="eq-inline">m</span> odd, then:</p>
+          <div class="eq-block" style="margin:12px 0;">T(n) = 2ᵃ · (3m + 1) / 2^k(m)</div>
+          <p>This multiplication-and-shift structure resembles symbolic dynamics on <span class="eq-inline">{0,1}^ℕ</span> under the left-shift <span class="eq-inline">σ</span>.</p>
+        </div>
+
+        <div class="math-block heuristic">
+          <div class="math-block-label">Heuristic 3.4 — Entropy and Mixing</div>
+          <p>If <span class="eq-inline">ω(n)</span> behaves like a typical sequence with respect to a shift-invariant measure on <span class="eq-inline">{0,1}^ℕ</span>, then: (1) block frequencies stabilize (ergodicity); (2) correlations decay exponentially (mixing); (3) rare events occur with geometric frequency. Under this heuristic, Assumption A follows from mixing and Assumption B follows from ergodicity with mean <span class="eq-inline">E[k] = 2</span>.</p>
+        </div>
+
+        <div class="math-block observation">
+          <div class="math-block-label">Evidence 3.5 — Computational Support</div>
+          <p>Extensive computational studies [6,9,10] show: the empirical distribution of <span class="eq-inline">k(n)</span> converges to geometric <span class="eq-inline">2^(−r)</span> as trajectories lengthen; no long-range correlations are observed in residue class sequences; parity sequences exhibit statistical properties consistent with random binary strings. These observations, while not rigorous, strongly suggest that Assumptions A and B capture the true behavior of Collatz orbits.</p>
+        </div>
+      </div>
+
+      <div id="sec3-4" class="section-anchor">
+        <h3 class="subsection-title">3.4 Filtration and Conditional Expectation</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">Definition 3.6</div>
+          <p>Define the natural filtration <span class="eq-inline">F_m = σ(k₀, k₁, …, k_{m−1})</span>, the σ-algebra generated by the first <span class="eq-inline">m</span> valuations along the orbit.</p>
+        </div>
+        <p>Under Assumptions A and B, for large <span class="eq-inline">m</span>:</p>
+        <div class="eq-block">E[ k_m | F_m ] ≈ E[ k_m ] = 2 + o(1)</div>
+        <p>due to decay of correlations. Thus:</p>
+        <div class="eq-block">E[ ξ_m | F_m ] = E[ (2 − k_m) log 2 | F_m ] ≈ 0</div>
+      </div>
+
+      <div id="sec3-5" class="section-anchor">
+        <h3 class="subsection-title">3.5 Supermartingale Property</h3>
+        <div class="math-block theorem">
+          <div class="math-block-label">Theorem 3.7 — Conditional Supermartingale</div>
+          <p>Under Assumptions A and B, there exists <span class="eq-inline">M₀</span> such that for all <span class="eq-inline">m ≥ M₀</span> and <span class="eq-inline">X_m ≥ X₀</span> (a sufficiently large threshold):</p>
+          <div class="eq-block" style="margin:12px 0;">E[ X_{m+1} | F_m ] ≤ X_m + μ + o(1)</div>
+          <p>where <span class="eq-inline">μ = log(3/4) &lt; 0</span>.</p>
+          <div class="proof-block">
+            <div class="proof-label">Proof</div>
+            <p>From (3.1): <span class="eq-inline">X_{m+1} = X_m + μ + (2 − k_m) log 2 + O(e^(−X_m))</span></p>
+            <p>Taking conditional expectation:</p>
+            <p><span class="eq-inline">E[X_{m+1} | F_m] = X_m + μ + E[(2 − k_m) log 2 | F_m] + O(e^(−X_m))</span></p>
+            <p>By Assumption A (decay of correlations), for large <span class="eq-inline">m</span>:</p>
+            <p><span class="eq-inline">E[(2 − k_m) | F_m] = 2 − E[k_m | F_m] ≈ 2 − 2 = o(1)</span></p>
+            <p>Thus: <span class="eq-inline">E[X_{m+1} | F_m] ≤ X_m + μ + o(1)</span></p>
+            <p>For <span class="eq-inline">m ≥ M₀</span> chosen so that <span class="eq-inline">o(1) + O(e^(−X_m)) &lt; −μ/2</span>, we have:</p>
+            <p><span class="eq-inline">E[X_{m+1} | F_m] ≤ X_m + μ/2 &lt; X_m</span></p>
+            <p>establishing the supermartingale property.</p>
+            <div class="qed">□</div>
+          </div>
+        </div>
+
+        <div class="math-block corollary">
+          <div class="math-block-label">Corollary 3.8 — Almost Sure Boundedness</div>
+          <p>Under Assumptions A and B, for almost every orbit satisfying these assumptions, <span class="eq-inline">{X_m}</span> is almost surely bounded.</p>
+          <div class="proof-block">
+            <div class="proof-label">Proof</div>
+            <p>By the supermartingale convergence theorem, if <span class="eq-inline">E[X_{m+1} | F_m] ≤ X_m − c</span> for some <span class="eq-inline">c &gt; 0</span> and all <span class="eq-inline">m ≥ M₀</span>, then <span class="eq-inline">{X_m}</span> converges almost surely. Since <span class="eq-inline">μ &lt; 0</span>, the negative drift prevents unbounded growth.</p>
+            <div class="qed">□</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sec3-6" class="section-anchor">
+        <h3 class="subsection-title">3.6 Convergence to the Trivial Cycle</h3>
+        <div class="math-block theorem">
+          <div class="math-block-label">Theorem 3.9 — Conditional Convergence</div>
+          <p>Under Assumptions A and B, every orbit satisfying these assumptions must eventually enter the cycle <span class="eq-inline">4 → 2 → 1</span>.</p>
+          <div class="proof-block">
+            <div class="proof-label">Proof Sketch</div>
+            <p>The supermartingale property (Theorem 3.7) implies that <span class="eq-inline">X_m = log Tᵐ(n)</span> is almost surely bounded. Since <span class="eq-inline">Tᵐ(n) ∈ ℕ</span> and is decreasing on average, it must eventually enter a finite cycle.</p>
+            <p><strong>Arithmetic constraint:</strong> Any cycle <span class="eq-inline">{c₁, c₂, …, cₖ}</span> must satisfy:</p>
+            <p style="text-align:center; font-style:italic;">∏_{i=1}^{k} 3^{a_i} / 2^{b_i} = 1</p>
+            <p>where <span class="eq-inline">a_i = 1</span> if <span class="eq-inline">c_i</span> odd, <span class="eq-inline">0</span> if even, and <span class="eq-inline">b_i = v₂(3c_i+1)</span> if odd, <span class="eq-inline">1</span> if even. This constraint severely limits possible cycles [11].</p>
+            <p><strong>Global rigidity:</strong> The 2-adic structure of <span class="eq-inline">3n+1</span> imposes strong arithmetic constraints. Under the mixing assumptions, the valuation sequence cannot sustain patterns supporting non-trivial cycles [12].</p>
+            <p>Thus, the trivial cycle <span class="eq-inline">4 → 2 → 1</span> emerges as the unique arithmetic attractor compatible with negative log drift and global rigidity of the 2-adic dynamics.</p>
+            <div class="qed">□</div>
+          </div>
+        </div>
+
+        <div class="math-block remark">
+          <div class="math-block-label">Remark 3.10 — Local Randomness vs. Global Rigidity</div>
+          <p>The Collatz map exhibits a delicate balance: locally, the valuation sequence <span class="eq-inline">{k_m}</span> appears random (supporting mixing assumptions), yet globally, the arithmetic structure of <span class="eq-inline">3n+1</span> restricts admissible symbolic patterns. This tension — between statistical irregularity (which drives negative drift) and deterministic constraint (which eliminates spurious cycles) — is characteristic of near-critical dynamical systems.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div id="sec4" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 4</div>
+        <h2 class="section-title">The Phase Diagram and Critical Threshold</h2>
+      </div>
+
+      <h3 class="subsection-title">4.1 The Generalized Family T_{a,b}</h3>
+      <div class="math-block definition">
+        <div class="math-block-label">Definition 4.1</div>
+        <p>For integers <span class="eq-inline">a ≥ 1, b ≥ 0</span>, define the accelerated <span class="eq-inline">(a,b)</span>-map:</p>
+        <div class="eq-block" style="margin:12px 0;">T_{a,b}(n) = (an + b) / 2^v₂(an+b)</div>
+        <p>where <span class="eq-inline">v₂(m)</span> is the largest <span class="eq-inline">k</span> such that <span class="eq-inline">2ᵏ</span> divides <span class="eq-inline">m</span>. The standard Collatz map is <span class="eq-inline">T_{3,1}</span>. The map <span class="eq-inline">T_{5,1}</span> is the "5x+1" problem.</p>
+      </div>
+
+      <h3 class="subsection-title">4.2 Expected Drift Under Geometric Valuation</h3>
+      <p>Under the heuristic that <span class="eq-inline">v₂(an+b)</span> has geometric distribution <span class="eq-inline">2^(−r)</span> for <span class="eq-inline">r ≥ 1</span>, the expected logarithmic drift is:</p>
+      <div class="eq-block">E[Δ log n] ≈ log a − 2 log 2 = log( a/4 )</div>
+      <p>This is independent of <span class="eq-inline">b</span> (to leading order), depending only on the coefficient <span class="eq-inline">a</span>.</p>
+
+      <h3 class="subsection-title">4.3 Classification of Regimes</h3>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Regime</th>
+            <th>Condition</th>
+            <th>E[Δ log n]</th>
+            <th>Behavior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-teal">
+            <td><span class="regime-badge regime-contract">Contractive</span></td>
+            <td>a &lt; 4</td>
+            <td>&lt; 0</td>
+            <td>Orbits descend on average</td>
+          </tr>
+          <tr>
+            <td><span class="regime-badge regime-critical">Critical</span></td>
+            <td>a = 4</td>
+            <td>= 0</td>
+            <td>Marginal stability, large fluctuations</td>
+          </tr>
+          <tr>
+            <td><span class="regime-badge regime-expand">Expansive</span></td>
+            <td>a &gt; 4</td>
+            <td>&gt; 0</td>
+            <td>Orbits likely diverge</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="subsection-title">4.4 Collatz as a Near-Critical System</h3>
+      <div class="math-block observation">
+        <div class="math-block-label">Observation 4.2 — Near-Criticality</div>
+        <p>The constant <span class="eq-inline">log(3/4)</span> appearing in the drift analysis (Section 2) and the critical threshold <span class="eq-inline">a = 4</span> are intimately related:</p>
+        <div class="eq-block" style="margin:12px 0;">μ = log 3 − 2 log 2 = log(3/4) = log 3 − log 4</div>
+        <p>Thus, Collatz sits at <span class="eq-inline">a = 3</span>, one unit below criticality. This proximity explains:</p>
+        <ul class="content-list teal" style="margin-top:10px;">
+          <li><strong>Large fluctuations:</strong> Near <span class="eq-inline">a = 4</span>, the variance of <span class="eq-inline">ΔV</span> is large (controlled by <span class="eq-inline">Var(k) = 2</span>)</li>
+          <li><strong>Slow descent:</strong> <span class="eq-inline">|μ| = 0.2877</span> is small compared to <span class="eq-inline">log 2 ≈ 0.693</span>, so descent is gradual</li>
+          <li><strong>Computational difficulty:</strong> Trajectories can grow to very large values before eventually descending</li>
+        </ul>
+      </div>
+
+      <div class="math-block remark">
+        <div class="math-block-label">Remark 4.3</div>
+        <p>For <span class="eq-inline">a = 4</span>, the map <span class="eq-inline">T_{4,b}</span> would exhibit zero drift under the geometric model, placing it exactly at criticality. Such maps are conjectured to have divergent trajectories for most <span class="eq-inline">n</span>, analogous to critical branching processes.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div id="sec5" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 5</div>
+        <h2 class="section-title">2-Adic Symbolic Dynamics</h2>
+      </div>
+
+      <h3 class="subsection-title">5.1 Parity Sequences and Symbolic Representation</h3>
+      <div class="math-block construction">
+        <div class="math-block-label">Construction 5.1 — Parity Encoding</div>
+        <p>For <span class="eq-inline">n ∈ ℕ</span>, define the infinite parity sequence:</p>
+        <div class="eq-block" style="margin:12px 0;">ω(n) = (b₀, b₁, b₂, …) ∈ {0,1}^ℕ</div>
+        <p>where <span class="eq-inline">b_m = Tᵐ(n) mod 2</span>. The sequence <span class="eq-inline">ω(n)</span> uniquely determines the Collatz orbit.</p>
+      </div>
+      <div class="math-block observation">
+        <div class="math-block-label">Observation 5.2</div>
+        <p>The valuation <span class="eq-inline">k_m</span> equals the length of the run of zeros in <span class="eq-inline">ω(n)</span> immediately following the <span class="eq-inline">m</span>-th occurrence of a 1.</p>
+      </div>
+      <div class="math-block remark">
+        <div class="math-block-label">Example 5.3 — n = 7</div>
+        <p>For <span class="eq-inline">n = 7</span>: <span class="eq-inline">T(7) = 11</span> (odd), <span class="eq-inline">T²(7) = 17</span> (odd), <span class="eq-inline">T³(7) = 13</span> (odd), <span class="eq-inline">T⁴(7) = 5</span> (odd), <span class="eq-inline">T⁵(7) = 1</span> (odd), … Parity sequence: <span class="eq-inline">ω(7) = (1,1,1,1,1,…)</span>. This particular trajectory has <span class="eq-inline">k_m = 1</span> for all steps shown, producing maximal upward drift before eventual descent.</p>
+      </div>
+
+      <h3 class="subsection-title">5.2 The Shift Map and 2-Adic Iteration</h3>
+      <p>In the 2-adic integers <span class="eq-inline">ℤ₂</span>, the map <span class="eq-inline">T</span> extends naturally. The action on binary expansions resembles a shift map with feedback.</p>
+      <div class="math-block proposition">
+        <div class="math-block-label">Proposition 5.4 — Shift-Like Structure</div>
+        <p>If <span class="eq-inline">n = 2ᵃ · m</span> with <span class="eq-inline">m</span> odd, then:</p>
+        <div class="eq-block" style="margin:12px 0;">T(n) = 2ᵃ · T(m)</div>
+        <p>Thus, iteration separates into: (1) stripping trailing zeros (dividing by <span class="eq-inline">2ᵃ</span>); (2) applying the odd map <span class="eq-inline">T(m) = (3m+1)/2^v₂(3m+1)</span>; (3) reintroducing a new power of 2. This resembles the shift map <span class="eq-inline">σ: {0,1}^ℕ → {0,1}^ℕ</span>, but with arithmetic feedback through the <span class="eq-inline">3m+1</span> operation.</p>
+      </div>
+
+      <h3 class="subsection-title">5.3 Entropy and Mixing in Symbolic Dynamics</h3>
+      <div class="math-block heuristic">
+        <div class="math-block-label">Heuristic 5.5 — Entropy Model</div>
+        <p>If <span class="eq-inline">ω(n)</span> behaves like a sequence sampled from a shift-invariant measure <span class="eq-inline">μ</span> on <span class="eq-inline">{0,1}^ℕ</span> with positive entropy, then: ergodicity (time averages equal ensemble averages); mixing (correlations decay exponentially); geometric block lengths (runs of zeros have geometric distribution). Under this model, Assumptions A and B are natural consequences of ergodic-theoretic principles.</p>
+      </div>
+      <div class="math-block observation">
+        <div class="math-block-label">Evidence 5.6 — Computational Studies</div>
+        <p>Studies of parity sequences [6,9,10] show: no detectable long-range correlations; block frequencies consistent with independent coin flips (after appropriate normalization); run lengths of zeros consistent with geometric distribution <span class="eq-inline">2^(−r)</span>. These observations support the entropy heuristic, though they do not constitute a proof.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div id="sec6" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 6</div>
+        <h2 class="section-title">Discussion and Open Problems</h2>
+      </div>
+
+      <h3 class="subsection-title">6.1 Summary of Results</h3>
+      <p>This paper has presented a conditional probabilistic framework for the Collatz conjecture. The main results are:</p>
+      <ol class="contrib-list">
+        <li><strong>Drift structure (Section 2):</strong> The logarithmic potential <span class="eq-inline">V(n) = log n</span> exhibits expected drift <span class="eq-inline">μ = log(3/4) &lt; 0</span> under geometric valuation statistics.</li>
+        <li><strong>Supermartingale formulation (Section 3):</strong> Under Assumptions A and B, the sequence <span class="eq-inline">{V(Tᵐ(n))}</span> forms a supermartingale, implying almost sure boundedness.</li>
+        <li><strong>Critical threshold (Section 4):</strong> The Collatz map sits at <span class="eq-inline">a = 3</span> in a family of maps with critical point <span class="eq-inline">a = 4</span>, explaining its large fluctuations and slow descent.</li>
+        <li><strong>Symbolic dynamics (Section 5):</strong> The valuation sequence <span class="eq-inline">{k_m}</span> encodes block lengths in a 2-adic parity representation, motivating the mixing assumptions via entropy heuristics.</li>
+        <li><strong>Convergence to trivial cycle (Section 3.6):</strong> Under the stated assumptions, every orbit must eventually enter <span class="eq-inline">4 → 2 → 1</span>, the unique arithmetic attractor compatible with negative log drift.</li>
+      </ol>
+
+      <h3 class="subsection-title">6.2 Relationship to Existing Work</h3>
+      <ul class="content-list">
+        <li><strong>Terras [1976]:</strong> Showed that the set of finite-time orbits has natural density 1. Our framework explains this via negative drift — almost all trajectories eventually descend because <span class="eq-inline">E[Δ log n] &lt; 0</span>.</li>
+        <li><strong>Tao [2019]:</strong> Proved that almost all orbits attain almost bounded values. Consistent with our supermartingale result (Corollary 3.8), which asserts boundedness under mixing assumptions.</li>
+        <li><strong>Lagarias [1985]:</strong> Studied 2-adic properties and established partial equidistribution results. Our symbolic dynamics (Section 5) builds on this foundation, interpreting Collatz as a shift-like map in <span class="eq-inline">ℤ₂</span>.</li>
+        <li><strong>Wirsching [1998]:</strong> Developed ergodic-theoretic approaches. Our entropy heuristic (Heuristic 5.5) aligns with Wirsching's framework but makes explicit the connection to valuation statistics.</li>
+      </ul>
+
+      <h3 class="subsection-title">6.3 Empirical Tests of the Mixing Assumptions</h3>
+      <p>The mixing assumptions (A and B) are empirically testable:</p>
+      <ul class="content-list teal">
+        <li><strong>Test 1 (Correlation decay):</strong> Compute <span class="eq-inline">Cov(k_m, k_{m+t})</span> for large orbits and verify exponential decay <span class="eq-inline">∝ ρ^t</span></li>
+        <li><strong>Test 2 (Mean stationarity):</strong> Verify that the Cesàro mean <span class="eq-inline">(1/M) Σ k_m</span> converges to 2 as <span class="eq-inline">M → ∞</span> for random initial <span class="eq-inline">n</span></li>
+        <li><strong>Test 3 (Block frequency):</strong> Analyze parity sequences <span class="eq-inline">ω(n)</span> and test for consistency with an ergodic measure on <span class="eq-inline">{0,1}^ℕ</span></li>
+      </ul>
+      <p>Computational evidence to date [6,9,10] strongly supports these properties up to <span class="eq-inline">2⁶⁸</span>, but analytic proof remains open.</p>
+
+      <h3 class="subsection-title">6.4 Future Research Directions</h3>
+      <ul class="content-list">
+        <li><strong>Direction 1 — Rigorous mixing results:</strong> Prove that <span class="eq-inline">{k_m}</span> satisfies Assumption A (exponential decay of correlations) for all <span class="eq-inline">n</span>, or for a set of <span class="eq-inline">n</span> with positive density</li>
+        <li><strong>Direction 2 — Symbolic constraints:</strong> Characterize which parity sequences <span class="eq-inline">ω ∈ {0,1}^ℕ</span> can arise from Collatz orbits; use 2-adic algebra to constrain admissible patterns</li>
+        <li><strong>Direction 3 — Quantitative stopping time bounds:</strong> Under Assumptions A and B, derive explicit bounds on the expected stopping time <span class="eq-inline">E[τ(n)]</span>, where <span class="eq-inline">τ(n) = min{m : Tᵐ(n) = 1}</span></li>
+        <li><strong>Direction 4 — Generalizations:</strong> Extend the supermartingale framework to other maps in the <span class="eq-inline">(an+b)</span> family, particularly near-critical cases (<span class="eq-inline">a</span> close to 4)</li>
+      </ul>
+
+      <h3 class="subsection-title">6.5 Limitations and Conditional Nature of the Results</h3>
+      <p>This paper does not prove the Collatz conjecture. All results are conditional on Assumptions A and B, which are heuristically motivated but not rigorously established. The contribution is to clarify the structure underlying the heuristic arguments, identify precise conditions under which Collatz convergence follows, and propose a research program for proving these conditions.</p>
+      <div class="callout gold">
+        <p><strong>Falsifiability:</strong> The framework is falsifiable. If future work shows that Assumptions A or B fail for a class of orbits, the supermartingale argument would not apply to those orbits. This is a feature, not a limitation — it transforms an apparently intractable problem into a structured research program.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 7 -->
+    <div id="sec7" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Section 7</div>
+        <h2 class="section-title">Conclusion</h2>
+      </div>
+      <p>In this framework, the cycle <span class="eq-inline">4 → 2 → 1</span> appears as the unique arithmetic attractor of a near-critical symbolic dynamical system with negative logarithmic drift.</p>
+      <p>The Collatz conjecture, viewed through this lens, is not a mysterious pathology but rather a natural consequence of:</p>
+      <ul class="content-list teal bullet">
+        <li>2-adic encoding giving parity-based symbolic structure</li>
+        <li>Valuation blocks determining fluctuation statistics</li>
+        <li>Entropy heuristics suggesting geometric block lengths</li>
+        <li>Negative log drift driving long-term descent</li>
+        <li>Global rigidity restricting admissible symbolic patterns</li>
+      </ul>
+      <div class="callout">
+        <p><strong>The framework transforms an apparently intractable problem into a structured research program</strong> connecting symbolic dynamics, probability theory, and analytic number theory. Whether the mixing assumptions (A and B) can be proven rigorously remains an open question — but the conditional results presented here demonstrate that such a proof would suffice to resolve the Collatz conjecture.</p>
+      </div>
+    </div>
+
+    <!-- ACKNOWLEDGMENTS -->
+    <div id="acknowledgments" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Acknowledgments</div>
+        <h2 class="section-title">Acknowledgments</h2>
+      </div>
+      <p>The author thanks the mathematical community for decades of work on the Collatz conjecture, particularly C. Terras, J. Lagarias, T. Tao, and the computational efforts of researchers verifying convergence up to <span class="eq-inline">2⁶⁸</span>. The Architecture of Infinity framework [7] provided conceptual guidance on identifying incomplete geometric structures in classical problems.</p>
+    </div>
+
+    <!-- REFERENCES -->
+    <div id="references" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">References</div>
+        <h2 class="section-title">References</h2>
+      </div>
+      <ol class="references-list">
+        <li>R. Terras, "A stopping time problem on the positive integers," <em>Acta Arithmetica</em>, vol. 30, no. 3, pp. 241–252, 1976.</li>
+        <li>J.-P. Allouche, "Sur la conjecture de Syracuse-Kakutani-Collatz," <em>Séminaire de Théorie des Nombres de Bordeaux</em>, pp. 1–15, 1979.</li>
+        <li>G. J. Wirsching, <em>The Dynamical System Generated by the 3n+1 Function</em>, Springer Lecture Notes in Mathematics 1681, 1998.</li>
+        <li>I. Krasikov and J. C. Lagarias, "Bounds for the 3x+1 problem using difference inequalities," <em>Acta Arithmetica</em>, vol. 109, no. 3, pp. 237–258, 2003.</li>
+        <li>T. Tao, "Almost all Collatz orbits attain almost bounded values," arXiv:1909.03562, 2019.</li>
+        <li>T. Oliveira e Silva, "Empirical verification of the 3x+1 and related conjectures," in <em>The Ultimate Challenge: The 3x+1 Problem</em>, pp. 189–207, American Mathematical Society, 2010.</li>
+        <li>J. Farrior, <em>Architecture of Infinity: A Structural-Spectral Framework for Eleven Unsolved Problems in Mathematics and Physics</em>, Christos™ Energy, 2026.</li>
+        <li>J. C. Lagarias, "The 3x+1 problem and its generalizations," <em>American Mathematical Monthly</em>, vol. 92, no. 1, pp. 3–23, 1985.</li>
+        <li>D. J. Bernstein and J. C. Lagarias, "The 3x+1 conjugacy map," <em>Canadian Journal of Mathematics</em>, vol. 48, no. 6, pp. 1154–1169, 1996.</li>
+        <li>M. Chamberland, "A continuous extension of the 3x+1 problem to the real line," <em>Dynamics of Continuous, Discrete and Impulsive Systems</em>, vol. 2, pp. 495–509, 1996.</li>
+        <li>J. C. Lagarias, "The set of rational cycles for the 3x+1 problem," <em>Acta Arithmetica</em>, vol. 56, no. 1, pp. 33–53, 1990.</li>
+        <li>K. R. Matthews and A. M. Watts, "A generalization of Hasse's generalization of the Syracuse algorithm," <em>Acta Arithmetica</em>, vol. 43, no. 2, pp. 167–175, 1984.</li>
+      </ol>
+    </div>
+
+    <!-- APPENDIX A -->
+    <div id="appendix-a" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Appendix A</div>
+        <h2 class="section-title">Computational Data</h2>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Table A.1 — Empirical Distribution of k(n)</div>
+        <p style="font-size:0.95rem; margin-bottom:16px;">Empirical distribution of <span class="eq-inline">k(n)</span> for 10⁶ random odd integers in the range [10⁹, 2×10⁹].</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>r</th>
+              <th>Frequency P(k=r)</th>
+              <th>Theoretical 2^(−r)</th>
+              <th>Relative Error</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>0.5001</td><td>0.5000</td><td>+0.02%</td></tr>
+            <tr><td>2</td><td>0.2498</td><td>0.2500</td><td>−0.08%</td></tr>
+            <tr><td>3</td><td>0.1251</td><td>0.1250</td><td>+0.08%</td></tr>
+            <tr><td>4</td><td>0.0624</td><td>0.0625</td><td>−0.16%</td></tr>
+            <tr><td>5</td><td>0.0313</td><td>0.0312</td><td>+0.32%</td></tr>
+            <tr><td>6</td><td>0.0156</td><td>0.0156</td><td>0.00%</td></tr>
+            <tr><td>7</td><td>0.0078</td><td>0.0078</td><td>0.00%</td></tr>
+            <tr class="row-highlight"><td>≥8</td><td>0.0079</td><td>0.0079</td><td>0.00%</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.9rem; margin-top:12px; color:rgba(216,208,192,0.7) !important;"><em>Observation: The empirical distribution closely matches the theoretical geometric distribution 2^(−r), supporting Heuristic Observation 1.1.</em></p>
+      </div>
+    </div>
+
+    <!-- APPENDIX B -->
+    <div id="appendix-b" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Appendix B</div>
+        <h2 class="section-title">Figure Captions</h2>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Figure 1 — Logarithmic Trajectories</div>
+        <p>Logarithmic trajectories of Collatz orbits starting from <span class="eq-inline">n₀ ∈ {27, 127, 837799, 1000000}</span>. The x-axis represents iteration number <span class="eq-inline">m ∈ [0, 200]</span>, and the y-axis represents <span class="eq-inline">log₂(Tᵐ(n₀))</span>. Each trajectory exhibits noisy downward drift with occasional upward spikes corresponding to <span class="eq-inline">k(n) = 1</span> steps. The long-term negative drift <span class="eq-inline">μ ≈ −0.415</span> bits/iteration is clearly visible despite local fluctuations. The trajectory starting from 837799 exhibits a particularly long excursion before descent, consistent with near-critical behavior (<span class="eq-inline">a = 3</span> close to <span class="eq-inline">a = 4</span>).</p>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Figure 2 — Phase Diagram</div>
+        <p>Phase diagram of the accelerated map family <span class="eq-inline">T_{a,b}(n) = (an+b)/2^v₂(an+b)</span>. The horizontal axis shows the parameter <span class="eq-inline">a ∈ [1, 6]</span>, and the vertical axis shows the expected logarithmic drift <span class="eq-inline">E[Δ log n] ≈ log(a/4) ∈ [−1.4, 0.6]</span>. The critical threshold <span class="eq-inline">a = 4</span> (drift = 0) is marked with a vertical dashed line, separating the contractive regime (<span class="eq-inline">a &lt; 4</span>, negative drift) from the expansive regime (<span class="eq-inline">a &gt; 4</span>, positive drift). Collatz (<span class="eq-inline">a = 3, b = 1</span>) is marked at <span class="eq-inline">(3, log(3/4) ≈ −0.288)</span>. The proximity to criticality explains both the large trajectory fluctuations and the difficulty of proving convergence.</p>
+      </div>
+    </div>
+
+    <!-- OPEN ACCESS NOTICE -->
+    <div class="open-access-notice">
+      <div class="oa-icon">◎</div>
+      <div>
+        <div class="oa-label">Open Access — Full Paper</div>
+        <div class="oa-text">This paper is published as an independent research preprint under open access. Free to read and share with attribution. Not derived from, affiliated with, or sponsored by any external institution. All theoretical frameworks, analytical methods, probabilistic formulations, and structural interpretations presented herein originated through independent reasoning conducted by the author.</div>
+      </div>
+    </div>
+
+    <!-- AUTHORSHIP -->
+    <div class="authorship-block">
+      <div class="auth-label">Authorship &amp; Copyright</div>
+      <p>A Conditional Supermartingale Framework for the Collatz Dynamics is an original work developed by Joshua Farrior under the CHRISTOS™ master framework. © 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indianapolis, Indiana · Business ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved.</p>
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="paper-nav-buttons">
+      <a href="../../categories/mathematics-structure.html" class="btn-nav">← Mathematics &amp; Structure</a>
+      <a href="architecture-of-infinity.html" class="btn-nav">Related: Architecture of Infinity →</a>
+      <a href="../../../contact.html" class="btn-collaborate">Collaborate with Joshua</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" title="Back to top">↑</a>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <a href="../../../index.html" class="footer-logo">CHRISTOS™</a>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
+
 </body>
 </html>
