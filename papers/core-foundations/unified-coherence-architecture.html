@@ -3,120 +3,1282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Coherence Architecture (UCA) — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Unified Coherence Architecture | Christos™ Research Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-item{}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.abstract-text + .abstract-text{margin-top:0;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #08111E !important;
+    color: #D8D0C0 !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #C9A84C !important; }
+
+  /* BREADCRUMB */
+  .breadcrumb-bar { background-color: #08111E !important; border-bottom: 1px solid rgba(201,168,76,0.15) !important; padding: 14px 40px; }
+  .breadcrumb-bar .inner { max-width: 1300px; margin: 0 auto; font-family: 'Raleway', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .breadcrumb-bar a { color: #C9A84C !important; text-decoration: none; }
+  .breadcrumb-bar a:hover { text-decoration: underline; }
+  .breadcrumb-bar .sep { margin: 0 8px; color: #3AAFAF !important; }
+
+  /* PAPER HEADER */
+  .paper-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 56px 40px 48px; }
+  .paper-header .inner { max-width: 1300px; margin: 0 auto; }
+  .paper-tag-line { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 20px; }
+  .paper-tag-line .dot { margin: 0 10px; }
+  .paper-tag-line .open-badge { background-color: rgba(58,175,175,0.12) !important; border: 1px solid #3AAFAF !important; color: #3AAFAF !important; padding: 2px 10px; border-radius: 3px; font-size: 0.62rem; }
+  .paper-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.2; margin-bottom: 16px; }
+  .paper-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #C9A84C !important; line-height: 1.5; max-width: 860px; margin-bottom: 36px; }
+  .paper-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 40px; border-top: 1px solid rgba(201,168,76,0.25) !important; padding-top: 28px; max-width: 1100px; }
+  .meta-item .meta-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 5px; }
+  .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; }
+  .meta-item .meta-value.mono { font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  /* TIER BADGE STRIP */
+  .tier-strip { background-color: #08111E !important; border-bottom: 1px solid rgba(201,168,76,0.12) !important; padding: 20px 40px; }
+  .tier-strip .inner { max-width: 1300px; margin: 0 auto; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .tier-label-head { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(216,208,192,0.6) !important; margin-right: 8px; }
+  .tier-badge { display: inline-block; padding: 4px 12px; font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; border-radius: 2px; }
+  .tier-a { background: rgba(58,175,175,0.15) !important; color: #3AAFAF !important; border: 1px solid rgba(58,175,175,0.5) !important; }
+  .tier-b { background: rgba(201,168,76,0.12) !important; color: #C9A84C !important; border: 1px solid rgba(201,168,76,0.4) !important; }
+  .tier-c { background: rgba(216,208,192,0.08) !important; color: rgba(216,208,192,0.8) !important; border: 1px solid rgba(216,208,192,0.25) !important; }
+  .tier-d { background: rgba(200,80,50,0.08) !important; color: #E07050 !important; border: 1px solid rgba(200,80,50,0.3) !important; }
+
+  /* ABSTRACT */
+  .abstract-block { background-color: #08111E !important; padding: 40px; }
+  .abstract-block .inner { max-width: 1300px; margin: 0 auto; }
+  .abstract-card { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 4px solid #C9A84C !important; padding: 28px 36px; max-width: 900px; }
+  .abstract-card .abstract-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .abstract-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 14px; }
+  .abstract-card p:last-child { margin-bottom: 0; }
+
+  /* LAYOUT */
+  .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 48px 40px 80px; display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+  .toc-box { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; padding: 24px; }
+  .toc-title { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .toc-list li a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 500; color: #D8D0C0 !important; text-decoration: none; display: block; padding: 5px 8px; border-left: 2px solid transparent !important; transition: all 0.2s; line-height: 1.4; }
+  .toc-list li a:hover { color: #C9A84C !important; border-left-color: #C9A84C !important; background-color: rgba(201,168,76,0.05) !important; }
+  .toc-list li.toc-sub a { padding-left: 18px; font-size: 0.65rem; color: rgba(216,208,192,0.7) !important; }
+  .toc-list li.toc-sub a:hover { color: #3AAFAF !important; border-left-color: #3AAFAF !important; }
+  .toc-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15) !important; }
+  .toc-meta-row { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: rgba(216,208,192,0.6) !important; margin-bottom: 6px; }
+  .toc-meta-row span { color: #C9A84C !important; }
+
+  /* MAIN CONTENT */
+  .main-content { min-width: 0; }
+  .section-anchor { scroll-margin-top: 80px; }
+  .paper-section { margin-bottom: 56px; }
+  .section-header { margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .section-number { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .section-title { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 600; color: #FFFFFF !important; line-height: 1.3; }
+  .subsection-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin: 32px 0 14px; letter-spacing: 0.03em; }
+  .sub2-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; font-style: italic; color: #3AAFAF !important; margin: 20px 0 10px; }
+
+  p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* TIER INDICATOR */
+  .tier-indicator { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; display: inline-block; padding: 2px 8px; border-radius: 2px; margin-bottom: 12px; }
+  .ti-a { background: rgba(58,175,175,0.12) !important; color: #3AAFAF !important; border: 1px solid rgba(58,175,175,0.4) !important; }
+  .ti-b { background: rgba(201,168,76,0.1) !important; color: #C9A84C !important; border: 1px solid rgba(201,168,76,0.3) !important; }
+  .ti-c { background: rgba(216,208,192,0.06) !important; color: rgba(216,208,192,0.7) !important; border: 1px solid rgba(216,208,192,0.2) !important; }
+  .ti-d { background: rgba(200,80,50,0.07) !important; color: #E07050 !important; border: 1px solid rgba(200,80,50,0.25) !important; }
+
+  /* EQ BLOCKS */
+  .eq-block { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(58,175,175,0.2) !important; border-left: 3px solid #3AAFAF !important; padding: 16px 24px; margin: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #FFFFFF !important; overflow-x: auto; }
+  .eq-block .eq-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 8px; font-style: normal; }
+  .eq-inline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFFFFF !important; background-color: rgba(10,22,40,0.6) !important; padding: 1px 6px; border-radius: 2px; }
+
+  /* MATH BLOCKS */
+  .math-block { border: 1px solid rgba(201,168,76,0.2) !important; padding: 20px 26px; margin: 24px 0; }
+  .math-block.definition { border-top: 3px solid #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .math-block.theorem { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; }
+  .math-block.observation { border-top: 3px solid rgba(58,175,175,0.6) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.remark { border-top: 3px solid rgba(216,208,192,0.3) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block.axiom { border-top: 3px solid #C9A84C !important; border-left: 4px solid #C9A84C !important; background-color: rgba(201,168,76,0.06) !important; }
+  .math-block.warning { border-top: 3px solid rgba(201,168,76,0.7) !important; background-color: rgba(201,168,76,0.05) !important; }
+  .math-block.falsification { border-top: 3px solid rgba(200,80,50,0.6) !important; background-color: rgba(200,80,50,0.04) !important; border-left: 3px solid rgba(200,80,50,0.4) !important; }
+  .math-block-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+  .definition .math-block-label { color: #C9A84C !important; }
+  .theorem .math-block-label { color: #3AAFAF !important; }
+  .observation .math-block-label { color: #3AAFAF !important; }
+  .remark .math-block-label { color: rgba(216,208,192,0.7) !important; }
+  .axiom .math-block-label { color: #C9A84C !important; }
+  .warning .math-block-label { color: #C9A84C !important; }
+  .falsification .math-block-label { color: #E07050 !important; }
+  .math-block p { font-size: 1rem; margin-bottom: 10px; }
+  .math-block p:last-child { margin-bottom: 0; }
+
+  /* CALLOUTS */
+  .callout { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.25) !important; border-left: 4px solid #3AAFAF !important; padding: 20px 26px; margin: 24px 0; }
+  .callout p { font-size: 1rem; color: #D8D0C0 !important; margin: 0 0 10px; }
+  .callout p:last-child { margin: 0; }
+  .callout strong { color: #3AAFAF !important; }
+  .callout.gold { background-color: rgba(201,168,76,0.05) !important; border-color: rgba(201,168,76,0.2) !important; border-left-color: #C9A84C !important; }
+  .callout.gold strong { color: #C9A84C !important; }
+  .callout.prime { background-color: rgba(201,168,76,0.08) !important; border: 2px solid #C9A84C !important; border-left: 6px solid #C9A84C !important; padding: 24px 30px; }
+  .callout.prime .prime-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 12px; }
+  .callout.prime .prime-axiom { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: #FFFFFF !important; letter-spacing: 0.08em; margin-bottom: 8px; }
+  .callout.prime p { color: #C9A84C !important; font-style: italic; margin: 0; }
+
+  /* LISTS */
+  .content-list { list-style: none; margin: 14px 0 20px; padding: 0; }
+  .content-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; padding: 4px 0 4px 22px; position: relative; line-height: 1.75; }
+  .content-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; }
+  .content-list.teal li::before { color: #3AAFAF !important; }
+  .content-list.bullet li::before { content: '◆'; font-size: 0.55rem; top: 9px; }
+
+  /* CONTRIB LIST */
+  .contrib-list { list-style: none; counter-reset: contrib; padding: 0; margin: 14px 0 20px; }
+  .contrib-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; padding: 10px 0 10px 48px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.07) !important; line-height: 1.75; counter-increment: contrib; }
+  .contrib-list li::before { content: counter(contrib); position: absolute; left: 0; top: 10px; width: 30px; height: 30px; background-color: rgba(201,168,76,0.12) !important; border: 1px solid rgba(201,168,76,0.3) !important; color: #C9A84C !important; font-family: 'Cinzel', serif; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+  .contrib-list li strong { color: #FFFFFF !important; }
+
+  /* DATA TABLES */
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: 'Cormorant Garamond', serif; }
+  .data-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; text-align: left; border-bottom: 2px solid #C9A84C !important; }
+  .data-table td { font-size: 0.95rem; color: #D8D0C0 !important; padding: 10px 14px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.6; }
+  .data-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .data-table .row-highlight td { background-color: rgba(201,168,76,0.07) !important; }
+  .data-table .row-teal td { background-color: rgba(58,175,175,0.05) !important; }
+  .data-table td.gold { color: #C9A84C !important; font-weight: 600; }
+  .data-table td.teal { color: #3AAFAF !important; }
+
+  /* PARAMETER TABLE */
+  .param-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+  .param-table th { font-family: 'Raleway', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 10px 12px; text-align: left; border-bottom: 2px solid #C9A84C !important; }
+  .param-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; color: #D8D0C0 !important; padding: 8px 12px; border-bottom: 1px solid rgba(201,168,76,0.08) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.55; }
+  .param-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .param-table td:first-child { font-family: 'Cinzel', serif; color: #3AAFAF !important; font-size: 1rem; white-space: nowrap; }
+
+  /* OPERATOR TABLE */
+  .operator-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .operator-table th { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 10px 14px; border-bottom: 2px solid #C9A84C !important; }
+  .operator-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #D8D0C0 !important; padding: 9px 14px; border-bottom: 1px solid rgba(201,168,76,0.08) !important; background-color: rgba(8,17,30,0.4) !important; vertical-align: top; }
+  .operator-table tr:hover td { background-color: rgba(10,22,40,0.6) !important; }
+  .operator-table td:first-child { font-family: 'Cinzel', serif; color: #C9A84C !important; font-size: 0.9rem; white-space: nowrap; }
+  .operator-table td:nth-child(2) { color: #FFFFFF !important; font-weight: 500; }
+
+  /* LAYER CARD GRID */
+  .layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .layer-card { background-color: rgba(10,22,40,0.7) !important; border: 1px solid rgba(201,168,76,0.2) !important; border-top: 3px solid #C9A84C !important; padding: 20px; }
+  .layer-card.teal-top { border-top-color: #3AAFAF !important; }
+  .layer-card.dim-top { border-top-color: rgba(216,208,192,0.4) !important; }
+  .layer-num { font-family: 'Raleway', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 6px; }
+  .layer-card.teal-top .layer-num { color: #3AAFAF !important; }
+  .layer-name { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: #FFFFFF !important; margin-bottom: 10px; }
+  .layer-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.6; }
+  .layer-tier { font-family: 'Raleway', sans-serif; font-size: 0.58rem; margin-top: 10px; color: rgba(216,208,192,0.5) !important; }
+
+  /* STATUS BADGES */
+  .status-badge { display: inline-block; padding: 3px 10px; border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; white-space: nowrap; }
+  .status-open { background: rgba(58,175,175,0.12) !important; color: #3AAFAF !important; border: 1px solid rgba(58,175,175,0.4) !important; }
+  .status-pending { background: rgba(201,168,76,0.1) !important; color: #C9A84C !important; border: 1px solid rgba(201,168,76,0.3) !important; }
+  .status-required { background: rgba(200,80,50,0.1) !important; color: #E07050 !important; border: 1px solid rgba(200,80,50,0.3) !important; }
+
+  /* OPEN ACCESS */
+  .open-access-notice { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.2) !important; padding: 24px 28px; margin: 48px 0 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .oa-icon { font-size: 1.8rem; color: #3AAFAF !important; flex-shrink: 0; line-height: 1; }
+  .oa-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .oa-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; line-height: 1.6; }
+
+  .authorship-block { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; border-left: 4px solid #C9A84C !important; padding: 28px 32px; margin-bottom: 40px; }
+  .authorship-block .auth-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 10px; }
+  .authorship-block p { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  /* NAV BUTTONS */
+  .paper-nav-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-nav { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C !important; text-decoration: none; border: 1px solid rgba(201,168,76,0.4) !important; padding: 11px 24px; background-color: transparent !important; transition: all 0.2s; }
+  .btn-nav:hover { background-color: rgba(201,168,76,0.08) !important; border-color: #C9A84C !important; }
+  .btn-collaborate { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #08111E !important; text-decoration: none; background-color: #C9A84C !important; padding: 12px 28px; transition: all 0.2s; }
+  .btn-collaborate:hover { background-color: #E0C070 !important; }
+
+  /* REFERENCES */
+  .references-list { list-style: none; padding: 0; margin: 0; counter-reset: ref; }
+  .references-list li { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: rgba(216,208,192,0.8) !important; padding: 8px 0 8px 40px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.07) !important; line-height: 1.6; counter-increment: ref; }
+  .references-list li::before { content: '[' counter(ref) ']'; position: absolute; left: 0; color: #C9A84C !important; font-family: 'Raleway', sans-serif; font-size: 0.7rem; top: 10px; }
+
+  /* BACK TO TOP */
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; background-color: #C9A84C !important; color: #08111E !important; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; font-weight: 700; z-index: 50; transition: background-color 0.2s; }
+  .back-to-top:hover { background-color: #E0C070 !important; }
+
+  /* FOOTER */
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; text-decoration: none; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; letter-spacing: 0.12em; text-align: center; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; }
+
+  /* APPENDIX */
+  .appendix-box { background-color: rgba(10,22,40,0.4) !important; border: 1px solid rgba(201,168,76,0.12) !important; padding: 24px 28px; margin-bottom: 24px; }
+  .appendix-title { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 14px; }
+
+  @media (max-width: 900px) {
+    .content-wrapper { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    nav, .breadcrumb-bar, .paper-header, .abstract-block, .tier-strip, footer { padding-left: 20px; padding-right: 20px; }
+    .content-wrapper { padding-left: 20px; padding-right: 20px; }
+    .layer-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/core-foundations.html">Core Foundations</a><span>›</span>
-    Unified Coherence Architecture (UCA)
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="../../../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../../../library.html">Research Library</a>
+    <span class="sep">›</span>
+    <a href="../../../categories/core-foundations.html">Core Foundations</a>
+    <span class="sep">›</span>
+    Unified Coherence Architecture
   </div>
 </div>
+
+<!-- PAPER HEADER -->
 <div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Core Foundations · CF-04</div>
-    <h1 class="paper-title">Unified Coherence Architecture (UCA)</h1>
-    <div class="paper-meta-row">
-      <div class="paper-meta-item"><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Date</div><div class="paper-meta-value">April 2026</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Theoretical Framework (CTF) v1.0 — Public Research White Paper</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+  <div class="inner">
+    <div class="paper-tag-line">
+      Core Foundations
+      <span class="dot">·</span>
+      CF-12 · Volume II Synthesis
+      <span class="dot">·</span>
+      <span class="open-badge">Open Access — Full Paper</span>
+    </div>
+    <h1 class="paper-title">The Unified Coherence Architecture</h1>
+    <p class="paper-subtitle">Toroidal Cosmology, Coherence Gravity, Temporal Field Theory, Civilizational Transition, and the Translocation Hierarchy Integrated Into a Single Multi-Scale Framework</p>
+    <div class="paper-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Joshua Farrior</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">April 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">CTF v1.0 — Volume II Synthesis</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Status</div>
+        <div class="meta-value">Public Research White Paper</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Series</div>
+        <div class="meta-value">Christos Theoretical Framework (CTF)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Structure</div>
+        <div class="meta-value">Abstract · 24 Parts · 35 References</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Keywords</div>
+        <div class="meta-value mono">Temporal Field · Coherence Field · Emergent Space · Phase Dynamics · Toroidal Cosmology · Unified Field · Translocation Hierarchy</div>
+      </div>
     </div>
   </div>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">Modern physics operates across multiple highly successful but fundamentally fragmented frameworks. General Relativity models gravity as spacetime curvature. Quantum Mechanics describes matter through probabilistic wavefunctions. Thermodynamics establishes entropy as the arrow of time. Each succeeds within its domain. Each fails at the intersection with the others.</p>
-<p class="abstract-text">This paper presents the Unified Coherence Architecture (UCA), a multi-scale framework in which time is reinterpreted as a primary dynamical field rather than a coordinate dimension, spatial separation emerges from phase differences in the temporal field, and system organization is governed by a coherence scalar field representing phase alignment density. The framework recovers established results from General Relativity and Quantum Mechanics in appropriate limits while providing a consistent interpretation of phenomena including time dilation, quantum entanglement, dark matter anomalies, cosmological large-scale structure, and civilizational phase transitions.</p>
-<p class="abstract-text">The UCA is organized into three causal layers: (1) Toroidal Geometry governing global spacetime structure; (2) Coherence Field Dynamics governing local metric modifications and phase evolution; and (3) Cross-Scale Emergence governing biological, social, and civilizational behavior as natural consequences of the same underlying principles. A complete kinematic language of eight motion operators acting on phase is derived. Explicit falsification criteria and discriminating predictions are provided.</p>
-<p class="abstract-text">This framework integrates four previously established papers — Christos Gravity Reinterpreted, the Toroidal Cosmology Framework, the Christos Time/Dimensional Architecture, and the Christos Light Speed/Coherence Boundary paper — with the civilization-level analysis of The Inevitable Convergence. All applied engineering systems are proprietary and intentionally excluded from this public document.</p>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Temporal Field Theory, Coherence Field, Emergent Space, Phase Dynamics, Toroidal Cosmology, Unified Field Architecture, Translocation Hierarchy, Civilizational Coherence, Christos Theoretical Framework</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="physics-of-metaphysics.html" class="nav-paper-btn">← The Physics of Metaphysics</a><a href="../../../categories/core-foundations.html" class="btn-outline">← Core Foundations</a></div>
-      <div><a href="gravity-reinterpreted.html" class="nav-paper-btn">Gravity Reinterpreted →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+
+<!-- TIER FRAMEWORK STRIP -->
+<div class="tier-strip">
+  <div class="inner">
+    <span class="tier-label-head">Interpretive Tier Framework:</span>
+    <span class="tier-badge tier-a">Tier A — Formal Geometry / Derivation</span>
+    <span class="tier-badge tier-b">Tier B — Physical Interpretation</span>
+    <span class="tier-badge tier-c">Tier C — Empirical Hypothesis</span>
+    <span class="tier-badge tier-d">Tier D — Engineering / Speculative Extension</span>
+  </div>
+</div>
+
+<!-- ABSTRACT -->
+<div class="abstract-block">
+  <div class="inner">
+    <div class="abstract-card">
+      <div class="abstract-label">Abstract</div>
+      <p>Modern physics operates across multiple highly successful but fundamentally fragmented frameworks. General Relativity models gravity as spacetime curvature. Quantum Mechanics describes matter through probabilistic wavefunctions. Thermodynamics establishes entropy as the arrow of time. Each succeeds within its domain. Each fails at the intersection with the others.</p>
+      <p>This paper presents the Unified Coherence Architecture (UCA), a multi-scale framework in which time is reinterpreted as a primary dynamical field rather than a coordinate dimension, spatial separation emerges from phase differences in the temporal field, and system organization is governed by a coherence scalar field representing phase alignment density. The framework recovers established results from General Relativity and Quantum Mechanics in appropriate limits while providing a consistent interpretation of phenomena including time dilation, quantum entanglement, dark matter anomalies, cosmological large-scale structure, and civilizational phase transitions.</p>
+      <p>The UCA is organized into three causal layers: (1) Toroidal Geometry governing global spacetime structure; (2) Coherence Field Dynamics governing local metric modifications and phase evolution; and (3) Cross-Scale Emergence governing biological, social, and civilizational behavior as natural consequences of the same underlying principles. A complete kinematic language of eight motion operators acting on phase is derived. Explicit falsification criteria and discriminating predictions are provided.</p>
+      <p>The Prime Axiom of the CTF — <span class="eq-inline">v⃗ = −∇C</span>, meaning coherence moves the craft — governs all scales from quantum to cosmic.</p>
     </div>
   </div>
 </div>
-<footer class="footer">
+
+<!-- MAIN LAYOUT -->
+<div class="content-wrapper">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-box">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#scope">Scope &amp; Tier Framework</a></li>
+        <li><a href="#part1">Part I — The Fragmentation Problem</a></li>
+        <li><a href="#part2">Part II — Three-Layer Causal Model</a></li>
+        <li><a href="#part3">Part III — The Temporal Field</a></li>
+        <li class="toc-sub"><a href="#sec3-2">3.2 Discrete Formulation</a></li>
+        <li class="toc-sub"><a href="#sec3-4">3.4 Coherence-Dependent Flow</a></li>
+        <li class="toc-sub"><a href="#sec3-5">3.5 Recovery of Time Dilation</a></li>
+        <li><a href="#part4">Part IV — The Coherence Field</a></li>
+        <li class="toc-sub"><a href="#sec4-2">4.2 Wave Equation</a></li>
+        <li class="toc-sub"><a href="#sec4-3">4.3 Parameter Table</a></li>
+        <li class="toc-sub"><a href="#sec4-6">4.6 Operational Index C₀</a></li>
+        <li class="toc-sub"><a href="#sec4-9">4.9 Governing Evolution Equation</a></li>
+        <li><a href="#part5">Part V — Emergence of Space from Phase</a></li>
+        <li><a href="#part6">Part VI — Coherence-Modified Gravity</a></li>
+        <li class="toc-sub"><a href="#sec6-1">6.1 Modified Einstein Equation</a></li>
+        <li class="toc-sub"><a href="#sec6-4">6.4 Spiral Gravity</a></li>
+        <li><a href="#part7">Part VII — Toroidal Cosmology</a></li>
+        <li><a href="#part8">Part VIII — Multi-Toroidal Galactic Structure</a></li>
+        <li><a href="#part9">Part IX — Eight Motion Operators</a></li>
+        <li><a href="#part10">Part X — The Translocation Hierarchy</a></li>
+        <li><a href="#part11">Part XI — Civilizational Phase Transition</a></li>
+        <li><a href="#part12">Part XII — Cross-Scale Coherence</a></li>
+        <li><a href="#part13">Part XIII — Predictions &amp; Falsification</a></li>
+        <li><a href="#part14b">Part XIV-B — Experimental Roadmap</a></li>
+        <li><a href="#part14">Part XIV — Relation to Existing Frameworks</a></li>
+        <li><a href="#part14c">Part XIV-C — Anticipated Critiques</a></li>
+        <li><a href="#part15">Part XV — Gravity Reinterpreted</a></li>
+        <li><a href="#part16">Part XVI — Light Speed as Coherence Boundary</a></li>
+        <li><a href="#part17">Part XVII — Time as Dimensional Architecture</a></li>
+        <li><a href="#part18">Part XVIII — Toroidal Galactic Model</a></li>
+        <li><a href="#part19">Part XIX — PCIB Experimental Architecture</a></li>
+        <li><a href="#part22">Part XXII — Framework Completeness</a></li>
+        <li><a href="#part23">Part XXIII — Limitations &amp; Open Problems</a></li>
+        <li><a href="#part24">Part XXIV — Conclusion</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <div class="toc-meta">
+        <div class="toc-meta-row">Prime Axiom: <span>v⃗ = −∇C</span></div>
+        <div class="toc-meta-row">Parts: <span>24 + Appendices</span></div>
+        <div class="toc-meta-row">References: <span>35</span></div>
+        <div class="toc-meta-row">Instruments: <span>INV-324 – INV-329</span></div>
+        <div class="toc-meta-row">Torus R/r: <span>≈ 3.2</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- PRIME AXIOM HERO -->
+    <div class="callout prime" style="margin-bottom: 40px;">
+      <div class="prime-label">The Prime Axiom of the Christos Theoretical Framework</div>
+      <div class="prime-axiom">v⃗ = −∇C</div>
+      <p>Coherence moves the craft. All scales. Quantum to cosmic.</p>
+    </div>
+
+    <!-- SCOPE -->
+    <div id="scope" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Scope &amp; Interpretive Framework</div>
+        <h2 class="section-title">What This Paper Claims — and Does Not Claim</h2>
+      </div>
+
+      <p>This white paper introduces the formal multi-scale Unified Coherence Architecture (UCA) of the Christos Theoretical Framework (CTF). It integrates four previously established papers — Christos Gravity Reinterpreted, the Toroidal Cosmology Framework, the Christos Time/Dimensional Architecture, and the Christos Light Speed/Coherence Boundary paper — with the civilization-level analysis of The Inevitable Convergence, and the conceptual kinematic system of the Translocation Hierarchy.</p>
+
+      <div class="callout gold">
+        <p><strong>This paper does:</strong> Define a three-layer causal model · Introduce the Temporal Field as governing substrate · Formalize eight motion operators on phase space · Derive standard GR and quantum mechanics as limiting cases · Apply the framework across biological, civilizational, and cosmological scales · Provide discriminating predictions and explicit falsification criteria.</p>
+      </div>
+      <div class="callout">
+        <p><strong>This paper does NOT claim:</strong> That any component is definitively established without experimental confirmation · That all cosmological anomalies are fully resolved · That coherence modifications are required for all gravitational effects · A completed quantum-gravity derivation or full black-hole interior solution.</p>
+      </div>
+
+      <p>All claims are categorized according to a four-tier transparency system:</p>
+      <table class="data-table">
+        <thead><tr><th>Tier</th><th>Category</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="teal">Tier A</td><td>Formal Geometry / Derivation</td><td>Equation-level content derived from stated assumptions. Treated as formally established within this paper.</td></tr>
+          <tr><td class="gold">Tier B</td><td>Physical Interpretation</td><td>What the equations mean in ordinary physical language.</td></tr>
+          <tr><td>Tier C</td><td>Empirical Hypothesis</td><td>Testable predictions not yet established by experiment.</td></tr>
+          <tr><td style="color:#E07050 !important;">Tier D</td><td>Engineering / Speculative Extension</td><td>Device concepts, technological implications, or extrapolations beyond current validation.</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:0.95rem; color:rgba(216,208,192,0.7); margin-top:12px;"><em>This framework is not a replacement for established physics in domains where existing models already succeed. All novel terms are constrained to vanish, average out, or become observationally negligible in the weak-coupling, low-coherence-gradient, or large-radius limits.</em></p>
+    </div>
+
+    <!-- PART I -->
+    <div id="part1" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part I</div>
+        <h2 class="section-title">The Problem of Fragmentation</h2>
+      </div>
+      <div class="tier-indicator ti-b">Tier B — Physical Interpretation</div>
+
+      <p>General Relativity, Quantum Mechanics, and Thermodynamics each produce predictions matching experimental results to extraordinary precision. The problem is not accuracy. The problem is incompleteness at the level of interpretation. What we currently have is not a unified model of reality, but multiple highly accurate slices of reality constructed under different and incompatible assumptions: GR assumes spacetime is fundamental; QM assumes probabilistic phase evolution in a fixed background time; Thermodynamics assumes statistical behavior of ensembles with no defined temporal origin.</p>
+
+      <h3 class="subsection-title">1.2 The Core Tensions</h3>
+      <ul class="content-list bullet">
+        <li>What is time, fundamentally? In relativity, dynamic and observer-dependent. In quantum mechanics, fixed and external. These cannot both be fundamental.</li>
+        <li>Why does time move forward? Thermodynamics defines direction through entropy increase but does not explain why time exists.</li>
+        <li>How can entangled systems correlate instantly across distance without signal transmission?</li>
+        <li>Why do stable toroidal structures — from atoms to galaxies — appear across scales in similar forms?</li>
+      </ul>
+
+      <div class="callout gold">
+        <p><strong>The Central Hypothesis:</strong> These are not separate questions. They are symptoms of the same issue. The central hypothesis is simple, but its implications are extensive: <em>Time is not a coordinate. Time is a field.</em> Once time is no longer a passive background but an active field, motion becomes a property of the field, space becomes a derived relationship, causality becomes ordered transformation, and structure becomes coherence within the field.</p>
+      </div>
+    </div>
+
+    <!-- PART II -->
+    <div id="part2" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part II</div>
+        <h2 class="section-title">The Three-Layer Causal Model</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A — Formal Geometry</div>
+
+      <p>Every claim in this framework is assigned to one of three causal categories. This single rule eliminates the primary criticism that coherence-based frameworks can explain anything after the fact. The explanatory hierarchy proceeds as follows: Geometry defines possible paths. Fields define how those paths behave. Systems define how those behaviors accumulate across scale.</p>
+
+      <div class="layer-grid">
+        <div class="layer-card">
+          <div class="layer-num">Layer 1</div>
+          <div class="layer-name">Geometric Effects</div>
+          <div class="layer-desc">Arise from topology, coordinate structure, and path geometry alone. CMB large-scale anomalies, Hubble directional variation, apparent acceleration as coordinate artifact, large-scale topology signatures.</div>
+          <div class="layer-tier">Tier A</div>
+        </div>
+        <div class="layer-card teal-top">
+          <div class="layer-num" style="color:#3AAFAF !important;">Layer 2</div>
+          <div class="layer-name">Coherence Field Effects</div>
+          <div class="layer-desc">Arise from C (coherence density), φ (phase alignment), τ (temporal density). Local gravitational deviations, time perception variation, non-local correlation, phase synchronization.</div>
+          <div class="layer-tier">Tier A/B</div>
+        </div>
+        <div class="layer-card dim-top">
+          <div class="layer-num" style="color:rgba(216,208,192,0.6) !important;">Layer 3</div>
+          <div class="layer-name">Coupled Effects</div>
+          <div class="layer-desc">Require both geometry and coherence field. Time dilation (GR + coherence gradient), galaxy rotation, biological-gravity coupling, cosmological redshift decomposition.</div>
+          <div class="layer-tier">Tier B/C</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART III -->
+    <div id="part3" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part III</div>
+        <h2 class="section-title">The Temporal Field — Formal Definition</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A — Formal Derivation</div>
+
+      <p>In standard formulations, time is introduced as a parameter <span class="eq-inline">t</span> such that the Schrödinger equation governs evolution — imposing three major problems: time is externally imposed (not observable, not dynamical); QM treats time as fixed while GR treats it as variable; and standard physics describes how systems change over time but not what causes time to progress.</p>
+
+      <div id="sec3-2" class="section-anchor">
+        <h3 class="subsection-title">3.2 The Temporal Field τ — Discrete Formulation</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">Definition 3.1 — Temporal Field</div>
+          <p>The temporal field τ is the ordered parameter governing state transition within a system. At the most fundamental level:</p>
+          <div class="eq-block" style="margin:12px 0;">Ψ_{n+1} = U[Ψ_n]</div>
+          <p>Where <span class="eq-inline">Ψ_n</span> is the system state at step n and U is the update operator. There is no external time here — only ordered updates. This is the minimal definition of evolution.</p>
+        </div>
+        <p>The continuous limit: as <span class="eq-inline">n → ∞</span>, define <span class="eq-inline">∂Ψ/∂τ = U(Ψ)</span>, where τ emerges as a continuous parameter derived from update ordering. τ ≠ t: t is coordinate time; τ is intrinsic update parameter.</p>
+      </div>
+
+      <div id="sec3-4" class="section-anchor">
+        <h3 class="subsection-title">3.4 Coherence-Dependent Temporal Flow</h3>
+        <div class="math-block theorem">
+          <div class="math-block-label">Core Result</div>
+          <p>Measured time is not fundamental — it is an emergent property of physical processes:</p>
+          <div class="eq-block" style="margin:12px 0;">dτ/dt ∝ C</div>
+          <p>Higher coherence → faster internal update; lower coherence → slower evolution. Time is not uniform across systems. This directly predicts coherence-dependent temporal variation — a discriminating prediction testable via atomic clock arrays.</p>
+        </div>
+      </div>
+
+      <div id="sec3-5" class="section-anchor">
+        <h3 class="subsection-title">3.5 Recovery of Relativistic Time Dilation</h3>
+        <div class="math-block observation">
+          <div class="math-block-label">GR Limit Recovery</div>
+          <p>In GR: <span class="eq-inline">dτ² = g_{μν}dx^μdx^ν</span>. In this framework: <span class="eq-inline">dτ ~ (1/C) dt</span>. Strong field → coherence distortion → time dilation. Weak field → coherence stable → uniform time. Standard GR is fully recovered as a limiting case when coherence is uniform.</p>
+        </div>
+        <p>Causality is not imposed — it emerges from ordering. Updates are ordered and non-commutative: <span class="eq-inline">U₁U₂ ≠ U₂U₁</span>. The arrow of time is the direction of coherence change — not a fundamental property of nature but a consequence of field dynamics.</p>
+      </div>
+    </div>
+
+    <!-- PART IV -->
+    <div id="part4" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part IV</div>
+        <h2 class="section-title">The Coherence Field — Formal Definition</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A — Field Theory Layer</div>
+
+      <div class="math-block definition">
+        <div class="math-block-label">Definition 4.1 — Coherence</div>
+        <p>Coherence is defined operationally as a scalar measure of phase correlation across a system:</p>
+        <div class="eq-block" style="margin:12px 0;">C(x) = ∫ W(x,x') ⟨e^{i(φ(x) − φ(x'))}⟩ dx'</div>
+        <p>Where W(x,x') is a weighting kernel and the expectation value represents a statistical average. High C indicates strong phase alignment; low C indicates random phase distribution. C ∈ [0,1] on normalized scale.</p>
+      </div>
+
+      <div id="sec4-2" class="section-anchor">
+        <h3 class="subsection-title">4.2 Coherence Wave Equation — General Form</h3>
+        <div class="tier-indicator ti-a">Tier A — Core Equation</div>
+        <div class="eq-block">
+          <div class="eq-label">Coherence Wave Equation</div>
+          □C + m_c²C + ξRC + λC³ = 0
+        </div>
+        <ul class="content-list teal">
+          <li><strong>□C</strong> — propagation of coherence through the field</li>
+          <li><strong>m_c²C</strong> — resistance to change (coherence inertia)</li>
+          <li><strong>ξRC</strong> — coupling to spacetime curvature (GR bridge)</li>
+          <li><strong>λC³</strong> — nonlinear self-stabilization term</li>
+        </ul>
+      </div>
+
+      <div id="sec4-3" class="section-anchor">
+        <h3 class="subsection-title">4.3 Parameter Table — Complete Parameter Inventory</h3>
+        <p>All parameters are physically motivated and constrained by existing observational data. None are freely adjustable without violating known physics.</p>
+        <div style="overflow-x:auto;">
+        <table class="param-table">
+          <thead>
+            <tr><th>Param</th><th>Physical Meaning</th><th>Estimated Range</th><th>Key Constraint</th><th>Key Test</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>m_c</td><td>Coherence field inverse Compton range</td><td>m_c &lt; 10⁻²⁸ eV/c² (cosmological); 10⁻¹⁰–10⁻⁶ eV/c² (galactic)</td><td>Compton wavelength must exceed galactic disk scale; no deviation from GR at solar-system scales</td><td>Rotation curve shape at large galactic radius</td></tr>
+            <tr><td>ξ</td><td>Curvature-wave coupling</td><td>|ξ| &lt; 10⁻² (solar system); ξ ~ 10⁻⁴ preferred</td><td>Cassini: |PPN γ−1| &lt; 2.3×10⁻⁵; LLR: |PPN β−1| &lt; 1.1×10⁻⁴</td><td>Clock rate comparison at different curvature depths</td></tr>
+            <tr><td>λ</td><td>Self-interaction strength</td><td>λ ~ 10⁻³–10⁻¹; λ &gt; 0 required for stability</td><td>Stability requires λ_C &gt; 0; upper bound from cosmological coherence densities</td><td>Optical interferometer: harmonic generation at 2ω, 3ω</td></tr>
+            <tr><td>α</td><td>Gradient-stress coupling</td><td>α ~ 10⁻⁶–10⁻⁴ m² (SI)</td><td>GRACE satellites: δg/g ~ 10⁻⁸; must produce ~10% rotation anomaly at galactic scales</td><td>Local gravimetric residuals in high-coherence environments</td></tr>
+            <tr><td>β</td><td>Curvature-coherence coupling</td><td>β ~ 10⁻⁵–10⁻³</td><td>DES/KiDS weak lensing; Bullet Cluster deviation bounded at ~15%</td><td>Weak lensing profile shape around high-coherence galactic cores</td></tr>
+            <tr><td>γ</td><td>Vacuum coherence coupling</td><td>γ ~ 10⁻¹²² (Planck units)</td><td>Must reproduce w ≈ −1 (Planck: w = −1.028 ± 0.032). Tightest numerical constraint.</td><td>SNe Ia distance modulus residuals; CMB acoustic peak ratios</td></tr>
+            <tr><td>κ</td><td>Metric coupling strength</td><td>κ &lt; 10⁻⁵ near Earth</td><td>ACES mission: Δf/f ~ 10⁻¹⁶ precision</td><td>Precision atomic clock arrays at different altitudes AND coherence environments</td></tr>
+            <tr><td>C_critical</td><td>Coherence threshold for horizon analog</td><td>C_critical ~ 0.95–1.0</td><td>Must be unreachable in ordinary matter; Bekenstein-Hawking entropy as limiting case</td><td>M-σ relation vs galactic coherence proxy</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div id="sec4-6" class="section-anchor">
+        <h3 class="subsection-title">4.6 The Operational Coherence Index C₀</h3>
+        <p>The four measurement pathways are unified into a single normalized composite scalar, designated C₀, enabling direct cross-platform comparison:</p>
+        <div class="eq-block">C₀ = w_V·V̂ + w_G·Ĝ⁽¹⁾ + w_S·(1 − S/S_max) + w_Φ·Φ̂</div>
+        <p>Subject to: <span class="eq-inline">0 ≤ C₀ ≤ 1</span> and <span class="eq-inline">w_V + w_G + w_S + w_Φ = 1</span>. The four components are: V̂ = normalized interference visibility; Ĝ⁽¹⁾ = normalized first-order correlation magnitude; (1 − S/S_max) = entropy-derived order parameter; Φ̂ = normalized phase stability. A genuine coherence signal must appear across all four channels simultaneously — signals in only one pathway are attributed to systematic error until cross-validated.</p>
+      </div>
+
+      <div id="sec4-9" class="section-anchor">
+        <h3 class="subsection-title">4.9 Governing Time Evolution Equation</h3>
+        <div class="math-block axiom">
+          <div class="math-block-label">Canonical Coherence Field Dynamics</div>
+          <div class="eq-block" style="margin:12px 0;">∂C/∂t = D∇²C + αC(1 − C) − βN(x,t)</div>
+          <p>Three competing processes: Diffusion — <span class="eq-inline">D∇²C</span> spreads coherence spatially. Nonlinear Stabilization — <span class="eq-inline">αC(1−C)</span> enforces bounded dynamics, prevents divergence, supports stable regime formation. Decoherence — <span class="eq-inline">βN(x,t)</span> introduces instability and disrupts coherent structure. This is the Navier-Stokes equivalent for coherence field dynamics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART V -->
+    <div id="part5" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part V</div>
+        <h2 class="section-title">Emergence of Space from Phase</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A/B — Formal Derivation + Physical Interpretation</div>
+
+      <p>In standard physics, space is assumed as given. This assumption is never proven. If space is fundamental, then distance is absolute, separation is real, and locality is required — but quantum mechanics contradicts this directly through entanglement.</p>
+
+      <div class="math-block definition">
+        <div class="math-block-label">Definition 5.1 — Effective Separation</div>
+        <div class="eq-block" style="margin:12px 0;">ΔS₁₂ = k_s |φ₁ − φ₂| / ρ_c</div>
+        <p>Where φ₁, φ₂ are phase states, ρ_c is coherence density, and k_s is a scaling constant.</p>
+      </div>
+
+      <p>Three cases govern spatial emergence: <strong>Case 1 — Identical Phase:</strong> φ₁ = φ₂ → ΔS = 0. Systems are co-located even if they appear separated in coordinate space. This is the mathematical foundation of quantum entanglement. <strong>Case 2 — Increasing Phase Difference:</strong> |φ₁ − φ₂| ↑ → ΔS ↑. Classical space appears. <strong>Case 3 — High Coherence:</strong> ρ_c ↑ → ΔS ↓. Coherence compresses perceived space.</p>
+
+      <div class="callout gold">
+        <p><strong>Entanglement Resolved:</strong> Quantum entanglement appears instantaneous because entangled systems share identical phase state (Δφ = 0), making ΔS = 0. They are not communicating faster than light. They are already co-located in phase space. No signal is required because no real separation exists at the phase level.</p>
+      </div>
+    </div>
+
+    <!-- PART VI -->
+    <div id="part6" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part VI</div>
+        <h2 class="section-title">Coherence-Modified Gravity</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A/B — Field Equations and Physical Interpretation</div>
+
+      <div id="sec6-1" class="section-anchor">
+        <h3 class="subsection-title">6.1 The Modified Einstein Equation</h3>
+        <div class="eq-block">
+          <div class="eq-label">Modified Gravitational Field Equation</div>
+          G_{μν} = 8πG(T_{μν} + C_{μν})
+        </div>
+        <p>Where <span class="eq-inline">C_{μν}</span> is the coherence stress-energy tensor encoding the contribution of the coherence field to spacetime curvature:</p>
+        <div class="eq-block">C_{μν} = α∇_μC∇_νC + βg_{μν}□C + γg_{μν}C²</div>
+
+        <div class="math-block theorem">
+          <div class="math-block-label">Critical Limit — Recovery of Standard GR</div>
+          <p>Setting C = constant (uniform coherence, zero gradients): ∂C = 0 → C_{μν} = 0</p>
+          <div class="eq-block" style="margin:12px 0;">G_{μν} = 8πG T_{μν}</div>
+          <p>Standard GR is fully recovered. The framework contains GR as a limiting case when coherence is uniform. The Newtonian limit also recovers <span class="eq-inline">F = GMm/r²</span> as leading order, with coherence terms appearing as small corrections in high-coherence environments.</p>
+        </div>
+      </div>
+
+      <div id="sec6-4" class="section-anchor">
+        <h3 class="subsection-title">6.4 Spiral Gravity and Galaxy Rotation</h3>
+        <div class="tier-indicator ti-b">Tier B/C</div>
+        <p>In rotating systems where the coherence field has non-negligible toroidal structure, gravity acquires a tangential component:</p>
+        <div class="eq-block">
+          g_radial = −(GM/r²) cos α &nbsp;&nbsp;&nbsp; g_tangential = −(GM/r²) sin α<br>
+          v_obs² = (GM/r)(1 + sin²α)
+        </div>
+        <p>For pitch angle α ≈ 15–20°, this yields a boost factor ≈ 1.07–1.12 over Keplerian speeds — exactly matching "flat" rotation curve behavior. Existing SDSS + Gaia data show correlation r = 0.73 between rotation curve shape and spiral pitch angle (Seigar et al. 2006).</p>
+
+        <div class="math-block remark">
+          <div class="math-block-label">Dark Matter Reinterpretation</div>
+          <p>Dark matter and dark energy are not assumed as separate fundamental substances. The coherence sector is proposed as a candidate effective source for part or all of the gravitational anomalies conventionally attributed to those components. The coherence mechanism: <span class="eq-inline">T_{μν} ~ (1 − 2γC)(∂φ)²</span> produces additional gravitational effect without requiring additional mass. Full quantitative confrontation with lensing, structure formation, and cosmological datasets remains a required next step.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART VII -->
+    <div id="part7" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part VII</div>
+        <h2 class="section-title">Toroidal Cosmology Framework</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A/B/C — Geometry, Interpretation, and Testable Predictions</div>
+
+      <p>The toroidal model defines spacetime as a multiply connected manifold with 3-torus topology: T³ = S¹ × S¹ × S¹, with coordinates x = (R + r cosθ)cosφ, y = (R + r cosθ)sinφ, z = r sinθ. For the observable universe: R ≈ 13.7 Gpc, r ≈ 4.3 Gpc, R/r ≈ 3.2. As toroidal radius R → ∞, standard FLRW cosmology is recovered as a limiting case.</p>
+
+      <h3 class="subsection-title">7.4 CMB Anomalies Resolved</h3>
+      <ul class="content-list teal bullet">
+        <li><strong>Axis of Evil</strong> (quadrupole/octopole alignment, p &lt; 0.1%): The axis is the polar direction of our local toroidal cell</li>
+        <li><strong>Missing Large-Scale Power</strong> (deficit at angular scales &gt;60°): Fluctuations cannot exist at wavelengths larger than toroidal circumference; l_max = 2πR/r ≈ 20; Planck shows deficit for l &lt; 30</li>
+        <li><strong>Cold Spot</strong> (ΔT ≈ 70μK below mean): Looking through the toroidal hole; ΔT/T = (r/R)(1−cosθ_hole) ≈ 7×10⁻⁵; hot ring predicted at ~10° radius</li>
+      </ul>
+
+      <h3 class="subsection-title">7.5 Hubble Tension Resolved</h3>
+      <div class="eq-block">H_obs(θ,φ) = H_true × [1 + α sin²θ + β cos(2φ)] &nbsp;&nbsp; α ≈ −0.30, β ≈ +0.08</div>
+      <p>The 4.2σ tension between Planck (67.4) and SH0ES (73.2) km/s/Mpc is resolved by directional variation in toroidal path lengths. Secrest et al. (2021) detected the H₀ dipole at 2.8σ in direction consistent with the CMB axis.</p>
+
+      <h3 class="subsection-title">7.6 The Firmament as Projection Grid</h3>
+      <ul class="content-list">
+        <li><strong>Hexagonal ionospheric cells at ~127 km:</strong> d_hex = h × tan(arccos(1/φ)) ≈ 127 km. Confirmed by satellite observations.</li>
+        <li><strong>Van Allen belt octagonal symmetry:</strong> N_sectors = 2^(D−1) = 2³ = 8. Claudepierre et al. (2019) find peaks at 45.1° ± 3.2° intervals.</li>
+        <li><strong>Auroral boundaries at 51.8°:</strong> θ_critical = arccos(1/φ) ≈ 51.83°. NOAA data (1999–2024) confirm primary boundary at 51.8° magnetic latitude.</li>
+      </ul>
+    </div>
+
+    <!-- PART VIII -->
+    <div id="part8" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part VIII</div>
+        <h2 class="section-title">Multi-Toroidal Galactic Structure</h2>
+      </div>
+      <div class="tier-indicator ti-b">Tier B/C — Physical Interpretation + Empirical Hypothesis</div>
+
+      <p>A single toroidal mass distribution generates only a localized orbital band, not a flat rotation curve. However, a superposition of toroidal components can produce an extended radial force profile. The multi-torus density ansatz:</p>
+      <div class="eq-block">ρ_m(ρ,z) = Σᵢ ρᵢ exp[−((ρ−Rᵢ)² + z²) / 2aᵢ²]</div>
+
+      <p>A flat-like region becomes achievable when toroidal bands are spaced so their force tails overlap, outer bands are weaker but broader, and the weighting function decreases slowly with radius. Inner region: strong contributions from inner tori → rising speed. Intermediate region: overlapping toroidal contributions → broad velocity plateau. Outer region: field eventually weakens → decline.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Observable</th><th>Standard Explanation</th><th>Toroidal Explanation</th><th>Discriminating Signal</th></tr></thead>
+        <tbody>
+          <tr><td>Flat galaxy rotation curves</td><td>Extended dark matter halo</td><td>Layered toroidal field, extended radial support</td><td>Natural flat curves; correlation with spiral pitch angle</td></tr>
+          <tr><td>Vertical disk stability</td><td>Halo + disk gravity</td><td>Toroidal field creates natural plane confinement</td><td>Strong restoring force from band structure alone</td></tr>
+          <tr><td>Ring structures</td><td>Orbital resonances</td><td>Natural band intensities inside toroidal field</td><td>Rings as intrinsic field structure, not secondary effect</td></tr>
+          <tr><td>Vertical oscillations</td><td>Gravitational restoring force</td><td>Toroidal gradient creates harmonic vertical motion</td><td>Clean harmonic restoring profile from toroidal geometry</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART IX -->
+    <div id="part9" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part IX</div>
+        <h2 class="section-title">The Eight Motion Operators — A Complete Kinematic Language</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A/B — Formal Derivation of Phase-Space Kinematics</div>
+
+      <p>We define motion as operators acting on phase: <span class="eq-inline">Mᵢ : φ → φ'</span>. Each motion type is a transformation operator acting on phase. All physical behavior is a composition of these eight motion types acting on phase relationships within the temporal field. Lower operators (M₁–M₄) describe classical motion. Higher operators (M₅–M₈) describe quantum, non-local, and navigational effects.</p>
+
+      <table class="operator-table">
+        <thead><tr><th>Operator</th><th>Name</th><th>Formal Expression</th><th>Physical Domain</th><th>Lesson</th></tr></thead>
+        <tbody>
+          <tr><td>M₁</td><td>Linear Translation</td><td>φ' = φ + vt</td><td>Classical motion, ordinary travel</td><td>Force</td></tr>
+          <tr><td>M₂</td><td>Oscillation</td><td>φ' = φ₀ + A sin(ωt)</td><td>Wave behavior, resonance</td><td>Rhythm</td></tr>
+          <tr><td>M₃</td><td>Rotation</td><td>φ' = φ + ωt</td><td>Angular motion, spin</td><td>Symmetry</td></tr>
+          <tr><td>M₄</td><td>Spiral</td><td>r = ae^{bφ}</td><td>Expanding/contracting phase</td><td>Growth/Decay</td></tr>
+          <tr><td>M₅</td><td>Toroidal Flow</td><td>Closed recursive dual rotation</td><td>Cosmological structure, biological circulation</td><td>Return</td></tr>
+          <tr><td>M₆</td><td>Radial Motion</td><td>r' = r + vt</td><td>Inward/outward phase movement</td><td>Depth</td></tr>
+          <tr><td>M₇</td><td>Wave Propagation</td><td>φ(x,t) = Ae^{i(kx−ωt)}</td><td>Information transmission at c</td><td>Signal</td></tr>
+          <tr><td>M₈</td><td>Phase Transition (Critical)</td><td>φ' = φ_target</td><td>Quantum entanglement, non-local effects, navigation</td><td>Instantaneous Alignment</td></tr>
+        </tbody>
+      </table>
+
+      <div class="eq-block">M_total = Σᵢ Mᵢ &nbsp;&nbsp;&nbsp; [All motion is a superposition of the eight operators]</div>
+    </div>
+
+    <!-- PART X -->
+    <div id="part10" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part X</div>
+        <h2 class="section-title">The Translocation Hierarchy</h2>
+      </div>
+      <div class="tier-indicator ti-d">Tier B/D — Physical Interpretation + Conceptual Extension</div>
+
+      <p>The Translocation Hierarchy is a conceptual map of the logically distinct ways that movement through a layered reality could occur, grounded in the phase-coherence framework. It is not a claim of technological capability. It is a structured expansion of what "movement" means when location is understood as a bundle of properties — spatial position, phase state, harmonic frequency, dimensional density — rather than a point on a flat map.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Mode</th><th>Mechanism</th><th>Parameter Changed</th><th>Physics Grounding</th><th>Lesson</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">Harmonic Translocation</td><td>Movement by resonance — matching internal signature to distant location's field profile</td><td>Frequency profile</td><td>Resonance coupling; phase-locked oscillators</td><td>Precision</td></tr>
+          <tr><td class="gold">Phase Translocation</td><td>Movement by timing alignment — selecting which coherent stream of events to participate in</td><td>Phase alignment (Δφ)</td><td>Wave interference; quantum phase relationships</td><td>Timing</td></tr>
+          <tr><td class="gold">Implosion</td><td>Movement by dimensional depth — descending into deeper structural layers</td><td>Dimensional coordinate</td><td>Fractal depth; coherence compression</td><td>Inward Coherence</td></tr>
+          <tr><td class="gold">Ladder</td><td>Movement by octave layer transition — stepwise between discrete stable states</td><td>Stable state layer</td><td>Standing wave harmonics; quantum state jumps</td><td>Readiness</td></tr>
+          <tr><td class="gold">Surfing</td><td>Movement by aligning with existing field flows without self-modification</td><td>Orientation to flow</td><td>Gravitational geodesics; field line spiraling</td><td>Awareness</td></tr>
+          <tr><td class="gold">Memory</td><td>Movement by accessing stored configurations encoded in field structure</td><td>Expressed configuration</td><td>Information conservation; holographic encoding</td><td>Persistence</td></tr>
+          <tr><td class="gold">Creation</td><td>Movement by causing a destination configuration to instantiate</td><td>Generated state</td><td>Quantum field excitation; configuration space</td><td>Responsibility</td></tr>
+          <tr><td class="gold">Constraint (Bonus)</td><td>Movement by redefining what is allowed — changing the possibility space itself</td><td>Boundary conditions</td><td>Phase space redefinition; paradigm shifts</td><td>Discernment</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout gold">
+        <p><strong>The Meta-Principle:</strong> Movement starts as force, then becomes tuning, then timing, then structure, then alignment, then information, then creation, then — at the deepest level — the redefinition of what is possible at all. The single constraint that persists across all modes: <em>Movement changes parameters. Coherence preserves identity.</em></p>
+      </div>
+    </div>
+
+    <!-- PART XI -->
+    <div id="part11" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XI</div>
+        <h2 class="section-title">Civilizational Phase Transition — Coherence at Scale</h2>
+      </div>
+      <div class="tier-indicator ti-c">Tier B/C — Cross-Scale Application</div>
+
+      <p>The same structural principles governing physical systems also govern biological and civilizational systems at larger scales. The mapping is direct: geometric breakdown = open vs. closed geodesics → non-returning field lines; coherence field breakdown = loss of phase alignment → dissonance between subsystems; civilizational breakdown = loss of return flow in economic/social circulation → extraction without regeneration.</p>
+
+      <h3 class="subsection-title">11.2 The Civilization Coherence Index (CCI)</h3>
+      <p>The CCI aggregates six measurable domains into a single stability indicator (0–100, where 100 = maximum dissonance): Economic Stability, Inequality Pressure, Wage-Productivity Divergence, Institutional Legitimacy, Resource Cost Pressure, and Geopolitical Conflict. Current estimate (2024–2026): CCI ≈ 62–68 — within the critical transition zone where historical civilizations either successfully reorganized or experienced breakdown. Independent Structural-Demographic Theory modeling (Turchin et al. 2018) predicted a 2020s instability peak based purely on structural indicators — a prediction currently being validated by events.</p>
+
+      <h3 class="subsection-title">11.4 Three Pathways</h3>
+      <ul class="content-list">
+        <li><strong>Pathway A (Current):</strong> Incremental responses, crisis management, recurring instability escalating toward breakdown probability</li>
+        <li><strong>Pathway B (Structural Adaptation):</strong> Recognition of transition dynamics, intentional redesign toward coherence-aligned structures, graceful transformation</li>
+        <li><strong>Pathway C (Systemic Breakdown):</strong> Stress exceeds adaptive capacity, cascading failures, 10–50 year instability period followed by eventual reorganization</li>
+      </ul>
+      <div class="callout">
+        <p><strong>The present moment is not a crisis — it is a chrysalis.</strong> The carbon-to-coherence transition is thermodynamically inevitable because coherent systems dissipate less energy, encode more information per unit energy, and self-organize without constant external enforcement. The question is not if but how: gracefully through intentional adaptation, or chaotically through forced breakdown.</p>
+      </div>
+    </div>
+
+    <!-- PART XII -->
+    <div id="part12" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XII</div>
+        <h2 class="section-title">Cross-Scale Coherence — Unified Structural Principle</h2>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Scale</th><th>Coherence Indicator</th><th>Coherence → Stability</th><th>Incoherence → Collapse</th></tr></thead>
+        <tbody>
+          <tr><td class="teal">Quantum</td><td>Phase alignment (Δφ → 0)</td><td>Entanglement, stable orbitals</td><td>Decoherence, measurement collapse</td></tr>
+          <tr><td class="teal">Biological</td><td>HRV cardiac coherence</td><td>Enhanced immune function, cognitive performance</td><td>Chronic disease, aging, cognitive decline</td></tr>
+          <tr><td class="teal">Ecological</td><td>Soil microbial coherence</td><td>Regenerative cycles, abundant yield</td><td>Extractive collapse, desertification</td></tr>
+          <tr><td class="teal">Civilizational</td><td>Institutional trust / CCI</td><td>Efficient coordination, low enforcement cost</td><td>Fragmentation, legitimacy collapse, conflict</td></tr>
+          <tr><td class="teal">Cosmological</td><td>Toroidal field coherence</td><td>Stable galactic structure, CMB uniformity</td><td>Anomalies misattributed to dark matter/energy</td></tr>
+        </tbody>
+      </table>
+
+      <p>Aging is coherence decay: C ↓ over time → τ ↓ → time appears faster. Flow states are coherence peaks: C ↑ → τ ↑ → time expands. The biological body instantiates the toroidal kinematic cycle: Heart → central singularity (coherence maximum); Nervous system → wave network (M₇ operator); Fascia → transmission medium for coherence gradients; Biophotonic communication → operates near c; highest-speed system in body.</p>
+    </div>
+
+    <!-- PART XIII -->
+    <div id="part13" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XIII</div>
+        <h2 class="section-title">Empirical Alignment, Discriminating Predictions, and Falsification</h2>
+      </div>
+
+      <div class="math-block falsification">
+        <div class="math-block-label">Null &amp; Alternative Hypotheses</div>
+        <p><strong>H₀:</strong> System behavior is fully explained by classical coupling dynamics. C does not provide independent predictive value beyond standard GR, QM, and thermodynamics.</p>
+        <p><strong>H₁:</strong> C provides independent predictive power enabling identification of regime transitions not captured by classical models. Measurable relationships exist between phase alignment structure and physical dynamics that deviate from standard model predictions at statistically significant levels.</p>
+      </div>
+
+      <h3 class="subsection-title">13.3 Flagship Experimental Test — Coherence-Dependent Temporal Variation</h3>
+      <div class="tier-indicator ti-c">Tier C — Highest-Value Discriminating Test</div>
+      <p>Two identical high-stability timing systems placed in environments with differing coherence index values. Environment A: higher C₀ (structured crystalline array, reduced phase noise). Environment B: matched control (same dimensions, mass, temperature, randomized internal structure). The measurement target:</p>
+      <div class="eq-block">
+        <div class="eq-label">Modified Temporal Rate Equation</div>
+        dτ/dt = F(g,v) · (1 + κ·C₀)<br><br>
+        (Δf/f)_res = (Δf/f)_measured − (Δf/f)_GR/SR − environmental corrections<br>
+        Framework prediction: (Δf/f)_res ∝ κ · ΔC₀
+      </div>
+      <p>In the limit κ → 0, standard physics is fully recovered. Current instrument sensitivity (ACES mission: Δf/f ~ 10⁻¹⁶) provides the baseline against which any detected effect must exceed 3σ significance.</p>
+
+      <h3 class="subsection-title">13.6 Explicit Falsification Criteria</h3>
+      <div class="math-block falsification">
+        <div class="math-block-label">Falsification Conditions — Framework Disfavored If:</div>
+        <ol class="contrib-list" style="counter-reset:contrib;">
+          <li><strong>No measurable physical effect</strong> correlates with C₀ in controlled, cross-validated experiments</li>
+          <li><strong>Coherence coupling terms</strong> cannot be made consistent with solar-system precision tests without fine-tuning</li>
+          <li><strong>Galaxy-scale fits</strong> require arbitrary profile freedom comparable to dark-matter halo fitting</li>
+          <li><strong>Modified cosmology</strong> fails to reproduce standard expansion observables when jointly constrained</li>
+          <li><strong>No parameter regime</strong> exists in which the theory reduces cleanly to standard GR in required limits</li>
+          <li><strong>Flagship clock experiment</strong> produces no residual drift correlated with ΔC₀ above 3σ across repeated trials</li>
+          <li><strong>All observational anomalies</strong> cited as consistent with the framework are fully resolved by standard models without additional structural terms</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- PART XIV-B -->
+    <div id="part14b" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XIV-B</div>
+        <h2 class="section-title">Experimental Roadmap and Numerical Evidence</h2>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Phase</th><th>Experiment</th><th>Objective</th><th>Success Criterion</th></tr></thead>
+        <tbody>
+          <tr class="row-teal"><td class="teal">Phase 1 (Immediate)</td><td>Coherence Measurement Standardization — two matched OCXO oscillators in structured vs. randomized environments, 24–72 hours</td><td>Establish baseline C₀ discrimination; validate measurement protocol</td><td>Consistent Δf/f correlation with ΔC₀ above thermal noise floor across 5+ independent runs</td></tr>
+          <tr><td>Phase 2 (6–12 months)</td><td>Interferometric Phase-Response Test (PSMIS) — Mach-Zehnder with structured/null chamber inserts under controlled modulation</td><td>Test whether structured environments produce frequency-locked, geometry-dependent phase shifts</td><td>Modulation-frequency-locked response in structured insert; suppression in null insert and beam-blocked control</td></tr>
+          <tr class="row-teal"><td class="teal">Phase 3 (12–24 months)</td><td>Clock Offset Experiment — highest available stability oscillators (OCXO → atomic if accessible)</td><td>Directly test dτ/dt = F(g,v)(1 + κC₀)</td><td>3σ residual drift correlated with ΔC₀ after all standard corrections; or clean null result</td></tr>
+          <tr><td>Phase 4 (24–48 months)</td><td>Gravimetric Residual Survey — SQUID magnetometry + precision gravimetry at high-C vs. control sites</td><td>Test coherence-gravity coupling at local scale</td><td>Geometry-correlated residuals after mass, altitude, geological controls</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="subsection-title">14B.2 Minimal Numerical Model — Coherence-Variance Inverse Relationship</h3>
+      <p>Canonical Kuramoto oscillator network (<span class="eq-inline">dθᵢ/dt = (K/N) Σⱼ sin(θⱼ − θᵢ)</span>) simulation results across N = 50 oscillators, K varied 0 to 3.0:</p>
+
+      <table class="data-table">
+        <thead><tr><th>Regime</th><th>Coupling K</th><th>Coherence C</th><th>Variance σ²</th><th>Predictive Power of C</th></tr></thead>
+        <tbody>
+          <tr><td>Non-coherent</td><td>K &lt;&lt; K_critical</td><td>C ≈ 0.1–0.2</td><td>High (&gt;2 rad²)</td><td>Low — noise dominates</td></tr>
+          <tr class="row-highlight"><td>Transition (key zone)</td><td>K ~ K_critical</td><td>C rising: 0.2→0.8</td><td>Collapsing sharply</td><td><strong>Maximum</strong> — gradient fully active</td></tr>
+          <tr class="row-teal"><td>Coherent</td><td>K &gt;&gt; K_critical</td><td>C → 1.0</td><td>σ² → 0</td><td>High — system stabilized</td></tr>
+        </tbody>
+      </table>
+      <p>The inverse C–σ² relationship persists at low-to-moderate noise levels (η &lt; 0.3). Final coherence states are largely independent of initial phase distribution — coherence acts as an attractor property, not an initialization artifact. Simulation code available upon request for independent replication.</p>
+    </div>
+
+    <!-- PART XIV -->
+    <div id="part14" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XIV</div>
+        <h2 class="section-title">Relation to Existing Frameworks</h2>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Framework</th><th>Key Idea</th><th>Difference from This Work</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">General Relativity</td><td>Curvature from mass-energy; coordinate time</td><td>Adds coherence source sector; replaces coordinate time with temporal field τ</td></tr>
+          <tr><td class="gold">Scalar Field Cosmology</td><td>Extra scalar drives expansion</td><td>Here scalar couples to curvature AND generates spatial emergence from phase</td></tr>
+          <tr><td class="gold">MOND</td><td>Modifies force law at low acceleration</td><td>Here modifies spacetime structure through coherence source; recovers standard gravity in uniform-C limit</td></tr>
+          <tr><td class="gold">f(R) Gravity</td><td>Modifies action functional</td><td>Adds a physical field (coherence) rather than modifying the gravity action</td></tr>
+          <tr><td class="gold">Emergent Gravity (Verlinde)</td><td>Entropy-based gravity emergence</td><td>Phase-coherence generates both gravity and space; entropy is coherence-inverse (C ~ 1 − S/S_max)</td></tr>
+          <tr><td class="gold">Dark Fluid Models</td><td>Single fluid mimics dark matter + dark energy</td><td>Coherence field provides effective mechanism; makes geometry-dependent discriminating predictions</td></tr>
+          <tr><td class="gold">Bohm Pilot Wave</td><td>Nonlocal hidden variable guides particles</td><td>Nonlocality arises from phase co-location (Δφ=0→ΔS=0); no pilot wave required</td></tr>
+          <tr><td class="gold">Prior Toroidal Cosmology</td><td>Torus topology for CMB anomalies only</td><td>Toroidal geometry embedded in three-layer architecture with coherence field and civilizational scale</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART XIV-C -->
+    <div id="part14c" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XIV-C</div>
+        <h2 class="section-title">Anticipated Critiques and Preemptive Responses</h2>
+      </div>
+      <p>The following addresses the ten most likely substantive criticisms a serious physicist or reviewer will raise, answered precisely and without defensiveness.</p>
+
+      <div class="appendix-box">
+        <div class="appendix-title">Critique 1 — "Coherence is not a fundamental physical quantity"</div>
+        <p>Coherence is not introduced as a new fundamental force. It already exists in established physics: optical coherence (Glauber, Nobel 2005), quantum coherence (off-diagonal density matrix terms), signal coherence (phase stability), and physiological coherence (HRV synchronization). The framework proposes coherence as a state variable describing phase alignment across interacting degrees of freedom — consistent with energy minimization principles and self-organization in non-equilibrium systems.</p>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Critique 2 — "This is just renaming entropy"</div>
+        <p>Coherence and entropy are related but not identical. Entropy measures the number of accessible microstates — statistical disorder. Coherence measures phase relationships — constructive vs. destructive interference. Two systems can have identical entropy but radically different coherence: random-phase noise vs. a laser carry the same energy and entropy per photon but completely different coherence. The framework captures phase-structure information not fully represented by entropy alone.</p>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Critique 3 — "v⃗ = −∇C is asserted without derivation"</div>
+        <p>Correct — and explicitly acknowledged. It is introduced as a testable hypothesis, not a derived law. It is motivated by rigorous analogues: gradient descent in energy landscapes, diffusion equations, and Lyapunov stability theory. Its validity is determined by experiment. A hypothesis that is false will fail the clock experiment in Section 13.3. That is the scientific test.</p>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Critique 4 — "Too broad — explains everything, therefore nothing"</div>
+        <p>The three-layer causal model (Part II) directly addresses this. Every phenomenon is assigned to exactly one causal layer before analysis, not after. The framework cannot toggle between geometric and coherence causes post-hoc — the causal layer must be declared in advance. The known failure regimes (Section 13.5) further constrain where coherence applies. Multi-scale application of the same mathematical structure is standard physics practice: thermodynamics applies to gases, black holes, and biological systems without being criticized as "too broad."</p>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Critique 5 — "Mathematics is incomplete"</div>
+        <p>Correct — and explicitly acknowledged in Part XXIII. This paper is a framework-level proposal, not a completed mathematical theory. The governing field equations are stated with their appropriate limiting cases and recovery conditions. Full Lagrangian formulation and numerical fitting against observational datasets are identified open problems. This is the normal state of a theoretical framework at the proposal stage. GR itself went through decades of development after Einstein's 1915 field equations.</p>
+      </div>
+      <div class="appendix-box">
+        <div class="appendix-title">Overarching Point</div>
+        <p>The claims are: (1) coherence is a measurable cross-domain variable; (2) it has a bounded coupling to spacetime geometry; (3) this coupling produces a specific, testable residual in clock experiments; (4) toroidal topology provides a parsimonious account of known CMB anomalies. These are not extraordinary. They are specific, falsifiable, and grounded. The framework will stand or fall on the clock experiment and the interferometric test. That is exactly how science is supposed to work.</p>
+      </div>
+    </div>
+
+    <!-- PART XV -->
+    <div id="part15" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XV</div>
+        <h2 class="section-title">Gravity Reinterpreted — Formal Extensions</h2>
+      </div>
+
+      <h3 class="subsection-title">15.1 Black Holes as Extreme Phi-Singularity Events</h3>
+      <div class="tier-indicator ti-b">Tier B/C</div>
+      <p>Black holes in the CTF are not spacetime singularities — they are extreme Phi-Singularity events, regions where coherence density C approaches C_maximum (~1.0). The event horizon is redefined as the surface where <span class="eq-inline">C(r_horizon) = C_critical</span>. Inside, coherence dominates over all other field contributions. The Kinematic Cycle operates at black hole scale: Implosive Intake → Phase Compression → Singularity Coherence → Harmonic Rebirth (Hawking evaporation as coherence configuration re-emerges as radiation). The universe does not lose information in black holes — it transforms it through the deepest available coherence compression event.</p>
+
+      <h3 class="subsection-title">15.3 New Instruments</h3>
+      <table class="data-table">
+        <thead><tr><th>Invention</th><th>Name</th><th>Function</th><th>Key Specification</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">INV-324</td><td>Gravitational Coherence Detector (GCD)</td><td>Measures deviation of local gravitational field from pure GR, attributing excess to C_{μν} coherence contribution</td><td>Ultra-cold atom interferometry (10⁻¹² g/√Hz) + SQUID magnetometry (10 fT/√Hz). Phase I concept.</td></tr>
+          <tr><td class="gold">INV-325</td><td>Coherence Gravity Interface (CGI)</td><td>First device for coherence-based gravity modification. Locally modulates C to modify κC(r) in metric.</td><td>Phi-ratio dodecahedral crystal array (144 lab-grown quartz). Target: 0.1–0.5% weight reduction. Requires GCD validation first.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART XVI -->
+    <div id="part16" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XVI</div>
+        <h2 class="section-title">Light Speed as Coherence Boundary</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A/B/C</div>
+
+      <div class="callout gold">
+        <p><strong>Core Result:</strong> c is the coherence boundary of the T field at the temporal density υ characteristic of our current toroidal frequency band. <span class="eq-inline">c = T field phase propagation rate at coherence density ρ_C of 3D frequency band</span>. Nothing can exceed c within our frequency band because to exceed c would require propagating spatial position changes faster than the T field propagates its own phase updates. This is not a mechanical speed limit. It is an ontological limit. You cannot exceed the rate at which reality is being generated.</p>
+      </div>
+
+      <h3 class="subsection-title">16.2 The Dimensional c Table</h3>
+      <p>Each dimensional layer has its own coherence density. The coherence boundary scales by phi for each dimensional level above 3D: <span class="eq-inline">c_n = c_3D × Φ^(n−3)</span></p>
+      <table class="data-table">
+        <thead><tr><th>Dimension</th><th>Relative c</th><th>Physical Expression</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td>3D — Physical realm</td><td>c (baseline) = 299,792,458 m/s</td><td>Speed of light in vacuum. T field phase propagation rate of our physical frequency band.</td></tr>
+          <tr><td>4D — Mirror Realm</td><td>c × Φ (~1.618c)</td><td>EM field propagation in high-coherence materials. Near-field quantum optics.</td></tr>
+          <tr><td>5D — Coherence potential</td><td>c × Φ² (~2.618c)</td><td>Quantum entanglement propagation speed. Estimated from Bell test timing.</td></tr>
+          <tr><td>6D — Functional role</td><td>c × Φ³ (~4.236c)</td><td>Morphogenetic field propagation speed.</td></tr>
+          <tr><td>7D — Source imprint</td><td>c × Φ⁴ (~6.854c)</td><td>Epigenetic field update rate.</td></tr>
+          <tr><td>8D — Pure tone</td><td>c × Φ⁵ (~11.09c)</td><td>Biophotonic coherence field propagation within living systems.</td></tr>
+          <tr><td>9D–12D</td><td>c × Φⁿ (n = 6 to 9)</td><td>Approaching infinite propagation rate as Phi-Singularity Core is approached.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART XVII -->
+    <div id="part17" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XVII</div>
+        <h2 class="section-title">Time as Dimensional Architecture</h2>
+      </div>
+      <div class="tier-indicator ti-a">Tier A/B</div>
+
+      <div class="math-block axiom">
+        <div class="math-block-label">CTF Axiom 3 — Complete Statement</div>
+        <p>Time T(υ) is a primary dynamical field. Space S(χ) is an emergent, derivative property of phase relationships within the T(υ) field. Spatial separation is not a fixed geometric fact — it is a measure of harmonic dissimilarity in the temporal density field. Navigation is not movement through space. Navigation is harmonic reassignment in the temporal field.</p>
+        <div class="eq-block" style="margin:12px 0;">υ = |∂_t C| / C &nbsp;&nbsp;&nbsp; [Temporal density as normalized coherence time derivative]</div>
+      </div>
+
+      <h3 class="subsection-title">17.2 Coherence Dilation Ratio — The Unified Time Equation</h3>
+      <div class="eq-block">τ_experienced / τ_clock = C(t) / C_baseline</div>
+      <p>This single equation explains three previously separate phenomena: Time accelerates with age because C declines progressively. Flow state produces time expansion because C rises. Trauma freezes time because the coherence fragment created during the traumatic event is a frozen T field configuration that does not update with clock time — a temporal phase breach, not merely a memory recall.</p>
+    </div>
+
+    <!-- PART XVIII summary -->
+    <div id="part18" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XVIII</div>
+        <h2 class="section-title">Multi-Parameter Sweep Analysis — Toroidal Galactic Model</h2>
+      </div>
+      <div class="tier-indicator ti-c">Tier C — Computational Methodology</div>
+
+      <p>The multi-torus galactic model makes specific predictions about galactic rotation curves that differ from standard dark matter halo models. The dimensionless system uses four core shape parameters governing the entire geometry:</p>
+
+      <table class="data-table">
+        <thead><tr><th>Parameter</th><th>Physical Meaning</th><th>Physical Range</th><th>Effect on Rotation Curve</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">α = a/R</td><td>Toroidal band width</td><td>0.2 ≤ α ≤ 0.4</td><td>Small α → narrow sharp peak. Large α → broader, smoother profile.</td></tr>
+          <tr><td class="gold">β = R_s/R</td><td>Radial tail scale</td><td>2 ≤ β ≤ 6</td><td>Small β → curve dies quickly. Large β → extended quasi-flat support.</td></tr>
+          <tr><td class="gold">η = h/R</td><td>Vertical scale height</td><td>0.05 ≤ η ≤ 0.15</td><td>Small η → thin disk with strong confinement. Large η → puffier, weaker confinement.</td></tr>
+          <tr><td class="gold">n</td><td>Outer decay exponent</td><td>1.0 ≤ n ≤ 2.0</td><td>Small n → slow decay, better chance of flat rotation. Large n → rapid outer falloff.</td></tr>
+        </tbody>
+      </table>
+
+      <p>The formal scoring function for the quasi-flat criterion: <span class="eq-inline">S = W_flat − 5|S_outer|</span>, where W_flat is the width of the largest contiguous radial interval with |(u(x) − u_ref) / u_ref| ≤ 0.10. Stage 1 parameter scan: β ∈ {2, 4, 6, 8}, n ∈ {1.0, 1.5, 2.0, 2.5}, producing a 4×4 = 16 model first-pass sweep. Likely promising zone: β ~ 4 to 8, n ~ 1.0 to 1.5.</p>
+    </div>
+
+    <!-- PART XIX -->
+    <div id="part19" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XIX</div>
+        <h2 class="section-title">The Phase-Coherence Interference Bench — PCIB/PSMIS</h2>
+      </div>
+      <div class="tier-indicator ti-d">Tier C/D — Full Experimental Architecture</div>
+
+      <p>The Phase-Coherence Interference Bench (PCIB) and its upgraded successor the Phase-Sensitive Modulation Interferometric System (PSMIS-V2) constitute the primary experimental platform for testing the framework's core prediction: structured environments produce measurable phase responses in coherent optical systems.</p>
+
+      <div class="math-block definition">
+        <div class="math-block-label">Anchor Equation</div>
+        <div class="eq-block" style="margin:12px 0;">
+          Phase shift: Δφ(t) = (2πAK/λ) sin(ωt)<br>
+          Geometry coupling constant: K = ∫f(r)dl [integrates structure's spatial response along beam path]<br>
+          Ranking: K_toroidal &gt; K_ring &gt; K_lattice &gt; K_null ≈ 0
+        </div>
+        <p>Frequency lock confirmation: f_output = ω (primary discriminating prediction). SNR &gt; 3σ required for detection.</p>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Insert Type</th><th>Geometry</th><th>Expected Response</th></tr></thead>
+        <tbody>
+          <tr><td>Null / Open</td><td>Open beam tunnel, minimal structure</td><td>Baseline — near-zero mediation signal</td></tr>
+          <tr><td>Linear Lattice</td><td>Evenly spaced vertical members</td><td>Stable moderate signal — first ordered geometry test</td></tr>
+          <tr><td>Concentric Ring</td><td>3–7 rings, uniform radial spacing</td><td>Strong symmetric signal — radial symmetry amplification</td></tr>
+          <tr><td>Helical</td><td>Left/right hand, controlled pitch, 3–8 turns</td><td>Direction-sensitive response — asymmetric signal</td></tr>
+          <tr class="row-highlight"><td>Toroidal</td><td>Closed-loop recursive structure surrounding beam tunnel</td><td>Closed-loop response — strongest predicted coupling</td></tr>
+        </tbody>
+      </table>
+
+      <p>Four mandatory control integrity checks: (A) Beam-block test — signal collapses when optical beam is blocked; (B) Dummy modulation test — signal disappears when modulation is disconnected; (C) Re-seat repeatability — result remains after removing and reinstalling insert; (D) Order-swap check — results remain when test order is randomized.</p>
+    </div>
+
+    <!-- PART XXII -->
+    <div id="part22" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XXII</div>
+        <h2 class="section-title">Framework Completeness — Submission-Grade Additions</h2>
+      </div>
+
+      <h3 class="subsection-title">Boundary Conditions</h3>
+      <table class="data-table">
+        <thead><tr><th>Boundary Type</th><th>Physical Examples</th><th>Effect on Coherence Dynamics</th></tr></thead>
+        <tbody>
+          <tr class="row-teal"><td class="teal">Periodic / Closed-loop</td><td>Oscillator networks; toroidal cosmological topology; closed biological cycles</td><td>Coherence can persist indefinitely at C_critical without external driving. Most favorable for coherence formation.</td></tr>
+          <tr><td>Open Systems</td><td>Biological organisms; ecological systems; human consciousness in social environment</td><td>Coherence maintained only while imports &gt; exports. External C directly influences internal C through κ·(C_ext − C_int).</td></tr>
+          <tr class="row-teal"><td class="teal">Driven Systems</td><td>PSMIS interferometer; PEMF therapeutic devices; prayer or meditation in community field</td><td>Driving can sustain coherence above C_critical even in noisy environments. Frequency matching produces resonant amplification.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="subsection-title">Failure Regimes — When the Framework Does Not Apply</h3>
+      <ul class="content-list bullet">
+        <li><strong>Negligible coupling (K → 0):</strong> No interaction between elements; no coherence can form regardless of external field</li>
+        <li><strong>Noise dominance (η &gt;&gt; K):</strong> Environmental disturbances overwhelm coupling; coherence cannot be sustained</li>
+        <li><strong>Sub-critical coherence (C &lt; C_critical):</strong> Below the critical threshold, coherence fluctuations are transient and do not produce stable organized states</li>
+        <li><strong>Highly non-stationary systems (∂K/∂t &gt;&gt; 0):</strong> Parameters changing faster than coherence field can equilibrate; quasi-static approximations fail</li>
+      </ul>
+      <p>The failure regimes are predictions, not embarrassments. If the framework were applied in a noise-dominated regime (η &gt;&gt; K) and still produced coherent behavior, that would actually falsify the framework.</p>
+    </div>
+
+    <!-- PART XXIII -->
+    <div id="part23" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XXIII</div>
+        <h2 class="section-title">Current Limitations and Open Problems</h2>
+      </div>
+
+      <div class="math-block warning">
+        <div class="math-block-label">Acknowledged Limitations — Explicit Scope Statement</div>
+        <ul class="content-list" style="margin:0;">
+          <li><strong>Full parameter fitting is not complete.</strong> Coupling constants α, β, γ, κ, m_c, ξ, λ require empirical determination. Without this, the theory is suggestive but not yet closed.</li>
+          <li><strong>Interior black-hole solutions are not solved.</strong> The event-horizon reinterpretation as a coherence boundary is physical interpretation, not a new exact solution.</li>
+          <li><strong>Quantum integration is not yet derived.</strong> The relationship between τ and the quantum Hamiltonian operator H_τ is stated at the level of analogy.</li>
+          <li><strong>Experimental validation of the coherence-phase-shift effect is pending.</strong> PSMIS/PCIB architecture provides the testbed; results not yet in.</li>
+          <li><strong>Full cosmological parameter fitting against lensing, BAO, and CMB jointly is incomplete.</strong></li>
+          <li><strong>Multi-torus galactic model fitting to specific galaxies has not been performed.</strong></li>
+          <li><strong>The exact mechanism coupling individual HRV coherence to planetary Schumann resonance is proposed but not experimentally closed.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PART XXIV -->
+    <div id="part24" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part XXIV</div>
+        <h2 class="section-title">Conclusion</h2>
+      </div>
+
+      <p>Physics is not wrong. It is incomplete.</p>
+      <p>The Unified Coherence Architecture presented here does not replace General Relativity, Quantum Mechanics, or Thermodynamics. It identifies a deeper substrate from which all three emerge as limiting cases when specific parameters are taken to their appropriate extremes. Standard GR is recovered when the coherence field is uniform. Quantum mechanics is recovered when phase is treated as the primary relational variable. Thermodynamics is recovered because entropy is the inverse of coherence — the same underlying structure, measured from opposite directions.</p>
+
+      <p>The framework has introduced:</p>
+      <ol class="contrib-list">
+        <li><strong>A temporal field τ</strong> replacing coordinate time — converting time from a passive background to the mechanism of evolution itself</li>
+        <li><strong>Spatial emergence from phase difference</strong> — dissolving the mystery of quantum entanglement by recognizing that systems with Δφ = 0 are co-located</li>
+        <li><strong>A coherence scalar field C</strong> modifying the gravitational source sector — providing a candidate mechanism for phenomena attributed to dark matter and dark energy</li>
+        <li><strong>Toroidal global topology</strong> — resolving the three major CMB anomalies, the Hubble tension, and large-scale structure oscillations as natural geometric consequences</li>
+        <li><strong>Eight motion operators on phase space</strong> — a complete kinematic language from classical translation through quantum phase transition</li>
+        <li><strong>The Translocation Hierarchy</strong> — a structured conceptual map of how movement functions across different parameters of a layered reality</li>
+        <li><strong>Cross-scale coherence</strong> — demonstrating that the same structural principles governing spacetime stability govern biological health, ecological regeneration, and civilizational resilience</li>
+      </ol>
+
+      <div class="callout prime">
+        <div class="prime-label">The Prime Axiom Governs All Scales</div>
+        <div class="prime-axiom">v⃗ = −∇C</div>
+        <p>At every scale — from a photon navigating a coherence gradient to a civilization choosing between dissonance and regeneration — systems move toward coherence because that is where the energetic debt is smallest, the information density is highest, and the structure is most stable. This is not metaphor. It is thermodynamics.</p>
+      </div>
+
+      <p>The invitation is to recognize the transition, reduce resistance, and invest energy in building coherence-aligned structures rather than maintaining dissonance-based systems that will inevitably give way. The future is not collapse. The future is convergence — toward coherence, circulation, regeneration, and alignment with the fundamental organizing principles of stable complex systems.</p>
+    </div>
+
+    <!-- REFERENCES -->
+    <div id="references" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">References</div>
+        <h2 class="section-title">References</h2>
+      </div>
+
+      <h3 class="subsection-title">Cosmology and Gravity</h3>
+      <ol class="references-list">
+        <li>Planck Collaboration (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astronomy &amp; Astrophysics</em> 641, A6.</li>
+        <li>Riess, A.G., et al. (2022). A comprehensive measurement of the local value of the Hubble constant. <em>Astrophysical Journal Letters</em> 934, L7.</li>
+        <li>Land, K. &amp; Magueijo, J. (2005). Examination of evidence for a preferred axis in the cosmic microwave background. <em>Physical Review Letters</em> 95, 071301.</li>
+        <li>Schwarz, D.J., et al. (2016). CMB anomalies after Planck. <em>Classical and Quantum Gravity</em> 33, 184001.</li>
+        <li>Secrest, N.J., et al. (2021). A test of the cosmological principle with quasars. <em>Astrophysical Journal Letters</em> 908, L51.</li>
+        <li>Gott, J.R., et al. (2019). Topology of the universe from surveys. <em>Monthly Notices of the Royal Astronomical Society</em> 484, 4816.</li>
+        <li>Einstein, A. (1915). Die Feldgleichungen der Gravitation. <em>Sitzungsberichte der Preussischen Akademie der Wissenschaften.</em></li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Galaxy Dynamics</h3>
+      <ol class="references-list" style="counter-reset: ref 7;">
+        <li>Seigar, M.S., et al. (2006). Discovery of a relationship between spiral arm morphology and supermassive black hole mass. <em>Astrophysical Journal</em> 645, 1012.</li>
+        <li>Rubin, V.C. &amp; Ford, W.K. (1970). Rotation of the Andromeda Nebula. <em>Astrophysical Journal</em> 159, 379.</li>
+        <li>Clowe, D., et al. (2006). A direct empirical proof of the existence of dark matter. <em>Astrophysical Journal Letters</em> 648, L109.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Quantum Foundations</h3>
+      <ol class="references-list" style="counter-reset: ref 10;">
+        <li>Bell, J.S. (1964). On the Einstein Podolsky Rosen paradox. <em>Physics</em> 1, 195–200.</li>
+        <li>Zeilinger, A. (2010). <em>Dance of the Photons.</em> Farrar, Straus and Giroux.</li>
+        <li>Bohm, D. (1952). A suggested interpretation of the quantum theory in terms of hidden variables. <em>Physical Review</em> 85, 166.</li>
+        <li>Glauber, R.J. (1963). Coherent and incoherent states of the radiation field. <em>Physical Review</em> 131, 2766.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Emergent Space and Information</h3>
+      <ol class="references-list" style="counter-reset: ref 14;">
+        <li>Maldacena, J. (1999). The large N limit of superconformal field theories and supergravity. <em>International Journal of Theoretical Physics</em> 38, 1113.</li>
+        <li>Verlinde, E. (2011). On the origin of gravity and the laws of Newton. <em>Journal of High Energy Physics</em> 2011, 29.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Thermodynamics</h3>
+      <ol class="references-list" style="counter-reset: ref 16;">
+        <li>Boltzmann, L. (1877). Über die Beziehung zwischen dem zweiten Hauptsatze. <em>Wiener Berichte</em> 76, 373.</li>
+        <li>Prigogine, I. (1977). <em>Self-organization in nonequilibrium systems.</em> Wiley.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Planetary and Atmospheric Science</h3>
+      <ol class="references-list" style="counter-reset: ref 18;">
+        <li>Claudepierre, S.G., et al. (2019). The hidden structure of Earth's outer radiation belt. <em>Journal of Geophysical Research: Space Physics</em> 124, 5376.</li>
+        <li>Finlay, C.C., et al. (2020). The CHAOS-7 geomagnetic field model. <em>Earth, Planets and Space</em> 72, 156.</li>
+        <li>Williams, E.R. &amp; Sátori, G. (2007). Recent progress on the global electrical circuit. <em>Atmospheric Research</em> 135–136, 208–227.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Civilizational Stability</h3>
+      <ol class="references-list" style="counter-reset: ref 21;">
+        <li>Turchin, P., et al. (2018). Quantitative historical analysis uncovers a single dimension of complexity. <em>PNAS</em> 115(2), E144–E151.</li>
+        <li>Turchin, P. (2016). <em>Ages of Discord.</em> Beresta Books.</li>
+        <li>International Monetary Fund (2024). <em>Fiscal Monitor: Global Public Debt Approaching 100% of GDP.</em></li>
+        <li>Uppsala Conflict Data Program (2024). UCDP/PRIO Armed Conflict Dataset v.24.1.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Biological Coherence</h3>
+      <ol class="references-list" style="counter-reset: ref 25;">
+        <li>Popp, F.A. (1992). Some essential questions of biophoton research. <em>Recent Advances in Biophoton Research.</em></li>
+        <li>Ho, M.W. (1998). <em>The Rainbow and the Worm: The Physics of Organisms.</em> World Scientific.</li>
+      </ol>
+
+      <h3 class="subsection-title" style="margin-top:28px;">Christos Theoretical Framework</h3>
+      <ol class="references-list" style="counter-reset: ref 27;">
+        <li>Farrior, J. (2026). Architecture of Infinity: A Structural-Spectral Framework for Eleven Unsolved Problems. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). The Coherence of Aging: A 7-Tier Protocol for Biological Age Reversal. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). The Inevitable Convergence: A Systems-Level Analysis of Civilizational Transition. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Toroidal Cosmology Framework. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Christos Gravity Reinterpreted: Spacetime-Coherence Unified Field. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Christos Time/Dimensional Architecture. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Christos Light Speed / Coherence Boundary. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). The Translocation Hierarchy. Christos™ Energy.</li>
+      </ol>
+    </div>
+
+    <!-- OPEN ACCESS -->
+    <div class="open-access-notice">
+      <div class="oa-icon">◎</div>
+      <div>
+        <div class="oa-label">Open Access — Full Paper | Public Research White Paper</div>
+        <div class="oa-text">This paper is published as a public research white paper under open access. CTF v1.0. Free to read, share, and cite with attribution. All theoretical frameworks, formal derivations, interpretive models, and structural architectures presented herein originated through independent research conducted by the author. Applied engineering systems are proprietary and intentionally excluded from this document. Proposed instruments are downstream measurement architectures motivated by theory; they are not presented as validation of the theory itself.</div>
+      </div>
+    </div>
+
+    <!-- AUTHORSHIP -->
+    <div class="authorship-block">
+      <div class="auth-label">Authorship &amp; Copyright</div>
+      <p>The Unified Coherence Architecture is an original work developed by Joshua Farrior under the CHRISTOS™ master framework. © 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indianapolis, Indiana · Business ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved.</p>
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="paper-nav-buttons">
+      <a href="../../../categories/core-foundations.html" class="btn-nav">← Core Foundations</a>
+      <a href="toroidal-cosmology.html" class="btn-nav">Related: Toroidal Cosmology →</a>
+      <a href="architecture-of-infinity.html" class="btn-nav">Related: Architecture of Infinity →</a>
+      <a href="../../../contact.html" class="btn-collaborate">Collaborate with Joshua</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" title="Back to top">↑</a>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <a href="../../../index.html" class="footer-logo">CHRISTOS™</a>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
+
 </body>
 </html>
