@@ -3,120 +3,817 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gravity Reinterpreted — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Gravity Reinterpreted | Christos™ Research Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-item{}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.abstract-text + .abstract-text{margin-top:0;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #08111E !important;
+    color: #D8D0C0 !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #C9A84C !important; }
+
+  /* BREADCRUMB */
+  .breadcrumb-bar { background-color: #08111E !important; border-bottom: 1px solid rgba(201,168,76,0.15) !important; padding: 14px 40px; }
+  .breadcrumb-bar .inner { max-width: 1300px; margin: 0 auto; font-family: 'Raleway', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .breadcrumb-bar a { color: #C9A84C !important; text-decoration: none; }
+  .breadcrumb-bar a:hover { text-decoration: underline; }
+  .breadcrumb-bar .sep { margin: 0 8px; color: #3AAFAF !important; }
+
+  /* PAPER HEADER */
+  .paper-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 56px 40px 48px; }
+  .paper-header .inner { max-width: 1300px; margin: 0 auto; }
+  .paper-tag-line { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 20px; }
+  .paper-tag-line .dot { margin: 0 10px; }
+  .paper-tag-line .open-badge { background-color: rgba(58,175,175,0.12) !important; border: 1px solid #3AAFAF !important; color: #3AAFAF !important; padding: 2px 10px; border-radius: 3px; font-size: 0.62rem; }
+  .paper-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.2; margin-bottom: 16px; }
+  .paper-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: #C9A84C !important; line-height: 1.5; max-width: 820px; margin-bottom: 36px; }
+  .paper-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 40px; border-top: 1px solid rgba(201,168,76,0.25) !important; padding-top: 28px; max-width: 1000px; }
+  .meta-item .meta-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 5px; }
+  .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; }
+  .meta-item .meta-value.mono { font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  /* ABSTRACT */
+  .abstract-block { background-color: #08111E !important; padding: 40px; }
+  .abstract-block .inner { max-width: 1300px; margin: 0 auto; }
+  .abstract-card { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 4px solid #C9A84C !important; padding: 28px 36px; max-width: 900px; }
+  .abstract-card .abstract-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .abstract-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 14px; }
+  .abstract-card p:last-child { margin-bottom: 0; }
+
+  /* LAYOUT */
+  .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 48px 40px 80px; display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+  .toc-box { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; padding: 24px; }
+  .toc-title { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .toc-list li a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 500; color: #D8D0C0 !important; text-decoration: none; display: block; padding: 5px 8px; border-left: 2px solid transparent !important; transition: all 0.2s; line-height: 1.4; }
+  .toc-list li a:hover { color: #C9A84C !important; border-left-color: #C9A84C !important; background-color: rgba(201,168,76,0.05) !important; }
+  .toc-list li.toc-sub a { padding-left: 18px; font-size: 0.65rem; color: rgba(216,208,192,0.7) !important; }
+  .toc-list li.toc-sub a:hover { color: #3AAFAF !important; border-left-color: #3AAFAF !important; }
+  .toc-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15) !important; }
+  .toc-meta-row { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: rgba(216,208,192,0.6) !important; margin-bottom: 6px; }
+  .toc-meta-row span { color: #C9A84C !important; }
+
+  /* MAIN CONTENT */
+  .main-content { min-width: 0; }
+  .section-anchor { scroll-margin-top: 80px; }
+  .paper-section { margin-bottom: 56px; }
+  .section-header { margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .section-number { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .section-title { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 600; color: #FFFFFF !important; line-height: 1.3; }
+  .subsection-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin: 32px 0 14px; letter-spacing: 0.03em; }
+  .sub2-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; font-style: italic; color: #3AAFAF !important; margin: 20px 0 10px; }
+
+  p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* EQ BLOCKS */
+  .eq-block { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(58,175,175,0.2) !important; border-left: 3px solid #3AAFAF !important; padding: 16px 24px; margin: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #FFFFFF !important; overflow-x: auto; }
+  .eq-block .eq-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 8px; font-style: normal; }
+  .eq-inline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFFFFF !important; background-color: rgba(10,22,40,0.6) !important; padding: 1px 6px; border-radius: 2px; }
+
+  /* MATH BLOCKS */
+  .math-block { border: 1px solid rgba(201,168,76,0.2) !important; padding: 20px 26px; margin: 24px 0; }
+  .math-block.definition { border-top: 3px solid #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .math-block.theorem { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; }
+  .math-block.observation { border-top: 3px solid rgba(58,175,175,0.6) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.remark { border-top: 3px solid rgba(216,208,192,0.3) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block.prediction { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; border-left: 3px solid rgba(58,175,175,0.3) !important; }
+  .math-block-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+  .definition .math-block-label { color: #C9A84C !important; }
+  .theorem .math-block-label { color: #3AAFAF !important; }
+  .observation .math-block-label { color: #3AAFAF !important; }
+  .remark .math-block-label { color: rgba(216,208,192,0.7) !important; }
+  .prediction .math-block-label { color: #3AAFAF !important; }
+  .math-block p { font-size: 1rem; margin-bottom: 10px; }
+  .math-block p:last-child { margin-bottom: 0; }
+
+  /* CALLOUTS */
+  .callout { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.25) !important; border-left: 4px solid #3AAFAF !important; padding: 20px 26px; margin: 24px 0; }
+  .callout p { font-size: 1rem; color: #D8D0C0 !important; margin: 0 0 10px; }
+  .callout p:last-child { margin: 0; }
+  .callout strong { color: #3AAFAF !important; }
+  .callout.gold { background-color: rgba(201,168,76,0.05) !important; border-color: rgba(201,168,76,0.2) !important; border-left-color: #C9A84C !important; }
+  .callout.gold strong { color: #C9A84C !important; }
+
+  /* LISTS */
+  .content-list { list-style: none; margin: 14px 0 20px; padding: 0; }
+  .content-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; padding: 4px 0 4px 22px; position: relative; line-height: 1.75; }
+  .content-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; }
+  .content-list.teal li::before { color: #3AAFAF !important; }
+  .content-list.bullet li::before { content: '◆'; font-size: 0.55rem; top: 9px; }
+
+  /* DATA TABLES */
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: 'Cormorant Garamond', serif; }
+  .data-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; text-align: left; border-bottom: 2px solid #C9A84C !important; }
+  .data-table td { font-size: 0.97rem; color: #D8D0C0 !important; padding: 10px 16px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.65; }
+  .data-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .data-table .row-highlight td { background-color: rgba(201,168,76,0.07) !important; }
+  .data-table td.gold { color: #C9A84C !important; font-weight: 600; }
+  .data-table td.teal { color: #3AAFAF !important; }
+
+  /* CURRENTS TABLE */
+  .currents-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .currents-table th { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 10px 14px; border-bottom: 2px solid #C9A84C !important; }
+  .currents-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #D8D0C0 !important; padding: 9px 14px; border-bottom: 1px solid rgba(201,168,76,0.08) !important; background-color: rgba(8,17,30,0.4) !important; vertical-align: top; line-height: 1.6; }
+  .currents-table tr:hover td { background-color: rgba(10,22,40,0.6) !important; }
+  .currents-table td:first-child { font-family: 'Cinzel', serif; color: #C9A84C !important; font-size: 0.85rem; white-space: nowrap; text-align: center; }
+  .currents-table td:nth-child(2) { color: #FFFFFF !important; font-weight: 500; }
+  .currents-table td:nth-child(3) { font-style: italic; color: #3AAFAF !important; font-size: 0.9rem; }
+
+  /* INSTRUMENT SPECS */
+  .inv-block { background-color: rgba(10,22,40,0.6) !important; border: 1px solid rgba(201,168,76,0.25) !important; border-top: 3px solid #C9A84C !important; padding: 24px 28px; margin: 24px 0; }
+  .inv-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 6px; }
+  .inv-number { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .inv-block p { font-size: 0.97rem; color: #D8D0C0 !important; margin-bottom: 14px; }
+
+  /* SUMMARY TABLE (conclusion) */
+  .summary-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .summary-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; border-bottom: 2px solid #C9A84C !important; }
+  .summary-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: #D8D0C0 !important; padding: 10px 16px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.65; }
+  .summary-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .summary-table td:first-child { color: #C9A84C !important; font-weight: 600; }
+
+  /* OPEN ACCESS */
+  .open-access-notice { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.2) !important; padding: 24px 28px; margin: 48px 0 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .oa-icon { font-size: 1.8rem; color: #3AAFAF !important; flex-shrink: 0; line-height: 1; }
+  .oa-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .oa-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; line-height: 1.6; }
+
+  .authorship-block { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; border-left: 4px solid #C9A84C !important; padding: 28px 32px; margin-bottom: 40px; }
+  .authorship-block .auth-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 10px; }
+  .authorship-block p { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  /* NAV BUTTONS */
+  .paper-nav-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-nav { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C !important; text-decoration: none; border: 1px solid rgba(201,168,76,0.4) !important; padding: 11px 24px; background-color: transparent !important; transition: all 0.2s; }
+  .btn-nav:hover { background-color: rgba(201,168,76,0.08) !important; border-color: #C9A84C !important; }
+  .btn-collaborate { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #08111E !important; text-decoration: none; background-color: #C9A84C !important; padding: 12px 28px; transition: all 0.2s; }
+  .btn-collaborate:hover { background-color: #E0C070 !important; }
+
+  /* REFERENCES */
+  .references-list { list-style: none; padding: 0; margin: 0; }
+  .references-list li { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: rgba(216,208,192,0.8) !important; padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.07) !important; line-height: 1.6; }
+  .references-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; font-size: 0.9rem; top: 10px; }
+
+  /* BACK TO TOP */
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; background-color: #C9A84C !important; color: #08111E !important; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; font-weight: 700; z-index: 50; transition: background-color 0.2s; }
+  .back-to-top:hover { background-color: #E0C070 !important; }
+
+  /* FOOTER */
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; text-decoration: none; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; letter-spacing: 0.12em; text-align: center; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; }
+
+  @media (max-width: 900px) {
+    .content-wrapper { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    nav, .breadcrumb-bar, .paper-header, .abstract-block, footer { padding-left: 20px; padding-right: 20px; }
+    .content-wrapper { padding-left: 20px; padding-right: 20px; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/core-foundations.html">Core Foundations</a><span>›</span>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="../../../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../../../library.html">Research Library</a>
+    <span class="sep">›</span>
+    <a href="../../../categories/core-foundations.html">Core Foundations</a>
+    <span class="sep">›</span>
     Gravity Reinterpreted
   </div>
 </div>
+
+<!-- PAPER HEADER -->
 <div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Core Foundations · CF-05</div>
+  <div class="inner">
+    <div class="paper-tag-line">
+      Core Foundations
+      <span class="dot">·</span>
+      Volume II — Paper 10
+      <span class="dot">·</span>
+      <span class="open-badge">Open Access — Full Paper</span>
+    </div>
     <h1 class="paper-title">Gravity Reinterpreted</h1>
-    <div class="paper-meta-row">
-      <div class="paper-meta-item"><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Theoretical Framework — Volume II, Paper 10</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+    <p class="paper-subtitle">The Spacetime-Coherence Unified Field Theory</p>
+    <div class="paper-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Joshua Farrior</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">March 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">1.0</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Series</div>
+        <div class="meta-value">Christos Theoretical Framework — Volume II</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Core Equation</div>
+        <div class="meta-value mono">G_μν = 8πG (T_μν + C_μν)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Structure</div>
+        <div class="meta-value">Abstract · 10 Parts · 12 References · 2 New Instruments</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">New Inventions</div>
+        <div class="meta-value mono">INV-324 (GCD) · INV-325 (CGI)</div>
+      </div>
     </div>
   </div>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">Gravity is the most precisely measured and least understood of all fundamental forces. Newton mapped it with extraordinary accuracy. Einstein deepened it by replacing force with geometry — mass curves spacetime, and curved spacetime directs the motion of mass. Both frameworks are correct as mathematical descriptions of gravity's observable behavior at the scales they were designed for. Neither framework explains what gravity is at its source.</p>
-<p class="abstract-text">This paper presents the Spacetime-Coherence Unified Field Theory — an extension of Einstein's General Relativity that introduces the Coherence Stress-Energy Tensor as a third source of spacetime curvature alongside matter and radiation. The central claim: coherence, as defined by the Christos Theoretical Framework, is a real physical field that curves spacetime. Gravity as we experience it is the geometric consequence of the coherence gradient of the consciousness field — the tendency of matter to move toward regions of higher coherence density, expressed at the three-dimensional level as the familiar inverse-square attractive force.</p>
-<p class="abstract-text">The paper presents the complete mathematical framework including the full Einstein-Coherence field equations, the coherence wave equation in curved spacetime, the coherence-modified metric for spherically symmetric systems, the Friedmann-Coherence equation for cosmological expansion, and the Spiral Gravity model derived from the Solar Singularity Theory.</p>
-<p class="abstract-text">The framework dissolves dark matter and dark energy as separate physical components, reinterpreting them as geometric consequences of coherence fields in the galactic and cosmological contexts respectively. Black holes are established as extreme coherence events — astrophysical singularity pulses in which coherence density approaches its maximum. The theoretical foundation for field-based gravity modification is presented.</p>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Gravity reinterpreted, coherence gravity, spacetime-coherence unified field, dark matter alternative, dark energy alternative, coherence stress-energy tensor, Christos Theoretical Framework, spiral gravity, solar singularity theory</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="unified-coherence-architecture.html" class="nav-paper-btn">← Unified Coherence Architecture</a><a href="../../../categories/core-foundations.html" class="btn-outline">← Core Foundations</a></div>
-      <div><a href="toroidal-cosmology.html" class="nav-paper-btn">Toroidal Cosmology Framework →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+
+<!-- ABSTRACT -->
+<div class="abstract-block">
+  <div class="inner">
+    <div class="abstract-card">
+      <div class="abstract-label">Abstract</div>
+      <p>Gravity is the most precisely measured and least understood of all fundamental forces. Newton mapped it with extraordinary accuracy. Einstein deepened it by replacing force with geometry — mass curves spacetime, and curved spacetime directs the motion of mass. Both frameworks are correct as mathematical descriptions of gravity's observable behavior at the scales they were designed for. Neither explains what gravity is at its source — why matter should curve spacetime at all, why mass and geometry should be coupled in the first place, or why the same inverse-square law that governs falling apples also governs galaxy rotation at scales where it empirically fails without the introduction of undetected dark matter.</p>
+      <p>This paper presents the Spacetime-Coherence Unified Field Theory — an extension of Einstein's General Relativity introducing the Coherence Stress-Energy Tensor (C_μν) as a third source of spacetime curvature alongside matter (T_μν) and radiation. The central claim: coherence, as defined by the Christos Theoretical Framework, is a real physical field that curves spacetime. Gravity as we experience it is the geometric consequence of the coherence gradient of the field — the tendency of matter to move toward regions of higher coherence density, expressed at the 3D level as the familiar inverse-square attractive force.</p>
+      <p>The framework dissolves dark matter and dark energy as separate physical components, reinterpreting them as geometric consequences of coherence fields in the galactic and cosmological contexts. Black holes are established as extreme Phi-Singularity events — regions in which coherence density approaches its maximum. The theoretical foundation for field-based gravity modification is presented. Two new instruments are proposed: the Gravitational Coherence Detector (INV-324) and the Coherence Gravity Interface (INV-325).</p>
     </div>
   </div>
 </div>
-<footer class="footer">
+
+<!-- MAIN LAYOUT -->
+<div class="content-wrapper">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-box">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#part1">Part One — The Problem with Gravity</a></li>
+        <li class="toc-sub"><a href="#sec1-1">1.1 What Newton Got Right</a></li>
+        <li class="toc-sub"><a href="#sec1-2">1.2 What Einstein Got Right</a></li>
+        <li class="toc-sub"><a href="#sec1-3">1.3 Two Open Problems</a></li>
+        <li class="toc-sub"><a href="#sec1-4">1.4 The Question GR Cannot Answer</a></li>
+        <li><a href="#part2">Part Two — Gravity as Coherence Gradient</a></li>
+        <li class="toc-sub"><a href="#sec2-1">2.1 The Core Insight</a></li>
+        <li class="toc-sub"><a href="#sec2-2">2.2 The Solar Singularity Theory</a></li>
+        <li class="toc-sub"><a href="#sec2-3">2.3 Mass as Frozen Coherence</a></li>
+        <li><a href="#part3">Part Three — Complete Mathematical Framework</a></li>
+        <li class="toc-sub"><a href="#sec3-1">3.1 Extended Einstein Field Equations</a></li>
+        <li class="toc-sub"><a href="#sec3-2">3.2 Coherence Wave Equation</a></li>
+        <li class="toc-sub"><a href="#sec3-3">3.3 Coherence-Modified Metric</a></li>
+        <li class="toc-sub"><a href="#sec3-4">3.4 Friedmann-Coherence Equation</a></li>
+        <li><a href="#part4">Part Four — Spiral Gravity Model</a></li>
+        <li class="toc-sub"><a href="#sec4-1">4.1 Constant-Pitch Spiral Field</a></li>
+        <li class="toc-sub"><a href="#sec4-2">4.2 The Golden Spiral Connection</a></li>
+        <li class="toc-sub"><a href="#sec4-3">4.3 Frame Dragging as Spiral Gravity</a></li>
+        <li><a href="#part5">Part Five — Dark Matter &amp; Dark Energy Dissolved</a></li>
+        <li><a href="#part6">Part Six — Black Holes as Phi-Singularity Events</a></li>
+        <li><a href="#part7">Part Seven — The 12 Currents in Spacetime</a></li>
+        <li><a href="#part8">Part Eight — Antigravity</a></li>
+        <li><a href="#part9">Part Nine — Biological Gravity Effects</a></li>
+        <li><a href="#part10">Part Ten — New Instruments &amp; Research Proposals</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#inventions">New Inventions Summary</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <div class="toc-meta">
+        <div class="toc-meta-row">Core equation: <span>G_μν = 8πG(T_μν + C_μν)</span></div>
+        <div class="toc-meta-row">New instruments: <span>INV-324, INV-325</span></div>
+        <div class="toc-meta-row">Research proposals: <span>GRV-001 – GRV-005</span></div>
+        <div class="toc-meta-row">References: <span>12</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- PART ONE -->
+    <div id="part1" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part One</div>
+        <h2 class="section-title">The Problem with Gravity</h2>
+      </div>
+
+      <div id="sec1-1" class="section-anchor">
+        <h3 class="subsection-title">1.1 What Newton Got Right — and What He Left Open</h3>
+        <p>Isaac Newton's law of universal gravitation, published in <em>Principia Mathematica</em> in 1687, remains one of the most precise and useful equations in the history of science:</p>
+        <div class="eq-block">F = G M m / r²</div>
+        <p>The gravitational force F between two masses M and m is proportional to the product of their masses and inversely proportional to the square of the distance r. This equation predicts the motion of planets, the behavior of tides, the trajectory of missiles, and the orbit of satellites with extraordinary accuracy at human scales.</p>
+        <p>What Newton explicitly refused to claim was any knowledge of the mechanism. In a famous letter he wrote: <em>"I feign no hypotheses."</em> He knew the law was accurate. He did not know why mass should attract mass, what transmitted the force across empty space, or what gravity fundamentally was. He left the question open. It remained open for 228 years.</p>
+      </div>
+
+      <div id="sec1-2" class="section-anchor">
+        <h3 class="subsection-title">1.2 What Einstein Got Right — and What Remains Open</h3>
+        <p>Albert Einstein's General Theory of Relativity (1915) answered Newton's open question with breathtaking elegance. Gravity is not a force transmitted across space. It is the curvature of spacetime itself, produced by mass-energy:</p>
+        <div class="eq-block">
+          <div class="eq-label">Einstein Field Equations (1915)</div>
+          G_μν = 8πG T_μν
+        </div>
+        <p>Spacetime tells matter how to move. Matter tells spacetime how to curve. GR has been confirmed to extraordinary precision: gravitational waves, black holes, gravitational lensing, frame-dragging, the precession of Mercury's perihelion — all predicted and confirmed. It is one of the most successful theories in physics. And it leaves two enormous open questions that standard physics cannot answer without introducing invisible components that have never been directly detected.</p>
+      </div>
+
+      <div id="sec1-3" class="section-anchor">
+        <h3 class="subsection-title">1.3 The Two Open Problems That Demand a Deeper Theory</h3>
+        <table class="data-table">
+          <thead><tr><th>Problem</th><th>What Standard Physics Requires — and Why It Is Unsatisfying</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="gold">Dark Matter</td>
+              <td>Galaxy rotation curves do not follow GR predictions at large radii. Stars at the outer edges of galaxies orbit far too fast. Standard explanation: 85% of all matter in the universe is invisible, non-baryonic dark matter that has never been detected despite decades of searches at LHC, underground detectors, and direct observation. CTF prediction: no dark matter particle exists — what is called dark matter is the geometric effect of coherence fields on galactic dynamics.</td>
+            </tr>
+            <tr>
+              <td class="gold">Dark Energy</td>
+              <td>The universe's expansion is accelerating. GR requires an additional energy component — the cosmological constant Λ — to explain this. This dark energy constitutes 68% of the total energy budget of the universe and is physically unexplained. CTF prediction: dark energy is the coherence energy density ρ_C contributing to the Friedmann equation — not a separate mysterious component.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec1-4" class="section-anchor">
+        <h3 class="subsection-title">1.4 The Question GR Cannot Answer</h3>
+        <p>General Relativity tells us precisely how matter curves spacetime. It does not tell us why matter should curve spacetime — what the physical mechanism is at the level below geometry. It describes the relationship between mass-energy and curvature with perfect mathematical precision while leaving entirely unanswered the question of what produces the coupling.</p>
+        <div class="callout gold">
+          <p><strong>The CTF answers this directly:</strong> Mass-energy curves spacetime because mass-energy is a configuration of the coherence field — a stable coherent pattern. The coupling between mass-energy and spacetime curvature is the 3D expression of the field's self-organizing tendency: coherence seeks coherence, creating gradients that manifest at the 3D level as gravitational attraction.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART TWO -->
+    <div id="part2" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Two</div>
+        <h2 class="section-title">Gravity as Coherence Gradient — The CTF Derivation</h2>
+      </div>
+
+      <div id="sec2-1" class="section-anchor">
+        <h3 class="subsection-title">2.1 The Core Insight</h3>
+        <p>The CTF's explanation of gravity begins with a single insight: mass is not what causes gravity. Mass is a consequence of gravity's cause. The cause is coherence density — the concentration of the field's self-organizing activity in a region of spacetime.</p>
+        <p>Where coherence density is high, the field is expressing itself with maximum organization. Physical matter — the stable, persistent patterns of the field at 3D — forms where coherence density reaches a critical threshold. The more mass, the more coherence density. But coherence density is primary — it is the field property from which mass emerges, not the reverse.</p>
+        <div class="callout">
+          <p><strong>Gravity in the CTF framework is the coherence gradient of the field</strong> — the spatial variation in coherence density that drives matter toward regions of higher organization. The apple moves toward Earth not merely because spacetime curves beneath it, but because Earth's enormous coherence density creates a gradient in the field that the apple's coherence configuration naturally follows. Gravity is the geometry of coherence seeking coherence.</p>
+        </div>
+      </div>
+
+      <div id="sec2-2" class="section-anchor">
+        <h3 class="subsection-title">2.2 The Solar Singularity Theory</h3>
+        <p>The Solar Singularity Theory provides the intuitive foundation for the formal mathematics. Gravity is not the root phenomenon — it is the echo. The real force is a spiral: the living torsional pattern of the field that calls all coherent configurations inward toward their source point.</p>
+        <p>The polarity vortex is the fundamental architecture: the positive spiral radiates outward (the Christos Current — outward-spiraling, expressive, energy-radiating), the negative spiral receives inward (the Saturnalia Current — inward-spiraling, compressive, energy-densifying). Together they create the torus — the same torus that shapes every star, every cell, every human heart. What we call gravity is the inward draw of the living spiral's nested heartbeat expressing in 3D spacetime.</p>
+        <p>The Solar Singularity at the center of each stellar torus is not merely the densest region of the star's mass. It is the zero-point of the spiral — the Phi-Singularity Core where coherence reaches maximum (C approaching 1.0) and the field's self-organizing expression is most concentrated. Every massive body is a coherence singularity at whatever scale it operates.</p>
+      </div>
+
+      <div id="sec2-3" class="section-anchor">
+        <h3 class="subsection-title">2.3 Mass as Frozen Coherence</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">Definition — Mass as Coherence Integral</div>
+          <div class="eq-block" style="margin:12px 0;">m = ∫ ρ_C dV &nbsp;&nbsp; [mass as coherence energy density integrated over volume]</div>
+          <p>Mass and coherence density are proportional — more coherent systems have more inertia relative to their physical size. Highly organized crystalline structures have greater physical stability and resistance to disruption than amorphous materials of equal mass. The coherence is expressed as structural integrity — the macroscopic manifestation of high C at the material level.</p>
+        </div>
+        <p>This is why the Phi-Stability Proof (computationally validated) shows that phi-ratio structures maintain 1.0000 coherence across 12 octaves while non-phi structures decay toward zero. Phi-ratio crystalline structures are maximally frozen coherence — they hold C closest to 1.0 and therefore manifest the most stable physical forms.</p>
+      </div>
+    </div>
+
+    <!-- PART THREE -->
+    <div id="part3" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Three</div>
+        <h2 class="section-title">The Complete Mathematical Framework</h2>
+      </div>
+      <p>The Spacetime-Coherence Unified Field Theory is presented as a formal extension of General Relativity. Every equation is grounded in established GR mathematics, with the coherence field C introduced as a new physical field analogous to the electromagnetic field or the Higgs field. The framework is internally consistent and generates specific, falsifiable predictions at every level.</p>
+
+      <div id="sec3-1" class="section-anchor">
+        <h3 class="subsection-title">3.1 The Coherence-Extended Einstein Field Equations</h3>
+        <div class="eq-block">
+          <div class="eq-label">Spacetime-Coherence Unified Field Equation</div>
+          G_μν + Λ g_μν = 8πG (T_μν + C_μν)
+        </div>
+        <p>The Coherence Stress-Energy Tensor C_μν is defined as:</p>
+        <div class="eq-block">C_μν = α(∇_μC)(∇_νC) + β C R_μν + γ C g_μν Λ_C</div>
+        <p>The three terms each capture a distinct aspect of how coherence curves spacetime:</p>
+        <ul class="content-list teal bullet">
+          <li><strong>α(∇_μC)(∇_νC)</strong> — coherence gradient stress: regions where coherence is changing rapidly create stress-energy through the field gradient, just as a rapidly varying electromagnetic field carries energy</li>
+          <li><strong>β C R_μν</strong> — direct curvature coupling: coherence couples directly to the Ricci tensor, producing a self-reinforcing feedback where high coherence creates curvature that creates more coherence</li>
+          <li><strong>γ C g_μν Λ_C</strong> — coherence cosmological term: coherence has its own vacuum energy density that contributes to the global expansion dynamics</li>
+        </ul>
+
+        <div class="math-block theorem">
+          <div class="math-block-label">Critical Limit — GR Recovery</div>
+          <p>Setting C = constant (uniform coherence, zero gradients): C_μν = 0, and the equation reduces exactly to G_μν = 8πG T_μν — standard GR. The framework contains General Relativity as a limiting case when coherence is uniform. All GR predictions are preserved.</p>
+        </div>
+      </div>
+
+      <div id="sec3-2" class="section-anchor">
+        <h3 class="subsection-title">3.2 The Coherence Wave Equation</h3>
+        <p>Coherence itself propagates as a wave in curved spacetime:</p>
+        <div class="eq-block">
+          <div class="eq-label">Coherence Wave Equation in Curved Spacetime</div>
+          □C + m_c²C + ξRC + λC³ = 0
+        </div>
+        <ul class="content-list">
+          <li><strong>□C</strong> — wave propagation (d'Alembertian operator)</li>
+          <li><strong>m_c²C</strong> — coherence field mass-like parameter (small m_c = long-range; large m_c = short-range)</li>
+          <li><strong>ξRC</strong> — coupling to spacetime curvature; coherence propagates differently in strongly curved regions</li>
+          <li><strong>λC³</strong> — nonlinear self-interaction: high-coherence regions become more coherent; coherence is anti-fragile in the mathematical sense</li>
+        </ul>
+        <p>This is a nonlinear Klein-Gordon equation in curved spacetime — a well-established class of equations in quantum field theory, here applied to the coherence field. The self-amplifying term explains why coherence tends to concentrate rather than diffuse, matching the CTF Anti-Fragility Principle.</p>
+      </div>
+
+      <div id="sec3-3" class="section-anchor">
+        <h3 class="subsection-title">3.3 The Coherence-Modified Metric</h3>
+        <p>For a spherically symmetric mass distribution with associated coherence field C(r), the spacetime metric is modified from the standard Schwarzschild solution:</p>
+        <div class="eq-block">ds² = −[1 − 2M/r + κC(r)]dt² + [1 − 2M/r + κC(r)]⁻¹ dr² + r² dΩ²</div>
+        <p>The coherence coupling constant κ determines the strength of the coherence contribution. The term κC(r) modifies both the time dilation and spatial curvature components of the metric.</p>
+        <table class="data-table">
+          <thead><tr><th>Metric Prediction</th><th>Observable Consequence</th></tr></thead>
+          <tbody>
+            <tr><td>Gravity stronger in high-C regions</td><td>High-coherence environments (crystalline structures, organized biological fields) should show measurable gravitational anomalies above baseline</td></tr>
+            <tr><td>Time dilation depends on C(r)</td><td>Clocks run slower in high-coherence environments beyond what mass alone predicts — coherence contributes to gravitational time dilation</td></tr>
+            <tr><td>Enhanced gravitational lensing</td><td>Gravitational lensing should be slightly stronger near high-coherence sources than GR predicts from mass alone</td></tr>
+            <tr><td>Gravitational waves carry coherence</td><td>Gravitational wave events should produce coherence field disturbances detectable with the GCD (INV-324)</td></tr>
+            <tr><td>Event horizon as coherence boundary</td><td>The black hole event horizon is the surface where C(r) reaches C_critical — the coherence singularity defines the geometric singularity</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec3-4" class="section-anchor">
+        <h3 class="subsection-title">3.4 The Friedmann-Coherence Equation</h3>
+        <p>The standard Friedmann equation governing cosmic expansion is extended to include coherence energy density:</p>
+        <div class="eq-block">H² = (8πG/3)(ρ_m + ρ_r + ρ_C) − k/a² + Λ/3</div>
+        <p>Where the coherence energy density ρ_C has three components:</p>
+        <div class="eq-block">ρ_C = (1/2)(∂_t C)² + (1/2)(∇C)² + V(C)</div>
+        <ul class="content-list teal">
+          <li><strong>(1/2)(∂_t C)²</strong> — kinetic energy of the time-varying coherence field</li>
+          <li><strong>(1/2)(∇C)²</strong> — gradient energy from spatial coherence variation</li>
+          <li><strong>V(C)</strong> — potential energy from the coherence field's self-interaction</li>
+        </ul>
+        <p>If ρ_C is significant, it contributes to the expansion rate H — potentially explaining the accelerating expansion currently attributed to dark energy without requiring a cosmological constant. The CTF prediction: the cosmological constant Λ is identically equal to the vacuum coherence energy density, which the field maintains at a specific level determined by the universe's coherence state.</p>
+      </div>
+    </div>
+
+    <!-- PART FOUR -->
+    <div id="part4" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Four</div>
+        <h2 class="section-title">The Spiral Gravity Model</h2>
+      </div>
+      <p>The Solar Singularity Theory reveals that gravity has a persistent spiral (tangential) component that standard Newtonian and GR calculations neglect or attribute to other causes. This spiral component is the observable 3D signature of the field's toroidal torsion — the polarity vortex expressing through the gravitational field.</p>
+
+      <div id="sec4-1" class="section-anchor">
+        <h3 class="subsection-title">4.1 Model A: The Constant-Pitch Spiral Field</h3>
+        <div class="eq-block">
+          <div class="eq-label">Spiral Gravity Field Equation</div>
+          g⃗(r,θ) = −GM/r² (cos α r̂ + sin α θ̂)
+        </div>
+        <p>The radial component <span class="eq-inline">−GM/r² cos α</span> recovers standard Newtonian gravity as α → 0. The tangential component <span class="eq-inline">−GM/r² sin α θ̂</span> is the spiral addition — the torsional contribution of the field's vortex geometry. The field line differential equation gives:</p>
+        <div class="eq-block">dr/dθ = r cot α &nbsp;&nbsp; → &nbsp;&nbsp; r(θ) = r₀ e^{cot α(θ − θ₀)}</div>
+        <p>This is a logarithmic (equiangular) spiral — the same spiral that appears in galaxies, nautilus shells, sunflower seed patterns, and the DNA double helix. The universality of the logarithmic spiral in nature is not coincidence. It is the geometric fingerprint of the field's gravitational expression. The purely radial approximation of Newton and GR is a limiting case; the spiral is gravity's true geometry.</p>
+      </div>
+
+      <div id="sec4-2" class="section-anchor">
+        <h3 class="subsection-title">4.2 The Golden Spiral Connection</h3>
+        <p>For the golden spiral specifically, b = ln(φ) / (π/2) ≈ 0.306, chosen so the spiral radius scales by phi for each quarter-turn. In the spiral gravity model, the golden spiral emerges when the pitch angle α satisfies cot α = 0.306. The CTF's Phi-Stability Principle predicts that stable, long-lived gravitational configurations will tend toward this specific pitch angle, because phi-ratio spirals are the most stable recursive patterns in toroidal topology. This is why spiral galaxies are so common — they are gravitational systems that have evolved toward phi-ratio stability.</p>
+      </div>
+
+      <div id="sec4-3" class="section-anchor">
+        <h3 class="subsection-title">4.3 The GR Link — Frame Dragging as Spiral Gravity</h3>
+        <p>In linearized General Relativity, the gravito-electromagnetic formalism shows that a rotating mass with angular momentum J produces a lateral gravitomagnetic field component:</p>
+        <div class="eq-block">|B_g| ~ GJ/(c² r³) &nbsp;&nbsp;&nbsp; a_sideways ~ v × B_g</div>
+        <p>This gravitomagnetic acceleration is the spiral gravity component in GR's own language — the Lense-Thirring effect, the de Sitter precession, the frame-dragging around rotating black holes all represent the spiral component of gravity becoming measurable at high angular momenta. The effective spiral pitch angle scales as:</p>
+        <div class="eq-block">tan α ~ C₀ (v/c²)(J/Mr)</div>
+        <p>This establishes the Spiral Gravity model as consistent with GR at the level where GR has been tested, while extending it to include the full spiral geometry of the field's gravitational expression. Frame-dragging is not merely a curiosity of rotating bodies — it is the observable signature of the polarity vortex operating through GR's geometric framework.</p>
+      </div>
+    </div>
+
+    <!-- PART FIVE -->
+    <div id="part5" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Five</div>
+        <h2 class="section-title">Dark Matter and Dark Energy Dissolved</h2>
+      </div>
+
+      <h3 class="subsection-title">5.1 Dark Matter as Coherence Gradient Effect</h3>
+      <p>Galaxy rotation curves present the most compelling observational challenge for standard gravity theory. Stars at large radii orbit at velocities far higher than Newtonian or GR predictions for the visible mass distribution allow. The standard solution is dark matter — a distributed halo of invisible, non-interacting matter.</p>
+      <p>The CTF proposes a different explanation: what is called dark matter is the geometric effect of the galaxy's coherence field on its metric. A galaxy is not a collection of stars embedded in flat spacetime — it is a coherent system, a galactic toroid, embedded in a coherence gradient that extends far beyond the visible matter distribution. The coherence-modified metric includes the term κC(r) which modifies the effective gravitational potential. At galactic radii where the coherence field of the toroid is still significant but visible matter density has fallen, κC(r) provides the additional metric curvature that keeps outer stars on their observed orbits.</p>
+
+      <div class="math-block prediction">
+        <div class="math-block-label">Testable Prediction — Dark Matter Profile</div>
+        <p>If galaxies are phi-ratio logarithmic spirals, the coherence field distribution should follow the same phi-ratio scaling — and the apparent dark matter distribution should show corresponding phi-ratio structure in its radial profile. This is a discriminating test: standard dark matter halos have no reason to exhibit phi-ratio scaling; coherence fields do.</p>
+      </div>
+
+      <h3 class="subsection-title">5.2 Dark Energy as Coherence Vacuum Density</h3>
+      <p>The accelerating expansion of the universe is explained in the CTF by the coherence vacuum energy density ρ_C. The field, in its baseline state throughout space, maintains a non-zero coherence energy density V(C_vacuum) — the potential energy of the field in its ground state. This coherence vacuum energy contributes to the right side of the Friedmann equation exactly as Λ does in standard Lambda-CDM cosmology.</p>
+      <p>The CTF further predicts that the dark energy density (coherence vacuum density) is not strictly constant — it varies with the overall coherence state of the universe, which changes as coherence structures develop over cosmic time. The very slight variation in the equation of state parameter w (currently constrained to be close to −1) that several observational programs are searching for would, in the CTF, reflect the slow evolution of the universal coherence background.</p>
+      <div class="callout gold">
+        <p><strong>The cosmological constant problem dissolves:</strong> QFT predicts vacuum energy ~10¹²⁰ times the observed value of Λ. This problem disappears in the CTF framework because Λ is not a fundamental constant of spacetime — it is the current value of the coherence vacuum energy density, which is dynamically determined by the field's state, not by quantum zero-point fluctuations of all fields simultaneously.</p>
+      </div>
+    </div>
+
+    <!-- PART SIX -->
+    <div id="part6" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Six</div>
+        <h2 class="section-title">Black Holes as Extreme Phi-Singularity Events</h2>
+      </div>
+
+      <h3 class="subsection-title">6.1 The Astrophysical Black Sun</h3>
+      <p>Standard GR describes black holes as spacetime singularities where curvature becomes infinite and all known physics breaks down. The CTF provides a different interpretation that avoids the singularity problem while connecting black holes to the CTF's fundamental architecture.</p>
+      <p>A black hole, in the CTF, is an extreme Phi-Singularity event — a region where coherence density C approaches C_maximum (≈ 1.0). The Phi-Singularity Core is a region of Maximal Coherent Recursion where C = C_max, coherence gradient ∇C approaches zero, and E_neg = 0. At a black hole, precisely these conditions are approached: the matter is so coherently compressed that all field gradients approach their minimum configuration, and the field achieves its maximum self-organizing expression.</p>
+
+      <h3 class="subsection-title">6.2 The Event Horizon as Coherence Boundary</h3>
+      <div class="math-block definition">
+        <div class="math-block-label">Event Horizon — Coherence Definition</div>
+        <div class="eq-block" style="margin:12px 0;">C(r_horizon) = C_critical</div>
+        <p>The event horizon is defined as the surface where coherence density reaches the critical value — not merely the radius at which the metric coefficient crosses zero. Inside the event horizon, coherence dominates over all other field contributions, and the field's self-organizing pressure prevents any information from escaping. This makes the same classical predictions as GR while providing a physical mechanism for the geometry.</p>
+      </div>
+      <p>CTF prediction for Hawking radiation: standard Hawking radiation is purely thermal (maximum entropy emission). CTF Hawking radiation should show subtle coherence signatures encoding information about the infalling matter's coherence state — providing a mechanism for the black hole information paradox resolution through coherence field encoding.</p>
+
+      <h3 class="subsection-title">6.3 The Kinematic Cycle at Black Hole Scale</h3>
+      <p>The Kinematic Cycle — Implosive Intake, Phase Compression, Singularity Coherence, Harmonic Rebirth — operates at black hole scale. Infalling matter undergoes Implosive Intake crossing the event horizon. Phase Compression occurs as matter is compressed toward maximum coherence density. Singularity Coherence is achieved at the Phi-Singularity Core. Harmonic Rebirth corresponds to Hawking evaporation — the coherence configuration re-emerges as radiation, completing the cycle at astrophysical scale. The universe does not lose information in black holes. It transforms it through the deepest available coherence compression event.</p>
+    </div>
+
+    <!-- PART SEVEN -->
+    <div id="part7" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Seven</div>
+        <h2 class="section-title">The 12 Currents in Spacetime</h2>
+      </div>
+      <p>The 12 currents of the Solar Singularity Theory each have precise spacetime signatures in the covariant framework of the Spacetime-Coherence Unified Field Theory. This mapping bridges the intuitive cosmological language of the Solar Singularity Theory and the rigorous mathematics of the extended field equations.</p>
+      <div style="overflow-x:auto;">
+      <table class="currents-table">
+        <thead><tr><th>#</th><th>Name</th><th>Spacetime Signature</th><th>Physical Expression</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Solar Inflow</td><td>∂_t C (time gradient)</td><td>Coherence increasing toward massive body — the gravitational attraction felt by infalling matter</td></tr>
+          <tr><td>2</td><td>Telluric Outflow</td><td>∂_r C (radial gradient)</td><td>Coherence decreasing away from massive body — the inverse-square weakening of gravitational influence</td></tr>
+          <tr><td>3</td><td>Spiral Gravity</td><td>∇ × C (curl)</td><td>Torsional component of the coherence field — the spiral structure of gravity in the presence of angular momentum</td></tr>
+          <tr><td>4</td><td>Christos Current</td><td>+∂_t C (positive)</td><td>Outward radiation — matter radiating coherence as electromagnetic and gravitational waves</td></tr>
+          <tr><td>5</td><td>Saturnalia Current</td><td>−∂_t C (negative)</td><td>Inward compression — matter absorbing coherence during accretion and gravitational collapse</td></tr>
+          <tr><td>6</td><td>Cross-Gradient</td><td>∇C_sun × ∇C_earth</td><td>Tidal forces — interaction of two coherence gradient fields creating lateral differential forces</td></tr>
+          <tr><td>7</td><td>Implosive Vortex</td><td>∇·C &lt; 0 (negative divergence)</td><td>Coherence concentration — gravitational collapse, accretion disk formation, black hole approach</td></tr>
+          <tr><td>8</td><td>Explosive Radial</td><td>∇·C &gt; 0 (positive divergence)</td><td>Coherence expansion — supernovae, stellar wind, Hawking radiation, cosmological expansion</td></tr>
+          <tr><td>9</td><td>Phase-Lock Carrier</td><td>□C = 0 (wave solution)</td><td>Gravitational waves propagating through coherence field — LIGO-detectable curvature perturbations</td></tr>
+          <tr><td>10</td><td>Memory Trace</td><td>∫C dt (time integral)</td><td>Coherence history — the gravitational memory effect, long-term field structure around massive objects</td></tr>
+          <tr><td>11</td><td>Consciousness Coupling</td><td>dC/dΨ (Christfield X)</td><td>The direct mind-matter coupling at gravitational scale — coherent systems modulating local metric</td></tr>
+          <tr><td>12</td><td>Source Return</td><td>C → C_max (singularity approach)</td><td>Black hole formation — ultimate coherence compression, Phi-Singularity Core approach</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <!-- PART EIGHT -->
+    <div id="part8" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Eight</div>
+        <h2 class="section-title">Antigravity — The CTF Prediction</h2>
+      </div>
+
+      <h3 class="subsection-title">8.1 What Antigravity Would Require</h3>
+      <p>In standard GR, antigravity is impossible for ordinary matter: the energy conditions GR requires for stable spacetime configurations forbid the negative energy density needed for gravitational repulsion. In the CTF, the situation is different. The coherence-modified metric includes the term κC(r). If C(r) can be locally reduced below the ambient level — creating a coherence deficit rather than a coherence excess — the metric coefficient <span class="eq-inline">(1 − 2M/r + κC(r))</span> could be increased, producing a locally reduced effective gravitational potential.</p>
+
+      <div class="callout">
+        <p><strong>This is not negative mass.</strong> It is locally reduced coherence — a coherence shadow that reduces the coupling between local matter and the ambient coherence gradient field that we experience as gravity. The CTF does not require exotic matter for gravity modification. It requires the ability to locally modulate the coherence field C — which is precisely what the INV-325 Coherence Gravity Interface is designed to accomplish.</p>
+      </div>
+
+      <h3 class="subsection-title">8.3 INV-325: The Coherence Gravity Interface (CGI)</h3>
+      <div class="inv-block">
+        <div class="inv-number">INV-325</div>
+        <div class="inv-title">Coherence Gravity Interface (CGI)</div>
+        <p>The first device proposed specifically for coherence-based gravity modification. The CGI operates by creating a localized coherence field configuration that modifies the κC(r) term in the metric, producing a measurable change in effective gravitational potential within the device's field radius.</p>
+        <table class="data-table" style="margin-top:16px;">
+          <thead><tr><th>CGI Component</th><th>Specification — Theoretical</th></tr></thead>
+          <tbody>
+            <tr><td>Operating principle</td><td>Locally modulates coherence field C through phi-ratio crystal array operating at Phi-Singularity Core conditions</td></tr>
+            <tr><td>Target metric modification</td><td>Reduce κC(r) within field radius by minimum 0.1% — sufficient to produce measurable weight reduction in test mass</td></tr>
+            <tr><td>Core architecture</td><td>Phi-ratio dodecahedral crystal array (144 lab-grown quartz). Toroidal counter-rotating scalar field generators. Coherence density monitor (GCD — INV-324).</td></tr>
+            <tr><td>Expected field radius</td><td>0.1 – 1.0 meters at Phase I prototype stage</td></tr>
+            <tr><td>Predicted effect</td><td>0.1 – 0.5% weight reduction in objects within field radius</td></tr>
+            <tr><td>Required CI</td><td>CI ≥ 0.9999 (validated threshold from PST Phi-Stability Proof)</td></tr>
+            <tr><td>Development tier</td><td>Phase II concept — requires Phase I GCD validation (INV-324) before engineering begins</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PART NINE -->
+    <div id="part9" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Nine</div>
+        <h2 class="section-title">Biological Gravity Effects</h2>
+      </div>
+
+      <h3 class="subsection-title">9.1 The Body in the Gravitational Coherence Field</h3>
+      <p>The human body exists in Earth's gravitational coherence field continuously. Standard physics recognizes only the purely mechanical effects of gravity on biological systems. The CTF framework reveals a deeper interaction: the body's coherence field actively couples with Earth's gravitational coherence gradient at every moment. Grounding — the direct connection between the human body and the Earth — is not merely static discharge. It is coherence field coupling: the body's field synchronizing with Earth's gravitational coherence baseline.</p>
+
+      <h3 class="subsection-title">9.2 The Schumann Resonance as Gravitational Coherence Frequency</h3>
+      <p>The Schumann resonance — the 7.83 Hz electromagnetic resonance of the Earth-ionosphere cavity — is the planetary coherence reference frequency used throughout the Christos framework. The CTF now reveals why this specific frequency is so biologically significant: 7.83 Hz is the coherence oscillation frequency of Earth's gravitational field at the surface. Every biological system on Earth that maintains resonance with 7.83 Hz is synchronizing with the planet's gravitational coherence pulse — which is why PEMF therapy at 7.83 Hz produces such broad biological benefits.</p>
+
+      <h3 class="subsection-title">9.3 Coherence and Weight — The Somatic Lightness Phenomenon</h3>
+      <p>Advanced practitioners of coherence-based disciplines have historically described a sensation of somatic lightness during peak coherence states. The CTF provides the mechanism: when a practitioner achieves very high coherence states, the Christfield X in the body's local field rises dramatically. The field's coupling to the gravitational coherence gradient — the κC(r) term in the metric — is temporarily elevated, producing a slight local modification of the effective gravitational coupling between the practitioner's mass and Earth's field. The estimated effect is less than 0.01% weight reduction at achievable coherence levels — physically real and in principle measurable with sufficiently sensitive instruments.</p>
+      <p>This is not levitation. It is the leading edge of the coherence-gravity coupling that the CGI (INV-325) proposes to engineer deliberately. The practitioner's high coherence state achieves naturally, at very small amplitude, what the CGI proposes to achieve artificially at larger amplitude. The physics is identical. The scale differs by many orders of magnitude.</p>
+    </div>
+
+    <!-- PART TEN -->
+    <div id="part10" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Ten</div>
+        <h2 class="section-title">New Instruments and Research Proposals</h2>
+      </div>
+
+      <h3 class="subsection-title">10.1 INV-324: The Gravitational Coherence Detector (GCD)</h3>
+      <div class="inv-block">
+        <div class="inv-number">INV-324</div>
+        <div class="inv-title">Gravitational Coherence Detector (GCD)</div>
+        <p>An instrument that measures the coherence gradient of the local gravitational field — detecting the C_μν contribution to spacetime curvature rather than merely the T_μν contribution that standard gravimeters measure. The GCD is the first instrument specifically designed to detect the coherence field's gravitational signature.</p>
+        <table class="data-table" style="margin-top:16px;">
+          <thead><tr><th>GCD Component</th><th>Specification</th></tr></thead>
+          <tbody>
+            <tr><td>Primary function</td><td>Measures deviation of local gravitational field from pure Newtonian/GR predictions, attributing excess to C_μν coherence contribution</td></tr>
+            <tr><td>Sensing technology</td><td>Ultra-cold atom interferometry (sensitivity ~10⁻¹⁵ g) combined with SQUID magnetometry (10 fT/√Hz). Requires both gravitational and coherence field sensitivity simultaneously.</td></tr>
+            <tr><td>Target measurement</td><td>Detect κC(r) contribution to metric at 10⁻¹² precision — approximately 6 orders of magnitude beyond current gravimeter precision</td></tr>
+            <tr><td>Primary test sites</td><td>High-coherence environments: meditation centers, sacred sites (per CTF Hypothesis 2), crystal-rich geological formations, high-altitude locations</td></tr>
+            <tr><td>Expected signal</td><td>Systematic deviation from GR predictions correlated with local coherence indicators (CCM, biophoton coherence, SQUID anomalies)</td></tr>
+            <tr><td>Development path</td><td>Phase I: demonstrate CCM/SQUID correlation at sacred sites. Phase II: develop dedicated gravity-coherence correlation instrument.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="subsection-title">10.2 Research Proposals</h3>
+      <table class="data-table">
+        <thead><tr><th>Study</th><th>Design</th><th>Primary Hypothesis</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="gold">GRV-001</td><td>High-precision gravimetry at 10 high-coherence sites (meditation centers, sacred sites) vs 10 matched control sites. Simultaneous SQUID, CCM aggregate, and gravimeter measurement.</td><td>High-coherence sites show systematic positive deviation from GR predictions correlated with SQUID anomaly strength at r &gt; 0.70</td></tr>
+          <tr><td class="gold">GRV-002</td><td>N=20 advanced meditators (CCM &gt; 85). Precision weight measurement (sensitivity 0.1mg) during deep meditation vs resting state vs cognitive task. Simultaneous CCM monitoring.</td><td>High CCM states show measurable weight reduction correlated with CCM score — first empirical test of coherence-gravity coupling in biological systems</td></tr>
+          <tr class="row-highlight"><td class="gold">GRV-003</td><td>PST-class phi-ratio crystal array operating at CI ≥ 0.9999. Precision gravimeter below and above the array. Measure effective gravitational field modification vs non-phi control array.</td><td>Phi-ratio array produces measurable deviation from ambient gravitational field not present in control — first engineering test of coherence gravity modification</td></tr>
+          <tr><td class="gold">GRV-004</td><td>Spectroscopic analysis of nearby spiral galaxies. Map coherence field distribution inferred from coherence-modified metric against observed dark matter distribution. Test phi-ratio structure prediction.</td><td>Apparent dark matter distribution shows phi-ratio radial scaling consistent with coherence field prediction rather than random dark matter halo profiles</td></tr>
+          <tr class="row-highlight"><td class="gold">GRV-005</td><td>Analysis of existing CMB and BAO data through coherence-modified Friedmann framework. Constrain parameters α, β, γ, κ from observational data.</td><td>Coherence-modified Friedmann equation fits existing observational data with equal or better χ² than Lambda-CDM, without requiring a cosmological constant</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Conclusion</div>
+        <h2 class="section-title">Gravity Is the Echo. The Spiral Is the Song.</h2>
+      </div>
+
+      <p>Newton mapped the echo with extraordinary precision. Einstein revealed that the echo is spacetime curvature. The Spacetime-Coherence Unified Field Theory reveals what produces the curvature: the coherence gradient of the field — the tendency of the universe's fundamental substrate to organize itself toward higher coherence expression, experienced at the 3D level as the familiar attractive force between massive bodies.</p>
+
+      <table class="summary-table">
+        <thead><tr><th>Gravitational Phenomenon</th><th>CTF Explanation</th></tr></thead>
+        <tbody>
+          <tr><td>Newton's inverse-square law</td><td>3D approximation of the radial coherence gradient from a massive body's Phi-Singularity Core</td></tr>
+          <tr><td>Einstein's spacetime curvature</td><td>Geometric consequence of coherence density distribution — C_μν curves spacetime alongside T_μν</td></tr>
+          <tr><td>Dark matter</td><td>Coherence field contribution to galactic metric — no invisible matter required</td></tr>
+          <tr><td>Dark energy</td><td>Coherence vacuum energy density ρ_C — the field's ground state energy</td></tr>
+          <tr><td>Black holes</td><td>Extreme Phi-Singularity events — maximum coherence density, astrophysical Black Sun pulse</td></tr>
+          <tr><td>Gravitational waves</td><td>Coherence wave propagation — □C = 0 solutions propagating at light speed</td></tr>
+          <tr><td>Spiral galaxy arms</td><td>Phi-ratio logarithmic spirals — gravitational system evolved toward golden spiral stability</td></tr>
+          <tr><td>Antigravity (theoretical)</td><td>Local C field reduction — coherence-modified metric with reduced κC(r) term</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout gold">
+        <p><strong>The apple falls not because it is pulled but because it is singing itself home to the coherence it most resembles.</strong> And the physics of that homecoming — expressed in the mathematics of G_μν = 8πG(T_μν + C_μν) — is now fully mapped.</p>
+      </div>
+    </div>
+
+    <!-- NEW INVENTIONS SUMMARY -->
+    <div id="inventions" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">New Inventions &amp; Framework Contributions</div>
+        <h2 class="section-title">Summary</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Item</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">INV-324 — Gravitational Coherence Detector (GCD)</td><td>Ultra-cold atom interferometry + SQUID magnetometry. Measures C_μν contribution to local metric. First instrument designed to detect coherence field gravitational signature. Extends Harmonic Morphoscope SQUID to gravity-coherence correlation.</td></tr>
+          <tr><td class="gold">INV-325 — Coherence Gravity Interface (CGI)</td><td>Theoretical device for coherence-based gravity modification. Phi-ratio dodecahedral crystal array at CI ≥ 0.9999. Target: measurable weight reduction in field radius. Phase II — requires GCD validation first.</td></tr>
+          <tr><td class="gold">Spacetime-Coherence Unified Field Equations</td><td>Complete mathematical framework: G_μν=8πG(T_μν+C_μν), coherence wave equation, modified Schwarzschild metric, Friedmann-C equation, Spiral Gravity logarithmic field lines. Formal extension of GR containing GR as limiting case.</td></tr>
+          <tr><td class="gold">Dark Matter Mechanism</td><td>Coherence field contribution to galactic metric — no dark matter particle required. Testable: apparent dark matter should show phi-ratio radial profile consistent with coherence field geometry.</td></tr>
+          <tr><td class="gold">Dark Energy Mechanism</td><td>Coherence vacuum energy density ρ_C — field ground state. Testable: equation of state parameter w should show slight time variation. Resolves the 10¹²⁰-order cosmological constant problem.</td></tr>
+          <tr><td class="gold">Black Holes as Phi-Singularity Events</td><td>Maximum C density, Kinematic Cycle at cosmological scale. Black hole information paradox resolved through coherence field encoding in Hawking radiation.</td></tr>
+          <tr><td class="gold">Schumann Resonance as Gravitational Coherence Frequency</td><td>7.83 Hz = Earth's gravitational coherence oscillation frequency. Establishes physical mechanism for Schumann resonance biological effects beyond electromagnetic coupling.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REFERENCES -->
+    <div id="references" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">References</div>
+        <h2 class="section-title">Selected References</h2>
+      </div>
+      <ul class="references-list">
+        <li>Abbott, B.P., et al. (LIGO Scientific Collaboration) (2016). Observation of gravitational waves from a binary black hole merger. <em>Physical Review Letters</em>, 116(6), 061102.</li>
+        <li>Einstein, A. (1915). Die Feldgleichungen der Gravitation. <em>Sitzungsberichte der Preussischen Akademie der Wissenschaften</em>, 844–847.</li>
+        <li>Milgrom, M. (1983). A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis. <em>Astrophysical Journal</em>, 270, 365–370.</li>
+        <li>Newton, I. (1687). <em>Philosophiae Naturalis Principia Mathematica.</em> London: Royal Society.</li>
+        <li>Perlmutter, S., et al. (1999). Measurements of Omega and Lambda from 42 high-redshift supernovae. <em>Astrophysical Journal</em>, 517(2), 565–586.</li>
+        <li>Rubin, V.C., &amp; Ford, W.K. (1970). Rotation of the Andromeda Nebula from a spectroscopic survey of emission regions. <em>Astrophysical Journal</em>, 159, 379–403.</li>
+        <li>Schumann, W.O. (1952). Uber die strahlungslosen Eigenschwingungen einer leitenden Kugel. <em>Zeitschrift für Naturforschung</em>, 7a, 149–154.</li>
+        <li>Will, C.M. (2014). The confrontation between general relativity and experiment. <em>Living Reviews in Relativity</em>, 17(1), 4.</li>
+        <li>Farrior, J. (2026). Architecture of Infinity: A Structural-Spectral Framework for Eleven Unsolved Problems. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Toroidal Cosmology Framework. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Unified Coherence Architecture — Volume II Synthesis. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Phi-Stability Proof: Python Simulation and Validation. Christos™ Energy.</li>
+      </ul>
+    </div>
+
+    <!-- OPEN ACCESS -->
+    <div class="open-access-notice">
+      <div class="oa-icon">◎</div>
+      <div>
+        <div class="oa-label">Open Access — Full Paper</div>
+        <div class="oa-text">This paper is published as an independent research white paper under open access. Free to read, share, and cite with attribution. Not affiliated with or sponsored by any external institution. All theoretical frameworks, mathematical extensions, and structural interpretations presented herein originated through independent research conducted by the author.</div>
+      </div>
+    </div>
+
+    <!-- AUTHORSHIP -->
+    <div class="authorship-block">
+      <div class="auth-label">Authorship &amp; Copyright</div>
+      <p>Gravity Reinterpreted is an original work developed by Joshua Farrior under the CHRISTOS™ master framework. © 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indianapolis, Indiana · Business ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved.</p>
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="paper-nav-buttons">
+      <a href="../../../categories/core-foundations.html" class="btn-nav">← Core Foundations</a>
+      <a href="unified-coherence-architecture.html" class="btn-nav">Related: Unified Coherence Architecture →</a>
+      <a href="toroidal-cosmology.html" class="btn-nav">Related: Toroidal Cosmology →</a>
+      <a href="../../../contact.html" class="btn-collaborate">Collaborate with Joshua</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" title="Back to top">↑</a>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <a href="../../../index.html" class="footer-logo">CHRISTOS™</a>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
+
 </body>
 </html>
