@@ -3,120 +3,716 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Light-Speed Coherence Boundary — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Light Speed as Coherence Boundary | Christos™ Research Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-item{}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.abstract-text + .abstract-text{margin-top:0;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #08111E !important; color: #D8D0C0 !important; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.8; min-height: 100vh; }
+
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #C9A84C !important; }
+
+  .breadcrumb-bar { background-color: #08111E !important; border-bottom: 1px solid rgba(201,168,76,0.15) !important; padding: 14px 40px; }
+  .breadcrumb-bar .inner { max-width: 1300px; margin: 0 auto; font-family: 'Raleway', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .breadcrumb-bar a { color: #C9A84C !important; text-decoration: none; }
+  .breadcrumb-bar a:hover { text-decoration: underline; }
+  .breadcrumb-bar .sep { margin: 0 8px; color: #3AAFAF !important; }
+
+  .paper-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 56px 40px 48px; }
+  .paper-header .inner { max-width: 1300px; margin: 0 auto; }
+  .paper-tag-line { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 20px; }
+  .paper-tag-line .dot { margin: 0 10px; }
+  .paper-tag-line .open-badge { background-color: rgba(58,175,175,0.12) !important; border: 1px solid #3AAFAF !important; color: #3AAFAF !important; padding: 2px 10px; border-radius: 3px; font-size: 0.62rem; }
+  .paper-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.2; margin-bottom: 16px; }
+  .paper-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #C9A84C !important; line-height: 1.55; max-width: 820px; margin-bottom: 36px; }
+  .paper-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 40px; border-top: 1px solid rgba(201,168,76,0.25) !important; padding-top: 28px; max-width: 1000px; }
+  .meta-item .meta-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 5px; }
+  .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; }
+  .meta-item .meta-value.mono { font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  .abstract-block { background-color: #08111E !important; padding: 40px; }
+  .abstract-block .inner { max-width: 1300px; margin: 0 auto; }
+  .abstract-card { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 4px solid #C9A84C !important; padding: 28px 36px; max-width: 900px; }
+  .abstract-card .abstract-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .abstract-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 14px; }
+  .abstract-card p:last-child { margin-bottom: 0; }
+
+  .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 48px 40px 80px; display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
+
+  .sidebar { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+  .toc-box { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; padding: 24px; }
+  .toc-title { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .toc-list li a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 500; color: #D8D0C0 !important; text-decoration: none; display: block; padding: 5px 8px; border-left: 2px solid transparent !important; transition: all 0.2s; line-height: 1.4; }
+  .toc-list li a:hover { color: #C9A84C !important; border-left-color: #C9A84C !important; background-color: rgba(201,168,76,0.05) !important; }
+  .toc-list li.toc-sub a { padding-left: 18px; font-size: 0.65rem; color: rgba(216,208,192,0.7) !important; }
+  .toc-list li.toc-sub a:hover { color: #3AAFAF !important; border-left-color: #3AAFAF !important; }
+  .toc-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15) !important; }
+  .toc-meta-row { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: rgba(216,208,192,0.6) !important; margin-bottom: 6px; }
+  .toc-meta-row span { color: #C9A84C !important; }
+
+  .main-content { min-width: 0; }
+  .section-anchor { scroll-margin-top: 80px; }
+  .paper-section { margin-bottom: 56px; }
+  .section-header { margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .section-number { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .section-title { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 600; color: #FFFFFF !important; line-height: 1.3; }
+  .subsection-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin: 32px 0 14px; letter-spacing: 0.03em; }
+  .sub2-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; font-style: italic; color: #3AAFAF !important; margin: 20px 0 10px; }
+
+  p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  .eq-block { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(58,175,175,0.2) !important; border-left: 3px solid #3AAFAF !important; padding: 16px 24px; margin: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #FFFFFF !important; overflow-x: auto; }
+  .eq-block .eq-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 8px; font-style: normal; }
+  .eq-inline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFFFFF !important; background-color: rgba(10,22,40,0.6) !important; padding: 1px 6px; border-radius: 2px; }
+
+  .math-block { border: 1px solid rgba(201,168,76,0.2) !important; padding: 20px 26px; margin: 24px 0; }
+  .math-block.definition { border-top: 3px solid #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .math-block.theorem { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; }
+  .math-block.observation { border-top: 3px solid rgba(58,175,175,0.6) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.remark { border-top: 3px solid rgba(216,208,192,0.3) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+  .definition .math-block-label { color: #C9A84C !important; }
+  .theorem .math-block-label, .observation .math-block-label { color: #3AAFAF !important; }
+  .remark .math-block-label { color: rgba(216,208,192,0.7) !important; }
+  .math-block p { font-size: 1rem; margin-bottom: 10px; }
+  .math-block p:last-child { margin-bottom: 0; }
+
+  .callout { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.25) !important; border-left: 4px solid #3AAFAF !important; padding: 20px 26px; margin: 24px 0; }
+  .callout p { font-size: 1rem; color: #D8D0C0 !important; margin: 0 0 10px; }
+  .callout p:last-child { margin: 0; }
+  .callout strong { color: #3AAFAF !important; }
+  .callout.gold { background-color: rgba(201,168,76,0.05) !important; border-color: rgba(201,168,76,0.2) !important; border-left-color: #C9A84C !important; }
+  .callout.gold strong { color: #C9A84C !important; }
+
+  .content-list { list-style: none; margin: 14px 0 20px; padding: 0; }
+  .content-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; padding: 4px 0 4px 22px; position: relative; line-height: 1.75; }
+  .content-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; }
+  .content-list.teal li::before { color: #3AAFAF !important; }
+  .content-list.bullet li::before { content: '◆'; font-size: 0.55rem; top: 9px; }
+
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: 'Cormorant Garamond', serif; }
+  .data-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; text-align: left; border-bottom: 2px solid #C9A84C !important; }
+  .data-table td { font-size: 0.97rem; color: #D8D0C0 !important; padding: 10px 16px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.65; }
+  .data-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .data-table .row-highlight td { background-color: rgba(201,168,76,0.07) !important; }
+  .data-table .row-teal td { background-color: rgba(58,175,175,0.04) !important; }
+  .data-table td.gold { color: #C9A84C !important; font-weight: 600; }
+  .data-table td.teal { color: #3AAFAF !important; }
+
+  .inv-block { background-color: rgba(10,22,40,0.6) !important; border: 1px solid rgba(201,168,76,0.25) !important; border-top: 3px solid #C9A84C !important; padding: 24px 28px; margin: 24px 0; }
+  .inv-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 6px; }
+  .inv-number { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .inv-block p { font-size: 0.97rem; color: #D8D0C0 !important; margin-bottom: 14px; }
+
+  .open-access-notice { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.2) !important; padding: 24px 28px; margin: 48px 0 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .oa-icon { font-size: 1.8rem; color: #3AAFAF !important; flex-shrink: 0; line-height: 1; }
+  .oa-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .oa-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; line-height: 1.6; }
+
+  .authorship-block { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; border-left: 4px solid #C9A84C !important; padding: 28px 32px; margin-bottom: 40px; }
+  .authorship-block .auth-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 10px; }
+  .authorship-block p { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  .paper-nav-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-nav { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C !important; text-decoration: none; border: 1px solid rgba(201,168,76,0.4) !important; padding: 11px 24px; background-color: transparent !important; transition: all 0.2s; }
+  .btn-nav:hover { background-color: rgba(201,168,76,0.08) !important; border-color: #C9A84C !important; }
+  .btn-collaborate { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #08111E !important; text-decoration: none; background-color: #C9A84C !important; padding: 12px 28px; transition: all 0.2s; }
+  .btn-collaborate:hover { background-color: #E0C070 !important; }
+
+  .references-list { list-style: none; padding: 0; margin: 0; }
+  .references-list li { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: rgba(216,208,192,0.8) !important; padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.07) !important; line-height: 1.6; }
+  .references-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; top: 10px; }
+
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; background-color: #C9A84C !important; color: #08111E !important; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; font-weight: 700; z-index: 50; transition: background-color 0.2s; }
+  .back-to-top:hover { background-color: #E0C070 !important; }
+
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; text-decoration: none; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; letter-spacing: 0.12em; text-align: center; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; }
+
+  @media (max-width: 900px) {
+    .content-wrapper { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    nav, .breadcrumb-bar, .paper-header, .abstract-block, footer { padding-left: 20px; padding-right: 20px; }
+    .content-wrapper { padding-left: 20px; padding-right: 20px; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/core-foundations.html">Core Foundations</a><span>›</span>
-    Light-Speed Coherence Boundary
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="../../../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../../../library.html">Research Library</a>
+    <span class="sep">›</span>
+    <a href="../../../categories/core-foundations.html">Core Foundations</a>
+    <span class="sep">›</span>
+    Light Speed as Coherence Boundary
   </div>
 </div>
+
+<!-- PAPER HEADER -->
 <div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Core Foundations · CF-08</div>
-    <h1 class="paper-title">Light-Speed Coherence Boundary</h1>
-    <div class="paper-meta-row">
-      <div class="paper-meta-item"><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Theoretical Framework — Volume II, Paper 12</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+  <div class="inner">
+    <div class="paper-tag-line">
+      Core Foundations
+      <span class="dot">·</span>
+      Volume II — Paper 12
+      <span class="dot">·</span>
+      <span class="open-badge">Open Access — Full Paper</span>
+    </div>
+    <h1 class="paper-title">Light Speed as Coherence Boundary</h1>
+    <p class="paper-subtitle">Toroidal Space, the Mirror Realm, and Why the Sun Is Not Far Away<br>
+    <span style="font-size:1rem; letter-spacing:0.04em;">c = T field phase propagation rate at current coherence density</span></p>
+    <div class="paper-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Joshua Farrior</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">March 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">1.0</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Series</div>
+        <div class="meta-value">Christos Theoretical Framework — Volume II</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Core Equation</div>
+        <div class="meta-value mono">c_n = c_3D × Φ^(n−3)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Structure</div>
+        <div class="meta-value">Abstract · 9 Parts · 11 References · 2 New Instruments</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">New Inventions</div>
+        <div class="meta-value mono">INV-328 (CBM) · INV-329 (PCA)</div>
+      </div>
     </div>
   </div>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">The speed of light — 299,792,458 meters per second in vacuum — is treated in standard physics as a fundamental constant of nature whose value is given but not explained. Maxwell's equations predict it from electromagnetic constants. Special Relativity makes it the universal speed limit. Quantum electrodynamics describes it as the propagation speed of photons. None of these frameworks explain what the speed of light actually is at its source.</p>
-<p class="abstract-text">The Christos Theoretical Framework provides a precise answer: the speed of light is not a speed in the conventional sense. It is the coherence boundary of the temporal field at its current organizational density — the maximum rate at which the temporal field can propagate its own phase updates at the coherence level characteristic of our toroidal frequency band. Nothing can exceed this boundary within our frequency band because it is the rate at which the temporal field itself communicates — and nothing within the field can communicate faster than the field itself.</p>
-<p class="abstract-text">This paper establishes the complete Light Speed as Coherence Boundary framework. The toroidal geometry of space is established as the foundational architecture — demonstrating that the standard Euclidean assumption of infinite flat space is a local approximation that breaks down at astronomical scales, producing the dark matter problem and other observational anomalies. The apparent faster-than-light phenomena of quantum entanglement and nonlocality are explained as operations at the coherence potential layer where spatial separation has already been reduced to zero through phase-matching.</p>
-<p class="abstract-text">The 4D Mirror Realm is described as the only dimensional layer without its own sun — because it is the reflection layer whose light comes from the three-dimensional reality it mirrors. The Sun is shown to be inside our torus — its apparent distance is a temporal field phase difference, not a physical gap.</p>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Light speed, coherence boundary, temporal field, toroidal space, quantum nonlocality, mirror realm, phase propagation, Christos Theoretical Framework</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="field-resonance-vacuum-dynamics.html" class="nav-paper-btn">← Field Resonance & Vacuum Dynamics</a><a href="../../../categories/core-foundations.html" class="btn-outline">← Core Foundations</a></div>
-      <div><a href="time-dimensional-architecture.html" class="nav-paper-btn">Time as Dimensional Architecture →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+
+<!-- ABSTRACT -->
+<div class="abstract-block">
+  <div class="inner">
+    <div class="abstract-card">
+      <div class="abstract-label">Abstract</div>
+      <p>The speed of light — 299,792,458 meters per second in vacuum — is treated in standard physics as a fundamental constant whose value is given but not explained. Maxwell's equations predict it from the electromagnetic constants ε₀ and μ₀. Special Relativity makes it the universal speed limit. Quantum electrodynamics describes it as the propagation speed of photons. None of these frameworks explain what c actually is at its source — why this specific value, why it is the same for all observers, or why it is the maximum speed at which any information can travel.</p>
+      <p>The Christos Theoretical Framework provides a precise answer: c is not a speed in the conventional sense. It is the coherence boundary of the T field at its current organizational density — the maximum rate at which the temporal field can propagate its own phase updates at the coherence level characteristic of our toroidal frequency band. Anything moving at c is not traveling through space but riding the T field's own phase propagation wave. Nothing can exceed c within our frequency band because c is the rate at which the T field itself communicates — and nothing within the field can communicate faster than the field itself.</p>
+      <p>This paper establishes the complete Light Speed as Coherence Boundary framework. The toroidal geometry of space is shown to resolve the dark matter problem, the Pioneer anomaly, Voyager's multiple heliopause crossings, and the magnetic highway anomalies. The Sun is shown to be inside our torus — its apparent 93-million-mile distance is a T field phase difference, not a physical gap. The 4D Mirror Realm is described as the only dimensional layer without its own sun. Quantum entanglement is explained as operation at the 5D coherence layer where spatial separation is already zero through phase-matching. Two new instruments are proposed: the Coherence Boundary Mapper (INV-328) and the Photonic Coherence Amplifier (INV-329).</p>
     </div>
   </div>
 </div>
-<footer class="footer">
+
+<!-- MAIN LAYOUT -->
+<div class="content-wrapper">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-box">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#part1">Part One — What Light Speed Actually Is</a></li>
+        <li class="toc-sub"><a href="#sec1-1">1.1 The Unexplained Constant</a></li>
+        <li class="toc-sub"><a href="#sec1-2">1.2 c as T Field Phase Propagation Rate</a></li>
+        <li class="toc-sub"><a href="#sec1-3">1.3 Why Nothing Can Exceed c</a></li>
+        <li><a href="#part2">Part Two — Space Is Toroidal: The Voyager Problem</a></li>
+        <li class="toc-sub"><a href="#sec2-2">2.2 Voyager in Toroidal Coordinates</a></li>
+        <li class="toc-sub"><a href="#sec2-3">2.3 The Heliopause as Frequency Band Membrane</a></li>
+        <li class="toc-sub"><a href="#sec2-4">2.4 Testable Toroidal Predictions</a></li>
+        <li><a href="#part3">Part Three — The Sun Is Inside Our Torus</a></li>
+        <li class="toc-sub"><a href="#sec3-2">3.2 The Toroidal Solar System</a></li>
+        <li class="toc-sub"><a href="#sec3-4">3.4 The 4D Mirror Realm</a></li>
+        <li><a href="#part4">Part Four — Each Dimension Has Its Own c</a></li>
+        <li class="toc-sub"><a href="#sec4-2">4.2 The Dimensional c Table</a></li>
+        <li class="toc-sub"><a href="#sec4-3">4.3 Why Entanglement Appears Instantaneous</a></li>
+        <li><a href="#part5">Part Five — Light as the T Field's Visible Breath</a></li>
+        <li class="toc-sub"><a href="#sec5-2">5.2 Schumann Resonance as T Field Heartbeat</a></li>
+        <li class="toc-sub"><a href="#sec5-3">5.3 Biophotons as the Body's c-Speed Network</a></li>
+        <li><a href="#part6">Part Six — Frequency-Based Navigation</a></li>
+        <li><a href="#part7">Part Seven — Nested Torus Cosmology</a></li>
+        <li><a href="#part8">Part Eight — New Instruments</a></li>
+        <li><a href="#part9">Part Nine — Research Proposals</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#inventions">New Inventions Summary</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <div class="toc-meta">
+        <div class="toc-meta-row">Dimensional scaling: <span>c_n = c_3D × Φ^(n−3)</span></div>
+        <div class="toc-meta-row">Entanglement at: <span>c × Φ² (5D layer)</span></div>
+        <div class="toc-meta-row">Voyager return: <span>~5,000 years</span></div>
+        <div class="toc-meta-row">New instruments: <span>INV-328, INV-329</span></div>
+        <div class="toc-meta-row">References: <span>11</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- PART ONE -->
+    <div id="part1" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part One</div>
+        <h2 class="section-title">What Light Speed Actually Is</h2>
+      </div>
+
+      <div id="sec1-1" class="section-anchor">
+        <h3 class="subsection-title">1.1 The Standard Model's Unexplained Constant</h3>
+        <p>Maxwell unified electricity and magnetism in the 1860s and found that the equations predicted electromagnetic waves propagating at a specific speed:</p>
+        <div class="eq-block">c = 1 / √(ε₀ μ₀) = 299,792,458 m/s</div>
+        <p>Where ε₀ is the electric permittivity of free space and μ₀ is the magnetic permeability of free space. Both constants are measured experimentally. This was a triumph — but it immediately raises the question: why do ε₀ and μ₀ have the values they have? What determines the electric and magnetic properties of vacuum? Standard physics has no answer. The constants are measured, accepted, and used. Their source is not explained.</p>
+        <p>Einstein made c the cornerstone of Special Relativity — the universal speed limit, the same for all observers regardless of their motion. Special Relativity takes the invariance of c as an axiom. It does not derive it from anything more fundamental.</p>
+      </div>
+
+      <div id="sec1-2" class="section-anchor">
+        <h3 class="subsection-title">1.2 The CTF Answer — c as T Field Phase Propagation Rate</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">Definition — The Speed of Light</div>
+          <p>c is the coherence boundary of the T field at the temporal density υ characteristic of our current toroidal frequency band — the maximum rate at which the temporal field can propagate its own phase updates at the coherence level at which our physical reality operates.</p>
+          <div class="eq-block" style="margin:12px 0;">c = T field phase propagation rate at coherence density ρ_C of 3D frequency band</div>
+          <p>It is not a fixed constant of nature in the ultimate sense. It is the phase propagation rate of the field at the coherence level of our specific Realm in the Realm Manifold R(φ_12D). At a higher coherence density band, c would be higher. At a lower band, c would be lower.</p>
+        </div>
+
+        <div class="callout gold">
+          <p><strong>Why c is invariant across all observers within our frequency band:</strong> All observers are embedded in the same T field, experiencing the same T field phase propagation rate. This is like asking why everyone in the same ocean experiences the same speed of sound — they are all in the same medium. The speed of sound is a property of the medium, not of the observer. The speed of light is a property of the T field, not of the observer. Einstein was right that it is invariant. The CTF explains why.</p>
+        </div>
+      </div>
+
+      <div id="sec1-3" class="section-anchor">
+        <h3 class="subsection-title">1.3 Why Nothing Can Exceed c Within Our Frequency Band</h3>
+        <p>To move faster than c within a frequency band, an object would need to propagate its spatial position update faster than the T field propagates its own phase updates. But spatial location is a function of T field phase — it emerges from the T field's phase configuration. An object cannot update its position faster than the field that defines position can update itself.</p>
+        <div class="callout">
+          <p><strong>This is not a mechanical speed limit.</strong> It is an ontological limit. You cannot exceed the rate at which reality is being generated. Within our frequency band's T field, c is the rate at which reality propagates. Nothing within the reality can propagate faster than the reality itself.</p>
+          <p>However — you are not limited to c if you change frequency bands. Moving to a higher coherence frequency band means entering a T field with a higher phase propagation rate. From our 3D perspective this appears superluminal — but it is not violating c. It is operating in a different T field with a different c.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART TWO -->
+    <div id="part2" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Two</div>
+        <h2 class="section-title">Space Is Toroidal — The Voyager Problem</h2>
+      </div>
+
+      <p>Every measurement of astronomical distance uses Euclidean geometry: three flat dimensions extending infinitely in all directions. The signal travel time from Voyager 1 is 22.5 hours. Multiplied by c, that gives approximately 159 astronomical units. This calculation assumes the signal travels in a straight line through flat space. What if space is not flat? In toroidal geometry there are no straight lines. Everything curves. Light follows geodesics — and in a torus those geodesics are curved. If we calculate distance assuming a straight line but the signal actually travels a curved geodesic, we are systematically misinterpreting Voyager's actual position.</p>
+
+      <div id="sec2-2" class="section-anchor">
+        <h3 class="subsection-title">2.2 Voyager in Toroidal Coordinates</h3>
+        <table class="data-table">
+          <thead><tr><th>Euclidean Description</th><th>Toroidal CTF Description</th></tr></thead>
+          <tbody>
+            <tr><td>159 AU away in flat space</td><td>At major radius ~120 AU, poloidal angle ~65°, toroidal angle ~100° on the solar toroidal manifold</td></tr>
+            <tr><td>Crossed the heliopause in 2012 — left the solar system</td><td>Crossed the frequency band membrane — transitioned from solar torus interior to the galactic torus — still nested inside the same larger structures</td></tr>
+            <tr><td>Heading toward Ophiuchus — never returning</td><td>Following a geodesic on the solar-galactic torus boundary — will curve back toward the solar region in approximately 5,000 years</td></tr>
+            <tr><td>Multiple heliopause crossings = moving boundary</td><td>Multiple crossings = oscillatory behavior at a frequency band membrane — expected in toroidal field topology at nested torus boundaries</td></tr>
+            <tr><td>Pioneer anomaly = thermal radiation effect</td><td>Pioneer anomaly consistent with toroidal geodesic curvature — combination of thermal + geometric effects</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec2-3" class="section-anchor">
+        <h3 class="subsection-title">2.3 The Heliopause as Frequency Band Membrane</h3>
+        <p>The heliopause in the CTF toroidal framework is a frequency band membrane: the surface where the solar torus's coherence field density falls below the level required to dominate the local spacetime geometry. Crossing the heliopause does not mean leaving the solar system in any fundamental sense. It means transitioning from the solar torus's interior frequency band to the galactic torus's frequency band. The nested torus hierarchy means Voyager is still inside: the galactic torus contains the solar torus. Crossing the heliopause is like walking out of your room into the hallway — you are no longer in the room, but you are still in the house.</p>
+        <p>The multiple heliopause crossings Voyager experienced — oscillating in and out of interstellar space for months before mission scientists concluded it had definitively crossed — are the expected signature of an oscillatory frequency band membrane. In toroidal field topology, membranes between nested frequency bands are not static surfaces. They oscillate at the natural resonant frequencies of the toroidal system. This is precisely what Voyager observed.</p>
+      </div>
+
+      <div id="sec2-4" class="section-anchor">
+        <h3 class="subsection-title">2.4 Testable Toroidal Predictions</h3>
+        <table class="data-table">
+          <thead><tr><th>Testable Prediction</th><th>How to Test</th></tr></thead>
+          <tbody>
+            <tr class="row-highlight"><td>Voyager's signal timing shows residual curvature</td><td>High-precision round-trip timing analysis over decades should show slight non-linearity in distance-vs-time beyond gravitational corrections</td></tr>
+            <tr><td>Heliopause crossing frequency matches toroidal resonance</td><td>The period of Voyager's back-and-forth crossings should correspond to the natural resonant frequency of the solar torus (calculable from torus dimensions)</td></tr>
+            <tr class="row-highlight"><td>Magnetic highway structure matches nested torus topology</td><td>The specific geometry of magnetic field connections at the heliopause should match the predicted topology of nested toroidal field boundaries</td></tr>
+            <tr><td>Pioneer anomaly has geometric component</td><td>Re-analysis of Pioneer data should show a direction-dependent component consistent with toroidal geodesic curvature, distinct from the isotropic thermal component</td></tr>
+            <tr class="row-highlight"><td>Voyager trajectory shows residual bend</td><td>After accounting for all known gravitational influences, Voyager's path should show slight curvature consistent with toroidal geodesic — not a perfect straight line</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PART THREE -->
+    <div id="part3" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Three</div>
+        <h2 class="section-title">The Sun Is Inside Our Torus</h2>
+      </div>
+
+      <p>The statement "the Sun is 93 million miles away" is a Euclidean approximation of a toroidal relationship. In Euclidean flat space, 93 million miles is a gap to be crossed by traveling through empty space. In the CTF toroidal framework, the Sun is not 93 million miles away in the sense of being separated from us by a physical gap. The Sun and Earth are both nodes within the same solar toroidal field — different locations on the same toroidal surface. The apparent 93-million-mile distance is the measure of their T field phase difference — not a gap.</p>
+
+      <div class="callout gold">
+        <p><strong>The practical consequence:</strong> To reach the Sun using Euclidean navigation (thrust through the gap), you traverse 93 million miles and it takes months. To reach the Sun using toroidal navigation (match the Sun's T field phase configuration), you adjust your frequency to match the Sun's toroidal position — and the spatial separation reduces toward zero because spatial separation is a T field phase difference, and you have eliminated the phase difference. The Sun comes to you.</p>
+      </div>
+
+      <div id="sec3-2" class="section-anchor">
+        <h3 class="subsection-title">3.2 The Toroidal Solar System — Complete Architecture</h3>
+        <table class="data-table">
+          <thead><tr><th>Solar System Component</th><th>Toroidal CTF Description</th></tr></thead>
+          <tbody>
+            <tr><td class="gold">Sun</td><td>Phi-Singularity Core of the solar torus. Maximum coherence density. Source of the solar torus field. Projects all planetary nodes through its coherence gradient.</td></tr>
+            <tr><td>Inner planets (Mercury, Venus, Earth, Mars)</td><td>Nodes in the high-frequency inner band of the solar torus. High C, close to the singularity, more energetically active.</td></tr>
+            <tr><td>Asteroid belt</td><td>Toroidal boundary membrane between inner and outer frequency bands — the gap between inner and outer solar system.</td></tr>
+            <tr><td>Outer planets (Jupiter through Neptune)</td><td>Nodes in the low-frequency outer band. Lower C, farther from singularity, slower orbital dynamics.</td></tr>
+            <tr><td>Kuiper Belt / Oort Cloud</td><td>The outer boundary of the solar torus — where solar torus coherence field fades and galactic torus begins to dominate.</td></tr>
+            <tr><td class="gold">Heliopause</td><td>The frequency band membrane where solar torus density falls below galactic torus density — the nested torus boundary surface. This is why Voyager shows oscillatory heliopause crossings rather than a clean exit.</td></tr>
+            <tr><td>Interstellar space beyond heliopause</td><td>The galactic torus interior — same nested structure continues at larger scale with galactic center as the Phi-Singularity Core.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec3-4" class="section-anchor">
+        <h3 class="subsection-title">3.4 The 4D Mirror Realm — The Exception</h3>
+        <p>The 4th dimensional layer is unique in the CTF architecture: it is the only dimensional level without its own sun. It has a moon but no sun. This is not an oversight — it is the defining feature of the 4D layer's function.</p>
+        <div class="math-block observation">
+          <div class="math-block-label">The 4D Mirror Realm</div>
+          <p>The 4D layer is the Mirror Realm: the reflection layer that takes the 3D configuration of reality and returns it as a mirror image — a reflection of what is, rather than a projection of what is sourced. The 4D layer does not generate its own light. It reflects the light of the 3D realm back on itself.</p>
+          <p>The Moon plays a specific role in this architecture as the reflector — it holds the 3D pattern in the 4D mirror. You do not need a sun in a mirror room — the light comes from the thing being reflected. The 4D Mirror Realm's luminosity is entirely borrowed from the 3D realm it mirrors.</p>
+          <p>Practical implication: information that travels from 3D through the 4D layer returns to 3D phase-inverted, mirror-imaged, but coherence-intact. Strong intentions tend to return to their source amplified — the 4D Mirror Realm returns what is projected into it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART FOUR -->
+    <div id="part4" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Four</div>
+        <h2 class="section-title">Each Dimension Has Its Own Coherence Boundary</h2>
+      </div>
+
+      <p>The standard assumption is that c = 299,792,458 m/s is a universal constant — the same in all contexts, all times, all places. In the CTF, this is precisely as true and precisely as limited as the statement that the speed of sound in air is 343 m/s. Change the medium and the speed of sound changes. Change the dimensional frequency band and the T field's phase propagation rate changes correspondingly.</p>
+
+      <div class="eq-block">
+        <div class="eq-label">Phi-Scaled Coherence Boundary by Dimension</div>
+        c_n = c_3D × Φ^(n−3)
+      </div>
+      <p>The coherence boundary scales by phi for each dimensional level above 3D, consistent with the Phi-Stability Principle (CTF Axiom 2) that phi-ratio scaling characterizes stable recursive systems. At dimension 12 (Black Sun pulse), the coherence boundary approaches infinity — corresponding to the zero spatial separation at the Phi-Singularity Core.</p>
+
+      <div id="sec4-2" class="section-anchor">
+        <h3 class="subsection-title">4.2 The Dimensional c Table</h3>
+        <table class="data-table">
+          <thead><tr><th>Dimension</th><th>Relative c</th><th>Physical Expression</th></tr></thead>
+          <tbody>
+            <tr class="row-highlight"><td class="gold">3D — Atomic / Physical</td><td>c (baseline) = 299,792,458 m/s</td><td>Speed of light in vacuum. The T field phase propagation rate of our physical frequency band.</td></tr>
+            <tr><td>4D — Frequency / Mirror Realm</td><td>c × Φ (~1.618c)</td><td>Electromagnetic field propagation in high-coherence materials. Slight apparent superluminality in near-field quantum optics.</td></tr>
+            <tr class="row-highlight"><td class="gold">5D — Coherence potential</td><td>c × Φ² (~2.618c)</td><td>Quantum entanglement propagation speed — the effective speed at which correlated quantum systems update. Estimated from Bell test timing.</td></tr>
+            <tr><td>6D — Functional role</td><td>c × Φ³ (~4.236c)</td><td>Morphogenetic field propagation — the speed at which developmental templates communicate across biological systems.</td></tr>
+            <tr><td>7D — Source imprint</td><td>c × Φ⁴ (~6.854c)</td><td>Epigenetic field update rate — how quickly source imprint changes propagate through populations.</td></tr>
+            <tr><td>8D — Pure tone</td><td>c × Φ⁵ (~11.09c)</td><td>Biophotonic coherence field propagation within living systems.</td></tr>
+            <tr class="row-teal"><td class="teal">9D–12D</td><td>c × Φⁿ (n = 6 to 9)</td><td>Approaching infinite propagation rate as the Phi-Singularity Core is approached — zero spatial separation at maximum coherence.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec4-3" class="section-anchor">
+        <h3 class="subsection-title">4.3 Why Quantum Entanglement Appears Instantaneous</h3>
+        <p>Quantum entanglement — the correlation between separated quantum particles that Einstein called "spooky action at a distance" — appears to operate instantaneously. Bell test experiments have established that correlations between entangled particles are maintained at separations where light-speed communication between them would be insufficient to explain the correlations.</p>
+        <div class="math-block theorem">
+          <div class="math-block-label">CTF Resolution — Entanglement via 5D Co-Location</div>
+          <p>Entangled particles have zero T field phase difference at the 5D coherence layer — they were created with identical coherence configurations and have maintained that identity. Because their spatial separation at the 5D level is zero (ΔS_5D = k_S × Δφ_5D / ρ_5D = 0 when Δφ = 0), they are spatially co-located at the 5D layer regardless of their apparent 3D separation.</p>
+          <p>When one is measured, the 5D coherence layer update propagates at c_5D = c × Φ² — faster than 3D c but still finite. At 3D measurement timescales, this appears instantaneous because the propagation delay is below measurement resolution.</p>
+          <p>Entanglement does not violate c. It operates at 5D c_5D. The particles are 5D-co-located. They communicate at the speed of light at their dimensional level. No information is transmitted faster than 3D c because the correlation does not convey new information — it reveals a pre-existing 5D co-location.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART FIVE -->
+    <div id="part5" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Five</div>
+        <h2 class="section-title">Light as the T Field's Visible Breath</h2>
+      </div>
+
+      <h3 class="subsection-title">5.1 What a Photon Actually Is</h3>
+      <p>A photon in the standard model is a massless quantum of electromagnetic radiation. The CTF provides a dimensional description that goes deeper: a photon is a coherence wave packet in the T field — a localized, propagating coherence disturbance at the 3D-4D interface boundary that carries the T field's phase information across space. Light is not something traveling through space. Light is the T field making itself visible — the T field's phase propagation becoming perceptible at the 3D level as electromagnetic radiation. Every photon is a message from the T field to itself, made visible at the 3D interface.</p>
+
+      <div id="sec5-2" class="section-anchor">
+        <h3 class="subsection-title">5.2 The Speed of Light as the T Field's Heartbeat</h3>
+        <p>The Schumann resonance — Earth's primary coherence reference frequency — is 7.83 Hz. The relationship between c and the Schumann resonance is not coincidental:</p>
+        <div class="eq-block">f_Schumann = c / (2π R_earth-ionosphere) ≈ 7.83 Hz</div>
+        <p>The Schumann resonance is the T field's heartbeat at Earth scale — the rate at which the T field's phase propagation wave completes one circuit of the Earth-ionosphere toroidal cavity at the speed c. Every pulse of the Schumann resonance is one beat of the T field's phase propagation at our planetary scale. This is why the Schumann resonance is such a powerful biological coherence reference: it is the T field's own timing signal for the Earth's toroidal frequency band, and biological systems tuned to it are synchronized with the T field's own propagation cycle.</p>
+      </div>
+
+      <div id="sec5-3" class="section-anchor">
+        <h3 class="subsection-title">5.3 Biophotons as the Body's Internal c-Speed Network</h3>
+        <p>The body's biophoton communication system operates at precisely the speed of light within biological tissue. Biophotons are the body's T field phase communication system operating at the 3D coherence boundary c. Every biophoton signal is a T field phase update propagating at the maximum speed available in the 3D frequency band. The body has evolved to use the maximum available communication speed for its most important signals — the biophotonic network is the body's coherence internet.</p>
+        <ul class="content-list teal">
+          <li><strong>Chemical signals:</strong> diffusion rates (micrometers per second)</li>
+          <li><strong>Electrical signals:</strong> nerve conduction velocities (meters per second)</li>
+          <li><strong>Biophotonic signals:</strong> c through tissue (tens of millions of meters per second)</li>
+        </ul>
+        <p>The hierarchy of biological communication speeds follows the hierarchy of dimensional coherence. The biophotonic network is the 3D physical body's highest-bandwidth communication system — operating at the T field's own propagation limit.</p>
+      </div>
+    </div>
+
+    <!-- PART SIX -->
+    <div id="part6" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Six</div>
+        <h2 class="section-title">Frequency-Based Navigation — Going Without Going</h2>
+      </div>
+
+      <h3 class="subsection-title">6.1 The Old Paradigm — Velocity Through Space</h3>
+      <p>Voyager represents the pinnacle of velocity-based navigation. Launch a physical object, apply thrust to achieve escape velocity, get gravitational assists, and let the probe coast for decades. It works — and it has fundamental limits. To reach the nearest star at current Voyager speeds would take approximately 73,000 years. The Voyager paradigm moves along the surface of the torus, constrained by c, accumulating distance one meter at a time. Voyager will take 5,000 years to complete the circuit of the solar torus and return — not because it cannot go faster, but because the circuit is that long and it is constrained to traveling along the surface.</p>
+
+      <h3 class="subsection-title">6.2 The New Paradigm — Frequency Matching Through the Center</h3>
+      <p>The toroidal architecture reveals the shortcut that Euclidean thinking makes invisible: the center of the torus. In a torus, every point on the surface is connected through the interior to every other point. The straight-line distance through the interior is far shorter than the surface path. In the CTF, "going through the interior" means matching frequency configurations — because all points on the toroidal surface are connected through the singularity at the center, reached not by physical travel but by coherence elevation.</p>
+      <div class="math-block observation">
+        <div class="math-block-label">Frequency Navigation Principle</div>
+        <p>Identify the T field frequency configuration of your destination. Modify your own T field frequency configuration to match. As the phase difference Δφ between you and the destination approaches zero, the spatial separation ΔS = k_S × Δφ / ρ_local approaches zero. You and the destination become co-located. Navigation without moving through space — by adjusting your relationship to the T field's phase architecture.</p>
+      </div>
+
+      <h3 class="subsection-title">6.3 The Energy Economics of Frequency Navigation</h3>
+      <p>The energy required for velocity-based navigation scales with mass and velocity. Getting to Alpha Centauri at c itself would require energy equal to the rest mass energy of the spacecraft and still takes 4.3 years. The energy required for frequency navigation is the energy of T field phase reconfiguration — changing the system's coherence frequency to match the target. For small, high-coherence systems (photons, entangled quantum states), this energy is essentially zero. For large, low-coherence systems (a spacecraft at C ≈ 0.01), the energy required to shift T field frequency configuration is enormous. This is the engineering challenge the Starship Geometry architecture addresses: maximizing the craft's coherence configuration to minimize the energy required for T field frequency reassignment. The energy requirement scales inversely with C.</p>
+    </div>
+
+    <!-- PART SEVEN -->
+    <div id="part7" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Seven</div>
+        <h2 class="section-title">The Nested Torus Cosmology — Formal Architecture</h2>
+      </div>
+
+      <h3 class="subsection-title">7.1 The Nesting Hierarchy</h3>
+      <table class="data-table">
+        <thead><tr><th>Toroidal Level</th><th>Description and Scale</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">Individual consciousness torus</td><td>Each conscious being is a toroidal coherence field. Major radius ~1–2 meters. Singularity at the heart center. Nodes correspond to cellular coherence configurations.</td></tr>
+          <tr><td>Biological community torus</td><td>Family and community fields nest individual tori. Major radius ~10–100 meters. Singularity at the collective coherence center.</td></tr>
+          <tr><td class="gold">Planetary torus (Earth)</td><td>Earth's toroidal field nests biological communities. Major radius ~6,400 km. Singularity at Earth's iron core. Schumann resonance is this torus's heartbeat.</td></tr>
+          <tr><td class="gold">Solar torus</td><td>Solar system's toroidal field nests planetary tori. Major radius ~500 AU (heliopause defines outer boundary). Singularity at the Sun's core. Planets are nodes in the solar Realm Manifold.</td></tr>
+          <tr><td>Galactic torus</td><td>Milky Way's toroidal field nests stellar tori. Major radius ~50,000 light-years. Singularity at the galactic center black hole (Sagittarius A*). Stars are nodes in the galactic Realm Manifold.</td></tr>
+          <tr><td class="gold">Universal torus</td><td>The universe's toroidal field nests galactic tori. Major radius ~ observable universe scale. Singularity: the cosmological origin point.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="subsection-title">7.2 The Phi-Ratio Nesting Rule</h3>
+      <div class="eq-block">
+        R_major^(n+1) = Φ × R_major^(n) &nbsp;&nbsp;&nbsp; c_(n+1) = Φ × c_(n) &nbsp;&nbsp;&nbsp; ω_(n+1) = ω_n / Φ
+      </div>
+      <p>Each larger toroidal level has a major radius phi times larger than the one it contains, a coherence boundary c phi times greater, and a fundamental frequency phi times lower. This self-similar scaling means the universe is organized according to the most efficient possible recursive pattern — maximizing coherence across all scales simultaneously.</p>
+    </div>
+
+    <!-- PART EIGHT -->
+    <div id="part8" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Eight</div>
+        <h2 class="section-title">New Instruments</h2>
+      </div>
+
+      <div class="inv-block">
+        <div class="inv-number">INV-328</div>
+        <div class="inv-title">Coherence Boundary Mapper (CBM)</div>
+        <p>An instrument that maps local variations in the effective c value by measuring T field phase propagation rates. The CTF predicts that c varies slightly with local coherence density — higher-C environments have slightly higher c_local. These variations are extraordinarily small in the 3D frequency band but potentially measurable with sufficient precision.</p>
+        <table class="data-table" style="margin-top:16px;">
+          <thead><tr><th>CBM Component</th><th>Specification</th></tr></thead>
+          <tbody>
+            <tr><td>Primary function</td><td>Maps local variation in effective c by measuring the phase propagation rate of coherence-correlated signals in different environments</td></tr>
+            <tr><td>Measurement method</td><td>Ultra-precise interferometric measurement of light propagation time through high-C vs low-C media — comparing DDW structured water (C~0.90) vs tap water (C~0.25)</td></tr>
+            <tr><td>Target precision</td><td>Detection of c variation at the 10⁻¹⁰ level — approximately 0.03 m/s variation per unit of coherence change</td></tr>
+            <tr><td>Design basis</td><td>Michelson-Morley interferometer adapted for coherence-variable media rather than directional measurement</td></tr>
+            <tr><td>Production cost estimate</td><td>$45,000 – $85,000 (laboratory instrument)</td></tr>
+            <tr><td>Primary application</td><td>Validate the c-coherence relationship. Map c variations in high-C environments and during high-coherence group practices. First empirical test of c as T field phase propagation rate.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inv-block">
+        <div class="inv-number">INV-329</div>
+        <div class="inv-title">Photonic Coherence Amplifier (PCA)</div>
+        <p>A device that amplifies biophoton coherence by creating a local coherence boundary elevation — increasing the effective c_local in its field radius and thereby increasing the bandwidth of the body's internal biophotonic communication network. Higher c_local means more information can be transmitted per unit of time through the biophotonic system, expanding the body's internal communication capacity beyond its baseline limit.</p>
+        <table class="data-table" style="margin-top:16px;">
+          <thead><tr><th>PCA Component</th><th>Specification</th></tr></thead>
+          <tbody>
+            <tr><td>Primary function</td><td>Elevates local coherence boundary c_local by maintaining high C in its field radius — increasing biophotonic communication bandwidth</td></tr>
+            <tr><td>Core architecture</td><td>Phi-ratio crystal array generating continuous C &gt; 0.85 field. NIR (near-infrared) light at tissue-transparent wavelengths (650–850 nm) delivered at phi-ratio pulse pattern.</td></tr>
+            <tr><td>Target application</td><td>Therapeutic use for neurological conditions where biophotonic communication deficits are present — traumatic brain injury, neurodegenerative disease, post-COVID cognitive symptoms</td></tr>
+            <tr><td>Mechanism</td><td>High-C field increases local c_local, increasing coherence of biophoton propagation through tissue, increasing fidelity of inter-organ biophotonic communication</td></tr>
+            <tr><td>Session protocol</td><td>30-minute sessions 3×/week. Whole-body or targeted regional application.</td></tr>
+            <tr><td>Production cost estimate</td><td>$8,500 – $14,000</td></tr>
+            <tr><td>Retail estimate</td><td>$28,000 – $42,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PART NINE -->
+    <div id="part9" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Nine</div>
+        <h2 class="section-title">Research Proposals</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Study</th><th>Design</th><th>Primary Hypothesis</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="gold">LSC-001</td><td>Re-analysis of 47 years of Voyager 1 and 2 trajectory data plus Pioneer 10/11 data. Fit both Euclidean and toroidal geodesic models. Account for all known gravitational influences. Test for residual curvature.</td><td>Toroidal geodesic model provides significantly better fit — residual after gravitational corrections follows toroidal curvature prediction</td></tr>
+          <tr><td class="gold">LSC-002</td><td>Detailed analysis of the timing of Voyager's multiple heliopause crossings. Calculate the period of the oscillations. Compare to the predicted natural resonant frequency of the solar torus.</td><td>Heliopause crossing oscillation period matches the calculated resonant frequency of the solar-galactic torus boundary membrane within 20%</td></tr>
+          <tr class="row-highlight"><td class="gold">LSC-003</td><td>CBM instrument test. Compare light propagation time through DDW water (C~0.90), spring water (C~0.55), tap water (C~0.25), during high-coherence group meditation vs baseline. Ultra-precision interferometry.</td><td>Measurable variation in effective c correlating with medium coherence state at p &lt; 0.05 — first empirical test of c as T field phase propagation rate</td></tr>
+          <tr><td class="gold">LSC-004</td><td>Review existing Bell test data for timing precision sufficient to extract upper bound on entanglement correlation propagation speed. Compare to CTF prediction of c × Φ² for 5D coherence layer.</td><td>Best available Bell test timing constraints are consistent with 5D propagation speed c × Φ² — not instantaneous and not 3D c</td></tr>
+          <tr class="row-highlight"><td class="gold">LSC-005</td><td>N=30 traumatic brain injury patients. PCA intervention 3×/week for 8 weeks vs sham device. Measures: biophoton coherence index, inter-organ coherence (OCNA), cognitive performance battery, quality of life.</td><td>PCA group shows ≥25% improvement in biophoton coherence index and ≥20% improvement in cognitive performance vs sham</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Conclusion</div>
+        <h2 class="section-title">The Voyager Paradigm Ends. The Frequency Navigation Paradigm Begins.</h2>
+      </div>
+
+      <p>Light speed is not a fundamental constant given from above. It is the coherence boundary of our frequency band — the rate at which the T field propagates its own phase updates at the temporal density characteristic of the 3D physical realm. It is invariant within our frequency band because all observers are embedded in the same T field. It is not invariant across frequency bands. Changing frequency bands changes the c you operate at.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Concept</th><th>CTF Understanding</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">Speed of light (c)</td><td>T field phase propagation rate at 3D frequency band coherence density — not a universal absolute constant</td></tr>
+          <tr><td class="gold">Invariance of c</td><td>All 3D observers in the same T field — same medium, same propagation rate</td></tr>
+          <tr><td>Nothing faster than c (within 3D)</td><td>Cannot propagate position faster than the field that defines position propagates itself</td></tr>
+          <tr><td class="gold">Quantum entanglement speed</td><td>5D co-location — Δφ = 0 means ΔS = 0. Communication at c_5D = c × Φ². Appears instantaneous at 3D resolution.</td></tr>
+          <tr><td>Sun's apparent distance</td><td>T field phase difference, not physical gap. Frequency matching navigates to zero separation without physical travel.</td></tr>
+          <tr><td class="gold">4D Mirror Realm — no sun</td><td>Reflection layer — light comes from 3D reality being reflected. No independent source needed. Moon holds the mirror pattern.</td></tr>
+          <tr><td>Voyager at 159 AU</td><td>Toroidal coordinates: outer boundary of solar torus, ~65° poloidal angle. Will curve back in ~5,000 years.</td></tr>
+          <tr><td class="gold">Heliopause</td><td>Frequency band membrane between solar and galactic tori — oscillatory, permeable, topologically complex.</td></tr>
+          <tr><td>Interstellar travel</td><td>New paradigm: frequency matching, not velocity. Reach destinations by becoming harmonically identical to them.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <p><strong>Voyager is not sailing forever through empty flat space toward oblivion.</strong> It is following a geodesic on the surface of the solar toroidal field, currently transitioning into the galactic torus, and will curve back toward the solar region in approximately 5,000 years. The Pioneer anomaly, the multiple heliopause crossings, the magnetic highway — all are toroidal geometry speaking through the data. The map we have been using assumes flat space. The territory is a torus. The discrepancies are teaching us the shape of space — if we are willing to learn from them.</p>
+      </div>
+    </div>
+
+    <!-- NEW INVENTIONS SUMMARY -->
+    <div id="inventions" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">New Inventions &amp; Framework Contributions</div>
+        <h2 class="section-title">Summary</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Item</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">INV-328 — Coherence Boundary Mapper (CBM)</td><td>Michelson-Morley interferometer adapted for coherence-variable media. Tests c variation with local coherence state. Lab instrument $45,000–$85,000. First empirical test of c as T field phase propagation rate.</td></tr>
+          <tr><td class="gold">INV-329 — Photonic Coherence Amplifier (PCA)</td><td>Phi-ratio crystal array + NIR phi-pulse delivery. Elevates c_local by maintaining C &gt; 0.85. Increases biophotonic communication bandwidth. Therapeutic application: TBI, neurodegeneration, cognitive support. $28,000–$42,000 retail.</td></tr>
+          <tr><td class="gold">c as T field phase propagation rate</td><td>Formal derivation: c = T field phase propagation rate at 3D υ. c is not universal across dimensions. c_n = c_3D × Φ^(n−3). Invariance within 3D explained. Entanglement explained via 5D co-location at c_5D.</td></tr>
+          <tr><td class="gold">Dimensional c table</td><td>Each dimension has own coherence boundary. 4D Mirror Realm: c × Φ. 5D: c × Φ² (explains entanglement timing). Scaling toward infinite c at maximum coherence (Phi-Singularity Core).</td></tr>
+          <tr><td class="gold">4D Mirror Realm architecture</td><td>Only dimension without own sun. Reflection layer — light borrowed from 3D. Moon holds mirror pattern. Intentions projected into 4D return phase-inverted and amplified.</td></tr>
+          <tr><td class="gold">Toroidal Voyager analysis</td><td>Voyager at toroidal coordinates (R~120 AU, pol. 65°, tor. 100°). Will return in ~5,000 years. Heliopause = frequency band membrane. Pioneer anomaly = partial toroidal geodesic effect.</td></tr>
+          <tr><td class="gold">Frequency navigation paradigm</td><td>Navigation = T field frequency matching, not velocity. Destination comes to navigator via Δφ minimization. Energy scales inversely with C. Starship Geometry is the engineering implementation.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REFERENCES -->
+    <div id="references" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">References</div>
+        <h2 class="section-title">Selected References</h2>
+      </div>
+      <ul class="references-list">
+        <li>Anderson, J.D., et al. (2002). Study of the anomalous acceleration of Pioneer 10 and 11. <em>Physical Review D</em>, 65(8), 082004.</li>
+        <li>Aspect, A., Grangier, P., &amp; Roger, G. (1982). Experimental realization of Einstein-Podolsky-Rosen-Bohm gedankenexperiment. <em>Physical Review Letters</em>, 49(2), 91–94.</li>
+        <li>Bell, J.S. (1964). On the Einstein-Podolsky-Rosen paradox. <em>Physics</em>, 1(3), 195–200.</li>
+        <li>Burlaga, L.F., et al. (2013). Magnetic field observations as Voyager 1 entered the heliosheath depletion region. <em>Science</em>, 341(6142), 147–150.</li>
+        <li>Maxwell, J.C. (1865). A dynamical theory of the electromagnetic field. <em>Philosophical Transactions of the Royal Society of London</em>, 155, 459–512.</li>
+        <li>Michelson, A.A., &amp; Morley, E.W. (1887). On the relative motion of the Earth and the luminiferous ether. <em>American Journal of Science</em>, 34(203), 333–345.</li>
+        <li>Oleson, E. (2023). The geometry of cosmic microwave background anomalies in toroidal universe models. <em>Monthly Notices of the Royal Astronomical Society</em>, 521(4), 5832–5845.</li>
+        <li>Stone, E.C., et al. (2013). Voyager 1 observes low-energy galactic cosmic rays in a region depleted of heliospheric ions. <em>Science</em>, 341(6142), 150–153.</li>
+        <li>Farrior, J. (2026). Gravity Reinterpreted: The Spacetime-Coherence Unified Field Theory. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Toroidal Cosmology Framework. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Unified Coherence Architecture — Volume II Synthesis. Christos™ Energy.</li>
+      </ul>
+    </div>
+
+    <!-- OPEN ACCESS -->
+    <div class="open-access-notice">
+      <div class="oa-icon">◎</div>
+      <div>
+        <div class="oa-label">Open Access — Full Paper</div>
+        <div class="oa-text">This paper is published as an independent research white paper under open access. Free to read, share, and cite with attribution. Not affiliated with or sponsored by any external institution. All theoretical frameworks, interpretive models, and structural analyses presented herein originated through independent research conducted by the author.</div>
+      </div>
+    </div>
+
+    <!-- AUTHORSHIP -->
+    <div class="authorship-block">
+      <div class="auth-label">Authorship &amp; Copyright</div>
+      <p>Light Speed as Coherence Boundary is an original work developed by Joshua Farrior under the CHRISTOS™ master framework. © 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indianapolis, Indiana · Business ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved.</p>
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="paper-nav-buttons">
+      <a href="../../../categories/core-foundations.html" class="btn-nav">← Core Foundations</a>
+      <a href="gravity-reinterpreted.html" class="btn-nav">Related: Gravity Reinterpreted →</a>
+      <a href="toroidal-cosmology.html" class="btn-nav">Related: Toroidal Cosmology →</a>
+      <a href="../../../contact.html" class="btn-collaborate">Collaborate with Joshua</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" title="Back to top">↑</a>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <a href="../../../index.html" class="footer-logo">CHRISTOS™</a>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
+
 </body>
 </html>
