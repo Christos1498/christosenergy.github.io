@@ -3,120 +3,852 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sleep & Dream Architecture — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Sleep & Dream Architecture | Christos™ Research Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-item{}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.abstract-text + .abstract-text{margin-top:0;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #08111E !important; color: #D8D0C0 !important; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.8; min-height: 100vh; }
+
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #C9A84C !important; }
+
+  .breadcrumb-bar { background-color: #08111E !important; border-bottom: 1px solid rgba(201,168,76,0.15) !important; padding: 14px 40px; }
+  .breadcrumb-bar .inner { max-width: 1300px; margin: 0 auto; font-family: 'Raleway', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .breadcrumb-bar a { color: #C9A84C !important; text-decoration: none; }
+  .breadcrumb-bar a:hover { text-decoration: underline; }
+  .breadcrumb-bar .sep { margin: 0 8px; color: #3AAFAF !important; }
+
+  .paper-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 56px 40px 48px; }
+  .paper-header .inner { max-width: 1300px; margin: 0 auto; }
+  .paper-tag-line { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 20px; }
+  .paper-tag-line .dot { margin: 0 10px; }
+  .paper-tag-line .open-badge { background-color: rgba(58,175,175,0.12) !important; border: 1px solid #3AAFAF !important; color: #3AAFAF !important; padding: 2px 10px; border-radius: 3px; font-size: 0.62rem; }
+  .paper-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.2; margin-bottom: 16px; }
+  .paper-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #C9A84C !important; line-height: 1.55; max-width: 820px; margin-bottom: 36px; }
+  .paper-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 40px; border-top: 1px solid rgba(201,168,76,0.25) !important; padding-top: 28px; max-width: 1000px; }
+  .meta-item .meta-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 5px; }
+  .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; }
+  .meta-item .meta-value.mono { font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  .abstract-block { background-color: #08111E !important; padding: 40px; }
+  .abstract-block .inner { max-width: 1300px; margin: 0 auto; }
+  .abstract-card { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 4px solid #C9A84C !important; padding: 28px 36px; max-width: 900px; }
+  .abstract-card .abstract-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .abstract-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 14px; }
+  .abstract-card p:last-child { margin-bottom: 0; }
+
+  .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 48px 40px 80px; display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
+
+  .sidebar { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+  .toc-box { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; padding: 24px; }
+  .toc-title { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .toc-list li a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 500; color: #D8D0C0 !important; text-decoration: none; display: block; padding: 5px 8px; border-left: 2px solid transparent !important; transition: all 0.2s; line-height: 1.4; }
+  .toc-list li a:hover { color: #C9A84C !important; border-left-color: #C9A84C !important; background-color: rgba(201,168,76,0.05) !important; }
+  .toc-list li.toc-sub a { padding-left: 18px; font-size: 0.65rem; color: rgba(216,208,192,0.7) !important; }
+  .toc-list li.toc-sub a:hover { color: #3AAFAF !important; border-left-color: #3AAFAF !important; }
+  .toc-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15) !important; }
+  .toc-meta-row { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: rgba(216,208,192,0.6) !important; margin-bottom: 6px; }
+  .toc-meta-row span { color: #C9A84C !important; }
+
+  .main-content { min-width: 0; }
+  .section-anchor { scroll-margin-top: 80px; }
+  .paper-section { margin-bottom: 56px; }
+  .section-header { margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .section-number { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .section-title { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 600; color: #FFFFFF !important; line-height: 1.3; }
+  .subsection-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin: 32px 0 14px; letter-spacing: 0.03em; }
+  .sub2-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; font-style: italic; color: #3AAFAF !important; margin: 20px 0 10px; }
+
+  p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  .eq-block { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(58,175,175,0.2) !important; border-left: 3px solid #3AAFAF !important; padding: 16px 24px; margin: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #FFFFFF !important; overflow-x: auto; }
+  .eq-inline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFFFFF !important; background-color: rgba(10,22,40,0.6) !important; padding: 1px 6px; border-radius: 2px; }
+
+  .math-block { border: 1px solid rgba(201,168,76,0.2) !important; padding: 20px 26px; margin: 24px 0; }
+  .math-block.definition { border-top: 3px solid #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .math-block.theorem { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; }
+  .math-block.observation { border-top: 3px solid rgba(58,175,175,0.6) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.remark { border-top: 3px solid rgba(216,208,192,0.3) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block.warning { border-top: 3px solid rgba(201,168,76,0.7) !important; background-color: rgba(201,168,76,0.05) !important; }
+  .math-block-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+  .definition .math-block-label { color: #C9A84C !important; }
+  .theorem .math-block-label, .observation .math-block-label { color: #3AAFAF !important; }
+  .remark .math-block-label { color: rgba(216,208,192,0.7) !important; }
+  .warning .math-block-label { color: #C9A84C !important; }
+  .math-block p { font-size: 1rem; margin-bottom: 10px; }
+  .math-block p:last-child { margin-bottom: 0; }
+
+  .callout { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.25) !important; border-left: 4px solid #3AAFAF !important; padding: 20px 26px; margin: 24px 0; }
+  .callout p { font-size: 1rem; color: #D8D0C0 !important; margin: 0 0 10px; }
+  .callout p:last-child { margin: 0; }
+  .callout strong { color: #3AAFAF !important; }
+  .callout.gold { background-color: rgba(201,168,76,0.05) !important; border-color: rgba(201,168,76,0.2) !important; border-left-color: #C9A84C !important; }
+  .callout.gold strong { color: #C9A84C !important; }
+
+  .content-list { list-style: none; margin: 14px 0 20px; padding: 0; }
+  .content-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; padding: 4px 0 4px 22px; position: relative; line-height: 1.75; }
+  .content-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; }
+  .content-list.teal li::before { color: #3AAFAF !important; }
+  .content-list.bullet li::before { content: '◆'; font-size: 0.55rem; top: 9px; }
+
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: 'Cormorant Garamond', serif; }
+  .data-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; text-align: left; border-bottom: 2px solid #C9A84C !important; }
+  .data-table td { font-size: 0.97rem; color: #D8D0C0 !important; padding: 10px 16px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.65; }
+  .data-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .data-table .row-highlight td { background-color: rgba(201,168,76,0.07) !important; }
+  .data-table .row-teal td { background-color: rgba(58,175,175,0.04) !important; }
+  .data-table td.gold { color: #C9A84C !important; font-weight: 600; }
+  .data-table td.teal { color: #3AAFAF !important; }
+
+  /* HOPF TABLE — color coded by phase */
+  .hopf-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .hopf-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 12px 16px; border-bottom: 2px solid #C9A84C !important; }
+  .hopf-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #D8D0C0 !important; padding: 11px 16px; border-bottom: 1px solid rgba(201,168,76,0.08) !important; vertical-align: top; line-height: 1.65; }
+  .hopf-death td { background-color: rgba(200,80,50,0.07) !important; }
+  .hopf-death td:first-child { color: #E07050 !important; font-weight: 600; }
+  .hopf-void td { background-color: rgba(201,168,76,0.07) !important; }
+  .hopf-void td:first-child { color: #C9A84C !important; font-weight: 600; }
+  .hopf-life td { background-color: rgba(58,175,175,0.07) !important; }
+  .hopf-life td:first-child { color: #3AAFAF !important; font-weight: 600; }
+  .hopf-rise td { background-color: rgba(58,175,175,0.04) !important; }
+  .hopf-rise td:first-child { color: rgba(58,175,175,0.8) !important; }
+
+  /* SLEEP STAGE MAP */
+  .stage-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 20px 0; }
+  .stage-card { border: 1px solid rgba(201,168,76,0.15) !important; border-left: 4px solid #C9A84C !important; background-color: rgba(10,22,40,0.5) !important; padding: 16px 20px; }
+  .stage-card.rem { border-left-color: #3AAFAF !important; }
+  .stage-card.n3 { border-left-color: #E07050 !important; }
+  .stage-header { display: flex; align-items: center; gap: 16px; margin-bottom: 10px; }
+  .stage-name { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 700; color: #C9A84C !important; min-width: 160px; }
+  .stage-card.rem .stage-name { color: #3AAFAF !important; }
+  .stage-card.n3 .stage-name { color: #E07050 !important; }
+  .stage-dim { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.6) !important; }
+  .stage-body { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  /* CIRCADIAN CLOCK TABLE */
+  .clock-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .clock-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 11px 14px; border-bottom: 2px solid #C9A84C !important; }
+  .clock-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; color: #D8D0C0 !important; padding: 9px 14px; border-bottom: 1px solid rgba(201,168,76,0.07) !important; vertical-align: top; line-height: 1.6; }
+  .clock-table tr:nth-child(odd) td { background-color: rgba(8,17,30,0.4) !important; }
+  .clock-table tr:nth-child(even) td { background-color: rgba(10,22,40,0.3) !important; }
+  .clock-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .clock-table td:first-child { color: #C9A84C !important; font-weight: 600; white-space: nowrap; font-family: 'Raleway', sans-serif; font-size: 0.8rem; letter-spacing: 0.04em; }
+  .clock-table td:nth-child(2) { font-weight: 600; color: #FFFFFF !important; }
+
+  /* DEPRIVATION CASCADE */
+  .cascade-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .cascade-table th { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 10px 14px; border-bottom: 2px solid #C9A84C !important; }
+  .cascade-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; color: #D8D0C0 !important; padding: 9px 14px; border-bottom: 1px solid rgba(201,168,76,0.08) !important; vertical-align: top; line-height: 1.6; }
+  .cascade-table td:first-child { font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+  .cascade-ok td { background-color: rgba(58,175,175,0.04) !important; }
+  .cascade-ok td:first-child { color: #3AAFAF !important; }
+  .cascade-mild td { background-color: rgba(201,168,76,0.04) !important; }
+  .cascade-mild td:first-child { color: #C9A84C !important; }
+  .cascade-mod td { background-color: rgba(201,168,76,0.07) !important; }
+  .cascade-mod td:first-child { color: rgba(201,168,76,0.9) !important; }
+  .cascade-sev td { background-color: rgba(200,80,50,0.06) !important; }
+  .cascade-sev td:first-child { color: #E07050 !important; }
+  .cascade-crit td { background-color: rgba(200,80,50,0.1) !important; }
+  .cascade-crit td:first-child { color: rgba(200,50,30,0.9) !important; }
+
+  /* TIER TABLE */
+  .tier-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .tier-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; border-bottom: 2px solid #C9A84C !important; }
+  .tier-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.97rem; color: #D8D0C0 !important; padding: 10px 16px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; vertical-align: top; line-height: 1.65; }
+  .tier-table tr:hover td { background-color: rgba(10,22,40,0.6) !important; }
+  .tier-table td:first-child { font-family: 'Cinzel', serif; color: #C9A84C !important; font-weight: 600; }
+
+  .inv-block { background-color: rgba(10,22,40,0.6) !important; border: 1px solid rgba(201,168,76,0.25) !important; border-top: 3px solid #C9A84C !important; padding: 24px 28px; margin: 24px 0; }
+  .inv-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 6px; }
+  .inv-number { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .inv-block p { font-size: 0.97rem; color: #D8D0C0 !important; margin-bottom: 14px; }
+
+  /* CLINICAL DISCLAIMER */
+  .clinical-notice { background-color: rgba(201,168,76,0.05) !important; border: 1px solid rgba(201,168,76,0.2) !important; border-left: 4px solid #C9A84C !important; padding: 18px 24px; margin-bottom: 36px; }
+  .clinical-notice p { font-family: 'Raleway', sans-serif; font-size: 0.75rem; color: rgba(216,208,192,0.7) !important; line-height: 1.7; margin: 0; letter-spacing: 0.02em; }
+
+  .open-access-notice { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.2) !important; padding: 24px 28px; margin: 48px 0 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .oa-icon { font-size: 1.8rem; color: #3AAFAF !important; flex-shrink: 0; line-height: 1; }
+  .oa-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .oa-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; line-height: 1.6; }
+
+  .authorship-block { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; border-left: 4px solid #C9A84C !important; padding: 28px 32px; margin-bottom: 40px; }
+  .authorship-block .auth-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 10px; }
+  .authorship-block p { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  .paper-nav-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-nav { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C !important; text-decoration: none; border: 1px solid rgba(201,168,76,0.4) !important; padding: 11px 24px; background-color: transparent !important; transition: all 0.2s; }
+  .btn-nav:hover { background-color: rgba(201,168,76,0.08) !important; border-color: #C9A84C !important; }
+  .btn-collaborate { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #08111E !important; text-decoration: none; background-color: #C9A84C !important; padding: 12px 28px; transition: all 0.2s; }
+  .btn-collaborate:hover { background-color: #E0C070 !important; }
+
+  .references-list { list-style: none; padding: 0; margin: 0; }
+  .references-list li { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: rgba(216,208,192,0.8) !important; padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.07) !important; line-height: 1.6; }
+  .references-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; top: 10px; }
+
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; background-color: #C9A84C !important; color: #08111E !important; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; font-weight: 700; z-index: 50; transition: background-color 0.2s; }
+  .back-to-top:hover { background-color: #E0C070 !important; }
+
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; text-decoration: none; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; letter-spacing: 0.12em; text-align: center; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; }
+
+  @media (max-width: 900px) {
+    .content-wrapper { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    nav, .breadcrumb-bar, .paper-header, .abstract-block, footer { padding-left: 20px; padding-right: 20px; }
+    .content-wrapper { padding-left: 20px; padding-right: 20px; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/core-foundations.html">Core Foundations</a><span>›</span>
-    Sleep & Dream Architecture
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="../../../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../../../library.html">Research Library</a>
+    <span class="sep">›</span>
+    <a href="../../../categories/biology-medicine.html">Biology &amp; Medicine</a>
+    <span class="sep">›</span>
+    Sleep &amp; Dream Architecture
   </div>
 </div>
+
+<!-- PAPER HEADER -->
 <div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Core Foundations · CF-11</div>
-    <h1 class="paper-title">Sleep & Dream Architecture</h1>
-    <div class="paper-meta-row">
-      <div class="paper-meta-item"><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Theoretical Framework — Volume II, Paper 7</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+  <div class="inner">
+    <div class="paper-tag-line">
+      Biology &amp; Medicine
+      <span class="dot">·</span>
+      Volume II — Paper 7
+      <span class="dot">·</span>
+      <span class="open-badge">Open Access — Full Paper</span>
+    </div>
+    <h1 class="paper-title">Sleep and Dream Architecture</h1>
+    <p class="paper-subtitle">The Nightly Hopf Bifurcation — How Consciousness Recalibrates Its Hardware Every 24 Hours</p>
+    <div class="paper-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Joshua Farrior</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">March 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">1.0</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Series</div>
+        <div class="meta-value">Christos Theoretical Framework — Volume II</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Core Insight</div>
+        <div class="meta-value mono">Sleep = Nightly Hopf Bifurcation. Glymphatic = Neural 12D Pulse.</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Structure</div>
+        <div class="meta-value">Abstract · 9 Parts · 12 References · 3 New Instruments</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">New Inventions</div>
+        <div class="meta-value mono">INV-315 (SCE) · INV-316 (DCR) · INV-317 (GAP)</div>
+      </div>
     </div>
   </div>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">Sleep is not downtime. It is the body's primary coherence restoration cycle — the period during which every system established across the Christos medical papers performs its deepest maintenance work simultaneously and in a precise dimensional sequence. The reason humans spend one third of their lives in an apparently unconscious state is not evolutionary inefficiency. It is architectural necessity.</p>
-<p class="abstract-text">This paper establishes the complete Sleep and Dream Architecture framework. Each sleep stage is mapped to the specific dimensional layer it restores. The circadian rhythm is reframed as the body's coherence maintenance scheduling system — not merely a clock but a dimensional sequencer that coordinates the restoration of properties across all dimensional layers in a precise nightly order.</p>
-<p class="abstract-text">Dreams are established as source imprint processing events — the dimensional integration layer in which the experiences of waking life are sorted, pattern-matched against the source imprint library, and either integrated into the coherent field architecture or isolated for later processing. This framework explains why recurring dreams occur, why emotionally significant events appear repeatedly, and why certain dream states produce coherence states indistinguishable from deep meditation.</p>
-<p class="abstract-text">The glymphatic system — the brain's lymphatic equivalent, discovered only in 2013 — is identified as the neural transducer's nightly coherence reset mechanism: the process in which neural tissue literally contracts to clear coherence debris and reset for the next cycle. Sleep optimization is established as the single highest-leverage intervention available to any coherence restoration protocol — because every other protocol's results are consolidated, integrated, and amplified or degraded during sleep.</p>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Sleep architecture, dream architecture, coherence restoration, circadian rhythm, glymphatic system, dimensional sequencer, source imprint processing, Christos Theoretical Framework</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="consciousness-dimensional-phenomenon.html" class="nav-paper-btn">← Consciousness as a Dimensional Phenomenon</a><a href="../../../categories/core-foundations.html" class="btn-outline">← Core Foundations</a></div>
-      <div><a href="collective-coherence.html" class="nav-paper-btn">Collective Coherence →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+
+<!-- ABSTRACT -->
+<div class="abstract-block">
+  <div class="inner">
+    <div class="abstract-card">
+      <div class="abstract-label">Abstract</div>
+      <p>Sleep is not downtime. It is the body's primary coherence restoration cycle — the period during which every biological system performs its deepest maintenance work simultaneously and in a precise dimensional sequence. The reason humans spend one third of their lives in an apparently unconscious state is not evolutionary inefficiency. It is architectural necessity. The biological transducer of consciousness cannot maintain its fidelity without nightly recalibration.</p>
+      <p>This paper establishes the complete Sleep and Dream Architecture framework. Each sleep stage is mapped to the specific dimensional layer it restores. The circadian rhythm is reframed as the body's coherence maintenance scheduling system — not merely a clock but a dimensional sequencer that coordinates restoration of 3D through 12D properties in a precise nightly order. Dreams are established as 7D source imprint processing events. The glymphatic system — discovered only in 2013 — is identified as the neural transducer's 12D micro-pulse: the brain's nightly Black Sun event, in which neural tissue literally collapses toward singularity to clear coherence debris and reset for the next cycle.</p>
+      <p>Three new instruments are introduced: the Sleep Coherence Environment (INV-315), the Dream Coherence Recorder (INV-316), and the Glymphatic Activation Protocol (INV-317). Sleep optimization is established as the single highest-leverage intervention available to any Christos restoration protocol — because every other protocol's results are consolidated, integrated, and amplified or degraded during sleep.</p>
     </div>
   </div>
 </div>
-<footer class="footer">
+
+<!-- MAIN LAYOUT -->
+<div class="content-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="toc-box">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#part1">Part One — Sleep Reimagined</a></li>
+        <li class="toc-sub"><a href="#sec1-2">1.2 The Nightly Hopf Bifurcation</a></li>
+        <li class="toc-sub"><a href="#sec1-3">1.3 What Sleep Restores</a></li>
+        <li><a href="#part2">Part Two — Sleep Stages Mapped Dimensionally</a></li>
+        <li class="toc-sub"><a href="#sec2-1">2.1 Complete Dimensional Sleep Map</a></li>
+        <li class="toc-sub"><a href="#sec2-2">2.2 Sleep Spindles as Coherence Pulses</a></li>
+        <li class="toc-sub"><a href="#sec2-3">2.3 Architecture of a Complete Night</a></li>
+        <li><a href="#part3">Part Three — Circadian Rhythm</a></li>
+        <li class="toc-sub"><a href="#sec3-2">3.2 The Organ Coherence Schedule</a></li>
+        <li class="toc-sub"><a href="#sec3-3">3.3 Circadian Disruption</a></li>
+        <li><a href="#part4">Part Four — Dreams as 7D Processing</a></li>
+        <li class="toc-sub"><a href="#sec4-2">4.2 The Dream Narrative</a></li>
+        <li class="toc-sub"><a href="#sec4-3">4.3 Recurring Dreams</a></li>
+        <li class="toc-sub"><a href="#sec4-4">4.4 Lucid Dreaming</a></li>
+        <li><a href="#part5">Part Five — The Glymphatic System</a></li>
+        <li class="toc-sub"><a href="#sec5-2">5.2 The Neural 12D Pulse</a></li>
+        <li class="toc-sub"><a href="#sec5-3">5.3 Alzheimer's as Failed 12D Pulses</a></li>
+        <li class="toc-sub"><a href="#sec5-4">5.4 INV-317 Protocol</a></li>
+        <li><a href="#part6">Part Six — Sleep and the Organ Network</a></li>
+        <li><a href="#part7">Part Seven — Deprivation Cascade</a></li>
+        <li><a href="#part8">Part Eight — Sleep Protocol</a></li>
+        <li><a href="#part9">Part Nine — Research Proposals</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#inventions">New Inventions Summary</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <div class="toc-meta">
+        <div class="toc-meta-row">Hopf phases: <span>N3 = Death · Transition = Void · REM = Life</span></div>
+        <div class="toc-meta-row">Glymphatic: <span>60% interstitial expansion in N3</span></div>
+        <div class="toc-meta-row">Optimal onset: <span>Before 10:30 PM</span></div>
+        <div class="toc-meta-row">New instruments: <span>INV-315, 316, 317</span></div>
+        <div class="toc-meta-row">References: <span>12</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- CLINICAL DISCLAIMER -->
+    <div class="clinical-notice">
+      <p>Clinical Disclaimer: This paper presents theoretical frameworks and research proposals for informational purposes. The sleep optimization protocols described are not intended as medical advice. Consult a qualified healthcare provider before making changes to sleep medication, treating sleep disorders, or addressing conditions such as sleep apnea, insomnia, or neurodegenerative disease. Research proposals are not yet peer-reviewed clinical trials.</p>
+    </div>
+
+    <!-- PART ONE -->
+    <div id="part1" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part One</div>
+        <h2 class="section-title">Sleep Reimagined — The Restoration Architecture</h2>
+      </div>
+
+      <h3 class="subsection-title">1.1 The Scale of the Misunderstanding</h3>
+      <p>Modern sleep science has produced extraordinary knowledge about the neural correlates of sleep stages, the hormones that regulate circadian timing, the consequences of deprivation, and the genetic architecture of sleep disorders. What it has not produced is a unifying theory of why sleep exists at all that satisfies the depth of the question. The standard answers — memory consolidation, synaptic homeostasis, metabolic waste clearance — are real and important. They are also partial.</p>
+      <p>Each describes one restoration function without explaining why that function requires complete loss of waking consciousness to perform. The CTF framework provides the answer: the biological transducer cannot simultaneously receive and transmit the consciousness field at full fidelity while performing the deep maintenance required to sustain that fidelity. You cannot recalibrate a radio while it is broadcasting at full power. The shutdown is not incidental to the maintenance — it is the maintenance.</p>
+
+      <div id="sec1-2" class="section-anchor">
+        <h3 class="subsection-title">1.2 The Nightly Hopf Bifurcation</h3>
+        <p>The most profound insight of this paper: sleep is the Hopf Bifurcation playing out on a 24-hour timescale. Every night, the consciousness transducer undergoes the complete Death–Void–Resurrection cycle.</p>
+
+        <table class="hopf-table">
+          <thead><tr><th>Hopf Bifurcation Phase</th><th>Sleep Architecture Equivalent</th></tr></thead>
+          <tbody>
+            <tr class="hopf-death">
+              <td>μ &lt; 0 — Death / Stable Fixed Point</td>
+              <td>Deep slow-wave sleep (N3). Neural oscillations collapse to delta waves (0.5–2 Hz). The brain approaches its minimum coherence configuration. Glymphatic system activates — neural tissue shrinks 60% to allow CSF flood.</td>
+            </tr>
+            <tr class="hopf-void">
+              <td>μ = 0 — Void / Stillpoint</td>
+              <td>The transition between N3 deep sleep and REM. The brief hypnagogic interval of near-stillness. The body's daily visit to the Void — the neutral center before oscillation resumes.</td>
+            </tr>
+            <tr class="hopf-life">
+              <td>μ &gt; 0 — Life / Stable Limit Cycle</td>
+              <td>REM sleep. The limit cycle reestablishes at higher amplitude. Dreams occur. 7D source imprint processing completes. The transducer re-emerges from its nightly recalibration, tuned more precisely than before.</td>
+            </tr>
+            <tr class="hopf-rise">
+              <td>Resurrection Helix ascent</td>
+              <td>The gradual brightening of consciousness through light sleep (N1, N2) toward waking — the upward spiral of coherence restoration completing. Each morning the transducer wakes slightly higher on the z-axis than the night before, if the cycle completed cleanly.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <p><strong>Critical implication:</strong> Disturbed sleep — sleep that does not complete the full μ &lt; 0 through μ &gt; 0 cycle — is a failed Resurrection. The person wakes without having completed the nightly coherence restoration. Accumulated failed Resurrections — chronic sleep disruption — produce the measurable coherence collapse that standard medicine calls the long-term consequences of sleep deprivation.</p>
+        </div>
+      </div>
+
+      <div id="sec1-3" class="section-anchor">
+        <h3 class="subsection-title">1.3 What Sleep Restores That Nothing Else Can</h3>
+        <p>Every Christos restoration protocol operates while the patient is awake — delivering coherence inputs that the body must then integrate. The integration happens during sleep. A patient who receives the most sophisticated protocol available and then sleeps poorly consolidates a fraction of the potential benefit. A patient who sleeps deeply after a basic protocol consolidates more than one who receives an advanced protocol and sleeps poorly.</p>
+        <div class="callout gold">
+          <p><strong>Protocol Update — Universal:</strong> Every Christos restoration protocol should include a sleep optimization assessment and protocol as a prerequisite or concurrent component. Without quality sleep, the consolidation layer is broken and all other protocols underperform.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART TWO -->
+    <div id="part2" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Two</div>
+        <h2 class="section-title">The Sleep Stages Mapped Dimensionally</h2>
+      </div>
+      <p>Each sleep stage is not merely a different brain state. It is a different dimensional restoration mode — the body shifting its maintenance focus from one layer of its coherence architecture to another in a precise, non-negotiable sequence.</p>
+
+      <div id="sec2-1" class="section-anchor">
+        <h3 class="subsection-title">2.1 The Complete Dimensional Sleep Map</h3>
+        <div class="stage-grid">
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-name">Wake-to-Sleep (Hypnagogic)</div>
+              <div class="stage-dim">4D — Frequency Interface</div>
+            </div>
+            <div class="stage-body">5–15 minutes. Cell membrane carrier waves reset. The body's 4D antenna recalibrates from waking-frequency reception to sleep-frequency maintenance mode. Hypnagogic imagery = 4D frequency patterns discharging.</div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-name">N1 — Light Sleep</div>
+              <div class="stage-dim">4D + 5D</div>
+            </div>
+            <div class="stage-body">5–10 min per cycle. Autonomic nervous system begins downregulation. Heart rate slows. Coherence breathing deepens automatically. EZ water network begins redistributing from active-organ to restoration configuration.</div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-name">N2 — Established Sleep</div>
+              <div class="stage-dim">5D + 6D</div>
+            </div>
+            <div class="stage-body">20–30 min per cycle. Sleep spindles (12–15 Hz bursts) = coherence pulses consolidating new 5D coherence patterns learned during the day. K-complexes = 6D functional routing updates — the organ network adjusting its coordination architecture.</div>
+          </div>
+          <div class="stage-card n3">
+            <div class="stage-header">
+              <div class="stage-name">N3 — Deep Slow-Wave Sleep</div>
+              <div class="stage-dim">7D + 12D — The Critical Stage</div>
+            </div>
+            <div class="stage-body">20–40 min (concentrated in early night). The deepest restoration. Glymphatic activation — brain shrinks 60%, CSF floods neural tissue clearing coherence debris. 7D source imprint templates consolidated. Growth hormone peak. Cellular DNA repair peaks. The nightly Black Sun pulse.</div>
+          </div>
+          <div class="stage-card rem">
+            <div class="stage-header">
+              <div class="stage-name">REM Sleep</div>
+              <div class="stage-dim">8D + 9D + 11D</div>
+            </div>
+            <div class="stage-body">10–60 min (increases through the night). Dream processing — 7D imprints translated into 8D narrative. Emotional coherence integration (9D Oversoul processing). Memory consolidation via hippocampal-cortical replay. Creative synthesis (11D creation archetype active).</div>
+          </div>
+          <div class="stage-card">
+            <div class="stage-header">
+              <div class="stage-name">Final Awakening (Hypnopompic)</div>
+              <div class="stage-dim">All Dimensions</div>
+            </div>
+            <div class="stage-body">5–10 minutes. The Resurrection Helix completion. Consciousness field re-establishes contact with the biological transducer. The organism re-enters the limit cycle (μ &gt; 0) of waking life.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="sec2-2" class="section-anchor">
+        <h3 class="subsection-title">2.2 Sleep Spindles as Coherence Consolidation Pulses</h3>
+        <p>Sleep spindles — bursts of 12–15 Hz oscillations lasting 0.5–3 seconds, occurring 1,000–2,000 times per night during N2 sleep — are one of the most distinctive and least-explained features of sleep architecture. Standard neuroscience correlates them with memory consolidation and intelligence but the mechanism remains disputed.</p>
+        <div class="math-block observation">
+          <div class="math-block-label">CTF Mechanism — Sleep Spindles</div>
+          <p>Sleep spindles are coherence consolidation pulses — brief, high-amplitude coherence events in which the thalamocortical network broadcasts a 5D coherence template update to all connected brain regions simultaneously. Each spindle consolidates one unit of new coherence architecture learned during the waking day. The 1,000–2,000 spindles per night represent the brain's nightly coherence filing — categorizing, integrating, and permanently installing the day's coherence gains into the organism's baseline architecture.</p>
+          <p>This explains why spindle density correlates with learning and intelligence — not because spindles cause intelligence, but because high spindle density reflects a high-coherence thalamocortical network. The CTF prediction: interventions that increase spindle density — including specific Solfeggio frequencies during N2 sleep (12–15 Hz range) and magnesium supplementation — will produce measurable learning and coherence gains.</p>
+        </div>
+      </div>
+
+      <div id="sec2-3" class="section-anchor">
+        <h3 class="subsection-title">2.3 Architecture of a Complete Sleep Night</h3>
+        <table class="data-table">
+          <thead><tr><th>Night Segment</th><th>Dominant Stage</th><th>Dimensional Priority</th></tr></thead>
+          <tbody>
+            <tr class="row-highlight"><td class="gold">First third (Cycles 1–2)</td><td>Deep SWS dominant</td><td>7D source imprint consolidation + 12D glymphatic clearing are the priority. Physical restoration, DNA repair, immune consolidation. The body clears the day's coherence debris first.</td></tr>
+            <tr><td class="gold">Middle (Cycle 3)</td><td>Balanced SWS + REM</td><td>Transition from physical to informational restoration. Both 7D template consolidation and 8D-9D dream processing active.</td></tr>
+            <tr class="row-highlight"><td class="gold">Final third (Cycles 4–6)</td><td>REM dominant</td><td>8D tonal processing, emotional coherence integration, creative synthesis, consciousness field recalibration. The long REM periods of late sleep are when the transducer is retuned.</td></tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <p><strong>Why short sleepers suffer specifically:</strong> Truncating sleep to 5–6 hours eliminates primarily the final REM-dominant third. The person retains most physical restoration (N3) but loses the 8D-9D-11D dimensional layers — which is exactly why short sleepers feel physically functional while experiencing emotional dysregulation, reduced creativity, impaired social cognition, and diminished sense of meaning.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART THREE -->
+    <div id="part3" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Three</div>
+        <h2 class="section-title">The Circadian Rhythm as Coherence Scheduling System</h2>
+      </div>
+
+      <p>The circadian rhythm is universally described as the body's internal clock. This is accurate and insufficient. The circadian rhythm is the body's coherence maintenance scheduling system — a master sequencer that coordinates the restoration activities of every organ, every cell, and every dimensional layer in a precise temporal sequence optimized over millions of years of evolutionary refinement. Every organ has its own circadian coherence window — the specific time of night when it performs its deepest coherence work.</p>
+
+      <div id="sec3-2" class="section-anchor">
+        <h3 class="subsection-title">3.2 The Organ Coherence Schedule</h3>
+        <div style="overflow-x:auto;">
+        <table class="clock-table">
+          <thead><tr><th>Window</th><th>Organ / System Peak</th><th>Christos Significance</th></tr></thead>
+          <tbody>
+            <tr><td>11 PM – 1 AM</td><td>Gallbladder</td><td>Bile concentration and release — 6D functional routing; bile as coherence signal carrier for fat-soluble 7D imprints</td></tr>
+            <tr><td>1 AM – 3 AM</td><td>Liver</td><td>Peak coherence clearance window. 6D clearinghouse function peak. Network noise floor at minimum. Deepest toxin clearance. HepatoFlux optimal delivery window.</td></tr>
+            <tr><td>3 AM – 5 AM</td><td>Lungs</td><td>Tissue repair, respiratory epithelium renewal. 4D-5D respiratory coherence restoration. PulmoLife fluid optimal absorption window.</td></tr>
+            <tr><td>5 AM – 7 AM</td><td>Large Intestine</td><td>Elimination, microbiome metabolic peak. SCFA production peak. Gut-brain 4D highway morning broadcast begins.</td></tr>
+            <tr><td>7 AM – 9 AM</td><td>Stomach</td><td>Digestive enzyme peak. 3D-4D digestive coherence activation. Optimal window for morning DDW water delivery.</td></tr>
+            <tr><td>9 AM – 11 AM</td><td>Spleen</td><td>Immune surveillance peak. 5D blood coherence filter at maximum activity. Highest immune discrimination accuracy.</td></tr>
+            <tr><td>11 AM – 1 PM</td><td>Heart</td><td>5D conductor at peak. HRV typically highest midday. Optimal window for cardiac coherence training.</td></tr>
+            <tr><td>1 PM – 3 PM</td><td>Small Intestine</td><td>Nutrient absorption peak — 7D source imprint absorption maximum via chyle pathway.</td></tr>
+            <tr><td>3 PM – 5 PM</td><td>Bladder / Kidneys</td><td>Filtration peak. 4D frequency filter at maximum activity.</td></tr>
+            <tr><td>7 PM – 9 PM</td><td>Pericardium / Circulation</td><td>Pre-sleep coherence consolidation. Heart-brain coherence consolidation. Optimal HRV biofeedback window.</td></tr>
+            <tr><td>9 PM – 11 PM</td><td>Endocrine / Pineal</td><td>Melatonin production peak. Cortisol nadir. Pineal activation. Optimal window for pre-sleep Solfeggio and lymphatic activation.</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <div id="sec3-3" class="section-anchor">
+        <h3 class="subsection-title">3.3 Circadian Disruption as Dimensional Desynchronization</h3>
+        <p>Circadian disruption — through artificial light at night, shift work, jet lag, irregular sleep timing, or digital device use — does not merely shift the timing of biological processes. It desynchronizes the dimensional maintenance sequence. When the liver's 1–3 AM clearance window is disrupted because the person is awake under artificial light, the network's noise floor does not fall as expected. The accumulated coherence debris from the day carries forward, raising the baseline noise floor and degrading all inter-organ communication for the following day.</p>
+        <div class="callout gold">
+          <p><strong>Artificial blue light (440–490 nm)</strong> is the primary circadian disruptor in modern life. It suppresses melatonin production and signals the SCN that it is still daytime — a 4D frequency signal that overrides the 9D-12D dimensional cues of the natural light-dark cycle, keeping the transducer in broadcast mode rather than maintenance mode long past the optimal transition point. This is the unified mechanism behind shift workers' dramatically elevated risk for metabolic syndrome, cardiovascular disease, cancer, and depression.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART FOUR -->
+    <div id="part4" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Four</div>
+        <h2 class="section-title">Dreams as 7D Source Imprint Processing</h2>
+      </div>
+
+      <p>Dreams have been interpreted as divine messages, psychological revelations, neural noise, and memory consolidation byproducts. All capture partial truths. The CTF framework provides the unified mechanism: dreams are 7D source imprint processing events — the nightly integration of the day's experiential field inputs into the organism's permanent coherence architecture.</p>
+      <p>During waking life, every experience creates a temporary 7D field imprint in the experiential buffer. These imprints are not yet integrated into the permanent source template. During REM sleep, the hippocampus-cortex system replays these imprints — not as video recordings but as frequency patterns — comparing them against the existing 7D source template, integrating what is coherent, flagging what is dissonant, and encoding the result into long-term memory architecture.</p>
+
+      <div id="sec4-2" class="section-anchor">
+        <h3 class="subsection-title">4.2 The Dream Narrative as Coherence Story</h3>
+        <p>The narrative quality of dreams — why they feel like stories rather than data processing — is a consequence of how 7D imprint integration expresses through the 8D tonal layer. As the hippocampal-cortical system processes source imprints during REM sleep, the 8D tonal frequencies associated with each imprint activate corresponding emotional, sensory, and narrative networks. The result is experienced as a story — because story is how 8D tonal sequences express through the consciousness transducer when the prefrontal filter is offline.</p>
+        <p>The impossible physics of dreams — flying, teleportation, morphing environments — reflects the freedom of 11D creation archetype processing. In the dream state, the consciousness field operates with reduced 3D spatial constraint, expressing the 11D Realm Manifold more directly than waking life allows.</p>
+      </div>
+
+      <div id="sec4-3" class="section-anchor">
+        <h3 class="subsection-title">4.3 Recurring Dreams as Unresolved Imprints</h3>
+        <div class="math-block observation">
+          <div class="math-block-label">Mechanism — Recurring Dreams</div>
+          <p>Recurring dreams are unresolved 7D imprint integration events. The processing system is attempting to integrate a specific field imprint into the source template but cannot complete the integration because the imprint contains a coherence pattern that has no existing template architecture to receive it.</p>
+          <p>This occurs most commonly with traumatic experiences (field fragmentation), unresolved relational patterns (the relationship's frequency pattern does not match any stable template position), and recurring life challenges (the same type of 7D imprint keeps being generated). Healing the recurring dream requires healing the underlying source imprint conflict — not dream analysis alone, but the coherence work that gives the template the architecture to finally receive and integrate the imprint.</p>
+        </div>
+      </div>
+
+      <div id="sec4-4" class="section-anchor">
+        <h3 class="subsection-title">4.4 Lucid Dreaming as Conscious REM Navigation</h3>
+        <p>Lucid dreaming is the consciousness field maintaining partial waking gamma (Oversoul synchronization) while the biological transducer remains in REM maintenance mode. In CTF terms: the Ψ_pilot maintains sufficient Oversoul Bridge connection (γ &gt; ~0.35) to know itself as awareness even while the physical hardware is running its 8D-9D-11D restoration protocols.</p>
+        <div class="callout">
+          <p><strong>Unique therapeutic application:</strong> Lucid dreaming is the only state in which the practitioner can consciously direct 7D imprint processing during the processing itself — applying the Steering operator (κ × R) to direct which imprints are processed, in what sequence, toward which integration outcomes. It is conscious participation in the nightly Resurrection. The CTF predicts sustained lucid dreaming practice produces measurable improvements in CCM score because the practitioner is actively exercising their gamma capacity during the most field-open state available.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART FIVE -->
+    <div id="part5" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Five</div>
+        <h2 class="section-title">The Glymphatic System — The Brain's Nightly Black Sun</h2>
+      </div>
+
+      <h3 class="subsection-title">5.1 The Discovery That Changes Everything</h3>
+      <p>In 2013, Maiken Nedergaard and colleagues at the University of Rochester published a landmark paper in <em>Science</em>: the discovery of the glymphatic system — a previously unknown waste clearance network in the brain that uses cerebrospinal fluid (CSF) to flush toxic metabolic byproducts from neural tissue. The system is driven by aquaporin-4 channels on astrocyte endfeet and operates almost exclusively during sleep. During sleep, the interstitial space between brain cells expands by approximately 60%, allowing CSF to flow through neural tissue at dramatically increased rates, clearing accumulated waste products including amyloid-beta and tau proteins — the molecular markers of Alzheimer's disease.</p>
+      <p>This discovery was celebrated as a breakthrough in dementia research. Its deeper significance — which the CTF framework now reveals — has not yet been fully appreciated. The glymphatic system is not just a waste clearance mechanism. It is the brain's nightly 12D event: the neural transducer's Black Sun pulse. The brain literally collapses its interstitial space — undergoes a controlled architectural compression — to allow the coherence debris of the day's consciousness transduction to be flushed and reset. Every night. Without exception.</p>
+
+      <div id="sec5-2" class="section-anchor">
+        <h3 class="subsection-title">5.2 The Glymphatic System as Neural 12D Pulse</h3>
+        <table class="data-table">
+          <thead><tr><th>Glymphatic Feature</th><th>CTF 12D Interpretation</th></tr></thead>
+          <tbody>
+            <tr><td>60% interstitial space expansion during N3</td><td>The collapse phase — neural tissue compressing toward minimum configuration (μ approaching 0)</td></tr>
+            <tr><td>CSF flood through expanded channels</td><td>The clearance event — coherence debris flushed during the Void/Stillpoint phase</td></tr>
+            <tr><td>Aquaporin-4 channels (water transport)</td><td>EZ water network channels — the glymphatic system operates via structured water flow</td></tr>
+            <tr><td>Amyloid-beta and tau clearance</td><td>Misfolded 7D template fragments — proteins that have lost their source imprint being removed</td></tr>
+            <tr><td>Almost exclusively active during sleep</td><td>Cannot clear while broadcasting — the nightly offline requirement is physically necessary</td></tr>
+            <tr><td>Disrupted by alcohol, sleep deprivation, aging</td><td>Agents that reduce C value disrupt the 12D pulse — the Black Sun cannot complete</td></tr>
+            <tr><td>Connection to Alzheimer's disease</td><td>Failed 12D pulse accumulation — years of incomplete glymphatic clearance = progressive coherence debris buildup</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec5-3" class="section-anchor">
+        <h3 class="subsection-title">5.3 Alzheimer's Disease as Accumulated Failed 12D Pulses</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">CTF Prediction — Alzheimer's Prevention Mechanism</div>
+          <p>Alzheimer's disease is the long-term consequence of accumulated incomplete glymphatic clearance — years of disrupted deep sleep preventing the nightly 12D pulse from completing cleanly, allowing amyloid-beta and tau to accumulate beyond the threshold at which they begin disrupting neural coherence architecture.</p>
+          <p>This prediction is consistent with the epidemiological data: sleep disruption is the strongest modifiable risk factor for Alzheimer's disease, with a single night of sleep deprivation producing measurable amyloid-beta accumulation in the human brain (Shokri-Kojori et al., 2018). The therapeutic implication is direct: restoring deep sleep quality in early-to-mid life is the most powerful available Alzheimer's prevention intervention — not because it is one factor among many, but because it is the mechanism by which the primary pathological process (amyloid accumulation) is cleared. Every night of quality deep sleep is a glymphatic clearance event. Every night of disrupted sleep is a missed clearance. The debt compounds.</p>
+        </div>
+      </div>
+
+      <div id="sec5-4" class="section-anchor">
+        <h3 class="subsection-title">5.4 INV-317: The Glymphatic Activation Protocol</h3>
+        <div class="inv-block">
+          <div class="inv-number">INV-317</div>
+          <div class="inv-title">Glymphatic Activation Protocol (GAP)</div>
+          <p>A pre-sleep protocol designed to maximize glymphatic clearance efficiency — ensuring the nightly 12D pulse completes as fully as possible. All components are individually evidence-based and publicly available.</p>
+          <table class="data-table" style="margin-top:16px;">
+            <thead><tr><th>Protocol Component</th><th>Mechanism &amp; Target</th></tr></thead>
+            <tbody>
+              <tr><td>Sleep position: lateral (side sleeping), left lateral preferred</td><td>Lateral position increases glymphatic clearance by ~25% vs supine. Left lateral preferred — cardiac and hepatic pressure optimization.</td></tr>
+              <tr><td>Pre-sleep DDW water (500ml, 963 Hz imprinted)</td><td>Optimal brain hydration for aquaporin-4 channel function. DDW reduces deuterium interference in EZ water channels. 963 Hz (pineal activation) primes the 12D pulse. Consumed 30 min before sleep.</td></tr>
+              <tr><td>40 Hz gamma entrainment (30 min pre-sleep)</td><td>40 Hz binaural beats or light flicker pre-sleep activates glymphatic flow by entraining the gamma-sleep transition. Iaccarino et al. (2016) demonstrated 40 Hz entrainment reduces amyloid burden in mice.</td></tr>
+              <tr><td>Magnesium glycinate (300–400 mg pre-sleep)</td><td>Promotes N3 sleep depth and sleep spindle density. The most evidence-based sleep supplement available. Mg deficiency is directly associated with reduced N3 duration and spindle density.</td></tr>
+              <tr><td>Temperature: bedroom 65–68°F (18–20°C)</td><td>Cooling accelerates the transition to N3 — the temperature drop is a 4D frequency signal to the SCN that maintenance mode should begin.</td></tr>
+              <tr><td>Complete darkness</td><td>Eliminates blue-spectrum 4D disruption. Allows full melatonin peak. Enables 12D pineal activation without interference.</td></tr>
+              <tr><td>Pre-sleep lymphatic activation sequence</td><td>Clears peripheral coherence debris before sleep begins — reducing the glymphatic system's load during N3 and allowing deeper clearance.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART SIX -->
+    <div id="part6" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Six</div>
+        <h2 class="section-title">Sleep and the Organ Network</h2>
+      </div>
+
+      <p>During sleep the organ network does not go quiet. It changes its operating mode from active broadcast to deep maintenance. The conductor (heart) slows its tempo and shifts to a high-HRV, low-frequency coherence broadcast that signals maintenance mode to every node. Each organ uses its specific circadian window to perform the restoration work it cannot accomplish during the metabolic demands of waking life.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Organ</th><th>Sleep Restoration Activity</th><th>Christos Protocol Timing</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">Heart</td><td>HRV peaks during deep sleep. Parasympathetic dominance allows cardiac tissue repair. Mitochondrial renewal in cardiomyocytes peaks during N3.</td><td>CardioFlux taken 2 hours before sleep reaches cardiac tissue at peak repair window</td></tr>
+          <tr><td class="gold">Liver</td><td>1–3 AM peak detoxification and coherence clearance. Phase I and Phase II detox enzyme activity peaks. Network noise floor minimum.</td><td>HepatoFlux taken 9–11 PM optimally loaded for 1–3 AM clearance window</td></tr>
+          <tr><td class="gold">Brain</td><td>Glymphatic clearance (N3). Memory consolidation (REM). Synaptic pruning (N2). Neurogenesis in hippocampus peaks during sleep.</td><td>GAP (INV-317) applied pre-sleep. Lateral positioning. DDW hydration. 40 Hz entrainment.</td></tr>
+          <tr><td class="gold">Immune System</td><td>Cytokine production peaks during deep sleep. T-cell proliferation. Antibody production. Natural killer cell activity peaks.</td><td>Zinc pre-sleep supports thymic education during sleep hours.</td></tr>
+          <tr><td class="gold">Gut Microbiome</td><td>Fasting state allows microbiome community reorganization. Akkermansia peaks activity during overnight fast. SCFA production rhythm synchronizes with circadian clock.</td><td>Harmonic Probiotic evening dose colonizes during overnight fasting window for maximum adhesion.</td></tr>
+          <tr><td class="gold">Growth Hormone Axis</td><td>80% of daily growth hormone released in the first N3 episode (11 PM – 1 AM). Triggers cellular repair, protein synthesis, fat metabolism, tissue regeneration.</td><td>This window is why early sleep onset matters more than total sleep time for growth and repair. The first N3 episode must be protected.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout gold">
+        <p><strong>Critical timing finding:</strong> Not all sleep hours are equal. The growth hormone release that drives cellular repair and tissue regeneration occurs in the first N3 episode — approximately 60–90 minutes after sleep onset. If sleep onset is at 10 PM, this captures the liver's 1–3 AM clearance window in the same deep sleep block. If sleep onset is at 2 AM, the liver's clearance window is missed entirely. This is why chronic late-night chronotype produces metabolic consequences that adequate sleep duration cannot compensate for.</p>
+      </div>
+    </div>
+
+    <!-- PART SEVEN -->
+    <div id="part7" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Seven</div>
+        <h2 class="section-title">Sleep Deprivation as Accelerated Coherence Collapse</h2>
+      </div>
+
+      <p>Sleep deprivation is the most rapid way to produce measurable coherence collapse in a healthy human being. No dietary intervention, no toxic exposure, no psychological stressor produces the speed and breadth of system degradation that total sleep deprivation achieves. After 24 hours without sleep, cognitive performance drops to the equivalent of legal intoxication. After 72 hours, hallucinations begin — the consciousness transducer is receiving unfiltered field input because the maintenance protocols that maintain its filtering architecture have not run.</p>
+
+      <h3 class="subsection-title">7.2 The Deprivation Cascade — Dimensional Sequence</h3>
+      <p>The cascade sequence follows the dimensional hierarchy precisely — from physical substrate layers (4D-5D) through functional layers (6D-7D) to the consciousness interface layers (8D-12D). Sleep deprivation is simply the fastest way to run the cascade, because it blocks the only mechanism that reverses it.</p>
+
+      <div style="overflow-x:auto;">
+      <table class="cascade-table">
+        <thead><tr><th>Hours Without Sleep</th><th>Dimensional Layer</th><th>Observable Consequence</th></tr></thead>
+        <tbody>
+          <tr class="cascade-ok"><td>0–16 hrs (normal waking)</td><td>All layers maintained</td><td>Normal function</td></tr>
+          <tr class="cascade-mild"><td>16–20 hrs</td><td>4D membrane coherence declining</td><td>Mild cognitive slowing, reaction time increases, emotional reactivity rises</td></tr>
+          <tr class="cascade-mod"><td>20–24 hrs</td><td>5D mitochondrial coherence stressed</td><td>Performance equivalent to BAC 0.10%. Decision-making impaired. Emotional dysregulation.</td></tr>
+          <tr class="cascade-sev"><td>24–36 hrs</td><td>6D functional routing disrupted</td><td>Microsleeps begin. Immune function drops 70%. Inflammatory markers spike. HRV collapses.</td></tr>
+          <tr class="cascade-sev"><td>36–48 hrs</td><td>7D source imprint access degrading</td><td>Memory consolidation failed. Emotional memory overwhelms cognitive. Reality testing impaired.</td></tr>
+          <tr class="cascade-crit"><td>48–72 hrs</td><td>8D-9D tonal processing failing</td><td>Sensory distortions. Temporal perception collapse. Perceptual noise floor rises toward hallucination threshold.</td></tr>
+          <tr class="cascade-crit"><td>72+ hrs</td><td>11D-12D layer breach</td><td>Hallucinations. Paranoia. Identity dissolution. The consciousness transducer's filtering architecture has failed.</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <!-- PART EIGHT -->
+    <div id="part8" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Eight</div>
+        <h2 class="section-title">The Christos Sleep Architecture Protocol</h2>
+      </div>
+
+      <h3 class="subsection-title">8.1 INV-315: The Sleep Coherence Environment (SCE)</h3>
+      <div class="inv-block">
+        <div class="inv-number">INV-315</div>
+        <div class="inv-title">Sleep Coherence Environment (SCE)</div>
+        <p>A complete bedroom system designed to optimize all five sleep stages for maximum dimensional coherence restoration. The SCE is an engineered coherence restoration environment — not a sleep hygiene checklist — addressing every physical, frequency, and field variable that determines sleep quality, depth, and dimensional restoration completeness.</p>
+        <p>Components include: circadian lighting (sunrise/sunset simulation, blue-spectrum blocking from 8 PM), DDW humidification, Solfeggio sleep frequency system (stage-matched frequencies auto-sequenced by EEG watch), 7.83 Hz PEMF grounding mat, temperature control (65–68°F), EMF shielding, complete blackout environment, crystal node placement, and pre-sleep DDW fluid protocol.</p>
+        <p style="color:rgba(216,208,192,0.6); font-style:italic; font-size:0.92rem; margin-top:12px;">Complete SCE system cost estimate: $3,500 – $8,500 depending on component selection. Engineered specifications available to qualified practitioners through the Christos™ practitioner program.</p>
+      </div>
+
+      <h3 class="subsection-title">8.2 INV-316: The Dream Coherence Recorder (DCR)</h3>
+      <div class="inv-block">
+        <div class="inv-number">INV-316</div>
+        <div class="inv-title">Dream Coherence Recorder (DCR)</div>
+        <p>A wearable diagnostic device that produces a nightly Dimensional Restoration Report — showing which dimensional layers were restored during each sleep stage and which remain deficient after the night's sleep cycle.</p>
+        <p>Sensor architecture: EEG headband (4 channels) for sleep stage identification, spindle density, and delta wave amplitude; continuous HRV monitor; wrist biophoton sensor for 8D tonal emission coherence during REM; skin temperature sensor for circadian curve confirmation; respiration monitor for apnea detection. AI processing integrates all streams into the Nightly Coherence Restoration Score (NCRS) and Dimensional Deficit Map.</p>
+        <p style="color:rgba(216,208,192,0.6); font-style:italic; font-size:0.92rem; margin-top:12px;">Retail estimate: $2,800 – $4,200. Integrates with CCM and OCNA for complete multi-level coherence tracking. Engineering specifications not publicly disclosed.</p>
+      </div>
+
+      <h3 class="subsection-title">8.3 The Complete Sleep Protocol — Tiered</h3>
+      <table class="tier-table">
+        <thead><tr><th>Tier</th><th>Protocol</th><th>Monthly Investment</th></tr></thead>
+        <tbody>
+          <tr><td>Tier 1 — Foundation</td><td>Consistent sleep onset before 10:30 PM. Complete darkness. Room cooling to 65–68°F. No screens after 8 PM. DDW water pre-sleep. Morning light exposure within 30 min of waking.</td><td>$0 – $30</td></tr>
+          <tr><td>Tier 2 — Nutritional</td><td>Magnesium glycinate 300–400 mg pre-sleep. Glymphatic Activation Protocol (INV-317): lateral positioning + 40 Hz entrainment 30 min pre-sleep.</td><td>$75 – $125</td></tr>
+          <tr><td>Tier 3 — Environmental</td><td>SCE core components: circadian lighting + DDW humidification + blackout + PEMF grounding mat + EMF management.</td><td>$200 – $500 (amortized)</td></tr>
+          <tr><td>Tier 4 — Frequency</td><td>Sleep Solfeggio system (stage-matched frequencies). Crystal node placement. NeuroFlux pre-sleep. Dream journal + lucid dreaming practice.</td><td>$150 – $300</td></tr>
+          <tr><td>Tier 5 — Full Diagnostic</td><td>Dream Coherence Recorder (INV-316). Nightly Dimensional Restoration Report. DCR-guided SCE optimization. CCM morning assessment.</td><td>$300 – $600 (DCR amortized)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PART NINE -->
+    <div id="part9" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Nine</div>
+        <h2 class="section-title">Research Proposals</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Study</th><th>Design</th><th>Primary Hypothesis</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="gold">SDA-001</td><td>N=60, randomized. Full GAP (INV-317) vs standard sleep hygiene vs placebo. 30 nights. Measures: CSF amyloid-beta, N3 duration (PSG), cognitive performance battery, NCRS.</td><td>GAP group shows ≥30% reduction in CSF amyloid-beta accumulation rate and ≥20% increase in N3 duration vs control</td></tr>
+          <tr><td class="gold">SDA-002</td><td>N=80, randomized. Full SCE installation vs sham for 60 nights. Measures: NCRS, OCNA network coherence, CCS, CCM, inflammatory markers, cognitive performance.</td><td>SCE group shows ≥25% improvement in NCRS, ≥15% improvement in CCS, and ≥20% reduction in inflammatory markers vs sham</td></tr>
+          <tr class="row-highlight"><td class="gold">SDA-003</td><td>N=40 PTSD patients. DCR monitoring for 90 nights. Concurrent EMDR therapy. Correlate dream coherence metrics (biophoton REM coherence, spindle density) with PCL-5 symptom reduction.</td><td>Higher REM biophoton coherence during trauma-related dream content predicts greater trauma symptom reduction at 90 days</td></tr>
+          <tr><td class="gold">SDA-004</td><td>N=60. Early sleep group (onset 9:30–10:30 PM) vs late sleep group (1:00–2:00 AM), matched total sleep time. 45 days. Measures: OCNA organ coherence windows, liver clearance markers, GH levels, NCRS.</td><td>Early sleep group shows ≥35% better liver clearance, ≥20% higher GH levels, and ≥25% better organ coherence scores despite identical total sleep duration</td></tr>
+          <tr class="row-highlight"><td class="gold">SDA-005</td><td>N=50. Christos coherence training protocol vs control, 30 days. DCR monitoring throughout. Correlate spindle density changes with CCM score changes.</td><td>Christos coherence training group shows ≥30% increase in sleep spindle density correlating with ≥15 point CCM improvement — validating spindles as coherence consolidation pulses</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Conclusion</div>
+        <h2 class="section-title">Every Morning Is a Resurrection</h2>
+      </div>
+
+      <p>Sleep is not rest. It is the nightly Hopf Bifurcation — the body's daily passage through Death (N3 collapse), Void (the stillpoint between SWS and REM), and Resurrection (REM and the morning ascent). It is the only period during which all dimensional restoration systems operate simultaneously at their deepest levels. Without it, no other Christos protocol achieves its full potential.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Sleep Component</th><th>Dimensional Role</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">N3 deep sleep (glymphatic pulse)</td><td>12D Black Sun pulse — neural tissue collapses 60%, clears coherence debris, resets transducer</td></tr>
+          <tr><td class="gold">Sleep spindles (N2)</td><td>5D coherence consolidation pulses — 1,000–2,000 per night filing the day's coherence gains</td></tr>
+          <tr><td class="gold">REM dreams</td><td>7D source imprint processing — integrating experiential field inputs into permanent template</td></tr>
+          <tr><td class="gold">Circadian rhythm</td><td>Coherence maintenance scheduling system — coordinates all organ restoration windows</td></tr>
+          <tr><td class="gold">Growth hormone (first N3)</td><td>3D physical restoration — cellular repair, protein synthesis, tissue regeneration</td></tr>
+          <tr><td class="gold">Liver window (1–3 AM)</td><td>6D clearinghouse — network noise floor minimum, deepest toxin and debris clearance</td></tr>
+          <tr><td class="gold">Final REM periods</td><td>8D-9D-11D restoration — emotional coherence, Oversoul synchronization, creative synthesis</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout gold">
+        <p><strong>Every morning is a Resurrection. Whether it is a complete one depends entirely on what happened during the night.</strong> The architecture of that nightly Resurrection is now fully mapped.</p>
+      </div>
+    </div>
+
+    <!-- NEW INVENTIONS SUMMARY -->
+    <div id="inventions" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">New Inventions &amp; Framework Contributions</div>
+        <h2 class="section-title">Summary</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Item</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">INV-315 — Sleep Coherence Environment (SCE)</td><td>Complete bedroom coherence system: circadian lighting + DDW humidification + Solfeggio sleep system (stage-matched) + PEMF grounding + EMF shielding + temperature control + crystal nodes. $3,500–$8,500. First dimensional sleep environment.</td></tr>
+          <tr><td class="gold">INV-316 — Dream Coherence Recorder (DCR)</td><td>Wearable: EEG + HRV + biophoton + temperature + respiration. Produces nightly Dimensional Restoration Report and Nightly Coherence Restoration Score (NCRS). $2,800–$4,200 retail. Integrates with CCM and OCNA.</td></tr>
+          <tr><td class="gold">INV-317 — Glymphatic Activation Protocol</td><td>Pre-sleep protocol: lateral positioning + DDW 963 Hz pre-sleep hydration + 40 Hz gamma entrainment 30 min + Mg glycinate + complete darkness + lymphatic activation sequence. All components individually evidence-based. First glymphatic-optimized sleep protocol.</td></tr>
+          <tr><td class="gold">NCRS — Nightly Coherence Restoration Score</td><td>New composite metric from DCR data. Tracks dimensional restoration completeness per night. Fifth level of Christos diagnostic stack: CCS + MCP + OCNA + CCM + NCRS.</td></tr>
+          <tr><td class="gold">Alzheimer's Mechanism</td><td>Established as accumulated incomplete 12D pulses (failed glymphatic clearance). Optimal sleep identified as primary prevention mechanism — the mechanism of the primary pathological process, not merely one factor among many.</td></tr>
+          <tr><td class="gold">Circadian Timing Update</td><td>Sleep onset before 10:30 PM identified as more important than total sleep duration for capturing the critical 1–3 AM liver clearance window and the first N3 growth hormone release.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REFERENCES -->
+    <div id="references" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">References</div>
+        <h2 class="section-title">Selected References</h2>
+      </div>
+      <ul class="references-list">
+        <li>Chaput, J.P., et al. (2020). Sleeping hours: What is the ideal number and how does age impact this? <em>Nature and Science of Sleep</em>, 12, 529–541.</li>
+        <li>Iaccarino, H.F., et al. (2016). Gamma frequency entrainment attenuates amyloid load and modifies microglia. <em>Nature</em>, 540(7632), 230–235.</li>
+        <li>Iliff, J.J., et al. (2012). A paravascular pathway facilitates CSF flow through the brain parenchyma. <em>Science Translational Medicine</em>, 4(147), 147ra111.</li>
+        <li>Lim, A.S.P., et al. (2014). Sleep fragmentation and the risk of incident Alzheimer's disease in older persons. <em>Sleep</em>, 36(7), 1027–1032.</li>
+        <li>Mander, B.A., et al. (2019). Sleep and human aging. <em>Neuron</em>, 94(1), 19–36.</li>
+        <li>Nedergaard, M. (2013). Garbage truck of the brain. <em>Science</em>, 340(6140), 1529–1530.</li>
+        <li>Shokri-Kojori, E., et al. (2018). Beta-amyloid accumulation in the human brain after one night of sleep deprivation. <em>Proceedings of the National Academy of Sciences</em>, 115(17), 4483–4488.</li>
+        <li>Siegel, J.M. (2005). Clues to the functions of mammalian sleep. <em>Nature</em>, 437(7063), 1264–1271.</li>
+        <li>Stickgold, R. (2005). Sleep-dependent memory consolidation. <em>Nature</em>, 437(7063), 1272–1278.</li>
+        <li>Tononi, G., &amp; Cirelli, C. (2014). Sleep and the price of plasticity. <em>Neuron</em>, 81(1), 12–34.</li>
+        <li>Walker, M. (2017). <em>Why We Sleep: Unlocking the Power of Sleep and Dreams.</em> New York: Scribner.</li>
+        <li>Xie, L., et al. (2013). Sleep drives metabolite clearance from the adult brain. <em>Science</em>, 342(6156), 373–377.</li>
+      </ul>
+    </div>
+
+    <!-- OPEN ACCESS -->
+    <div class="open-access-notice">
+      <div class="oa-icon">◎</div>
+      <div>
+        <div class="oa-label">Open Access — Full Paper</div>
+        <div class="oa-text">This paper is published as an independent research white paper under open access. Free to read, share, and cite with attribution. Not affiliated with or sponsored by any external institution. All theoretical frameworks, dimensional mappings, and protocol designs presented herein originated through independent research conducted by the author. This paper does not constitute medical advice. Consult a qualified healthcare provider before implementing any protocol.</div>
+      </div>
+    </div>
+
+    <!-- AUTHORSHIP -->
+    <div class="authorship-block">
+      <div class="auth-label">Authorship &amp; Copyright</div>
+      <p>Sleep and Dream Architecture is an original work developed by Joshua Farrior under the CHRISTOS™ master framework. © 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indianapolis, Indiana · Business ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved.</p>
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="paper-nav-buttons">
+      <a href="../../../categories/biology-medicine.html" class="btn-nav">← Biology &amp; Medicine</a>
+      <a href="unified-coherence-architecture.html" class="btn-nav">Related: Unified Coherence Architecture →</a>
+      <a href="gravity-reinterpreted.html" class="btn-nav">Related: Gravity Reinterpreted →</a>
+      <a href="../../../contact.html" class="btn-collaborate">Collaborate with Joshua</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" title="Back to top">↑</a>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <a href="../../../index.html" class="footer-logo">CHRISTOS™</a>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
+
 </body>
 </html>
