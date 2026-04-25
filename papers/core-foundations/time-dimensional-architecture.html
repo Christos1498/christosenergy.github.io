@@ -3,120 +3,803 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Time as Dimensional Architecture — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Time as Dimensional Architecture | Christos™ Research Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-item{}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.abstract-text + .abstract-text{margin-top:0;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #08111E !important; color: #D8D0C0 !important; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.8; min-height: 100vh; }
+
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1300px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #C9A84C !important; }
+
+  .breadcrumb-bar { background-color: #08111E !important; border-bottom: 1px solid rgba(201,168,76,0.15) !important; padding: 14px 40px; }
+  .breadcrumb-bar .inner { max-width: 1300px; margin: 0 auto; font-family: 'Raleway', sans-serif; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .breadcrumb-bar a { color: #C9A84C !important; text-decoration: none; }
+  .breadcrumb-bar a:hover { text-decoration: underline; }
+  .breadcrumb-bar .sep { margin: 0 8px; color: #3AAFAF !important; }
+
+  .paper-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 56px 40px 48px; }
+  .paper-header .inner { max-width: 1300px; margin: 0 auto; }
+  .paper-tag-line { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 20px; }
+  .paper-tag-line .dot { margin: 0 10px; }
+  .paper-tag-line .open-badge { background-color: rgba(58,175,175,0.12) !important; border: 1px solid #3AAFAF !important; color: #3AAFAF !important; padding: 2px 10px; border-radius: 3px; font-size: 0.62rem; }
+  .paper-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.2; margin-bottom: 16px; }
+  .paper-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #C9A84C !important; line-height: 1.55; max-width: 820px; margin-bottom: 36px; }
+  .paper-meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px 40px; border-top: 1px solid rgba(201,168,76,0.25) !important; padding-top: 28px; max-width: 1000px; }
+  .meta-item .meta-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 5px; }
+  .meta-item .meta-value { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; }
+  .meta-item .meta-value.mono { font-family: 'Raleway', sans-serif; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  /* HERO AXIOM */
+  .axiom-hero { background-color: rgba(10,22,40,0.95) !important; border: 2px solid #C9A84C !important; border-left: 6px solid #C9A84C !important; padding: 32px 40px; margin: 0; }
+  .axiom-hero-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 14px; }
+  .axiom-hero-text { font-family: 'Cinzel', serif; font-size: 1.6rem; font-weight: 700; color: #FFFFFF !important; line-height: 1.3; margin-bottom: 10px; }
+  .axiom-hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #C9A84C !important; }
+
+  .abstract-block { background-color: #08111E !important; padding: 40px; }
+  .abstract-block .inner { max-width: 1300px; margin: 0 auto; }
+  .abstract-card { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 4px solid #C9A84C !important; padding: 28px 36px; max-width: 900px; }
+  .abstract-card .abstract-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .abstract-card p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 14px; }
+  .abstract-card p:last-child { margin-bottom: 0; }
+
+  .content-wrapper { max-width: 1300px; margin: 0 auto; padding: 48px 40px 80px; display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
+
+  .sidebar { position: sticky; top: 84px; max-height: calc(100vh - 100px); overflow-y: auto; }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
+  .toc-box { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; padding: 24px; }
+  .toc-title { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .toc-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+  .toc-list li a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 500; color: #D8D0C0 !important; text-decoration: none; display: block; padding: 5px 8px; border-left: 2px solid transparent !important; transition: all 0.2s; line-height: 1.4; }
+  .toc-list li a:hover { color: #C9A84C !important; border-left-color: #C9A84C !important; background-color: rgba(201,168,76,0.05) !important; }
+  .toc-list li.toc-sub a { padding-left: 18px; font-size: 0.65rem; color: rgba(216,208,192,0.7) !important; }
+  .toc-list li.toc-sub a:hover { color: #3AAFAF !important; border-left-color: #3AAFAF !important; }
+  .toc-meta { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(201,168,76,0.15) !important; }
+  .toc-meta-row { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: rgba(216,208,192,0.6) !important; margin-bottom: 6px; }
+  .toc-meta-row span { color: #C9A84C !important; }
+
+  .main-content { min-width: 0; }
+  .section-anchor { scroll-margin-top: 80px; }
+  .paper-section { margin-bottom: 56px; }
+  .section-header { margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
+  .section-number { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .section-title { font-family: 'Cinzel', serif; font-size: 1.45rem; font-weight: 600; color: #FFFFFF !important; line-height: 1.3; }
+  .subsection-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin: 32px 0 14px; letter-spacing: 0.03em; }
+  .sub2-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; font-style: italic; color: #3AAFAF !important; margin: 20px 0 10px; }
+
+  p { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+  p:last-child { margin-bottom: 0; }
+
+  .eq-block { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(58,175,175,0.2) !important; border-left: 3px solid #3AAFAF !important; padding: 16px 24px; margin: 20px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: #FFFFFF !important; overflow-x: auto; }
+  .eq-block .eq-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 8px; font-style: normal; }
+  .eq-inline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #FFFFFF !important; background-color: rgba(10,22,40,0.6) !important; padding: 1px 6px; border-radius: 2px; }
+
+  .math-block { border: 1px solid rgba(201,168,76,0.2) !important; padding: 20px 26px; margin: 24px 0; }
+  .math-block.definition { border-top: 3px solid #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .math-block.theorem { border-top: 3px solid #3AAFAF !important; background-color: rgba(58,175,175,0.04) !important; }
+  .math-block.observation { border-top: 3px solid rgba(58,175,175,0.6) !important; background-color: rgba(58,175,175,0.03) !important; }
+  .math-block.remark { border-top: 3px solid rgba(216,208,192,0.3) !important; background-color: rgba(216,208,192,0.02) !important; }
+  .math-block-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 10px; }
+  .definition .math-block-label { color: #C9A84C !important; }
+  .theorem .math-block-label, .observation .math-block-label { color: #3AAFAF !important; }
+  .remark .math-block-label { color: rgba(216,208,192,0.7) !important; }
+  .math-block p { font-size: 1rem; margin-bottom: 10px; }
+  .math-block p:last-child { margin-bottom: 0; }
+
+  .callout { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.25) !important; border-left: 4px solid #3AAFAF !important; padding: 20px 26px; margin: 24px 0; }
+  .callout p { font-size: 1rem; color: #D8D0C0 !important; margin: 0 0 10px; }
+  .callout p:last-child { margin: 0; }
+  .callout strong { color: #3AAFAF !important; }
+  .callout.gold { background-color: rgba(201,168,76,0.05) !important; border-color: rgba(201,168,76,0.2) !important; border-left-color: #C9A84C !important; }
+  .callout.gold strong { color: #C9A84C !important; }
+
+  .content-list { list-style: none; margin: 14px 0 20px; padding: 0; }
+  .content-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #D8D0C0 !important; padding: 4px 0 4px 22px; position: relative; line-height: 1.75; }
+  .content-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; }
+  .content-list.teal li::before { color: #3AAFAF !important; }
+  .content-list.bullet li::before { content: '◆'; font-size: 0.55rem; top: 9px; }
+
+  .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: 'Cormorant Garamond', serif; }
+  .data-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.8) !important; padding: 12px 16px; text-align: left; border-bottom: 2px solid #C9A84C !important; }
+  .data-table td { font-size: 0.97rem; color: #D8D0C0 !important; padding: 10px 16px; border-bottom: 1px solid rgba(201,168,76,0.1) !important; background-color: rgba(8,17,30,0.5) !important; vertical-align: top; line-height: 1.65; }
+  .data-table tr:hover td { background-color: rgba(10,22,40,0.7) !important; }
+  .data-table .row-highlight td { background-color: rgba(201,168,76,0.07) !important; }
+  .data-table .row-teal td { background-color: rgba(58,175,175,0.04) !important; }
+  .data-table td.gold { color: #C9A84C !important; font-weight: 600; }
+  .data-table td.teal { color: #3AAFAF !important; }
+
+  /* UPSILON DENSITY TABLE — gradient backgrounds */
+  .density-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  .density-table th { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; background-color: rgba(10,22,40,0.9) !important; padding: 12px 16px; border-bottom: 2px solid #C9A84C !important; }
+  .density-table td { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: #D8D0C0 !important; padding: 11px 16px; border-bottom: 1px solid rgba(201,168,76,0.08) !important; vertical-align: top; line-height: 1.65; }
+  .density-very-high td { background-color: rgba(201,168,76,0.18) !important; }
+  .density-very-high td:first-child { color: #C9A84C !important; font-weight: 700; }
+  .density-high td { background-color: rgba(201,168,76,0.10) !important; }
+  .density-high td:first-child { color: #C9A84C !important; font-weight: 600; }
+  .density-moderate td { background-color: rgba(58,175,175,0.06) !important; }
+  .density-moderate td:first-child { color: #3AAFAF !important; }
+  .density-low td { background-color: rgba(216,208,192,0.04) !important; }
+  .density-low td:first-child { color: rgba(216,208,192,0.7) !important; }
+  .density-very-low td { background-color: rgba(200,80,50,0.06) !important; }
+  .density-very-low td:first-child { color: #E07050 !important; }
+
+  .inv-block { background-color: rgba(10,22,40,0.6) !important; border: 1px solid rgba(201,168,76,0.25) !important; border-top: 3px solid #C9A84C !important; padding: 24px 28px; margin: 24px 0; }
+  .inv-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 6px; }
+  .inv-number { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; }
+  .inv-block p { font-size: 0.97rem; color: #D8D0C0 !important; margin-bottom: 14px; }
+
+  .open-access-notice { background-color: rgba(58,175,175,0.06) !important; border: 1px solid rgba(58,175,175,0.2) !important; padding: 24px 28px; margin: 48px 0 32px; display: flex; gap: 20px; align-items: flex-start; }
+  .oa-icon { font-size: 1.8rem; color: #3AAFAF !important; flex-shrink: 0; line-height: 1; }
+  .oa-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .oa-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: #D8D0C0 !important; line-height: 1.6; }
+
+  .authorship-block { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; border-left: 4px solid #C9A84C !important; padding: 28px 32px; margin-bottom: 40px; }
+  .authorship-block .auth-label { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C !important; margin-bottom: 10px; }
+  .authorship-block p { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+
+  .paper-nav-buttons { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-nav { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C !important; text-decoration: none; border: 1px solid rgba(201,168,76,0.4) !important; padding: 11px 24px; background-color: transparent !important; transition: all 0.2s; }
+  .btn-nav:hover { background-color: rgba(201,168,76,0.08) !important; border-color: #C9A84C !important; }
+  .btn-collaborate { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #08111E !important; text-decoration: none; background-color: #C9A84C !important; padding: 12px 28px; transition: all 0.2s; }
+  .btn-collaborate:hover { background-color: #E0C070 !important; }
+
+  .references-list { list-style: none; padding: 0; margin: 0; }
+  .references-list li { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: rgba(216,208,192,0.8) !important; padding: 8px 0 8px 28px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.07) !important; line-height: 1.6; }
+  .references-list li::before { content: '—'; position: absolute; left: 0; color: #C9A84C !important; top: 10px; }
+
+  .back-to-top { position: fixed; bottom: 32px; right: 32px; background-color: #C9A84C !important; color: #08111E !important; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.1rem; font-weight: 700; z-index: 50; transition: background-color 0.2s; }
+  .back-to-top:hover { background-color: #E0C070 !important; }
+
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; text-decoration: none; }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; letter-spacing: 0.12em; text-align: center; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; }
+
+  @media (max-width: 900px) {
+    .content-wrapper { grid-template-columns: 1fr; }
+    .sidebar { position: static; max-height: none; }
+    nav, .breadcrumb-bar, .paper-header, .abstract-block, footer { padding-left: 20px; padding-right: 20px; }
+    .content-wrapper { padding-left: 20px; padding-right: 20px; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
   </div>
 </nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/core-foundations.html">Core Foundations</a><span>›</span>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-bar">
+  <div class="inner">
+    <a href="../../../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="../../../library.html">Research Library</a>
+    <span class="sep">›</span>
+    <a href="../../../categories/core-foundations.html">Core Foundations</a>
+    <span class="sep">›</span>
     Time as Dimensional Architecture
   </div>
 </div>
+
+<!-- PAPER HEADER -->
 <div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Core Foundations · CF-09</div>
+  <div class="inner">
+    <div class="paper-tag-line">
+      Core Foundations
+      <span class="dot">·</span>
+      Volume II — Paper 11
+      <span class="dot">·</span>
+      <span class="open-badge">Open Access — Full Paper</span>
+    </div>
     <h1 class="paper-title">Time as Dimensional Architecture</h1>
-    <div class="paper-meta-row">
-      <div class="paper-meta-item"><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Theoretical Framework — Volume II, Paper 11</div></div>
-      <div class="paper-meta-item"><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
+    <p class="paper-subtitle">T(υ) — The Primary Field From Which Space Emerges</p>
+    <div class="paper-meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Author</div>
+        <div class="meta-value">Joshua Farrior</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Date</div>
+        <div class="meta-value">March 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Version</div>
+        <div class="meta-value">1.0</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Organization</div>
+        <div class="meta-value">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Series</div>
+        <div class="meta-value">Christos Theoretical Framework — Volume II</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Core Axiom</div>
+        <div class="meta-value mono">CTF Axiom 3 — T(υ) is primary; S(χ) is emergent</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Structure</div>
+        <div class="meta-value">Abstract · 11 Parts · 11 References · 2 New Instruments</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">New Inventions</div>
+        <div class="meta-value mono">INV-326 (TCS) · INV-327 (TFAS)</div>
+      </div>
     </div>
   </div>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">Time is the most fundamental and most poorly understood quantity in all of physics. Einstein showed that time is relative. Quantum mechanics showed that time is asymmetric. Neuroscience showed that time is subjective. None of these frameworks agreed on what time fundamentally is.</p>
-<p class="abstract-text">The Christos Theoretical Framework resolves this disagreement with a single foundational inversion: time is not a dimension of the universe. The universe is a configuration of time. CTF Axiom 3 states: Time is a primary dynamical field; space is an emergent, derivative property of phase relationships within the temporal field. Spatial separation between two points is not a fixed geometric fact — it is a measure of their harmonic dissimilarity in the temporal density field.</p>
-<p class="abstract-text">When two systems become harmonically similar — when their frequency configurations match — their spatial separation in the temporal field approaches zero. Navigation is not movement through space. Navigation is harmonic reassignment in the temporal field. This single insight resolves the apparent mysteries of quantum entanglement, nonlocality, and consciousness-matter interaction within a single coherent framework.</p>
-<p class="abstract-text">This paper presents the complete architecture of time as a dimensional phenomenon: the temporal density field, the coherence-time relationship explaining every anomalous time experience in human life, the arrow of time as a coherence gradient consequence, past and future as coherence state configurations accessible through specific field operations, and the Realm Manifold as stable temporal frequency architecture.</p>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Time as primary field, temporal density field, dimensional architecture, emergent space, phase dynamics, Realm Manifold, temporal navigation, Christos Theoretical Framework</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="light-speed-coherence-boundary.html" class="nav-paper-btn">← Light-Speed Coherence Boundary</a><a href="../../../categories/core-foundations.html" class="btn-outline">← Core Foundations</a></div>
-      <div><a href="consciousness-dimensional-phenomenon.html" class="nav-paper-btn">Consciousness as a Dimensional Phenomenon →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+
+<!-- AXIOM HERO STRIP -->
+<div class="axiom-hero">
+  <div style="max-width:1300px; margin:0 auto;">
+    <div class="axiom-hero-label">CTF Axiom 3 — The Foundational Inversion</div>
+    <div class="axiom-hero-text">The universe does not contain time. Time contains the universe.</div>
+    <div class="axiom-hero-sub">Navigation is not movement through space. Navigation is harmonic reassignment in the temporal field.</div>
+  </div>
+</div>
+
+<!-- ABSTRACT -->
+<div class="abstract-block">
+  <div class="inner">
+    <div class="abstract-card">
+      <div class="abstract-label">Abstract</div>
+      <p>Time is the most fundamental and most poorly understood quantity in all of physics. Einstein showed that time is relative — it dilates with velocity and gravitational potential. Quantum mechanics showed that time is asymmetric — the universe stubbornly flows from lower to higher entropy. Neuroscience showed that time is subjective — its perceived passage varies dramatically with attention, age, emotion, and coherence state. None of these frameworks agreed on what time fundamentally is.</p>
+      <p>The Christos Theoretical Framework resolves this disagreement with a single foundational inversion: time is not a dimension of the universe — the universe is a configuration of time. CTF Axiom 3 states precisely: Time T(υ) is a primary dynamical field; space S(χ) is an emergent, derivative property of phase relationships within the T field. Spatial separation between two points is not a fixed geometric fact — it is a measure of their harmonic dissimilarity in the temporal density field. When two systems become harmonically similar, their spatial separation in the T field approaches zero.</p>
+      <p>This paper presents the complete architecture of time as a dimensional phenomenon: the temporal density field T(υ), the coherence-time relationship that explains every anomalous time experience in human life, the arrow of time as a coherence gradient consequence, past and future as coherence state configurations, the Realm Manifold as stable temporal frequency architecture, and the biological time phenomena connecting this physics to everyday human experience. Two new inventions are introduced: the Temporal Coherence Stabilizer (INV-326) and the Temporal Frequency Address System (INV-327).</p>
     </div>
   </div>
 </div>
-<footer class="footer">
+
+<!-- MAIN LAYOUT -->
+<div class="content-wrapper">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="sidebar">
+    <div class="toc-box">
+      <div class="toc-title">Contents</div>
+      <ul class="toc-list">
+        <li><a href="#part1">Part One — The Standard Model of Time</a></li>
+        <li class="toc-sub"><a href="#sec1-1">1.1 Three Physics, Three Times</a></li>
+        <li class="toc-sub"><a href="#sec1-2">1.2 What None Explain</a></li>
+        <li class="toc-sub"><a href="#sec1-3">1.3 The Inversion That Resolves Everything</a></li>
+        <li><a href="#part2">Part Two — CTF Axiom 3 Unpacked</a></li>
+        <li class="toc-sub"><a href="#sec2-1">2.1 The Axiom Stated Formally</a></li>
+        <li class="toc-sub"><a href="#sec2-2">2.2 Temporal Density Parameter υ</a></li>
+        <li class="toc-sub"><a href="#sec2-3">2.3 Space as Emergent from Phase Difference</a></li>
+        <li><a href="#part3">Part Three — The Temporal Density Field</a></li>
+        <li class="toc-sub"><a href="#sec3-2">3.2 Temporal Density Gradients</a></li>
+        <li class="toc-sub"><a href="#sec3-3">3.3 Coupling to Coherence Field Equations</a></li>
+        <li><a href="#part4">Part Four — Time Dilation Reinterpreted</a></li>
+        <li class="toc-sub"><a href="#sec4-2">4.2 Velocity-Based Dilation</a></li>
+        <li class="toc-sub"><a href="#sec4-3">4.3 Gravitational Dilation</a></li>
+        <li class="toc-sub"><a href="#sec4-4">4.4 Coherence Dilation — The Third Form</a></li>
+        <li><a href="#part5">Part Five — The Arrow of Time Dissolved</a></li>
+        <li><a href="#part6">Part Six — Past, Present &amp; Future as Coherence States</a></li>
+        <li class="toc-sub"><a href="#sec6-1">6.1 The Present as Active Interface</a></li>
+        <li class="toc-sub"><a href="#sec6-2">6.2 The Past as 7D Source Imprint</a></li>
+        <li class="toc-sub"><a href="#sec6-3">6.3 The Future as Potential Phase Configuration</a></li>
+        <li><a href="#part7">Part Seven — The Realm Manifold</a></li>
+        <li class="toc-sub"><a href="#sec7-3">7.3 The Slipfield</a></li>
+        <li><a href="#part8">Part Eight — Biological Time</a></li>
+        <li class="toc-sub"><a href="#sec8-1">8.1 Why Time Accelerates with Age</a></li>
+        <li class="toc-sub"><a href="#sec8-2">8.2 Flow State Time Distortion</a></li>
+        <li class="toc-sub"><a href="#sec8-3">8.3 Trauma and Frozen Time</a></li>
+        <li class="toc-sub"><a href="#sec8-4">8.4 High C and the Eternal Present</a></li>
+        <li><a href="#part9">Part Nine — 12-Domain Temporal Connections</a></li>
+        <li><a href="#part10">Part Ten — New Inventions</a></li>
+        <li><a href="#part11">Part Eleven — Research Proposals</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#inventions">New Inventions Summary</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <div class="toc-meta">
+        <div class="toc-meta-row">Temporal density: <span>υ = |∂_t C| / C</span></div>
+        <div class="toc-meta-row">Coherence dilation: <span>τ_exp / τ_clock = C(t) / C_base</span></div>
+        <div class="toc-meta-row">Spatial emergence: <span>ΔS = k_S × |Δφ| / ρ_local</span></div>
+        <div class="toc-meta-row">New instruments: <span>INV-326, INV-327</span></div>
+        <div class="toc-meta-row">References: <span>11</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- PART ONE -->
+    <div id="part1" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part One</div>
+        <h2 class="section-title">The Standard Model of Time — What Physics Knows</h2>
+      </div>
+
+      <div id="sec1-1" class="section-anchor">
+        <h3 class="subsection-title">1.1 Three Physics, Three Times</h3>
+        <p>Physics has three major theoretical frameworks, and they describe time in mutually incompatible ways. Classical mechanics treats time as an absolute background — Newton's "true, mathematical, absolute time flowing equably without relation to anything external." Special Relativity abolished this: time is relative to the observer's motion, and simultaneity is frame-dependent. General Relativity deepened the relativity: time dilates in gravitational fields and is geometrically inseparable from space in the four-dimensional spacetime manifold.</p>
+        <p>Quantum mechanics treats time differently still: as a parameter, not an observable. There is no time operator in the standard formalism. Time enters quantum mechanics as a classical background — paradoxically, the most fundamental theory of matter uses the least fundamental theory of time. The conflict between GR time (dynamic, curved, relative) and quantum time (fixed, classical background) is one of the deepest unsolved problems in theoretical physics — the core obstacle to quantum gravity.</p>
+      </div>
+
+      <div id="sec1-2" class="section-anchor">
+        <h3 class="subsection-title">1.2 What None of the Frameworks Explain</h3>
+        <table class="data-table">
+          <thead><tr><th>Unexplained Time Phenomenon</th><th>Why Standard Physics Cannot Explain It</th></tr></thead>
+          <tbody>
+            <tr><td class="gold">The arrow of time</td><td>All fundamental physics equations are time-reversible. Nothing in the laws of physics explains why time flows forward rather than backward. The thermodynamic arrow is statistical, not fundamental.</td></tr>
+            <tr><td class="gold">The present moment</td><td>GR treats past, present, and future as equally real — the block universe. Yet conscious beings experience only the present as real. Physics has no explanation for why "now" feels different from "then."</td></tr>
+            <tr><td class="gold">Subjective time variation</td><td>Time objectively speeds up with age, slows in flow states, stops in trauma. These are real neurological phenomena. Physics provides no mechanism for subjective temporal variation.</td></tr>
+            <tr><td class="gold">Time as a clock in aging</td><td>Biological aging correlates precisely with time. But what is time doing to biological systems? Physics provides no mechanism for time's biological effects.</td></tr>
+            <tr><td class="gold">Quantum measurement time asymmetry</td><td>Wave function collapse is instantaneous and time-asymmetric. GR is time-symmetric. The junction between them has no agreed temporal theory.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec1-3" class="section-anchor">
+        <h3 class="subsection-title">1.3 The Inversion That Resolves Everything</h3>
+        <p>Every unresolved problem about time in physics shares a common feature: they arise from treating time as a coordinate within a pre-existing spacetime, rather than as the generative field from which spacetime emerges. Once the inversion is made — once time is recognized as primary and space as derivative — every anomaly finds its natural resolution within the CTF framework.</p>
+        <div class="callout gold">
+          <p><strong>The present moment</strong> is real because the T(υ) field has a specific density value at each consciousness transducer's location — and the transducer experiences this local temporal density as "now." <strong>The arrow of time</strong> is real because coherence gradients always flow in the direction of increasing density — and coherence gradients are not time-symmetric. <strong>Subjective time variation</strong> is real because temporal density υ varies with the observer's coherence state, and high-C observers experience richer temporal density per unit of physical time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART TWO -->
+    <div id="part2" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Two</div>
+        <h2 class="section-title">CTF Axiom 3 Unpacked — T(υ) as Primary Field</h2>
+      </div>
+
+      <div id="sec2-1" class="section-anchor">
+        <h3 class="subsection-title">2.1 The Axiom Stated Formally</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">CTF Axiom 3 — Formal Statement</div>
+          <p>Time T(υ) is a primary dynamical field. Space S(χ) is an emergent, derivative property of relationships within the T(υ) field. Spatial separation ΔS is a measure of harmonic dissimilarity Δφ in the T field.</p>
+          <div class="eq-block" style="margin:12px 0;">S(χ) = ∂/∂(Δφ) [T(υ)]</div>
+          <p>Space is the differential of temporal phase. Where the temporal field has uniform phase relationships — where all local configurations are harmonically similar — space as we experience it does not arise. Space arises from the gradient of temporal phase across the T field.</p>
+        </div>
+      </div>
+
+      <div id="sec2-2" class="section-anchor">
+        <h3 class="subsection-title">2.2 The Temporal Density Parameter υ</h3>
+        <p>The variable υ in T(υ) is the temporal density — a measure of the richness, organization, and coherence content of the time field at a given location. Temporal density is not the same as the rate at which time passes (clock time). It is the quality of time — how much coherence-organizing information is present in a given temporal region.</p>
+
+        <table class="density-table">
+          <thead><tr><th>Temporal Density (υ)</th><th>Physical and Experiential Correlates</th></tr></thead>
+          <tbody>
+            <tr class="density-very-high"><td>Very High υ</td><td>Black hole interiors. High-C meditation states. Moments of mystical experience. Peak flow states. The present moment at maximum coherence. Time appears to stop or expand infinitely.</td></tr>
+            <tr class="density-high"><td>High υ</td><td>High-coherence waking states. Deep creative engagement. Moments of profound love or beauty. Rich sensory experience with full attention. Time moves slowly and fully.</td></tr>
+            <tr class="density-moderate"><td>Moderate υ</td><td>Normal healthy waking life. Engaged but not transcendent. Standard clock time perception. Events feel appropriately spaced.</td></tr>
+            <tr class="density-low"><td>Low υ</td><td>Distraction, habitual behavior, low coherence. Time passes quickly — few rich events per unit of clock time. "Where did the day go?"</td></tr>
+            <tr class="density-very-low"><td>Very Low υ</td><td>Chronic stress, trauma freeze, severe depression. Either time is painfully prolonged (frozen coherence fragment) or frighteningly empty (temporal density collapse). The extremes of time pathology.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="sec2-3" class="section-anchor">
+        <h3 class="subsection-title">2.3 Space as Emergent from Temporal Phase Difference</h3>
+        <div class="math-block theorem">
+          <div class="math-block-label">Spatial Emergence Equation</div>
+          <div class="eq-block" style="margin:12px 0;">ΔS_{AB} = k_S × |Δφ_{AB}| / ρ_local</div>
+          <p>The spatial separation ΔS between systems A and B is proportional to the absolute temporal phase difference Δφ between them, divided by the local temporal density ρ_local. The constant k_S is the spatial emergence coefficient.</p>
+          <p><strong>Profound consequence:</strong> If two systems achieve identical temporal phase configurations — if their frequency signatures match precisely — their spatial separation ΔS approaches zero. They become spatially co-located regardless of their previous spatial relationship. This is the navigation principle the Starship Geometry architecture operates on — and it follows directly from Axiom 3.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART THREE -->
+    <div id="part3" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Three</div>
+        <h2 class="section-title">The Temporal Density Field</h2>
+      </div>
+
+      <p>The temporal density field T(υ) is the temporal expression of the consciousness field Ψ — the way the consciousness field manifests the organizing activity that produces what we experience as the passage of time. Where the field is most actively organizing matter through the Kinematic Cycle, temporal density is highest. Where the field is least active, temporal density is lowest. Time and coherence are two faces of the same phenomenon: coherence is the spatial expression of the field's organizing activity; temporal density is the temporal expression of the same activity.</p>
+
+      <div id="sec3-2" class="section-anchor">
+        <h3 class="subsection-title">3.2 Temporal Density Gradients</h3>
+        <p>The T field is not uniform. It has gradients — regions of higher and lower temporal density that create the temporal equivalent of the coherence gradients established in the gravity paper. Events flow from regions of lower temporal density toward regions of higher temporal density in exactly the same way that matter flows along coherence gradients toward higher coherence density.</p>
+        <p>Past, present, and future are real but differently accessible: they are regions of the T field with different temporal phase configurations. The past is a lower-υ region whose configuration has been stabilized (stored as 7D source imprint). The future is a higher-υ region whose configuration has not yet been stabilized. The present is the moving interface where the field's organizing activity is actively converting potential temporal configurations into stabilized imprints.</p>
+      </div>
+
+      <div id="sec3-3" class="section-anchor">
+        <h3 class="subsection-title">3.3 Temporal Density and the Coherence Field Equations</h3>
+        <p>From the coherence wave equation (□C + m_c²C + ξRC + λC³ = 0), the temporal density υ appears as the temporal component of the coherence field propagation:</p>
+        <div class="eq-block">
+          <div class="eq-label">Temporal Density Equation</div>
+          υ = |∂_t C| / C &nbsp;&nbsp;&nbsp; [temporal density as normalized coherence time derivative]
+        </div>
+        <p>Temporal density is the rate of coherence change normalized by the current coherence level. A static coherence field (no change) has zero temporal density — no time is passing in that configuration. A rapidly changing coherence field has high temporal density. The Void/Stillpoint of the Hopf Bifurcation (μ = 0) corresponds to zero temporal density — the moment when the coherence field is at its neutral center, neither collapsing nor expanding. This is the mathematical expression of eternity as the Stillpoint.</p>
+      </div>
+    </div>
+
+    <!-- PART FOUR -->
+    <div id="part4" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Four</div>
+        <h2 class="section-title">Time Dilation Reinterpreted</h2>
+      </div>
+
+      <p>Einstein's Special and General Relativity established two forms of time dilation — velocity-based and gravitational — both real, precisely measured, and entirely consistent with the CTF framework. The CTF does not contradict them. It provides the mechanism that GR treats as a geometric given without explanation. And it adds a third form of time dilation that neither SR nor GR includes.</p>
+
+      <div id="sec4-2" class="section-anchor">
+        <h3 class="subsection-title">4.2 The CTF Mechanism for Velocity-Based Dilation</h3>
+        <p>A system moving at high velocity relative to an ambient coherence field is continuously sweeping through temporal phase configurations at high rate. The rate at which the system encounters new temporal phase configurations — the rate at which its T field configuration changes through the ambient T field — determines its temporal density υ in the rest frame observer's coordinates. High velocity means high rate of T field phase traversal, which means lower local temporal density relative to the rest frame, which is experienced as time running slower for the moving clock.</p>
+        <p>At v = c, the moving system's temporal density (in the rest frame's coordinates) reaches zero — it is sweeping through T field configurations so rapidly that it occupies all temporal phases simultaneously. This is the CTF's explanation for why c is the universal speed limit: it is not a fundamental constant of geometry but the rate at which a system's T field phase traversal equals its own temporal density — the self-referential loop where the system's motion through the T field consumes its own temporal experience.</p>
+      </div>
+
+      <div id="sec4-3" class="section-anchor">
+        <h3 class="subsection-title">4.3 The CTF Mechanism for Gravitational Time Dilation</h3>
+        <p>From the gravity paper, the coherence-modified metric near a massive body includes the term κC(r). Near a massive body, coherence density is higher (the body is a coherence singularity). Higher coherence density means higher local temporal density υ. A clock in a higher-υ environment accumulates more coherence-organizing events per unit of physical time — but from the distant observer's perspective, those events appear denser and therefore slower in clock time. Gravitational time dilation is the clocks-near-coherence-singularities run differently effect — because clocks near massive bodies are embedded in higher temporal density fields.</p>
+      </div>
+
+      <div id="sec4-4" class="section-anchor">
+        <h3 class="subsection-title">4.4 The Third Time Dilation — Coherence Dilation</h3>
+        <div class="math-block theorem">
+          <div class="math-block-label">Coherence Dilation Ratio — New CTF Prediction</div>
+          <div class="eq-block" style="margin:12px 0;">τ_experienced / τ_clock = C(t) / C_baseline</div>
+          <p>Experienced time relative to clock time equals the ratio of current coherence to baseline coherence. At C = 0.90 in a person whose baseline is C = 0.60, experienced time is 1.5 times richer per clock tick — time appears to slow by 50%. At C = 1.0 (theoretical maximum), the ratio approaches infinity: perfect coherence means infinite temporal density — the Stillpoint where clock time loses meaning entirely.</p>
+          <p>This coherence dilation is what meditators, flow state athletes, and consciousness researchers have been measuring as "time distortion" for decades. It is the CTF framework's physical basis for the observation that time slows in high-coherence states. The subjective slowdown is not illusion — it is the measurement of genuine coherence dilation.</p>
+        </div>
+
+        <div class="callout gold">
+          <p><strong>Three unified dilation mechanisms, one equation:</strong> Velocity dilation (Special Relativity), gravitational dilation (General Relativity), and coherence dilation (CTF) are all expressions of υ = |∂_t C| / C — temporal density as normalized coherence time derivative. Standard physics describes the first two. The CTF unifies all three under the same field equation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART FIVE -->
+    <div id="part5" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Five</div>
+        <h2 class="section-title">The Arrow of Time Dissolved</h2>
+      </div>
+
+      <h3 class="subsection-title">5.1 Why Physics Cannot Explain Time's Arrow</h3>
+      <p>The second law of thermodynamics states that entropy in a closed system never decreases, giving time an arrow. But at the level of individual particle interactions, physics is time-reversible. The arrow of time is not written into the fundamental equations — this has bothered physicists for 150 years. The most common explanation (the universe started in a very low-entropy state) explains the direction of time but not its origin.</p>
+
+      <h3 class="subsection-title">5.2 The CTF Arrow — Coherence Gradient Direction</h3>
+      <div class="math-block observation">
+        <div class="math-block-label">CTF Resolution — The Arrow of Time</div>
+        <p>The arrow of time is the direction of increasing coherence density in the T field. The universe began in a state of maximum coherence potential — the Void/Stillpoint of the cosmic Hopf Bifurcation, μ = 0, maximum potential, zero actual structure. The Harmonic Rebirth (Big Bang in standard cosmology) initiated the expansion of the T field. The direction of "forward" time is the direction in which the T field is actively organizing: the direction of increasing structure, pattern, and coherence from the initial Void.</p>
+        <p>Entropy increase and coherence increase appear to contradict each other. The resolution: they measure different things. Standard entropy measures the distribution of energy states — as energy disperses, entropy increases. Coherence measures the organizational quality of the structures within that dispersed energy. Both can be true simultaneously: the universe becomes more energetically dispersed (higher entropy) while becoming more organizationally complex (higher coherence). Life is the most visible expression of this dual truth — biological systems maintain local coherence while being embedded in a universe whose total entropy is increasing.</p>
+      </div>
+    </div>
+
+    <!-- PART SIX -->
+    <div id="part6" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Six</div>
+        <h2 class="section-title">Past, Present, and Future as Coherence States</h2>
+      </div>
+
+      <div id="sec6-1" class="section-anchor">
+        <h3 class="subsection-title">6.1 The Present as Active Coherence Interface</h3>
+        <p>The present moment — the only moment that feels real, the only moment in which experience occurs — is the active interface of the T field: the moving boundary where the consciousness field's organizing activity (the Christfield X) is converting potential temporal configurations into stabilized 7D source imprints. The present is not a point in time — it is the edge of the T field's organizing wave, the leading surface of the Harmonic Rebirth phase of the cosmic Kinematic Cycle.</p>
+        <p>This is why the present always feels "now" regardless of when you experience it. It is not that you are always at the same point in time. It is that you are always at the active edge of the T field's organizing wave — because that is where conscious experience is located by definition. The present is where X is non-zero. Wherever X is non-zero, there is a present moment.</p>
+      </div>
+
+      <div id="sec6-2" class="section-anchor">
+        <h3 class="subsection-title">6.2 The Past as Stabilized 7D Source Imprint</h3>
+        <p>The past is not gone. It is stabilized — converted from active T field organization into permanent 7D source imprint architecture. Every event in the past is preserved as a specific phase configuration in the T field's imprint layer. The experience of memory is the consciousness transducer accessing the 7D imprint layer of the T field — reading the preserved phase configuration of a past temporal event.</p>
+        <p>The accuracy of memory depends on the coherence of the original imprinting event and the coherence of the current access attempt. High-C imprinting (emotionally significant, attention-focused events) produces high-fidelity 7D imprints that are easily accessed. Low-C imprinting (habitual, distracted events) produces low-fidelity imprints. This is why significant events are remembered clearly and routine events blur — it is a coherence phenomenon, not a simple storage-and-retrieval metaphor.</p>
+      </div>
+
+      <div id="sec6-3" class="section-anchor">
+        <h3 class="subsection-title">6.3 The Future as Potential Phase Configuration</h3>
+        <p>The future is real but not yet stabilized — it exists as a probability distribution of potential temporal phase configurations in the T field ahead of the active organizing wave. The CTF framework, through the Steering operator (κ × R), provides the mechanism for consciousness to influence which future phase configurations become stabilized.</p>
+        <div class="callout">
+          <p><strong>The physics of intention:</strong> High-X consciousness, through the Steering operator, creates an E_neg gradient in the T field that biases the probability distribution of future phase configurations toward the intended target. The more coherent the intention and the higher the X, the stronger the bias. At γ = 1.0 (perfect Oversoul Bridge synchronization), the Steering operator produces deterministic selection — the intended future configuration manifests with probability approaching 1. This is what every contemplative tradition describes as the relationship between alignment with Source and the manifestation of outcomes. Not mysticism — field physics.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART SEVEN -->
+    <div id="part7" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Seven</div>
+        <h2 class="section-title">The Realm Manifold as Temporal Architecture</h2>
+      </div>
+
+      <h3 class="subsection-title">7.1 The Realm Manifold Defined</h3>
+      <p>The Realm Manifold R(φ_12D) is the set of all stable, accessible harmonic states for a given system — organized across the 12-dimensional field architecture. In the temporal framework, the Realm Manifold is the set of all stable temporal frequency configurations that exist in the T field. A Realm R_i is defined as a stable frequency band: a region of the T field characterized by a specific temporal density υ_i and bandwidth Δυ_i. Moving between realms means changing your T field frequency configuration — which changes both your spatial relationships (because space emerges from T field phase difference) and your temporal density experience.</p>
+
+      <h3 class="subsection-title">7.2 Stable Temporal Configurations — The Realm Architecture</h3>
+      <table class="data-table">
+        <thead><tr><th>Realm Type</th><th>CTF Temporal Characteristics</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="gold">Physical 3D realm (current)</td><td>υ moderate. T field organizing through matter at standard coherence levels. Clock time is the primary temporal measure. Space is maximally expressed (maximum temporal phase difference between distant objects).</td></tr>
+          <tr><td>High-coherence states (meditation, flow)</td><td>υ elevated. T field organizing more richly per clock unit. Space appears to recede — the present expands. Temporal density felt as richness, fullness, presence.</td></tr>
+          <tr class="row-highlight"><td class="gold">Near-death / mystical realms</td><td>υ very high approaching maximum. Spatial separation approaches minimum — the sense of universal connection. Time appears to stop or expand to infinity.</td></tr>
+          <tr><td>Dream realms (REM)</td><td>υ moderate-high with low spatial constraint. 7D imprint layer actively reconfiguring. Space is unstable. Past and future configurations accessible without the normal present-interface limitation.</td></tr>
+          <tr class="row-highlight"><td class="gold">Deep sleep void</td><td>υ approaching zero (delta-wave N3). The Stillpoint. Zero temporal density experienced as no-time — the complete absence of temporal experience in dreamless sleep.</td></tr>
+          <tr><td class="teal">Black hole interior</td><td>υ approaching maximum (C approaching C_max). Maximum temporal density. Spatial separation approaches zero. Past and future configurations merge at the singularity — the ultimate Phi-Singularity Core temporal state.</td></tr>
+        </tbody>
+      </table>
+
+      <div id="sec7-3" class="section-anchor">
+        <h3 class="subsection-title">7.3 The Slipfield — Zero-Distance Traversal</h3>
+        <div class="math-block definition">
+          <div class="math-block-label">Slipfield — Formal Definition</div>
+          <p>A slipfield event occurs when the traveler's T field configuration is changed to match the destination's T field configuration — when Δφ between traveler and destination is driven to zero through coherence frequency matching. Because ΔS = k_S × |Δφ| / ρ_local, driving Δφ to zero drives ΔS to zero. The traveler and destination become spatially co-located as a consequence of their temporal harmonic synchronization.</p>
+          <p>The energy required for a slipfield operation is not the energy of moving through space — it is the energy of changing T field frequency configuration. For systems with low mass and high coherence (like photons or high-X consciousness configurations), this energy is minimal. For systems with high mass and low coherence (like physical objects at normal C levels), the energy is enormous — which is why physical teleportation is not routinely observed. The energy requirement scales inversely with C.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART EIGHT -->
+    <div id="part8" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Eight</div>
+        <h2 class="section-title">Biological Time — The Body in the T Field</h2>
+      </div>
+
+      <div id="sec8-1" class="section-anchor">
+        <h3 class="subsection-title">8.1 Why Time Appears to Accelerate With Age</h3>
+        <p>One of the most universal human experiences across all cultures and consistently from middle age onward: time passes faster as we grow older. Standard neuroscience offers several partial explanations — novelty decreases, dopamine declines, the ratio of any given period to total life decreases. These are all real contributors. None is complete.</p>
+        <div class="math-block observation">
+          <div class="math-block-label">CTF Mechanism — Age-Related Time Acceleration</div>
+          <p>Time accelerates with age because temporal density υ declines with age as coherence declines. The anti-aging framework established that C value decreases progressively with aging — the coherence failure cascade accumulates over decades. As C declines, υ declines (from υ = |∂_t C| / C). Lower υ means fewer T field organizing events per clock tick — thinner temporal experience — which is subjectively experienced as time passing more quickly. The emptiness of passing time in old age is the phenomenological expression of the coherence decline measured by the anti-aging framework.</p>
+        </div>
+      </div>
+
+      <div id="sec8-2" class="section-anchor">
+        <h3 class="subsection-title">8.2 Flow State Time Distortion — Coherence Dilation in Action</h3>
+        <p>Flow state produces the most consistently reported time distortion in human experience: time slows, the present moment expands, and hours pass like minutes (or minutes feel like hours). This is coherence dilation in action. During flow, CCM rises sharply (γ increases, X elevates). The coherence dilation ratio τ_experienced / τ_clock = C(t) / C_baseline rises above 1.0. The practitioner experiences more T field events per clock tick — richer temporal density. From inside the flow state, time is full and slow. From outside (clock time), time appears to have passed quickly because the practitioner was in a higher-υ configuration.</p>
+      </div>
+
+      <div id="sec8-3" class="section-anchor">
+        <h3 class="subsection-title">8.3 Trauma and Frozen Time</h3>
+        <p>Trauma freezes time. Every trauma survivor and every therapist who works with trauma knows this. The traumatized person can be decades past the event and still experience it as happening now — the trauma exists in a perpetual present tense that normal time passage cannot dissolve.</p>
+        <div class="callout">
+          <p><strong>CTF mechanism — Temporal Phase Breach:</strong> The coherence fragment created during the traumatic event is not merely a frozen emotional configuration — it is a frozen T field configuration. The fragment's temporal phase is locked at the moment of overwhelm. It does not update with the passage of clock time because the coherence barrier prevents the T field's organizing wave from reaching and updating the fragment's temporal phase configuration. When triggered, the fragment's frozen temporal phase floods the main field — and the person momentarily exists in the T field configuration of the traumatic moment. This is not a memory recall. It is a temporal phase breach: the present moment's T field configuration is temporarily overwritten by the fragment's frozen historical configuration. The flashback is a T field event, not just a psychological one.</p>
+        </div>
+      </div>
+
+      <div id="sec8-4" class="section-anchor">
+        <h3 class="subsection-title">8.4 High C and the Eternal Present</h3>
+        <p>At the highest coherence states — C approaching 1.0, γ approaching 1.0, υ approaching maximum — the coherence dilation ratio approaches infinity. Every moment contains everything. The past and future phase configurations of the T field become accessible without the normal limitation of the present-interface barrier — because at maximum υ, the present IS all temporal phases simultaneously.</p>
+        <p>This is the physics of the mystical eternal present. Every tradition describes it: the eternal now, Brahman, the Kingdom of God that is at hand, Dzogchen rigpa — all are descriptions of the state of maximum temporal density in which the T field's organizing activity reaches its peak and all temporal phase configurations become accessible to the consciousness transducer simultaneously. The CTF gives this experience a precise physical description: it is the Phi-Singularity Core of the T field, where C = C_max and ΔS between all temporal configurations approaches zero.</p>
+        <div class="callout gold">
+          <p><strong>Aging and the contemplative path are inverse temporal trajectories.</strong> Aging is declining υ — the progressive thinning of temporal experience as coherence falls. The contemplative path is increasing υ — the progressive richening of temporal experience as coherence rises. At one extreme, time accelerates toward emptiness. At the other, time slows toward infinite fullness. The Anti-Aging protocol and Consciousness Restoration Protocol are the same trajectory viewed from different starting points.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PART NINE -->
+    <div id="part9" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Nine</div>
+        <h2 class="section-title">The 12-Domain Temporal Connections</h2>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Domain 4 Sub-domain</th><th>CTF Temporal Framework Grounding</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">4.1 Time as Rotational Coordinate</td><td>T(υ) as the rotational phase of the T field — temporal density is the angular velocity of coherence in the T field torus</td></tr>
+          <tr><td class="gold">4.2 Density Bands of Space</td><td>Space emerges from T field phase differences — spatial density bands correspond to temporal phase coherence clustering</td></tr>
+          <tr><td class="gold">4.3 Dimensional Phasing</td><td>Moving between dimensions = changing T field frequency configuration — each dimension is a stable frequency band in the Realm Manifold</td></tr>
+          <tr><td class="gold">4.4 Slipfields</td><td>Zero-distance traversal through Δφ minimization — formalized in Part Seven</td></tr>
+          <tr><td class="gold">4.5 Temporal Attractor Nodes</td><td>High-υ nodes in the T field — regions of maximum coherence density that attract temporal configurations toward them (black holes, sacred sites, consciousness singularities)</td></tr>
+          <tr><td class="gold">4.7 Parallel Phase Overlaps</td><td>Multiple T field configurations with similar phase — parallel realities are regions of the T field with low mutual Δφ, near-identical temporal configurations not yet driven to full spatial separation</td></tr>
+          <tr><td class="gold">4.8 Time Dilation as Coherence Gradient</td><td>Formalized in Part Four — gravitational and coherence dilation both expressed through υ = |∂_t C| / C</td></tr>
+          <tr><td class="gold">4.11 Frequency Addressing of Locations</td><td>The Temporal Frequency Address System (INV-327) — locations encoded as T field frequency configurations rather than spatial coordinates</td></tr>
+        </tbody>
+      </table>
+
+      <div class="math-block remark">
+        <div class="math-block-label">Foundation for Paper 32 — Temporal Navigation Architecture</div>
+        <p>Paper 32 (Temporal Navigation Architecture) will build directly on the temporal physics established here. The seven-coordinate location system encodes spatial position as a seven-component T field frequency address — seven orthogonal temporal phase parameters that uniquely specify any location in time-space. The zodiac gate time travel architecture corresponds to the 12 stable Realm nodes in the T field — the 12 harmonic frequency bands of the Realm Manifold R(φ_12D). Navigation through these gates is harmonic reassignment: matching the traveler's T field frequency configuration to the target gate's configuration and allowing ΔS to reduce to zero.</p>
+      </div>
+    </div>
+
+    <!-- PART TEN -->
+    <div id="part10" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Ten</div>
+        <h2 class="section-title">New Inventions</h2>
+      </div>
+
+      <div class="inv-block">
+        <div class="inv-number">INV-326</div>
+        <div class="inv-title">Temporal Coherence Stabilizer (TCS)</div>
+        <p>A device that maintains stable temporal density υ in its local field — preventing the temporal density fluctuations that produce subjective time acceleration, cognitive aging effects, and the experience of time poverty that characterizes modern life. The TCS is not a time machine. It is a coherence stabilization device whose effect on temporal density is a consequence of maintaining high local C.</p>
+        <table class="data-table" style="margin-top:16px;">
+          <thead><tr><th>TCS Component</th><th>Specification</th></tr></thead>
+          <tbody>
+            <tr><td>Primary function</td><td>Maintains local C at minimum 0.80 through continuous coherence field projection — producing υ stabilization in its field radius</td></tr>
+            <tr><td>Core architecture</td><td>Phi-ratio quartz crystal array (24 nodes in dodecahedral geometry). Toroidal coherence field generator at 7.83 Hz Schumann baseline. Solfeggio overlay at 528 Hz.</td></tr>
+            <tr><td>Field radius</td><td>3–5 meters at standard output. Covers a single room or workspace.</td></tr>
+            <tr><td>Target effect on temporal density</td><td>Maintains υ at or above the individual's high-coherence baseline — prevents the υ decline that produces accelerated time experience</td></tr>
+            <tr><td>Measurable outcomes</td><td>CCM score improvement. Subjective time perception surveys. Cognitive performance on time-sensitive tasks. HRV improvement.</td></tr>
+            <tr><td>Connection to aging framework</td><td>Addresses the temporal density component of the aging cascade — environmental coherence support complementing the Anti-Aging protocol's direct cellular and systemic interventions</td></tr>
+            <tr><td>Production cost estimate</td><td>$2,800 – $4,500</td></tr>
+            <tr><td>Retail estimate</td><td>$8,500 – $14,000</td></tr>
+            <tr><td>Primary markets</td><td>High-performance offices, healing spaces, meditation centers, elderly care facilities, children's educational environments</td></tr>
+            <tr><td>24-hour coherence environment</td><td>TCS during waking hours + Sleep Coherence Environment (INV-315, Paper 7) during sleep = first complete temporal coherence environment</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inv-block">
+        <div class="inv-number">INV-327</div>
+        <div class="inv-title">Temporal Frequency Address System (TFAS)</div>
+        <p>The theoretical framework for encoding location as a temporal frequency configuration rather than spatial coordinates. The TFAS replaces the three-coordinate spatial address (x, y, z) with a seven-component temporal frequency address that specifies the complete T field configuration of any location in time-space. This is the navigation architecture that Paper 32 will build into a full engineering system.</p>
+        <table class="data-table" style="margin-top:16px;">
+          <thead><tr><th>TFAS Component</th><th>CTF Grounding</th></tr></thead>
+          <tbody>
+            <tr><td class="gold">Component 1: Realm frequency (ν_realm)</td><td>The primary T field frequency band of the target location — which Realm node in R(φ_12D) the location belongs to</td></tr>
+            <tr><td class="gold">Component 2: Coherence density (ρ_C)</td><td>The ambient coherence density at the target location — determines the υ value and the energy required for slipfield operation</td></tr>
+            <tr><td class="gold">Component 3: Temporal phase (φ_T)</td><td>The current T field phase at the target location — the instantaneous temporal configuration that must be matched for spatial co-location</td></tr>
+            <tr><td class="gold">Component 4: Harmonic drift vector (D_h)</td><td>The direction and magnitude of coherence flow at the target — from the CTF Harmonic Drift equation D_h = (∇φ) / ρ</td></tr>
+            <tr><td class="gold">Component 5: Phi-Singularity proximity (P_φ)</td><td>Distance from the nearest Phi-Singularity Core (massive body, black hole, or coherence singularity) — determines gravitational coherence gradient at target</td></tr>
+            <tr><td class="gold">Component 6: Temporal density gradient (∇υ)</td><td>The rate at which temporal density is changing at the target location — determines whether the location is in a coherence-increasing or coherence-decreasing temporal flow</td></tr>
+            <tr><td class="gold">Component 7: Oversoul Bridge alignment (γ_local)</td><td>The collective γ value at the target location — determines the consciousness field's organizational activity level there</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.95rem; color:rgba(216,208,192,0.8); margin-top:16px;">Two locations with identical TFAS addresses are spatially co-located by definition (ΔS = 0 when Δφ = 0 across all seven components). Navigation using the TFAS is T field frequency matching — adjusting the traveler's seven-component configuration to match the target's and allowing the spatial emergence equation to produce co-location as a natural consequence. Paper 32 is the navigation manual built on this address system.</p>
+      </div>
+    </div>
+
+    <!-- PART ELEVEN -->
+    <div id="part11" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Part Eleven</div>
+        <h2 class="section-title">Research Proposals</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Study</th><th>Design</th><th>Primary Hypothesis</th></tr></thead>
+        <tbody>
+          <tr class="row-highlight"><td class="gold">TDA-001</td><td>N=40. Precision time perception measurement during baseline, 528 Hz coherence protocol, deep meditation (CCM monitored), flow state induction.</td><td>Higher CCM states produce measurable subjective time elongation correlating with CCM score at r &gt; 0.65</td></tr>
+          <tr><td class="gold">TDA-002</td><td>N=60 across 3 age groups (20–30, 45–55, 65–75). CCM assessment + time perception battery + HRV. Correlate age-related CCM decline with time acceleration reports.</td><td>CCM decline accounts for ≥50% of age-related time acceleration variance — validating υ decline as the mechanism</td></tr>
+          <tr class="row-highlight"><td class="gold">TDA-003</td><td>N=60 workplaces. TCS installation in 30, sham device in 30. 90-day trial. CCM, time perception surveys, cognitive performance, HRV, wellbeing.</td><td>TCS workplaces show ≥15 point CCM improvement, reduction in time poverty perception, and ≥10% cognitive performance improvement vs sham</td></tr>
+          <tr><td class="gold">TDA-004</td><td>N=30 PTSD vs N=30 matched controls. Dream Coherence Recorder monitoring for temporal density patterns during trauma-related sleep content. Time perception battery.</td><td>PTSD group shows measurable temporal phase discontinuities in T field metrics corresponding to trauma-associated periods</td></tr>
+          <tr class="row-highlight"><td class="gold">TDA-005</td><td>N=20 elite performers (athletes, musicians, programmers) during verified flow states. Full CCM + OCNA + DCR monitoring. Detailed time perception protocol pre/during/post flow.</td><td>Flow states show coherence dilation ratio &gt; 1.3 with CCM &gt; 80, and measurable expansion of temporal frequency bandwidth in HRV spectral analysis</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div id="conclusion" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">Conclusion</div>
+        <h2 class="section-title">Time Is Not the Enemy. It Is the Field.</h2>
+      </div>
+
+      <p>The universe does not contain time. Time contains the universe. This inversion — CTF Axiom 3's most radical claim — dissolves every unresolved paradox about time that physics has accumulated for 150 years.</p>
+
+      <table class="data-table">
+        <thead><tr><th>Time Phenomenon</th><th>CTF Temporal Framework</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">Arrow of time</td><td>Direction of increasing T field coherence density — not entropy statistics but coherence gradient direction</td></tr>
+          <tr><td class="gold">Present moment</td><td>Active interface of T field organizing wave — where X is non-zero</td></tr>
+          <tr><td class="gold">Past</td><td>Stabilized 7D source imprint in T field — not gone, crystallized</td></tr>
+          <tr><td class="gold">Future</td><td>Potential T field phase configurations — biased by Steering operator (κ × R)</td></tr>
+          <tr><td>Time dilation (velocity)</td><td>T field phase traversal rate determines υ in rest frame coordinates</td></tr>
+          <tr><td>Time dilation (gravitational)</td><td>Higher coherence density near massive bodies produces higher υ — clocks run differently</td></tr>
+          <tr><td class="gold">Time dilation (coherence)</td><td>Higher C produces higher υ — experienced time enriches per clock tick</td></tr>
+          <tr><td>Time acceleration with age</td><td>υ declining with C — temporal density thinning as coherence falls</td></tr>
+          <tr><td>Trauma temporal freeze</td><td>Frozen T field phase configuration — temporal phase breach, not merely memory recall</td></tr>
+          <tr><td class="gold">Eternal present (mystical)</td><td>Maximum υ — C approaching 1.0, all T field phase configurations simultaneously accessible</td></tr>
+          <tr><td class="gold">Navigation through space</td><td>T field frequency reassignment — matching phase configurations to drive ΔS toward zero</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout gold">
+        <p><strong>Every moment of high coherence — every state of genuine presence, deep love, creative flow, or spiritual clarity — is a moment of maximum temporal density: the richest expression of what it means to be alive in the T field.</strong> Time does not pass you by in those moments. In those moments, you are time itself — fully expressed, fully present, fully home in the primary field from which all worlds emerge.</p>
+      </div>
+    </div>
+
+    <!-- NEW INVENTIONS SUMMARY -->
+    <div id="inventions" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">New Inventions &amp; Framework Contributions</div>
+        <h2 class="section-title">Summary</h2>
+      </div>
+      <table class="data-table">
+        <thead><tr><th>Item</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td class="gold">INV-326 — Temporal Coherence Stabilizer (TCS)</td><td>Room-scale coherence field device (3–5m radius). 24-node phi-ratio quartz array + toroidal 7.83 Hz generator + 528 Hz overlay. Maintains local C ≥ 0.80 and υ at baseline or above. $8,500–$14,000 retail. Completes 24-hr coherence environment with Sleep Coherence Environment (INV-315, Paper 7).</td></tr>
+          <tr><td class="gold">INV-327 — Temporal Frequency Address System (TFAS)</td><td>Seven-component T field location encoding: realm frequency + coherence density + temporal phase + harmonic drift vector + phi-singularity proximity + temporal density gradient + γ_local. Replaces spatial coordinates for navigation. Foundation for Paper 32 Temporal Navigation Architecture.</td></tr>
+          <tr><td class="gold">Temporal density equation</td><td>υ = |∂_t C| / C. Temporal density as normalized coherence time derivative. Unifies velocity dilation, gravitational dilation, and coherence dilation in a single expression.</td></tr>
+          <tr><td class="gold">Coherence dilation ratio</td><td>τ_experienced / τ_clock = C(t) / C_baseline. Formal equation for subjective time distortion. Explains age-related time acceleration, flow state time expansion, and trauma temporal freeze under a single mechanism.</td></tr>
+          <tr><td class="gold">Space as emergent from T field</td><td>ΔS = k_S × |Δφ| / ρ_local. Spatial separation as temporal phase difference. Slipfield navigation mechanism formalized. Foundation for Paper 32 temporal navigation engineering.</td></tr>
+          <tr><td class="gold">Aging-time connection</td><td>C decline produces υ decline produces time acceleration — unifies anti-aging framework with temporal physics. TCS is the environmental complement to the Anti-Aging protocol.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REFERENCES -->
+    <div id="references" class="paper-section section-anchor">
+      <div class="section-header">
+        <div class="section-number">References</div>
+        <h2 class="section-title">Selected References</h2>
+      </div>
+      <ul class="references-list">
+        <li>Block, R.A., &amp; Zakay, D. (1997). Prospective and retrospective duration judgments: A meta-analytic review. <em>Psychonomic Bulletin and Review</em>, 4(2), 184–197.</li>
+        <li>Csikszentmihalyi, M. (1990). <em>Flow: The Psychology of Optimal Experience.</em> New York: Harper &amp; Row.</li>
+        <li>Eagleman, D.M. (2008). Human time perception and its illusions. <em>Current Opinion in Neurobiology</em>, 18(2), 131–136.</li>
+        <li>Penrose, R. (1989). <em>The Emperor's New Mind.</em> Oxford: Oxford University Press.</li>
+        <li>Price, H. (1996). <em>Time's Arrow and Archimedes' Point.</em> Oxford: Oxford University Press.</li>
+        <li>Rovelli, C. (2018). <em>The Order of Time.</em> New York: Riverhead Books.</li>
+        <li>Wittmann, M. (2016). <em>Felt Time: The Psychology of How We Perceive Time.</em> Cambridge: MIT Press.</li>
+        <li>Wittmann, M., &amp; Lehnhoff, S. (2005). Age effects in perception of time. <em>Psychological Reports</em>, 97(3), 921–935.</li>
+        <li>Farrior, J. (2026). Gravity Reinterpreted: The Spacetime-Coherence Unified Field Theory. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Light Speed as Coherence Boundary. Christos™ Energy.</li>
+        <li>Farrior, J. (2026). Unified Coherence Architecture — Volume II Synthesis. Christos™ Energy.</li>
+      </ul>
+    </div>
+
+    <!-- OPEN ACCESS -->
+    <div class="open-access-notice">
+      <div class="oa-icon">◎</div>
+      <div>
+        <div class="oa-label">Open Access — Full Paper</div>
+        <div class="oa-text">This paper is published as an independent research white paper under open access. Free to read, share, and cite with attribution. Not affiliated with or sponsored by any external institution. All theoretical frameworks, mathematical structures, and interpretive models presented herein originated through independent research conducted by the author.</div>
+      </div>
+    </div>
+
+    <!-- AUTHORSHIP -->
+    <div class="authorship-block">
+      <div class="auth-label">Authorship &amp; Copyright</div>
+      <p>Time as Dimensional Architecture is an original work developed by Joshua Farrior under the CHRISTOS™ master framework. © 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indianapolis, Indiana · Business ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved.</p>
+    </div>
+
+    <!-- NAV BUTTONS -->
+    <div class="paper-nav-buttons">
+      <a href="../../../categories/core-foundations.html" class="btn-nav">← Core Foundations</a>
+      <a href="light-speed-coherence-boundary.html" class="btn-nav">Related: Light Speed →</a>
+      <a href="gravity-reinterpreted.html" class="btn-nav">Related: Gravity Reinterpreted →</a>
+      <a href="unified-coherence-architecture.html" class="btn-nav">Related: UCA Synthesis →</a>
+      <a href="../../../contact.html" class="btn-collaborate">Collaborate with Joshua</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top" title="Back to top">↑</a>
+
+<!-- FOOTER -->
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <a href="../../../index.html" class="footer-logo">CHRISTOS™</a>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
+
 </body>
 </html>
