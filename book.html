@@ -49,7 +49,6 @@ a { text-decoration: none; color: inherit; }
 .bc-sub { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; color: rgba(240,235,224,0.45); text-align: center; line-height: 1.5; position: relative; z-index: 1; }
 
 /* Book info */
-.book-info {}
 .bi-status { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 18px; }
 .bi-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #3AAFAF; flex-shrink: 0; }
 .bi-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,36px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 10px; }
@@ -67,7 +66,7 @@ a { text-decoration: none; color: inherit; }
 .btn-outline { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; display: inline-block; transition: all 0.2s; }
 .btn-outline:hover { background-color: rgba(201,168,76,0.1); }
 
-/* ── COMING SOON BOOKS ── */
+/* ── BOOKS GRID ── */
 .coming-soon-wrap { margin-bottom: 40px; }
 .coming-soon-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,32px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 14px; }
 .coming-soon-sub { font-size: 18px; color: #D0C8B8; line-height: 1.8; max-width: 760px; margin-bottom: 48px; }
@@ -79,14 +78,24 @@ a { text-decoration: none; color: inherit; }
 .cs-cover { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.15); border-radius: 4px; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px 16px; position: relative; overflow: hidden; }
 .cs-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.04), transparent 70%); }
 .cs-cover::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, rgba(201,168,76,0.4), rgba(201,168,76,0.1), rgba(201,168,76,0.4)); }
+
+/* Released badge (gold) */
+.cs-badge-released { position: absolute; top: 10px; right: 10px; background-color: #C9A84C; color: #08111E; font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; }
+/* Coming soon badge (teal) */
 .cs-badge { position: absolute; top: 10px; right: 10px; background-color: rgba(42,127,127,0.2); border: 1px solid rgba(42,127,127,0.4); color: #3AAFAF; font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; }
+
 .cs-cover-title { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; color: rgba(201,168,76,0.7); letter-spacing: 0.07em; text-align: center; line-height: 1.4; position: relative; z-index: 1; }
 .cs-cover-rule { width: 30px; height: 1px; background: rgba(201,168,76,0.3); position: relative; z-index: 1; }
 .cs-cover-author { font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.4); position: relative; z-index: 1; text-align: center; }
 
 .cs-info {}
+/* Released status (teal dot filled) */
+.cs-status-released { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; }
+.cs-status-released::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #3AAFAF; flex-shrink: 0; }
+/* Coming soon status (teal dot hollow) */
 .cs-status { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; }
 .cs-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: rgba(42,127,127,0.4); border: 1px solid #3AAFAF; flex-shrink: 0; }
+
 .cs-title { font-family: 'Cinzel', serif; font-size: clamp(16px,1.8vw,21px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 8px; }
 .cs-author { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 18px; }
 .cs-desc { font-size: 16px; color: #D0C8B8; line-height: 1.75; margin-bottom: 22px; }
@@ -153,7 +162,7 @@ a { text-decoration: none; color: inherit; }
   <div class="page-header-inner">
     <div class="eyebrow">Christos™ Publications</div>
     <h1 class="page-title">Books by Joshua Farrior</h1>
-    <p class="page-sub">Three works spanning the full range of the Christos vision — from the foundational unified framework of Magnus Opus through the new language of coherence civilization in Sovereign Logos Prime. A fourth work, Starburst vs. Saturnalia, is forthcoming.</p>
+    <p class="page-sub">Three works spanning the full range of the Christos vision — from the foundational unified framework of the Magnus Opus to the civilizational and philosophical writings yet to come.</p>
   </div>
 </div>
 
@@ -166,13 +175,10 @@ a { text-decoration: none; color: inherit; }
     <div class="section-eyebrow">Available Now</div>
     <div class="featured-book">
 
-      <!-- Cover Mock -->
-      <div class="book-cover">
+      <!-- Cover Image -->
+      <div class="book-cover" style="padding:0; overflow:hidden; position:relative;">
         <div class="bc-available">Available Now</div>
-        <div class="bc-title">MAGNUS<br>OPUS</div>
-        <div class="bc-rule"></div>
-        <div class="bc-author">Joshua Farrior</div>
-        <div class="bc-sub">Unified Framework of<br>Physics, Consciousness,<br>Geometry & Biological Systems</div>
+        <img src="assets/book-magnus-opus.png" alt="Magnus Opus by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
       </div>
 
       <!-- Info -->
@@ -196,33 +202,46 @@ a { text-decoration: none; color: inherit; }
             <div class="bi-meta-value">Christos™ Publications</div>
           </div>
         </div>
-        <a href="papers/core-foundations/magnus-opus.html" class="btn-gold">Read Magnus Opus →</a>
+        <a href="Magnus_Opus_Joshua_Farrior.pdf" target="_blank" class="btn-gold">Read the Magnus Opus</a>
         <a href="contact.html" class="btn-outline">Contact About This Work</a>
       </div>
     </div>
   </div>
 
-  <!-- QUOTE -->
+  <!-- QUOTE — updated paper count to 106 -->
   <div class="quote-block">
-    <div class="quote-text">"What began as a unified framework has grown into a 106-paper research platform, 1,000+ inventions, and 105 newly formalized fields of scientific inquiry. The Magnus Opus is where that journey began — and where the foundation for all of it was laid."</div>
+    <div class="quote-text">"What began as a unified framework has grown into a 106-paper research platform, 400+ inventions, and 105 newly formalized fields of scientific inquiry. The Magnus Opus is where that journey began — and where the foundation for all of it was laid."</div>
     <div class="quote-attr">— Joshua Farrior, Founder · Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div>
   </div>
 
-  <!-- ── COMING SOON BOOKS ── -->
+  <!-- ── BOOKS GRID ── -->
   <div class="coming-soon-wrap">
-    <div class="section-eyebrow">Coming Soon</div>
-    <div class="coming-soon-title">Forthcoming Work</div>
-    <p class="coming-soon-sub">One additional book is currently in development — extending the Christos framework into the civilizational and historical forces that have shaped the present moment.</p>
+    <div class="section-eyebrow">All Publications</div>
+    <div class="coming-soon-title">Additional Works</div>
+    <p class="coming-soon-sub">Two additional books extend the Christos framework into new territory — one a complete practical guide to the Sovereign Logos Prime coherence language system, the other exploring the civilizational and historical forces shaping the present moment.</p>
 
     <div class="coming-grid">
 
-      <!-- BOOK 2: STARBURST VS BASTION -->
+      <!-- BOOK 2: SOVEREIGN LOGOS PRIME — NOW RELEASED -->
       <div class="cs-book">
-        <div class="cs-cover">
-          <div class="cs-badge">Coming Soon</div>
-          <div class="cs-cover-title">STARBURST VS BASTION<br><br>CHRISTOS VS SATURNALIA IN AMERICA</div>
-          <div class="cs-cover-rule"></div>
-          <div class="cs-cover-author">Joshua Farrior</div>
+        <div class="cs-cover" style="padding:0; overflow:hidden;">
+          <div class="cs-badge-released" style="z-index:2;">Available Now</div>
+          <img src="assets/book-slp.png" alt="Sovereign Logos Prime by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
+        </div>
+        <div class="cs-info">
+          <div class="cs-status-released">Available Now</div>
+          <div class="cs-title">Sovereign Logos Prime</div>
+          <div class="cs-author">Joshua Farrior</div>
+          <p class="cs-desc">A complete guide to the coherence communication system your nervous system was always meant to speak. Covers the full SLP architecture — 12 Currents, 144 terms, 12 Dialects, breath geometries, tone intensities, inter-species communication, and the five training phases from foundation breath to silent field transmission.</p>
+          <a href="slp-book.html" class="btn-gold" style="font-size:11px; padding:12px 24px;">Read the Book</a>
+        </div>
+      </div>
+
+      <!-- BOOK 3: STARBURST VS BASTION — COMING SOON -->
+      <div class="cs-book">
+        <div class="cs-cover" style="padding:0; overflow:hidden;">
+          <div class="cs-badge" style="z-index:2;">Coming Soon</div>
+          <img src="assets/book-starburst.png" alt="Starburst vs Bastion by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
         </div>
         <div class="cs-info">
           <div class="cs-status">Not Yet Released</div>
@@ -230,24 +249,6 @@ a { text-decoration: none; color: inherit; }
           <div class="cs-author">Joshua Farrior</div>
           <p class="cs-desc">A forthcoming work exploring the clash of civilizational forces — coherence versus entropy, expansion versus control, the Christos framework versus the Saturnine structures that have shaped modern America. Details and release information to be announced.</p>
           <div class="cs-notify">Notify Me at Release</div>
-        </div>
-      </div>
-
-      <!-- BOOK 3: SOVEREIGN LOGOS PRIME -->
-      <div class="cs-book">
-        <div class="cs-cover" style="border-color:rgba(201,168,76,0.4);">
-          <div class="bc-available" style="position:absolute;top:14px;right:14px;background-color:#C9A84C;color:#08111E;font-family:'Raleway',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:5px 10px;border-radius:2px;">Available Now</div>
-          <img src="assets/images/slp-cover.jpg" alt="Sovereign Logos Prime Cover" style="max-height:180px;max-width:100%;object-fit:contain;position:relative;z-index:1;" onerror="this.style.display='none'">
-          <div class="cs-cover-title" style="position:relative;z-index:1;">SOVEREIGN<br>LOGOS<br>PRIME</div>
-          <div class="cs-cover-rule"></div>
-          <div class="cs-cover-author">Joshua Farrior</div>
-        </div>
-        <div class="cs-info">
-          <div class="cs-status" style="color:#C9A84C;">Available Now</div>
-          <div class="cs-title">Sovereign Logos Prime</div>
-          <div class="cs-author">Joshua Farrior · 2026</div>
-          <p class="cs-desc">A complete coherence-based biofield communication model — a structured system of breath, tone, gesture, and intention designed to train the human nervous system toward measurable states of coherence. Not binary. Not digital. A new language for a coherence civilization, built entirely on the physics of the biofield. Includes the complete 144-term lexicon, 12 dialects, 21 Root Physics, and the full training protocol across five measurable phases.</p>
-          <a href="slp-book.html" class="btn-gold" style="font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;margin-top:16px;">Read Sovereign Logos Prime</a>
         </div>
       </div>
 
