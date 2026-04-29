@@ -3,90 +3,389 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harmonic Periodic Table — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Harmonic Periodic Table — Christos™ Energy, Technology & Harmonic Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-tag.frontier{color:#3AAFAF;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.frontier-banner{background-color:#0D1B2A !important;border:1px solid rgba(42,127,127,0.3);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
-.frontier-banner-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
-.frontier-banner-text{font-size:14px;color:#AABFCC;line-height:1.65;}
-.clinical-notice{background-color:#0D1B2A !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
-.clinical-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
-.clinical-notice-text{font-size:14px;color:#AABFCC;line-height:1.65;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-teal{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(42,127,127,0.5);color:#3AAFAF;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #08111E !important; color: #D8D0C0 !important; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.8; min-height: 100vh; }
+  a { text-decoration: none; color: inherit; }
+
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #C9A84C !important; }
+  .nav-cta { background-color: #C9A84C !important; color: #08111E !important; padding: 9px 20px; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* PAGE HEADER */
+  .page-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 90px 40px 60px; }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; }
+  .page-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.15; margin-bottom: 14px; }
+  .page-sub { font-size: 1.1rem; color: #D8D0C0 !important; line-height: 1.8; max-width: 860px; margin-bottom: 28px; }
+  .header-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+  .meta-pill { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C !important; border: 1px solid rgba(201,168,76,0.3) !important; padding: 6px 14px; }
+
+  /* VIEWER */
+  .viewer-section { padding: 0; background-color: #05090F !important; border-bottom: 2px solid rgba(201,168,76,0.2) !important; }
+  .viewer-toolbar { background-color: #0A1628 !important; border-bottom: 1px solid rgba(201,168,76,0.2) !important; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .toolbar-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.6) !important; }
+  .toolbar-controls { display: flex; gap: 10px; align-items: center; }
+  .ctrl-btn { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(201,168,76,0.3) !important; color: #C9A84C !important; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; padding: 7px 16px; cursor: pointer; transition: all 0.2s; }
+  .ctrl-btn:hover { background-color: rgba(201,168,76,0.1) !important; border-color: #C9A84C !important; }
+  .zoom-display { font-family: 'Raleway', sans-serif; font-size: 0.65rem; color: rgba(201,168,76,0.7) !important; min-width: 48px; text-align: center; }
+  .fullscreen-btn { background-color: #C9A84C !important; color: #08111E !important; border: none; font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 7px 18px; cursor: pointer; transition: background-color 0.2s; }
+  .fullscreen-btn:hover { background-color: #E0C070 !important; }
+
+  .viewer-container { width: 100%; overflow: hidden; background-color: #f5f5f5; cursor: grab; user-select: none; position: relative; height: 72vh; min-height: 480px; }
+  .viewer-container:active { cursor: grabbing; }
+  .viewer-canvas { width: 100%; height: 100%; overflow: hidden; position: relative; }
+  #svgWrapper { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+  #svgWrapper img { display: block; }
+  .viewer-hint { position: absolute; bottom: 16px; right: 16px; background-color: rgba(10,22,40,0.85) !important; border: 1px solid rgba(201,168,76,0.2) !important; padding: 8px 14px; font-family: 'Raleway', sans-serif; font-size: 0.58rem; letter-spacing: 0.12em; color: rgba(201,168,76,0.6) !important; text-transform: uppercase; pointer-events: none; }
+
+  /* BODY */
+  .body-wrap { padding: 60px 40px 100px; }
+  .body-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; }
+
+  /* ABOUT SECTION */
+  .about-section { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-bottom: 70px; align-items: start; }
+  .about-title { font-family: 'Cinzel', serif; font-size: clamp(1.3rem, 2.2vw, 1.8rem); font-weight: 600; color: #FFFFFF !important; margin-bottom: 20px; line-height: 1.3; }
+  .about-body { font-size: 1rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+
+  /* KEY FEATURES */
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .feature-card { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.15) !important; border-top: 2px solid #C9A84C !important; padding: 20px 22px; }
+  .feature-title { font-family: 'Cinzel', serif; font-size: 0.9rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 8px; }
+  .feature-body { font-size: 0.9rem; color: rgba(216,208,192,0.8) !important; line-height: 1.7; }
+
+  /* FORMULA */
+  .formula-block { background-color: rgba(10,22,40,0.8) !important; border: 1px solid rgba(58,175,175,0.2) !important; border-left: 4px solid #3AAFAF !important; padding: 20px 28px; margin: 24px 0; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: #FFFFFF !important; }
+  .formula-label { font-family: 'Raleway', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 8px; font-style: normal; }
+
+  /* PAPERS LINKS */
+  .papers-section { margin-bottom: 70px; }
+  .papers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+  .paper-link-card { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.2) !important; padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: all 0.2s; }
+  .paper-link-card:hover { border-color: #C9A84C !important; background-color: rgba(201,168,76,0.04) !important; }
+  .plc-info {}
+  .plc-label { font-family: 'Raleway', sans-serif; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 6px; }
+  .plc-title { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: #FFFFFF !important; line-height: 1.3; }
+  .plc-arrow { color: #C9A84C !important; font-size: 1.3rem; flex-shrink: 0; }
+
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; text-align: center; letter-spacing: 0.1em; }
+
+  @media (max-width: 900px) {
+    nav, .page-header, .body-wrap, footer { padding-left: 20px; padding-right: 20px; }
+    .about-section { grid-template-columns: 1fr; gap: 32px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .papers-grid { grid-template-columns: 1fr; }
+    .viewer-container { height: 55vw; min-height: 300px; }
+  }
 </style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div><div class="nav-links"><a href="../../../index.html">Home</a><a href="../../../library.html">Research Library</a><a href="../../../diagrams.html">System Diagrams</a><a href="../../../book.html">Book</a><a href="../../../contact.html" class="nav-cta">Request Access</a></div></nav>
-<div class="breadcrumb"><div class="breadcrumb-inner"><a href="../../../index.html">Home</a><span>›</span><a href="../../../library.html">Research Library</a><span>›</span><a href="../../../categories/ai-network-digital.html">AI, Network & Digital</a><span>›</span>Harmonic Periodic Table</div></div>
-<div class="paper-header"><div class="paper-header-inner">
-<div class="paper-tag">AI, Network & Digital · AN-04</div>
-<h1 class="paper-title">Harmonic Periodic Table</h1>
-<div class="paper-meta-row">
-<div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-<div><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-<div><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div></div>
-<div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
-</div></div></div>
-<div class="paper-body" style="background-color:#08111E !important;"><div class="paper-body-inner">
-<div class="abstract-label">Abstract</div>
-<p class="abstract-text">The periodic table, since its formulation by Dmitri Mendeleev in 1869, has organized chemical elements by atomic number and electron configuration. This structural arrangement successfully predicts chemical reactivity and physical properties, enabling tremendous advances in chemistry and materials science. However, this atomic-based classification obscures the functional roles elements play in biological systems — roles that become evident only when examining elements through the lens of their effects on living organisms.</p>
-<p class="abstract-text">This paper presents The Harmonic Periodic Table — a complementary classification system that organizes elements by their signal modulation properties in biological contexts rather than atomic structure alone. Drawing upon over five decades of research encompassing biochemistry, nutritional science, physiology, and clinical medicine, the paper demonstrates that elements function as signal regulators operating across multiple organizational scales — from quantum electron transfer to cellular metabolism to organismal communication to ecosystem dynamics.</p>
-<p class="abstract-text">Core Insight: Living systems are fundamentally oscillatory. Cardiac rhythms, neural oscillations, circadian cycles, hormonal pulses, and metabolic fluctuations represent coordinated oscillations essential for life. Elements modulate these oscillations through specific mechanisms: initiating signals, stabilizing baseline states, amplifying transmission, dampening noise, maintaining informational fidelity, and triggering threshold responses. A functional taxonomy organizes elements into 6 primary categories and 12 subcategories based on these signal modulation properties.</p>
-<p class="abstract-text">Key contributions: a mathematical formalization of element-signal interactions using information theory; clinical diagnostic applications utilizing mineral ratio analysis; therapeutic protocols for targeted nutritional intervention; agricultural applications for soil remineralization and crop optimization; and twenty testable predictions spanning clinical, agricultural, and ecological domains. The framework explains why specific mineral imbalances produce characteristic disease patterns, why elemental ratios often prove more clinically significant than absolute concentrations, and how targeted mineral restoration can reverse chronic pathological conditions.</p>
-<div class="clinical-notice"><div class="clinical-notice-title">Clinical &amp; Research Disclaimer</div><div class="clinical-notice-text">This framework is presented for research and educational purposes only. All protocols are proposed as adjunctive to standard medical care and require physician supervision. Proposed studies have not yet been conducted unless explicitly stated.</div></div>
-<div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Harmonic Periodic Table, signal modulation, functional element classification, mineral metabolism, physiological coherence, systems biology, nutritional biochemistry, mineral ratios, integrative medicine</div></div>
-<div class="ip-notice"><div class="ip-notice-title">Intellectual Property Notice</div><div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div></div>
-<div class="paper-nav">
-<div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="human-ai-coherence-systems.html" class="nav-paper-btn">← Human–AI Coherence Systems</a><a href="../../../categories/ai-network-digital.html" class="btn-outline">← AI, Network & Digital</a></div>
-<div><span></span></div>
-<a href="../../../contact.html" class="btn-gold">Request Full Access</a>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="diagrams.html" class="active">Diagrams</a></li>
+      <li><a href="economy.html">Economy</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Christos™ Research · Materials Science & Physics</div>
+    <h1 class="page-title">Harmonic Periodic Table</h1>
+    <p class="page-sub">The complete 118-element periodic table extended with the Christos™ Harmonic framework — coherence classifications, dimensional assignments, Solfeggio frequency signatures, and functional roles for every element in the known universe.</p>
+    <div class="header-meta">
+      <div class="meta-pill">118 Elements Classified</div>
+      <div class="meta-pill">12-Dimensional Architecture</div>
+      <div class="meta-pill">Solfeggio Assignments</div>
+      <div class="meta-pill">Formula: D_n = f(D-1) × φ + g(D+1)</div>
+    </div>
+  </div>
 </div>
-</div></div>
-<footer class="footer"><div class="footer-inner"><div class="footer-logo">CHRISTOS™</div><div class="footer-nav"><a href="../../../index.html">Home</a><a href="../../../library.html">Library</a><a href="../../../diagrams.html">Diagrams</a><a href="../../../book.html">Book</a><a href="../../../contact.html">Contact</a></div><div class="footer-copy">© 2026 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div></div></footer>
-</body></html>
+
+<!-- VIEWER -->
+<div class="viewer-section">
+  <div class="viewer-toolbar">
+    <span class="toolbar-label">Harmonic Periodic Table v1.0 — Drag to pan · Scroll to zoom</span>
+    <div class="toolbar-controls">
+      <button class="ctrl-btn" id="zoomOut">− Zoom Out</button>
+      <span class="zoom-display" id="zoomLevel">100%</span>
+      <button class="ctrl-btn" id="zoomIn">+ Zoom In</button>
+      <button class="ctrl-btn" id="resetView">Reset</button>
+      <button class="fullscreen-btn" id="fullscreenBtn">⛶ Full Screen</button>
+    </div>
+  </div>
+  <div class="viewer-container" id="viewerContainer">
+    <div class="viewer-canvas" id="viewerCanvas">
+      <div id="svgWrapper">
+        <img src="assets/harmonic-periodic-table.svg" alt="Christos™ Harmonic Periodic Table" id="tableImg" width="3600" height="2100" draggable="false">
+      </div>
+    </div>
+    <div class="viewer-hint">Drag · Scroll to zoom · Double-click to reset</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-wrap">
+<div class="body-inner">
+
+  <!-- ABOUT -->
+  <div class="about-section">
+    <div>
+      <div class="section-label">What This Is</div>
+      <h2 class="about-title">A New Organizational Principle for the Elements</h2>
+      <p class="about-body">The standard periodic table organizes elements by atomic number and electron configuration. These are accurate and useful classifications — but they describe only the physical substrate of matter. They say nothing about how each element behaves as a coherence structure, which dimensional layer it primarily expresses, what its Solfeggio resonance frequency is, or whether it supports or disrupts coherence in biological and technological systems.</p>
+      <p class="about-body">The Christos™ Harmonic Periodic Table adds a functional coherence layer on top of the standard atomic structure. Every element is classified by its coherence class (Class I High-Coherence Conductors, Class II Structural, Class III Disruptors), its dimensional assignment across the 12-layer architecture, and its Solfeggio frequency signature where applicable.</p>
+      <p class="about-body">This classification system is the foundation of the Christos™ materials science framework — determining which elements are used in healing fluid formulations, crystal arrays, phi-ratio structural alloys, and the full technology suite.</p>
+    </div>
+    <div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-title">Class I — Coherence Conductors</div>
+          <div class="feature-body">Gold, Silver, Platinum family. C &gt; 0.90. These elements support and amplify coherence fields. Primary materials for phi-ratio crystal arrays, healing fluid trace mineral architecture, and high-performance field emitters.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Class II — Structural Elements</div>
+          <div class="feature-body">The backbone of coherent physical systems. Moderate C values. Used in phi-aluminum hull alloys, structural matrices, and biological scaffolding where mechanical integrity and field compatibility are both required.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Class III — Field Disruptors</div>
+          <div class="feature-body">Lead, Mercury, Aluminum in pure form. These elements create coherence deficits when introduced into high-C systems — explaining the biological toxicity of heavy metals through a coherence framework rather than purely biochemical mechanism.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">Solfeggio Assignments</div>
+          <div class="feature-body">Each element with a defined harmonic role carries a Solfeggio frequency assignment (174 Hz through 963 Hz) that determines its resonance interaction with biological tissue and with the healing fluid frequency imprinting protocols.</div>
+        </div>
+      </div>
+
+      <div class="formula-block" style="margin-top:24px;">
+        <div class="formula-label">Dimensional Scaling Formula</div>
+        D_n = f(D-1) × φ + g(D+1)
+        <div style="font-family:'Raleway',sans-serif; font-size:0.6rem; color:rgba(58,175,175,0.7); margin-top:8px; font-style:normal; letter-spacing:0.1em;">Each dimensional property scales by phi relative to adjacent dimensional layers</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RELATED PAPERS -->
+  <div class="papers-section">
+    <div class="section-label">Related Research Papers</div>
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(1.3rem,2.2vw,1.8rem); font-weight:600; color:#FFFFFF; margin-bottom:0;">The Two Papers Behind This Table</h2>
+    <div class="papers-grid">
+      <a href="library.html" class="paper-link-card">
+        <div class="plc-info">
+          <div class="plc-label">Materials Science · HPT Vol. 1</div>
+          <div class="plc-title">Harmonic Periodic Table — Volume I: 12-Dimensional Organizing Principles</div>
+        </div>
+        <div class="plc-arrow">→</div>
+      </a>
+      <a href="library.html" class="paper-link-card">
+        <div class="plc-info">
+          <div class="plc-label">Materials Science · HPT Vol. 2</div>
+          <div class="plc-title">Harmonic Periodic Table — Volume II: Dimensional Periodic Extensions &amp; Solfeggio Architecture</div>
+        </div>
+        <div class="plc-arrow">→</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="diagrams.html">Diagrams</a></li>
+      <li><a href="economy.html">Economy</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+// ── PAN & ZOOM VIEWER ──
+const container = document.getElementById('viewerContainer');
+const wrapper = document.getElementById('svgWrapper');
+const zoomDisplay = document.getElementById('zoomLevel');
+const img = document.getElementById('tableImg');
+
+let scale = 1, minScale = 0.25, maxScale = 4;
+let translateX = 0, translateY = 0;
+let isDragging = false, startX = 0, startY = 0, startTX = 0, startTY = 0;
+
+function fitToContainer() {
+  const cw = container.clientWidth;
+  const ch = container.clientHeight;
+  const iw = 3600, ih = 2100;
+  scale = Math.min(cw / iw, ch / ih) * 0.97;
+  translateX = (cw - iw * scale) / 2;
+  translateY = (ch - ih * scale) / 2;
+  applyTransform();
+}
+
+function applyTransform() {
+  wrapper.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+  zoomDisplay.textContent = Math.round(scale * 100) + '%';
+}
+
+function clampTranslate() {
+  const cw = container.clientWidth;
+  const ch = container.clientHeight;
+  const scaledW = 3600 * scale;
+  const scaledH = 2100 * scale;
+  const minX = Math.min(0, cw - scaledW);
+  const minY = Math.min(0, ch - scaledH);
+  const maxX = Math.max(0, cw - scaledW);
+  const maxY = Math.max(0, ch - scaledH);
+  translateX = Math.max(minX, Math.min(maxX, translateX));
+  translateY = Math.max(minY, Math.min(maxY, translateY));
+}
+
+// Wait for image to load then fit
+img.onload = fitToContainer;
+window.addEventListener('load', fitToContainer);
+window.addEventListener('resize', fitToContainer);
+
+// Mouse drag
+container.addEventListener('mousedown', e => {
+  isDragging = true;
+  startX = e.clientX; startY = e.clientY;
+  startTX = translateX; startTY = translateY;
+  e.preventDefault();
+});
+document.addEventListener('mousemove', e => {
+  if (!isDragging) return;
+  translateX = startTX + (e.clientX - startX);
+  translateY = startTY + (e.clientY - startY);
+  clampTranslate();
+  applyTransform();
+});
+document.addEventListener('mouseup', () => { isDragging = false; });
+
+// Touch drag
+let lastTouchDist = null;
+container.addEventListener('touchstart', e => {
+  if (e.touches.length === 1) {
+    isDragging = true;
+    startX = e.touches[0].clientX; startY = e.touches[0].clientY;
+    startTX = translateX; startTY = translateY;
+  } else if (e.touches.length === 2) {
+    isDragging = false;
+    lastTouchDist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+  }
+  e.preventDefault();
+}, { passive: false });
+
+container.addEventListener('touchmove', e => {
+  if (e.touches.length === 1 && isDragging) {
+    translateX = startTX + (e.touches[0].clientX - startX);
+    translateY = startTY + (e.touches[0].clientY - startY);
+    clampTranslate();
+    applyTransform();
+  } else if (e.touches.length === 2 && lastTouchDist !== null) {
+    const dist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+    const delta = dist / lastTouchDist;
+    const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - container.getBoundingClientRect().left;
+    const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2 - container.getBoundingClientRect().top;
+    zoomAt(cx, cy, delta);
+    lastTouchDist = dist;
+  }
+  e.preventDefault();
+}, { passive: false });
+
+container.addEventListener('touchend', () => { isDragging = false; lastTouchDist = null; });
+
+// Scroll zoom
+container.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = container.getBoundingClientRect();
+  const cx = e.clientX - rect.left;
+  const cy = e.clientY - rect.top;
+  const factor = e.deltaY < 0 ? 1.12 : 1 / 1.12;
+  zoomAt(cx, cy, factor);
+}, { passive: false });
+
+function zoomAt(cx, cy, factor) {
+  const newScale = Math.max(minScale, Math.min(maxScale, scale * factor));
+  const scaleChange = newScale / scale;
+  translateX = cx - scaleChange * (cx - translateX);
+  translateY = cy - scaleChange * (cy - translateY);
+  scale = newScale;
+  clampTranslate();
+  applyTransform();
+}
+
+// Double-click reset
+container.addEventListener('dblclick', fitToContainer);
+
+// Buttons
+document.getElementById('zoomIn').addEventListener('click', () => {
+  const cx = container.clientWidth / 2, cy = container.clientHeight / 2;
+  zoomAt(cx, cy, 1.3);
+});
+document.getElementById('zoomOut').addEventListener('click', () => {
+  const cx = container.clientWidth / 2, cy = container.clientHeight / 2;
+  zoomAt(cx, cy, 1 / 1.3);
+});
+document.getElementById('resetView').addEventListener('click', fitToContainer);
+
+// Fullscreen
+document.getElementById('fullscreenBtn').addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    container.requestFullscreen().then(() => {
+      setTimeout(fitToContainer, 200);
+    });
+  } else {
+    document.exitFullscreen();
+  }
+});
+document.addEventListener('fullscreenchange', () => {
+  setTimeout(fitToContainer, 200);
+});
+</script>
+
+</body>
+</html>
