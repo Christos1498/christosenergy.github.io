@@ -1,1 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regenerative Economy — Christos™ Energy, Technology & Harmonic Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #08111E !important; color: #D8D0C0 !important; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.8; min-height: 100vh; }
+  a { text-decoration: none; color: inherit; }
 
+  nav { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; position: sticky; top: 0; z-index: 100; padding: 0 40px; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-logo { text-decoration: none; }
+  .nav-logo .logo-main { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.12em; }
+  .nav-logo .logo-sub { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #D8D0C0 !important; letter-spacing: 0.28em; text-transform: uppercase; display: block; margin-top: -2px; }
+  .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+  .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #D8D0C0 !important; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: #C9A84C !important; }
+  .nav-cta { background-color: #C9A84C !important; color: #08111E !important; padding: 9px 20px; font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* PAGE HEADER */
+  .page-header { background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C !important; padding: 90px 40px 70px; }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .eyebrow { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; }
+  .page-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; color: #FFFFFF !important; line-height: 1.15; margin-bottom: 14px; }
+  .page-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: #C9A84C !important; line-height: 1.7; max-width: 800px; margin-bottom: 0; }
+
+  /* BODY */
+  .body-wrap { padding: 80px 40px 120px; }
+  .body-inner { max-width: 1200px; margin: 0 auto; }
+
+  /* SECTION LABEL */
+  .section-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+  .section-label::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; }
+
+  /* CORE PRINCIPLE HERO */
+  .principle-hero { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 6px solid #C9A84C !important; padding: 40px 48px; margin-bottom: 80px; }
+  .principle-hero-quote { font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 600; color: #FFFFFF !important; line-height: 1.4; margin-bottom: 20px; }
+  .principle-hero-body { font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; max-width: 860px; }
+
+  /* TIER SYSTEM */
+  .tiers-section { margin-bottom: 80px; }
+  .tiers-intro { font-size: 1.1rem; color: #D8D0C0 !important; line-height: 1.85; max-width: 860px; margin-bottom: 48px; }
+
+  .tier-grid { display: flex; flex-direction: column; gap: 24px; }
+  .tier-card { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.2) !important; border-radius: 4px; display: grid; grid-template-columns: 140px 1fr; overflow: hidden; }
+  .tier-number { background-color: rgba(201,168,76,0.08) !important; border-right: 2px solid #C9A84C !important; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px 16px; gap: 6px; }
+  .tier-num-label { font-family: 'Raleway', sans-serif; font-size: 0.55rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(201,168,76,0.6) !important; }
+  .tier-num-text { font-family: 'Cinzel', serif; font-size: 1.8rem; font-weight: 700; color: #C9A84C !important; line-height: 1; }
+  .tier-num-name { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #C9A84C !important; text-align: center; }
+  .tier-content { padding: 28px 36px; }
+  .tier-title { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 600; color: #FFFFFF !important; margin-bottom: 10px; letter-spacing: 0.03em; }
+  .tier-body { font-size: 1rem; color: #D8D0C0 !important; line-height: 1.8; margin-bottom: 14px; }
+  .tier-example { background-color: rgba(58,175,175,0.05) !important; border-left: 3px solid #3AAFAF !important; padding: 12px 16px; font-size: 0.95rem; font-style: italic; color: rgba(216,208,192,0.8) !important; }
+
+  /* AMPLIFICATION VISUAL */
+  .amplification-section { margin-bottom: 80px; }
+  .amplification-card { background-color: #0A1628 !important; border: 1px solid rgba(58,175,175,0.25) !important; border-top: 3px solid #3AAFAF !important; padding: 40px 48px; margin-top: 40px; }
+  .amp-cycle { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 24px; }
+  .amp-step { text-align: center; padding: 24px 20px; background-color: rgba(58,175,175,0.04) !important; border: 1px solid rgba(58,175,175,0.15) !important; }
+  .amp-step-num { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 700; color: #3AAFAF !important; margin-bottom: 8px; }
+  .amp-step-label { font-family: 'Raleway', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #3AAFAF !important; margin-bottom: 10px; }
+  .amp-step-body { font-size: 0.95rem; color: #D8D0C0 !important; line-height: 1.7; }
+  .amp-arrow { display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,0.4) !important; font-size: 1.8rem; }
+
+  /* PRINCIPLES */
+  .principles-section { margin-bottom: 80px; }
+  .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+  .principle-card { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.15) !important; padding: 32px; }
+  .principle-card-title { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 600; color: #C9A84C !important; margin-bottom: 12px; letter-spacing: 0.04em; }
+  .principle-card-body { font-size: 0.97rem; color: #D8D0C0 !important; line-height: 1.8; }
+
+  /* NON-EXTRACTION COVENANT */
+  .covenant-block { background-color: #0D1B2A !important; border: 1px solid rgba(201,168,76,0.3) !important; border-left: 6px solid #C9A84C !important; padding: 40px 48px; margin-bottom: 80px; }
+  .covenant-title { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 700; color: #FFFFFF !important; margin-bottom: 18px; letter-spacing: 0.04em; }
+  .covenant-body { font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 18px; }
+  .covenant-items { list-style: none; padding: 0; margin-top: 20px; }
+  .covenant-items li { font-size: 1rem; color: #D8D0C0 !important; padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid rgba(201,168,76,0.08) !important; line-height: 1.7; }
+  .covenant-items li::before { content: '◆'; position: absolute; left: 0; color: #C9A84C !important; font-size: 0.5rem; top: 14px; }
+
+  /* CTF GROUNDING */
+  .framework-block { background-color: rgba(58,175,175,0.05) !important; border: 1px solid rgba(58,175,175,0.2) !important; padding: 36px 40px; margin-bottom: 80px; }
+  .framework-block p { font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.85; margin-bottom: 16px; }
+  .framework-block p:last-child { margin-bottom: 0; }
+  .framework-block strong { color: #3AAFAF !important; }
+
+  /* CTA */
+  .cta-section { background-color: #0A1628 !important; border: 1px solid rgba(201,168,76,0.25) !important; padding: 56px; text-align: center; }
+  .cta-title { font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 600; color: #FFFFFF !important; margin-bottom: 16px; }
+  .cta-body { font-size: 1.05rem; color: #D8D0C0 !important; line-height: 1.8; max-width: 680px; margin: 0 auto 36px; }
+  .btn-gold { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background-color: #C9A84C !important; color: #08111E !important; padding: 14px 36px; transition: background-color 0.2s; margin-right: 16px; }
+  .btn-gold:hover { background-color: #E0C070 !important; }
+  .btn-outline { display: inline-block; font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 1px solid rgba(201,168,76,0.5) !important; color: #C9A84C !important; padding: 14px 36px; transition: all 0.2s; }
+  .btn-outline:hover { background-color: rgba(201,168,76,0.08) !important; }
+
+  footer { background-color: #0A1628 !important; border-top: 2px solid #C9A84C !important; padding: 40px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-logo { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #C9A84C !important; letter-spacing: 0.1em; }
+  .footer-links { display: flex; gap: 24px; list-style: none; }
+  .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #D8D0C0 !important; }
+  .footer-links a:hover { color: #C9A84C !important; }
+  .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.58rem; color: rgba(216,208,192,0.5) !important; width: 100%; border-top: 1px solid rgba(201,168,76,0.12) !important; padding-top: 20px; margin-top: 8px; text-align: center; letter-spacing: 0.1em; }
+
+  @media (max-width: 800px) {
+    nav, .page-header, .body-wrap, footer { padding-left: 20px; padding-right: 20px; }
+    .tier-card { grid-template-columns: 1fr; }
+    .tier-number { flex-direction: row; justify-content: flex-start; gap: 16px; padding: 20px 24px; border-right: none !important; border-bottom: 2px solid #C9A84C !important; }
+    .amp-cycle { grid-template-columns: 1fr; }
+    .amp-arrow { transform: rotate(90deg); }
+    .principles-grid { grid-template-columns: 1fr; }
+    .principle-hero, .covenant-block { padding: 28px 24px; }
+    .cta-section { padding: 40px 24px; }
+    .btn-gold { margin-right: 0; margin-bottom: 12px; display: block; }
+    .btn-outline { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="diagrams.html">Diagrams</a></li>
+      <li><a href="economy.html" class="active">Economy</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Christos™ Business Framework</div>
+    <h1 class="page-title">The Regenerative Economy</h1>
+    <p class="page-sub">How Christos™ licenses technology — and why every agreement is designed to make the people it reaches stronger, not dependent.</p>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="body-wrap">
+<div class="body-inner">
+
+  <!-- CORE PRINCIPLE -->
+  <div class="principle-hero">
+    <div class="principle-hero-quote">"Value must circulate, not accumulate."</div>
+    <p class="principle-hero-body">Every licensing agreement, every partnership, every technology deployment under the Christos™ framework is governed by a single economic principle: wealth that pools without circulating destroys the system that generated it. The Regenerative Economy model is not altruism — it is coherence-aligned business design. When the people you work with grow stronger, the network grows stronger. When the network grows stronger, every node in it benefits. This is the Christos Current applied to economics: outward expression that always returns.</p>
+  </div>
+
+  <!-- TIER SYSTEM -->
+  <div class="tiers-section">
+    <div class="section-label">The Licensing Architecture</div>
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:600; color:#FFFFFF; margin-bottom:20px; letter-spacing:0.04em;">Five-Tier Kinetic Circulation Model</h2>
+    <p class="tiers-intro">The Kinetic Circulation Economy is the formal economic architecture of every Christos™ licensing agreement. It is structured in five tiers, each building on the last, each designed to ensure that value generated by the licensed technology flows back into the people who generate it — not merely to the licensor.</p>
+
+    <div class="tier-grid">
+
+      <div class="tier-card">
+        <div class="tier-number">
+          <div class="tier-num-label">Tier</div>
+          <div class="tier-num-text">1</div>
+          <div class="tier-num-name">Licensing</div>
+        </div>
+        <div class="tier-content">
+          <div class="tier-title">Performance-Tied Licensing Agreement</div>
+          <p class="tier-body">Christos™ licenses IP, technology, or framework to the partner. The licensing fee is not a flat rate — it is tied to measurable performance gain. The partner pays a percentage of the improvement the technology generates, not a fixed cost regardless of outcome. If it doesn't work, you don't pay as much.</p>
+          <div class="tier-example">Fee structure: 20–40% of verified performance gain. Agreement term: 5–10 years. No equity taken. No board seats. No control over the partner's operations.</div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-number">
+          <div class="tier-num-label">Tier</div>
+          <div class="tier-num-text">2</div>
+          <div class="tier-num-name">Return Flow</div>
+        </div>
+        <div class="tier-content">
+          <div class="tier-title">Revenue Flows Back to the Network</div>
+          <p class="tier-body">As the partner's performance improves, the licensing revenue flows back to Christos™ Energy as a share of the gains generated — not a toll on revenue that exists regardless of performance. The model only succeeds financially when the technology actually works. The incentive structures are fully aligned.</p>
+          <div class="tier-example">Example: Partner generates $10M in performance gain. Christos™ receives $3M (30%). The remaining $7M stays with the partner.</div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-number">
+          <div class="tier-num-label">Tier</div>
+          <div class="tier-num-text">3</div>
+          <div class="tier-num-name">Reinvestment</div>
+        </div>
+        <div class="tier-content">
+          <div class="tier-title">Mandatory Reinvestment Back Into the Partner</div>
+          <p class="tier-body">This is the structural core of the model — and what makes it genuinely different from standard licensing. Of the revenue received by Christos™, 40% is mandatorily reinvested directly back into the partner's system. Not into Christos™ infrastructure. Into the partner's people, capabilities, and capacity.</p>
+          <div class="tier-example">Of $3M received: $1.2M flows back into the partner's workforce training, equipment upgrades, R&D capabilities, and infrastructure improvements. The agreement specifies the reinvestment categories at signing.</div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-number">
+          <div class="tier-num-label">Tier</div>
+          <div class="tier-num-text">4</div>
+          <div class="tier-num-name">Amplification</div>
+        </div>
+        <div class="tier-content">
+          <div class="tier-title">Compounding Through Capacity Growth</div>
+          <p class="tier-body">The reinvestment into the partner's capacity generates additional performance gains in the next cycle. A stronger partner produces more gain. More gain produces more licensing revenue. More revenue enables more reinvestment. The loop is self-amplifying — not extractive. Each cycle expands the total value available rather than redistributing a fixed pool.</p>
+          <div class="tier-example">Cycle 1: $10M gain → $3M to Christos™ → $1.8M reinvested. Cycle 2: $15M gain (partner is now stronger) → $4.5M to Christos™ → $1.8M reinvested. The loop compounds naturally.</div>
+        </div>
+      </div>
+
+      <div class="tier-card">
+        <div class="tier-number">
+          <div class="tier-num-label">Tier</div>
+          <div class="tier-num-text">5</div>
+          <div class="tier-num-name">Network</div>
+        </div>
+        <div class="tier-content">
+          <div class="tier-title">Anti-Fragile Network Effects</div>
+          <p class="tier-body">As each partner strengthens, the broader network of Christos™ licensees becomes more resilient. No single partner's failure collapses the system. Partners can co-develop, share knowledge, and access each other's capabilities. The network becomes anti-fragile by design — each node's strength contributes to collective stability rather than creating dependency on any single point.</p>
+          <div class="tier-example">Long-term outcome: A network of independently strong organizations, each owning their own capabilities, each connected by a shared commitment to coherent value circulation. No extraction. No dependence. Mutual amplification.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- AMPLIFICATION LOOP -->
+  <div class="amplification-section">
+    <div class="section-label">How the Loop Compounds</div>
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(1.4rem,2.2vw,2rem); font-weight:600; color:#FFFFFF; margin-bottom:0; letter-spacing:0.04em;">The Kinetic Circulation Cycle</h2>
+    <div class="amplification-card">
+      <p style="font-size:1rem; color:#D8D0C0; line-height:1.8; margin-bottom:0;">The model is named Kinetic because it requires motion — value in motion, not value at rest. A static pool of capital does nothing for anyone. A circulating current of value — one that flows through technology deployment, performance gain, return flow, and reinvestment — generates compound growth that benefits every participant. This is the economic expression of the same toroidal architecture that underlies the entire Christos framework: outward expression always returns.</p>
+      <div class="amp-cycle">
+        <div class="amp-step">
+          <div class="amp-step-num">①</div>
+          <div class="amp-step-label">License Deployed</div>
+          <div class="amp-step-body">Christos™ technology enters the partner's system. Performance gains begin. The relationship is active.</div>
+        </div>
+        <div class="amp-step">
+          <div class="amp-step-num">②</div>
+          <div class="amp-step-label">Gain Generated</div>
+          <div class="amp-step-body">Partner measures performance improvement. Fee calculated as a percentage of verified gain — not revenue, not arbitrary benchmarks.</div>
+        </div>
+        <div class="amp-step">
+          <div class="amp-step-num">③</div>
+          <div class="amp-step-label">Flow Returns</div>
+          <div class="amp-step-body">Revenue flows to Christos™. Simultaneously, 40% flows back into the partner's infrastructure, people, and capabilities.</div>
+        </div>
+      </div>
+      <p style="font-size:0.95rem; color:rgba(216,208,192,0.65); font-style:italic; margin-top:24px; text-align:center; line-height:1.7;">The cycle repeats. Each repetition, the partner is stronger. Each repetition, the gain is larger. The network grows without anyone being diminished.</p>
+    </div>
+  </div>
+
+  <!-- CORE PRINCIPLES -->
+  <div class="principles-section">
+    <div class="section-label">What Every Agreement Includes</div>
+    <h2 style="font-family:'Cinzel',serif; font-size:clamp(1.4rem,2.2vw,2rem); font-weight:600; color:#FFFFFF; margin-bottom:0; letter-spacing:0.04em;">Structural Commitments in Every Partnership</h2>
+    <div class="principles-grid">
+
+      <div class="principle-card">
+        <div class="principle-card-title">Non-Extraction Covenant</div>
+        <div class="principle-card-body">No Christos™ licensing agreement is structured to extract maximum value from a partner's operation. Pricing is performance-tied. Reinvestment is mandatory. The covenant is enforceable — it is written into the agreement, not a verbal commitment.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-card-title">Transparency Protocol</div>
+        <div class="principle-card-body">Performance metrics, gain calculations, and reinvestment disbursements are documented and shared with the partner at every cycle. There are no opaque licensing structures. Both parties see the same numbers.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-card-title">Co-Development Rights</div>
+        <div class="principle-card-body">Partners who deploy Christos™ technology have the right to contribute to its ongoing development. Improvements generated through their deployment can be formally credited and, where appropriate, contribute to their future licensing terms.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-card-title">Workforce Priority</div>
+        <div class="principle-card-body">The reinvestment requirement prioritizes workforce development over capital expenditure. People first, then equipment, then infrastructure. A technology deployment that improves machinery without training the people who use it has not created coherent growth.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-card-title">No Equity, No Control</div>
+        <div class="principle-card-body">Christos™ does not take equity stakes in partners. No board seats. No voting rights. No operational control. The relationship is a licensing partnership — performance-tied, reinvestment-required, and fully respectful of the partner's independence.</div>
+      </div>
+
+      <div class="principle-card">
+        <div class="principle-card-title">Long-Term Orientation</div>
+        <div class="principle-card-body">Agreement terms run 5–10 years. The model is not optimized for maximum short-term extraction — it is optimized for maximum long-term network coherence. Short-term and long-term incentives are aligned by design, not by hope.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTF GROUNDING -->
+  <div class="framework-block">
+    <div class="section-label" style="margin-bottom:20px;">Why This Model Is Built This Way</div>
+    <p>The Regenerative Economy is not a business strategy designed around conventional economics. It is the direct economic expression of the Christos Theoretical Framework's understanding of how coherent systems sustain themselves. In the CTF, any system that concentrates value without circulating it is exhibiting the same pattern as biological aging, organizational decay, and ecological collapse — coherence deficit from a blocked return current.</p>
+    <p><strong>Value that pools without moving is the economic equivalent of coherence debt.</strong> It feels like strength in the short term. It produces systemic fragility in the long term. The companies, governments, and communities that have accumulated the most resources while distributing the least to the people who generated them are demonstrating — in economic terms — the same pattern that the CTF framework identifies as the primary driver of all system failure: the Christos Current running without the Saturnalia return.</p>
+    <p>The Kinetic Circulation model closes that loop. Every licensing fee that flows to Christos™ Energy and flows back into a partner's workforce is the return current completing the circuit. <strong>This is not generosity. This is the engineering of coherent economic systems.</strong> The math works the same way the physics does — circulation produces stability; accumulation produces brittleness.</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2 class="cta-title">Ready to Explore a Partnership?</h2>
+    <p class="cta-body">All licensing discussions begin with a direct conversation with Joshua Farrior. There are no intermediaries, no sales teams, and no boilerplate proposals. Every partnership is specific to the partner's situation, the technology being deployed, and the performance gains that are realistically achievable.</p>
+    <a href="contact.html" class="btn-gold">Start the Conversation</a>
+    <a href="library.html" class="btn-outline">Explore the Research</a>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="diagrams.html">Diagrams</a></li>
+      <li><a href="economy.html">Economy</a></li>
+      <li><a href="book.html">Book</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
