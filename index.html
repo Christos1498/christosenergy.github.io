@@ -23,10 +23,10 @@ img { max-width: 100%; display: block; }
 }
 .nav-logo { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: #C9A84C; letter-spacing: 0.12em; }
 .nav-logo span { display: block; font-size: 11px; font-weight: 400; color: rgba(201,168,76,0.7); letter-spacing: 0.2em; }
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
 .nav-links a:hover { color: #C9A84C; }
-.nav-cta { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 10px 22px; border-radius: 2px; transition: background 0.2s; }
+.nav-cta { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; background: #C9A84C; color: #08111E; padding: 10px 20px; border-radius: 2px; transition: background 0.2s; }
 .nav-cta:hover { background: #E8C97A; color: #08111E; }
 
 /* HERO */
@@ -107,6 +107,24 @@ img { max-width: 100%; display: block; }
 .as-num { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: #C9A84C; margin-bottom: 8px; }
 .as-label { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #FFFFFF; }
 
+/* SOCIAL STRIP */
+.social-strip { background-color: #0A1628; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 80px 40px; }
+.social-strip-inner { max-width: 1160px; margin: 0 auto; }
+.social-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin-top: 40px; }
+.social-card { background-color: #08111E; border: 1px solid rgba(201,168,76,0.15); border-radius: 6px; padding: 28px 32px; display: flex; gap: 20px; align-items: flex-start; transition: border-color 0.25s; }
+.social-card:hover { border-color: rgba(201,168,76,0.4); }
+.social-card.tiktok { border-left: 3px solid #C9A84C; }
+.social-card.youtube { border-left: 3px solid #3AAFAF; }
+.s-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.s-icon.tt { background: linear-gradient(135deg,#010101,#1a1a1a); border: 1px solid rgba(255,255,255,0.12); }
+.s-icon.yt { background: linear-gradient(135deg,#c00,#ff0000); }
+.s-platform { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 5px; }
+.s-handle { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 600; color: #C9A84C; margin-bottom: 5px; letter-spacing: 0.04em; }
+.s-stats { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-bottom: 10px; }
+.s-desc { font-size: 14px; color: #D0C8B8; line-height: 1.65; margin-bottom: 14px; }
+.s-link { display: inline-flex; align-items: center; gap: 6px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C; border: 1px solid rgba(201,168,76,0.3); padding: 8px 16px; transition: all 0.2s; }
+.s-link:hover { background: rgba(201,168,76,0.1); border-color: #C9A84C; }
+
 /* FOUNDER */
 .founder-wrap { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 80px; align-items: center; }
 .founder-card { background: #111F30; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 44px; text-align: center; }
@@ -141,13 +159,14 @@ img { max-width: 100%; display: block; }
   .diag-grid { grid-template-columns: 1fr; }
   .founder-wrap { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .social-cards { grid-template-columns: 1fr; max-width: 100%; }
 }
 @media(max-width:640px){
   .nav { padding: 0 20px; }
   .nav-links { display: none; }
   .hero { padding: 100px 20px 60px; }
   .section, .section-alt { padding: 70px 20px; }
-  .stats-bar, .access-band { padding: 44px 20px; }
+  .stats-bar, .access-band, .social-strip { padding: 44px 20px; }
   .access-steps { flex-direction: column; }
   .access-step { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.2); }
   .access-step:last-child { border-bottom: none; }
@@ -163,10 +182,11 @@ img { max-width: 100%; display: block; }
   <a href="index.html" style="text-decoration:none;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="library.html">Research Library</a>
-    <a href="diagrams.html">System Diagrams</a>
+    <a href="library.html">Library</a>
+    <a href="diagrams.html">Diagrams</a>
+    <a href="economy.html">Economy</a>
     <a href="book.html">Book</a>
-    <a href="contact.html" class="nav-cta">Request Access</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </div>
 </nav>
 
@@ -341,25 +361,23 @@ img { max-width: 100%; display: block; }
   </div>
 </div>
 
-<!-- FOUNDER -->
-
-<!-- BOOKS AVAILABLE -->
+<!-- BOOKS -->
 <section class="section" style="background-color:#0D1B2A !important;border-top:1px solid rgba(201,168,76,0.15);border-bottom:1px solid rgba(201,168,76,0.15);">
   <div style="max-width:1160px;margin:0 auto;padding:0 40px;">
     <div class="section-eyebrow">Published Works</div>
     <h2 class="section-title">Books Now Available</h2>
     <p style="font-size:18px;color:#D8D0C0;line-height:1.8;margin-bottom:40px;max-width:680px;">Two foundational texts of the Christos™ framework are now available as free downloads. Both are released openly as architectural disclosures — inviting researchers, builders, and institutions to engage with the work.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px;">
-      <div style="background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.25);border-left:3px solid #C9A84C;border-radius:6px;padding:28px 28px;">
+      <div style="background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.25);border-left:3px solid #C9A84C;border-radius:6px;padding:28px;">
         <div style="font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;">Available Now · Free Download</div>
         <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.04em;margin-bottom:8px;">Magnus Opus</div>
-        <p style="font-size:16px;color:#D0C8B8;line-height:1.75;margin-bottom:20px;">The foundational text of the Christos™ framework. A unified architectural disclosure integrating physics, consciousness, geometry, and biological systems into a single coherent model — the origin point of the entire research platform.</p>
+        <p style="font-size:16px;color:#D0C8B8;line-height:1.75;margin-bottom:20px;">The foundational text of the Christos™ framework. A unified architectural disclosure integrating physics, consciousness, geometry, and biological systems into a single coherent model.</p>
         <a href="papers/core-foundations/magnus-opus.html" style="font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:11px 24px;border-radius:2px;display:inline-block;">Read Magnus Opus →</a>
       </div>
-      <div style="background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.25);border-left:3px solid #3AAFAF;border-radius:6px;padding:28px 28px;">
+      <div style="background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.25);border-left:3px solid #3AAFAF;border-radius:6px;padding:28px;">
         <div style="font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#3AAFAF;margin-bottom:12px;">Available Now · Free Download</div>
         <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:0.04em;margin-bottom:8px;">Sovereign Logos Prime</div>
-        <p style="font-size:16px;color:#D0C8B8;line-height:1.75;margin-bottom:20px;">A complete coherence-based biofield communication model — a structured system of breath, tone, gesture, and intention. Not binary. Not digital. A new language for a coherence civilization built entirely on the physics of the biofield.</p>
+        <p style="font-size:16px;color:#D0C8B8;line-height:1.75;margin-bottom:20px;">A complete coherence-based biofield communication model — a structured system of breath, tone, gesture, and intention built entirely on the physics of the biofield.</p>
         <a href="slp-book.html" style="font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#3AAFAF;color:#08111E;padding:11px 24px;border-radius:2px;display:inline-block;">Read Sovereign Logos Prime →</a>
       </div>
     </div>
@@ -369,6 +387,45 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
+<!-- SOCIAL MEDIA STRIP -->
+<div class="social-strip">
+  <div class="social-strip-inner">
+    <div class="section-eyebrow">Follow the Work</div>
+    <h2 class="section-title">600+ Videos. 29,000+ Followers.</h2>
+    <p style="font-size:18px; color:#D8D0C0; line-height:1.8; max-width:680px; margin-bottom:0;">The research papers are the formal layer. The videos are where ideas come alive — real-time explanations, discoveries as they happen, and the full scope of the Christos™ framework explained directly by Joshua Farrior.</p>
+    <div class="social-cards">
+
+      <a href="https://tiktok.com/@joshuafarrior" target="_blank" class="social-card tiktok" style="text-decoration:none;">
+        <div class="s-icon tt">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.22 8.22 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/></svg>
+        </div>
+        <div>
+          <div class="s-platform">TikTok · Primary Platform</div>
+          <div class="s-handle">@joshuafarrior</div>
+          <div class="s-stats">29,100+ Followers · 600+ Videos · 191K Likes</div>
+          <p class="s-desc">Real-time discoveries, framework explanations, and the full scope of the Christos™ research — short-form, direct from the founder.</p>
+          <div class="s-link">Follow on TikTok →</div>
+        </div>
+      </a>
+
+      <a href="https://youtube.com/@Theanswers-n4u" target="_blank" class="social-card youtube" style="text-decoration:none;">
+        <div class="s-icon yt">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/></svg>
+        </div>
+        <div>
+          <div class="s-platform">YouTube · Long-Form Content</div>
+          <div class="s-handle">@Theanswers-n4u</div>
+          <div class="s-stats">682 Subscribers · Extended Format</div>
+          <p class="s-desc">Deep dives into specific frameworks — teleportation, time travel, med pods, ancient resonance technology, and extended explorations of the Christos™ research.</p>
+          <div class="s-link">Subscribe on YouTube →</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOUNDER -->
 <section class="section">
   <div class="founder-wrap">
     <div class="founder-card">
@@ -410,22 +467,21 @@ img { max-width: 100%; display: block; }
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Diagrams</div>
+        <div class="footer-col-title">Platform</div>
         <div class="footer-links">
-          <a href="diagrams.html">All Diagrams</a>
-          <a href="diagrams.html">Christos Architecture</a>
-          <a href="diagrams.html">Reality as a Loop</a>
-          <a href="diagrams.html">Human System Stack</a>
-          <a href="diagrams.html">Civilization System</a>
+          <a href="diagrams.html">System Diagrams</a>
+          <a href="economy.html">Regenerative Economy</a>
+          <a href="book.html">Books</a>
+          <a href="harmonic-periodic-table.html">Harmonic Periodic Table</a>
         </div>
       </div>
       <div>
-        <div class="footer-col-title">Access</div>
+        <div class="footer-col-title">Follow & Connect</div>
         <div class="footer-links">
           <a href="contact.html">Request Access</a>
-          <a href="book.html">Books</a>
           <a href="contact.html">Collaboration</a>
-          <a href="contact.html">Licensing</a>
+          <a href="https://tiktok.com/@joshuafarrior" target="_blank">TikTok @joshuafarrior</a>
+          <a href="https://youtube.com/@Theanswers-n4u" target="_blank">YouTube @Theanswers-n4u</a>
         </div>
       </div>
     </div>
