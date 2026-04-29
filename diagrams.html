@@ -6,80 +6,62 @@
 <title>System Diagrams — Christos™ Energy, Technology & Harmonic Design</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { background-color: #08111E !important; }
-body { background-color: #08111E !important; color: #FFFFFF; font-family: 'Cormorant Garamond', Georgia, serif; overflow-x: hidden; }
-a { text-decoration: none; color: inherit; }
-
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
-.nav-logo { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: #C9A84C; letter-spacing: 0.12em; }
-.nav-logo span { display: block; font-size: 11px; font-weight: 400; color: rgba(201,168,76,0.7); letter-spacing: 0.2em; }
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: #C9A84C; }
-.nav-cta { background-color: #C9A84C !important; color: #08111E !important; padding: 10px 22px; border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
-
-.page-header { background-color: #08111E !important; padding: 130px 40px 70px; border-bottom: 1px solid rgba(201,168,76,0.25); }
-.page-header-inner { max-width: 1160px; margin: 0 auto; }
-.eyebrow { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
-.eyebrow::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
-.page-title { font-family: 'Cinzel', serif; font-size: clamp(30px,4vw,50px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 16px; }
-.page-sub { font-size: 19px; color: #D8D0C0; line-height: 1.75; max-width: 820px; }
-
-.quick-nav { background-color: #0D1B2A !important; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 18px 40px; position: sticky; top: 68px; z-index: 900; overflow-x: auto; }
-.quick-nav-inner { max-width: 1160px; margin: 0 auto; display: flex; gap: 8px; align-items: center; white-space: nowrap; }
-.qn-label { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: #5A7080; margin-right: 8px; flex-shrink: 0; }
-.qn-btn { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; background-color: #08111E !important; border: 1px solid rgba(201,168,76,0.15); color: #AABFCC; padding: 7px 14px; border-radius: 2px; cursor: pointer; white-space: nowrap; display: inline-block; }
-.qn-btn:hover { border-color: #C9A84C; color: #C9A84C; }
-
-.diagrams-body { background-color: #08111E !important; max-width: 1160px; margin: 0 auto; padding: 80px 40px 120px; }
-
-.diagram-block { margin-bottom: 110px; scroll-margin-top: 140px; }
-.db-num { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: rgba(201,168,76,0.45); margin-bottom: 10px; }
-.db-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,36px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 12px; }
-.db-rule { width: 60px; height: 2px; background: #C9A84C; margin-bottom: 20px; opacity: 0.5; }
-.db-desc { font-size: 18px; color: #D8D0C0; line-height: 1.8; max-width: 820px; margin-bottom: 18px; }
-.db-covers-label { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #5A7080; margin-bottom: 10px; }
-.db-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
-.db-tag { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; background-color: rgba(42,127,127,0.12) !important; border: 1px solid rgba(42,127,127,0.3); color: #3AAFAF; padding: 5px 12px; border-radius: 2px; }
-
-.diagram-img-wrap { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; overflow: hidden; box-shadow: 0 0 60px rgba(0,0,0,0.5); }
-.diagram-img-wrap img { width: 100%; display: block; }
-.diagram-placeholder { background-color: #111F30 !important; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 80px 40px; min-height: 360px; }
-.dp-circle { width: 80px; height: 80px; border: 2px solid rgba(201,168,76,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: rgba(201,168,76,0.3); }
-.dp-title { font-family: 'Cinzel', serif; font-size: 17px; color: rgba(201,168,76,0.5); letter-spacing: 0.1em; text-align: center; }
-.dp-sub { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #3A4A54; text-align: center; }
-.diagram-caption { background-color: #0D1B2A !important; border-top: 1px solid rgba(201,168,76,0.15); padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-.dc-title { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; }
-.dc-sub { font-family: 'Raleway', sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.5); margin-top: 3px; }
-.dc-link { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A84C; display: inline-flex; align-items: center; gap: 6px; }
-.dc-link::after { content: '→'; }
-
-.divider { border: none; border-top: 1px solid rgba(201,168,76,0.1); margin: 70px 0; }
-
-.bottom-cta { background-color: #0D1B2A !important; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 56px; text-align: center; margin-top: 60px; }
-.bottom-cta-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,34px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.06em; margin-bottom: 16px; }
-.bottom-cta-body { font-size: 18px; color: #D0C8B8; line-height: 1.8; max-width: 620px; margin: 0 auto 36px; }
-.btn-primary { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background-color: #C9A84C; color: #08111E; padding: 14px 32px; border-radius: 2px; display: inline-block; }
-.btn-ghost { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; display: inline-block; margin-left: 16px; }
-
-.footer { background-color: #0A1628 !important; border-top: 1px solid rgba(201,168,76,0.2); padding: 50px 40px 36px; }
-.footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.footer-logo { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
-.footer-nav { display: flex; gap: 28px; flex-wrap: wrap; }
-.footer-nav a { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #AABFCC; }
-.footer-nav a:hover { color: #C9A84C; }
-.footer-copy { font-family: 'Raleway', sans-serif; font-size: 11px; color: #5A7080; letter-spacing: 0.08em; width: 100%; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,168,76,0.1); }
-
-@media(max-width:768px){
-  .nav { padding: 0 20px; } .nav-links { display: none; }
-  .page-header { padding: 110px 20px 50px; }
-  .quick-nav { padding: 14px 20px; }
-  .diagrams-body { padding: 50px 20px 80px; }
-  .bottom-cta { padding: 32px 20px; }
-  .btn-ghost { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
-  .diagram-caption { flex-direction: column; align-items: flex-start; }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background-color:#08111E !important;}
+body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
+.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#C9A84C;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 20px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;}
+.page-header{background-color:#08111E !important;padding:130px 40px 70px;border-bottom:1px solid rgba(201,168,76,0.25);}
+.page-header-inner{max-width:1160px;margin:0 auto;}
+.eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
+.page-title{font-family:'Cinzel',serif;font-size:clamp(30px,4vw,50px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:16px;}
+.page-sub{font-size:19px;color:#D8D0C0;line-height:1.75;max-width:820px;}
+.quick-nav{background-color:#0D1B2A !important;border-bottom:1px solid rgba(201,168,76,0.15);padding:18px 40px;position:sticky;top:68px;z-index:900;overflow-x:auto;}
+.quick-nav-inner{max-width:1160px;margin:0 auto;display:flex;gap:8px;align-items:center;white-space:nowrap;}
+.qn-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#5A7080;margin-right:8px;flex-shrink:0;}
+.qn-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;background-color:#08111E !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:7px 14px;border-radius:2px;cursor:pointer;white-space:nowrap;display:inline-block;}
+.qn-btn:hover{border-color:#C9A84C;color:#C9A84C;}
+.diagrams-body{background-color:#08111E !important;max-width:1160px;margin:0 auto;padding:80px 40px 120px;}
+.diagram-block{margin-bottom:110px;scroll-margin-top:140px;}
+.db-num{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:rgba(201,168,76,0.45);margin-bottom:10px;}
+.db-title{font-family:'Cinzel',serif;font-size:clamp(22px,3vw,36px);font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:12px;}
+.db-rule{width:60px;height:2px;background:#C9A84C;margin-bottom:20px;opacity:0.5;}
+.db-desc{font-size:18px;color:#D8D0C0;line-height:1.8;max-width:820px;margin-bottom:18px;}
+.db-covers-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#5A7080;margin-bottom:10px;}
+.db-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+.db-tag{font-family:'Raleway',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;background-color:rgba(42,127,127,0.12) !important;border:1px solid rgba(42,127,127,0.3);color:#3AAFAF;padding:5px 12px;border-radius:2px;}
+.diagram-img-wrap{background-color:#111F30 !important;border:1px solid rgba(201,168,76,0.2);border-radius:8px;overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,0.5);}
+.diagram-img-wrap img{width:100%;display:block;}
+.diagram-placeholder{background-color:#111F30 !important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:80px 40px;min-height:360px;}
+.dp-circle{width:80px;height:80px;border:2px solid rgba(201,168,76,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;color:rgba(201,168,76,0.3);}
+.dp-title{font-family:'Cinzel',serif;font-size:17px;color:rgba(201,168,76,0.5);letter-spacing:0.1em;text-align:center;}
+.dp-sub{font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#3A4A54;text-align:center;}
+.diagram-caption{background-color:#0D1B2A !important;border-top:1px solid rgba(201,168,76,0.15);padding:16px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.dc-title{font-family:'Cinzel',serif;font-size:14px;font-weight:600;color:#FFFFFF;letter-spacing:0.05em;}
+.dc-sub{font-family:'Raleway',sans-serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,168,76,0.5);margin-top:3px;}
+.dc-link{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;display:inline-flex;align-items:center;gap:6px;}
+.dc-link::after{content:'→';}
+.divider{border:none;border-top:1px solid rgba(201,168,76,0.1);margin:70px 0;}
+.bottom-cta{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.2);border-radius:8px;padding:56px;text-align:center;margin-top:60px;}
+.bottom-cta-title{font-family:'Cinzel',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:#FFFFFF;letter-spacing:0.06em;margin-bottom:16px;}
+.bottom-cta-body{font-size:18px;color:#D0C8B8;line-height:1.8;max-width:620px;margin:0 auto 36px;}
+.btn-primary{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:14px 32px;border-radius:2px;display:inline-block;}
+.btn-ghost{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid #C9A84C;color:#C9A84C;padding:14px 32px;border-radius:2px;display:inline-block;margin-left:16px;}
+.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:50px 40px 36px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
+.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
+.footer-nav a{font-family:'Raleway',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:#AABFCC;}
+.footer-nav a:hover{color:#C9A84C;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.08em;width:100%;margin-top:24px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.1);}
+@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:110px 20px 50px;}.quick-nav{padding:14px 20px;}.diagrams-body{padding:50px 20px 80px;}.bottom-cta{padding:32px 20px;}.btn-ghost{margin-left:0;margin-top:12px;display:block;text-align:center;}.diagram-caption{flex-direction:column;align-items:flex-start;}}
 </style>
 </head>
 <body style="background-color:#08111E !important;">
@@ -88,10 +70,11 @@ a { text-decoration: none; color: inherit; }
   <a href="index.html" style="text-decoration:none;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="library.html">Research Library</a>
-    <a href="diagrams.html" class="active">System Diagrams</a>
+    <a href="library.html">Library</a>
+    <a href="diagrams.html" class="active">Diagrams</a>
+    <a href="economy.html">Economy</a>
     <a href="book.html">Book</a>
-    <a href="contact.html" class="nav-cta">Request Access</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </div>
 </nav>
 
@@ -160,7 +143,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 03 of 10</div>
     <div class="db-title">Human System Stack</div>
     <div class="db-rule"></div>
-    <p class="db-desc">A layered model of the complete human biological and cognitive system. Five stacked rings — Consciousness at the top, descending through Nervous System, Organ Systems, Cellular Systems, and Material / Chemical Layer at the base — with AI / Digital Systems and External Environment as lateral integration nodes. The foundational reference architecture for all biology and medicine papers.</p>
+    <p class="db-desc">A layered model of the complete human biological and cognitive system. Five stacked rings — Consciousness at the top, descending through Nervous System, Organ Systems, Cellular Systems, and Material / Chemical Layer at the base — with AI / Digital Systems and External Environment as lateral integration nodes.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">Biology & Medicine</span><span class="db-tag">Medical Applications</span><span class="db-tag">Pharmacology & Fluids</span><span class="db-tag">Sound & Frequency</span><span class="db-tag">Devices & Wearables</span><span class="db-tag">Consciousness Research</span></div>
     <div class="diagram-img-wrap">
@@ -177,7 +160,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 04 of 10</div>
     <div class="db-title">Coherent Transport System</div>
     <div class="db-rule"></div>
-    <p class="db-desc">An integrated mobility architecture shown as five ascending platform layers — Vehicle System at the top, descending through Human Interface, Navigation System, Infrastructure Network, and Civilization Routing Layer at the base. AI / Digital Systems and Mobility Network integrate as lateral nodes. The governing reference diagram for the full Christos Transportation Family.</p>
+    <p class="db-desc">An integrated mobility architecture shown as five ascending platform layers — Vehicle System at the top, descending through Human Interface, Navigation System, Infrastructure Network, and Civilization Routing Layer at the base. AI / Digital Systems and Mobility Network integrate as lateral nodes.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">Transport & Time Systems</span><span class="db-tag">Aether Skiff</span><span class="db-tag">Transportation Master Architecture</span><span class="db-tag">Teleportation Systems</span><span class="db-tag">AI / Network / Digital</span></div>
     <div class="diagram-img-wrap">
@@ -211,7 +194,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 06 of 10</div>
     <div class="db-title">Coherent Energy System</div>
     <div class="db-rule"></div>
-    <p class="db-desc">A fully regenerative energy architecture showing the complete cycle of generation, storage, distribution, and feedback regulation. Energy Generation sources — Solar, Wind, Geothermal — feed into central Energy Reserves, distribute through Wireless Power and Control & Data Networks, and return through Feedback and Regulation into Advanced Storage. A planetary-scale energy platform designed for zero-waste, self-regulating operation.</p>
+    <p class="db-desc">A fully regenerative energy architecture showing the complete cycle of generation, storage, distribution, and feedback regulation. Energy Generation sources — Solar, Wind, Geothermal — feed into central Energy Reserves, distribute through Wireless Power and Control & Data Networks, and return through Feedback and Regulation into Advanced Storage.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">Civilization Systems</span><span class="db-tag">Applied Domains Framework</span><span class="db-tag">Unified Civilization System</span><span class="db-tag">Field Resonance & Vacuum Dynamics</span><span class="db-tag">Transport & Time Systems</span></div>
     <div class="diagram-img-wrap">
@@ -228,7 +211,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 07 of 10</div>
     <div class="db-title">Coherent Water / Thermal System</div>
     <div class="db-rule"></div>
-    <p class="db-desc">A fully integrated water and thermal architecture — connecting Water Purification & Desalination, Water Cycle, Thermal Regulation, Energy Conversion Systems, Thermal Exchange Systems, Agriculture, Hydro Energy, Water Reservoir, and Feedback & Optimization. Water treated not as a passive resource but as an active coherence-carrying medium integrated across all civilization systems.</p>
+    <p class="db-desc">A fully integrated water and thermal architecture — connecting Water Purification & Desalination, Water Cycle, Thermal Regulation, Energy Conversion Systems, Thermal Exchange Systems, Agriculture, Hydro Energy, Water Reservoir, and Feedback & Optimization. Water treated not as a passive resource but as an active coherence-carrying medium.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">Agriculture, Water & Food</span><span class="db-tag">Structured Water Framework</span><span class="db-tag">Pharmacology & Fluids</span><span class="db-tag">Civilization Systems</span><span class="db-tag">Harmonic Agricultural Framework</span></div>
     <div class="diagram-img-wrap">
@@ -245,7 +228,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 08 of 10</div>
     <div class="db-title">Coherent Agricultural / Biological System</div>
     <div class="db-rule"></div>
-    <p class="db-desc">A fully integrated agricultural and biological architecture — the interconnected cycle of Regenerative Agriculture, Controlled Environment Agriculture, Biological Supply Chain, Healthy Food, Food Production Systems, Soil Regeneration, Soil Restoration, and Feedback & Optimization. Food production and human biology not as separate systems but as integrated layers of one coherent platform.</p>
+    <p class="db-desc">A fully integrated agricultural and biological architecture — the interconnected cycle of Regenerative Agriculture, Controlled Environment Agriculture, Biological Supply Chain, Healthy Food, Food Production Systems, Soil Regeneration, Soil Restoration, and Feedback & Optimization.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">Agriculture, Water & Food</span><span class="db-tag">Biology & Medicine</span><span class="db-tag">Christos Food System</span><span class="db-tag">Harmonic Agricultural Framework</span><span class="db-tag">Microbiome Dimensional Mapping</span></div>
     <div class="diagram-img-wrap">
@@ -262,7 +245,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 09 of 10</div>
     <div class="db-title">CQI / AI System — The Intelligence Layer</div>
     <div class="db-rule"></div>
-    <p class="db-desc">The complete intelligence layer of the Christos platform. CQI Core — the Coherent Intelligence Engine — sits at the center, surrounded by six domain nodes: Energy, Human Health, Transport, Architecture, Agriculture, and Water. Industrial and Environmental application stacks flank both sides. At the base, Global Data Integration drives real-time monitoring, prediction, and optimization. Hundreds of applications. One unified intelligence layer.</p>
+    <p class="db-desc">The complete intelligence layer of the Christos platform. CQI Core — the Coherent Intelligence Engine — sits at the center, surrounded by six domain nodes: Energy, Human Health, Transport, Architecture, Agriculture, and Water. Industrial and Environmental application stacks flank both sides. At the base, Global Data Integration drives real-time monitoring, prediction, and optimization.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">AI / Network / Digital</span><span class="db-tag">Field AI — Volume I</span><span class="db-tag">Quantum Internet Framework</span><span class="db-tag">Human–AI Coherence Systems</span><span class="db-tag">CQI Technical Specification</span><span class="db-tag">Civilization Systems</span></div>
     <div class="diagram-img-wrap">
@@ -279,7 +262,7 @@ a { text-decoration: none; color: inherit; }
     <div class="db-num">Diagram 10 of 10</div>
     <div class="db-title">The Coherent Civilization System</div>
     <div class="db-rule"></div>
-    <p class="db-desc">The master civilization diagram — a vision for a fully integrated and intelligent world. The globe at the apex feeds into the CQI Core intelligence layer surrounded by six domain nodes: Energy, Humans, Water, Transport, Architecture, and Agriculture. A human figure stands within concentric ground rings labeled with eight foundational layers: Geometry, Architecture, Flow, Humans, Transport, Energy, Water / Thermal, Agriculture / Biology. A unified, intelligent, and sustainable blueprint for humanity.</p>
+    <p class="db-desc">The master civilization diagram — a vision for a fully integrated and intelligent world. The globe at the apex feeds into the CQI Core intelligence layer surrounded by six domain nodes: Energy, Humans, Water, Transport, Architecture, and Agriculture. A human figure stands within concentric ground rings. A unified, intelligent, and sustainable blueprint for humanity.</p>
     <div class="db-covers-label">Covers Research Domains</div>
     <div class="db-tags"><span class="db-tag">Civilization Systems</span><span class="db-tag">Unified Civilization System</span><span class="db-tag">AI / Network / Digital</span><span class="db-tag">Transport & Time Systems</span><span class="db-tag">Architecture & Built Environment</span><span class="db-tag">Agriculture, Water & Food</span><span class="db-tag">All 15 Domains</span></div>
     <div class="diagram-img-wrap">
@@ -291,7 +274,7 @@ a { text-decoration: none; color: inherit; }
 
   <div class="bottom-cta">
     <div class="bottom-cta-title">Explore the Full Research Library</div>
-    <p class="bottom-cta-body">These diagrams represent the visual layer of a 106-paper research platform. Each paper contains the detailed abstract, theoretical framework, and system architecture behind what these diagrams map. Browse the full library or request protected access.</p>
+    <p class="bottom-cta-body">These diagrams represent the visual layer of a 106-paper research platform. Each paper contains the detailed abstract, theoretical framework, and system architecture behind what these diagrams map.</p>
     <a href="library.html" class="btn-primary">Browse All 106 Papers</a>
     <a href="contact.html" class="btn-ghost">Request Access</a>
   </div>
@@ -302,7 +285,12 @@ a { text-decoration: none; color: inherit; }
   <div class="footer-inner">
     <div class="footer-logo">CHRISTOS™</div>
     <div class="footer-nav">
-      <a href="index.html">Home</a><a href="library.html">Library</a><a href="diagrams.html">Diagrams</a><a href="book.html">Book</a><a href="contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+      <a href="diagrams.html">Diagrams</a>
+      <a href="economy.html">Economy</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
