@@ -9,20 +9,16 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { background-color: #08111E !important; color: #FFFFFF; font-family: 'Cormorant Garamond', Georgia, serif; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
-
-/* EVERY SECTION GETS EXPLICIT DARK BACKGROUND */
 section, div, nav, footer, header { background-color: transparent; }
 
-/* NAV */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background-color: #0A1628 !important; border-bottom: 2px solid #C9A84C; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 68px; }
 .nav-logo { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 700; color: #C9A84C; letter-spacing: 0.12em; }
 .nav-logo span { display: block; font-size: 11px; font-weight: 400; color: #C9A84C; opacity: 0.7; letter-spacing: 0.2em; }
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a { font-family: 'Raleway', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: #FFFFFF; }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF; transition: color 0.2s; }
 .nav-links a:hover { color: #C9A84C; }
-.nav-cta { background-color: #C9A84C !important; color: #08111E !important; padding: 10px 22px; border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.nav-cta { background-color: #C9A84C !important; color: #08111E !important; padding: 10px 20px; border-radius: 2px; font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 
-/* PAGE HEADER */
 .page-header { background-color: #08111E !important; padding: 130px 40px 70px; border-bottom: 1px solid rgba(201,168,76,0.3); }
 .page-header-inner { max-width: 1160px; margin: 0 auto; }
 .eyebrow { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
@@ -30,14 +26,11 @@ section, div, nav, footer, header { background-color: transparent; }
 .page-title { font-family: 'Cinzel', serif; font-size: clamp(30px,4vw,50px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 20px; }
 .page-sub { font-size: 19px; color: #D8D0C0; line-height: 1.75; max-width: 780px; }
 
-/* BODY WRAPPER */
 .body-wrap { background-color: #08111E !important; padding: 80px 40px 120px; }
 .body-inner { max-width: 1160px; margin: 0 auto; }
 
-/* TWO COLUMN */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
 
-/* CARDS */
 .card-dark { background-color: #0D1B2A !important; border: 1px solid rgba(201,168,76,0.25); border-radius: 8px; padding: 40px; }
 .card-mid { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.18); border-radius: 8px; padding: 40px; }
 
@@ -45,67 +38,74 @@ section, div, nav, footer, header { background-color: transparent; }
 .card-title { font-family: 'Cinzel', serif; font-size: clamp(19px,2.5vw,26px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.04em; margin-bottom: 18px; }
 .card-body { font-size: 17px; color: #D8D0C0; line-height: 1.8; margin-bottom: 28px; }
 
-/* STEPS */
 .step { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(201,168,76,0.12); }
 .step:last-child { border-bottom: none; padding-bottom: 0; }
 .step-num { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: #C9A84C; line-height: 1; flex-shrink: 0; width: 40px; }
 .step-title { font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: #FFFFFF; margin-bottom: 6px; }
 .step-desc { font-size: 16px; color: #D0C8B8; line-height: 1.65; }
 
-/* CONTACT METHODS */
 .contact-method { background-color: #08111E !important; border: 1px solid rgba(201,168,76,0.2); border-radius: 6px; padding: 22px 26px; margin-bottom: 16px; }
 .cm-label { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 8px; }
 .cm-value { font-family: 'Cinzel', serif; font-size: 17px; color: #C9A84C; letter-spacing: 0.03em; word-break: break-all; }
 .cm-note { font-size: 14px; color: #C8C0B0; margin-top: 6px; line-height: 1.55; }
 
-/* INCLUDE BOX */
 .include-box { background-color: #08111E !important; border: 1px solid rgba(201,168,76,0.2); border-left: 3px solid #C9A84C; border-radius: 4px; padding: 26px 30px; margin-top: 24px; }
 .include-label { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: #C9A84C; margin-bottom: 16px; }
 .include-item { display: flex; gap: 12px; font-size: 16px; color: #D0C8B8; line-height: 1.6; margin-bottom: 10px; }
 .include-item:last-child { margin-bottom: 0; }
 .include-item::before { content: '—'; color: #C9A84C; font-weight: 700; flex-shrink: 0; }
 
-/* WHO THIS IS FOR */
+/* SOCIAL MEDIA SECTION */
+.social-section { background-color: #0D1B2A !important; border: 1px solid rgba(201,168,76,0.2); border-top: 3px solid #C9A84C; border-radius: 8px; padding: 48px; margin-bottom: 80px; }
+.social-header { margin-bottom: 36px; }
+.social-title { font-family: 'Cinzel', serif; font-size: clamp(20px,2.5vw,28px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.04em; margin-bottom: 12px; }
+.social-sub { font-size: 17px; color: #D0C8B8; line-height: 1.8; max-width: 720px; }
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.social-card { background-color: #08111E !important; border: 1px solid rgba(201,168,76,0.15); border-radius: 6px; padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start; transition: border-color 0.25s; }
+.social-card:hover { border-color: rgba(201,168,76,0.4); }
+.social-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px; }
+.social-icon.tiktok { background: linear-gradient(135deg, #010101, #1a1a1a); border: 1px solid rgba(255,255,255,0.1); }
+.social-icon.youtube { background: linear-gradient(135deg, #c00, #ff0000); }
+.social-info {}
+.social-platform { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 6px; }
+.social-handle { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 600; color: #C9A84C; margin-bottom: 8px; letter-spacing: 0.04em; }
+.social-stats { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(201,168,76,0.7); margin-bottom: 10px; }
+.social-desc { font-size: 15px; color: #D0C8B8; line-height: 1.65; margin-bottom: 16px; }
+.social-link { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #C9A84C; border: 1px solid rgba(201,168,76,0.35); padding: 9px 18px; transition: all 0.2s; }
+.social-link:hover { background-color: rgba(201,168,76,0.1); border-color: #C9A84C; }
+
 .section-block { background-color: #08111E !important; margin-bottom: 80px; }
 .section-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,36px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.04em; margin-bottom: 14px; }
 .section-sub { font-size: 18px; color: #D0C8B8; line-height: 1.8; max-width: 720px; margin-bottom: 40px; }
 
 .uc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.uc-card { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.15); border-radius: 6px; padding: 28px; }
+.uc-card { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.15); border-radius: 6px; padding: 28px; transition: border-color 0.25s; }
 .uc-card:hover { border-color: rgba(201,168,76,0.35); }
 .uc-icon { font-size: 26px; margin-bottom: 14px; }
 .uc-title { font-family: 'Cinzel', serif; font-size: 17px; font-weight: 600; color: #FFFFFF; margin-bottom: 10px; }
 .uc-desc { font-size: 15px; color: #D0C8B8; line-height: 1.65; }
 
-/* IP NOTICE */
 .ip-box { background-color: #0D1B2A !important; border: 1px solid rgba(201,168,76,0.25); border-top: 3px solid #C9A84C; border-radius: 6px; padding: 34px 38px; margin-bottom: 60px; }
 .ip-title { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 600; color: #FFFFFF; margin-bottom: 14px; }
 .ip-body { font-size: 17px; color: #D0C8B8; line-height: 1.8; }
 .ip-body strong { color: #C9A84C; }
 
-/* FOUNDER STRIP */
 .founder-strip { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 36px 40px; display: flex; gap: 36px; align-items: center; }
 .founder-jf { font-family: 'Cinzel', serif; font-size: 56px; font-weight: 700; color: #C9A84C; opacity: 0.3; line-height: 1; flex-shrink: 0; }
 .founder-name { font-family: 'Cinzel', serif; font-size: 21px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.06em; margin-bottom: 4px; }
 .founder-role { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; }
 .founder-bio { font-size: 17px; color: #D0C8B8; line-height: 1.75; }
 
-/* BTN */
-.btn-gold { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; background-color: #C9A84C; color: #08111E; padding: 14px 32px; border-radius: 2px; display: inline-block; }
-.btn-gold:hover { background-color: #E8C97A; }
-
-/* FOOTER */
 .footer { background-color: #0A1628 !important; border-top: 1px solid rgba(201,168,76,0.25); padding: 50px 40px 36px; }
 .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
-.footer-nav { display: flex; gap: 28px; flex-wrap: wrap; }
-.footer-nav a { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #AABFCC; }
+.footer-nav { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-nav a { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #AABFCC; transition: color 0.2s; }
 .footer-nav a:hover { color: #C9A84C; }
 .footer-copy { font-family: 'Raleway', sans-serif; font-size: 11px; color: #5A7080; letter-spacing: 0.08em; width: 100%; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,168,76,0.1); }
 
-/* RESPONSIVE */
-@media(max-width:900px){ .two-col { grid-template-columns: 1fr; } .uc-grid { grid-template-columns: 1fr 1fr; } }
-@media(max-width:640px){ .nav { padding: 0 20px; } .nav-links { display: none; } .page-header { padding: 110px 20px 50px; } .body-wrap { padding: 50px 20px 80px; } .uc-grid { grid-template-columns: 1fr; } .founder-strip { flex-direction: column; gap: 16px; } }
+@media(max-width:900px){ .two-col { grid-template-columns: 1fr; } .uc-grid { grid-template-columns: 1fr 1fr; } .social-grid { grid-template-columns: 1fr; } }
+@media(max-width:640px){ .nav { padding: 0 20px; } .nav-links { display: none; } .page-header { padding: 110px 20px 50px; } .body-wrap { padding: 50px 20px 80px; } .uc-grid { grid-template-columns: 1fr; } .founder-strip { flex-direction: column; gap: 16px; } .social-section { padding: 32px 24px; } }
 </style>
 </head>
 <body style="background-color:#08111E !important;">
@@ -115,10 +115,11 @@ section, div, nav, footer, header { background-color: transparent; }
   <a href="index.html" style="text-decoration:none;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="library.html">Research Library</a>
-    <a href="diagrams.html">System Diagrams</a>
+    <a href="library.html">Library</a>
+    <a href="diagrams.html">Diagrams</a>
+    <a href="economy.html">Economy</a>
     <a href="book.html">Book</a>
-    <a href="contact.html" class="nav-cta">Request Access</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </div>
 </nav>
 
@@ -126,8 +127,8 @@ section, div, nav, footer, header { background-color: transparent; }
 <div class="page-header">
   <div class="page-header-inner">
     <div class="eyebrow">Access & Collaboration</div>
-    <h1 class="page-title">Contact & Request Access</h1>
-    <p class="page-sub">Full technical architecture, engineering specifications, and proprietary system detail are not published openly. All collaboration begins with a direct conversation. Review the process below and reach out to begin.</p>
+    <h1 class="page-title">Contact & Follow Along</h1>
+    <p class="page-sub">Full technical architecture and proprietary system detail are not published openly. All collaboration begins with a direct conversation. You can also follow the ongoing work across TikTok and YouTube.</p>
   </div>
 </div>
 
@@ -137,8 +138,6 @@ section, div, nav, footer, header { background-color: transparent; }
 
   <!-- TWO COLUMN -->
   <div class="two-col">
-
-    <!-- LEFT: ACCESS PROCESS -->
     <div class="card-dark">
       <div class="card-eyebrow">How It Works</div>
       <div class="card-title">The Access Process</div>
@@ -161,12 +160,11 @@ section, div, nav, footer, header { background-color: transparent; }
       </div>
     </div>
 
-    <!-- RIGHT: CONTACT INFO -->
     <div>
       <div class="card-mid">
         <div class="card-eyebrow">Direct Contact</div>
         <div class="card-title">Reach Joshua Farrior</div>
-        <p class="card-body">All inquiries are handled directly by Joshua Farrior, Founder and Chief Architect. There is no intermediary. Every conversation starts person to person.</p>
+        <p class="card-body">All inquiries are handled directly by Joshua Farrior. There is no intermediary. Every conversation starts person to person.</p>
         <div class="contact-method">
           <div class="cm-label">Primary Email</div>
           <div class="cm-value">joshuafarrior@sbcglobal.net</div>
@@ -193,42 +191,62 @@ section, div, nav, footer, header { background-color: transparent; }
     </div>
   </div>
 
+  <!-- SOCIAL MEDIA -->
+  <div class="social-section">
+    <div class="social-header">
+      <div class="eyebrow" style="margin-bottom:14px;">Follow the Work</div>
+      <div class="social-title">600+ Videos. 29,000+ Followers. One Mission.</div>
+      <p class="social-sub">The research papers represent the formal layer of the Christos™ work. The videos are where the ideas come alive — real-time explanations, discoveries as they happen, and the full scope of the framework explained directly by Joshua Farrior.</p>
+    </div>
+    <div class="social-grid">
+
+      <!-- TIKTOK -->
+      <div class="social-card">
+        <div class="social-icon tiktok">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.22 8.22 0 0 0 4.79 1.52V6.76a4.85 4.85 0 0 1-1.02-.07z"/>
+          </svg>
+        </div>
+        <div class="social-info">
+          <div class="social-platform">TikTok · Primary Platform</div>
+          <div class="social-handle">@joshuafarrior</div>
+          <div class="social-stats">29,100+ Followers · 600+ Videos · 191K Likes</div>
+          <p class="social-desc">The main channel — where concepts from the research library are explained directly, discoveries happen in real time, and the full scope of the Christos™ framework is presented video by video.</p>
+          <a href="https://tiktok.com/@joshuafarrior" target="_blank" class="social-link">Follow on TikTok →</a>
+        </div>
+      </div>
+
+      <!-- YOUTUBE -->
+      <div class="social-card">
+        <div class="social-icon youtube">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5V8.5l6.25 3.5-6.25 3.5z"/>
+          </svg>
+        </div>
+        <div class="social-info">
+          <div class="social-platform">YouTube · Long-Form Content</div>
+          <div class="social-handle">@Theanswers-n4u</div>
+          <div class="social-stats">682 Subscribers · Extended Format</div>
+          <p class="social-desc">Long-form deep dives into specific frameworks — teleportation, time travel, med pods, ancient resonance technology, and extended explorations of the Christos™ research. Where the detail lives.</p>
+          <a href="https://youtube.com/@Theanswers-n4u" target="_blank" class="social-link">Subscribe on YouTube →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- WHO THIS IS FOR -->
   <div class="section-block">
     <div class="eyebrow">Who This Is For</div>
     <div class="section-title">Areas of Collaboration</div>
     <p class="section-sub">The Christos™ platform spans 18 domains and 1,000+ inventions. Collaboration opportunities exist across research, clinical application, manufacturing, infrastructure, and investment — at any scale.</p>
     <div class="uc-grid">
-      <div class="uc-card">
-        <div class="uc-icon">⚗️</div>
-        <div class="uc-title">Research & Academia</div>
-        <div class="uc-desc">Independent researchers, university labs, and institutional scientists interested in validating, extending, or building on the Christos theoretical framework.</div>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon">⚕️</div>
-        <div class="uc-title">Medical & Clinical</div>
-        <div class="uc-desc">Clinicians, hospitals, and health technology companies exploring coherence-based medicine, organ regeneration, healing fluids, and biological interface systems.</div>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon">⚙️</div>
-        <div class="uc-title">Manufacturing & Materials</div>
-        <div class="uc-desc">Engineering firms interested in the Weaver's Loom fabrication platform, programmable matter, crystal engineering, and Phi-Steel applications.</div>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon">🌍</div>
-        <div class="uc-title">Infrastructure & Civilization</div>
-        <div class="uc-desc">Government agencies, urban planners, and developers working on energy, transport, water, agriculture, and large-scale coherence-based systems design.</div>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon">💡</div>
-        <div class="uc-title">Investment & Funding</div>
-        <div class="uc-desc">Angel investors, venture capital, family offices, and sovereign wealth funds evaluating early-stage deep technology IP across multiple high-value domains simultaneously.</div>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon">🎓</div>
-        <div class="uc-title">Education & Licensing</div>
-        <div class="uc-desc">Institutions interested in the Christos™ Temple University Curriculum — 144 knowledge domains and 105 newly formalized fields of scientific inquiry.</div>
-      </div>
+      <div class="uc-card"><div class="uc-icon">⚗️</div><div class="uc-title">Research & Academia</div><div class="uc-desc">Independent researchers, university labs, and institutional scientists interested in validating, extending, or building on the Christos theoretical framework.</div></div>
+      <div class="uc-card"><div class="uc-icon">⚕️</div><div class="uc-title">Medical & Clinical</div><div class="uc-desc">Clinicians, hospitals, and health technology companies exploring coherence-based medicine, organ regeneration, healing fluids, and biological interface systems.</div></div>
+      <div class="uc-card"><div class="uc-icon">⚙️</div><div class="uc-title">Manufacturing & Materials</div><div class="uc-desc">Engineering firms interested in the Weaver's Loom fabrication platform, programmable matter, crystal engineering, and Phi-Steel applications.</div></div>
+      <div class="uc-card"><div class="uc-icon">🌍</div><div class="uc-title">Infrastructure & Civilization</div><div class="uc-desc">Government agencies, urban planners, and developers working on energy, transport, water, agriculture, and large-scale coherence-based systems design.</div></div>
+      <div class="uc-card"><div class="uc-icon">💡</div><div class="uc-title">Investment & Funding</div><div class="uc-desc">Angel investors, venture capital, family offices, and sovereign wealth funds evaluating early-stage deep technology IP across multiple high-value domains simultaneously.</div></div>
+      <div class="uc-card"><div class="uc-icon">🎓</div><div class="uc-title">Education & Licensing</div><div class="uc-desc">Institutions interested in the Christos™ Temple University Curriculum — 144 knowledge domains and 105 newly formalized fields of scientific inquiry.</div></div>
     </div>
   </div>
 
@@ -259,6 +277,7 @@ section, div, nav, footer, header { background-color: transparent; }
       <a href="index.html">Home</a>
       <a href="library.html">Library</a>
       <a href="diagrams.html">Diagrams</a>
+      <a href="economy.html">Economy</a>
       <a href="book.html">Book</a>
       <a href="contact.html">Contact</a>
     </div>
