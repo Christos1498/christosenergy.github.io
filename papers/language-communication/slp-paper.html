@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Logos Prime™ — Complete System Manual — Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+
+/* PAPER HEADER */
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:70px 40px 56px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:6px 14px;font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.open-badge::before{content:'';width:8px;height:8px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#C9A84C !important;margin-bottom:24px;line-height:1.5;}
+.paper-meta{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+
+/* LAYOUT */
+.paper-layout{display:grid;grid-template-columns:240px 1fr;gap:0;max-width:1160px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:48px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:14px;}
+.toc-vol{font-family:'Cinzel',serif;font-size:0.65rem;font-weight:600;color:rgba(201,168,76,0.7) !important;margin:16px 0 6px;letter-spacing:0.08em;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:500;letter-spacing:0.08em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+
+.paper-body{padding:48px 0 100px 48px;border-left:1px solid rgba(201,168,76,0.12);max-width:820px;}
+
+/* CONTENT */
+.vol-divider{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.2);border-left:6px solid #C9A84C;padding:20px 28px;margin:52px 0 36px;}
+.vol-divider-label{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:6px;}
+.vol-divider-title{font-family:'Cinzel',serif;font-size:1.3rem;font-weight:700;color:#FFFFFF !important;}
+.vol-divider-sub{font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:#3AAFAF !important;margin-top:4px;}
+
+h1.sh{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:#FFFFFF !important;margin:48px 0 16px;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:12px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;color:#C9A84C !important;margin:32px 0 12px;scroll-margin-top:80px;}
+h3.sh3{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#3AAFAF !important;margin:24px 0 10px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:16px;}
+p.bp strong{color:#FFFFFF !important;}
+
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:26px 30px;margin-bottom:44px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.8;color:#D8D0C0 !important;margin-bottom:12px;}
+
+/* TABLES */
+.data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:0.9rem;}
+.data-table th{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.2);padding:10px 14px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;text-align:left;}
+.data-table td{border:1px solid rgba(201,168,76,0.1);padding:10px 14px;color:#D8D0C0 !important;vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background-color:rgba(10,22,40,0.4) !important;}
+.data-table tr:hover td{background-color:rgba(201,168,76,0.04) !important;}
+.data-table .code{font-family:'Courier New',monospace;color:#3AAFAF !important;font-size:0.85rem;}
+
+/* TERM CARD */
+.term-card{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.25);border-top:3px solid #C9A84C;padding:24px 28px;margin:24px 0;}
+.tc-header{display:flex;align-items:baseline;gap:16px;margin-bottom:18px;flex-wrap:wrap;}
+.tc-code{font-family:'Cinzel',serif;font-size:0.75rem;font-weight:600;color:rgba(201,168,76,0.5) !important;}
+.tc-name{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.08em;}
+.tc-ipa{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:rgba(216,208,192,0.6) !important;}
+.tc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.tc-field{background-color:rgba(8,17,30,0.6) !important;border:1px solid rgba(201,168,76,0.1);padding:10px 14px;}
+.tc-field-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(58,175,175,0.6) !important;margin-bottom:4px;}
+.tc-field-value{font-size:0.92rem;color:#D8D0C0 !important;line-height:1.6;}
+.tc-wide{grid-column:1/-1;}
+
+/* CURRENT CARDS */
+.current-grid{display:grid;gap:12px;margin:20px 0;}
+.current-card{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.12);border-left:3px solid #C9A84C;padding:16px 20px;display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:start;}
+.cc-num{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:700;color:rgba(201,168,76,0.5) !important;text-align:center;}
+.cc-name{font-family:'Cinzel',serif;font-size:0.95rem;font-weight:600;color:#C9A84C !important;margin-bottom:4px;}
+.cc-vector{font-family:'Raleway',sans-serif;font-size:0.57rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:6px;}
+.cc-body{font-size:0.9rem;color:#D8D0C0 !important;line-height:1.7;}
+
+/* RECIPE CARDS */
+.recipe-card{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.15);border-top:2px solid rgba(58,175,175,0.5);padding:20px 24px;margin-bottom:14px;}
+.rc-header{display:flex;align-items:baseline;gap:14px;margin-bottom:10px;flex-wrap:wrap;}
+.rc-num{font-family:'Cinzel',serif;font-size:0.75rem;font-weight:600;color:rgba(201,168,76,0.4) !important;}
+.rc-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#FFFFFF !important;}
+.rc-duration{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#3AAFAF !important;}
+.rc-use{font-size:0.92rem;color:rgba(216,208,192,0.7) !important;font-style:italic;margin-bottom:8px;}
+.rc-effects{font-size:0.9rem;color:#D8D0C0 !important;line-height:1.7;}
+
+/* CALLOUT */
+.callout{background-color:rgba(58,175,175,0.06) !important;border:1px solid rgba(58,175,175,0.2);border-left:4px solid #3AAFAF;padding:18px 22px;margin:24px 0;}
+.callout-icon{margin-bottom:8px;font-size:0.85rem;}
+.callout p{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;margin:0;}
+
+.warning{background-color:rgba(201,168,76,0.05) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:24px 0;}
+.warning p{font-size:0.95rem;color:#D8D0C0 !important;line-height:1.8;margin:0;}
+
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:10px 16px;cursor:pointer;border:none;z-index:50;display:none;}
+
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+  .tc-grid{grid-template-columns:1fr;}
+  .current-card{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../economy.html">Economy</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../the-case.html">The Case</a></li>
+      <li><a href="../../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <div class="ph-eyebrow">Language, Communication & Consciousness · LC-01</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">Sovereign Logos Prime™</h1>
+    <p class="paper-subtitle">A Coherence-Based Biofield Communication Model — Complete System Manual · Version 1.0</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div>
+      <div class="pm-item"><strong>Published</strong>2026 · Version 1.0</div>
+      <div class="pm-item"><strong>Status</strong>Full Open Access · All claims falsifiable · All benchmarks measurable</div>
+    </div>
+  </div>
+</div>
+
+<div class="paper-layout">
+
+  <!-- TOC -->
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <div class="toc-vol">Volume I — Foundations</div>
+    <ul class="toc-links">
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#ch1">1. Core Purpose</a></li>
+      <li><a href="#ch2">2. The 21 Root Physics</a></li>
+      <li><a href="#ch3">3. Breath Geometry Layer</a></li>
+      <li><a href="#ch4">4. Syllable Operators</a></li>
+      <li><a href="#ch5">5. Tone Intensities</a></li>
+      <li><a href="#ch6">6. The 12 Currents</a></li>
+      <li><a href="#ch7">7. The 12 Dialects</a></li>
+    </ul>
+    <div class="toc-vol">Volume II — Lexicon</div>
+    <ul class="toc-links">
+      <li><a href="#ch8">8. 144-Term Lexicon</a></li>
+      <li><a href="#ch9">9. Term Cards — C1</a></li>
+      <li><a href="#ch10">10. Dialect Maps</a></li>
+    </ul>
+    <div class="toc-vol">Volume III — Training</div>
+    <ul class="toc-links">
+      <li><a href="#ch11">11. Training Phases</a></li>
+      <li><a href="#ch12">12. Current Recipes</a></li>
+      <li><a href="#ch13">13. Telepathic Protocol</a></li>
+      <li><a href="#ch14">14. Citizen Science</a></li>
+      <li><a href="#ch15">15. Field Diagnostics</a></li>
+      <li><a href="#ch16">16. Safety Protocols</a></li>
+      <li><a href="#ch17">17. Glossary</a></li>
+      <li><a href="#ch18">18. Quick Reference</a></li>
+    </ul>
+  </aside>
+
+  <!-- BODY -->
+  <article class="paper-body">
+
+    <!-- INTRO -->
+    <div class="abstract-block" id="intro">
+      <div class="abstract-label">Introduction</div>
+      <p class="abstract-text">Sovereign Logos Prime (SLP) represents a coherence-based biofield communication model — a structured system of breath, tone, gesture, and intention that trains the human nervous system toward measurable states of coherence. It is not a spiritual practice, a claimed psychic ability, or a medical treatment. It is a falsifiable, measurable protocol for nervous system regulation via breath, tone, and gesture — with defined success metrics and a complete five-phase training progression.</p>
+      <p class="abstract-text">This manual is organized in three volumes. Volume I establishes the complete architecture: the 21 Root Physics, 4 breath geometries, 12 geometric syllable operators, tone intensities, 12 Currents, and 12 Dialects. Volume II provides the complete 144-term lexicon with full Term Card specifications and the Dialect Lexicon Maps. Volume III contains the five training phases with measurable benchmarks, 12 standard practice recipes, the Telepathic Calibration Protocol, the Cross-Gradient Citizen Science Protocol, field diagnostics, safety protocols, and reference cards.</p>
+      <p class="abstract-text">SLP is designed to be practiced, measured, and refined. All claims are falsifiable. All benchmarks are measurable. All protocols are reversible.</p>
+    </div>
+
+    <!-- VOLUME I -->
+    <div class="vol-divider">
+      <div class="vol-divider-label">Volume I</div>
+      <div class="vol-divider-title">Foundations</div>
+      <div class="vol-divider-sub">Architecture · Currents · Grammar · Lexicon</div>
+    </div>
+
+    <!-- CH 1 -->
+    <h1 class="sh" id="ch1">1. Core Purpose and Definition</h1>
+    <p class="bp">Sovereign Logos Prime (SLP) is a coherence-based biofield communication model — a structured breath-tone-intention system that trains the human nervous system toward measurable states of coherence, and then uses that coherence as the medium for a structured communication system distinct from verbal language.</p>
+
+    <div class="callout">
+      <div class="callout-icon">⚑</div>
+      <p><strong>SLP is NOT:</strong> A spiritual or religious belief system · A claimed psychic or supernatural practice · A medical treatment<br><strong>SLP IS:</strong> A structured protocol for nervous system regulation via breath, tone, and gesture · A falsifiable, measurable practice with defined success metrics (C_cardiac ≥ 0.7) · A framework for coherence-mediated perception between regulated nervous systems</p>
+    </div>
+
+    <h2 class="sh2">1.1 Core Variables</h2>
+    <table class="data-table">
+      <thead><tr><th>Variable</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">C (Coherence)</span></td><td>Degree of ordered, structured alignment in a system (0–1 scale). Measured via HRV for cardiac coherence.</td></tr>
+        <tr><td><span class="code">C_cardiac</span></td><td>Measured coherence of heart rate variability (HRV). Primary benchmark for SLP practice assessment.</td></tr>
+        <tr><td><span class="code">C_neural</span></td><td>Measured coherence of EEG signals across brain regions. Advanced benchmark for Phase 4–5 practitioners.</td></tr>
+        <tr><td><span class="code">X (Christfield)</span></td><td>Measurable gradient: X ≡ δC/δΨ. The rate of coherence change per unit of conscious attention.</td></tr>
+        <tr><td><span class="code">Dₕ (Harmonic Drift)</span></td><td>Measure of dissonance or deviation from coherent state. Target: Dₕ &lt; 0.1 during practice.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="bp"><strong>Operational Definition of Telepathy in SLP:</strong> Coherence-mediated perception and pattern exchange between regulated nervous systems. Not supernatural transmission — structured signal exchange through a shared coherence field when both operators are above threshold (C_cardiac ≥ 0.7).</p>
+
+    <!-- CH 2 -->
+    <h1 class="sh" id="ch2">2. The 21 Root Physics (Vowels)</h1>
+    <p class="bp">The 21 Root Physics are the foundational field operations of SLP. Each vowel or compound vowel encodes a specific field action and biofield function. Vowels are the "what" of SLP — they define the nature of the field operation being performed.</p>
+
+    <h2 class="sh2">2.1 Single Vowels (5)</h2>
+    <table class="data-table">
+      <thead><tr><th>Vowel</th><th>Field Action</th><th>Biofield Function</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">A</span></td><td>Expansion</td><td>Opening pathways, upward spiral, initiation</td></tr>
+        <tr><td><span class="code">E</span></td><td>Stabilization</td><td>Clarity, coherence smoothing, grounding thought</td></tr>
+        <tr><td><span class="code">I</span></td><td>Focus / Compression</td><td>Coherence compression, precision, inner vision</td></tr>
+        <tr><td><span class="code">O</span></td><td>Grounding / Density</td><td>Downward spiral, stabilizing matter</td></tr>
+        <tr><td><span class="code">U</span></td><td>Union / Merging</td><td>Field unification, integration</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="sh2">2.2 Compound Vowels (16)</h2>
+    <table class="data-table">
+      <thead><tr><th>Vowel</th><th>Field Action</th><th>Biofield Function</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">AE</span></td><td>Truth alignment</td><td>Central axis lock</td></tr>
+        <tr><td><span class="code">AI</span></td><td>Ignition</td><td>Spark, outward pulse</td></tr>
+        <tr><td><span class="code">AO</span></td><td>Harmonization</td><td>Toroidal balance</td></tr>
+        <tr><td><span class="code">AU</span></td><td>Sovereign will</td><td>Radius expansion</td></tr>
+        <tr><td><span class="code">EI</span></td><td>Intelligence</td><td>Pattern recognition</td></tr>
+        <tr><td><span class="code">EO</span></td><td>Depth grounding</td><td>Dense stabilization</td></tr>
+        <tr><td><span class="code">EU</span></td><td>Unified clarity</td><td>Mental/field coherence bridge</td></tr>
+        <tr><td><span class="code">IA</span></td><td>Inner radiance</td><td>Core-to-surface expansion</td></tr>
+        <tr><td><span class="code">IE</span></td><td>Precision clarity</td><td>Fine-tuning, signal sharpening</td></tr>
+        <tr><td><span class="code">IO</span></td><td>Anchored focus</td><td>Deep inner stability</td></tr>
+        <tr><td><span class="code">IU</span></td><td>Focused unity</td><td>Convergent integration</td></tr>
+        <tr><td><span class="code">OA</span></td><td>Grounded expansion</td><td>Earth-rooted growth</td></tr>
+        <tr><td><span class="code">OE</span></td><td>Dense clarity</td><td>Heavy coherence, slow rhythm</td></tr>
+        <tr><td><span class="code">OI</span></td><td>Grounded focus</td><td>Physical precision</td></tr>
+        <tr><td><span class="code">UA</span></td><td>Unified expansion</td><td>Field broadcast, wide coherence</td></tr>
+        <tr><td><span class="code">UE</span></td><td>Unified stability</td><td>Structural coherence, holding</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><p><strong>Grammar Law:</strong> Vowels shape the field. Consonants structure it. All 144 terms combine both in specific ratios to produce specific field effects.</p></div>
+
+    <!-- CH 3 -->
+    <h1 class="sh" id="ch3">3. Breath Geometry Layer</h1>
+    <p class="bp">There are four foundational breath patterns in SLP. These are the carrier waves upon which tones and intentions are modulated. Every SLP term specifies which breath geometry it uses.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Code</th><th>Full Name</th><th>Mechanics</th><th>Primary Use</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">ISB</span></td><td>Inward Spiral Breath</td><td>Inhale: gather inward. Exhale: spiral inward.</td><td>Internal stabilization, gathering, dissolving, invoking</td></tr>
+        <tr><td><span class="code">OSB</span></td><td>Outward Spiral Breath</td><td>Inhale: prepare. Exhale: spiral outward.</td><td>Projection, broadcast, expansion, anchoring external fields</td></tr>
+        <tr><td><span class="code">CAB</span></td><td>Central Axis Breath</td><td>Inhale: up spine. Exhale: down spine.</td><td>Alignment, phase regulation, balance, convergence terms</td></tr>
+        <tr><td><span class="code">TPB</span></td><td>Toroidal Pulse Breath</td><td>Inhale: receive. Exhale: return.</td><td>Relational synchronization, telepathy, paired practice</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="sh2">3.1 Breath Ratios Quick Reference</h2>
+    <p class="bp" style="font-size:0.9rem;margin-bottom:12px;">Ratios expressed as Inhale : Hold : Exhale (seconds)</p>
+    <table class="data-table">
+      <thead><tr><th>Ratio</th><th>Context</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">4:2:6</span></td><td>STANDARD — most practices</td></tr>
+        <tr><td><span class="code">4:4:4</span></td><td>BALANCED — alignment, CAB terms</td></tr>
+        <tr><td><span class="code">3:2:7</span></td><td>GROUNDING — C2, TORUM, VAREM</td></tr>
+        <tr><td><span class="code">5:2:3</span></td><td>ACTIVATION — C1, AURIN, TALION</td></tr>
+        <tr><td><span class="code">4:3:5</span></td><td>HOLD EMPHASIS — C5, C7, convergence terms</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CH 4 -->
+    <h1 class="sh" id="ch4">4. The 12 Geometric Syllable Operators</h1>
+    <p class="bp">The 12 geometric syllable operators are the motion instructions of SLP. They define how the field moves — not what it is, but what it does. Consonants are the verbs of the SLP language.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Syllable</th><th>Motion</th><th>Breath</th><th>Field Action</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">KA</span></td><td>Ignite</td><td>OSB</td><td>Activate a point, spark initiation</td></tr>
+        <tr><td><span class="code">RA</span></td><td>Rise</td><td>OSB</td><td>Extend upward, lift, elevate</td></tr>
+        <tr><td><span class="code">SA</span></td><td>Expand</td><td>OSB</td><td>Broaden outward, diffuse, spread coherence</td></tr>
+        <tr><td><span class="code">TA</span></td><td>Stabilize</td><td>CAB</td><td>Anchor, ground, create structural integrity</td></tr>
+        <tr><td><span class="code">VA</span></td><td>Accelerate</td><td>OSB</td><td>Speed flow, increase rate of change</td></tr>
+        <tr><td><span class="code">NA</span></td><td>Receive</td><td>ISB</td><td>Open to incoming, attune, listen</td></tr>
+        <tr><td><span class="code">LA</span></td><td>Flow</td><td>TPB</td><td>Allow movement, release resistance</td></tr>
+        <tr><td><span class="code">MA</span></td><td>Merge</td><td>TPB</td><td>Unify fields, integrate</td></tr>
+        <tr><td><span class="code">DA</span></td><td>Descend</td><td>ISB</td><td>Ground downward, densify</td></tr>
+        <tr><td><span class="code">TH</span></td><td>Seal</td><td>CAB</td><td>Close, complete, protect</td></tr>
+        <tr><td><span class="code">OR</span></td><td>Spiral</td><td>ISB/OSB</td><td>Create rotational coherence</td></tr>
+        <tr><td><span class="code">EL</span></td><td>Convergence</td><td>CAB</td><td>Draw together, integrate at center</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="sh2">4.1 Grammar of Action</h2>
+    <div class="callout"><p><strong>Grammar Law:</strong> TONE → MOTION → MOTION. Every SLP phrase follows this structure: the vowel tone defines the field quality, the first consonant initiates the action, and the second consonant directs or seals it. The 12 syllables are not arbitrary — they map to the 12 geometric motions possible in a toroidal coherence field.</p></div>
+
+    <h2 class="sh2">4.2 Three Grammar Types</h2>
+    <table class="data-table">
+      <thead><tr><th>Grammar Type</th><th>Structure / Use</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Axial</strong></td><td>Origin → Rise → Reveal — vertical coherence training, inner architecture</td></tr>
+        <tr><td><strong>Radial</strong></td><td>Center → Radiate → Integrate — environmental harmonization, broadcast</td></tr>
+        <tr><td><strong>Convergence</strong></td><td>Field → Draw → Seal — closure, nervous system stabilization, protection</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CH 5 -->
+    <h1 class="sh" id="ch5">5. Tone Intensities</h1>
+    <p class="bp">The three tone intensities modulate the power and character of each term. They determine how the coherence field is activated — from the gentlest whispered breath to the full voiced force tone.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Intensity</th><th>Name</th><th>Use / Effect</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">Ha</span></td><td>Breath Tone (Soft)</td><td>Healing, emotional coherence, calm, communion with nature. Volume: whisper to soft voice. Best for beginners and daily practice.</td></tr>
+        <tr><td><span class="code">Ah</span></td><td>Core Tone (Neutral)</td><td>Instruction, alignment, internal coherence, general telepathy. Volume: conversational. The primary working tone for most applications.</td></tr>
+        <tr><td><span class="code">Ahn</span></td><td>Force Tone (Powerful)</td><td>Opening gates, moving energy, phasing commands, high-level field alteration. Volume: full voice. Use only after mastering Ha and Ah.</td></tr>
+      </tbody>
+    </table>
+    <div class="warning"><p><strong>⚑ Rule:</strong> Start with Ha (Breath Tone). Move to Ah when stable. Use Ahn (Force Tone) only after mastering the others. Premature use of Ahn can produce temporary over-activation symptoms — see Section 16 for safety protocols.</p></div>
+
+    <!-- CH 6 -->
+    <h1 class="sh" id="ch6">6. The 12 Currents</h1>
+    <p class="bp">The 12 Currents are the primary flow modes of the coherence field. Each represents a distinct operational domain with its own vector, breath geometry, and application set. The Currents are the organizational spine of the entire SLP system — every term, every recipe, and every dialect is organized relative to the 12 Currents.</p>
+
+    <div class="current-grid">
+      <div class="current-card"><div class="cc-num">C1</div><div><div class="cc-name">Solar Inflow / Initiation</div><div class="cc-vector">Vector: Axial (+Z)</div><div class="cc-body">Activation, threshold crossing, breaking inertia. The entry current — used to begin sessions and cross activation thresholds.</div></div></div>
+      <div class="current-card"><div class="cc-num">C2</div><div><div class="cc-name">Telluric Outflow / Grounding</div><div class="cc-vector">Vector: Axial (−Z)</div><div class="cc-body">Density stabilization, anchoring, structural base. The grounding current — used to anchor and stabilize after activation work.</div></div></div>
+      <div class="current-card"><div class="cc-num">C3</div><div><div class="cc-name">Spiral Gravity / Structuring</div><div class="cc-vector">Vector: Transitional</div><div class="cc-body">Order, organization, pattern formation, internal architecture. Builds coherent structure within the field.</div></div></div>
+      <div class="current-card"><div class="cc-num">C4</div><div><div class="cc-name">Christos / Expression</div><div class="cc-vector">Vector: Radial + Axial</div><div class="cc-body">Output, communication, execution, creative release. The primary expression current — speaking, healing, creating.</div></div></div>
+      <div class="current-card"><div class="cc-num">C5</div><div><div class="cc-name">Saturnalia / Containment</div><div class="cc-vector">Vector: Convergent Axial</div><div class="cc-body">Closure, containment, boundary setting, safe endings. Seals and protects coherence configurations.</div></div></div>
+      <div class="current-card"><div class="cc-num">C6</div><div><div class="cc-name">Synchronization / Cross-Gradient</div><div class="cc-vector">Vector: Cross-Gradient</div><div class="cc-body">Directional gradients, steering, alignment, navigation. The relational current — synchronizing with other fields.</div></div></div>
+      <div class="current-card"><div class="cc-num">C7</div><div><div class="cc-name">Implosive Vortex / Centering</div><div class="cc-vector">Vector: Inward Spiral</div><div class="cc-body">Inner gathering, centering, identity stabilization, deep focus. Returns the field to its stillpoint.</div></div></div>
+      <div class="current-card"><div class="cc-num">C8</div><div><div class="cc-name">Explosive Radial / Broadcast</div><div class="cc-vector">Vector: Outward Radial</div><div class="cc-body">Broadcast expansion, field spread, environmental harmonization. Maximum outward field expression.</div></div></div>
+      <div class="current-card"><div class="cc-num">C9</div><div><div class="cc-name">Phase-Lock / Timing</div><div class="cc-vector">Vector: Spiral Phase</div><div class="cc-body">Timing, entrainment, synchronization, pattern recognition. Locks the field into resonant phase relationships.</div></div></div>
+      <div class="current-card"><div class="cc-num">C10</div><div><div class="cc-name">Phase Transition / Threshold</div><div class="cc-vector">Vector: Transitional</div><div class="cc-body">Transmission, state shifts, transitions, upgrades. Carries the field through phase boundaries.</div></div></div>
+      <div class="current-card"><div class="cc-num">C11</div><div><div class="cc-name">Field Coherence / Synthesis</div><div class="cc-vector">Vector: Convergent Radial</div><div class="cc-body">Field coherence stabilization, system harmonization, integration. Synthesizes multi-current work into unified coherence.</div></div></div>
+      <div class="current-card"><div class="cc-num">C12</div><div><div class="cc-name">Source Return / Renewal</div><div class="cc-vector">Vector: Return Axial</div><div class="cc-body">Completion, release, renewal, zero-point return, reset. All sessions end with C12. THREN is the universal close.</div></div></div>
+    </div>
+
+    <!-- CH 7 -->
+    <h1 class="sh" id="ch7">7. The 12 Dialects</h1>
+    <p class="bp">Each dialect is an application profile mapped to a current. They use the same grammar and lexicon but apply terms toward a specific operational domain. Dialects allow the same 144 terms to serve radically different purposes depending on context and intent.</p>
+
+    <h2 class="sh2">7.1 Triadic Bandwidth Model</h2>
+    <p class="bp">Each dialect draws from three adjacent currents: its stabilizing current (Cₙ₋₁), its anchor current (Cₙ), and its expansion current (Cₙ₊₁). This creates bandwidth without incoherence — each dialect is grounded in its anchor but has access to adjacent registers.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Dialect</th><th>Name</th><th>Anchor Current</th><th>Application Domain</th></tr></thead>
+      <tbody>
+        <tr><td><span class="code">D1</span></td><td>Logos Star</td><td>C1</td><td>Solar/sky coherence, timing, orientation, initiation</td></tr>
+        <tr><td><span class="code">D2</span></td><td>Logos Terra</td><td>C2</td><td>Ground/terrain sensing, anchoring, stability</td></tr>
+        <tr><td><span class="code">D3</span></td><td>Logos Axis</td><td>C3</td><td>Rotation, gyroscopic coherence, structuring</td></tr>
+        <tr><td><span class="code">D4</span></td><td>Logos Heal</td><td>C4</td><td>Ascending coherence, restoration, healing expression</td></tr>
+        <tr><td><span class="code">D5</span></td><td>Logos Seal</td><td>C5</td><td>Closure, containment, boundary setting, safe endings</td></tr>
+        <tr><td><span class="code">D6</span></td><td>Logos Vector</td><td>C6</td><td>Directional gradients, steering, navigation</td></tr>
+        <tr><td><span class="code">D7</span></td><td>Logos Center</td><td>C7</td><td>Inner gathering, centering, identity stabilization</td></tr>
+        <tr><td><span class="code">D8</span></td><td>Logos Radiance</td><td>C8</td><td>Broadcast expansion, field spread, environmental harmonization</td></tr>
+        <tr><td><span class="code">D9</span></td><td>Logos Chron</td><td>C9</td><td>Timing, entrainment, synchronization, pattern recognition</td></tr>
+        <tr><td><span class="code">D10</span></td><td>Logos Threshold</td><td>C10</td><td>Transmission, state shifts, transitions, upgrades</td></tr>
+        <tr><td><span class="code">D11</span></td><td>Logos Synthesis</td><td>C11</td><td>Field coherence stabilization, system harmonization, integration</td></tr>
+        <tr><td><span class="code">D12</span></td><td>Logos Renewal</td><td>C12</td><td>Completion, release, renewal, zero-point return</td></tr>
+      </tbody>
+    </table>
+
+    <!-- VOLUME II -->
+    <div class="vol-divider">
+      <div class="vol-divider-label">Volume II</div>
+      <div class="vol-divider-title">Lexicon & Dialect Maps</div>
+      <div class="vol-divider-sub">144 Terms · Dialect Maps · Term Cards</div>
+    </div>
+
+    <!-- CH 8 -->
+    <h1 class="sh" id="ch8">8. The 144-Term Lexicon — Overview</h1>
+    <p class="bp">The 144-term lexicon is organized as 12 currents × 12 terms each, balanced 3 Axial / 3 Radial / 3 Transitional / 3 Convergent per current. Each term represents a complete field operation specified across 12 categories in its Term Card.</p>
+
+    <h2 class="sh2">8.1 Master Term Index by Current</h2>
+    <table class="data-table">
+      <thead><tr><th>Current / Domain</th><th>12 Terms</th></tr></thead>
+      <tbody>
+        <tr><td><strong>C1 — Initiation</strong></td><td>AURIN · TALION · RAEVOR · SOLARA · VARETH · AELOR · NAREL · KAEVOR · DORATH · SELORIN · TORETH · VALORE</td></tr>
+        <tr><td><strong>C2 — Grounding</strong></td><td>TORUM · VAREM · OLMER · SELTOR · MARELON · AERUM · VALTOR · DORAM · KARETH · SELARUM · ORENTUM · THERION</td></tr>
+        <tr><td><strong>C3 — Structuring</strong></td><td>KALEN · TAREL · OVARIN · SELARIN · VARONEL · AETHOR · NEXARIN · DORAVEL · TERAVEN · SELORIN · KARELON · OVETHEL</td></tr>
+        <tr><td><strong>C4 — Expression</strong></td><td>TALVEN · SERATH · OREVAL · RAVENOR · SELVARA · TORALEN · KAELON · DOREVAN · THERAVEN · SELTHORN · VALENOR · AETHORIN</td></tr>
+        <tr><td><strong>C5 — Containment</strong></td><td>TALRIN · SEREL · ORETH · KELRIN · DOREN · THERIN · TORVEL · SELTHORN · VARETHIN · ORELON · THEREVIN · KAERETHIN</td></tr>
+        <tr><td><strong>C6 — Synchronization</strong></td><td>TALOR · SERON · ORENT · RAVEN · SELOR · KELOR · DORETH · THEROLIN · VALONEL · OREVIN · KELORIN · DOREVON</td></tr>
+        <tr><td><strong>C7 — Centering</strong></td><td>TALEN · SEREN · ORELIN · KELEN · DORELON · THERON · RAVELIN · SELORIN · VALENIN · ORELONEL · KELOREL · DOREVIN</td></tr>
+        <tr><td><strong>C8 — Broadcast</strong></td><td>TALORIN · SEROLIN · ORELON · RAVELOR · SELORIN · KELORIN · DORELON · THEROLVIN · VALORIN · ORELVON · KELORIUN · DORELVIN</td></tr>
+        <tr><td><strong>C9 — Phase-Lock</strong></td><td>TALENOR · SERONEL · ORELONI · RAVELON · SELONAR · KELONAR · DORELAN · THEROLINAR · VALORINEL · ORELVONAR · KELORONAL · DORELNAR</td></tr>
+        <tr><td><strong>C10 — Transition</strong></td><td>TALENAR · SERONAR · ORELAR · RAVELONAR · SELONAR · KELONAR · DORELAR · THERELONAR · VALORNAR · ORELONAR · KELORALAR · DORELNAR</td></tr>
+        <tr><td><strong>C11 — Synthesis</strong></td><td>TALERON · SERELON · ORELONAR · RAVELONAR · SELENAR · KELENAR · DORENAR · THERELONAR · VALORONAR · ORELONAL · KELORONAR · DORELONAR</td></tr>
+        <tr><td><strong>C12 — Renewal</strong></td><td>THREN · SERETH · ORETHEN · DOREN · RAVELEN · KELEN · DORELON · THERELEN · VALORETH · ORELTHEN · KELORETH · DORELETH</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CH 9 -->
+    <h1 class="sh" id="ch9">9. Term Cards — Current 1 (Initiation) Complete Specifications</h1>
+    <p class="bp">Each of the 144 terms receives a complete Term Card containing 12 specification categories. Below are the full specifications for Current 1 (Initiation) as the demonstration set. Full Term Cards for C2 through C12 follow the same format and are contained in the Technical Reference edition.</p>
+
+    <h2 class="sh2">9.1 Term Card Format</h2>
+    <table class="data-table">
+      <thead><tr><th>Term Card Category</th><th>What It Specifies</th></tr></thead>
+      <tbody>
+        <tr><td>Pronunciation</td><td>IPA notation + plain English approximation + syllable stress</td></tr>
+        <tr><td>Breath</td><td>Primary breath geometry (ISB/OSB/CAB/TPB) + ratio (inhale:hold:exhale)</td></tr>
+        <tr><td>Tone</td><td>Intensity (Ha/Ah/Ahn) + pitch tendency + vowel purity requirement</td></tr>
+        <tr><td>Duration & Repetitions</td><td>Seconds per utterance + repetition range per session</td></tr>
+        <tr><td>Gesture</td><td>Specific hand/body motion coordinated with breath and tone</td></tr>
+        <tr><td>Current / Domain</td><td>Which current the term belongs to + its vector class</td></tr>
+        <tr><td>Dialect Bandwidth</td><td>Which three currents this term draws from {Cₙ₋₁, Cₙ, Cₙ₊₁}</td></tr>
+        <tr><td>Field Effect</td><td>Observable biofield effect when performed correctly</td></tr>
+        <tr><td>Internal Sensation</td><td>Expected practitioner sensation when term is active</td></tr>
+        <tr><td>Minimum Coherence</td><td>Minimum C_cardiac required to activate (0.4–0.9 range)</td></tr>
+        <tr><td>Training Phase</td><td>Phase 1–5 — when in training progression this term is introduced</td></tr>
+        <tr><td>Contraindications</td><td>Conditions under which this term should not be used</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="sh2">9.2 Current 1 (Initiation) — C1.1 Full Term Card</h2>
+
+    <div class="term-card">
+      <div class="tc-header">
+        <span class="tc-code">C1.1</span>
+        <span class="tc-name">AURIN</span>
+        <span class="tc-ipa">/ˈɔː.rɪn/ · AW-rin</span>
+      </div>
+      <div class="tc-grid">
+        <div class="tc-field"><div class="tc-field-label">Current / Domain</div><div class="tc-field-value">C1 — Initiation · Axial Vector Class</div></div>
+        <div class="tc-field"><div class="tc-field-label">Dialect Bandwidth</div><div class="tc-field-value">{C12, C1, C2}</div></div>
+        <div class="tc-field"><div class="tc-field-label">Breath</div><div class="tc-field-value">OSB (Outward Spiral Breath) · Ratio 5:2:3</div></div>
+        <div class="tc-field"><div class="tc-field-label">Tone</div><div class="tc-field-value">Ha (Breath Tone) → Ah (Core Tone) · Rising pitch · Pure AW vowel</div></div>
+        <div class="tc-field"><div class="tc-field-label">Duration & Reps</div><div class="tc-field-value">4–6 seconds per utterance · 3–5 repetitions per session</div></div>
+        <div class="tc-field"><div class="tc-field-label">Min C_cardiac / Phase</div><div class="tc-field-value">0.5 · Phase 1 (entry-level term)</div></div>
+        <div class="tc-field tc-wide"><div class="tc-field-label">Field Effect</div><div class="tc-field-value">Initiates upward axial coherence flow. Opens the practitioner's field to incoming solar/stellar coherence. Creates the initial activation threshold crossing necessary to begin C1 work.</div></div>
+        <div class="tc-field tc-wide"><div class="tc-field-label">Internal Sensation</div><div class="tc-field-value">Warmth at crown. Slight upward lift sensation. Feeling of a door opening. Some practitioners report light visual phenomena in peripheral vision during strong activations.</div></div>
+        <div class="tc-field tc-wide"><div class="tc-field-label">Gesture</div><div class="tc-field-value">Hands begin at heart center, palms facing inward. On exhale, slowly raise both hands upward along the central axis to overhead, palms rotating to face upward at the apex.</div></div>
+        <div class="tc-field tc-wide"><div class="tc-field-label">Contraindications</div><div class="tc-field-value">Do not use during acute anxiety, panic states, or when C_cardiac is below 0.4. Do not use as first term in a session — always precede with 3 rounds of standard breathing to establish baseline coherence.</div></div>
+      </div>
+    </div>
+
+    <h2 class="sh2">C1.2 through C1.12 — Abbreviated Term Cards</h2>
+    <table class="data-table">
+      <thead><tr><th>Term</th><th>IPA / Approx.</th><th>Use / Application</th><th>Min C / Phase</th></tr></thead>
+      <tbody>
+        <tr><td><strong>C1.2: TALION</strong></td><td>/ˈtæ.li.ɒn/ TAL-ee-on</td><td>Threshold crossing, breaking inertia</td><td>0.55 / Phase 2</td></tr>
+        <tr><td><strong>C1.3: RAEVOR</strong></td><td>/ˈreɪ.vɔːr/ RAY-vor</td><td>Internal activation without outward expression</td><td>0.5 / Phase 1</td></tr>
+        <tr><td><strong>C1.4: SOLARA</strong></td><td>/soʊˈlɑː.rə/ so-LAH-rah</td><td>Radial announcement, establishing presence</td><td>0.6 / Phase 2</td></tr>
+        <tr><td><strong>C1.5: VARETH</strong></td><td>/ˈvɑː.rɛθ/ VAH-reth</td><td>First contact, gentle coherent touch</td><td>0.55 / Phase 2</td></tr>
+        <tr><td><strong>C1.6: AELOR</strong></td><td>/ˈeɪ.lɔːr/ AY-lor</td><td>Truth field establishment, opening to accurate perception</td><td>0.6 / Phase 2</td></tr>
+        <tr><td><strong>C1.7: NAREL</strong></td><td>/ˈnɑː.rɛl/ NAH-rel</td><td>Receptive opening, attunement initiation</td><td>0.5 / Phase 1</td></tr>
+        <tr><td><strong>C1.8: KAEVOR</strong></td><td>/ˈkeɪ.vɔːr/ KAY-vor</td><td>Ignition with directional momentum</td><td>0.65 / Phase 3</td></tr>
+        <tr><td><strong>C1.9: DORATH</strong></td><td>/ˈdɒ.rɑːθ/ DOR-ath</td><td>Deep initiation, activating from ground up</td><td>0.6 / Phase 2</td></tr>
+        <tr><td><strong>C1.10: SELORIN</strong></td><td>/sɛˈlɔː.rɪn/ sel-OR-in</td><td>Spiral initiation, rotational activation</td><td>0.65 / Phase 3</td></tr>
+        <tr><td><strong>C1.11: TORETH</strong></td><td>/ˈtɔː.rɛθ/ TOR-eth</td><td>Toroidal activation, full-field initialization</td><td>0.7 / Phase 3</td></tr>
+        <tr><td><strong>C1.12: VALORE</strong></td><td>/vɑːˈlɔː.reɪ/ va-LOR-ay</td><td>Sovereign initiation, highest C1 activation</td><td>0.75 / Phase 4</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><p>Full Term Cards for all 144 terms (C2 through C12) follow the same format as the C1.1 AURIN card above. Each term is fully specified in the Technical Reference edition and the published book <em>Sovereign Logos Prime</em>.</p></div>
+
+    <!-- CH 10 -->
+    <h1 class="sh" id="ch10">10. Dialect Lexicon Maps</h1>
+    <p class="bp">For each of the 12 dialects, the map specifies: (1) primary terms — one per current, weighted toward the anchor current; (2) secondary support terms; (3) the suggested practice sequence for that dialect. The dialect maps allow practitioners to build coherent practice sessions oriented toward specific applications without having to construct sequences from scratch.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Dialect</th><th>Bandwidth {Stabilizer, Anchor, Expansion}</th><th>Anchor Terms (Primary)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>D1: Logos Star</strong></td><td>{C12, C1, C2}</td><td>THREN · AURIN · TALION · SOLARA · TORUM</td></tr>
+        <tr><td><strong>D2: Logos Terra</strong></td><td>{C1, C2, C3}</td><td>VALEN · TORUM · VAREM · SELTOR · KALEN</td></tr>
+        <tr><td><strong>D3: Logos Axis</strong></td><td>{C2, C3, C4}</td><td>KARETH · KALEN · TAREL · OVARIN · TALVEN</td></tr>
+        <tr><td><strong>D4: Logos Heal</strong></td><td>{C3, C4, C5}</td><td>TERAVEN · TALVEN · RAVENOR · SELVARA · SEREL</td></tr>
+        <tr><td><strong>D5: Logos Seal</strong></td><td>{C4, C5, C6}</td><td>THERON · SEREL · ORETH · KELRIN · TORVEL</td></tr>
+        <tr><td><strong>D6: Logos Vector</strong></td><td>{C5, C6, C7}</td><td>TORVEL · TALOR · RAVEN · SELOR · TALEN</td></tr>
+        <tr><td><strong>D7: Logos Center</strong></td><td>{C6, C7, C8}</td><td>THEREN · TALEN · SEREN · ORELIN · RAVELIN</td></tr>
+        <tr><td><strong>D8: Logos Radiance</strong></td><td>{C7, C8, C9}</td><td>RAVELIN · TALORIN · RAVELOR · SELORIN · TALENOR</td></tr>
+        <tr><td><strong>D9: Logos Chron</strong></td><td>{C8, C9, C10}</td><td>THEROL · TALENOR · RAVELON · SELONAR · TALENAR</td></tr>
+        <tr><td><strong>D10: Logos Threshold</strong></td><td>{C9, C10, C11}</td><td>THERONAL · TALENAR · ORELAR · KELONAR · TALERON</td></tr>
+        <tr><td><strong>D11: Logos Synthesis</strong></td><td>{C10, C11, C12}</td><td>THERALAR · TALERON · SELENAR · KELENAR · THREN</td></tr>
+        <tr><td><strong>D12: Logos Renewal</strong></td><td>{C11, C12, C1}</td><td>THERELAR · THREN · ORETHEN · RAVELEN · AURIN</td></tr>
+      </tbody>
+    </table>
+
+    <!-- VOLUME III -->
+    <div class="vol-divider">
+      <div class="vol-divider-label">Volume III</div>
+      <div class="vol-divider-title">Training, Protocols & Reference</div>
+      <div class="vol-divider-sub">Training · Recipes · Safety · Glossary</div>
+    </div>
+
+    <!-- CH 11 -->
+    <h1 class="sh" id="ch11">11. Training Proficiency Metrics — Five Phases</h1>
+    <p class="bp">SLP training proceeds through five phases. Each phase has observable criteria, measurable benchmarks, a typical time range, and remediation guidance if progress stalls. The progression is not arbitrary — it mirrors the natural development of nervous system coherence capacity.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Metric</th><th>Beginner</th><th>Proficient</th><th>Master</th></tr></thead>
+      <tbody>
+        <tr><td>C_cardiac target</td><td>0.4–0.6</td><td>0.6–0.8</td><td>0.8–0.95</td></tr>
+        <tr><td>Duration at C≥0.6</td><td>1–2 min</td><td>5–10 min</td><td>15+ min</td></tr>
+        <tr><td>Breath ratio consistency</td><td>±2 sec</td><td>±1 sec</td><td>±0.5 sec</td></tr>
+        <tr><td>Session length</td><td>5 min</td><td>10 min</td><td>15–20 min</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="sh3">Phase 1: Heart Coherence Breathing (2–4 weeks)</h3>
+    <p class="bp">Goal: Achieve and maintain C_cardiac ≥ 0.7 at will for 5 consecutive minutes. Completion test: achieve C_cardiac ≥ 0.7 for 5 consecutive minutes, repeated on 3 separate days within a 7-day period. Self-report: "I can access a calm, coherent state at will."</p>
+
+    <h3 class="sh3">Phase 2: Tone Integration (2–4 weeks)</h3>
+    <p class="bp">Goal: Produce all 7 primary tones with clear vowel distinction and C_cardiac ≥ 0.65 while toning for 3 continuous minutes. Introduces Ha and Ah intensities. All C1 terms through C1.7 introduced.</p>
+
+    <h3 class="sh3">Phase 3: Motion Layer Activation (3–6 weeks)</h3>
+    <p class="bp">Goal: All 12 syllables + gestures + 7-term sequences with C_cardiac ≥ 0.75. Introduces the full syllable operator set and gesture layer. Practitioners begin working with Current Recipes 1–6.</p>
+
+    <h3 class="sh3">Phase 4: Silent Internalization (4–8 weeks)</h3>
+    <p class="bp">Goal: Silent 7-term sequence with 70%+ sensation match and C_cardiac ≥ 0.8. Terms are practiced internally without vocalization. Practitioners develop the ability to maintain full field activation without audible tone.</p>
+
+    <h3 class="sh3">Phase 5: Relational Coherence (8–16 weeks)</h3>
+    <p class="bp">Goal: Plant response reliability, paired telepathy ≥60% accuracy over 20 trials, group coherence effects. The advanced relational phase — practitioners work with the Telepathic Calibration Protocol and Cross-Gradient Citizen Science Protocol.</p>
+
+    <!-- CH 12 -->
+    <h1 class="sh" id="ch12">12. Current Recipes — 12 Standard Sequences</h1>
+    <p class="bp">These pre-built sequences are operational protocols for common use cases. Each is complete with duration, breath pattern, expected effects, and phase requirements. Recipes are the practical application layer of SLP — the bridge between the theoretical framework and daily practice.</p>
+
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 1</span><span class="rc-name">Daily Centering</span><span class="rc-duration">5 minutes · Phase 1+</span></div>
+      <div class="rc-use">Use Case: Morning reset, baseline establishment</div>
+      <div class="rc-effects">Expected Effects: Feeling of settled presence · Reduced mental chatter · Readiness for the day · C_cardiac typically rises 0.1–0.2 points</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 2</span><span class="rc-name">Pre-Meeting Clarity</span><span class="rc-duration">3 minutes · Phase 2+</span></div>
+      <div class="rc-use">Use Case: Before a meeting, presentation, or important conversation</div>
+      <div class="rc-effects">Expected Effects: Clearer thinking · Reduced pre-meeting anxiety · More articulate speech · Improved listening presence</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 3</span><span class="rc-name">Post-Stress Reset</span><span class="rc-duration">7 minutes · Phase 1+</span></div>
+      <div class="rc-use">Use Case: After an argument, stressful event, or overwhelming situation</div>
+      <div class="rc-effects">Expected Effects: Reduced physiological arousal · Emotional settling · Return of clear thinking · Feeling of coming back to oneself</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 4</span><span class="rc-name">Deep Meditation Entry</span><span class="rc-duration">15 minutes · Phase 3+</span></div>
+      <div class="rc-use">Use Case: Transitioning from active mind to deep meditative stillness</div>
+      <div class="rc-effects">Expected Effects: Deep stillness · Reduced sense of body boundaries · Access to theta/alpha brain states · Timelessness</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 5</span><span class="rc-name">Emergency Reset</span><span class="rc-duration">2 minutes · Any Phase</span></div>
+      <div class="rc-use">Use Case: Acute anxiety, panic, dissociation, or overwhelm</div>
+      <div class="rc-effects">Expected Effects: Rapid grounding · Reduced panic symptoms · Return of body awareness · Feeling of coming back online</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 6</span><span class="rc-name">Group Harmonization</span><span class="rc-duration">10 minutes · Phase 2+</span></div>
+      <div class="rc-use">Use Case: Before a group meeting, workshop, or shared activity</div>
+      <div class="rc-effects">Expected Effects: Reduced social tension · Improved listening · Faster decision-making · Feeling of group flow</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 7</span><span class="rc-name">Telepathic Calibration</span><span class="rc-duration">12 minutes · Phase 5</span></div>
+      <div class="rc-use">Use Case: Paired practice to develop coherence-mediated perception</div>
+      <div class="rc-effects">Expected Effects: Above-chance accuracy over many trials (target 50–80%) · Feeling of connection · Reduced transmission latency</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 8</span><span class="rc-name">Sleep Preparation</span><span class="rc-duration">8 minutes · Phase 1+</span></div>
+      <div class="rc-use">Use Case: Evening practice for deep restorative sleep</div>
+      <div class="rc-effects">Expected Effects: Reduced racing thoughts · Physical relaxation · Faster sleep onset · Deeper sleep quality</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 9</span><span class="rc-name">Creative Activation</span><span class="rc-duration">6 minutes · Phase 2+</span></div>
+      <div class="rc-use">Use Case: Before writing, painting, composing, or any creative work</div>
+      <div class="rc-effects">Expected Effects: Reduced creative block · Increased idea flow · Easier entry into flow state · Less self-editing during creation</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 10</span><span class="rc-name">Conflict De-Escalation</span><span class="rc-duration">5 minutes · Phase 2+</span></div>
+      <div class="rc-use">Use Case: During or after conflict — to regulate and create space for resolution</div>
+      <div class="rc-effects">Expected Effects: Reduced reactivity · Clearer thinking during conflict · Less escalation risk · Ability to respond rather than react</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 11</span><span class="rc-name">Morning Activation</span><span class="rc-duration">4 minutes · Phase 1+</span></div>
+      <div class="rc-use">Use Case: Quick morning practice to start the day</div>
+      <div class="rc-effects">Expected Effects: Waking up faster · Reduced morning grogginess · Sense of readiness · Improved mood</div>
+    </div>
+    <div class="recipe-card">
+      <div class="rc-header"><span class="rc-num">Recipe 12</span><span class="rc-name">Sovereign Reset — Full 12-Current Cycle</span><span class="rc-duration">20 minutes · Phase 4+</span></div>
+      <div class="rc-use">Use Case: Weekly deep practice cycling through all 12 currents</div>
+      <div class="rc-effects">Expected Effects: Complete system reset · Increased baseline coherence · Feeling of wholeness · Reduced accumulated stress</div>
+    </div>
+
+    <!-- CH 13 -->
+    <h1 class="sh" id="ch13">13. Telepathic Calibration Protocol</h1>
+    <p class="bp">A paired practice for developing coherence-mediated perception between two sufficiently regulated operators. Both participants must have completed Phase 4 training (C_cardiac ≥ 0.8 sustained) before attempting this protocol.</p>
+    <h3 class="sh3">13.1 Prerequisites</h3>
+    <p class="bp">Both operators: C_cardiac ≥ 0.8 sustained for 10+ minutes. Phase 4 completion verified. Quiet, undistracted environment. 20 trials minimum per session for statistically meaningful results.</p>
+    <h3 class="sh3">13.2 Target Sets</h3>
+    <p class="bp">Standard target sets use simple geometric forms (circle, triangle, square, cross, spiral) presented as cards to the sender operator. The receiver operator attempts to perceive and report the target before card reveal. Target sets are randomized and blind to the receiver.</p>
+    <h3 class="sh3">13.3 Trial Structure</h3>
+    <p class="bp">Each trial: Sender views target → 30-second coherence establishment (C1 sequence) → 60-second transmission window → Receiver reports perception → Card reveal → Record accuracy. Session: 20 trials minimum. Expected baseline (chance): 20% for 5-target sets. SLP target: ≥40% Phase 5 entry, ≥60% proficient.</p>
+    <h3 class="sh3">13.4 Success Metrics</h3>
+    <table class="data-table">
+      <thead><tr><th>Level</th><th>Accuracy Over 20 Trials</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>Chance</td><td>~20%</td><td>No detectable coherence-mediated perception</td></tr>
+        <tr><td>Phase 5 Entry</td><td>40–50%</td><td>Coherence-mediated perception emerging</td></tr>
+        <tr><td>Proficient</td><td>50–65%</td><td>Reliable coherence-mediated perception</td></tr>
+        <tr><td>Advanced</td><td>65–80%</td><td>High-fidelity coherence-mediated perception</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CH 14 -->
+    <h1 class="sh" id="ch14">14. Cross-Gradient Citizen Science Protocol</h1>
+    <p class="bp">A falsifiable experiment for Current 6 (Synchronization / Logos Vector). Tests whether a coherent operator can produce measurable directional effects on plant HRV or moisture retention in a specific compass direction relative to solar azimuth. This protocol is designed for independent replication by any practitioner with basic equipment.</p>
+    <h3 class="sh3">14.1 Equipment</h3>
+    <p class="bp">Two matched plant specimens (same species, age, soil, pot size) · Soil moisture meters · HRV monitor for operator · Compass · Solar azimuth reference (phone app) · Data log</p>
+    <h3 class="sh3">14.2 Session Structure</h3>
+    <p class="bp">30-minute sessions: 5 min baseline measurement both plants → 20 min operator C6 practice directed at Plant A (designated target, positioned at predicted cross-gradient bearing) → 5 min post-measurement both plants. Plant B serves as control. Record operator C_cardiac throughout.</p>
+    <h3 class="sh3">14.3 Predicted Cross-Gradient</h3>
+    <p class="bp">The predicted cross-gradient is approximately 90° clockwise from the solar azimuth at time of practice. The Cross-Gradient Vector Calculation: bearing = solar_azimuth + 90° (mod 360°). This prediction is falsifiable — if Plant A shows no differential response relative to Plant B across 20+ sessions, the C6 cross-gradient hypothesis is not supported.</p>
+
+    <!-- CH 15 -->
+    <h1 class="sh" id="ch15">15. Field Diagnostics — Troubleshooting</h1>
+    <p class="bp">A self-assessment decision tree for identifying and correcting common SLP practice issues. Most problems in SLP practice fall into four categories: insufficient coherence baseline, incorrect breath pattern, premature tone intensity escalation, or insufficient grounding after activation work.</p>
+    <h3 class="sh3">15.1 Primary Symptom Index</h3>
+    <table class="data-table">
+      <thead><tr><th>Symptom</th><th>Most Likely Cause</th><th>Correction</th></tr></thead>
+      <tbody>
+        <tr><td>Nothing happening / feeling flat</td><td>C_cardiac below threshold · Insufficient breath depth</td><td>Return to Phase 1 breath work. Check HRV baseline before continuing.</td></tr>
+        <tr><td>Dizzy or lightheaded</td><td>Hyperventilation · Breath hold too long</td><td>Reduce or eliminate breath holds. Return to 4:0:6 ratio. Stop if persists.</td></tr>
+        <tr><td>Agitated / more stressed after practice</td><td>Premature Ahn tone use · Over-activation</td><td>Drop to Ha tone only. Add TORUM (C2) grounding at end of every session.</td></tr>
+        <tr><td>Can't reach target C_cardiac</td><td>Fatigue · Illness · Emotional activation</td><td>Do not practice during illness or high emotional states. Rest and return.</td></tr>
+        <tr><td>Floating / disconnected after practice</td><td>Insufficient grounding · Skipped THREN seal</td><td>Always end with THREN. Add TORUM after any C1/C8 work.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CH 16 -->
+    <h1 class="sh" id="ch16">16. Safety & Emergency Protocols</h1>
+
+    <div class="warning"><p><strong>⚑ Absolute Contraindications — Do NOT Practice SLP:</strong><br>Active psychosis or manic episode · Severe dissociative disorder (without practitioner supervision) · First trimester pregnancy (breath holds contraindicated) · Active seizure disorder (without medical clearance) · Current suicidal crisis (use professional support first)</p></div>
+
+    <h3 class="sh3">16.2 Relative Contraindications — Modify Practice</h3>
+    <p class="bp">Significant fatigue or illness — reduce session length and tone intensity. Recent trauma activation — use only Recipe 5 (Emergency Reset) and Recipe 1 (Daily Centering). Pregnancy second/third trimester — eliminate breath holds, use 4:0:6 ratio only.</p>
+
+    <h3 class="sh3">16.3 Signs of Over-Activation — Stop Immediately</h3>
+    <p class="bp">Heart racing beyond normal exercise levels · Nausea or vomiting · Visual disturbances persisting after stopping · Feeling of losing control or unreality · Temperature extremes (very hot or very cold) · Numbness in extremities. If any of these occur: stop all practice, use Emergency Reset (Recipe 5), get grounded physically (feet on floor, hands on knees), drink water.</p>
+
+    <div class="warning"><p><strong>16.5 Medical Disclaimer:</strong> SLP is a structured breathing and nervous system regulation practice. It is not a medical treatment and does not replace medical or psychological care. If you experience persistent symptoms, consult a qualified healthcare provider. If symptoms persist more than 15 minutes after stopping: call a trusted person. Seek professional support if needed.</p></div>
+
+    <!-- CH 17 -->
+    <h1 class="sh" id="ch17">17. Glossary of Key SLP Terms</h1>
+    <table class="data-table">
+      <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Coherence (C)</strong></td><td>Degree of ordered, structured alignment in a system (0–1 scale). Measured via HRV for C_cardiac.</td></tr>
+        <tr><td><strong>C_cardiac</strong></td><td>Measured heart rate variability coherence. Primary benchmark for SLP training progression.</td></tr>
+        <tr><td><strong>Christfield (X)</strong></td><td>X ≡ δC/δΨ. The measurable gradient of coherence change per unit of conscious attention.</td></tr>
+        <tr><td><strong>Current</strong></td><td>One of 12 primary flow modes of the coherence field, each with its own vector and application domain.</td></tr>
+        <tr><td><strong>Dialect</strong></td><td>Application profile mapped to a current — the same terms used toward a specific operational purpose.</td></tr>
+        <tr><td><strong>Harmonic Drift (Dₕ)</strong></td><td>Measure of dissonance or deviation from coherent state. Target: Dₕ &lt; 0.1 during active practice.</td></tr>
+        <tr><td><strong>Root Physics</strong></td><td>The 21 foundational vowel-based field operations — the "what" of each SLP term.</td></tr>
+        <tr><td><strong>Syllable Operator</strong></td><td>One of 12 geometric consonant-based motion instructions — the "how" of each SLP term.</td></tr>
+        <tr><td><strong>Term Card</strong></td><td>Complete 12-category specification for a single SLP term.</td></tr>
+        <tr><td><strong>THREN</strong></td><td>The universal seal term. Always used to close any SLP session. No exceptions.</td></tr>
+        <tr><td><strong>Tone Intensity</strong></td><td>One of three power levels (Ha/Ah/Ahn) modulating the activation level of each term.</td></tr>
+        <tr><td><strong>TORUM</strong></td><td>The primary grounding term. C2 anchor. Used after any activation work to prevent floating.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- CH 18 -->
+    <h1 class="sh" id="ch18">18. Quick-Reference Cards</h1>
+
+    <h2 class="sh2">Card 1: The 17-Second Coherence Lock</h2>
+    <p class="bp">A sustained coherent intention held for 17 seconds produces measurable field effects. This is the minimum threshold for field activation in SLP work. Any term practiced for less than 17 seconds (approximately 3–5 repetitions at 4–6 seconds each) has not reached activation threshold. Duration matters.</p>
+
+    <h2 class="sh2">Card 5: Top 10 Mistakes Beginners Make</h2>
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Mistake</th><th>Correction</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Trying too hard</td><td>SLP is about allowing, not forcing. Reduce effort.</td></tr>
+        <tr><td>2</td><td>Skipping the seal</td><td>Always end with THREN. No exceptions.</td></tr>
+        <tr><td>3</td><td>Expecting dramatic effects immediately</td><td>Coherence builds slowly. Be patient with the process.</td></tr>
+        <tr><td>4</td><td>Holding breath too long</td><td>If panicked, reduce or eliminate breath holds. Safety first.</td></tr>
+        <tr><td>5</td><td>Using Force Tone (Ahn) too early</td><td>Stick with Breath Tone (Ha) for the first month.</td></tr>
+        <tr><td>6</td><td>Practicing when fatigued or sick</td><td>Rest. Come back when recovered. Coherence requires capacity.</td></tr>
+        <tr><td>7</td><td>Judging 'nothing' as failure</td><td>The absence of noise IS coherence. Stillness is the result.</td></tr>
+        <tr><td>8</td><td>Rushing through terms</td><td>Each term: 3–6 seconds. Slow down. Duration matters.</td></tr>
+        <tr><td>9</td><td>Forgetting to ground after lift</td><td>After C4/RA terms, always add TORUM.</td></tr>
+        <tr><td>10</td><td>Comparing to others</td><td>Your nervous system is unique. Your timeline is your own.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout" style="margin-top:48px;">
+      <p>The full book version of Sovereign Logos Prime — with complete Term Cards for all 144 terms, extended practice sequences, and the complete inter-species communication framework — is available from the <a href="../../../book.html" style="color:#C9A84C;font-weight:600;">Books</a> page.</p>
+    </div>
+
+    <div style="margin-top:56px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.2);text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:0.15em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology & Harmonic Design Consulting, LLC · All Rights Reserved · Christos™ Trademark Pending USPTO · Sovereign Logos Prime™ is a trademark of Christos™ Energy</p>
+    </div>
+
+  </article>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../../index.html">Home</a></li>
+      <li><a href="../../../library.html">Library</a></li>
+      <li><a href="../../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../../economy.html">Economy</a></li>
+      <li><a href="../../../book.html">Book</a></li>
+      <li><a href="../../../the-case.html">The Case</a></li>
+      <li><a href="../../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('backTop').style.display = window.scrollY > 600 ? 'block' : 'none';
+});
+</script>
+</body>
+</html>
