@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursive Renormalization Structure in Prime Gap Dynamics — Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:70px 40px 56px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.access-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:20px;}
+.badge-open{background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);color:#3AAFAF !important;}
+.badge-open::before{content:'';width:8px;height:8px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.badge-restricted{background-color:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);color:#C9A84C !important;}
+.badge-restricted::before{content:'';width:8px;height:8px;border-radius:50%;background:#C9A84C;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3.2vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#C9A84C !important;margin-bottom:22px;line-height:1.5;}
+.paper-meta{display:flex;gap:28px;flex-wrap:wrap;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.paper-body{max-width:900px;margin:0 auto;padding:60px 40px 100px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:28px 32px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:14px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords{font-family:'Raleway',sans-serif;font-size:0.68rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.15);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:#FFFFFF !important;margin:48px 0 16px;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:12px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;color:#C9A84C !important;margin:32px 0 12px;}
+h3.sh3{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#3AAFAF !important;margin:24px 0 10px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:16px;}
+p.bp strong{color:#FFFFFF !important;}
+.callout{background-color:rgba(58,175,175,0.05) !important;border:1px solid rgba(58,175,175,0.2);border-left:4px solid #3AAFAF;padding:18px 22px;margin:24px 0;}
+.callout p{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;margin:0;}
+.warning{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:24px 0;}
+.warning p{font-size:0.95rem;color:#D8D0C0 !important;line-height:1.8;margin:0;}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:0.9rem;}
+.data-table th{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.2);padding:10px 14px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;text-align:left;}
+.data-table td{border:1px solid rgba(201,168,76,0.1);padding:10px 14px;color:#D8D0C0 !important;vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background-color:rgba(10,22,40,0.4) !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:14px 20px;margin:18px 0;font-family:'Courier New',monospace;font-size:0.95rem;color:#3AAFAF !important;}
+.nda-notice{background-color:rgba(201,168,76,0.06) !important;border:1px solid rgba(201,168,76,0.25);padding:22px 28px;margin:36px 0;text-align:center;}
+.nda-notice p{font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;color:#C9A84C !important;line-height:1.8;}
+.nda-notice a{color:#C9A84C !important;text-decoration:underline;}
+.medical-disclaimer{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.15);padding:20px 24px;margin:40px 0;font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.08em;color:rgba(216,208,192,0.55) !important;line-height:1.8;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){nav,.paper-header,.paper-body,footer{padding-left:20px;padding-right:20px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <div class="ph-eyebrow">Mathematics & Structure · MS-07 · Number Theory</div>
+    <div class="access-badge badge-open">Full Paper — Open Access</div>
+    <h1 class="paper-title">Recursive Renormalization Structure in Prime Gap Dynamics</h1>
+    <p class="paper-subtitle">Complete Phase I Archival Edition with Phase II Bridge Documentation</p>
+    <div class="paper-meta"><div class="pm-item"><strong>Author</strong>Joshua Farrior</div><div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div><div class="pm-item"><strong>Published</strong>May 2026</div><div class="pm-item"><strong>Status</strong>Complete Archival Edition · 69 pages · Phase I + Phase II Bridge</div></div>
+  </div>
+</div>
+<div class="paper-body">
+
+<div class="abstract-block">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">This complete archival edition presents the full Phase I computational investigation into recursive statistical organization in prime-gap dynamics under multiscale renormalization analysis, together with Phase II bridge documentation establishing the analytic reduction framework connecting the computational results to the centered Type II fourth-moment problem.</p>
+  <p class="abstract-text">The Phase I investigation — spanning approximately eight days and approximately one hundred independent computational tests — explored anomalous diffusion, recursive cascade coherence, bidirectional scale coupling, recursive attractor convergence, entropy relaxation, spectral persistence, and null-control hierarchy construction. The strongest surviving signatures suggested persistent non-equilibrium transport organization not fully reproduced by randomized stochastic controls.</p>
+  <p class="abstract-text">The Phase II bridge documents the analytic reduction chain from prime gap correlations through the energy-phase factorization, structural variance reduction, W-trick normalization, Type II bilinear decomposition, Fejér kernel packetization, and additive energy reformulation — arriving at the centered Type II fourth-moment theorem as the single remaining analytic wall whose resolution would block strong gap-2 suppression. The reduction is complete. The final theorem remains open.</p>
+  <div class="keywords"><strong>Keywords:</strong> Prime gap dynamics · Recursive renormalization · Anomalous diffusion · Cascade coherence · Type II bilinear sums · Centered fourth moment · Additive energy · Twin prime conjecture · Non-equilibrium transport · Arithmetic universality</div>
+</div>
+
+<div class="callout">
+<p><strong>Document Inventory:</strong> This archival edition contains the Phase I Main Paper (15 Sections, Appendices A–T), Phase I Raw Terminal Outputs (40 computational screenshots), Phase I Analytic Framework Figures (12 diagrams), Phase I Computational Graph Outputs (4 graphs), and Phase II Bridge documentation (7 analytic framework posters). Total: 69 pages.</p>
+</div>
+
+<h1 class="sh">Research Context</h1>
+<p class="bp">The distribution of prime numbers — specifically the statistical behavior of gaps between consecutive primes — is one of the deepest unsolved problems in analytic number theory. The twin prime conjecture (that there are infinitely many primes p such that p+2 is also prime) and the broader Elliott-Halberstam conjecture regarding prime distribution in arithmetic progressions remain open despite centuries of mathematical investigation.</p>
+<p class="bp">This investigation approaches the problem computationally and statistically, asking whether prime gap sequences exhibit measurable non-random organization under renormalization group transformations — specifically, whether the statistical signatures of prime gap distributions under multiscale analysis differ meaningfully from null models constructed by randomizing the gaps while preserving local statistical properties.</p>
+<p class="bp">The affirmative result — that the strongest computational signatures suggest organization not fully reproduced by randomized stochastic controls — does not constitute a proof of the twin prime conjecture or any related result. It identifies the precise analytic bottleneck: the centered Type II fourth-moment theorem. The Phase II bridge documents the complete reduction chain arriving at this single remaining wall, establishing both the progress achieved and the specific mathematical obstacle remaining.</p>
+
+<h1 class="sh">Phase I: Computational Investigation</h1>
+<h2 class="sh2">Anomalous Diffusion</h2>
+<p class="bp">Prime gap sequences, when analyzed as displacement sequences in a random walk framework, exhibit anomalous diffusion characteristics — the variance of cumulative displacement grows faster than linearly with the number of steps, inconsistent with simple random walk behavior. The anomalous diffusion exponent measured across multiple prime ranges and renormalization scales provides one of the strongest signatures of non-random organization in the dataset.</p>
+
+<h2 class="sh2">Recursive Cascade Coherence</h2>
+<p class="bp">Under iterative renormalization — replacing a block of consecutive gaps with their statistical summary and examining the resulting coarser-scale sequence — prime gap sequences maintain coherence structure across scales that randomized controls do not. The coherence is not destroyed by renormalization; it reorganizes at the coarser scale in a pattern suggestive of recursive self-similarity. This recursive cascade coherence persists across 6–8 renormalization levels before statistical noise dominates.</p>
+
+<h2 class="sh2">Null-Control Hierarchy Construction</h2>
+<p class="bp">The investigation constructs a hierarchy of null models with progressively stronger statistical matching to the original prime gap sequence — from fully random sequences through moment-matched sequences through locally-autocorrelated sequences. The prime gap signatures survive the weaker null models but show increasing sensitivity to the stronger controls, providing a map of which statistical features of the original sequence are responsible for the observed anomalies.</p>
+
+<h1 class="sh">Phase II: The Analytic Bridge</h1>
+<h2 class="sh2">The Reduction Chain</h2>
+<p class="bp">The Phase II bridge establishes the complete analytic reduction chain from the computational prime gap correlation signatures to the known mathematical structures in analytic number theory where these signatures must be explained. The reduction proceeds through: energy-phase factorization of the correlation functions, structural variance reduction using Cauchy-Schwarz estimates, W-trick normalization removing major arc contributions, Type II bilinear decomposition separating the sum into tractable and intractable components, Fejér kernel packetization of the frequency analysis, and additive energy reformulation connecting to the Balog-Szemerédi-Gowers theorem framework.</p>
+
+<h2 class="sh2">The Centered Type II Fourth-Moment Theorem</h2>
+<p class="bp">The reduction arrives at a single remaining obstacle: the centered Type II fourth-moment theorem. This theorem, if proved, would provide the bound needed to close the gap between the computational evidence for strong gap-2 suppression and a formal proof. The theorem concerns the fourth moment of a Type II bilinear sum with centering — removing the contribution of the diagonal terms — and establishing that the off-diagonal contribution is sufficiently small. The exact formulation, the current best known bounds, and the specific obstacle preventing proof are documented in full in the archival edition.</p>
+
+<div class="callout">
+<p><strong>Status:</strong> The reduction is complete. The centered Type II fourth-moment theorem is the single remaining analytic wall. The paper presents this not as a completed proof but as a precisely located open problem with a complete reduction chain — a contribution to the mathematical literature on twin prime distribution that establishes exactly what remains to be proved and why.</p>
+</div>
+
+<h1 class="sh">Relationship to the Christos™ Framework</h1>
+<p class="bp">The prime gap investigation connects to the Christos™ framework through the Architecture of Infinity — the formal identification of structural incompleteness in how unsolved mathematical problems are framed. The Architecture of Infinity argues that classical frameworks model only half of the mathematical structures relevant to completeness questions — specifically, that toroidal geometry introduces a second class of closure conditions invisible to standard linear or half-plane analysis.</p>
+<p class="bp">The prime gap work does not apply the CTF framework to the mathematics directly. It is a computational and analytic investigation that stands on its own mathematical merits. The connection is structural: the same drive to locate precisely what is missing — to complete the question rather than claim to have answered it — characterizes both the Architecture of Infinity and the prime gap reduction chain.</p>
+
+<a href="../../papers/mathematics-structure/architecture-of-infinity.html" style="display:inline-flex;align-items:center;gap:10px;font-family:'Raleway',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;border:1px solid rgba(201,168,76,0.3);padding:12px 22px;margin-top:12px;margin-bottom:32px;">
+Read: Architecture of Infinity →
+</a>
+
+<div style="margin-top:56px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.2);text-align:center;">
+<p style="font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:0.15em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</p>
+</div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+</body>
+</html>
