@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Without Thrust — Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:70px 40px 56px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.access-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:20px;}
+.badge-open{background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);color:#3AAFAF !important;}
+.badge-open::before{content:'';width:8px;height:8px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.badge-restricted{background-color:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.3);color:#C9A84C !important;}
+.badge-restricted::before{content:'';width:8px;height:8px;border-radius:50%;background:#C9A84C;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3.2vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#C9A84C !important;margin-bottom:22px;line-height:1.5;}
+.paper-meta{display:flex;gap:28px;flex-wrap:wrap;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.paper-body{max-width:900px;margin:0 auto;padding:60px 40px 100px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:28px 32px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:14px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords{font-family:'Raleway',sans-serif;font-size:0.68rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.15);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:#FFFFFF !important;margin:48px 0 16px;border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:12px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1.05rem;font-weight:600;color:#C9A84C !important;margin:32px 0 12px;}
+h3.sh3{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#3AAFAF !important;margin:24px 0 10px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:16px;}
+p.bp strong{color:#FFFFFF !important;}
+.callout{background-color:rgba(58,175,175,0.05) !important;border:1px solid rgba(58,175,175,0.2);border-left:4px solid #3AAFAF;padding:18px 22px;margin:24px 0;}
+.callout p{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;margin:0;}
+.warning{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:24px 0;}
+.warning p{font-size:0.95rem;color:#D8D0C0 !important;line-height:1.8;margin:0;}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:0.9rem;}
+.data-table th{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.2);padding:10px 14px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;text-align:left;}
+.data-table td{border:1px solid rgba(201,168,76,0.1);padding:10px 14px;color:#D8D0C0 !important;vertical-align:top;line-height:1.65;}
+.data-table tr:nth-child(even) td{background-color:rgba(10,22,40,0.4) !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:14px 20px;margin:18px 0;font-family:'Courier New',monospace;font-size:0.95rem;color:#3AAFAF !important;}
+.nda-notice{background-color:rgba(201,168,76,0.06) !important;border:1px solid rgba(201,168,76,0.25);padding:22px 28px;margin:36px 0;text-align:center;}
+.nda-notice p{font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.12em;color:#C9A84C !important;line-height:1.8;}
+.nda-notice a{color:#C9A84C !important;text-decoration:underline;}
+.medical-disclaimer{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.15);padding:20px 24px;margin:40px 0;font-family:'Raleway',sans-serif;font-size:0.65rem;letter-spacing:0.08em;color:rgba(216,208,192,0.55) !important;line-height:1.8;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){nav,.paper-header,.paper-body,footer{padding-left:20px;padding-right:20px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <div class="ph-eyebrow">Transport & Time Systems · Physics · TR-01</div>
+    <div class="access-badge badge-restricted">Abstract & Framework — Engineering Specs Under NDA</div>
+    <h1 class="paper-title">Motion Without Thrust</h1>
+    <p class="paper-subtitle">The Coherence-Gradient Drive: A Unified Physical Framework for Field-Based Propulsion</p>
+    <div class="paper-meta"><div class="pm-item"><strong>Author</strong>Joshua Farrior</div><div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div><div class="pm-item"><strong>Published</strong>April 2026 · Version 1.0</div><div class="pm-item"><strong>Framework</strong>Christos™ Theoretical Framework (CTF) — Volume II</div></div>
+  </div>
+</div>
+<div class="paper-body">
+
+<div class="abstract-block">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Every propulsion system in the history of human engineering operates on a single principle: apply force, generate reaction, produce motion. From the foot pushing against the ground to the rocket engine expelling exhaust at kilometers per second, the physical mechanism is identical — Newton's Third Law instantiated as engineering. This paper presents Motion Without Thrust — the theoretical and engineering framework for a fundamentally different mode of propulsion that the Christos™ Theoretical Framework (CTF) identifies as not only possible but already operative at planetary scale.</p>
+  <p class="abstract-text">The framework rests on CTF Axiom 3 — that time T(υ) is a primary dynamical field and space S(χ) is an emergent derivative phenomenon — and the Prime Axiom of CTF Volume II: the velocity vector of any coherent system points in the direction of the steepest coherence gradient. Spatial separation between two points is a function of their temporal phase difference, not a fixed geometric fact. The implication is that motion requires not the application of force but the manipulation of the coherence field that generates spatial geometry. A system that achieves sufficient internal coherence and navigates a coherence gradient field can undergo displacement without expelling propellant, without generating thrust, and without violating conservation laws — because the reaction goes into the coherence field itself rather than into expelled mass.</p>
+  <p class="abstract-text">The paper establishes the complete mathematical framework including the CGD Operating Equation, addresses every major skeptical objection — including apparent violations of Newton's Third Law, consciousness-based navigation, and the relationship to confirmed general relativistic predictions — with precision and scientific rigor. Six falsifiable experimental tests are proposed, ranging from precision gravimeter measurements around high-coherence crystal arrays to vacuum-chamber thrust measurements of phi-ratio field configurations. Gravity is identified as the existence proof: every orbit in the solar system is motion without thrust, driven by the coherence gradient of mass-induced spacetime curvature. The Coherence-Gradient Drive generalizes this principle from naturally occurring mass gradients to engineered coherence field gradients.</p>
+  <div class="keywords"><strong>Keywords:</strong> Propulsion · Coherence-gradient drive · CTF · Spacetime geometry · Temporal field theory · Field-based propulsion · Conservation laws · Phi-ratio geometry · Gravitational analogy · Falsifiable predictions</div>
+</div>
+
+<h1 class="sh">Why This Matters</h1>
+<p class="bp">The Tsiolkovsky rocket equation defines the hard ceiling of thrust-based propulsion. The mass ratio required to achieve meaningful interstellar velocities using chemical propellant is physically impossible to construct. Ion drives and solar sails extend range but cannot achieve the velocity fractions required for interplanetary transit times measured in days rather than years, or interstellar transit within a human lifetime. Thrust-based propulsion has been optimized for centuries and is approaching its fundamental limits.</p>
+<p class="bp">The CTF framework proposes that this ceiling does not apply to coherence-gradient propulsion because the physical mechanism is categorically different. Thrust moves mass by expelling other mass. Coherence-gradient propulsion moves a coherent system by navigating the geometry of spacetime itself — the same mechanism by which gravity produces orbital motion, scaled from naturally occurring mass-induced gradients to engineered coherence field gradients.</p>
+<p class="bp">The existence proof is not theoretical. Every orbit in the solar system demonstrates that a coherent mass-energy system undergoes continuous displacement without expelling propellant. The Earth has been in motion without thrust for four billion years. The question the CTF framework addresses is not whether this is possible — it manifestly is — but whether the coherence gradients that produce this motion can be engineered rather than merely encountered.</p>
+
+<div class="nda-notice">
+<p>Engineering specifications for field generation systems and the complete transportation architecture are available under NDA to qualified research and technology partners.<br>
+<a href="../../contact.html">Request Access →</a></p>
+</div>
+<div style="margin-top:56px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.2);text-align:center;">
+<p style="font-family:'Raleway',sans-serif;font-size:0.62rem;letter-spacing:0.15em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</p>
+</div>
+</div>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+</body>
+</html>
