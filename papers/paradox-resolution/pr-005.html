@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wave-Particle Duality — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-005</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">Wave-Particle Duality</h1>
+    <p class="paper-subtitle">A Coherence Wave-Packet Interpretation at the 3D-4D Boundary</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Theoretical Framework Paper</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-paradox">1. The Paradox</a></li><li><a href="#2--what-the-standard-model-got">2. What the Standard Model Got Righ</a></li><li><a href="#3--the-3d-4d-boundary-interpre">3. The 3D-4D Boundary Interpretatio</a></li><li><a href="#3-1-the-wave-packet-at-the-dim">3.1 The Wave-Packet at the Dimensio</a></li><li><a href="#3-2-measurement-as-phase-locki">3.2 Measurement as Phase-Locking</a></li><li><a href="#3-3-why-the-duality-exists">3.3 Why the Duality Exists</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Quantum entities exhibit wave-like interference when unobserved and particle-like localization when measured. No single classical picture captures both behaviors simultaneously, and no physical mechanism for the transition has been identified within standard quantum mechanics. The CTF framework proposes that quantum entities are coherence wave-packets existing at the boundary between the emergent 3D spatial dimension and the underlying 4D phase-time structure. Wave-like behavior reflects maintained phase coherence across spatial extension. Particle-like behavior reflects phase-locking through environmental coupling — what standard physics calls measurement. The duality is not a paradox requiring two incompatible pictures. It is a consequence of operating at the boundary between phase-primary and coordinate-primary description levels. The entity is neither wave nor particle — it is a coherence wave-packet, and its apparent nature depends entirely on which dimensional layer the observation couples to.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> wave-particle duality, double-slit experiment, coherence wave-packet, dimensional boundary, decoherence, quantum measurement</div>
+</div>
+    <h1 class="sh" id="1--the-paradox">1. The Paradox</h1>
+<p class="bp">The double-slit experiment produces interference patterns from single electrons, photons, and molecules including C₇₀ fullerenes and objects of over 2,000 atomic mass units. When a which-path detector is introduced, the interference pattern disappears regardless of whether the data is examined — consistent with decoherence through environmental entanglement rather than conscious observation. The phenomenon is not disputed. The wave function formalism predicts it with perfect accuracy. The paradox is the interpretation: how can one entity be both a spread-out wave and a localized point?</p>
+<h1 class="sh" id="2--what-the-standard-model-got">2. What the Standard Model Got Right</h1>
+<p class="bp">The Schrödinger equation correctly describes wave-packet evolution. The Born rule correctly predicts measurement probabilities. Decoherence correctly explains why macroscopic superpositions are not observed. The Copenhagen interpretation works as a calculational tool. All of these are preserved without modification.</p>
+<h1 class="sh" id="3--the-3d-4d-boundary-interpre">3. The 3D-4D Boundary Interpretation</h1>
+
+<h2 class="sh2" id="3-1-the-wave-packet-at-the-dim">3.1 The Wave-Packet at the Dimensional Interface</h2>
+<p class="bp">The CTF framework places the 3D spatial dimension as emergent from a deeper 4D phase-time structure. Quantum entities at small scales exist closer to the interface between these levels. In undisturbed propagation, the wave-packet maintains phase coherence across spatial extension — its behavior reflects the 4D phase structure it actually inhabits. This produces interference. Measurement — any interaction that records which-path information — couples the 4D phase structure to the 3D coordinate layer, causing phase-locking at a specific location. This produces apparent localization.</p>
+<h2 class="sh2" id="3-2-measurement-as-phase-locki">3.2 Measurement as Phase-Locking</h2>
+<p class="bp">Measurement is reinterpreted as coherence phase-locking: the quantum system's extended phase structure couples to the macroscopic coherence environment of the apparatus, and the phase structure resolves to the coordinate layer. This is not a mysterious collapse — it is the same decoherence process that makes macroscopic objects behave classically, operating at the quantum-classical boundary. The "collapse" is the 4D phase structure projecting into 3D coordinate space through environmental coupling.</p>
+<h2 class="sh2" id="3-3-why-the-duality-exists">3.3 Why the Duality Exists</h2>
+<p class="bp">The duality exists because quantum entities genuinely inhabit two levels of description simultaneously. From the perspective of the 4D phase layer, they are coherent phase structures — waves. From the perspective of the 3D coordinate layer, they are localized events — particles. Both descriptions are correct within their respective layers. The paradox arises only when we demand a single 3D description of an entity that spans two dimensional levels.</p>
+<p class="bp">Testable Predictions</p>
+<p class="bp">Phase-ordered environments should preserve quantum coherence measurably longer than thermally disordered environments of equivalent temperature, with a specific functional form related to environmental coherence density C.</p>
+<p class="bp">The quantum-to-classical transition boundary should correlate with coherence length relative to de Broglie wavelength, with deviations predictable from CTF coherence parameters.</p>
+<p class="bp">Highly structured biological environments may exploit quantum coherence through active maintenance of the 4D phase structure against environmental decoherence.</p>
+<p class="bp">Limitations</p>
+<p class="bp">The precise mapping between CTF dimensional levels and quantum mechanical formalism requires rigorous development.</p>
+<p class="bp">The 4D phase-time structure is proposed as an architectural feature of the CTF framework — its physical reality requires independent confirmation.</p>
+<p class="bp">Conclusion</p>
+<p class="bp">Wave-particle duality is not a paradox about the nature of quantum entities. It is a consequence of quantum entities genuinely spanning two levels of dimensional description simultaneously. At the 4D phase level, they are coherent wave structures. At the 3D coordinate level, they are localized events. The observer does not create the particle-like behavior — they couple to the 3D coordinate layer, which is where particles live. The paradox was the insistence on a single-level description of a two-level phenomenon.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework. Every paradox in this series resolves by one or more of five structural operations on the incomplete model.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Arndt, M., et al. (1999). Wave-particle duality of C60 molecules. Nature, 401, 680–682.</p>
+<p class="bp" style="font-size:0.88rem;">Davisson, C., &amp; Germer, L. H. (1927). Diffraction of electrons by a crystal of nickel. Physical Review, 30, 705.</p>
+<p class="bp" style="font-size:0.88rem;">Zurek, W. H. (2003). Decoherence, einselection, and the quantum origins of the classical. Reviews of Modern Physics, 75, 715.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Time as Dimensional Architecture. Christos Energy.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Unified Coherence Architecture. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>PR-004: Quantum Entanglement</li>
+<li>PR-008: The Measurement Problem</li>
+<li>Vol. II Paper 11: Time as Dimensional Architecture</li>
+<li>CF-12: Unified Coherence Architecture</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-004.html" class="nav-btn">← Quantum Entanglement</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-006.html" class="nav-btn">The Arrow of Time →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
