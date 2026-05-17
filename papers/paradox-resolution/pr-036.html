@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plant Cognition and Distributed Biological Awareness — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-036</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">Plant Cognition and Distributed Biological Awareness</h1>
+    <p class="paper-subtitle">Distributed Coherence Nodes, Mycorrhizal Networks, and the Limits of Plant Sentience</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Research White Paper — Tier B/C</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-question">1. The Question</a></li><li><a href="#2--scientific-foundation">2. Scientific Foundation</a></li><li><a href="#2-1-plant-learning-and-habitua">2.1 Plant Learning and Habituation</a></li><li><a href="#2-2-kin-recognition">2.2 Kin Recognition</a></li><li><a href="#2-3-mycorrhizal-networks">2.3 Mycorrhizal Networks</a></li><li><a href="#3--the-coherence-model">3. The Coherence Model</a></li><li><a href="#3-1-plant-as-distributed-coher">3.1 Plant as Distributed Coherence </a></li><li><a href="#3-2-why-plants-are-not-conscio">3.2 Why Plants Are Not Conscious in</a></li><li><a href="#3-3-the-forest-as-ecosystem-co">3.3 The Forest as Ecosystem Coheren</a></li><li><a href="#4--a-conservative-awareness-hi">4. A Conservative Awareness Hierarc</a></li><li><a href="#5--falsifiable-predictions">5. Falsifiable Predictions</a></li><li><a href="#6--conclusion">6. Conclusion</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Plants lack neurons and centralized brains, yet they exhibit complex adaptive behaviors including habituation, kin recognition, chemical signaling, electrical signaling, resource allocation, and networked ecological interaction through mycorrhizal fungi. The scientific debate is not whether plants respond intelligently to their environment — they demonstrably do — but whether these responses justify the language of cognition or consciousness. This paper proposes a cautious coherence-based model: plants should not be assumed to possess human-like self-aware consciousness, but they participate in a distributed form of biological awareness mediated by bioelectric, hydraulic, chemical, and mycorrhizal coupling. Within the toroidal coherence architecture, an individual plant is modeled as a coherence node operating below the threshold for recursive self-referential consciousness (PR-034) but above the threshold for environmental coherence coupling and adaptive response. A forest-soil-fungal system functions as a larger distributed ecological coherence network — terrestrial coherence at the ecosystem scale. The strongest defensible claim: plants display distributed biological cognition without centralized self-awareness, and forests may exhibit ecosystem-level coherence that influences individual plant behavior through network coupling.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> plant cognition, plant intelligence, mycorrhizal networks, bioelectricity, distributed awareness, wood wide web, Mimosa</div>
+</div>
+    <h1 class="sh" id="1--the-question">1. The Question</h1>
+<p class="bp">Plant consciousness is controversial because plants do not possess neurons, brains, or centralized nervous systems. Strong claims of plant sentience are rejected by mainstream biology — and for good reason. However, plants clearly perform complex adaptive functions: chemical communication through volatile compounds and root exudates, electrical signaling analogous to action potentials, behavioral modification based on prior exposure (habituation), kin recognition in competitive root interactions, resource sharing through mycorrhizal networks, and adaptive growth strategies. The question is not whether plants are intelligent machines — they demonstrably are. The question is what type and level of awareness, if any, accompanies these processes.</p>
+<h1 class="sh" id="2--scientific-foundation">2. Scientific Foundation</h1>
+
+<h2 class="sh2" id="2-1-plant-learning-and-habitua">2.1 Plant Learning and Habituation</h2>
+<p class="bp">Gagliano et al. demonstrated that Mimosa pudica learns to stop closing its leaves after repeated non-harmful drops, retaining this learned response for weeks — longer than some mammals retain equivalent conditioned responses. This is not mere stimulus fatigue; plants in different mechanical environments show different habituation rates. This supports the idea that plants can modify behavior based on experience, though it does not establish subjective awareness.</p>
+<h2 class="sh2" id="2-2-kin-recognition">2.2 Kin Recognition</h2>
+<p class="bp">Dudley and File demonstrated that plants discriminate kin from non-kin in competitive root interactions, reducing competitive root growth near genetically related neighbors while increasing it near non-kin. This relational, context-sensitive behavior requires some form of chemical recognition and behavioral modulation — distributed biological cognition without centralized processing.</p>
+<h2 class="sh2" id="2-3-mycorrhizal-networks">2.3 Mycorrhizal Networks</h2>
+<p class="bp">Simard and collaborators demonstrated carbon transfer between tree species through common mycorrhizal networks. The "wood wide web" concept should be handled carefully — some public presentations exaggerate the intentionality and scale of these exchanges. The defensible version: mycorrhizal networks can mediate nutrient transfer and stress signaling under certain ecological conditions, and forest trees connected through these networks show correlated responses to shared stressors. Whether this constitutes "communication" in any meaningful sense remains an open empirical question.</p>
+<h1 class="sh" id="3--the-coherence-model">3. The Coherence Model</h1>
+
+<h2 class="sh2" id="3-1-plant-as-distributed-coher">3.1 Plant as Distributed Coherence Node</h2>
+<p class="bp">Within the toroidal coherence architecture, a plant is a living coherence node whose coherence is distributed across multiple subsystems:</p>
+<p class="bp">C_plant = w₁C_photo + w₂C_bioelectric + w₃C_hydraulic + w₄C_root + w₅C_mycelial</p>
+<p class="bp">Each term corresponds to a measurable biological subsystem contributing to the plant's overall organizational coherence. This keeps the model testable and operationally grounded.</p>
+<h2 class="sh2" id="3-2-why-plants-are-not-conscio">3.2 Why Plants Are Not Conscious in the PR-034 Sense</h2>
+<p class="bp">Applying the recursive coherence framework from PR-034: plants do not maintain recursive self-referential coherence — they lack the thalamocortical architecture required for the recursive self-modeling loop that generates subjective experience. Their distributed coherence is real and supports sophisticated adaptive behavior, but it does not cross the threshold for recursive self-reference that the CTF framework identifies with conscious experience. A plant processes its environment coherently but does not model its own processing — it does not know that it knows.</p>
+<h2 class="sh2" id="3-3-the-forest-as-ecosystem-co">3.3 The Forest as Ecosystem Coherence</h2>
+<p class="bp">The forest-fungal network, considered as a whole system, may exhibit a higher-order coherence that influences individual plant behavior through distributed coupling — a genuine emergent property of the network, not just the sum of individual plant responses. This ecosystem coherence is not consciousness in the reflective sense, but it may constitute a form of distributed environmental intelligence — the forest as a whole being more adaptively responsive than any individual tree.</p>
+<h1 class="sh" id="4--a-conservative-awareness-hi">4. A Conservative Awareness Hierarchy</h1>
+
+<h1 class="sh" id="5--falsifiable-predictions">5. Falsifiable Predictions</h1>
+<p class="bp">Plants with higher chlorophyll fluorescence and more stable electrophysiological patterns should show greater resistance to stress — coherence predicts resilience.</p>
+<p class="bp">Plants connected through mycorrhizal networks should show correlated stress responses stronger than physically separated controls — network coherence coupling should measurably propagate stress signals.</p>
+<p class="bp">Severing mycorrhizal connectivity should reduce the speed and coherence of forest-wide stress responses, measurable through volatile compound emission and electrophysiological monitoring.</p>
+<p class="bp">Human intention or coherence practices affecting plant growth — if real — should only be accepted as evidence under randomized, blinded, controlled conditions with pre-registered endpoints. The CTF framework neither confirms nor denies such effects without controlled evidence.</p>
+<h1 class="sh" id="6--conclusion">6. Conclusion</h1>
+<p class="bp">Plants should not be dismissed as inert biological machines, but they should not be anthropomorphized into human-like conscious persons. The strongest defensible interpretation: plants are distributed coherence organisms that sense, adapt, remember biologically, and communicate through chemical, electrical, hydraulic, and fungal pathways. A forest is not merely a collection of trees — it is a coupled ecological system whose network properties exceed those of its individual members. Plant "consciousness" is best understood as distributed biological cognition — sophisticated, real, and worth studying — without claiming the recursive self-awareness that characterizes human and animal subjective experience.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Gagliano, M., et al. (2014). Experience teaches plants to learn faster and forget slower. Oecologia, 175, 63–72.</p>
+<p class="bp" style="font-size:0.88rem;">Dudley, S. A., &amp; File, A. L. (2007). Kin recognition in an annual plant. Biology Letters, 3, 435–438.</p>
+<p class="bp" style="font-size:0.88rem;">Simard, S. W., et al. (1997). Net transfer of carbon between ectomycorrhizal tree species in the field. Nature, 388, 579–582.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Unified Coherence Architecture. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>PR-034: Nature of Consciousness — recursive coherence threshold</li>
+<li>PR-022: Gaian Self-Regulation — ecosystem-level coherence</li>
+<li>PR-009: Origin of Life — coherence threshold in chemical systems</li>
+<li>CF-12: Unified Coherence Architecture</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-035.html" class="nav-btn">← The Binding Problem</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-037.html" class="nav-btn">The Preferred Basis Problem →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
