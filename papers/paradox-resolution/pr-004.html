@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Entanglement — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-004</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">Quantum Entanglement</h1>
+    <p class="paper-subtitle">Phase Co-Location and the Geometric Reinterpretation of Quantum Nonlocality</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Theoretical Framework Paper</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-paradox">1. The Paradox</a></li><li><a href="#2--what-the-standard-model-got">2. What the Standard Model Got Righ</a></li><li><a href="#3--the-phase-co-location-inter">3. The Phase Co-Location Interpreta</a></li><li><a href="#3-1-spatial-separation-as-emer">3.1 Spatial Separation as Emergent</a></li><li><a href="#3-2-bell-violations-without-si">3.2 Bell Violations Without Signali</a></li><li><a href="#3-3-decoherence-as-phase-diver">3.3 Decoherence as Phase Divergence</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Quantum entanglement produces correlations between separated particles that violate Bell inequalities and cannot be explained by local hidden variables. Standard quantum mechanics predicts the correlations precisely but provides no physically intuitive explanation of how two separated systems remain coordinated without exchanging information. The present framework proposes that spatial separation is not fundamental — it is an emergent property of phase differentiation within the coherence field. Entangled systems share a unified phase configuration such that their separation in coherence space approaches zero regardless of their coordinate separation. Under this interpretation, the Bell-violating correlations arise not from signaling across spatial distance but from the structural fact that the systems were never fully separated at the level of phase identity. The framework preserves Bell theorem, no-signaling, relativistic causality, and all standard quantum predictions while providing a geometric account of what entanglement physically is.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> quantum entanglement, Bell inequality, phase co-location, nonlocality, decoherence, toroidal coherence</div>
+</div>
+    <h1 class="sh" id="1--the-paradox">1. The Paradox</h1>
+<p class="bp">Bell-violating correlations have been experimentally confirmed beyond all reasonable doubt. Aspect (1982), Hensen (2015), Giustina (2015), and Shalm (2015) closed all major loopholes. The Bell-CHSH inequality S ≤ 2 is violated at S = 2√2 for maximally entangled states. Local hidden variable theories are ruled out. The nonlocal correlations are real. The paradox is not whether they exist but how: how can two separated systems remain correlated without exchanging information? Einstein called it "spooky action at a distance." The name has stuck because no satisfying physical mechanism has replaced it.</p>
+<h1 class="sh" id="2--what-the-standard-model-got">2. What the Standard Model Got Right</h1>
+<p class="bp">Bell theorem is correct. Local hidden variables fail. Quantum mechanics predicts the correlations with perfect precision. No-signaling holds — the correlations cannot be used to transmit information. Relativistic causality is preserved. These are the fixed points the framework must respect.</p>
+<h1 class="sh" id="3--the-phase-co-location-inter">3. The Phase Co-Location Interpretation</h1>
+
+<h2 class="sh2" id="3-1-spatial-separation-as-emer">3.1 Spatial Separation as Emergent</h2>
+<p class="bp">The CTF framework proposes that spatial separation is not fundamental — it emerges from phase differentiation within the coherence field. Phase relationship is primary. Two systems with zero phase difference have zero separation in coherence space regardless of their coordinate distance. The central relation is:</p>
+<p class="bp">Δφ = 0  ⟹  ΔS → 0</p>
+<p class="bp">Entangled particles share a unified phase configuration established at their moment of interaction. That shared phase identity does not degrade with coordinate separation because phase identity is not a property of coordinate space. Measuring one particle does not signal the other — it reveals their shared phase state.</p>
+<h2 class="sh2" id="3-2-bell-violations-without-si">3.2 Bell Violations Without Signaling</h2>
+<p class="bp">Under the phase co-location model, Bell violations arise because the particles are not truly separated at the level of phase identity. The correlations do not require information to travel between them — there is no gap to cross. The reduced density matrix for either subsystem remains maximally mixed, preserving no-signaling: P(0) = P(1) = ½ regardless of distant measurement. Causality is intact. The "spookiness" was the assumption that coordinate separation implied phase separation — it does not.</p>
+<h2 class="sh2" id="3-3-decoherence-as-phase-diver">3.3 Decoherence as Phase Divergence</h2>
+<p class="bp">Decoherence — the loss of entanglement through environmental interaction — corresponds to progressive phase divergence: Δφ grows as the system couples to environmental degrees of freedom. As phase difference increases, emergent spatial separation increases and the entangled state factorizes. This is fully consistent with standard decoherence theory while adding the geometric account of why coherent environments preserve entanglement longer.</p>
+<p class="bp">Testable Predictions</p>
+<p class="bp">Structured crystalline environments should preserve entanglement longer than thermally disordered environments of equivalent temperature — τ_decoherence ∝ (1 + κC) where C is environmental coherence density.</p>
+<p class="bp">Ultra-high-precision Bell experiments may reveal extremely small directional correlation anisotropies if large-scale coherence geometry possesses orientational structure.</p>
+<p class="bp">Biological systems maintaining active coherence organization may show anomalous entanglement resistance under controlled laboratory conditions.</p>
+<p class="bp">Limitations</p>
+<p class="bp">The framework does not provide a derivation of Bell correlations from first principles — it provides a geometric interpretation.</p>
+<p class="bp">No experimentally confirmed coherence-field equations currently exist at the quantum scale.</p>
+<p class="bp">The relationship between CTF phase structure and the quantum wave function requires rigorous formalization.</p>
+<p class="bp">Conclusion</p>
+<p class="bp">Quantum entanglement appears paradoxical only when coordinate separation is assumed to imply physical separation at all levels of description. Under the phase co-location model, entangled systems share a unified phase identity that was established at interaction and has not been broken. Their coordinate separation is real. Their phase separation is zero. Bell correlations are not spooky — they are the expected behavior of systems that never fully separated in the dimension that governs their correlations.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework. Every paradox in this series resolves by one or more of five structural operations on the incomplete model.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Aspect, A., Dalibard, J., &amp; Roger, G. (1982). Experimental test of Bell's inequalities. Physical Review Letters, 49, 1804.</p>
+<p class="bp" style="font-size:0.88rem;">Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox. Physics, 1, 195.</p>
+<p class="bp" style="font-size:0.88rem;">Hensen, B., et al. (2015). Loophole-free Bell inequality violation using electron spins separated by 1.3 km. Nature, 526, 682.</p>
+<p class="bp" style="font-size:0.88rem;">Giustina, M., et al. (2015). Significant-loophole-free test of Bell's theorem. Physical Review Letters, 115, 250401.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Unified Coherence Architecture. Christos Energy.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Toroidal Cosmology Framework. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>PR-005: Wave-Particle Duality — 3D-4D boundary framework</li>
+<li>PR-008: The Measurement Problem — coherence phase-locking</li>
+<li>CF-12: Unified Coherence Architecture</li>
+<li>Vol. II Paper 11: Time as Dimensional Architecture</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-003.html" class="nav-btn">← Baryon Asymmetry</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-005.html" class="nav-btn">Wave-Particle Duality →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
