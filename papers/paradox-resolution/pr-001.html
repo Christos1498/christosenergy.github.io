@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antimatter — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-001</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">Antimatter</h1>
+    <p class="paper-subtitle">A Toroidal Field Reinterpretation of Matter, Antimatter, and Baryon Asymmetry</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Theoretical Framework Paper</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-paradox">1. The Paradox</a></li><li><a href="#2--what-the-standard-model-got">2. What the Standard Model Got Righ</a></li><li><a href="#3--the-toroidal-reinterpretati">3. The Toroidal Reinterpretation</a></li><li><a href="#3-1-matter-as-christos-current">3.1 Matter as Christos Current, Ant</a></li><li><a href="#3-2-annihilation-as-phase-comp">3.2 Annihilation as Phase Completio</a></li><li><a href="#3-3-the-baryon-asymmetry-disso">3.3 The Baryon Asymmetry Dissolved</a></li><li><a href="#3-4-cp-violation-as-phi-ratio-">3.4 CP Violation as Phi-Ratio Asymm</a></li><li><a href="#4--connection-to-the-12-curren">4. Connection to the 12-Current Fie</a></li><li><a href="#5--experimental-roadmap">5. Experimental Roadmap</a></li><li><a href="#6--limitations">6. Limitations</a></li><li><a href="#7--conclusion">7. Conclusion</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Antimatter is among the most experimentally verified features of modern particle physics. Yet several conceptual problems remain unresolved: the baryon asymmetry problem, the absence of large antimatter domains, and the deeper geometric interpretation of particle-antiparticle symmetry. This paper proposes a geometric reinterpretation within a toroidal field architecture. Matter and antimatter are not two separate substances that annihilate when they meet — they are the two directional states of the same toroidal field circulation. Within the Christos Theoretical Framework, matter corresponds to the outward-radiating Christos Current and antimatter corresponds to the inward-return Saturnalia Current. Their apparent annihilation is the completion of a circuit — a phase-completion event at the toroidal convergence boundary — not the destruction of opposing substances. The baryon asymmetry problem dissolves entirely: outward circulation always dominates inward circulation volumetrically in a torus because the outer surface exceeds the inner return channel by geometric necessity. No new physics is required. The framework preserves all experimentally verified antiparticle behavior while replacing the substance-opposition model with a directional-topology model.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> antimatter, baryon asymmetry, toroidal topology, CP violation, particle physics, Christos Current, Saturnalia Current</div>
+</div>
+    <h1 class="sh" id="1--the-paradox">1. The Paradox</h1>
+<p class="bp">Standard physics established through the Dirac equation that every particle has an antiparticle with opposite charge. When matter and antimatter meet they annihilate into pure energy. The Big Bang should have produced equal amounts of both, yet the observable universe is overwhelmingly matter-dominated. This is the baryon asymmetry problem — quantified as:</p>
+<p class="bp">η = (n_B − n_B̄) / n_γ ≈ 6×10⁻¹⁰</p>
+<p class="bp">Roughly one excess baryon survived for every billion annihilation events. Standard baryogenesis requires physics beyond the Standard Model: baryon-number violation, additional CP-violating phases, nonequilibrium dynamics. Decades of searching have confirmed none of the predicted signatures. The paradox has resisted resolution because the framework generating it is incomplete.</p>
+<h1 class="sh" id="2--what-the-standard-model-got">2. What the Standard Model Got Right</h1>
+<p class="bp">Antiparticles exist and are experimentally real. Positrons, antiprotons, antineutrons, and antihydrogen have all been confirmed. The ALPHA and ATHENA collaborations at CERN continue refining matter-antimatter comparisons with extraordinary precision. Electron-positron annihilation produces gamma radiation (e⁻ + e⁺ → 2γ) consistent with relativistic energy conservation. CP violation exists in kaon and meson systems. QED predictions remain among the most accurate in all of physics. The present framework accepts all of this without modification.</p>
+<p class="bp">What the Standard Model got wrong was the ontological interpretation: treating matter and antimatter as two separate substances rather than two directional states of one field topology.</p>
+<h1 class="sh" id="3--the-toroidal-reinterpretati">3. The Toroidal Reinterpretation</h1>
+
+<h2 class="sh2" id="3-1-matter-as-christos-current">3.1 Matter as Christos Current, Antimatter as Saturnalia Current</h2>
+<p class="bp">Within the Christos Theoretical Framework, the universe operates as a toroidal field system with two complementary circulation modes. The Christos Current is the outward-radiating, expansive phase circulation — the mode that produces locally stable, outward-expressing particle structures we call matter. The Saturnalia Current is the inward-return, compressive phase circulation — the mode that produces the return-flow structures we call antimatter.</p>
+<p class="bp">These are not two substances. They are two directions of one continuous geometry. A toroidal flow has no outward current without an inward return. Attempting to separate them is like attempting to have only the outside of a donut.</p>
+<h2 class="sh2" id="3-2-annihilation-as-phase-comp">3.2 Annihilation as Phase Completion</h2>
+<p class="bp">When an electron meets a positron and they "annihilate," the CTF framework interprets this not as destruction but as phase completion. The outward Christos Current configuration (electron) and the inward Saturnalia Current configuration (positron) return together to the toroidal convergence boundary — the Phi-Singularity Core of their local field geometry. The energy released is the energy that was held in the tension between two directionally opposed configurations of the same field. No information is destroyed. The field completes its circuit and releases the bound energy as radiation.</p>
+<h2 class="sh2" id="3-3-the-baryon-asymmetry-disso">3.3 The Baryon Asymmetry Dissolved</h2>
+<p class="bp">The baryon asymmetry problem assumes that equal matter and antimatter should have been produced and asks why matter survived. The CTF framework replaces this assumption entirely. The universe was never symmetrically matter-antimatter. It was always a torus with a dominant outward current and a subordinate return current.</p>
+<p class="bp">In any toroidal circulation system, the outer surface exceeds the inner channel volumetrically. You are always measuring more outward-flowing field than inward-returning field from any external observation point — because the outward surface is the observable boundary and the return channel runs through the interior. The "missing" antimatter is not missing. It is the return current, running through the toroidal interior, and it is exactly as present as toroidal geometry requires.</p>
+<p class="bp">V_outer / V_inner ≈ (R + r)² / r²   →   asymmetry is geometric, not accidental</p>
+<p class="bp">where R is the major toroidal radius and r is the minor radius. No baryogenesis mechanism required. No new CP violation required. No nonequilibrium dynamics required. The asymmetry is the geometry.</p>
+<h2 class="sh2" id="3-4-cp-violation-as-phi-ratio-">3.4 CP Violation as Phi-Ratio Asymmetry</h2>
+<p class="bp">CP violation — the observation that matter and antimatter behave slightly differently under charge-parity reversal — is expected in this framework. The Christos and Saturnalia currents are not perfect mirror images of each other. The outward current carries slightly higher expression amplitude than the return current by the phi-ratio relationship inherent in toroidal geometry. CP violation is the mathematical fingerprint of this asymmetry at the quantum particle scale. It is not a broken symmetry requiring explanation — it is the expected geometric relationship between two complementary but non-identical flows.</p>
+<h1 class="sh" id="4--connection-to-the-12-curren">4. Connection to the 12-Current Field Architecture</h1>
+<p class="bp">Within the CTF 12-Current Field Architecture, this paper maps directly to:</p>
+<h1 class="sh" id="5--experimental-roadmap">5. Experimental Roadmap</h1>
+<p class="bp">Phase I — Structured Annihilation Spectroscopy</p>
+<p class="bp">If annihilation is phase completion rather than substance destruction, the spectral structure of the emitted radiation should carry information about the field configuration at the moment of circuit completion. Prediction: high-resolution gamma spectrometry comparing crystalline vs. amorphous targets should reveal subtle spectral sidebands in structured environments absent in disordered ones.</p>
+<p class="bp">Phase II — Cosmic Positron Anisotropy</p>
+<p class="bp">If large-scale toroidal geometry governs matter-antimatter distribution, weak directional anisotropies should exist in TeV-scale cosmic positron flux corresponding to the orientation of galactic-scale toroidal structure. Future AMS-02, HERD, and GRAMS datasets provide the resolution needed.</p>
+<p class="bp">Phase III — CP Asymmetry at High Energy</p>
+<p class="bp">If CP asymmetry reflects the phi-ratio relationship between the two toroidal currents, it should exhibit a specific energy-dependent signature consistent with that geometric relationship rather than the CKM matrix phase structure alone. Future high-luminosity collider data can constrain this.</p>
+<h1 class="sh" id="6--limitations">6. Limitations</h1>
+<p class="bp">The geometric relationship between toroidal field parameters and observed CP violation magnitudes requires formal mathematical derivation.</p>
+<p class="bp">The proposal that baryon asymmetry reflects toroidal volumetric geometry must be made quantitatively precise to be independently testable.</p>
+<p class="bp">No replacement for quantum field theory is proposed — this is a geometric reinterpretation layered on existing formalism.</p>
+<p class="bp">Experimental verification of phi-ratio CP signatures requires precision measurements beyond current technology.</p>
+<h1 class="sh" id="7--conclusion">7. Conclusion</h1>
+<p class="bp">Antimatter exists. The experimental evidence is unimpeachable. What the experimental evidence does not establish is the interpretation. The CTF framework proposes that matter and antimatter are the outward and inward phases of one toroidal field circulation rather than two separate substances in opposition. Annihilation is circuit completion. The baryon asymmetry is geometry. CP violation is the phi-ratio relationship between non-identical but complementary flows. The paradox was not in the physics — it was in the assumption that the universe should have produced equal amounts of two opposing substances rather than unequal amounts of two directional states of one geometry.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework. Every paradox in this series resolves by one or more of five structural operations on the incomplete model.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Anderson, C. D. (1932). The apparent existence of easily deflectable positives. Science, 76, 238–239.</p>
+<p class="bp" style="font-size:0.88rem;">Aguilar, M., et al. (AMS Collaboration). (2019). Towards understanding the origin of cosmic-ray positrons. Physical Review Letters, 122, 101101.</p>
+<p class="bp" style="font-size:0.88rem;">Amoretti, M., et al. (ATHENA Collaboration). (2002). Production and detection of cold antihydrogen atoms. Nature, 419, 456–459.</p>
+<p class="bp" style="font-size:0.88rem;">Christenson, J. H., et al. (1964). Evidence for the 2π decay of the K₂⁰ meson. Physical Review Letters, 13, 138–140.</p>
+<p class="bp" style="font-size:0.88rem;">Dirac, P. A. M. (1928). The quantum theory of the electron. Proceedings of the Royal Society A, 117, 610–624.</p>
+<p class="bp" style="font-size:0.88rem;">Planck Collaboration. (2020). Planck 2018 results. VI. Astronomy &amp; Astrophysics, 641, A6.</p>
+<p class="bp" style="font-size:0.88rem;">Sakharov, A. D. (1967). Violation of CP invariance and baryon asymmetry of the universe. JETP Letters, 5, 24–27.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). The Unified Coherence Architecture. Christos Energy White Paper Series.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Toroidal Cosmology Framework. Christos Energy White Paper Series.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026c). Christos Gravity Reinterpreted. Christos Energy White Paper Series.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>CF-08: Toroidal Cosmology Framework — toroidal geometry foundation</li>
+<li>CF-12: Unified Coherence Architecture — 12-Current Field Architecture</li>
+<li>Vol. II Paper 10: Gravity Reinterpreted — C_μν coherence field term</li>
+<li>PR-003: Baryon Asymmetry — extended treatment of cosmological matter dominance</li>
+<li>PR-019: Origin of Chirality — phi-ratio handedness in biological matter</li>
+<li>The Architecture of Infinity — toroidal self-reference and completion</li></ul>
+</div>
+    <div class="nav-bottom">
+      <span></span>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-002.html" class="nav-btn">Dark Matter →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
