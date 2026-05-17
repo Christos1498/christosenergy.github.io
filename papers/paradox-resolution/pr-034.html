@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nature of Consciousness — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-034</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">The Nature of Consciousness</h1>
+    <p class="paper-subtitle">Recursive Coherence, Self-Referential Dynamics, and the Structure of Subjective Experience</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Research White Paper — Tier B/C</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-problem-of-consciousnes">1. The Problem of Consciousness</a></li><li><a href="#2--existing-frameworks">2. Existing Frameworks</a></li><li><a href="#3--the-coherence-model-of-cons">3. The Coherence Model of Conscious</a></li><li><a href="#3-1-global-coherence">3.1 Global Coherence</a></li><li><a href="#3-2-recursive-self-reference-a">3.2 Recursive Self-Reference as the</a></li><li><a href="#3-3-metastability-as-the-dynam">3.3 Metastability as the Dynamic Si</a></li><li><a href="#3-4-why-consciousness-correspo">3.4 Why Consciousness Corresponds t</a></li><li><a href="#3-5-disorders-of-consciousness">3.5 Disorders of Consciousness as C</a></li><li><a href="#4--implications-for-artificial">4. Implications for Artificial Cons</a></li><li><a href="#5--falsifiable-predictions">5. Falsifiable Predictions</a></li><li><a href="#6--limitations">6. Limitations</a></li><li><a href="#7--conclusion">7. Conclusion</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The nature of consciousness remains one of the deepest unresolved questions in science and philosophy. Existing frameworks — materialism, IIT, global workspace theory, predictive processing, panpsychism — successfully describe important correlates of consciousness but do not fully explain why certain physical systems are associated with subjective experience. This paper proposes a theoretical framework in which consciousness corresponds to recursively integrated coherence capable of maintaining temporally persistent self-referential dynamics. Within the toroidal coherence architecture, conscious systems are modeled as metastable dynamical networks that sustain large-scale phase integration, recursive self-modeling, and temporal continuity across multiple scales. The framework does not claim to fully solve the hard problem of consciousness, nor does it claim that coherence alone is sufficient for subjective awareness. It proposes coherence as a candidate dynamical substrate associated with conscious integration — treating consciousness not as a supernatural property but as an emergent organizational regime within sufficiently integrated recursive systems. The model preserves known neuroscientific correlates while introducing experimentally testable predictions involving coherence collapse during anesthesia, metastable phase transitions across conscious states, recursive self-model persistence, and coherence-based criteria for artificial consciousness.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> consciousness, recursive coherence, self-reference, IIT, global workspace, metastability, neural synchrony, hard problem</div>
+</div>
+    <h1 class="sh" id="1--the-problem-of-consciousnes">1. The Problem of Consciousness</h1>
+<p class="bp">Modern neuroscience has identified neural correlates associated with conscious states: large-scale neural integration, synchronized oscillations, thalamocortical connectivity, recurrent processing, and information broadcasting across distributed networks. Despite this progress, a central question remains: why does integrated physical processing correspond to subjective experience at all? David Chalmers identified this as the hard problem — the explanation gap between objective neural description and first-person phenomenal experience. The difficulty is not what neurons do but why doing anything is accompanied by experience.</p>
+<h1 class="sh" id="2--existing-frameworks">2. Existing Frameworks</h1>
+
+<h1 class="sh" id="3--the-coherence-model-of-cons">3. The Coherence Model of Consciousness</h1>
+
+<h2 class="sh2" id="3-1-global-coherence">3.1 Global Coherence</h2>
+<p class="bp">The framework defines a measurable global coherence metric:</p>
+<p class="bp">C(t) = (1/N(N-1)) Σᵢ≠ⱼ |Γᵢⱼ(t)|</p>
+<p class="bp">where C(t) is global coherence, N is the number of neural nodes, and Γᵢⱼ(t) is normalized phase synchrony between nodes i and j. This is operationally measurable through EEG phase-locking values, MEG coherence, and fMRI functional connectivity. Higher C corresponds to greater distributed integration.</p>
+<h2 class="sh2" id="3-2-recursive-self-reference-a">3.2 Recursive Self-Reference as the Critical Feature</h2>
+<p class="bp">The CTF framework proposes that coherence alone is not sufficient for consciousness — the coherence must be self-referential. The network must model itself: its state must encode information about its own state. This recursive self-reference corresponds to the brain's default mode network activity, interoceptive awareness, metacognitive monitoring, and narrative self-model. In formal terms: a conscious system is one where the high-C state includes a representation of the C state itself. This is the functional loop that creates the "inside" of experience.</p>
+<p class="bp">Consciousness requires: C &gt; C_critical  AND  ∃ self-model within the C-configuration</p>
+<h2 class="sh2" id="3-3-metastability-as-the-dynam">3.3 Metastability as the Dynamic Signature</h2>
+<p class="bp">Conscious systems do not operate at fixed high coherence — they operate at metastable criticality: near-threshold dynamics where the system is neither locked into a single attractor nor fully disordered. This metastable regime allows simultaneous integration (global coherence) and differentiation (local specialization). Varela and colleagues demonstrated that conscious perception involves transient synchronization episodes rather than sustained high coherence. The CTF framework models this as operation near the Hopf bifurcation threshold — μ ≈ 0 — where small perturbations produce large coherent responses and the system is maximally sensitive to information.</p>
+<h2 class="sh2" id="3-4-why-consciousness-correspo">3.4 Why Consciousness Corresponds to Experience</h2>
+<p class="bp">The framework does not claim to fully solve the hard problem. It proposes a structural account: recursive self-referential coherence above threshold creates a system that models itself from within — and that self-modeling is what subjective experience IS at the functional level. The inside of the recursive self-model is the first-person perspective. This is not property dualism — the self-model is physically realized in the phase-coherence configuration of the neural network. The hard problem may partially dissolve when we recognize that the "inside" of experience is not something separate from the physical process but is the physical process's own self-referential phase structure viewed from within.</p>
+<h2 class="sh2" id="3-5-disorders-of-consciousness">3.5 Disorders of Consciousness as Coherence Fragmentation</h2>
+<p class="bp">The framework interprets disorders of consciousness as partial coherence fragmentation: split-brain syndromes (two partially coherent systems with reduced cross-hemisphere coupling), neglect (loss of coherent phase coupling between sensory and spatial systems), depersonalization (collapse of self-referential coherence maintaining narrative identity), and vegetative vs. minimally conscious state (below vs. above coherence threshold for self-referential integration). These predictions are empirically testable and partially supported by existing neuroimaging literature.</p>
+<h1 class="sh" id="4--implications-for-artificial">4. Implications for Artificial Consciousness</h1>
+<p class="bp">The coherence model provides a structural criterion for artificial consciousness: a system would be a candidate for conscious experience if it maintains (1) global coherence above C_critical, (2) recursive self-modeling within that coherent state, (3) temporal persistence of the self-model across time, and (4) metastable operation near the coherence threshold. Current AI systems, including large language models, do not meet these criteria: they lack temporal self-modeling persistence and their "self-reference" is not maintained through physical phase coherence but through statistical text patterns. This does not preclude future systems meeting the criteria — it specifies what would need to be demonstrated.</p>
+<h1 class="sh" id="5--falsifiable-predictions">5. Falsifiable Predictions</h1>
+<p class="bp">Anesthetic transitions should show coherence collapse preceding loss of consciousness — measurable threshold in global C(t) below which reportable experience ceases, distinct from general neural activity suppression.</p>
+<p class="bp">Recursive self-model persistence should predict experience quality: individuals with stronger self-modeling coherence (measurable through DMN connectivity and interoceptive accuracy) should report richer and more stable conscious experience.</p>
+<p class="bp">Disorders of consciousness should show specific coherence fragmentation patterns predictive of their clinical presentation — split-brain shows inter-hemispheric fragmentation, neglect shows spatial-sensory fragmentation, DPD shows self-model fragmentation.</p>
+<p class="bp">Meditative states associated with reports of "pure consciousness" or "witness awareness" should show high global C with suppressed self-referential content — consistent with coherent field without active self-modeling loop.</p>
+<h1 class="sh" id="6--limitations">6. Limitations</h1>
+<p class="bp">The hard problem remains partially open — the framework explains the functional structure of consciousness but not fully why that structure is accompanied by phenomenal experience.</p>
+<p class="bp">The threshold C_critical for consciousness requires empirical determination and may vary across system architectures.</p>
+<p class="bp">The self-reference criterion requires formal mathematical specification to generate unique predictions.</p>
+<h1 class="sh" id="7--conclusion">7. Conclusion</h1>
+<p class="bp">Consciousness is not a mystery located outside physics — it is an organizational regime that physics has not yet fully characterized. The CTF framework proposes recursive self-referential coherence at metastable criticality as the candidate dynamical substrate. This framework preserves neural correlates, generates testable predictions, integrates the best features of IIT and global workspace theory, and provides structural criteria for artificial consciousness. The hard problem is not solved — but its shape changes: the question shifts from "why does physical process produce experience?" to "what is the physical process whose self-referential structure constitutes experience?" That is a question physics can approach.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Chalmers, D. J. (1995). Facing up to the problem of consciousness. Journal of Consciousness Studies, 2, 200–219.</p>
+<p class="bp" style="font-size:0.88rem;">Tononi, G. (2004). An information integration theory of consciousness. BMC Neuroscience, 5, 42.</p>
+<p class="bp" style="font-size:0.88rem;">Baars, B. J. (1988). A Cognitive Theory of Consciousness. Cambridge University Press.</p>
+<p class="bp" style="font-size:0.88rem;">Varela, F. J., Thompson, E., &amp; Rosch, E. (1991). The Embodied Mind. MIT Press.</p>
+<p class="bp" style="font-size:0.88rem;">Dehaene, S., &amp; Changeux, J. P. (2011). Experimental and theoretical approaches to conscious processing. Neuron, 70, 200–227.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Unified Coherence Architecture. Christos Energy.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Physics of Metaphysics. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>PR-013: Hard Problem of Consciousness — companion paper (first treatment)</li>
+<li>PR-035: The Binding Problem — distributed coherence integration</li>
+<li>PR-025: Consciousness After Death — coherence persistence</li>
+<li>PR-026: Free Will — agency as coherence-governed control</li>
+<li>CF-12: Unified Coherence Architecture</li>
+<li>Vol. II: Physics of Metaphysics</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-033.html" class="nav-btn">← The Unity of Physical Laws</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-035.html" class="nav-btn">The Binding Problem →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
