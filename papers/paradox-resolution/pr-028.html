@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Cosmological Constant Problem — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-028</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">The Cosmological Constant Problem</h1>
+    <p class="paper-subtitle">Infrared Vacuum Organization and the Separation of UV and IR Vacuum Energy</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Research White Paper — Tier A/B/C</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-paradox">1. The Paradox</a></li><li><a href="#2--what-the-standard-models-go">2. What the Standard Models Got Rig</a></li><li><a href="#3--the-ir-uv-separation">3. The IR/UV Separation</a></li><li><a href="#3-1-two-distinct-quantities">3.1 Two Distinct Quantities</a></li><li><a href="#3-2-the-ir-vacuum-as-organizat">3.2 The IR Vacuum as Organizational</a></li><li><a href="#3-3-why-uv-modes-do-not-gravit">3.3 Why UV Modes Do Not Gravitate a</a></li><li><a href="#3-4-dynamical-dark-energy">3.4 Dynamical Dark Energy</a></li><li><a href="#4--connection-to-the-hubble-te">4. Connection to the Hubble Tension</a></li><li><a href="#5--falsifiable-predictions">5. Falsifiable Predictions</a></li><li><a href="#6--limitations">6. Limitations</a></li><li><a href="#7--conclusion">7. Conclusion</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The cosmological constant problem is widely regarded as the most severe fine-tuning problem in theoretical physics. Observations indicate a cosmological constant corresponding to ρ_Λ ≈ 4.5×10⁻¹⁰ J/m³, while naive ultraviolet quantum field theory vacuum estimates exceed this by approximately 120 orders of magnitude. The discrepancy appears to require extraordinary cancellation between competing contributions with no known physical mechanism. This paper proposes that the discrepancy arises from identifying two physically distinct quantities: ultraviolet zero-point fluctuation energy and the observed infrared gravitational vacuum term. Rather than treating the cosmological constant as the direct gravitational sum of all quantum vacuum modes, the present framework interprets the observed Λ as an emergent large-scale vacuum organization parameter associated with infrared gravitational structure and toroidal field geometry. In this interpretation, the observed cosmological constant scales naturally with late-time cosmic expansion parameters (Λ ~ H₀²/c²) without requiring explicit 120-decimal-place cancellations. The framework predicts small but measurable deviations from a perfectly constant equation-of-state parameter (w = −1) at cosmological timescales, weak redshift evolution detectable through precision dark energy measurements, and correlated signatures in late integrated Sachs-Wolfe observables.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> cosmological constant, vacuum energy, vacuum catastrophe, dark energy, infrared vacuum, ΛCDM, dynamical dark energy</div>
+</div>
+    <h1 class="sh" id="1--the-paradox">1. The Paradox</h1>
+<p class="bp">Einstein's field equations with the cosmological constant: G_μν + Λg_μν = 8πGT_μν. Observations from Planck, supernova surveys, baryon acoustic oscillations, and large-scale structure place Λ_obs ≈ 1.1×10⁻⁵² m⁻². Quantum field theory estimates vacuum energy through UV zero-point mode summation, yielding with a Planck-scale cutoff: ρ_vac^QFT ~ M_Pl⁴, which exceeds observations by ~10¹²⁰. This is the vacuum catastrophe. Some mechanism must cancel 120 significant figures of vacuum energy contributions, leaving a residual of the observed magnitude — with no known physical principle specifying why the cancellation should stop there.</p>
+<h1 class="sh" id="2--what-the-standard-models-go">2. What the Standard Models Got Right</h1>
+<p class="bp">The observational reality of accelerated expansion is established beyond reasonable doubt through multiple independent probes. ΛCDM successfully fits cosmological data across enormous dynamic range. The quantum vacuum zero-point energy calculation is correct within its domain of application. The Planck collaboration parameter constraints are reliable. These are fixed points. The problem is not the observations — it is the theoretical framework connecting UV vacuum physics to the IR cosmological term.</p>
+<h1 class="sh" id="3--the-ir-uv-separation">3. The IR/UV Separation</h1>
+
+<h2 class="sh2" id="3-1-two-distinct-quantities">3.1 Two Distinct Quantities</h2>
+<p class="bp">The central proposal is that the UV vacuum energy (sum of zero-point fluctuations across all quantum fields) and the observed IR cosmological vacuum energy are physically distinct quantities that should not be equated. The UV vacuum energy is a property of local quantum field theory — it is the energy of quantum fluctuations at sub-Planckian scales. The observed Λ is a property of the large-scale gravitational field — it governs the global dynamics of cosmic expansion. These quantities inhabit different scales, different physical domains, and different theoretical frameworks. Requiring them to match directly is an assumption, not a derivation.</p>
+<h2 class="sh2" id="3-2-the-ir-vacuum-as-organizat">3.2 The IR Vacuum as Organizational Parameter</h2>
+<p class="bp">Within the CTF framework, the observed cosmological constant is an emergent organizational parameter of the large-scale coherence field — the infrared ground state energy of the toroidal cosmological architecture. It is not determined by summing UV quantum fluctuations but by the attractor dynamics of the cosmic coherence field in the current epoch. This naturally produces the scaling:</p>
+<p class="bp">Λ ~ H₀²/c²</p>
+<p class="bp">Because H₀ is itself determined by the current state of cosmic expansion — the attractor evolution of the coherence field — the cosmological constant is a dynamical quantity tracking the large-scale organizational state of the universe, not a static fundamental constant. The near-coincidence between Λ and H₀²/c² is therefore not a cosmic coincidence requiring anthropic explanation — it is structural.</p>
+<h2 class="sh2" id="3-3-why-uv-modes-do-not-gravit">3.3 Why UV Modes Do Not Gravitate as Predicted</h2>
+<p class="bp">If the UV vacuum contributes 10^120 times more than observed, something is suppressing its gravitational effect. The CTF framework proposes that the same coherence dynamics that produce the toroidal attractor structure also provide natural UV suppression: the coherence field provides an effective infrared cutoff on which vacuum modes contribute to the large-scale gravitational term. This is not a new symmetry or fine-tuned cancellation — it is the self-consistent behavior of a coherence-organized field system in which large-scale dynamics and small-scale fluctuations are not simply additive.</p>
+<h2 class="sh2" id="3-4-dynamical-dark-energy">3.4 Dynamical Dark Energy</h2>
+<p class="bp">If Λ is an emergent organizational parameter rather than a true constant, it should show weak but detectable time-dependence as the cosmic coherence field evolves toward its final attractor state. The equation-of-state parameter w should deviate slightly from −1, with the deviation growing measurably at precision accessible to next-generation surveys. This is a concrete falsifiable prediction distinguishing the CTF interpretation from a true cosmological constant.</p>
+<h1 class="sh" id="4--connection-to-the-hubble-te">4. Connection to the Hubble Tension</h1>
+<p class="bp">The CTF IR vacuum interpretation connects directly to the Hubble tension (PR-042). If the cosmological constant is an emergent IR organizational parameter tracking cosmic coherence field state, it may exhibit weak directional dependence in sky-averaged measurements — producing the small but persistent tension between early-universe (CMB-inferred) and late-universe (distance-ladder) H₀ values. The tension may reflect the anisotropic geometric structure of the toroidal field rather than a fundamental conflict between measurement methods.</p>
+<h1 class="sh" id="5--falsifiable-predictions">5. Falsifiable Predictions</h1>
+<p class="bp">Equation-of-state parameter w should show measurable deviation from −1, with w slightly &gt; −1 at high redshift and approaching −1 in the late universe as the attractor stabilizes. Future Euclid and DESI data constrain this at the sub-percent level.</p>
+<p class="bp">Redshift drift measurements (Sandage-Loeb test) should reveal weak evolution in the effective expansion rate inconsistent with a perfectly constant Λ.</p>
+<p class="bp">Late integrated Sachs-Wolfe effect amplitude should show slight evolution with redshift correlated with the predicted IR vacuum evolution trajectory.</p>
+<p class="bp">No vacuum bubble nucleation events should be detected — IR/UV separation implies the UV vacuum is not in the same attractor landscape as the IR term, so vacuum decay is suppressed.</p>
+<h1 class="sh" id="6--limitations">6. Limitations</h1>
+<p class="bp">The formal derivation of IR/UV vacuum separation within QFT requires mathematical development beyond the present paper.</p>
+<p class="bp">The specific functional form of the IR vacuum evolution and its quantitative deviation from w = −1 requires a complete dynamical coherence field model.</p>
+<p class="bp">The present treatment is phenomenological — it identifies the physical mechanism but does not calculate its magnitude from first principles.</p>
+<h1 class="sh" id="7--conclusion">7. Conclusion</h1>
+<p class="bp">The cosmological constant problem arose from treating two physically distinct quantities — UV zero-point vacuum energy and the IR cosmological vacuum organizational parameter — as the same thing and demanding they agree. Separating them dissolves the 10^120 discrepancy: the UV vacuum energy is a property of local quantum field dynamics; the observed Λ is an emergent property of the large-scale coherence field in the current cosmic epoch. The catastrophic mismatch was a category error. The cosmological constant is not the wrong size — the calculation demanding it match UV vacuum energy was asking the wrong question.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Weinberg, S. (1989). The cosmological constant problem. Reviews of Modern Physics, 61, 1–23.</p>
+<p class="bp" style="font-size:0.88rem;">Peebles, P. J. E., &amp; Ratra, B. (2003). The cosmological constant and dark energy. Reviews of Modern Physics, 75, 559–606.</p>
+<p class="bp" style="font-size:0.88rem;">Planck Collaboration. (2020). Planck 2018 results. VI. Astronomy &amp; Astrophysics, 641, A6.</p>
+<p class="bp" style="font-size:0.88rem;">Padmanabhan, T. (2003). Cosmological constant — the weight of the vacuum. Physics Reports, 380, 235–320.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Toroidal Cosmology Framework. Christos Energy.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Christos Gravity Reinterpreted. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>PR-027: Fine-Tuning Problem — attractor dynamics framework</li>
+<li>PR-029: Baryon Asymmetry Extended — toroidal cosmological geometry</li>
+<li>PR-042: Hubble Tension — directional cosmological inference</li>
+<li>CF-08: Toroidal Cosmology Framework</li>
+<li>Vol. II Paper 10: Gravity Reinterpreted — G_μν + C_μν</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-027.html" class="nav-btn">← The Fine-Tuning Problem</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-029.html" class="nav-btn">The Nature of Time →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
