@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Black Hole Information Paradox — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-007</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">The Black Hole Information Paradox</h1>
+    <p class="paper-subtitle">Coherence Encoding, Hawking Radiation, and Information Preservation in Toroidal Field Geometry</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Theoretical Framework Paper</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-paradox">1. The Paradox</a></li><li><a href="#2--what-the-standard-model-got">2. What the Standard Model Got Righ</a></li><li><a href="#3--coherence-encoding-interpre">3. Coherence-Encoding Interpretatio</a></li><li><a href="#3-1-the-event-horizon-as-coher">3.1 The Event Horizon as Coherence </a></li><li><a href="#3-2-information-in-hawking-rad">3.2 Information in Hawking Radiatio</a></li><li><a href="#3-3-black-holes-in-the-kinemat">3.3 Black Holes in the Kinematic Cy</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Hawking's 1975 calculation showed that black holes emit thermal radiation, implying that information about infalling matter is destroyed as the black hole evaporates — violating quantum mechanics' unitarity principle. If information is preserved, it must somehow be encoded in the Hawking radiation through mechanisms not present in semiclassical gravity. The CTF framework proposes that the event horizon functions as a coherence-phase boundary rather than an absolute information boundary. Infalling matter's quantum information is encoded in the toroidal field topology surrounding the black hole through coherence-field imprinting, and is progressively released through field-phase correlations in Hawking radiation over the evaporation timescale. The mechanism is consistent with the Page curve prediction that information begins returning approximately halfway through evaporation. Unitarity is preserved not through exotic quantum gravity but through the same coherence-field architecture that governs information storage throughout the framework.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> black hole information paradox, Hawking radiation, unitarity, event horizon, coherence encoding, toroidal geometry</div>
+</div>
+    <h1 class="sh" id="1--the-paradox">1. The Paradox</h1>
+<p class="bp">Hawking showed that black holes emit thermal radiation from quantum effects near the event horizon — virtual pairs where one partner falls in while the other escapes. Because the spectrum is thermal, it carries no quantum information in the semiclassical calculation. As the black hole evaporates, all information about infalling matter appears permanently lost. But quantum mechanics' unitarity principle states that information is always preserved — the initial quantum state must in principle be recoverable from the final state. If Hawking is right, quantum mechanics is wrong. If unitarity holds, the information must be in the radiation through some mechanism that semiclassical gravity cannot describe. This is one of the sharpest conflicts between general relativity and quantum mechanics in physics.</p>
+<h1 class="sh" id="2--what-the-standard-model-got">2. What the Standard Model Got Right</h1>
+<p class="bp">Hawking radiation is real — the mechanism is theoretically sound and consistent with quantum field theory in curved spacetime. Black holes evaporate. The Page curve prediction that information begins returning at the Page time is now supported by recent quantum gravity calculations using island formulas and replica wormholes. Unitarity must be preserved. These are the constraints any framework must satisfy.</p>
+<h1 class="sh" id="3--coherence-encoding-interpre">3. Coherence-Encoding Interpretation</h1>
+
+<h2 class="sh2" id="3-1-the-event-horizon-as-coher">3.1 The Event Horizon as Coherence Boundary</h2>
+<p class="bp">The CTF framework proposes that the event horizon is not an absolute information boundary but a coherence-phase boundary — the surface at which the toroidal field topology transitions from exterior organization to interior coherence configuration. Infalling matter does not simply cross a boundary and become information-free. Its coherence-field imprint is encoded in the topology of the surrounding field structure, distributed across the toroidal geometry surrounding the black hole rather than lost at the geometric horizon.</p>
+<h2 class="sh2" id="3-2-information-in-hawking-rad">3.2 Information in Hawking Radiation</h2>
+<p class="bp">Hawking radiation in the CTF framework is not purely thermal. The coherence-field encoding of infalling matter imprints on the phase structure of the radiation through field-topology correlations at the horizon boundary. Over the evaporation timescale, these correlations become increasingly significant, eventually dominating the late-stage radiation and carrying the quantum information of the infalling matter back to the exterior observer. This is the physical mechanism behind the Page curve: early radiation is approximately thermal (low correlation), late radiation is highly correlated (high information content), with the crossover at approximately the Page time.</p>
+<h2 class="sh2" id="3-3-black-holes-in-the-kinemat">3.3 Black Holes in the Kinematic Cycle</h2>
+<p class="bp">Within the CTF framework, black holes are extreme coherence-convergence events — regions where the inward Saturnalia Current dominates so strongly that the toroidal coherence structure reaches the Singularity Coherence phase of the Kinematic Cycle. The event horizon corresponds to the boundary of this singularity-coherence state. Information is not destroyed at this boundary — it transitions from distributed 3D expression to compressed singularity-coherence encoding, analogous to the Kinematic Cycle's Implosive Intake phase. The evaporation process is the Harmonic Rebirth phase — the information returns to distributed expression through the coherence-field correlations of Hawking radiation.</p>
+<p class="bp">This connects directly to the modified Einstein equation: G_μν = 8πG(T_μν + C_μν), where C_μν carries the coherence-field information encoding of the infalling matter and evolves over the evaporation timescale.</p>
+<p class="bp">Testable Predictions</p>
+<p class="bp">Hawking radiation should contain subtle non-thermal correlations encoding information about infalling matter, measurable in principle through the statistics of radiation over the full evaporation timescale — consistent with the Page curve.</p>
+<p class="bp">The coherence-field encoding predicts that late-time Hawking radiation should show increasingly strong quantum correlations as the black hole approaches final evaporation, with a specific functional form determined by the toroidal field geometry.</p>
+<p class="bp">If coherence-field structure contributes to near-horizon physics, precision analog gravity experiments may reveal deviations from pure semiclassical predictions in the radiation spectrum.</p>
+<p class="bp">Limitations</p>
+<p class="bp">The physical mechanism of coherence-field information encoding has not been derived from first principles.</p>
+<p class="bp">No current technology can test near-horizon quantum correlations in astrophysical black holes.</p>
+<p class="bp">The connection between CTF coherence-field terms and established quantum gravity frameworks (island formula, replica wormholes) requires formal development.</p>
+<p class="bp">Conclusion</p>
+<p class="bp">The black hole information paradox arises from treating the event horizon as an absolute boundary that destroys the coherence structure of infalling matter. The CTF framework proposes that the horizon is a coherence-phase boundary — a transition between distributed exterior encoding and compressed interior singularity-coherence. Information is preserved in the toroidal field topology and returns progressively through the coherence-field correlations of Hawking radiation. Unitarity is maintained not through exotic new physics but through the same coherence-field architecture that governs information throughout the framework. The paradox was generated by applying semiclassical gravity — which describes geometry but not coherence-field structure — to a situation where the coherence-field term is dominant.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework. Every paradox in this series resolves by one or more of five structural operations on the incomplete model.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Hawking, S. W. (1975). Particle creation by black holes. Communications in Mathematical Physics, 43, 199–220.</p>
+<p class="bp" style="font-size:0.88rem;">Page, D. N. (1993). Information in black hole radiation. Physical Review Letters, 71, 3743.</p>
+<p class="bp" style="font-size:0.88rem;">Penington, G. (2020). Entanglement wedge reconstruction and the information paradox. Journal of High Energy Physics, 2020(9), 2.</p>
+<p class="bp" style="font-size:0.88rem;">Almheiri, A., et al. (2021). The entropy of bulk quantum fields and the entanglement wedge. JHEP, 2019(12), 63.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Christos Gravity Reinterpreted. Christos Energy.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Toroidal Cosmology Framework. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>Vol. II Paper 10: Gravity Reinterpreted</li>
+<li>CF-08: Toroidal Cosmology Framework</li>
+<li>PR-006: Arrow of Time</li>
+<li>PR-008: The Measurement Problem</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-006.html" class="nav-btn">← The Arrow of Time</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-008.html" class="nav-btn">The Measurement Problem →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
