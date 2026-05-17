@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Will — Paradox Resolution Papers — Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C !important;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.5rem,3vw,2.6rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:20px;}
+.back-link:hover{color:#C9A84C !important;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords-block{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF !important;}
+.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:'Courier New',monospace;font-size:0.93rem;color:#3AAFAF !important;letter-spacing:0.03em;}
+.five-moves-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:32px 0;}
+.five-moves-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}
+.five-moves-text{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;}
+.cross-refs{background-color:#0A1628 !important;border:1px solid rgba(58,175,175,0.2);padding:18px 22px;margin:28px 0;}
+.cross-refs-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;}
+.cross-refs-list{list-style:none;}
+.cross-refs-list li{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.7) !important;padding:3px 0;}
+.nav-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);}
+.nav-btn{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;display:flex;align-items:center;gap:8px;}
+.nav-btn:hover{color:#FFFFFF !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a:hover{color:#C9A84C !important;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:190px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS™</span>
+      <span class="logo-sub">Energy · Technology · Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="paper-header">
+  <div class="paper-header-inner">
+    <a href="./" class="back-link">← All Paradox Resolution Papers</a>
+    <div class="ph-eyebrow">Paradox Resolution Papers · PR-026</div>
+    <div class="open-badge">Full Paper — Open Access</div>
+    <h1 class="paper-title">Free Will</h1>
+    <p class="paper-subtitle">The Christos-Saturnalia Complementarity of Agency, Constraint, and Conscious Control</p>
+    <div class="paper-meta">
+      <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+      <div class="pm-item"><strong>Organization</strong>Christos™ Energy, Technology &amp; Harmonic Design</div>
+      <div class="pm-item"><strong>Published</strong>May 2026</div>
+      <div class="pm-item"><strong>Status</strong>Research White Paper — Tier B/C</div>
+    </div>
+  </div>
+</div>
+<div class="paper-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-label">Contents</div>
+    <ul class="toc-links">
+      <li><a href="#abstract">Abstract</a></li><li><a href="#1--the-paradox">1. The Paradox</a></li><li><a href="#2--what-the-standard-models-go">2. What the Standard Models Got Rig</a></li><li><a href="#3--the-coherence-model-of-agen">3. The Coherence Model of Agency</a></li><li><a href="#3-1-operational-definition">3.1 Operational Definition</a></li><li><a href="#3-2-saturnalia-as-constraint--">3.2 Saturnalia as Constraint — Chri</a></li><li><a href="#3-3-the-veto-as-christos-curre">3.3 The Veto as Christos Current</a></li><li><a href="#3-4-coherence-depth-and-effect">3.4 Coherence Depth and Effective F</a></li><li><a href="#4--moral-responsibility">4. Moral Responsibility</a></li><li><a href="#5--why-this-is-stronger-than--">5. Why This Is Stronger Than "Uncau</a></li><li><a href="#6--falsifiable-predictions">6. Falsifiable Predictions</a></li><li><a href="#7--limitations">7. Limitations</a></li><li><a href="#8--conclusion">8. Conclusion</a></li><li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+  <article class="paper-body">
+    <div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The free will debate is typically framed as a conflict between uncaused choice and strict determinism. Libertarian free will appears to violate physical causality. Hard determinism eliminates agency and moral responsibility. Neuroscience has sharpened the paradox through Libet-style experiments showing neural preparation preceding conscious intention, and later prediction studies showing choices can be decoded from brain activity before awareness. This paper proposes a coherence-based model of agency that resolves the apparent conflict. Within the toroidal coherence architecture, free will and determinism are not opponents — they are complementary phases of one action-generation system. The Saturnalia current represents prior constraint: memory, habit, biology, trauma, unconscious preparation, accumulated causal history. The Christos current represents conscious selection: recursive evaluation, veto capacity, value integration, and future-directed self-regulation. Free will is therefore not uncaused choice. It is the measurable capacity of a coherent conscious system to modulate, inhibit, redirect, or select among action tendencies prepared by prior causal processes. Agency is real. Determinism is real. They operate at different phases of the same toroidal cycle.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> free will, determinism, agency, Libet, readiness potential, veto, coherence, compatibilism</div>
+</div>
+    <h1 class="sh" id="1--the-paradox">1. The Paradox</h1>
+<p class="bp">The classical free will debate rests on three tensions: human beings experience themselves as choosing; physical systems appear governed by prior causes; and moral responsibility seems to require genuine agency. If choices are fully uncaused they appear physically impossible. If fully determined, conscious agency appears epiphenomenal. If merely random, they are not meaningfully free. Libet (1983) found that readiness potentials in motor cortex begin ~550ms before reported conscious intention to move, apparently showing the brain decides before the "self" is aware. Soon et al. (2008) decoded simple button choices from fMRI several seconds before conscious awareness. These findings are regularly cited as evidence that free will is illusory.</p>
+<h1 class="sh" id="2--what-the-standard-models-go">2. What the Standard Models Got Right</h1>
+<p class="bp">Libet's readiness potential is real. The Schurger accumulator model correctly shows that the readiness potential partly reflects stochastic neural accumulation toward action threshold rather than a fully formed unconscious decision. Soon et al.'s predictions are probabilistic and involve simple arbitrary choices — not morally significant deliberation. Compatibilist philosophy correctly identifies that determinism and freedom are not necessarily incompatible. Top-down causation in complex systems is real — organizational state constrains lower-level behavior in ways not fully predictable from those levels alone. Crucially, Libet also found that subjects can veto actions up to ~200ms before movement — the conscious process retains real causal efficacy even if it does not initiate every action.</p>
+<h1 class="sh" id="3--the-coherence-model-of-agen">3. The Coherence Model of Agency</h1>
+
+<h2 class="sh2" id="3-1-operational-definition">3.1 Operational Definition</h2>
+<p class="bp">This paper defines agency operationally rather than metaphysically:</p>
+<p class="bp">Agency = capacity for coherent self-regulation over prepared action tendencies</p>
+<p class="bp">This is testable. It does not require uncaused causation. It requires that the conscious organizational state of the system can modulate the transition from prepared action to executed action.</p>
+<h2 class="sh2" id="3-2-saturnalia-as-constraint--">3.2 Saturnalia as Constraint — Christos as Selection</h2>
+<p class="bp">The Saturnalia current in action generation represents the accumulated weight of prior causes: genetics, conditioning, memory, habit, trauma, stress state, body chemistry, environmental context, and unconscious neural preparation. This is the return current — structural, compressive, deterministic in character. It prepares the space of available actions. The Christos current represents conscious selection: the recursive evaluation that modulates which prepared tendency crosses threshold, endorses, inhibits, or redirects the Saturnalia-prepared options. Neither current is illusory. Neither acts alone. Their interplay IS the action.</p>
+<h2 class="sh2" id="3-3-the-veto-as-christos-curre">3.3 The Veto as Christos Current</h2>
+<p class="bp">Libet's veto finding is the most important result in the literature for the coherence model. Subjects cannot spontaneously initiate every neural event — but they can halt prepared actions up to 200ms before execution. The veto is the Christos current exerting real causal power over the Saturnalia-prepared trajectory. It is not uncaused — it is top-down organizational causation from the high-coherence conscious state redirecting lower-level prepared dynamics. Agency is real. It operates at the organizational level, not at the level of individual neurons.</p>
+<h2 class="sh2" id="3-4-coherence-depth-and-effect">3.4 Coherence Depth and Effective Freedom</h2>
+<p class="bp">Agency scales with coherence depth — the degree to which a system can integrate information from multiple sources, model future consequences, evaluate options against values, and maintain deliberative stability under pressure. A system with low coherence depth acts primarily from stimulus-response — narrow phase space of available responses. A high-coherence system with rich self-model, future modeling, value integration, and deliberative stability has a correspondingly richer effective phase space. Freedom is not the absence of causation. It is the organizational richness of the causation that produces the action.</p>
+<h1 class="sh" id="4--moral-responsibility">4. Moral Responsibility</h1>
+<p class="bp">The coherence model preserves compatibilist moral responsibility without requiring libertarian free will. Responsibility tracks coherence capacity: agents are more responsible when their conscious coherence state was high enough to enable genuine deliberation and veto. They are less responsible when external coercion, trauma, intoxication, or neurological disruption reduced coherence below the threshold for reflective control. This is not a new idea philosophically — it aligns with how courts already assess diminished capacity. The coherence model provides the neuroscientific mechanism.</p>
+<h1 class="sh" id="5--why-this-is-stronger-than--">5. Why This Is Stronger Than "Uncaused Choice"</h1>
+<p class="bp">Framing free will as uncaused choice invites immediate physical objection — uncaused events violate conservation laws and causal structure. The coherence model makes a completely different claim: the organizational state of a high-coherence system is itself a real physical causal factor. The self is not separate from physics — the self IS the organizational physics at the level of the whole system. When a high-coherence agent acts, the action reflects that organizational state. That is what agency means. The paradox was generated by looking for freedom at the wrong level — the subatomic level rather than the organizational level where it actually operates.</p>
+<h1 class="sh" id="6--falsifiable-predictions">6. Falsifiable Predictions</h1>
+<p class="bp">Higher baseline EEG coherence should predict stronger veto capacity in Libet-style paradigms — subjects with higher neural synchronization should show more successful inhibition of prepared actions.</p>
+<p class="bp">Readiness potential onset timing should be modulated by coherence state — high-coherence deliberative conditions should show different temporal profiles than low-coherence impulsive conditions.</p>
+<p class="bp">Meditation training increasing coherence should produce measurable expansion in effective behavioral phase space — greater consistency between stated values and actual behavior.</p>
+<p class="bp">Stress, sleep deprivation, and intoxication should produce measurable reductions in veto success rates in controlled action-inhibition paradigms.</p>
+<p class="bp">Neural decoding of "choice" seconds before awareness should perform significantly worse for high-stakes value-laden decisions than for arbitrary trivial choices — where Christos selection is actively engaged, prediction from prior neural state should be harder.</p>
+<h1 class="sh" id="7--limitations">7. Limitations</h1>
+<p class="bp">The mapping between CTF coherence depth and measurable neural parameters requires rigorous empirical development.</p>
+<p class="bp">The claim that top-down organizational causation constitutes "genuine" agency in a philosophically robust sense remains contested — the framework offers a scientific account, not final philosophical resolution.</p>
+<p class="bp">The hard determinist position — that even high-coherence deliberation is fully determined — cannot be ruled out by the framework. The framework shows agency is real and important without claiming it is uncaused.</p>
+<h1 class="sh" id="8--conclusion">8. Conclusion</h1>
+<p class="bp">Free will and determinism are both real. They operate at different phases of the same toroidal action-generation cycle. The Saturnalia current prepares the space of available action through accumulated causal history. The Christos current selects, endorses, inhibits, or redirects within that space through coherent conscious deliberation. The veto is not epiphenomenal — it is the organizational causal power of the high-coherence system operating at its own level. Freedom is not escape from physics. It is the richness and depth of the organizational physics that generates the action. The paradox was not in reality. It was in looking for agency at the wrong level of description.</p>
+
+    <div class="five-moves-box">
+  <div class="five-moves-label">Resolution Framework — The Five Moves</div>
+  <p class="five-moves-text">This paper applies the following move(s) from the master Paradox Resolution Framework.</p>
+</div>
+    <h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;">Libet, B. (1985). Unconscious cerebral initiative and the role of conscious will in voluntary action. Behavioral and Brain Sciences, 8, 529–539.</p>
+<p class="bp" style="font-size:0.88rem;">Schurger, A., Sitt, J. D., &amp; Dehaene, S. (2012). An accumulator model for spontaneous neural activity prior to self-initiated movement. PNAS, 109, E2904–E2913.</p>
+<p class="bp" style="font-size:0.88rem;">Soon, C. S., Brass, M., Heinze, H. J., &amp; Haynes, J. D. (2008). Unconscious determinants of free decisions in the human brain. Nature Neuroscience, 11, 543–545.</p>
+<p class="bp" style="font-size:0.88rem;">Frankfurt, H. (1971). Freedom of the will and the concept of a person. Journal of Philosophy, 68, 5–20.</p>
+<p class="bp" style="font-size:0.88rem;">Kane, R. (1996). The Significance of Free Will. Oxford University Press.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026a). Unified Coherence Architecture. Christos Energy.</p>
+<p class="bp" style="font-size:0.88rem;">Farrior, J. (2026b). Physics of Metaphysics. Christos Energy.</p>
+    <div class="cross-refs">
+  <div class="cross-refs-label">Cross-References — Christos™ Library</div>
+  <ul class="cross-refs-list"><li>PR-013: Hard Problem of Consciousness — organizational causation framework</li>
+<li>PR-025: Consciousness After Death — coherence persistence across transitions</li>
+<li>PR-036: The Binding Problem — recursive coherence integration</li>
+<li>CF-12: Unified Coherence Architecture</li>
+<li>Vol. II: Physics of Metaphysics</li></ul>
+</div>
+    <div class="nav-bottom">
+      <a href="pr-025.html" class="nav-btn">← Consciousness After Death</a>
+      <a href="./" class="nav-btn" style="color:#3AAFAF !important;">↑ All Paradox Papers</a>
+      <a href="pr-027.html" class="nav-btn">The Fine-Tuning Problem →</a>
+    </div>
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · All Rights Reserved</p>
+    </div>
+  </article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="./">Paradox Papers</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior · Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.getElementById('backTop').style.display=window.scrollY>600?'block':'none';});</script>
+</body>
+</html>
