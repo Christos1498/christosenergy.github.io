@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Two Geometries | Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:"Cinzel",serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:"Raleway",sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}.nav-links a{font-family:"Raleway",sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:"Raleway",sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:"";width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:"Cinzel",serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:0;}.pm-item{font-family:"Raleway",sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:"Raleway",sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}.keywords-block{font-family:"Raleway",sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.7) !important;line-height:1.7;margin-top:12px;padding-top:12px;border-top:1px solid rgba(201,168,76,0.12);}h1.sh{font-family:"Cinzel",serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:"Cinzel",serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#0A1628 !important;border-left:3px solid #3AAFAF;padding:12px 18px;margin:16px 0;font-family:"Courier New",monospace;font-size:0.88rem;color:#3AAFAF !important;letter-spacing:0.03em;line-height:1.7;}.info-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-left:4px solid #C9A84C;padding:18px 22px;margin:24px 0;}.info-box-label{font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}.info-box p{font-size:0.97rem;color:#D8D0C0 !important;line-height:1.8;margin-bottom:0;}.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:24px 0;}.stat-block{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.18);padding:18px 16px;text-align:center;}.stat-num{font-family:"Cinzel",serif;font-size:2rem;font-weight:700;color:#C9A84C !important;line-height:1;margin-bottom:6px;}.stat-label{font-family:"Raleway",sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;line-height:1.4;}.stat-sub{font-family:"Raleway",sans-serif;font-size:0.54rem;color:rgba(216,208,192,0.35) !important;margin-top:4px;}.warning-box{background-color:rgba(180,60,60,0.06) !important;border:1px solid rgba(180,60,60,0.2);border-left:4px solid rgba(180,60,60,0.5);padding:16px 22px;margin:20px 0;}.warning-box p{font-family:"Raleway",sans-serif;font-size:0.75rem;color:rgba(216,208,192,0.75) !important;margin:0;line-height:1.65;}.key-point{background-color:rgba(201,168,76,0.04) !important;border:2px solid rgba(201,168,76,0.18);padding:20px 26px;margin:24px 0;}.key-point-label{font-family:"Raleway",sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:8px;}.key-point p{font-family:"Cormorant Garamond",serif;font-size:1.05rem;font-style:italic;color:#D8D0C0 !important;margin:0;line-height:1.85;}.metalaw-block{background-color:#0A1628 !important;border-left:3px solid rgba(201,168,76,0.35);padding:14px 20px;margin:12px 0;}.metalaw-label{font-family:"Raleway",sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:6px;}.metalaw-block p{font-size:0.97rem;color:#D8D0C0 !important;margin:0;line-height:1.75;}.geo-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}.geo-block{background-color:#0A1628 !important;border:1px solid rgba(201,168,76,0.15);padding:16px 18px;}.geo-title{font-family:"Cinzel",serif;font-size:0.82rem;font-weight:600;color:#C9A84C !important;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(201,168,76,0.1);}.geo-block ul{list-style:none;padding:0;}.geo-block li{font-size:0.9rem;color:#D8D0C0 !important;padding:4px 0;border-bottom:1px solid rgba(201,168,76,0.05);line-height:1.5;}.geo-block li::before{content:"·";color:rgba(201,168,76,0.4);margin-right:6px;}.tier-tag{display:inline-block;font-family:"Raleway",sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;padding:1px 6px;border-radius:2px;margin-right:4px;vertical-align:middle;}.tag-a{background:rgba(201,168,76,0.12);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);}.tag-b{background:rgba(58,175,175,0.12);color:#3AAFAF;border:1px solid rgba(58,175,175,0.3);}.tag-c{background:rgba(208,168,109,0.12);color:#d0a86d;border:1px solid rgba(208,168,109,0.3);}.table-wrap{overflow-x:auto;margin:20px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:"Raleway",sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.5;vertical-align:top;font-family:"Cormorant Garamond",serif;font-size:0.95rem;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:"Raleway",sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;transition:all 0.2s;}.collab-btn:hover{background-color:rgba(201,168,76,0.2) !important;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:"Cinzel",serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:"Raleway",sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:"Raleway",sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;}.geo-compare{grid-template-columns:1fr;}}</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy · Technology · Harmonic Design</span></a><ul class="nav-links"><li><a href="../../../index.html">Home</a></li><li><a href="../../../library.html">Library</a></li><li><a href="../../../diagrams.html">Diagrams</a></li><li><a href="../../../economy.html">Economy</a></li><li><a href="../../../book.html">Book</a></li><li><a href="../../../the-case.html">The Case</a></li><li><a href="../../../papers/paradox-resolution/paradox-index.html">Paradox</a></li><li><a href="../../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+<div class="paper-header"><div class="paper-header-inner">
+  <div class="ph-eyebrow">Christos&#8482; Harmonic Framework · Coherence Geometry Series · May 2026</div>
+  <div class="open-badge">Full Paper — Open Access</div>
+  <h1 class="paper-title">The Two Geometries</h1>
+  <p class="paper-subtitle">Circulation Topology and Extraction Topology in Coherence Field Systems</p>
+  <div class="paper-meta">
+    <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+    <div class="pm-item"><strong>Organization</strong>Christos&#8482; Energy, Technology &amp; Harmonic Design</div>
+    <div class="pm-item"><strong>Published</strong>May 2026</div>
+    <div class="pm-item"><strong>Status</strong>Public Research White Paper · Tier A–B Formal Analysis</div>
+  </div>
+</div></div>
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links">
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href="#part-i">Part I — The Topological Problem</a></li>
+  <li><a href="#part-ii">Part II — The Two Exemplars</a></li>
+  <li><a href="#part-iii">Part III — Field Dynamics</a></li>
+  <li><a href="#part-iv">Part IV — Discriminating Predictions</a></li>
+</ul></aside>
+<article class="paper-body">
+<a href="mailto:contact@christosenergy.com" class="collab-btn">&#10022; Collaborate with Joshua</a>
+<div class="info-box" style="margin-bottom:28px;"><div class="info-box-label">Interpretive Tier Framework</div><p><span class="tier-tag tag-a">Tier A</span> Formal Geometry / Derivation — equation-level content derived from stated assumptions &nbsp;|&nbsp; <span class="tier-tag tag-b">Tier B</span> Physical Interpretation — well-grounded but not yet experimentally confirmed in all domains &nbsp;|&nbsp; <span class="tier-tag tag-c">Tier C</span> Empirical Hypothesis — testable predictions not yet established by experiment</p></div>
+<div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">All persistent physical systems operate under topological constraints governing how energy and information circulate through their structure. This paper presents a formal geometric analysis of two fundamentally distinct coherence field topologies: the open circulation topology, in which coherence gradients diffuse, self-restore, and return — and the closed extraction topology, in which coherence is confined, circulation is suppressed, and the system becomes dependent on external input for persistence.</p>
+  <p class="abstract-text">Drawing on the coherence wave equation from the Unified Coherence Architecture (UCA), this paper formally characterizes each topology in terms of boundary conditions, flux behavior, and restoration dynamics, and provides a set of discriminating predictions. No claims beyond Tier B are made. The geometric and field-theoretic analysis stands independent of any cultural, historical, or civilizational interpretation.</p>
+  <div class="keywords-block"><strong>Keywords:</strong> coherence field topology, circulation geometry, extraction geometry, coherence wave equation, open boundary conditions, closed-loop field systems, Christos&#8482; Harmonic Framework</div>
+</div>
+
+<h1 class="sh" id="part-i">Part I — The Topological Problem</h1>
+<h2 class="sh2">1.1 Two Classes of System Geometry</h2>
+<p class="bp">In field theory, the behavior of a system is not determined solely by its internal dynamics — it is equally determined by its boundary conditions and topological structure. Two systems governed by identical internal equations can behave in fundamentally different ways if their topological configurations differ. This paper identifies two geometric classes:</p>
+<div class="geo-compare">
+  <div class="geo-block"><div class="geo-title">Open Circulation Topology</div><ul>
+    <li>Coherence gradients free to diffuse, propagate, and return</li>
+    <li>Energy enters, distributes, transforms, and exits</li>
+    <li>Boundary conditions permit bidirectional flux</li>
+    <li>System self-restores</li>
+  </ul></div>
+  <div class="geo-block"><div class="geo-title">Closed Extraction Topology</div><ul>
+    <li>Coherence confined within a closed boundary</li>
+    <li>Internal circulation is suppressed</li>
+    <li>Cannot export coherence or regenerate from within</li>
+    <li>Dependent on continued external input</li>
+  </ul></div>
+</div>
+<p class="bp">These are not descriptions of specific objects or institutions. They are geometric classes — topological configurations that produce predictable field behaviors regardless of the domain in which they appear.</p>
+<h2 class="sh2">1.2 Why Geometry Determines Field Behavior</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> The coherence wave equation from the UCA describes the time evolution of a coherence field C(x,t):</p>
+<div class="formula-block">&#8706;C/&#8706;t = D&#8711;&#178;C + &#945;C(1 &#8722; C) &#8722; &#946;N(x,t)
+
+Where:
+D&#8711;&#178;C &#8194;&#8212; spatial diffusion: coherence spreads across the system
+&#945;C(1&#8722;C) &#8194;&#8212; nonlinear self-restoration: system returns toward coherent states
+&#946;N(x,t) &#8194;&#8212; noise and decoherence: environmental disruption</div>
+<p class="bp">The behavior of this equation is fundamentally altered by the boundary conditions imposed on C. The same equation produces self-sustaining, self-restoring behavior under open boundary conditions — and produces confinement, stagnation, and eventual depletion under closed boundary conditions that prevent flux exchange.</p>
+<h2 class="sh2">1.3 The Flux Condition</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> Define the coherence flux J as:</p>
+<div class="formula-block">J = &#8722;D&#8711;C
+
+Net coherence flux: &#934;_net = &#8750; J &#183; n&#770; dS
+
+Open circulation: &#934;_net = 0 &nbsp;&nbsp;(balanced in/out exchange)
+Closed extraction: &#934;_net &#8800; 0 &nbsp;&nbsp;(confinement; exchange prevented)</div>
+
+<h1 class="sh" id="part-ii">Part II — The Two Geometric Exemplars</h1>
+<h2 class="sh2">2.2 The Open Circulation Structure</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> The open circulation topology exhibits the following geometric properties: asymmetric node distribution allowing directional gradient flow; open boundary permitting outward flux; multiple independent pathways preventing local trapping; and central connectivity without enclosure. These properties support active spatial circulation (D&#8711;&#178;C nonzero) and active self-restoration. Two independent mechanisms defend coherence simultaneously.</p>
+<h2 class="sh2">2.3 The Closed Extraction Structure</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> The closed extraction topology exhibits: symmetric closure (two interlocking triangles forming a self-enclosing hexagonal boundary); all nodes confined within the boundary; redundant pathways creating standing waves rather than traveling waves; and enclosing geometry that acts as a closed boundary, suppressing &#934;_net not by balance but by confinement.</p>
+<h2 class="sh2">2.4 Comparative Topology Table</h2>
+<div class="table-wrap"><table>
+  <thead><tr><th>Property</th><th>Open Circulation</th><th>Closed Extraction</th></tr></thead>
+  <tbody>
+    <tr><td>Boundary condition</td><td>Open — permits bidirectional flux</td><td>Closed — confines field</td></tr>
+    <tr><td>Net coherence flux &#934;_net</td><td>= 0 by balance (in = out)</td><td>&#8800; 0 by confinement</td></tr>
+    <tr><td>Internal diffusion D&#8711;&#178;C</td><td>Active — coherence circulates</td><td>Suppressed — standing wave</td></tr>
+    <tr><td>Self-restoration &#945;C(1&#8722;C)</td><td>Active — system returns to coherent state</td><td>Impaired — cannot drive outward flux</td></tr>
+    <tr><td>Boundary geometry</td><td>Asymmetric, open-ended</td><td>Symmetric, self-enclosing</td></tr>
+    <tr><td>Long-term stability</td><td>Self-sustaining</td><td>Dependent on external input</td></tr>
+    <tr><td>Response to perturbation</td><td>Anti-fragile — redistributes load</td><td>Brittle — local failure propagates</td></tr>
+  </tbody>
+</table></div>
+
+<h1 class="sh" id="part-iii">Part III — Field Dynamics of Each Topology</h1>
+<h2 class="sh2">3.1 Steady-State Analysis — Open Circulation</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> For an open circulation system at steady state (&#8706;C/&#8706;t = 0):</p>
+<div class="formula-block">D&#8711;&#178;C + &#945;C(1 &#8722; C) = &#946;N(x,t)</div>
+<p class="bp">The diffusion term and restoration term together balance environmental noise. Two independent mechanisms defend coherence simultaneously. Loss of one does not eliminate coherence maintenance. This is the defining property of a resilient system.</p>
+<h2 class="sh2">3.2 Steady-State Analysis — Closed Extraction</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> For a closed extraction topology, the boundary conditions suppress D&#8711;&#178;C &#8594; 0. The steady-state equation reduces to:</p>
+<div class="formula-block">&#945;C(1 &#8722; C) &#8776; &#946;N(x,t)</div>
+<p class="bp">The system depends entirely on the nonlinear restoration term. There is no spatial diffusion pathway. When noise &#946; exceeds the restoration capacity &#945;, coherence collapses — with no secondary mechanism to arrest the collapse. A single point of failure.</p>
+<h2 class="sh2">3.3 The Restoration Ratio</h2>
+<p class="bp"><span class="tier-tag tag-a">Tier A</span> Define the restoration ratio R:</p>
+<div class="formula-block">R = &#945;C(1 &#8722; C) / &#946;N(x,t)
+
+Open system when R &lt; 1: diffusion pathway supplements restoration — coherence imported from adjacent regions
+Closed system when R &lt; 1: no supplementary pathway — coherence declines monotonically</div>
+<p class="bp"><span class="tier-tag tag-b">Tier B</span> The topological difference produces a measurable difference in response to external perturbation. An open circulation system distributes perturbation across multiple pathways. A closed extraction topology concentrates perturbation at the boundary nodes. When they fail, the entire enclosure becomes incoherent simultaneously. This is a geometrically derived prediction — it follows directly from the topological structure.</p>
+
+<h1 class="sh" id="part-iv">Part IV — Discriminating Predictions</h1>
+<p class="bp"><span class="tier-tag tag-c">Tier C</span> The following predictions are testable consequences of the formal geometry presented in Parts I–III. They apply to any physical, biological, or social system whose topology can be characterized as belonging to one of the two classes.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Prediction</th><th>Open Circulation</th><th>Closed Extraction</th></tr></thead>
+  <tbody>
+    <tr><td>Response to uniform decoherence pressure</td><td>Maintains coherence through spatial redistribution; coherence loss is gradual and recoverable</td><td>Coherence declines monotonically until external input restored; no self-recovery</td></tr>
+    <tr><td>Response to local node failure</td><td>System redistributes load; global coherence minimally affected</td><td>Local failure propagates; system-wide coherence collapse</td></tr>
+    <tr><td>Coherence under periodic perturbation</td><td>Anti-fragile: system adapts, may increase coherence</td><td>Brittle: system degrades under repeated perturbation</td></tr>
+    <tr><td>Steady-state coherence gradient</td><td>Non-zero internal gradient; coherence flows from high to low regions</td><td>Coherence gradient suppressed; standing wave pattern</td></tr>
+    <tr><td>Response to external coherence injection</td><td>Distributes injected coherence; maintains efficiency</td><td>Temporarily raises C; reverts when injection stops</td></tr>
+  </tbody>
+</table></div>
+<div class="info-box"><div class="info-box-label">Scope of Application</div><p>These predictions are derivable from the formal geometry alone and require no assumptions about the specific domain of application. They are equally valid as predictions about engineered field systems, biological networks, social systems, or economic structures — wherever the topological characterization of open versus closed boundary conditions applies.</p></div>
+<div style="margin-top:48px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</p></div>
+</article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:\"smooth\"})">&#8593; Top</button><footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../../index.html">Home</a></li><li><a href="../../../library.html">Library</a></li><li><a href="../../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer><script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
+</body>
+</html>
