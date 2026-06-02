@@ -77,91 +77,31 @@ a{text-decoration:none;color:inherit;}
 .footer-nav a{font-family:'Raleway',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:#AABFCC;}
 .footer-nav a:hover{color:#C9A84C;}
 .footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.08em;width:100%;margin-top:24px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.page-header{padding:190px 20px 50px;}.filter-bar{padding:16px 20px;}.library-body{padding:40px 20px 80px;}.paper-row{grid-template-columns:1fr;gap:10px;}.pr-right{text-align:left;}.library-cta{padding:32px 20px;}.footer{padding:44px 20px 32px;}}
-
-
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200;}
-.hamburger span{display:block;width:24px;height:2px;background-color:#C9A84C;transition:all 0.3s ease;border-radius:2px;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:20px 24px;z-index:150;flex-direction:column;gap:4px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#D8D0C0 !important;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(201,168,76,0.1);transition:color 0.2s;}
-.mobile-menu a:hover{color:#C9A84C !important;}
-.mobile-menu a:last-child{border-bottom:none;}
-.mobile-menu .mob-cta{background-color:#C9A84C !important;color:#08111E !important;text-align:center;padding:14px;margin-top:8px;border-bottom:none !important;}
-}
-
-
-/* ── MOBILE NAV ── */
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200;flex-shrink:0;}
-.hamburger span{display:block;width:26px;height:2px;background-color:#C9A84C !important;transition:all 0.3s ease;border-radius:2px;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:16px 24px;z-index:999;flex-direction:column;gap:0;box-shadow:0 8px 32px rgba(0,0,0,0.6);}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#D8D0C0 !important;text-decoration:none;padding:15px 8px;border-bottom:1px solid rgba(201,168,76,0.12);transition:color 0.2s;display:block;}
-.mobile-menu a:hover{color:#C9A84C !important;}
-.mobile-menu a:last-child{border-bottom:none;}
-.mobile-menu .mob-cta{background-color:#C9A84C !important;color:#08111E !important;text-align:center;padding:15px;margin-top:10px;font-weight:700;}
-
-
 @media(max-width:900px){
-  .nav{
-    height:auto !important;
-    flex-wrap:wrap;
-    padding:12px 20px !important;
-    gap:0;
-  }
-  .nav-logo{
-    flex:1;
-    padding:4px 0;
-  }
-  .hamburger{display:none !important;}
-  .nav-links{
-    display:flex !important;
-    flex-wrap:wrap;
-    gap:0;
-    width:100%;
-    border-top:1px solid rgba(201,168,76,0.15);
-    margin-top:10px;
-    padding-top:10px;
-  }
-  .nav-links a{
-    font-size:0.62rem !important;
-    letter-spacing:0.12em !important;
-    padding:8px 10px !important;
-    white-space:nowrap;
-    color:#D8D0C0 !important;
-  }
+  .nav{height:auto !important;flex-wrap:wrap;padding:12px 20px !important;gap:0;}
+  .nav-logo{flex:1;padding:4px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;padding-bottom:4px;}
+  .nav-links a{font-size:0.62rem !important;letter-spacing:0.12em !important;padding:8px 10px !important;white-space:nowrap;color:#D8D0C0 !important;}
   .nav-links a:hover{color:#C9A84C !important;}
-  .nav-cta{
-    background-color:#C9A84C !important;
-    color:#08111E !important;
-    padding:8px 14px !important;
-    border-radius:2px;
-  }
-  .mobile-menu{display:none !important;}
+  .nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 14px !important;border-radius:2px;}
+  .page-header{padding:160px 20px 50px;}
+  .filter-bar{padding:16px 20px;}
+  .library-body{padding:40px 20px 80px;}
+  .paper-row{grid-template-columns:1fr;gap:10px;}
+  .pr-right{text-align:left;}
+  .library-cta{padding:32px 20px;}
+  .footer{padding:44px 20px 32px;}
 }
-
-  .nav-links a{padding:9px 10px !important;}
-  .nav-links{padding-bottom:4px;}
-
-@media(max-width:480px){
-  .nav-links a{
-    font-size:0.58rem !important;
-    padding:7px 8px !important;
-  }
-}
-
+@media(max-width:480px){.nav-links a{font-size:0.58rem !important;padding:7px 8px !important;}}
 </style>
 </head>
 <body style="background-color:#08111E !important;">
 
 <nav class="nav">
-  <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:12px;"><img src="assets/christos-emblem.png" alt="Christos™" style="width:36px;height:36px;object-fit:cover;border-radius:50%;flex-shrink:0;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
+  <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+    <img src="assets/christos-emblem.png" alt="Christos™" style="width:36px;height:36px;object-fit:cover;border-radius:50%;flex-shrink:0;">
+    <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+  </a>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="library.html" class="active">Library</a>
@@ -169,29 +109,18 @@ a{text-decoration:none;color:inherit;}
     <a href="economy.html">Economy</a>
     <a href="book.html">Book</a>
     <a href="the-case.html">The Case</a>
-    <li><a href="papers/paradox-resolution/paradox-index.html">Paradox</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact</a>
+    <a href="papers/paradox-resolution/paradox-index.html">Paradox</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
   </div>
-
-<button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="library.html">Library</a>
-  <a href="diagrams.html">Diagrams</a>
-  <a href="economy.html">Economy</a>
-  <a href="book.html">Book</a>
-  <a href="the-case.html">The Case</a>
-  <a href="contact.html" class="mob-cta">Contact</a>
-</div>
 
 <div class="page-header">
   <div class="page-header-inner">
     <div class="eyebrow">Christos™ Research Platform</div>
     <h1 class="page-title">Research Library</h1>
-    <p class="page-sub">The complete public catalog of Christos™ research — 169 original papers spanning 18 domains. Select foundational and knowledge-based papers are published in full open access. Papers containing proprietary inventions present abstract-level visibility — full technical architecture available through protected collaboration pathways.</p>
+    <p class="page-sub">The complete public catalog of Christos™ research — 174 original papers spanning 18 domains. Select foundational and knowledge-based papers are published in full open access. Papers containing proprietary inventions present abstract-level visibility — full technical architecture available through protected collaboration pathways.</p>
     <div class="lib-stats">
-      <div><div class="lib-stat-num">169</div><div class="lib-stat-label">Total Papers</div></div>
+      <div><div class="lib-stat-num">174</div><div class="lib-stat-label">Total Papers</div></div>
       <div><div class="lib-stat-num">18</div><div class="lib-stat-label">Domains</div></div>
       <div><div class="lib-stat-num">1,000+</div><div class="lib-stat-label">Inventions</div></div>
       <div><div class="lib-stat-num">1</div><div class="lib-stat-label">Unified Architecture</div></div>
@@ -215,7 +144,7 @@ a{text-decoration:none;color:inherit;}
       <button class="filter-btn" onclick="filterCat('ai',this)">AI</button>
       <button class="filter-btn" onclick="filterCat('frontier',this)">Frontiers</button>
     </div>
-    <div class="result-count" id="result-count">169 Papers</div>
+    <div class="result-count" id="result-count">174 Papers</div>
   </div>
 </div>
 
@@ -224,7 +153,7 @@ a{text-decoration:none;color:inherit;}
 
 <!-- 01 CORE FOUNDATIONS -->
 <div class="cat-section" data-cat="core" id="cat-core">
-  <div class="cat-header"><div class="cat-header-num">01</div><div class="cat-header-title">Core Foundations</div><div class="cat-header-count">12 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">01</div><div class="cat-header-title">Core Foundations</div><div class="cat-header-count">14 Papers</div></div>
   <div class="cat-diagram-ref">System Diagrams: <a href="diagrams.html#architecture">The Christos Architecture</a> · <a href="diagrams.html#toroidal">Reality as a Loop</a> · <a href="diagrams.html#geometry">Coherence Geometry System</a></div>
   <div class="paper-list">
     <a href="papers/core-foundations/magnus-opus.html" class="paper-row"><div><div class="pr-tag">CF-01</div><div class="pr-title">Magnus Opus — Unified System</div><div class="pr-desc">The overarching integration layer of the Christos platform. Physics, consciousness, geometry, and biological systems interpreted as parts of a single structured whole — the foundational text from which every other paper derives.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
@@ -239,12 +168,14 @@ a{text-decoration:none;color:inherit;}
     <a href="papers/core-foundations/consciousness-dimensional-phenomenon.html" class="paper-row"><div><div class="pr-tag">CF-10</div><div class="pr-title">Consciousness as a Dimensional Phenomenon</div><div class="pr-desc">A formal speculative physics in which consciousness is the foundational scalar potential from which all observable reality emerges. The Death-Void-Resurrection cycle formalized as a precise mathematical transition.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/core-foundations/sleep-dream-architecture.html" class="paper-row"><div><div class="pr-tag">CF-11</div><div class="pr-title">Sleep & Dream Architecture</div><div class="pr-desc">Sleep reframed as the body's primary coherence restoration cycle. Each sleep stage mapped to the specific dimensional layer it restores. The glymphatic system identified as the brain's nightly coherence reset mechanism.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
     <a href="papers/core-foundations/collective-coherence.html" class="paper-row"><div><div class="pr-tag">CF-12</div><div class="pr-title">Collective Coherence</div><div class="pr-desc">When multiple humans achieve high coherence simultaneously, their fields couple rather than add — producing emergent field properties. The formal prediction of a 2035 planetary coherence convergence.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/core-foundations/unified-structure-coherent-systems.html" class="paper-row"><div><div class="pr-tag">CF-13</div><div class="pr-title">A Unified Structure for Coherent Systems</div><div class="pr-desc">Seven irreducible Meta-Laws constituting the minimum structural conditions for coherent system existence across all scales and domains. A five-level categorical hierarchy that prevents the category leakage responsible for most persistent paradoxes in science and philosophy. Full open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
+    <a href="papers/core-foundations/the-two-geometries.html" class="paper-row"><div><div class="pr-tag">CF-14</div><div class="pr-title">The Two Geometries</div><div class="pr-desc">A formal geometric analysis of two fundamentally distinct coherence field topologies — open circulation and closed extraction — characterized through the coherence wave equation. Discriminating predictions provided for physical, biological, and social systems. Full open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
   </div>
 </div>
 
 <!-- 02 MATHEMATICS & STRUCTURE -->
 <div class="cat-section" data-cat="math" id="cat-math">
-  <div class="cat-header"><div class="cat-header-num">02</div><div class="cat-header-title">Mathematics & Structure</div><div class="cat-header-count">7 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">02</div><div class="cat-header-title">Mathematics & Structure</div><div class="cat-header-count">9 Papers</div></div>
   <div class="cat-diagram-ref">System Diagrams: <a href="diagrams.html#geometry">Coherence Geometry System</a> · <a href="diagrams.html#architecture">The Christos Architecture</a></div>
   <div class="paper-list">
     <a href="papers/mathematics-structure/collatz-convergence.html" class="paper-row"><div><div class="pr-tag">MS-01</div><div class="pr-title">Collatz Convergence Paper</div><div class="pr-desc">A conditional supermartingale framework for the Collatz dynamics. Collatz at a = 3 sits in the contractive regime near the critical boundary — the unique arithmetic attractor of a near-critical symbolic dynamical system.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
@@ -253,8 +184,9 @@ a{text-decoration:none;color:inherit;}
     <a href="papers/mathematics-structure/coherence-quantification-index.html" class="paper-row"><div><div class="pr-tag">MS-04</div><div class="pr-title">Coherence Quantification Index (CQI)</div><div class="pr-desc">The formal mathematical instrument for measuring coherence states across biological, physical, and systemic domains — the core measurement tool of the Christos platform.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/mathematics-structure/cqi-technical-specification.html" class="paper-row"><div><div class="pr-tag">MS-05</div><div class="pr-title">CQI Technical Specification</div><div class="pr-desc">The engineering-level specification for the Coherence Quantification Index — measurement protocols, threshold standards, and validation architecture.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/mathematics-structure/cqi-unified-civilization-integration.html" class="paper-row"><div><div class="pr-tag">MS-06</div><div class="pr-title">CQI Unified Civilization Integration</div><div class="pr-desc">Application of the CQI measurement framework at civilization scale — integrating coherence tracking across infrastructure, governance, health, and environmental systems as a planetary operating metric.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-        <a href="papers/mathematics-structure/prime-gap-dynamics.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">MS-08</div><div class="pr-title">Recursive Renormalization Structure in Prime Gap Dynamics</div><div class="pr-desc">Complete Phase I archival edition — 100 independent computational tests exploring anomalous diffusion, recursive cascade coherence, and non-equilibrium transport in prime gap sequences. Phase II bridge documents the complete reduction chain arriving at the centered Type II fourth-moment theorem as the single remaining analytic wall. 69 pages including 40 terminal outputs, 12 analytic diagrams, and 7 Phase II posters.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
     <a href="papers/mathematics-structure/recursive-field-structures.html" class="paper-row"><div><div class="pr-tag">MS-07</div><div class="pr-title">Recursive Field Structures & Attractors</div><div class="pr-desc">A mathematical treatment of self-similar field patterns and coherence attractors — the formal basis for toroidal recursion across scales from quantum to cosmic.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/mathematics-structure/prime-gap-dynamics.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">MS-08</div><div class="pr-title">Recursive Renormalization Structure in Prime Gap Dynamics</div><div class="pr-desc">Complete Phase I archival edition — 100 independent computational tests exploring anomalous diffusion, recursive cascade coherence, and non-equilibrium transport in prime gap sequences. 69 pages including 40 terminal outputs, 12 analytic diagrams, and 7 Phase II posters.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
+    <a href="papers/mathematics-structure/paper55-geochemical-regime-biological-architecture.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">MS-09</div><div class="pr-title">Geochemical Regime Shifts and Biological Mineral Architecture</div><div class="pr-desc">A systems framework proposing that planetary silica availability is a primary driver of biological mineral architecture, organism scaling, and biospheric phase transitions across geological time. Draws on ocean silica geochemistry, gigantism records, phytolith fossil studies, relic species biology, and biomineralization literature. Five falsifiable predictions. Full open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
   </div>
 </div>
 
@@ -276,7 +208,7 @@ a{text-decoration:none;color:inherit;}
 
 <!-- 04 BIOLOGY & MEDICINE -->
 <div class="cat-section" data-cat="bio" id="cat-bio">
-  <div class="cat-header"><div class="cat-header-num">04</div><div class="cat-header-title">Biology & Medicine</div><div class="cat-header-count">13 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">04</div><div class="cat-header-title">Biology & Medicine</div><div class="cat-header-count">14 Papers</div></div>
   <div class="cat-diagram-ref">System Diagrams: <a href="diagrams.html#human">Human System Stack</a> · <a href="diagrams.html#agriculture">Coherent Agricultural / Biological System</a></div>
   <div class="paper-list">
     <a href="papers/biology-medicine/unified-coherence-medicine.html" class="paper-row"><div><div class="pr-tag">BM-01</div><div class="pr-title">Unified Coherence Medicine System</div><div class="pr-desc">The first unified theory of medicine grounded in a single testable principle: all chronic disease is coherence loss, and all healing is coherence restoration. Fourteen integrated frameworks. Seven therapeutic tiers. Over 30 proposed randomized controlled trials.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
@@ -292,27 +224,27 @@ a{text-decoration:none;color:inherit;}
     <a href="papers/biology-medicine/biological-energy-systems.html" class="paper-row"><div><div class="pr-tag">BM-11</div><div class="pr-title">Biological Energy & Coherence</div><div class="pr-desc">The human body reframed as the most sophisticated coherence-generative energy system ever observed — a 1.5-billion-year proof of concept for every principle the Christos Energy Framework proposes.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/biology-medicine/sound-as-medicine.html" class="paper-row"><div><div class="pr-tag">BM-12</div><div class="pr-title">Sound as Medicine</div><div class="pr-desc">Sound reframed as the most direct physical expression of the pure tone dimension. The first systematic account of why specific frequencies produce specific healing effects.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/biology-medicine/inner-geometry-of-healing.html" class="paper-row"><div><div class="pr-tag">BM-13</div><div class="pr-title">Inner Geometry of Healing — Volume 2</div><div class="pr-desc">A comprehensive reimagining of human anatomy — the body not as a mechanical assemblage but as a living harmonic instrument. Every structure serves both a biochemical function and a geometric field function.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/medical-applications/complete-noninvasive-medicine.html" class="paper-row"><div><div class="pr-tag">BM-14</div><div class="pr-title">The Complete Non-Invasive Medicine System</div><div class="pr-desc">17 integrated diagnostic and therapeutic devices — from the Hemo-Spectrometer™ and Smart Toilet™ to the Coherence Healing Beam™ and Coherence Youth Accelerator™ — forming a unified closed-loop coherence medicine platform. Abstract published; full engineering specifications under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Specs: NDA Required</div></div></a>
   </div>
 </div>
 
 <!-- 05 MEDICAL APPLICATIONS -->
 <div class="cat-section" data-cat="med" id="cat-med">
-  <div class="cat-header"><div class="cat-header-num">05</div><div class="cat-header-title">Medical Applications</div><div class="cat-header-count">9 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">05</div><div class="cat-header-title">Medical Applications</div><div class="cat-header-count">12 Papers</div></div>
   <div class="cat-diagram-ref">System Diagram: <a href="diagrams.html#human">Human System Stack</a></div>
   <div class="paper-list">
     <a href="papers/medical-applications/organ-regeneration-system.html" class="paper-row"><div><div class="pr-tag">MA-01</div><div class="pr-title">Organ Regeneration System</div><div class="pr-desc">A five-layer coherence-based regenerative protocol — organ-specific Morphogenic Resonator devices, frequency-imprinted Healing Fluids, whole-body Coherence Chamber sessions, daily field maintenance, and systemic nutritional support.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/medical-applications/complete-organ-regeneration-architecture.html" class="paper-row"><div><div class="pr-tag">MA-02</div><div class="pr-title">Complete Organ Regeneration Architecture</div><div class="pr-desc">All 80 organs. Every fluid. Every gel. Every resonator. 35+ healing fluids, 40+ healing gels, 28 morphogenic resonators, 12 chamber programs, and an 11-phase full-body protocol.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/medical-applications/field-guided-tissue-regeneration.html" class="paper-row"><div><div class="pr-tag">MA-03</div><div class="pr-title">Field-Guided Tissue Regeneration</div><div class="pr-desc">A coherence-field approach to directing biological tissue repair — using structured field geometries to guide cellular differentiation and tissue reconstruction at the level of biological self-organization.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-    <a href="papers/medical-applications/acoustic-dissolution-surgery.html" class="paper-row"><div><div class="pr-tag">MA-04</div><div class="pr-title">Acoustic Dissolution Surgery</div><div class="pr-desc">An extension of focused acoustic tissue intervention adding resonant frequency selectivity, coherent field geometry programming, and real-time adaptive coherence monitoring.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/medical-applications/acoustic-dissolution-surgery.html" class="paper-row"><div><div class="pr-tag">MA-04</div><div class="pr-title">Acoustic Dissolution Surgery</div><div class="pr-desc">An extension of focused acoustic tissue intervention adding resonant frequency selectivity, coherent field geometry programming, and real-time adaptive coherence monitoring.</div></div><div class="pr-right"><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></div></a>
     <a href="papers/medical-applications/auditory-regeneration-framework.html" class="paper-row"><div><div class="pr-tag">MA-05</div><div class="pr-title">Auditory Regeneration Framework</div><div class="pr-desc">A coherence-based multi-modal protocol for hearing restoration. AudiaFlux structured fluid, 12-crystal behind-ear resonator, seven condition-specific protocols, and a nine-phase Solfeggio chamber program.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/medical-applications/pulmolife-healing-fluid.html" class="paper-row"><div><div class="pr-tag">MA-06</div><div class="pr-title">PulmoLife & Complete Healing Fluid Architecture</div><div class="pr-desc">20 organ-specific coherence fluids on structured deuterium-depleted water base with 24-hour Solfeggio frequency imprinting. Not supplementation — coherence restoration delivered in liquid form.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/medical-applications/healing-gel-line.html" class="paper-row"><div><div class="pr-tag">MA-07</div><div class="pr-title">Healing Gel Line</div><div class="pr-desc">14 organ-specific coherence gels in two base formulations — Universal Gel Base and Penetration-Enhanced DMSO Base. The skin reframed as a coherence interface rather than a barrier.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/medical-applications/morphogenic-resonator-family.html" class="paper-row"><div><div class="pr-tag">MA-08</div><div class="pr-title">Morphogenic Resonator Family</div><div class="pr-desc">19 organ-specific wearable field devices — each containing a primary healing crystal and a 12-node piezoelectric array — broadcasting the organ's correct coherence frequency 24 hours per day.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/medical-applications/maternal-child-coherence-medicine.html" class="paper-row"><div><div class="pr-tag">MA-09</div><div class="pr-title">Maternal & Child Coherence Medicine</div><div class="pr-desc">A preconception-through-postnatal coherence medicine framework covering five phases including pregnancy support, birth, postnatal blueprint-lock, and birth defect correction protocols.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-        <a href="papers/medical-applications/ms-reversal-protocol.html" class="paper-row"><div><div class="pr-tag">MA-10</div><div class="pr-title">Complete Multiple Sclerosis Reversal Protocol</div><div class="pr-desc">A five-pillar, 24-month coherence-based framework targeting the five biological failure points of MS simultaneously — BBB permeability, myelin degradation, oligodendrocyte suppression, immune dysregulation, and mitochondrial failure. Five specialized healing fluids introduced. Proposed 200-participant RCT with MRI and EDSS endpoints. Abstract published; full protocol under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Protocol: NDA Required</div></div></a>
-    <a href="papers/medical-applications/lyme-babesia-reversal-protocol.html" class="paper-row"><div><div class="pr-tag">MA-11</div><div class="pr-title">Lyme Disease & Babesia Reversal Protocol</div><div class="pr-desc">A multi-tier coherence-based protocol addressing the five documented reasons standard antibiotic treatment fails: biofilm formation (100–1,000× antibiotic resistance), cyst/persister conversion, tissue sequestration, mineral depletion, and immune dysregulation. Babesia co-infection addressed through a parallel track. Grounded in published peer-reviewed mechanisms throughout. Abstract published; full protocol under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Protocol: NDA Required</div></div></a>
-    <a href="papers/medical-applications/sensory-regeneration-system.html" class="paper-row"><div><div class="pr-tag">MA-12</div><div class="pr-title">Complete Sensory Regeneration System</div><div class="pr-desc">Full restoration protocols for all five senses — vision, hearing, taste, smell, and touch. Five organ-specific healing fluids (OculoFlux, AudiaFlux, GustatoryFlux, OlfactoFlux, SomatoFlux). Five-layer regeneration architecture applied to each sensory system with condition-specific timelines and proposed RCT designs. Abstract published; full protocol under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Protocol: NDA Required</div></div></a>
-    
+    <a href="papers/medical-applications/ms-reversal-protocol.html" class="paper-row"><div><div class="pr-tag">MA-10</div><div class="pr-title">Complete Multiple Sclerosis Reversal Protocol</div><div class="pr-desc">A five-pillar, 24-month coherence-based framework targeting the five biological failure points of MS simultaneously. Five specialized healing fluids introduced. Proposed 200-participant RCT with MRI and EDSS endpoints. Abstract published; full protocol under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Protocol: NDA Required</div></div></a>
+    <a href="papers/medical-applications/lyme-babesia-reversal-protocol.html" class="paper-row"><div><div class="pr-tag">MA-11</div><div class="pr-title">Lyme Disease & Babesia Reversal Protocol</div><div class="pr-desc">A multi-tier coherence-based protocol addressing the five documented reasons standard antibiotic treatment fails. Babesia co-infection addressed through a parallel track. Abstract published; full protocol under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Protocol: NDA Required</div></div></a>
+    <a href="papers/medical-applications/sensory-regeneration-system.html" class="paper-row"><div><div class="pr-tag">MA-12</div><div class="pr-title">Complete Sensory Regeneration System</div><div class="pr-desc">Full restoration protocols for all five senses. Five organ-specific healing fluids. Five-layer regeneration architecture with condition-specific timelines and proposed RCT designs. Abstract published; full protocol under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Protocol: NDA Required</div></div></a>
   </div>
 </div>
 
@@ -331,7 +263,7 @@ a{text-decoration:none;color:inherit;}
 <div class="cat-section" data-cat="mat" id="cat-sound">
   <div class="cat-header"><div class="cat-header-num">07</div><div class="cat-header-title">Sound / Frequency / Resonance</div><div class="cat-header-count">4 Papers</div></div>
   <div class="paper-list">
-    <a href="papers/sound-frequency/sound-medicine-framework.html" class="paper-row"><div><div class="pr-tag">SF-01</div><div class="pr-title">Sound Medicine Framework</div><div class="pr-desc">A comprehensive framework for therapeutic application of acoustic frequencies. Includes the complete dimensional physics of acoustic coherence, Solfeggio science, cymatics evidence, and the Architecture of Manifestation through sound.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/sound-frequency/sound-medicine-framework.html" class="paper-row"><div><div class="pr-tag">SF-01</div><div class="pr-title">Sound Medicine Framework</div><div class="pr-desc">A comprehensive framework for therapeutic application of acoustic frequencies. The complete dimensional physics of acoustic coherence, Solfeggio science, cymatics evidence, and the Architecture of Manifestation through sound.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/sound-frequency/resonant-dentistry.html" class="paper-row"><div><div class="pr-tag">SF-02</div><div class="pr-title">Resonant Dentistry Framework</div><div class="pr-desc">A coherence-based model of oral health positioning the tooth as a living piezoelectric crystal system. Acoustic biofilm disruption, LIPUS for hard tissue regeneration, nano-hydroxyapatite remineralization.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/sound-frequency/acoustic-biomedical-fabrication.html" class="paper-row"><div><div class="pr-tag">SF-03</div><div class="pr-title">Acoustic Biomedical Fabrication</div><div class="pr-desc">A manufacturing framework using programmable acoustic standing wave fields to position living cells, hydrogel beads, and biological scaffolding into designed three-dimensional architectures without mechanical contact.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/sound-frequency/morphogenic-resonator-systems.html" class="paper-row"><div><div class="pr-tag">SF-04</div><div class="pr-title">Morphogenic Resonator Systems</div><div class="pr-desc">19 organ-specific resonator devices plus Blueprint and Womb Resonators — each using a 12-node piezoelectric crystal array to deliver targeted morphogenic field patterns for biological restoration.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
@@ -344,7 +276,7 @@ a{text-decoration:none;color:inherit;}
   <div class="paper-list">
     <a href="papers/materials-manufacturing/advanced-manufacturing-framework.html" class="paper-row"><div><div class="pr-tag">MM-01</div><div class="pr-title">Advanced Manufacturing Framework</div><div class="pr-desc">A coherence-based manufacturing architecture spanning conventional, additive, acoustic, and field-phase production methods with a unified quality framework based on coherence integrity scoring.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/materials-manufacturing/programmable-matter.html" class="paper-row"><div><div class="pr-tag">MM-02</div><div class="pr-title">Programmable Matter Systems</div><div class="pr-desc">Matter engineered to change structural, optical, and mechanical properties in response to coherence-field inputs — the most complete realization of programmable matter yet assembled.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-    <a href="papers/materials-manufacturing/coherence-programmable-matter-water.html" class="paper-row"><div><div class="pr-tag">MM-03</div><div class="pr-title">Coherence-Programmable Matter & Water</div><div class="pr-desc">A 16-layer coherence-responsive metamaterial architecture. Paired with Programmable Water leveraging hydrogen-bond network restructuring to produce information-encoding, biologically active aqueous media.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/materials-manufacturing/coherence-programmable-matter-water.html" class="paper-row"><div><div class="pr-tag">MM-03</div><div class="pr-title">Coherence-Programmable Matter & Water</div><div class="pr-desc">A 16-layer coherence-responsive metamaterial architecture paired with Programmable Water leveraging hydrogen-bond network restructuring to produce information-encoding, biologically active aqueous media.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/materials-manufacturing/crystal-engineering-systems.html" class="paper-row"><div><div class="pr-tag">MM-04</div><div class="pr-title">Crystal Engineering Systems</div><div class="pr-desc">Coherent acoustic and electromagnetic fields applied during the nucleation window directly bias crystalline geometry selection — producing designed polymorphs and non-Euclidean crystal geometries.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/materials-manufacturing/materials-science-framework.html" class="paper-row"><div><div class="pr-tag">MM-05</div><div class="pr-title">Materials Science Framework</div><div class="pr-desc">The foundational coherence-based materials science framework. You do not discover new materials by mixing compounds in a beaker. You compose them — in a resonant field, at a specific frequency, with specific geometric boundary conditions.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/materials-manufacturing/christos-materials-science-12d.html" class="paper-row"><div><div class="pr-tag">MM-06</div><div class="pr-title">Christos Materials Science — 12-Dimensional Framework</div><div class="pr-desc">The first complete dimensional classification of material properties across all 12 dimensions. The Resonant Materials Decalogue and the complete Phi-Phase Metal Family.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
@@ -357,17 +289,15 @@ a{text-decoration:none;color:inherit;}
 
 <!-- 09 AGRICULTURE / WATER / FOOD -->
 <div class="cat-section" data-cat="mat" id="cat-agr">
-  <div class="cat-header"><div class="cat-header-num">09</div><div class="cat-header-title">Agriculture, Water & Food</div><div class="cat-header-count">5 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">09</div><div class="cat-header-title">Agriculture, Water & Food</div><div class="cat-header-count">6 Papers</div></div>
   <div class="cat-diagram-ref">System Diagrams: <a href="diagrams.html#agriculture">Coherent Agricultural / Biological System</a> · <a href="diagrams.html#water">Coherent Water / Thermal System</a></div>
   <div class="paper-list">
     <a href="papers/agriculture-water-food/harmonic-agricultural-framework.html" class="paper-row"><div><div class="pr-tag">AW-01</div><div class="pr-title">Harmonic Agricultural Framework</div><div class="pr-desc">A five-volume unified theory establishing soil as a bio-piezoelectric circuit and the soil-plant-animal-human system as a unified coherence network. 500+ peer-reviewed citations.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-        <a href="papers/agriculture-water-food/coherent-hydrology.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AW-05</div><div class="pr-title">Coherent Hydrology</div><div class="pr-desc">A field-based framework for planetary water dynamics extending Darcy's Law with a coherence term. Addresses the documented ten-percent problem in aquifer recharge, the Ogallala Aquifer depletion asymmetry, AMOC deceleration, and desertification — proposing atmospheric vapor capture as the primary recharge mechanism for coherent soil systems. Full Colorado River Basin restoration protocol included. Open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
-    <a href="papers/agriculture-water-food/the-grown-system.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AW-06</div><div class="pr-title">The Grown System</div><div class="pr-desc">A complete mycelium-based food architecture resolving the two simultaneous failures of industrial animal agriculture and first-generation plant-based meat. Six inventions: Mycelial Cultivation Protocol (fiber-aligned SSF with fat emulsion marbling), Resonance Cultivation Chamber, Grown Flavor System (5-category: umami, kokumi, Maillard, sweet harmony, clean finish), Complete Animal Product Replacement Library, Allergen-Free Protein Matrix, and Food Replicator. 92% lower GHG emissions · 98% lower water use · 99% lower land use. Full open access — prior art disclosure.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — Prior Art Established</div></div></a>
-    
     <a href="papers/agriculture-water-food/harmonic-agriculture-vol2.html" class="paper-row"><div><div class="pr-tag">AW-02</div><div class="pr-title">Harmonic Agriculture — Complete System</div><div class="pr-desc">The synthesis of everything established about soil, water, minerals, sound, light, and coherence into a unified farming system. Includes the Christos Harmonic Grow Chamber.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/agriculture-water-food/christos-food-system.html" class="paper-row"><div><div class="pr-tag">AW-03</div><div class="pr-title">Christos Food System</div><div class="pr-desc">Five integrated inventions: the C0 Food Interrogator, Coherence Index Scoring Algorithm, Resonance Ledger, Harmonic Refrigerator, and Christos Food App. Quality cannot be faked because the measurement is physical.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/agriculture-water-food/structured-water-framework.html" class="paper-row"><div><div class="pr-tag">AW-04</div><div class="pr-title">Structured Water Framework</div><div class="pr-desc">A complete engineering system for producing, measuring, preserving, and deploying structured water across five application domains including agriculture and therapeutic delivery.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-    <a href="papers/agriculture-water-food/coherence-garden-systems.html" class="paper-row"><div><div class="pr-tag">AW-05</div><div class="pr-title">Coherence Garden Systems</div><div class="pr-desc">A hypothesis-driven framework exploring the interaction between soil ecology, plant physiology, and environmental signal conditions from personal garden to community-scale coherence food production.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/agriculture-water-food/coherent-hydrology.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AW-05</div><div class="pr-title">Coherent Hydrology</div><div class="pr-desc">A field-based framework for planetary water dynamics extending Darcy's Law with a coherence term. Addresses aquifer recharge asymmetry, AMOC deceleration, and desertification — proposing atmospheric vapor capture as the primary recharge mechanism for coherent soil systems. Full Colorado River Basin restoration protocol included. Full open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
+    <a href="papers/agriculture-water-food/the-grown-system.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AW-06</div><div class="pr-title">The Grown System</div><div class="pr-desc">A complete mycelium-based food architecture resolving the simultaneous failures of industrial animal agriculture and first-generation plant-based meat. Six inventions. 92% lower GHG emissions · 98% lower water use · 99% lower land use. Full open access — prior art disclosure.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — Prior Art Established</div></div></a>
   </div>
 </div>
 
@@ -383,13 +313,12 @@ a{text-decoration:none;color:inherit;}
 
 <!-- 11 TRANSPORT & TIME SYSTEMS -->
 <div class="cat-section" data-cat="transport" id="cat-transport">
-  <div class="cat-header"><div class="cat-header-num">11</div><div class="cat-header-title">Transport & Time Systems</div><div class="cat-header-count">6 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">11</div><div class="cat-header-title">Transport & Time Systems</div><div class="cat-header-count">7 Papers</div></div>
   <div class="cat-diagram-ref">System Diagram: <a href="diagrams.html#transport">Coherent Transport System</a></div>
   <div class="paper-list">
     <a href="papers/transport-time-systems/aether-skiff.html" class="paper-row"><div><div class="pr-tag">TT-01</div><div class="pr-title">Aether Skiff Transportation System</div><div class="pr-desc">A coherence field mobility platform that moves not by pushing against any medium but by navigating coherence gradients. No combustion. No thrust. No reaction mass.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/transport-time-systems/transportation-master-architecture.html" class="paper-row"><div><div class="pr-tag">TT-02</div><div class="pr-title">Transportation Master Architecture</div><div class="pr-desc">18 vehicles across 5 operational tiers, 4 infrastructure systems. The Chicago Deployment Model: 1.525M passengers per hour, zero emissions, demonstrating full urban integration.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-        <a href="papers/transport-time-systems/motion-without-thrust.html" class="paper-row"><div><div class="pr-tag">TR-01</div><div class="pr-title">Motion Without Thrust</div><div class="pr-desc">The theoretical and engineering framework for coherence-gradient propulsion — field-based motion without expelling propellant. Rests on CTF Axiom 3 and the Prime Axiom of Volume II. Gravity is identified as the existence proof. Full mathematical framework, six falsifiable experimental tests, and systematic response to every major scientific objection. Abstract and framework published; full engineering specs under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Specs: NDA Required</div></div></a>
-    
+    <a href="papers/transport-time-systems/motion-without-thrust.html" class="paper-row"><div><div class="pr-tag">TR-01</div><div class="pr-title">Motion Without Thrust</div><div class="pr-desc">The theoretical and engineering framework for coherence-gradient propulsion — field-based motion without expelling propellant. Full mathematical framework, six falsifiable experimental tests, and systematic response to every major scientific objection. Abstract published; full engineering specs under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Specs: NDA Required</div></div></a>
     <a href="papers/transport-time-systems/christos-gate-teleportation-network.html" class="paper-row"><div><div class="pr-tag">TT-03</div><div class="pr-title">Christos™ Gate & Global Teleportation Network</div><div class="pr-desc">Position is not an intrinsic property of matter — it is a negotiated relationship between a coherent system and the toroidal field lattice it inhabits. Twelve Zodiac Gates anchoring the network.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/transport-time-systems/teleportation-temple-system.html" class="paper-row"><div><div class="pr-tag">TT-04</div><div class="pr-title">Teleportation Temple System</div><div class="pr-desc">The complete unified architecture of three interlocking systems: Global Teleportation Network, the Christos™ Temple as civilizational node infrastructure, and the Mark VIII Temporal Translation device.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/transport-time-systems/temporal-navigation-systems.html" class="paper-row"><div><div class="pr-tag">TT-05</div><div class="pr-title">Temporal Navigation Systems</div><div class="pr-desc">A theoretical and applied framework for navigation within the Time Dimensional Architecture — field-phase temporal coordination and the formal foundation for temporal translation without a fixed gate node.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
@@ -410,13 +339,15 @@ a{text-decoration:none;color:inherit;}
 
 <!-- 13 AI / NETWORK / DIGITAL -->
 <div class="cat-section" data-cat="ai" id="cat-ai">
-  <div class="cat-header"><div class="cat-header-num">13</div><div class="cat-header-title">AI, Network & Digital</div><div class="cat-header-count">4 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">13</div><div class="cat-header-title">AI, Network & Digital</div><div class="cat-header-count">6 Papers</div></div>
   <div class="cat-diagram-ref">System Diagram: <a href="diagrams.html#cqi">CQI / AI System — The Intelligence Layer</a></div>
   <div class="paper-list">
     <a href="papers/ai-network-digital/quantum-internet-framework.html" class="paper-row"><div><div class="pr-tag">AN-01</div><div class="pr-title">Quantum Internet Framework</div><div class="pr-desc">The Christos Quantum Internet — the nervous system of a complete coherence-based civilization. The classical internet transmits data. The CQI confirms truth. Every node added makes the entire network stronger.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
     <a href="papers/ai-network-digital/field-ai-volume-one.html" class="paper-row"><div><div class="pr-tag">AN-02</div><div class="pr-title">Field AI — Volume I</div><div class="pr-desc">A non-binary, coherence-based artificial intelligence architecture in which computation, memory, and adaptation occur through the dynamics of coupled resonant physical elements rather than discrete binary switching.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-    <a href="papers/ai-network-digital/human-ai-coherence-systems.html" class="paper-row"><div><div class="pr-tag">AN-03</div><div class="pr-title">Human–AI Coherence Systems</div><div class="pr-desc">A framework for coherence-aligned human-AI collaboration — ensuring AI systems operate within and enhance human biological and cognitive coherence rather than disrupting it.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-    <a href="papers/ai-network-digital/harmonic-periodic-table.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AN-04</div><div class="pr-title">Harmonic Periodic Table — Volumes I & II</div><div class="pr-desc">Two full papers published in open access. Volume I: A functional reclassification of 118 elements by signal behavior in living systems — 6 categories, 20 testable predictions. Volume II: The 12-dimensional extension — 4D frequency signatures, 5D coherence classes, Solfeggio tones, and the complete dimensional architecture of the elements.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Papers ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
+    <a href="papers/ai-network-digital/field-ai-complete-architecture.html" class="paper-row"><div><div class="pr-tag">AN-03</div><div class="pr-title">Field AI — Complete Integration Architecture</div><div class="pr-desc">The full multi-volume engineer reference edition integrating Statistical AI, Quantum AI, and Field AI into a single three-engine architecture. Covers Volumes I–IV plus six gap-closing papers addressing semantic calibration, quantum routing, threat modeling, meta-learning convergence, autonomous discovery, and mycelial bridge integration. Abstract published; full specifications under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Specs: NDA Required</div></div></a>
+    <a href="papers/ai-network-digital/human-ai-coherence-systems.html" class="paper-row"><div><div class="pr-tag">AN-04</div><div class="pr-title">Human–AI Coherence Systems</div><div class="pr-desc">A framework for coherence-aligned human-AI collaboration — ensuring AI systems operate within and enhance human biological and cognitive coherence rather than disrupting it.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></div></a>
+    <a href="papers/ai-network-digital/the-7-trillion-mistake.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AN-05</div><div class="pr-title">The $7 Trillion Mistake</div><div class="pr-desc">A real-time intervention documenting how the largest capital misallocation in recorded history is being deployed to scale a fundamentally architecture-limited system while planetary resources are destroyed. The Field AI alternative — buildable at $160/unit, zero water, 15 watts — is presented in full. Full open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
+    <a href="papers/ai-network-digital/harmonic-periodic-table.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">AN-06</div><div class="pr-title">Harmonic Periodic Table — Volumes I & II</div><div class="pr-desc">Two full papers published in open access. Volume I: A functional reclassification of 118 elements by signal behavior in living systems — 6 categories, 20 testable predictions. Volume II: The 12-dimensional extension — 4D frequency signatures, 5D coherence classes, Solfeggio tones, and the complete dimensional architecture of the elements.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Papers ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
   </div>
 </div>
 
@@ -441,10 +372,9 @@ a{text-decoration:none;color:inherit;}
 
 <!-- 16 TEMPLE UNIVERSITY CURRICULUM -->
 <div class="cat-section" data-cat="core" id="cat-university">
-  <div class="cat-header"><div class="cat-header-num">16</div><div class="cat-header-title">Christos™ Temple University Curriculum</div><div class="cat-header-count">2 Papers</div></div>
+  <div class="cat-header"><div class="cat-header-num">16</div><div class="cat-header-title">Christos™ Temple University Curriculum</div><div class="cat-header-count">1 Paper</div></div>
   <div class="paper-list">
-    <a href="papers/university/temple-university-curriculum.html" class="paper-row"><div><div class="pr-tag">TU-01</div><div class="pr-title">Christos™ Temple University Curriculum</div><div class="pr-desc">A complete educational architecture built on a 12×12 = 144 field node system — 12 Parent Fields expanded into 12 sub-disciplines, yielding 144 total knowledge domains. Not education reform — consciousness restoration.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
-    <a href="papers/university/105-new-sciences.html" class="paper-row"><div><div class="pr-tag">TU-02</div><div class="pr-title">The 105 New Sciences — Formal Catalog</div><div class="pr-desc">A formally named catalog of 105 original fields of scientific inquiry not previously identified as standalone sciences — the single largest contribution to the taxonomy of human knowledge within the Christos body of work.</div></div><div class="pr-right"><div class="pr-link">View Abstract</div><div class="pr-protected">Full specs: NDA required</div></div></a>
+    <a href="papers/university/temple-university-curriculum.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">TU-01</div><div class="pr-title">Christos™ Temple University Curriculum</div><div class="pr-desc">The complete educational architecture built on 12 Parent Fields × 12 Child Nodes = 144 total knowledge domains. All 12 Parent Fields defined in full. The 144-node matrix, 7-principle pedagogical philosophy, Foundation through Elder teaching stages, and the formal catalog of 105 original fields of scientific inquiry not previously identified as standalone sciences. Not education reform — consciousness restoration. Full open access.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
   </div>
 </div>
 
@@ -452,7 +382,7 @@ a{text-decoration:none;color:inherit;}
 <div class="cat-section" data-cat="core" id="cat-language">
   <div class="cat-header"><div class="cat-header-num">17</div><div class="cat-header-title">Language, Communication & Consciousness</div><div class="cat-header-count">1 Paper</div></div>
   <div class="paper-list">
-    <a href="papers/language-communication/sovereign-logos-prime.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">LC-01</div><div class="pr-title">Sovereign Logos Prime™ — Complete System Manual</div><div class="pr-desc">Full open access. A coherence-based biofield communication model — 21 Root Physics, 4 breath geometries, 12 geometric syllable operators, 3 grammar types, 5 tone intensities, 12 Currents, 12 Dialects, and the complete 144-term lexicon with full Term Cards for Current 1 and abbreviated cards for C2–C12. Five training phases, 12 practice recipes, Telepathic Calibration Protocol, and citizen science experiment. All claims falsifiable. All benchmarks measurable.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
+    <a href="papers/language-communication/sovereign-logos-prime.html" class="paper-row" style="border-color:rgba(58,175,175,0.25);"><div><div class="pr-tag" style="color:#C9A84C;">LC-01</div><div class="pr-title">Sovereign Logos Prime™ — Complete System Manual</div><div class="pr-desc">Full open access. A coherence-based biofield communication model — 21 Root Physics, 4 breath geometries, 12 geometric syllable operators, 3 grammar types, 5 tone intensities, 12 Currents, 12 Dialects, and the complete 144-term lexicon. Five training phases, 12 practice recipes, Telepathic Calibration Protocol, and citizen science experiment. All claims falsifiable. All benchmarks measurable.</div></div><div class="pr-right"><div class="pr-link" style="color:#3AAFAF;">Full Paper ↗</div><div class="pr-protected" style="color:rgba(58,175,175,0.6);">Open Access — No NDA Required</div></div></a>
   </div>
 </div>
 
@@ -489,9 +419,11 @@ a{text-decoration:none;color:inherit;}
       <a href="economy.html">Economy</a>
       <a href="book.html">Book</a>
       <a href="contact.html">Contact</a>
-    <a href="papers/medical-applications/complete-noninvasive-medicine.html" class="paper-row"><div><div class="pr-tag">BM-14</div><div class="pr-title">The Complete Non-Invasive Medicine System</div><div class="pr-desc">17 integrated diagnostic and therapeutic devices — from the Hemo-Spectrometer™ and Smart Toilet™ to the Coherence Healing Beam™ and Coherence Youth Accelerator™ — forming a unified closed-loop coherence medicine platform. Abstract published; full engineering specifications under NDA.</div></div><div class="pr-right"><div class="pr-link">Abstract ↗</div><div class="pr-protected">Full Specs: NDA Required</div></div></a>
     </div>
-    <div style="text-align:center;padding-bottom:20px;border-top:1px solid rgba(201,168,76,0.1);padding-top:20px;margin-top:6px;"><img src="assets/christos-emblem.png" alt="Christos™" style="width:60px;height:60px;object-fit:cover;border-radius:50%;opacity:0.85;"></div><div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+    <div style="text-align:center;padding-bottom:20px;border-top:1px solid rgba(201,168,76,0.1);padding-top:20px;margin-top:6px;">
+      <img src="assets/christos-emblem.png" alt="Christos™" style="width:60px;height:60px;object-fit:cover;border-radius:50%;opacity:0.85;">
+    </div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
   </div>
 </footer>
 
@@ -525,25 +457,6 @@ function filterCat(cat, btn) {
   btn.classList.add('active');
   updateDisplay();
 }
-</script>
-
-<script>
-function toggleMenu(){
-  var m=document.getElementById('mobileMenu');
-  var b=document.getElementById('hamburger');
-  if(m&&b){m.classList.toggle('open');b.classList.toggle('open');}
-}
-document.addEventListener('DOMContentLoaded',function(){
-  var links=document.querySelectorAll('.mobile-menu a');
-  links.forEach(function(a){
-    a.addEventListener('click',function(){
-      var m=document.getElementById('mobileMenu');
-      var b=document.getElementById('hamburger');
-      if(m)m.classList.remove('open');
-      if(b)b.classList.remove('open');
-    });
-  });
-});
 </script>
 </body>
 </html>
