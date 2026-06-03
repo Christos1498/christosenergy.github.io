@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Broken Torus | Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
+a{text-decoration:none;color:inherit;}
+nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-links{display:flex;gap:20px;list-style:none;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#D8D0C0;transition:color 0.2s;}
+.nav-links a:hover{color:#C9A84C;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
+.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
+.paper-header-inner{max-width:900px;margin:0 auto;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:700;color:#FFFFFF;line-height:1.1;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#C9A84C;margin-bottom:20px;line-height:1.5;}
+.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6);}
+.pm-item strong{color:#D8D0C0;display:block;margin-bottom:2px;}
+.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
+.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5);margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5);transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C;border-left-color:#C9A84C;}
+.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
+.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:44px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+.keywords{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(58,175,175,0.65);margin-top:14px;padding-top:14px;border-top:1px solid rgba(201,168,76,0.12);line-height:1.7;}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF;margin:48px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C;margin:28px 0 10px;scroll-margin-top:80px;}
+p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0;margin-bottom:14px;}
+p.bp strong{color:#FFFFFF;}
+.pull-quote{border-left:3px solid #C9A84C;margin:28px 0;padding:16px 24px;background:rgba(201,168,76,0.04);}
+.pull-quote p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:#C9A84C;margin:0;line-height:1.7;}
+.torus-diagram{background-color:#04090F !important;border:1px solid rgba(201,168,76,0.2);border-top:3px solid #C9A84C;padding:28px;margin:28px 0;text-align:center;}
+.torus-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
+.torus-node{font-family:'Raleway',sans-serif;font-size:0.72rem;font-weight:600;padding:8px 14px;letter-spacing:0.05em;}
+.tn-gold{background:rgba(201,168,76,0.12);color:#C9A84C;border:1px solid rgba(201,168,76,0.3);}
+.tn-teal{background:rgba(58,175,175,0.1);color:#3AAFAF;border:1px solid rgba(58,175,175,0.3);}
+.tn-red{background:rgba(180,60,60,0.1);color:#E07070;border:1px solid rgba(180,60,60,0.25);}
+.tn-arrow{color:rgba(201,168,76,0.4);font-size:1rem;}
+.torus-vs{font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(216,208,192,0.3);padding:6px 0;width:100%;text-align:center;}
+.torus-label{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;}
+.torus-label.gold{color:rgba(201,168,76,0.55);}
+.torus-label.red{color:rgba(220,100,100,0.55);}
+.table-wrap{overflow-x:auto;margin:20px 0;}
+table{width:100%;border-collapse:collapse;font-size:0.82rem;}
+th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7);border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}
+td{padding:9px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.97rem;}
+.td-gold{color:#C9A84C !important;font-weight:600;}
+.td-teal{color:#3AAFAF !important;}
+.td-dim{color:rgba(216,208,192,0.45) !important;}
+.leakage-total{background-color:#0A1628 !important;border:2px solid rgba(201,168,76,0.25);border-left:4px solid #C9A84C;padding:20px 24px;margin:24px 0;}
+.lt-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.26em;text-transform:uppercase;color:rgba(201,168,76,0.5);margin-bottom:6px;}
+.lt-figure{font-family:'Cinzel',serif;font-size:2.2rem;font-weight:700;color:#C9A84C;line-height:1;margin-bottom:4px;}
+.lt-sub{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(216,208,192,0.55);line-height:1.5;}
+.primitive-block{margin-bottom:0;}
+.prim-row{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:1px solid rgba(201,168,76,0.07);}
+.prim-row:last-child{border-bottom:none;}
+.prim-letter{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:#C9A84C;font-weight:600;width:28px;flex-shrink:0;line-height:1;margin-top:2px;}
+.prim-title{font-family:'Cinzel',serif;font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF;margin-bottom:5px;}
+.prim-desc{font-size:0.95rem;color:rgba(216,208,192,0.75);line-height:1.75;}
+.prim-example{font-family:'Raleway',sans-serif;font-size:0.7rem;color:rgba(58,175,175,0.6);margin-top:4px;font-style:italic;}
+.callout{background-color:rgba(58,175,175,0.04) !important;border:1px solid rgba(58,175,175,0.2);padding:18px 24px;margin:24px 0;}
+.callout-title{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF;margin-bottom:8px;}
+.callout p{font-size:0.95rem;color:#D8D0C0;margin:0;line-height:1.75;}
+.resolution-box{background-color:rgba(201,168,76,0.04) !important;border:1px solid rgba(201,168,76,0.2);border-top:2px solid #C9A84C;padding:22px 26px;margin:24px 0;}
+.resolution-title{font-family:'Cinzel',serif;font-size:0.9rem;font-weight:700;color:#C9A84C;letter-spacing:0.06em;margin-bottom:14px;}
+.econ-box{background-color:#04090F !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;padding:18px 22px;margin:20px 0;}
+.econ-label{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,168,76,0.55);margin-bottom:8px;}
+.econ-formula{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:#C9A84C;line-height:1.7;}
+.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:32px;transition:all 0.2s;}
+.collab-btn:hover{background-color:rgba(201,168,76,0.2) !important;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C;}
+.footer-links{display:flex;gap:20px;list-style:none;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0;}
+.footer-links a:hover{color:#C9A84C;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4);width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+.ref-list{list-style:none;padding:0;}
+.ref-list li{font-family:'Raleway',sans-serif;font-size:0.78rem;color:rgba(216,208,192,0.5);padding:7px 0;border-bottom:1px solid rgba(201,168,76,0.05);line-height:1.65;}
+.series-nav{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);padding:20px 24px;margin-bottom:36px;}
+.sn-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.45);margin-bottom:12px;}
+.sn-links{display:flex;gap:16px;flex-wrap:wrap;}
+.sn-link{font-family:'Raleway',sans-serif;font-size:0.66rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3AAFAF;display:inline-flex;align-items:center;gap:5px;}
+.sn-link::after{content:'→';}
+@media(max-width:900px){
+  nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
+  .paper-header{padding-top:120px;}
+  .nav-inner{height:auto;padding:12px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;color:#D8D0C0 !important;}
+  .paper-layout{grid-template-columns:1fr;padding:0 20px;}
+  .toc-sidebar{display:none;}
+  .paper-body{padding:40px 0 80px;border-left:none;}
+  .torus-row{gap:8px;}
+}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <a href="index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy · Technology · Harmonic Design</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="library.html">Library</a></li>
+    <li><a href="sovereign-consulting.html">Consulting</a></li>
+    <li><a href="sovereign-circulation-framework.html">Gov. Framework</a></li>
+    <li><a href="diagrams.html">Diagrams</a></li>
+    <li><a href="economy.html">Economy</a></li>
+    <li><a href="the-case.html">The Case</a></li>
+    <li><a href="papers/paradox-resolution/paradox-index.html">Paradox</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</div></nav>
+
+<div class="paper-header"><div class="paper-header-inner">
+  <div class="ph-eyebrow">Christos&#8482; Energy · Sovereign Circulation Framework Series · May 2026</div>
+  <div class="open-badge">Full Paper — Open Access</div>
+  <h1 class="paper-title">The Broken Torus</h1>
+  <p class="paper-subtitle">Why the Global Economy Leaks — and What Restoring the Return Flow Would Be Worth</p>
+  <div class="paper-meta">
+    <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+    <div class="pm-item"><strong>Organization</strong>Christos&#8482; Energy, Technology &amp; Harmonic Design</div>
+    <div class="pm-item"><strong>Published</strong>May 2026</div>
+    <div class="pm-item"><strong>Series</strong>Sovereign Circulation Framework Series</div>
+  </div>
+</div></div>
+
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links">
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href="#s1">1. The Geometry of Economic Failure</a></li>
+  <li><a href="#s2">2. The Scale of Documented Leakage</a></li>
+  <li><a href="#s3">3. Five Failure Points</a></li>
+  <li><a href="#s4">4. The Return Flow That Is Missing</a></li>
+  <li><a href="#s5">5. The Economics Paper Not Yet Written</a></li>
+  <li><a href="#s6">6. Falsifiable Claims</a></li>
+  <li><a href="#s7">7. The Diagnostic as Torus Repair</a></li>
+  <li><a href="#s8">8. Conclusion</a></li>
+  <li><a href="#resolution">Resolution Framework</a></li>
+  <li><a href="#references">References</a></li>
+</ul></aside>
+
+<article class="paper-body">
+<a href="mailto:founder@christosenergy.com" class="collab-btn">&#10022; Collaborate with Joshua</a>
+
+<!-- SERIES NAV -->
+<div class="series-nav">
+  <div class="sn-label">Sovereign Circulation Framework Series</div>
+  <div class="sn-links">
+    <a href="sovereign-consulting.html" class="sn-link">Business Consulting</a>
+    <a href="sovereign-circulation-framework.html" class="sn-link">Sovereign / Government Framework</a>
+    <a href="sovereign-onepager.html" class="sn-link">One-Pager</a>
+  </div>
+</div>
+
+<!-- ABSTRACT -->
+<div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">Every major industry in the United States leaks value at a scale that has been normalized as unavoidable. Healthcare wastes $760B–$935B annually. Logistics runs 25–30% of its load miles empty. Construction watches 98% of major projects overrun budget. Agriculture discards $325B in food value each year. These are not isolated inefficiencies. They are symptoms of a single structural defect: the global economy is built as a one-directional extraction system with no designed return flow.</p>
+  <p class="abstract-text">In the language of the Christos&#8482; Theoretical Framework, it is a <strong>broken torus</strong> — Saturnalia compression without Christos regeneration, outward extraction without return circulation. This paper proposes a geometric reframing of economic structure. Healthy persistent systems — biological, physical, organizational — circulate value rather than merely move it through. Value flows outward (production, distribution, consumption), then must return (regeneration, reinvestment, renewal of the productive base). When the return flow is absent, the system progressively depletes its own foundation while the leakage accumulates at every node.</p>
+  <p class="abstract-text">The Christos&#8482; Sovereign Circulation Framework identifies five organizational primitives — Flow, Boundary Regulation, Feedback, Memory, and Regeneration — whose integrity determines whether value circulates or leaks. The documented annual leakage across six major U.S. industries exceeds <strong>$2 trillion</strong>. A systematic 15% recovery represents $300B+ in annual value that the existing economy discards while treating it as cost. Restoring the return flow is not a productivity improvement. It is an architectural correction to a system that was never designed to sustain itself.</p>
+  <div class="keywords"><strong>Keywords:</strong> economic leakage, value circulation, Christos current, Saturnalia return, toroidal economics, sovereign circulation, organizational coherence, systemic waste, broken torus, five primitives</div>
+</div>
+
+<!-- SECTION 1 -->
+<h1 class="sh" id="s1">1 — The Geometry of Economic Failure</h1>
+<h2 class="sh2">1.1 Two Kinds of Economic Flow</h2>
+<p class="bp">The standard economic model is directional. Resources enter a firm — labor, capital, materials, energy, information. They are processed. Products and services exit. Revenue returns. The model optimizes for throughput: maximize what moves through the system per unit of time and cost. What it does not model — what most economic analysis does not even have a vocabulary for — is the return circulation that makes the system self-sustaining rather than self-depleting.</p>
+<p class="bp">The Christos&#8482; toroidal coherence framework distinguishes two fundamental flow types present in any persistent system:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Flow Type</th><th>Economic Expression</th></tr></thead>
+  <tbody>
+    <tr><td class="td-gold">Christos Current — outward, generative, distributing</td><td>Value creation, distribution, wages paid, products delivered, services rendered, communities served</td></tr>
+    <tr><td class="td-teal">Saturnalia Current — inward, compressive, concentrating</td><td>Value extraction, capital accumulation, cost reduction, margin capture, resource depletion</td></tr>
+  </tbody>
+</table></div>
+<p class="bp">A healthy economic torus requires both. The Christos current generates and distributes. The Saturnalia return compresses and concentrates — but then regenerates and redistributes, feeding the base that enables the next Christos expression. <strong>When Saturnalia current flows without completing the regenerative return — when extraction accumulates without reinvestment — the torus breaks.</strong> Value leaks out of the system permanently rather than circulating through it.</p>
+
+<div class="torus-diagram">
+  <div class="torus-label gold" style="margin-bottom:16px;">Healthy Economy — Closed Torus</div>
+  <div class="torus-row">
+    <div class="torus-node tn-gold">Production &amp; Distribution</div>
+    <div class="torus-arrow">→</div>
+    <div class="torus-node tn-gold">Consumption</div>
+    <div class="torus-arrow">→</div>
+    <div class="torus-node tn-teal">Regenerative Return</div>
+    <div class="torus-arrow">→</div>
+    <div class="torus-node tn-gold">Renewed Productive Base</div>
+  </div>
+  <div class="torus-vs">vs.</div>
+  <div class="torus-label red" style="margin-bottom:16px;">Current Economy — Broken Torus</div>
+  <div class="torus-row">
+    <div class="torus-node tn-gold">Production &amp; Distribution</div>
+    <div class="torus-arrow">→</div>
+    <div class="torus-node tn-gold">Consumption</div>
+    <div class="torus-arrow">→</div>
+    <div class="torus-node tn-red">Extraction &amp; Discard</div>
+    <div class="torus-arrow" style="color:rgba(220,80,80,0.5);">&#8693;</div>
+    <div class="torus-node tn-red">$2T+ Annual Leakage</div>
+  </div>
+</div>
+
+<h2 class="sh2">1.2 What the Broken Torus Looks Like</h2>
+<p class="bp">The broken economic torus has a specific signature. It is not characterized by the absence of Saturnalia compression — that compression is everywhere. It is characterized by Saturnalia compression that does not complete the return cycle. Capital concentrates upward and does not reinvest in productive capacity. Labor is extracted and not renewed — turnover runs 80–90% annually in trucking; 35–50% in warehousing; 45% of contractors report declining labor productivity. Materials are consumed and discarded rather than circulated — 30% of construction materials go unused; $325B in food value is discarded annually.</p>
+<p class="bp">The critical insight: this is not inefficiency in the conventional sense. <strong>Inefficiency implies that a better version of the same process would solve the problem. The broken torus implies something structural — the process was never designed to circulate. It was designed to extract.</strong> Optimization of an extraction architecture is still extraction.</p>
+
+<!-- SECTION 2 -->
+<h1 class="sh" id="s2">2 — The Scale of Documented Leakage</h1>
+<p class="bp">The following figures are drawn from published, peer-reviewed, and industry-association sources. They represent what researchers have already measured — not projections or models. The combined picture is a system discarding value at a scale that dwarfs most public policy debates.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Industry</th><th>Annual Leakage Estimate</th><th>Primary Source</th></tr></thead>
+  <tbody>
+    <tr><td class="td-gold">Healthcare</td><td>$760B–$935B (17–21% of all health spending)</td><td>JAMA 2019; CMS National Health Expenditures 2023</td></tr>
+    <tr><td class="td-gold">Logistics &amp; Supply Chain</td><td>$300–500B bullwhip effect; 25–30% empty load miles on $2.45T base</td><td>McKinsey Global Institute; CSCMP State of Logistics 2023</td></tr>
+    <tr><td class="td-gold">Construction</td><td>$30–40B labor waste; 98% of large projects over budget ($280B in 2024 overruns)</td><td>FMI Corp. 2023; Contimod/McKinsey 2024</td></tr>
+    <tr><td class="td-gold">Agriculture</td><td>$325B in food value discarded annually (25% of U.S. food supply)</td><td>ReFED 2024; USDA Food Loss and Waste</td></tr>
+    <tr><td class="td-gold">Retail</td><td>$112B in shrink; $743B in merchandise returns annually</td><td>National Retail Federation 2023</td></tr>
+    <tr><td class="td-gold">Manufacturing</td><td>11–15% of all field labor cost unproductive or wasted</td><td>FMI Corporation / Siemens Industrial Operations 2023</td></tr>
+  </tbody>
+</table></div>
+<div class="leakage-total">
+  <div class="lt-label">Aggregate Annual Leakage — Six Sectors Only</div>
+  <div class="lt-figure">$2 Trillion+</div>
+  <div class="lt-sub">This is not the total addressable leakage in the U.S. economy — it is what has been formally measured and published in the sectors where systematic analysis has been done. The true figure, across all sectors including financial services, government, energy, pharmaceuticals, and real estate, is substantially higher.</div>
+</div>
+<div class="callout">
+  <div class="callout-title">The FedEx Proof Point</div>
+  <p>FedEx Corporation's DRIVE program — the most publicly transparent cost reduction initiative in U.S. logistics history — targeted $4 billion+ in annual structural cost savings. Before any analysis was presented, FedEx's own public disclosures confirmed that $4B+ in leakage existed in a single company's operating model. The largest logistics company in the world found a broken return flow and named a number. This is the strongest possible proof point: the leakage is real, it is large, and it is findable.</p>
+</div>
+
+<!-- SECTION 3 -->
+<h1 class="sh" id="s3">3 — The Five Failure Points: Where the Torus Breaks</h1>
+<p class="bp">The Christos&#8482; Sovereign Circulation Framework identifies five organizational primitives — the minimum structural conditions any persistent system requires. Remove any one and leakage becomes structural rather than incidental.</p>
+<div class="primitive-block">
+  <div class="prim-row">
+    <span class="prim-letter">F</span>
+    <div>
+      <div class="prim-title">Flow — Movement of Value Through the System</div>
+      <p class="prim-desc">When flow stagnates or fragments: inventory that sits, capital that does not deploy, workers waiting for materials, trucks running empty. The Christos current is interrupted before it reaches its destination.</p>
+      <div class="prim-example">Example: 25–30% of logistics load miles run empty. The flow is broken at the return lane.</div>
+    </div>
+  </div>
+  <div class="prim-row">
+    <span class="prim-letter">B</span>
+    <div>
+      <div class="prim-title">Boundary Regulation — The Interface Governing What Enters and Exits</div>
+      <p class="prim-desc">Without it, value dissipates into the environment. Customs misclassification, security losses, data breaches, regulatory non-compliance costs, scope creep — all represent boundary failures where value exits the system without generating return.</p>
+      <div class="prim-example">Example: $112B in retail shrink annually. The boundary is not holding.</div>
+    </div>
+  </div>
+  <div class="prim-row">
+    <span class="prim-letter">Fb</span>
+    <div>
+      <div class="prim-title">Feedback — The Capacity to Detect Drift Before Drift Becomes Loss</div>
+      <p class="prim-desc">Feedback latency is among the most common and costly leakage sources. The bullwhip effect in supply chains is a feedback failure: downstream demand signals distort by the time they reach upstream suppliers, causing overstock and stockout simultaneously. Healthcare administrative waste is substantially a feedback failure — treatments that do not correspond to diagnosis because the clinical signal never completed its return loop.</p>
+      <div class="prim-example">Example: $300–500B in bullwhip-effect inventory costs annually.</div>
+    </div>
+  </div>
+  <div class="prim-row">
+    <span class="prim-letter">M</span>
+    <div>
+      <div class="prim-title">Memory — Preserved Organizational Structure That Maintains Continuity</div>
+      <p class="prim-desc">Systems without memory repeat costly errors at every cycle. Construction rework (5–12% of project cost) is substantially a memory failure — the same quality errors recurring across projects because lessons from the previous project were not retained. Driver turnover at 80–90% annually means logistics operations continuously lose their most experienced operators.</p>
+      <div class="prim-example">Example: 80–90% annual driver turnover in trucking costs $8K–$12K per replacement.</div>
+    </div>
+  </div>
+  <div class="prim-row">
+    <span class="prim-letter">R</span>
+    <div>
+      <div class="prim-title">Regeneration — The Capacity to Rebuild Productive Capacity While Operating</div>
+      <p class="prim-desc">Organizations that consume faster than they regenerate are running down their own foundation. Labor depletion without workforce investment. Asset aging without maintenance investment. Community extraction without community reinvestment. The regeneration failure is the deepest form of the broken torus: the system is destroying the conditions that make future Christos flow possible.</p>
+      <div class="prim-example">Example: 30% of construction materials discarded — the productive material base is not regenerated.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<h1 class="sh" id="s4">4 — The Return Flow That Is Missing</h1>
+<h2 class="sh2">4.1 What Completing the Torus Looks Like in Practice</h2>
+<p class="bp">The Christos current in a healthy economic torus is not charity or redistribution — it is the structural return that makes the system self-sustaining. Examples of return flow in practice:</p>
+<p class="bp"><strong>Closed-loop materials in construction:</strong> The 30% materials discard rate becomes 5% when the return loop is closed. Materials tracked, recirculated, supplier relationships designed for return flow rather than one-directional extraction.</p>
+<p class="bp"><strong>Labor investment in high-turnover industries:</strong> Trucking's 80–90% annual driver turnover costs $8,000–$12,000 per replacement. A 50% reduction through scheduling improvement, pay structure review, and driver development programs recovers $4,000–$6,000 per driver per year — a return flow that compounds annually.</p>
+<p class="bp"><strong>Cold chain integrity in food systems:</strong> $325B in food value discarded annually represents return flow failure. Recovered value in closed-loop cold chain systems flows back to producers, distributors, and consumers simultaneously rather than accumulating as landfill.</p>
+
+<h2 class="sh2">4.2 The Regenerative License Agreement as Toroidal Design</h2>
+<p class="bp">The Christos&#8482; Regenerative License Agreement (INV-299) encodes toroidal economic structure formally. A licensing fee is tied to verified performance recovery (30%), with mandatory reinvestment of 40–60% of the recovered value back into the licensee's productive capacity — workforce, equipment, research and development. The return flow is not optional or aspirational. It is structural. It is contractual. It compounds.</p>
+<div class="econ-box">
+  <div class="econ-label">Representative Example — $50M Manufacturer</div>
+  <div class="econ-formula">Year 1: $3.75M leakage recovered · 30% fee · $675K–$900K mandatory reinvestment back to manufacturer<br>Year 5: ~$30M cumulative recovered · ~$8M reinvested · Productive base structurally stronger</div>
+</div>
+<p class="bp">The torus is repaired, not just patched. The distinction is architectural: a repair changes the system; a patch changes the numbers inside an unchanged system.</p>
+
+<!-- SECTION 5 -->
+<h1 class="sh" id="s5">5 — The Economics Paper That Has Not Been Written</h1>
+<p class="bp">Standard economics has a sophisticated vocabulary for market failure, externalities, information asymmetry, and principal-agent problems. What it lacks is a coherent model of <strong>systemic circulation failure</strong> — the condition in which the architecture of an economic system structurally prevents the return flow that would make it self-sustaining.</p>
+<p class="bp">Keynes described aggregate demand failures. Marx described surplus value extraction. Piketty documented capital concentration. Each identified part of the broken torus. None provided the geometric framework that would explain why these failures are structural rather than incidental — why they recur across industries, geographies, and political systems regardless of the specific actors involved.</p>
+<div class="pull-quote"><p>The toroidal coherence framework provides that geometry. The broken torus is not a market failure — it is an architectural design that was optimized for extraction without designing in the return. The leakage is not a bug. It is a feature of a one-directional system operating in a world that requires circulation.</p></div>
+<p class="bp">Every organism, every ecosystem, every physical system that persists over time does so because it circulates. The economy is the only major system that was architected around directional flow and then surprised when it depleted its own foundation.</p>
+<p class="bp">The resolution is not policy — it is design. Regulations can slow extraction but cannot restore circulation. Taxes can redirect captured value but cannot repair the torus. Only a structural change in the design of economic relationships — embedding the return flow as a mandatory architectural feature rather than an optional philanthropic addition — closes the loop.</p>
+
+<!-- SECTION 6 -->
+<h1 class="sh" id="s6">6 — Falsifiable Claims and Measurable Predictions</h1>
+<h2 class="sh2">6.1 Organizational Level</h2>
+<p class="bp">Organizations that implement all five circulation primitives at full integrity should show measurably lower voluntary turnover, higher asset utilization, lower rework rates, and higher operating margins than industry benchmarks within <strong>24 months</strong> of implementation.</p>
+<p class="bp">Organizations that repair a specific broken primitive should show measurable leakage reduction in the categories directly associated with that primitive within <strong>12 months</strong>. Feedback repair should reduce bullwhip-effect inventory costs. Memory repair should reduce rework rates. Regeneration repair should reduce turnover costs.</p>
+<p class="bp">The Regenerative License Agreement structure — with mandatory productive reinvestment — should produce compounding performance improvement over 5 years that exceeds the performance of equivalent organizations using standard consulting engagement structures without the reinvestment covenant.</p>
+<h2 class="sh2">6.2 Industry Level</h2>
+<p class="bp">Industries with higher average Five Primitive integrity (measured by composite proxy metrics) should show lower leakage rates as a percentage of revenue. Healthcare's 17–21% waste rate should correlate with specific primitive failures identifiable across health system types.</p>
+<p class="bp">Industries that have systematically implemented closed-loop return flow designs (certain manufacturing sectors with ISO 14001 circular economy certifications) should show meaningfully lower resource depletion rates than equivalent industries without such designs.</p>
+<h2 class="sh2">6.3 The Leakage Recovery Potential</h2>
+<div class="econ-box">
+  <div class="econ-label">Conservative 15% Recovery of Documented Leakage</div>
+  <div class="econ-formula">$2T+ annual leakage × 15% recovery = <strong>$300B+ in annual value restored</strong><br>Economic multiplier of circulating value (3–7×) = true impact substantially larger than face value</div>
+</div>
+<p class="bp">This is not GDP growth in the conventional sense — it is value that currently exits the system permanently, converted to value that circulates. The economic multiplier effect of circulating value means the true economic impact of leakage recovery is substantially larger than the face value of the recovered amount.</p>
+
+<!-- SECTION 7 -->
+<h1 class="sh" id="s7">7 — The Diagnostic as Torus Repair</h1>
+<p class="bp">The Christos&#8482; Sovereign Circulation Diagnostic is not an audit. It is a structural assessment of which primitives are compromised in a specific organization and what the repair of each is worth annually.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Phase</th><th>What Happens</th><th>Output</th></tr></thead>
+  <tbody>
+    <tr><td class="td-gold">Discovery</td><td>Establish which of the five primitives shows the most material breakdown in the specific organization, industry, and cost structure</td><td>Entry point — identifying where the torus is most severely broken</td></tr>
+    <tr><td class="td-gold">Leakage Mapping</td><td>Quantify the annual cost of each broken primitive against documented industry benchmarks</td><td>A specific, monetized leakage profile — a dollar figure by category, not a general assessment</td></tr>
+    <tr><td class="td-gold">Recovery Architecture</td><td>Design the specific interventions that restore circulation at each broken primitive, sequenced by impact magnitude and implementation complexity</td><td>Exact change sequence with annual recovery value per step</td></tr>
+  </tbody>
+</table></div>
+<p class="bp">The diagnostic conversation costs nothing. Not doing it costs the documented leakage rate — which for most organizations of meaningful scale is measurable in seven or eight figures annually.</p>
+
+<!-- SECTION 8 -->
+<h1 class="sh" id="s8">8 — Conclusion: The Return Flow Is the Resolution</h1>
+<p class="bp">The leakage documented in this paper is not a collection of separate industry problems. It is one problem expressed in six different contexts: a system that was designed to move value in one direction and was never given a return flow.</p>
+<p class="bp">Healthcare moves resources toward intervention and not toward prevention — the return flow that would reduce the volume of intervention needed is absent. Logistics moves freight toward consumption and leaves a quarter of its capacity moving air on the return lane. Construction moves materials onto jobsites and discards 30% of them. Agriculture moves food toward consumers and discards a quarter of the value it produced.</p>
+<p class="bp">The broken torus is not inevitable. Every persistent natural system — every organism, every ecosystem, every coherent physical structure — achieves persistence through circulation. The economy is not exempt from this structural requirement. It only behaves as if it is, until the depletion of the productive base makes the costs visible.</p>
+<div class="resolution-box">
+  <div class="resolution-title">The Architectural Resolution</div>
+  <div class="econ-formula" style="font-family:'Cormorant Garamond',serif;font-style:italic;color:#C9A84C;line-height:1.9;font-size:1.05rem;">Healthy Economy: Christos (outward generation) + Saturnalia return (regenerative reinvestment) = Closed Torus<br><br>Current Economy: Extraction without return = Broken Torus = $2T+ annual leakage</div>
+</div>
+<p class="bp">The $2 trillion figure is not the cost of the problem. It is the annual opportunity available to any organization, industry, or economy willing to stop optimizing for extraction and start designing for circulation.</p>
+
+<!-- RESOLUTION FRAMEWORK -->
+<h1 class="sh" id="resolution">Resolution Framework — The Five Moves Applied</h1>
+<p class="bp">This paper applies the following moves from the master Christos&#8482; Paradox Resolution Framework:</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Move Applied</th><th>Application</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="td-gold">Move 1: Complete the Torus</td>
+      <td>The global economy models the Christos current (outward production, distribution, consumption) and the Saturnalia compression (extraction, margin capture, capital concentration) but has not designed the regenerative return that closes the loop. The leakage is the signature of an incomplete torus. Completing it — designing the return flow as a structural feature of economic relationships — is the resolution.</td>
+    </tr>
+    <tr>
+      <td class="td-gold">Move 2: Identify the Coherence Threshold</td>
+      <td>Each of the five primitives has a threshold below which leakage becomes structural rather than incidental. The healthcare system's 17–21% waste rate represents chronic operation below the feedback and regeneration coherence thresholds. Identifying and naming the threshold for each primitive transforms the diagnosis from "we have inefficiency" to "we are operating below the minimum condition for a circulating system."</td>
+    </tr>
+    <tr>
+      <td class="td-gold">Move 5: Name the Dimensional Layer</td>
+      <td>Standard economics operates in the 3D transactional layer — price, quantity, profit. The broken torus is a 5D organizational coherence failure — a structural incompleteness in the architecture of how value is organized and circulated. Policy interventions at the 3D layer cannot repair a 5D architectural defect. The diagnostic operates at the correct dimensional layer.</td>
+    </tr>
+  </tbody>
+</table></div>
+
+<!-- CROSS REFERENCES -->
+<h2 class="sh2">Cross-References — Christos&#8482; White Paper Library</h2>
+<div style="display:flex;flex-direction:column;gap:8px;margin:14px 0 28px;">
+  <a href="sovereign-consulting.html" style="font-family:'Raleway',sans-serif;font-size:0.72rem;color:#3AAFAF;display:flex;align-items:center;gap:8px;">&#8594; Sovereign Circulation Framework — Business Leakage Diagnostic &amp; Recovery Model</a>
+  <a href="sovereign-circulation-framework.html" style="font-family:'Raleway',sans-serif;font-size:0.72rem;color:#3AAFAF;display:flex;align-items:center;gap:8px;">&#8594; Sovereign Cost Reduction Framework — Government Application of the Five Primitives</a>
+  <a href="papers/ai-network-digital/what-to-build-instead-coherent-cities.html" style="font-family:'Raleway',sans-serif;font-size:0.72rem;color:#3AAFAF;display:flex;align-items:center;gap:8px;">&#8594; Coherent Cities — Urban Circulation Design and Infrastructure</a>
+  <a href="papers/paradox-resolution/paradox-index.html" style="font-family:'Raleway',sans-serif;font-size:0.72rem;color:#3AAFAF;display:flex;align-items:center;gap:8px;">&#8594; Paradox Resolution Series — Master Christos&#8482; Resolution Framework</a>
+</div>
+
+<!-- REFERENCES -->
+<h1 class="sh" id="references">References</h1>
+<ul class="ref-list">
+  <li>Berwick, D.M., &amp; Hackbarth, A.D. (2012). Eliminating waste in US health care. <em>JAMA,</em> 307(14), 1513–1516.</li>
+  <li>Shrank, W.H., Rogstad, T.L., &amp; Parekh, N. (2019). Waste in the US health care system: Estimated costs and potential for savings. <em>JAMA,</em> 322(15), 1501–1509.</li>
+  <li>Council of Supply Chain Management Professionals (CSCMP). (2023). <em>State of Logistics Report 2023.</em> Kearney / Penske Logistics.</li>
+  <li>McKinsey Global Institute. (2021). <em>Supply Chain Resilience: Finding the Right Balance.</em></li>
+  <li>McKinsey Global Institute. (2017). <em>Reinventing Construction: A Route to Higher Productivity.</em></li>
+  <li>FMI Corporation. (2023). <em>Labor Productivity Study: Construction Labor Productivity Trends.</em></li>
+  <li>ReFED. (2024). <em>Roadmap to Reduce U.S. Food Waste by 50%.</em> ReFED / USDA Food Loss and Waste.</li>
+  <li>National Retail Federation. (2023). <em>Retail Security Survey / Annual Retail Shrink Survey.</em></li>
+  <li>FedEx Corporation. (2023). <em>Annual Report on Form 10-K, Fiscal Year Ended May 31, 2023.</em> SEC EDGAR.</li>
+  <li>Contimod / Concord Project Technologies. (2025). Construction Cost Overrun Statistics. GlobeNewswire.</li>
+  <li>Construction Industry Institute (CII). <em>Benchmarking &amp; Metrics: Rework Cost Studies.</em></li>
+  <li>Piketty, T. (2014). <em>Capital in the Twenty-First Century.</em> Harvard University Press.</li>
+  <li>Farrior, J. (2025). <em>Sovereign Circulation Framework.</em> Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+  <li>Farrior, J. (2026). <em>Unified Coherence Architecture.</em> Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+  <li>Farrior, J. (2026). <em>Coherent Cities.</em> Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+</ul>
+
+<div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;">
+  <a href="mailto:founder@christosenergy.com" class="collab-btn" style="margin-bottom:0;">&#10022; Collaborate with Joshua</a>
+  <p style="font-family:'Raleway',sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);margin-top:20px;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923 &middot; Christos&#8482; Trademark Pending USPTO</p>
+</div>
+</article>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button>
+<footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="library.html">Library</a></li><li><a href="sovereign-consulting.html">Consulting</a></li><li><a href="sovereign-circulation-framework.html">Gov. Framework</a></li><li><a href="contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
+</body>
+</html>
