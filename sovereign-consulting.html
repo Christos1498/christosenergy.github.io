@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sovereign Circulation Consulting | Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background-color:#08111E !important;color:#D8D0C0;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
+.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
+.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:#C9A84C;}
+.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 20px;}
+
+/* HERO */
+.hero{min-height:100vh;background-color:#08111E !important;display:flex;align-items:center;padding:120px 40px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(201,168,76,0.06) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(58,175,175,0.04) 0%,transparent 50%);pointer-events:none;}
+.hero-inner{max-width:1160px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.hero-eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:#2A7F7F;flex-shrink:0;}
+.hero-title{font-family:'Cinzel',serif;font-size:clamp(28px,4vw,52px);font-weight:700;color:#FFFFFF;line-height:1.15;letter-spacing:0.03em;margin-bottom:18px;}
+.hero-title .gold{color:#C9A84C;}
+.hero-divider{width:80px;height:2px;background:#C9A84C;margin-bottom:24px;opacity:0.5;}
+.hero-sub{font-size:1.15rem;font-style:italic;color:#D8D0C0;line-height:1.8;margin-bottom:16px;}
+.hero-desc{font-size:1rem;color:rgba(216,208,192,0.8);line-height:1.85;margin-bottom:36px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C !important;color:#08111E !important;padding:14px 32px;display:inline-block;transition:background 0.2s;}
+.btn-primary:hover{background-color:#E8C97A !important;}
+.btn-ghost{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid #C9A84C;color:#C9A84C;padding:14px 32px;display:inline-block;transition:all 0.2s;}
+.btn-ghost:hover{background:rgba(201,168,76,0.12);}
+.btn-teal{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid #3AAFAF;color:#3AAFAF;padding:14px 32px;display:inline-block;transition:all 0.2s;}
+.btn-teal:hover{background:rgba(58,175,175,0.12);}
+
+/* HERO RIGHT CARD */
+.hero-card{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.25);border-top:3px solid #C9A84C;padding:36px;}
+.hc-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:#3AAFAF;margin-bottom:20px;}
+.hc-stat{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(201,168,76,0.1);}
+.hc-stat:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.hc-industry{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(201,168,76,0.6);margin-bottom:4px;}
+.hc-figure{font-family:'Cinzel',serif;font-size:1.8rem;font-weight:700;color:#C9A84C;line-height:1;margin-bottom:4px;}
+.hc-desc{font-family:'Raleway',sans-serif;font-size:0.72rem;color:rgba(216,208,192,0.55);line-height:1.5;}
+.hc-source{font-family:'Raleway',sans-serif;font-size:0.6rem;color:rgba(216,208,192,0.3);margin-top:3px;}
+
+/* LEAKAGE STATS BAR */
+.stats-bar{background-color:#0D1B2A !important;border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.2);padding:56px 40px;}
+.stats-inner{max-width:1160px;margin:0 auto;}
+.stats-eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.stats-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
+.stats-title{font-family:'Cinzel',serif;font-size:clamp(20px,2.5vw,30px);font-weight:600;color:#FFFFFF;margin-bottom:8px;letter-spacing:0.04em;}
+.stats-sub{font-size:0.95rem;color:rgba(216,208,192,0.65);line-height:1.7;max-width:680px;margin-bottom:36px;}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,0.1);}
+.stat-card{background-color:#0A1628 !important;padding:28px 24px;position:relative;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C9A84C,transparent);}
+.stat-industry{font-family:'Raleway',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:rgba(216,208,192,0.5);margin-bottom:10px;}
+.stat-figure{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:#C9A84C;line-height:1;margin-bottom:6px;}
+.stat-label{font-family:'Raleway',sans-serif;font-size:0.72rem;color:rgba(216,208,192,0.65);line-height:1.5;margin-bottom:8px;}
+.stat-source{font-family:'Raleway',sans-serif;font-size:0.6rem;color:rgba(216,208,192,0.3);}
+
+/* PULL QUOTE */
+.pull-section{padding:80px 40px;text-align:center;}
+.pull-inner{max-width:900px;margin:0 auto;}
+.pull-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.7rem);font-style:italic;color:#C9A84C;line-height:1.65;margin-bottom:20px;position:relative;padding:0 40px;}
+.pull-quote::before,.pull-quote::after{content:'';position:absolute;top:50%;width:50px;height:1px;background:rgba(201,168,76,0.3);}
+.pull-quote::before{right:100%;}
+.pull-quote::after{left:100%;}
+.pull-attr{font-family:'Cinzel',serif;font-size:0.65rem;letter-spacing:0.2em;color:rgba(201,168,76,0.5);text-transform:uppercase;}
+
+/* HOW IT WORKS */
+.how-section{background-color:#08111E !important;padding:100px 40px;border-top:1px solid rgba(201,168,76,0.15);}
+.how-inner{max-width:1160px;margin:0 auto;}
+.section-eyebrow{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.4em;text-transform:uppercase;color:#3AAFAF;margin-bottom:12px;display:flex;align-items:center;gap:12px;}
+.section-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
+.section-title{font-family:'Cinzel',serif;font-size:clamp(22px,3vw,36px);font-weight:600;color:#FFFFFF;letter-spacing:0.04em;margin-bottom:14px;}
+.section-sub{font-size:1rem;color:rgba(216,208,192,0.75);line-height:1.8;max-width:680px;margin-bottom:56px;}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(201,168,76,0.08);margin-bottom:0;}
+.step{background-color:#0D1B2A !important;padding:36px 32px;}
+.step-num{font-family:'Cinzel',serif;font-size:3.5rem;font-weight:900;color:rgba(201,168,76,0.1);line-height:1;margin-bottom:12px;}
+.step-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;}
+.step-desc{font-size:0.95rem;color:rgba(216,208,192,0.7);line-height:1.75;}
+
+/* INDUSTRIES */
+.industries-section{background-color:#0D1B2A !important;padding:100px 40px;border-top:1px solid rgba(201,168,76,0.15);}
+.industries-inner{max-width:1160px;margin:0 auto;}
+.industry-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.08);margin-top:40px;}
+.ind-cell{background-color:#08111E !important;padding:22px 18px;transition:background 0.2s;}
+.ind-cell:hover{background-color:#0D1B2A !important;}
+.ind-icon{font-size:1.3rem;margin-bottom:8px;display:block;}
+.ind-name{font-family:'Cinzel',serif;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#C9A84C;margin-bottom:5px;}
+.ind-detail{font-family:'Raleway',sans-serif;font-size:0.68rem;color:rgba(216,208,192,0.5);line-height:1.5;}
+
+/* ARCHITECTURE */
+.arch-section{background-color:#08111E !important;padding:100px 40px;border-top:1px solid rgba(201,168,76,0.15);}
+.arch-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.arch-left p{font-size:1rem;color:rgba(216,208,192,0.75);line-height:1.85;margin-bottom:16px;}
+.primitives{list-style:none;display:flex;flex-direction:column;gap:1px;}
+.primitive{display:flex;align-items:flex-start;gap:18px;padding:18px 20px;background-color:#0D1B2A !important;border-left:2px solid rgba(201,168,76,0.2);transition:border-color 0.2s;}
+.primitive:hover{border-left-color:#C9A84C;}
+.prim-letter{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-style:italic;color:#C9A84C;font-weight:600;width:24px;flex-shrink:0;line-height:1;}
+.prim-text strong{display:block;font-family:'Raleway',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#C9A84C;margin-bottom:3px;}
+.prim-text span{font-family:'Raleway',sans-serif;font-size:0.78rem;color:rgba(216,208,192,0.6);line-height:1.5;}
+
+/* ENGAGEMENT STRUCTURE */
+.engage-section{background-color:#0D1B2A !important;padding:100px 40px;border-top:1px solid rgba(201,168,76,0.15);}
+.engage-inner{max-width:1160px;margin:0 auto;}
+.engage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.1);margin-top:40px;}
+.engage-card{background-color:#08111E !important;padding:32px 24px;position:relative;}
+.engage-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(201,168,76,0.3);}
+.engage-type{font-family:'Raleway',sans-serif;font-size:9px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#3AAFAF;margin-bottom:10px;}
+.engage-name{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#FFFFFF;letter-spacing:0.05em;margin-bottom:14px;}
+.engage-desc{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:rgba(216,208,192,0.65);line-height:1.7;margin-bottom:18px;}
+.engage-price{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C;}
+.engage-price-sub{font-family:'Raleway',sans-serif;font-size:0.65rem;color:rgba(216,208,192,0.4);margin-top:3px;}
+
+/* CTA */
+.cta-section{background-color:#08111E !important;padding:120px 40px;text-align:center;border-top:1px solid rgba(201,168,76,0.15);}
+.cta-inner{max-width:720px;margin:0 auto;}
+.cta-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.5vw,42px);font-weight:700;color:#FFFFFF;line-height:1.25;margin-bottom:18px;letter-spacing:0.03em;}
+.cta-body{font-size:1.1rem;color:rgba(216,208,192,0.75);line-height:1.8;margin-bottom:44px;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* DISCLAIMER */
+.disclaimer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.1);padding:28px 40px;}
+.disclaimer-inner{max-width:1160px;margin:0 auto;}
+.disclaimer p{font-family:'Raleway',sans-serif;font-size:0.68rem;color:rgba(216,208,192,0.35);line-height:1.7;}
+
+/* FOOTER */
+.footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:50px 40px 36px;}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo{font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:#C9A84C;}
+.footer-nav{display:flex;gap:22px;flex-wrap:wrap;}
+.footer-nav a{font-family:'Raleway',sans-serif;font-size:12px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;color:#AABFCC;}
+.footer-nav a:hover{color:#C9A84C;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:rgba(216,208,192,0.3);width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);text-align:center;letter-spacing:0.08em;}
+
+@media(max-width:900px){
+  .nav{height:auto !important;flex-wrap:wrap;padding:12px 20px !important;}
+  .nav-logo{flex:1;padding:4px 0;}
+  .nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}
+  .nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;color:#D8D0C0 !important;}
+  .nav-links a:hover{color:#C9A84C !important;}
+  .nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 14px !important;}
+  .hero{padding:160px 20px 60px;}
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .stats-bar,.how-section,.industries-section,.arch-section,.engage-section,.cta-section{padding-left:20px;padding-right:20px;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .steps-grid{grid-template-columns:1fr;}
+  .industry-grid{grid-template-columns:repeat(2,1fr);}
+  .arch-inner{grid-template-columns:1fr;}
+  .engage-grid{grid-template-columns:1fr 1fr;}
+  .footer{padding-left:20px;padding-right:20px;}
+  .pull-section{padding:60px 20px;}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr;}
+  .engage-grid{grid-template-columns:1fr;}
+  .industry-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:12px;">
+    <div class="nav-logo">CHRISTOS&#8482;<span>Energy · Technology · Harmonic Design</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="library.html">Library</a>
+    <a href="sovereign-consulting.html" class="active">Consulting</a>
+    <a href="diagrams.html">Diagrams</a>
+    <a href="economy.html">Economy</a>
+    <a href="book.html">Book</a>
+    <a href="the-case.html">The Case</a>
+    <a href="papers/paradox-resolution/paradox-index.html">Paradox</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Christos&#8482; Energy · Consulting Services</div>
+      <h1 class="hero-title">Your organization is<br>losing more than<br><span class="gold">you think.</span><br>We find exactly where.</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Most organizations have accepted a significant portion of their operational cost as unavoidable. It isn't.</p>
+      <p class="hero-desc">The Christos&#8482; Sovereign Circulation Framework identifies where value is leaking out of your system — and what it costs you every year. We map it. We quantify it. We design the architecture that recovers it.</p>
+      <div class="hero-btns">
+        <a href="mailto:founder@christosenergy.com" class="btn-primary">Request a Diagnostic Conversation &#8594;</a>
+        <a href="sovereign-circulation-framework.html" class="btn-ghost">Read the Framework Paper</a>
+        <a href="sovereign-onepager.html" class="btn-teal">View One-Pager</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-label">What Independent Research Has Already Documented</div>
+      <div class="hc-stat">
+        <div class="hc-industry">Healthcare</div>
+        <div class="hc-figure">$935B</div>
+        <div class="hc-desc">Annual waste in U.S. healthcare — 17–21% of all health spending</div>
+        <div class="hc-source">JAMA, 2019 / CMS NHE Accounts 2023</div>
+      </div>
+      <div class="hc-stat">
+        <div class="hc-industry">Logistics</div>
+        <div class="hc-figure">25–30%</div>
+        <div class="hc-desc">Of all truck loads run at least partially empty</div>
+        <div class="hc-source">CSCMP State of Logistics 2023</div>
+      </div>
+      <div class="hc-stat">
+        <div class="hc-industry">Construction</div>
+        <div class="hc-figure">98%</div>
+        <div class="hc-desc">Of large projects run over budget or over schedule</div>
+        <div class="hc-source">McKinsey Global Institute / FMI Corp</div>
+      </div>
+      <div class="hc-stat">
+        <div class="hc-industry">Agriculture</div>
+        <div class="hc-figure">$325B</div>
+        <div class="hc-desc">In food value discarded annually — 25% of U.S. food supply</div>
+        <div class="hc-source">ReFED 2024 / USDA</div>
+      </div>
+      <div class="hc-stat" style="border-bottom:none;">
+        <div class="hc-industry">Manufacturing</div>
+        <div class="hc-figure">11–15%</div>
+        <div class="hc-desc">Of all field labor costs are simply wasted or unproductive</div>
+        <div class="hc-source">FMI Corp. / Siemens Industrial 2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stats-eyebrow">The Problem</div>
+    <h2 class="stats-title">Industry-Level Leakage — Documented by Independent Research</h2>
+    <p class="stats-sub">These figures come from peer-reviewed studies, government agencies, and industry associations — not modeling assumptions. They represent what researchers have already measured.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-industry">Retail</div>
+        <div class="stat-figure">$112B</div>
+        <div class="stat-label">Annual retail shrink alone — before $743B in returns or inventory distortion</div>
+        <div class="stat-source">National Retail Federation, 2023</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-industry">Construction Labor</div>
+        <div class="stat-figure">$40B</div>
+        <div class="stat-label">Lost annually to labor inefficiency; 98% of large projects run over budget</div>
+        <div class="stat-source">FMI Corp. 2023 Labor Productivity Study</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-industry">Total U.S. Logistics</div>
+        <div class="stat-figure">$2.45T</div>
+        <div class="stat-label">Total U.S. business logistics cost — 9.1% of GDP — with 25–30% of loads running empty</div>
+        <div class="stat-source">CSCMP State of Logistics Report 2023</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="pull-section">
+  <div class="pull-inner">
+    <p class="pull-quote">"The problem isn't that businesses are inefficient. It's that their model isn't designed to circulate value — it's designed to extract it. Those are fundamentally different architectures."</p>
+    <div class="pull-attr">Joshua Farrior · Founder, Christos&#8482; Energy</div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-eyebrow">The Diagnostic Process</div>
+    <h2 class="section-title">Three Conversations. One Clear Answer.</h2>
+    <p class="section-sub">No forms. No packages sold before we know your situation. Three focused conversations — then you see exactly what your leakage costs and what recovery is worth.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Discovery</div>
+        <p class="step-desc">A focused conversation about your business: size, industry, cost structure, and where you feel the most pressure. We establish whether the diagnostic will surface something material before any engagement begins.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Leakage Mapping</div>
+        <p class="step-desc">We apply the Christos&#8482; Sovereign Circulation Framework to your operation — mapping where value exits the system across the five organizational primitives. Output: a specific, quantified leakage profile by category, benchmarked against documented industry data.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Recovery Architecture</div>
+        <p class="step-desc">We design the specific interventions that convert identified leakage into recovered value — sequenced by impact and implementation complexity. You see what changes, in what order, and what each step is worth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries-section">
+  <div class="industries-inner">
+    <div class="section-eyebrow">Industries Served</div>
+    <h2 class="section-title">The Framework Applies Wherever Value Flows — and Leaks.</h2>
+    <p class="section-sub" style="margin-bottom:0;">If value flows through it, the framework applies to it.</p>
+    <div class="industry-grid">
+      <div class="ind-cell"><span class="ind-icon">&#127973;</span><div class="ind-name">Healthcare</div><div class="ind-detail">Hospitals · Health systems · Medical practices · Outpatient groups</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#9881;&#65039;</span><div class="ind-name">Manufacturing</div><div class="ind-detail">Automotive · Consumer goods · Industrial · Food &amp; beverage</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#9889;</span><div class="ind-name">Energy</div><div class="ind-detail">Oil &amp; gas · Utilities · Pipelines · Renewable energy</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#127968;</span><div class="ind-name">Financial Services</div><div class="ind-detail">Banking · Insurance · Asset management · Lending</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#127807;</span><div class="ind-name">Agriculture</div><div class="ind-detail">Farm operations · Food processing · Agribusiness · Distribution</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#127959;&#65039;</span><div class="ind-name">Real Estate</div><div class="ind-detail">Commercial property · Development · Property management · Construction</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#128666;</span><div class="ind-name">Logistics</div><div class="ind-detail">Freight · 3PL · Supply chain · International trade · Last mile</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#128717;</span><div class="ind-name">Retail &amp; Consumer</div><div class="ind-detail">General merchandise · Grocery · Apparel · Electronics · E-commerce</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#127963;&#65039;</span><div class="ind-name">Government</div><div class="ind-detail">Municipal · State · Federal · Sovereign debt reduction</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#128295;</span><div class="ind-name">Construction</div><div class="ind-detail">General contractors · Trade contractors · Infrastructure · Program management</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#128138;</span><div class="ind-name">Pharmaceuticals</div><div class="ind-detail">Drug manufacturers · Distributors · Specialty pharmacy · Biotech</div></div>
+      <div class="ind-cell"><span class="ind-icon">&#128225;</span><div class="ind-name">Technology</div><div class="ind-detail">Electronics · Semiconductors · Software · IT infrastructure</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="arch-section">
+  <div class="arch-inner">
+    <div class="arch-left">
+      <div class="section-eyebrow">The Architecture</div>
+      <h2 class="section-title">Not a New Methodology.<br>A Different Lens.</h2>
+      <p>The Christos&#8482; Sovereign Circulation Framework is grounded in a single observation: persistent organizations don't just move resources through a system — they circulate them. Value flows, is retained, regenerates, and compounds. When that circulation breaks down, leakage follows.</p>
+      <p>Every diagnostic applies five organizational primitives — the minimum conditions that any persistent system requires. Remove any one and leakage becomes structural.</p>
+      <p>This framework is not borrowed from conventional consulting. It is derived from the Christos&#8482; research platform's unified systems architecture — the same principles that govern biological coherence, planetary hydrology, and material physics applied to organizational value circulation.</p>
+      <div style="margin-top:32px;">
+        <a href="sovereign-circulation-framework.html" class="btn-ghost" style="font-size:11px;padding:11px 24px;">Read the Full Framework Paper &#8594;</a>
+      </div>
+    </div>
+    <ul class="primitives">
+      <li class="primitive"><span class="prim-letter">F</span><div class="prim-text"><strong>Flow</strong><span>Movement of energy, capital, materials, or information through the system. Where flow stagnates or fragments, leakage accumulates.</span></div></li>
+      <li class="primitive"><span class="prim-letter">B</span><div class="prim-text"><strong>Boundary</strong><span>The regulatory interface that shapes what enters and exits. Without it, value dissipates into the environment rather than circulating within the system.</span></div></li>
+      <li class="primitive"><span class="prim-letter">Fb</span><div class="prim-text"><strong>Feedback</strong><span>The capacity to detect drift and self-correct before drift becomes loss. Feedback latency is one of the most common sources of preventable leakage.</span></div></li>
+      <li class="primitive"><span class="prim-letter">M</span><div class="prim-text"><strong>Memory</strong><span>Preserved organizational structure that maintains continuity. Systems without memory repeat costly errors at every cycle.</span></div></li>
+      <li class="primitive"><span class="prim-letter">R</span><div class="prim-text"><strong>Regeneration</strong><span>The capacity to rebuild productive capacity while operating. Organizations that consume faster than they regenerate are running down their own foundation.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ENGAGEMENT STRUCTURE -->
+<section class="engage-section">
+  <div class="engage-inner">
+    <div class="section-eyebrow">Engagement Structure</div>
+    <h2 class="section-title">Four Ways to Work Together</h2>
+    <p class="section-sub">Every engagement starts with a diagnostic conversation — no package is sold until we know what your situation warrants.</p>
+    <div class="engage-grid">
+      <div class="engage-card" style="border-top-color:#C9A84C;">
+        <div class="engage-type">Phase One</div>
+        <div class="engage-name">Diagnostic</div>
+        <div class="engage-desc">Quantify leakage by category. Written report with specific estimates by leakage type, benchmarked against documented industry data.</div>
+        <div class="engage-price">$8K – $300K+</div>
+        <div class="engage-price-sub">Scaled to organization size and complexity</div>
+      </div>
+      <div class="engage-card" style="border-top-color:#3AAFAF;">
+        <div class="engage-type">Phase Two</div>
+        <div class="engage-name">Architecture</div>
+        <div class="engage-desc">Design interventions and a sequenced implementation roadmap following completed diagnostic. Specific, quantified, actionable.</div>
+        <div class="engage-price">Scoped per engagement</div>
+        <div class="engage-price-sub">Based on diagnostic findings and scope</div>
+      </div>
+      <div class="engage-card" style="border-top-color:rgba(201,168,76,0.4);">
+        <div class="engage-type">Ongoing</div>
+        <div class="engage-name">Advisory</div>
+        <div class="engage-desc">Guide implementation and track recovery metrics over time. Continuous optimization as the architecture is deployed across the organization.</div>
+        <div class="engage-price">Monthly Retainer</div>
+        <div class="engage-price-sub">Structured to the implementation scope</div>
+      </div>
+      <div class="engage-card" style="border-top-color:rgba(58,175,175,0.5);">
+        <div class="engage-type">Performance</div>
+        <div class="engage-name">Fee Structure</div>
+        <div class="engage-desc">A portion of the engagement fee is tied to verified first-year savings — aligning our outcome directly with yours. Verified through independent audit.</div>
+        <div class="engage-price">10–15%</div>
+        <div class="engage-price-sub">Of verified first-year recovered savings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:20px;">Start Here</div>
+    <h2 class="cta-title">The diagnostic conversation costs you nothing.<br>Not doing it costs you more.</h2>
+    <p class="cta-body">We don't sell a package before we know your situation. The first conversation is straightforward: we look at what you do, where the pressure is, and whether the framework shows something worth pursuing. If it doesn't, we'll tell you that too.</p>
+    <div class="cta-btns">
+      <a href="mailto:founder@christosenergy.com" class="btn-primary">Request a Diagnostic Conversation &#8594;</a>
+      <a href="sovereign-circulation-framework.html" class="btn-ghost">Read the Framework Paper</a>
+      <a href="sovereign-onepager.html" class="btn-teal">Download One-Pager</a>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  <div class="disclaimer-inner">
+    <p>Industry leakage statistics cited on this page are drawn from published sources including JAMA, the National Retail Federation, FMI Corporation, CSCMP, ReFED, USDA, and other named research organizations. They represent documented industry-level findings, not projections for any specific organization. Individual diagnostic results will vary based on organization size, industry segment, operational maturity, and other factors specific to each engagement. No recovery outcome is guaranteed prior to a completed diagnostic.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS&#8482;</div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+      <a href="sovereign-consulting.html">Consulting</a>
+      <a href="sovereign-circulation-framework.html">Framework Paper</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; Indianapolis, Indiana &middot; Business ID: 202511071941923 &middot; All Rights Reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
