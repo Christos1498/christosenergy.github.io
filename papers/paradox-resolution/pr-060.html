@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The abc Conjecture | PR-060 | Christos&#8482;</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}.resolution-table{border:1px solid rgba(58,175,175,0.15);}.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}.bullet-list{margin:12px 0 18px 0;list-style:none;}.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;}}</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy · Technology · Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="paradox-index.html" class="active">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+<div class="paper-header"><div class="paper-header-inner">
+  <div class="ph-eyebrow">Paradox Resolution Papers &middot; PR-060 &middot; Mathematics &middot; May 2026</div>
+  <div class="open-badge">Full Paper &#8212; Open Access</div>
+  <h1 class="paper-title">The abc Conjecture</h1>
+  <p class="paper-subtitle">Radical Compression, Arithmetic Coherence Bounds, and the Capacity of the Additive Field</p>
+  <div class="paper-meta">
+    <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+    <div class="pm-item"><strong>Series</strong>Paradox Resolution Papers</div>
+    <div class="pm-item"><strong>ID</strong>PR-060</div>
+    <div class="pm-item"><strong>Status</strong>Tier A/B/C</div>
+    <div class="pm-item"><strong>MSC</strong>11D75 &middot; 11G05 &middot; 14G25</div>
+  </div>
+</div></div>
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links"><li><a href="#abstract">Abstract</a></li>
+<li><a href="#s1">1. The Conjecture</a></li>
+<li><a href="#s2">2. The Radical as Arithmetic Coherence</a></li>
+<li><a href="#s3">3. Known High-Quality Triples</a></li>
+<li><a href="#s4">4. Fermat's Last Theorem as Coherence Violation</a></li>
+<li><a href="#s5">5. Mochizuki's IUT as Coherence Bridge</a></li>
+<li><a href="#s6">6. Connection to Szpiro's Conjecture</a></li>
+<li><a href="#s7">7. Falsifiable Predictions</a></li>
+<li><a href="#s8">8. Limitations and Caveats</a></li>
+<li><a href="#s9">9. Conclusion</a></li>
+<li><a href="#resolution">Resolution Framework</a></li>
+<li><a href="#references">References</a></li></ul></aside>
+<article class="paper-body">
+<a href="paradox-index.html" class="collab-btn">&#8592; All Paradox Papers</a>
+
+<div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The abc conjecture, formulated by Masser and Oesterlé in 1985, is one of the most powerful and far-reaching conjectures in number theory. For coprime positive integers a + b = c, it states that for any &#949; &gt; 0, there are only finitely many triples with c &gt; rad(abc)^{1+&#949;}, where rad(n) is the product of distinct prime divisors of n. The conjecture implies Fermat's Last Theorem asymptotically, the Mordell conjecture, and effective Siegel bounds, among dozens of other results.</p>
+  <p class="abstract-text">This paper proposes a geometric interpretation within the toroidal coherence framework. The abc conjecture is a coherence capacity bound on additive relations: the radical rad(abc) measures the arithmetic coherence of the triple (its information-theoretic diversity in prime factors), while c measures the output of the additive relation. When the radical is small — meaning many prime factors are repeated (high compression, low diversity) — the additive structure a + b = c cannot produce a large c relative to that compressed base. The conjecture says that arithmetic coherence has finite capacity: you cannot obtain more from an addition than the prime diversity of the inputs supports.</p>
+</div>
+
+<h1 class="sh" id="s1">1. The Conjecture</h1>
+<p class="bp">For coprime positive integers a, b, c with a + b = c, define:</p>
+<div class="formula-block">rad(abc) = &#8719;_{p | abc} p&nbsp;&nbsp;&nbsp;(product of distinct prime divisors)</div>
+<p class="bp">The abc conjecture: for every &#949; &gt; 0, there exists a constant C_&#949; such that c &#8804; C_&#949; &middot; rad(abc)^{1+&#949;} for all such coprime triples. Equivalently, the quality q(a,b,c) = log(c)/log(rad(abc)) satisfies q &#8804; 1 + &#949; for all but finitely many triples.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Known Result</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>c &#8804; rad(abc)&#178; (trivial upper bound)</td><td>True always</td></tr>
+    <tr><td>c &#8804; rad(abc)^{1.5} (empirical)</td><td>True for all known triples</td></tr>
+    <tr><td>Maximum known quality q &#8776; 1.63</td><td>Triple: 2 + 3&#185;&#8304;&middot;109 = 23&#8309;</td></tr>
+    <tr><td>abc implies FLT for exponents n &#8805; 6</td><td>Proven (asymptotically)</td></tr>
+    <tr><td>Mochizuki's IUT proof</td><td>Circulated 2012; controversial; not yet universally accepted</td></tr>
+  </tbody>
+</table></div>
+
+<h1 class="sh" id="s2">2. The Radical as Arithmetic Coherence</h1>
+<h2 class="sh2">2.1 Radical and Coherence Deficit</h2>
+<p class="bp">The CTF framework reframes the radical as an arithmetic coherence measure. A triple (a,b,c) with small radical means that many prime factors appear with high multiplicity — arithmetic compression: the primes that divide abc are few but they appear many times. High radical means high diversity (many distinct primes); low radical means low diversity (few primes, many repetitions).</p>
+<p class="bp">Define the arithmetic coherence of a triple:</p>
+<div class="formula-block">C(a,b,c) = log(c) / log(rad(abc))</div>
+<p class="bp">The abc conjecture states C(a,b,c) &#8804; 1 + &#949; for all but finitely many triples. This is a coherence capacity bound: the ratio of output (log c) to diversity (log rad) cannot be unboundedly large.</p>
+
+<h2 class="sh2">2.2 Why Coherence Has Capacity</h2>
+<p class="bp">The Christos current in this framework is the additive structure — the outward expression a + b = c. The Saturnalia return is the multiplicative structure — the prime factorizations that constrain what a, b, and c can be. The abc conjecture says the additive output cannot exceed the multiplicative return capacity. When radicals are small (few distinct primes, high compression), the multiplicative return current is weak — the Saturnalia channel is narrow. A narrow channel cannot support a large Christos output.</p>
+
+<h1 class="sh" id="s3">3. Known High-Quality Triples</h1>
+<div class="table-wrap"><table>
+  <thead><tr><th>Triple a + b = c</th><th>Quality q = log c / log rad(abc)</th></tr></thead>
+  <tbody>
+    <tr><td>1 + 8 = 9 &#8594; rad = 6</td><td>q &#8776; 1.058</td></tr>
+    <tr><td>1 + 48 = 49 &#8594; rad = 42</td><td>q &#8776; 1.259</td></tr>
+    <tr><td>1 + 80 = 81 &#8594; rad = 30</td><td>q &#8776; 1.421</td></tr>
+    <tr><td>1 + 2&#8309;&middot;3&#8309; = 7&#8308; &#8594; rad = 42</td><td>q &#8776; 1.568</td></tr>
+    <tr><td>2 + 3&#185;&#8304;&middot;109 = 23&#8309; &#8594; rad = 6&middot;109&middot;23</td><td>q &#8776; 1.629</td></tr>
+  </tbody>
+</table></div>
+<p class="bp">All high-quality triples involve heavily repeated prime factors — small radical relative to c. The CTF interpretation: these are the triples approaching the coherence capacity limit. They cannot exceed quality 1 + &#949; because no arithmetic configuration can compress the additive output beyond what the multiplicative diversity supports.</p>
+
+<h1 class="sh" id="s4">4. Fermat's Last Theorem as Coherence Violation</h1>
+<p class="bp">Fermat's equation a&#8319; + b&#8319; = c&#8319; for n &#8805; 3 gives quality approximately:</p>
+<div class="formula-block">q(a&#8319;, b&#8319;, c&#8319;) &#8776; n / (1 + log(rad(abc))/log(c))</div>
+<p class="bp">For large n with fixed a, b, c: rad(a&#8319;b&#8319;c&#8319;) = rad(abc) (the radical does not change under taking n-th powers — only new primes matter), while c&#8319; grows as c&#8319;. The quality approaches n, which for large n violates the abc bound of 1 + &#949;. This is why abc implies FLT asymptotically: n-th powers produce extreme coherence overextension — the additive output c&#8319; is so large relative to the unchanged radical that the bound q &#8804; 1 + &#949; cannot be satisfied. The equation a&#8319; + b&#8319; = c&#8319; for large n demands more from the arithmetic coherence field than its multiplicative structure can supply.</p>
+
+<h1 class="sh" id="s5">5. Mochizuki's IUT as Coherence Bridge</h1>
+<p class="bp">Mochizuki's Inter-universal Teichmüller Theory (IUT) constructs a framework for analyzing the tension between multiplicative and additive structure by deconstructing and reconstructing the ring structure of integers at a fundamental level. The theta-link transfers information between different copies of the multiplicative structure; the log-theta-lattice provides the organizational framework. The CTF interpretation: IUT is a formal coherence bridge between the Christos current (additive structure, the output c) and the Saturnalia return (multiplicative structure, the radical). If correct, IUT is a formalization of coherence capacity in arithmetic.</p>
+
+<h1 class="sh" id="s6">6. Connection to Szpiro's Conjecture</h1>
+<p class="bp">Szpiro's conjecture for elliptic curves E/&#8474;: |&#916;(E)| &#8804; C_&#949; &middot; N(E)^{6+&#949;}, where &#916; is the minimal discriminant and N is the conductor. Szpiro is equivalent to the abc conjecture. The CTF interpretation: the conductor N(E) is the arithmetic coherence measure of the curve, while the discriminant &#916;(E) is the output of the elliptic curve's additive structure. Szpiro says: the arithmetic complexity of an elliptic curve cannot exceed the coherence of its reduction behavior beyond the 6+&#949; power. Same bound, different arithmetic object.</p>
+
+<h1 class="sh" id="s7">7. Falsifiable Predictions</h1>
+<ul class="bullet-list">
+  <li>Systematic computational search for abc triples with quality q &gt; 1.63 should continue to return null — no triple should exceed quality 2.0 even for c up to 10&#179;&#8304; or beyond. Any triple with q &gt; 2.0 would require re-examination of the conjecture.</li>
+  <li>The distribution of qualities q should thin out rapidly above q = 1.5 and approach a statistical limit below 2.0 — testable through extended computational surveys.</li>
+  <li>New families of high-quality triples, if found, should involve only primes with high repetition in the factorizations of a, b, c — consistent with the coherence compression interpretation.</li>
+  <li>If Mochizuki's IUT is eventually accepted and formalized, it should be interpretable as a coherence capacity theorem: the theta-link should be identifiable as a formal statement about the additive-multiplicative coherence bound.</li>
+</ul>
+
+<h1 class="sh" id="s8">8. Limitations and Caveats</h1>
+<ul class="bullet-list">
+  <li>The CTF interpretation identifies the structural reason the conjecture holds but does not provide a proof within standard number theory.</li>
+  <li>The coherence capacity concept requires formalization: the connection between log(c)/log(rad) and a rigorously defined arithmetic coherence measure needs mathematical development.</li>
+  <li>The interpretation of IUT as a coherence bridge is structural; whether IUT actually proves abc remains contested in the mathematical community.</li>
+</ul>
+
+<h1 class="sh" id="s9">9. Conclusion</h1>
+<p class="bp">The abc conjecture is the coherence capacity bound of arithmetic: the additive relation a + b = c cannot produce an output c that exceeds what the multiplicative prime diversity of (a,b,c) can support. The radical rad(abc) is the coherence measure — the diversity of the arithmetic field available to the addition. Large c with small radical means the additive output exceeds the multiplicative return capacity: the Christos current outpacing the Saturnalia supply. The conjecture says this overextension is always finite. Fermat's Last Theorem is the extreme case: n-th powers produce radical compression while the additive output grows, making the quality diverge for large n and ruling out integer solutions.</p>
+<div class="formula-block">c &#8804; C_&#949; &middot; rad(abc)^{1+&#949;}&nbsp;&nbsp;&nbsp;&#8660;&nbsp;&nbsp;&nbsp;Additive output &#8804; Multiplicative coherence capacity</div>
+
+<h1 class="sh" id="resolution">Resolution Framework — The Five Moves</h1>
+<div class="table-wrap"><table class="resolution-table">
+  <thead><tr><th>Move Applied</th><th>Application to This Paradox</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Move 1: Complete the Torus</strong></td><td>The additive structure a + b = c is the Christos current — outward arithmetic expression. The multiplicative structure (prime factorizations, radical) is the Saturnalia return — the constraint structure that bounds how large the output can be. The abc conjecture is the toroidal balance condition: the additive output cannot outpace the multiplicative return beyond the 1+&#949; power. Completing the arithmetic torus gives the bound.</td></tr>
+    <tr><td><strong>Move 3: Correct Scale</strong></td><td>The abc conjecture operates at the intersection of additive and multiplicative number theory — two different scale descriptions of the same integers. At the additive scale, a + b = c is simple arithmetic. At the multiplicative scale, the same equation is constrained by prime factorization diversity. Applying both scales simultaneously — not just one — gives the abc bound. Treating the two scales as independent misses the interaction that generates the constraint.</td></tr>
+  </tbody>
+</table></div>
+
+<h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;line-height:1.9;color:rgba(216,208,192,0.65) !important;">
+Masser, D.W. (1985). Open problems. <em>Proceedings of the Symposium on Number Theory,</em> 3&#8211;6.<br>
+Oesterl&#233;, J. (1988). Nouvelles approches du th&#233;or&#232;me de Fermat. <em>Ast&#233;risque,</em> 161&#8211;162, 165&#8211;186.<br>
+Szpiro, L. (1981). Discriminant et conducteur des courbes elliptiques. <em>S&#233;minaire sur les pinceaux,</em> 3&#8211;18.<br>
+Mochizuki, S. (2012). Inter-universal Teichm&#252;ller theory I&#8211;IV. <em>Publications of the Research Institute for Mathematical Sciences, Kyoto University.</em><br>
+Wiles, A. (1995). Modular elliptic curves and Fermat's Last Theorem. <em>Annals of Mathematics,</em> 141, 443&#8211;551.<br>
+Farrior, J. (2026). <em>Architecture of Infinity.</em> Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC.
+</p>
+<p class="bp" style="font-size:0.82rem;color:rgba(216,208,192,0.45) !important;margin-top:24px;"><strong style="color:rgba(216,208,192,0.55) !important;">Cross-References:</strong> PR-042 (Birch-Swinnerton-Dyer) &middot; PR-058 (Riemann Hypothesis) &middot; PR-041 (Goldbach's Conjecture) &middot; Architecture of Infinity</p>
+
+<div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4) !important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923</p></div>
+</article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button>
+<footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="paradox-index.html">All Paradox Papers</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
+</body>
+</html>
