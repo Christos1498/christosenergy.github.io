@@ -3,67 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Navier-Stokes Existence and Smoothness Problem | Christos™ Energy</title>
+<title>The Navier-Stokes Problem | PR-056 | Christos™</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.85;}
+body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}
 a{text-decoration:none;color:inherit;}
 nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}
-.nav-logo .logo-main{font-family:"Cinzel",serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
-.nav-logo .logo-sub{font-family:"Raleway",sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}
 .nav-links{display:flex;gap:18px;list-style:none;align-items:center;}
-.nav-links a{font-family:"Raleway",sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}
 .nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}
 .paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}
 .paper-header-inner{max-width:900px;margin:0 auto;}
-.ph-eyebrow{font-family:"Raleway",sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.ph-eyebrow::before{content:"";width:28px;height:1px;background:#2A7F7F;}
-.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
-.open-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
-.paper-title{font-family:"Cinzel",serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
-.paper-subtitle{font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
+.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}
+.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}
+.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}
+.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}
 .paper-meta{display:flex;gap:24px;flex-wrap:wrap;}
-.pm-item{font-family:"Raleway",sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
+.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}
 .pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}
-.correction-banner{background-color:rgba(58,175,175,0.08) !important;border:1px solid rgba(58,175,175,0.3);border-left:4px solid #3AAFAF;padding:14px 20px;margin-bottom:24px;font-family:"Raleway",sans-serif;font-size:0.75rem;color:#3AAFAF !important;line-height:1.65;}
-.correction-banner strong{color:#FFFFFF !important;}
 .paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}
 .toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}
-.toc-label{font-family:"Raleway",sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
-.toc-back{display:block;font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(58,175,175,0.6) !important;margin-bottom:16px;padding:6px 10px;border:1px solid rgba(58,175,175,0.2);text-align:center;}
-.toc-back:hover{color:#3AAFAF !important;border-color:#3AAFAF;}
+.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}
+.toc-links{list-style:none;}
+.toc-links li{margin-bottom:2px;}
+.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}
+.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}
 .paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}
 .abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}
-.abstract-label{font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
-.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;}
-.paper-subtitle-inner{font-family:"Cormorant Garamond",serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:18px;margin-top:-10px;}
-h1.sh{font-family:"Cinzel",serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
-h2.sh2{font-family:"Cinzel",serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
-h3.sh3{font-family:"Cinzel",serif;font-size:0.9rem;font-weight:600;color:rgba(201,168,76,0.8) !important;margin:22px 0 8px;}
+.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}
+.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}
+.abstract-text:last-child{margin-bottom:0;}
+h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}
+h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}
+h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}
 p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}
 p.bp strong{color:#FFFFFF !important;}
-p.bp em{color:#C9A84C !important;font-style:italic;}
-li.paper-li{font-size:0.97rem;color:#D8D0C0 !important;margin:6px 0 6px 22px;line-height:1.75;}
-.eq-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:"Cormorant Garamond",serif;}
-.eq-formula{font-size:1rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}
+.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}
 .table-wrap{overflow-x:auto;margin:18px 0;}
 table{width:100%;border-collapse:collapse;font-size:0.82rem;}
-th{font-family:"Raleway",sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}
-td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.5;vertical-align:top;font-family:"Cormorant Garamond",serif;font-size:0.95rem;}
-.section-hr{border:none;border-top:1px solid rgba(201,168,76,0.1);margin:32px 0;}
-.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:"Raleway",sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}
-.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:"Raleway",sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
+th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}
+td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}
+.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}
+.resolution-table{border:1px solid rgba(58,175,175,0.15);}
+.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}
+.bullet-list{margin:12px 0 18px 0;list-style:none;}
+.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}
+.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}
+.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}
 footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}
 .footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:"Cinzel",serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}
 .footer-links{display:flex;gap:20px;list-style:none;}
-.footer-links a{font-family:"Raleway",sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}
 .footer-links a:hover{color:#C9A84C !important;}
-.footer-copy{font-family:"Raleway",sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}
 @media(max-width:900px){
   nav,.paper-header,footer{padding-left:20px;padding-right:20px;}
   .paper-header{padding-top:120px;}
@@ -92,196 +93,149 @@ footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:
 </div></nav>
 
 <div class="paper-header"><div class="paper-header-inner">
-  <div class="ph-eyebrow">Christos&#8482; · Paradox Resolution Papers · PR-056 · Open Access</div>
-  <div class="open-badge">Full Paper — Open Access</div>
+  <div class="ph-eyebrow">Paradox Resolution Papers &middot; PR-056 &middot; Mathematics &amp; Physics &middot; May 2026</div>
+  <div class="open-badge">Full Paper &#8212; Open Access</div>
   <h1 class="paper-title">The Navier-Stokes Existence and Smoothness Problem</h1>
+  <p class="paper-subtitle">Toroidal Circulation, Return Flow, and the Coherence Geometry of Turbulent Regularity</p>
   <div class="paper-meta">
     <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
-    <div class="pm-item"><strong>Organization</strong>Christos&#8482; Energy, Technology &amp; Harmonic Design</div>
-    <div class="pm-item"><strong>Published</strong>May 2026</div>
+    <div class="pm-item"><strong>Series</strong>Paradox Resolution Papers</div>
     <div class="pm-item"><strong>ID</strong>PR-056</div>
+    <div class="pm-item"><strong>Status</strong>Tier A/B/C</div>
+    <div class="pm-item"><strong>MSC</strong>35Q30 · 76D05 · 76F02 · 35B65</div>
   </div>
 </div></div>
 
 <div class="paper-layout">
 <aside class="toc-sidebar">
-  <a href="paradox-index.html" class="toc-back">&#8592; All Paradox Papers</a>
-  <div class="toc-label">Paper PR-056</div>
-  <div style="font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:rgba(216,208,192,0.55);line-height:1.65;padding-top:6px;">The Navier-Stokes Existence and Smoothness Problem</div>
+  <div class="toc-label">Contents</div>
+  <ul class="toc-links">
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#s1">1. The Problem</a></li>
+    <li><a href="#s2">2. The Missing Return Channel</a></li>
+    <li><a href="#s3">3. Transport-Limited Amplification</a></li>
+    <li><a href="#s4">4. Inverse Cascade as Saturnalia Return</a></li>
+    <li><a href="#s5">5. Connection to Existing Results</a></li>
+    <li><a href="#s6">6. Falsifiable Predictions</a></li>
+    <li><a href="#s7">7. Limitations and Caveats</a></li>
+    <li><a href="#s8">8. Conclusion</a></li>
+    <li><a href="#resolution">Resolution Framework</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
 </aside>
+
 <article class="paper-body">
-  <a href="mailto:founder@christosenergy.com" class="collab-btn">&#10022; Collaborate with Joshua</a>
-  
-  
-<h1 class="sh" id="title">The Navier-Stokes Existence and Smoothness Problem</h1>
+<a href="paradox-index.html" class="collab-btn">&#8592; All Paradox Papers</a>
 
-<div class="abstract-block"><div class="abstract-label">Abstract</div><p class="abstract-text">Toroidal Circulation, Return Flow, and the Coherence Geometry of Turbulent Regularity</p></div>
+<div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The Navier-Stokes existence and smoothness problem is one of the seven Clay Millennium Prize Problems. It asks whether smooth initial conditions for the three-dimensional incompressible Navier-Stokes equations remain smooth for all time, or whether finite-time singularities (blow-up) can develop. Despite enormous analytical and computational effort, the problem remains open. Standard approaches focus on energy estimates, vorticity stretching, and regularity criteria. What standard models underemphasize is a geometric structural consideration: the equations describe outward flow dynamics — velocity, pressure, viscosity — but do not explicitly include the return circulation that characterizes coherent turbulent structures. Vortices, eddies, and the inverse cascade are all return-flow phenomena.</p>
+  <p class="abstract-text">This paper proposes that the Navier-Stokes problem is not a failure of analysis but an incomplete geometric framing. Turbulence is not chaos — it is a coherence phenomenon that emerges when circulation closes. In the toroidal coherence framework, the missing return channel is the vorticity closure condition that prevents singularities. The central structural claim: blow-up requires persistent vorticity alignment without return circulation, a configuration that is dynamically unstable in any system with closed-loop dynamics. The framework does not provide a formal proof. It provides the geometric interpretation that identifies what a proof must encode: the return circulation is not a correction — it is the regularity mechanism.</p>
+</div>
 
-<p class="bp"><strong>Author: </strong>Joshua Farrior | Christos™ Energy, Technology & Harmonic Design Consulting, LLC</p>
-
-<p class="bp"><strong>Date: </strong>May 2026</p>
-
-<p class="bp"><strong>Status: </strong>Research White Paper — Tier A/B/C</p>
-
-<p class="bp"><strong>MSC Classification: </strong>35Q30 (Navier-Stokes equations), 76D05 (Incompressible viscous fluids), 76F02 (Turbulence), 35B65 (Smoothness and regularity)</p>
-
-<p class="bp"><strong>Keywords: </strong>Navier-Stokes, turbulence, Millennium Problem, regularity, blow-up, toroidal circulation, coherence, return flow, inverse cascade</p>
-
-<h2 class="sh2" id="abstract">Abstract</h2>
-
-<div class="abstract-block"><div class="abstract-label">Abstract</div><p class="abstract-text">The Navier-Stokes existence and smoothness problem is one of the seven Clay Millennium Prize Problems. It asks whether smooth initial conditions for the three-dimensional incompressible Navier-Stokes equations remain smooth for all time, or whether finite-time singularities (blow-up) can develop. Despite enormous analytical and computational effort, the problem remains open. Standard approaches focus on energy estimates, vorticity stretching, and regularity criteria. What standard models underemphasize is a geometric structural consideration: the equations describe outward flow dynamics — velocity, pressure, viscosity — but do not explicitly include the return circulation that characterizes coherent turbulent structures. Vortices, eddies, and the inverse cascade are all return-flow phenomena. This paper proposes that the Navier-Stokes problem is not a failure of analysis but an incomplete geometric framing. Turbulence is not chaos — it is a coherence phenomenon that emerges when circulation closes. In the toroidal coherence framework, the missing return channel is the vorticity closure condition that prevents singularities. The central structural claim: blow-up requires persistent vorticity alignment without return circulation, a configuration that is dynamically unstable in any system with closed-loop dynamics. When both the forward energy cascade (Christos current) and the inverse cascade (Saturnalia return) are operative, energy redistributes across scales, filaments fragment before singular concentration stabilizes, and solutions remain smooth. The framework does not provide a formal proof. It provides the geometric interpretation that identifies what a proof must encode: the return circulation is not a correction — it is the regularity mechanism.</p></div>
-
-<h2 class="sh2" id="1-the-problem">1. The Problem</h2>
-
+<h1 class="sh" id="s1">1. The Problem</h1>
 <p class="bp">The three-dimensional incompressible Navier-Stokes equations:</p>
-
-<div class="eq-block"><div class="eq-formula">∂u/∂t + (u·∇)u = −∇p + ν∇²u,   ∇·u = 0</div></div>
-
-<p class="bp">Given smooth divergence-free initial data u₀(x), do globally smooth solutions u(x,t) exist for all t > 0, or can quantities such as vorticity or velocity blow up in finite time? Known results: global smoothness in 2D (proven); weak Leray-Hopf solutions in 3D (proven); uniqueness of weak solutions (open); global smoothness in 3D for large data (open); finite-time singularities (unknown).</p>
-
-<p class="bp">The difficulty concentrates in the vortex stretching term (ω·∇)u, which can amplify vorticity magnitude. If vorticity aligns sufficiently, it may amplify itself without bound — the Beale-Kato-Majda criterion states that blow-up requires ∫₀ᵀ ‖ω‖_{L^∞} dt → ∞. The open question: can this integral diverge in finite time?</p>
-
+<div class="formula-block">&#8706;u/&#8706;t + (u&#183;&#8711;)u = &#8722;&#8711;p + &#957;&#8711;&#178;u,&nbsp;&nbsp;&nbsp;&#8711;&#183;u = 0</div>
+<p class="bp">Given smooth divergence-free initial data u&#8320;(x), do globally smooth solutions u(x,t) exist for all t &gt; 0, or can quantities such as vorticity or velocity blow up in finite time? Known results: global smoothness in 2D (proven); weak Leray-Hopf solutions in 3D (proven); uniqueness of weak solutions (open); global smoothness in 3D for large data (open); finite-time singularities (unknown).</p>
+<p class="bp">The difficulty concentrates in the vortex stretching term (&#969;&#183;&#8711;)u, which can amplify vorticity magnitude. If vorticity aligns sufficiently, it may amplify itself without bound — the Beale-Kato-Majda criterion states that blow-up requires &#8747;&#8320;&#7488; &#8214;&#969;&#8214;_{L&#8734;} dt &#8594; &#8734;. The open question: can this integral diverge in finite time?</p>
 <div class="table-wrap"><table>
-<tr><th>Approach</th><th>Status / Limitation</th></tr>
-<tr><td>Energy methods — bound ‖u‖_{L²}</td><td>Insufficient for regularity</td></tr>
-<tr><td>Vorticity methods — BKM criterion</td><td>Open — can ‖ω‖_{L^∞} diverge?</td></tr>
-<tr><td>Computational simulations</td><td>No proof; candidates destabilize</td></tr>
-<tr><td>Statistical turbulence models</td><td>Phenomenological; not analytic</td></tr>
-<tr><td>Toroidal closure (CTF)</td><td>Return circulation prevents unbounded vorticity growth</td></tr>
+  <thead><tr><th>Approach</th><th>Status / Limitation</th></tr></thead>
+  <tbody>
+    <tr><td>Energy methods — bound &#8214;u&#8214;_{L&#178;}</td><td>Insufficient for regularity</td></tr>
+    <tr><td>Vorticity methods — BKM criterion</td><td>Open — can &#8214;&#969;&#8214;_{L&#8734;} diverge?</td></tr>
+    <tr><td>Computational simulations</td><td>No proof; candidates destabilize</td></tr>
+    <tr><td>Statistical turbulence models</td><td>Phenomenological; not analytic</td></tr>
+    <tr><td>Toroidal closure (CTF)</td><td>Return circulation prevents unbounded vorticity growth</td></tr>
+  </tbody>
 </table></div>
 
-<h2 class="sh2" id="2-the-missing-return-channel">2. The Missing Return Channel</h2>
-
-<h3 class="sh3" id="2-1-forward-and-inverse-cascade">2.1 Forward and Inverse Cascade</h3>
-
-<p class="bp">In three-dimensional turbulence, energy cascades from large scales to small scales — the Kolmogorov forward cascade. This is the Christos current of fluid dynamics: outward, dissipative, entropy-producing. The cascade terminates at the Kolmogorov scale η where viscosity converts kinetic energy to heat. But turbulence also exhibits the inverse cascade under certain conditions: in rotating turbulence, stratified flows, and magnetohydrodynamics, energy transfers from small scales back to large scales. This return flow is the Saturnalia current of the fluid — it is the mechanism by which the system avoids catastrophic localization.</p>
-
+<h1 class="sh" id="s2">2. The Missing Return Channel</h1>
+<h2 class="sh2">2.1 Forward and Inverse Cascade</h2>
+<p class="bp">In three-dimensional turbulence, energy cascades from large scales to small scales — the Kolmogorov forward cascade. This is the Christos current of fluid dynamics: outward, dissipative, entropy-producing. The cascade terminates at the Kolmogorov scale &#951; where viscosity converts kinetic energy to heat. But turbulence also exhibits the inverse cascade under certain conditions: in rotating turbulence, stratified flows, and magnetohydrodynamics, energy transfers from small scales back to large scales. This return flow is the Saturnalia current of the fluid — it is the mechanism by which the system avoids catastrophic localization.</p>
 <p class="bp">The standard Navier-Stokes equations contain the inverse cascade only implicitly, through nonlinear interactions. The CTF framework proposes that explicit accounting of this return channel — through the closure condition on vorticity — is the missing piece that prevents blow-up.</p>
 
-<h3 class="sh3" id="2-2-vorticity-stretching-and-return">2.2 Vorticity Stretching and Return</h3>
-
+<h2 class="sh2">2.2 Vorticity Stretching and Return</h2>
 <p class="bp">The vorticity transport equation:</p>
+<div class="formula-block">&#8706;&#969;/&#8706;t + (u&#183;&#8711;)&#969; = (&#969;&#183;&#8711;)u + &#957;&#8711;&#178;&#969;</div>
+<p class="bp">The stretching term (&#969;&#183;&#8711;)u amplifies vorticity when vortex filaments are elongated. In an open system with no return mechanism, this amplification could be unbounded. In a system with closed toroidal circulation, stretching is balanced by return mechanisms: vortex reconnection transfers energy between scales, filament fragmentation disrupts localization, and the inverse cascade redistributes energy back to large scales. The CTF claim is not that these mechanisms prevent all local amplification — they clearly do not — but that they prevent the sustained, persistent concentration that would be required for finite-time blow-up.</p>
 
-<div class="eq-block"><div class="eq-formula">∂ω/∂t + (u·∇)ω = (ω·∇)u + ν∇²ω</div></div>
-
-<p class="bp">The stretching term (ω·∇)u amplifies vorticity when vortex filaments are elongated. In an open system with no return mechanism, this amplification could be unbounded. In a system with closed toroidal circulation, stretching is balanced by return mechanisms: vortex reconnection transfers energy between scales, filament fragmentation disrupts localization, and the inverse cascade redistributes energy back to large scales. The CTF claim is not that these mechanisms prevent all local amplification — they clearly do not — but that they prevent the sustained, persistent concentration that would be required for finite-time blow-up.</p>
-
-<h3 class="sh3" id="2-3-the-coherence-of-turbulent-flow">2.3 The Coherence of Turbulent Flow</h3>
-
+<h2 class="sh2">2.3 The Coherence of Turbulent Flow</h2>
 <p class="bp">Turbulence is not random. Coherent structures — vortex tubes, sheets, and filaments — persist across a wide range of Reynolds numbers. Their existence demonstrates that turbulence has organizational structure: it is low-coherence relative to laminar flow but not incoherent. The coherence of a flow region can be measured by the alignment between vorticity and velocity:</p>
+<div class="formula-block">C_flow = &#8747;|&#969;&#183;u| dV / &#8747;|&#969;||u| dV</div>
+<p class="bp">Laminar flow: C &#8776; 1 (aligned, ordered). Fully turbulent flow: C &#8776; 0.2&#8211;0.5 (partially coherent). The CTF proposes that blow-up requires C &#8594; 0 persistently — that is, requires the system to remain in a state of minimum coherence without the return mechanisms that restore partial order.</p>
 
-<div class="eq-block"><div class="eq-formula">C_flow = ∫|ω·u| dV / ∫|ω||u| dV</div></div>
-
-<p class="bp">Laminar flow: C ≈ 1 (aligned, ordered). Fully turbulent flow: C ≈ 0.2–0.5 (partially coherent). The CTF proposes that blow-up requires C → 0 persistently — that is, requires the system to remain in a state of minimum coherence without the return mechanisms that restore partial order.</p>
-
-<h2 class="sh2" id="3-transport-limited-amplification">3. Transport-Limited Amplification</h2>
-
-<h3 class="sh3" id="3-1-the-regularity-hypothesis">3.1 The Regularity Hypothesis</h3>
-
+<h1 class="sh" id="s3">3. Transport-Limited Amplification</h1>
+<h2 class="sh2">3.1 The Regularity Hypothesis</h2>
 <p class="bp">The central physical hypothesis: singularity formation requires sustained localization of vorticity amplification faster than the combined rates of viscous diffusion, spectral redistribution, filament fragmentation, and nonlocal transport. Define:</p>
+<div class="formula-block">&#915;_NL ~ |&#8711;u|&nbsp;&nbsp;&nbsp;(nonlinear amplification rate)<br>&#915;_D = &#915;_&#957; + &#915;_cascade + &#915;_transport&nbsp;&nbsp;&nbsp;(distributed dissipation-transfer rate)</div>
+<p class="bp">The interpretive regularity condition: &#915;_NL &lt; &#915;_D globally over sufficiently long timescales. This is not proposed as a theorem — it is a physical organizing principle for why smoothness may persist. Finite-time singularity formation would require &#915;_NL &gt; &#915;_D persistently. The CTF proposes this is dynamically unstable: as vorticity increases, gradients sharpen, local instability rises, nonlocal coupling increases, and redistribution accelerates. Extreme amplification triggers its own disruption before singular concentration stabilizes.</p>
 
-<div class="eq-block"><div class="eq-formula">Γ_NL ~ |∇u|   (nonlinear amplification rate)</div></div>
-
-<div class="eq-block"><div class="eq-formula">Γ_D = Γ_ν + Γ_cascade + Γ_transport   (distributed dissipation-transfer rate)</div></div>
-
-<p class="bp">The interpretive regularity condition: Γ_NL < Γ_D globally over sufficiently long timescales. This is not proposed as a theorem — it is a physical organizing principle for why smoothness may persist. Finite-time singularity formation would require Γ_NL > Γ_D persistently. The CTF proposes this is dynamically unstable: as vorticity increases, gradients sharpen, local instability rises, nonlocal coupling increases, and redistribution accelerates. Extreme amplification triggers its own disruption before singular concentration stabilizes.</p>
-
-<h3 class="sh3" id="3-2-blow-up-as-an-open-system-phenomenon">3.2 Blow-up as an Open-System Phenomenon</h3>
-
+<h2 class="sh2">3.2 Blow-up as an Open-System Phenomenon</h2>
 <p class="bp">The toroidal framework frames the key distinction as open versus closed circulation:</p>
-
-<p class="bp">Blow-up ⟺ No return circulation ⟺ Open system</p>
-
-<p class="bp">Smoothness ⟺ Closed toroidal circulation ⟺ Coherence maintained</p>
-
+<div class="formula-block">Blow-up &#8660; No return circulation &#8660; Open system<br>Smoothness &#8660; Closed toroidal circulation &#8660; Coherence maintained</div>
 <p class="bp">In a closed circulatory system, the stretching term generates vorticity that is redistributed by the return mechanisms. In an open system — one lacking return flow — vorticity could grow without such redistribution. The Leray-Hopf weak solutions exist globally and exhibit finite total energy dissipation, consistent with the view that real turbulent flows are closed in this sense: energy dissipated at small scales does not create sustained blow-up concentration.</p>
 
-<h2 class="sh2" id="4-the-inverse-cascade-as-saturnalia-retu">4. The Inverse Cascade as Saturnalia Return</h2>
-
-<p class="bp">In two-dimensional turbulence, the inverse cascade is well-established — energy transfers to larger scales rather than smaller ones. In three dimensions, the inverse cascade occurs under rotation, stratification, or magnetic fields, and in helical turbulence. The CTF identification: the forward cascade (Kolmogorov inertial range, k^{−5/3} spectrum) is the Christos current. The inverse cascade is the Saturnalia return. Together they constitute the full toroidal energy cycle of turbulence.</p>
-
+<h1 class="sh" id="s4">4. The Inverse Cascade as Saturnalia Return</h1>
+<p class="bp">In two-dimensional turbulence, the inverse cascade is well-established — energy transfers to larger scales rather than smaller ones. In three dimensions, the inverse cascade occurs under rotation, stratification, or magnetic fields, and in helical turbulence. The CTF identification: the forward cascade (Kolmogorov inertial range, k&#8315;&#8309;&#8725;&#8309; spectrum) is the Christos current. The inverse cascade is the Saturnalia return. Together they constitute the full toroidal energy cycle of turbulence.</p>
 <p class="bp">The Kolmogorov spectrum:</p>
+<div class="formula-block">E(k) ~ &#949;&#178;&#8725;&#179; k&#8315;&#8309;&#8725;&#8309;</div>
+<p class="bp">applies in the inertial range where neither forcing nor dissipation is dominant — the regime where the two currents are in balance. Below the Kolmogorov scale &#951;, viscosity dominates (Saturnalia dissipation). Above the forcing scale, energy injection drives the Christos current outward. The regularity of turbulence is the regularity of this balance.</p>
 
-<div class="eq-block"><div class="eq-formula">E(k) ~ ε^{2/3} k^{−5/3}</div></div>
+<h1 class="sh" id="s5">5. Connection to Existing Mathematical Results</h1>
+<h2 class="sh2">5.1 Beale-Kato-Majda Criterion</h2>
+<p class="bp">Blow-up requires &#8747;&#8320;&#7488; &#8214;&#969;&#8214;_{L&#8734;} dt = &#8734;. The CTF interprets this as: blow-up requires the vorticity to escape redistribution indefinitely. Transport, fragmentation, and cascade mechanisms suppress &#8214;&#969;&#8214;_{L&#8734;} by preventing persistent localization. High-resolution DNS simulations consistently show candidate blow-up structures — vortex tubes approaching extreme amplification — that then reconnect, fragment, and redistribute before &#8214;&#969;&#8214;_{L&#8734;} diverges. The BKM criterion is correct; the CTF proposes that the integral is finite in practice because the open-system configuration required for blow-up is dynamically inaccessible.</p>
 
-<p class="bp">applies in the inertial range where neither forcing nor dissipation is dominant — the regime where the two currents are in balance. Below the Kolmogorov scale η, viscosity dominates (Saturnalia dissipation). Above the forcing scale, energy injection drives the Christos current outward. The regularity of turbulence is the regularity of this balance.</p>
-
-<h2 class="sh2" id="5-connection-to-existing-mathematical-re">5. Connection to Existing Mathematical Results</h2>
-
-<h3 class="sh3" id="5-1-beale-kato-majda-criterion">5.1 Beale-Kato-Majda Criterion</h3>
-
-<p class="bp">Blow-up requires ∫₀ᵀ ‖ω‖_{L^∞} dt = ∞. The CTF interprets this as: blow-up requires the vorticity to escape redistribution indefinitely. Transport, fragmentation, and cascade mechanisms suppress ‖ω‖_{L^∞} by preventing persistent localization. High-resolution DNS simulations consistently show candidate blow-up structures — vortex tubes approaching extreme amplification — that then reconnect, fragment, and redistribute before ‖ω‖_{L^∞} diverges. The BKM criterion is correct; the CTF proposes that the integral is finite in practice because the open-system configuration required for blow-up is dynamically inaccessible.</p>
-
-<h3 class="sh3" id="5-2-hou-li-depletion">5.2 Hou-Li Depletion</h3>
-
+<h2 class="sh2">5.2 Hou-Li Depletion</h2>
 <p class="bp">Hou and Li demonstrated that vortex stretching in the 3D Euler equations is dynamically depleted by geometric alignment — when vorticity and strain are aligned to produce maximum stretching, the geometry that produces that alignment simultaneously suppresses the stretching through back-reaction. The CTF reframes this: the depletion mechanism IS the return channel at the geometric level. The same alignment that produces stretching also activates the redistribution mechanism that prevents blow-up.</p>
 
-<h2 class="sh2" id="6-falsifiable-predictions">6. Falsifiable Predictions</h2>
+<h1 class="sh" id="s6">6. Falsifiable Predictions</h1>
+<ul class="bullet-list">
+  <li>In numerical simulations, artificially enhancing return circulation — through rotation, explicit inverse cascade models, or helical forcing — should extend regularity relative to non-rotating control cases. This is testable in DNS frameworks with controlled rotation.</li>
+  <li>Candidate blow-up structures in DNS should always exhibit fragmentation and redistribution before &#8214;&#969;&#8214;_{L&#8734;} diverges. Statistical analysis of extreme vorticity events should show that high-vorticity filaments are transient, not persistent — lifetimes should be shorter than the amplification timescale.</li>
+  <li>The coherence metric C_flow should show predictive power for regularity duration: flows with higher initial coherence should exhibit longer regularity against identical perturbations.</li>
+  <li>The deconfinement transition in turbulence (laminar &#8594; turbulent) should correspond to a sharp coherence threshold at the critical Reynolds number Re_c, measurable as a discontinuity in C_flow across the transition.</li>
+</ul>
 
-<li class="paper-li">In numerical simulations, artificially enhancing return circulation — through rotation, explicit inverse cascade models, or helical forcing — should extend regularity relative to non-rotating control cases. This is testable in DNS frameworks with controlled rotation.</li>
+<h1 class="sh" id="s7">7. Limitations and Caveats</h1>
+<ul class="bullet-list">
+  <li>This is a structural interpretation, not a formal proof. The regularity hypothesis &#915;_NL &lt; &#915;_D requires rigorous derivation from the Navier-Stokes equations — this remains the central mathematical challenge.</li>
+  <li>The return circulation mechanism is identified geometrically but not yet derived analytically as a bound on &#8214;&#969;&#8214;_{L&#8734;}.</li>
+  <li>The framework accommodates both possible outcomes: if blow-up is eventually proven (in the mathematical sense, for some initial data), this would confirm that open-system configurations do exist for the equations; if smoothness is proven, this would confirm the return mechanism is always operative.</li>
+</ul>
 
-<li class="paper-li">Candidate blow-up structures in DNS should always exhibit fragmentation and redistribution before ‖ω‖_{L^∞} diverges. Statistical analysis of extreme vorticity events should show that high-vorticity filaments are transient, not persistent — lifetimes should be shorter than the amplification timescale.</li>
+<h1 class="sh" id="s8">8. Conclusion</h1>
+<p class="bp">The Navier-Stokes problem reframes as a missing geometry problem: the equations describe the Christos current (forward cascade, vortex stretching, outward dissipation) accurately, but the Saturnalia return current (inverse cascade, vortex reconnection, energy redistribution to large scales) operates implicitly rather than being encoded as an explicit closure. Blow-up requires a sustained open-system configuration — vorticity growing without return redistribution — that the dynamics of any coherently circulating fluid actively prevents.</p>
+<p class="bp">Turbulence is not chaos. It is low-coherence organized flow with a return current that makes it self-regulating. The Navier-Stokes problem may not require new mathematics. It may require recognizing the geometry of what is already there.</p>
+<div class="formula-block">Smoothness &#8660; Closed toroidal circulation &#8660; C_flow maintained above C_critical</div>
 
-<li class="paper-li">The coherence metric C_flow should show predictive power for regularity duration: flows with higher initial coherence should exhibit longer regularity against identical perturbations.</li>
-
-<li class="paper-li">The deconfinement transition in turbulence (laminar → turbulent) should correspond to a sharp coherence threshold at the critical Reynolds number Re_c, measurable as a discontinuity in C_flow across the transition.</li>
-
-<h2 class="sh2" id="7-limitations-and-caveats">7. Limitations and Caveats</h2>
-
-<li class="paper-li">This is a structural interpretation, not a formal proof. The regularity hypothesis Γ_NL &lt; Γ_D requires rigorous derivation from the Navier-Stokes equations — this remains the central mathematical challenge.</li>
-
-<li class="paper-li">The return circulation mechanism is identified geometrically but not yet derived analytically as a bound on ‖ω‖_{L^∞}.</li>
-
-<li class="paper-li">The framework accommodates both possible outcomes: if blow-up is eventually proven (in the mathematical sense, for some initial data), this would confirm that open-system configurations do exist for the equations; if smoothness is proven, this would confirm the return mechanism is always operative.</li>
-
-<h2 class="sh2" id="8-conclusion">8. Conclusion</h2>
-
-<p class="bp">The Navier-Stokes problem reframes as a missing geometry problem: the equations describe the Christos current (forward cascade, vortex stretching, outward dissipation) accurately, but the Saturnalia return current (inverse cascade, vortex reconnection, energy redistribution to large scales) operates implicitly rather than being encoded as an explicit closure. Blow-up requires a sustained open-system configuration — vorticity growing without return redistribution — that the dynamics of any coherently circulating fluid actively prevents. Turbulence is not chaos. It is low-coherence organized flow with a return current that makes it self-regulating. The Navier-Stokes problem may not require new mathematics. It may require recognizing the geometry of what is already there.</p>
-
-<p class="bp">Smoothness ⟺ Closed toroidal circulation ⟺ C_flow maintained above C_critical</p>
-
-<h2 class="sh2" id="resolution-framework-the-five-moves">Resolution Framework — The Five Moves</h2>
-
-<p class="bp">This paper applies the following move(s) from the master Paradox Resolution Framework.</p>
-
-<div class="table-wrap"><table>
-<tr><th>Move Applied</th><th>Application to This Paradox</th></tr>
-<tr><td>Move 1: Complete the Torus</td><td>The standard Navier-Stokes analysis describes the Christos current (vortex stretching, forward cascade) without the Saturnalia return (inverse cascade, vortex reconnection, redistribution). Blow-up is the mathematical signature of an open system. Completing the torus — explicitly closing the circulation — provides the return mechanism that bounds vorticity growth. Smoothness is the closed-system outcome.</td></tr>
-<tr><td>Move 2: Coherence Threshold</td><td>The laminar-to-turbulent transition at Re_c is a coherence threshold crossing. Below threshold: high-coherence laminar flow. Above threshold: turbulent flow with reduced but nonzero coherence. Blow-up would require C_flow → 0 persistently — a second threshold that the return circulation prevents the system from reaching.</td></tr>
+<h1 class="sh" id="resolution">Resolution Framework — The Five Moves</h1>
+<div class="table-wrap"><table class="resolution-table">
+  <thead><tr><th>Move Applied</th><th>Application to This Paradox</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Move 1: Complete the Torus</strong></td><td>The standard Navier-Stokes analysis describes the Christos current (vortex stretching, forward cascade) without the Saturnalia return (inverse cascade, vortex reconnection, redistribution). Blow-up is the mathematical signature of an open system. Completing the torus — explicitly closing the circulation — provides the return mechanism that bounds vorticity growth. Smoothness is the closed-system outcome.</td></tr>
+    <tr><td><strong>Move 2: Coherence Threshold</strong></td><td>The laminar-to-turbulent transition at Re_c is a coherence threshold crossing. Below threshold: high-coherence laminar flow. Above threshold: turbulent flow with reduced but nonzero coherence. Blow-up would require C_flow &#8594; 0 persistently — a second threshold that the return circulation prevents the system from reaching.</td></tr>
+  </tbody>
 </table></div>
 
-<h2 class="sh2" id="references">References</h2>
+<h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;line-height:1.9;color:rgba(216,208,192,0.65) !important;">
+Fefferman, C.L. (2006). Existence and smoothness of the Navier-Stokes equation. Clay Mathematics Institute Millennium Problem Description.<br>
+Leray, J. (1934). Sur le mouvement d'un liquide visqueux emplissant l'espace. <em>Acta Mathematica,</em> 63, 193&#8211;248.<br>
+Beale, J.T., Kato, T., &amp; Majda, A. (1984). Remarks on the breakdown of smooth solutions for the 3-D Euler equations. <em>Communications in Mathematical Physics,</em> 94, 61&#8211;66.<br>
+Kolmogorov, A.N. (1941). The local structure of turbulence in incompressible viscous fluid. <em>Doklady Akademii Nauk SSSR,</em> 30, 301&#8211;305.<br>
+Hou, T.Y., &amp; Li, R. (2008). Dynamic depletion of vortex stretching. <em>Journal of Nonlinear Science,</em> 16, 639&#8211;664.<br>
+Kraichnan, R.H. (1967). Inertial ranges in two-dimensional turbulence. <em>Physics of Fluids,</em> 10, 1417&#8211;1423.<br>
+Tao, T. (2016). Finite time blowup for an averaged three-dimensional Navier-Stokes equation. <em>JAMS,</em> 29, 601&#8211;674.<br>
+Farrior, J. (2026). <em>Architecture of Infinity.</em> Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC.
+</p>
 
-<p class="bp">Fefferman, C. L. (2006). Existence and smoothness of the Navier-Stokes equation. Clay Mathematics Institute Millennium Problem Description.</p>
+<div style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.12);">
+  <p class="bp" style="font-size:0.82rem;color:rgba(216,208,192,0.45) !important;"><strong style="color:rgba(216,208,192,0.55) !important;">Cross-References:</strong> PR-057 (Yang-Mills Mass Gap) &middot; PR-058 (Riemann Hypothesis) &middot; PR-033 (Unity of Physical Laws) &middot; Architecture of Infinity</p>
+</div>
 
-<p class="bp">Leray, J. (1934). Sur le mouvement d'un liquide visqueux emplissant l'espace. Acta Mathematica, 63, 193–248.</p>
-
-<p class="bp">Beale, J. T., Kato, T., & Majda, A. (1984). Remarks on the breakdown of smooth solutions for the 3-D Euler equations. Communications in Mathematical Physics, 94, 61–66.</p>
-
-<p class="bp">Kolmogorov, A. N. (1941). The local structure of turbulence in incompressible viscous fluid. Doklady Akademii Nauk SSSR, 30, 301–305.</p>
-
-<p class="bp">Hou, T. Y., & Li, R. (2008). Dynamic depletion of vortex stretching. Journal of Nonlinear Science, 16, 639–664.</p>
-
-<p class="bp">Kraichnan, R. H. (1967). Inertial ranges in two-dimensional turbulence. Physics of Fluids, 10, 1417–1423.</p>
-
-<p class="bp">Tao, T. (2016). Finite time blowup for an averaged three-dimensional Navier-Stokes equation. JAMS, 29, 601–674.</p>
-
-<p class="bp">Farrior, J. (2026). Architecture of Infinity: Structural Framework for Unsolved Problems. Christos Energy.</p>
-
-<h2 class="sh2" id="cross-references-christos-white-paper-li">Cross-References — Christos™ White Paper Library</h2>
-
-<li class="paper-li">PR-057: Yang-Mills Mass Gap — toroidal flux tube coherence</li>
-
-<li class="paper-li">PR-058: Riemann Hypothesis — coherence boundary in prime spectrum</li>
-
-<li class="paper-li">PR-033: Unity of Physical Laws — force hierarchy and scale structure</li>
-
-<li class="paper-li">CF-08: Toroidal Cosmology Framework — toroidal circulation architecture</li>
-
-<li class="paper-li">Architecture of Infinity — structural interpretation of Millennium Problems</li>
-  <div style="margin-top:44px;padding-top:28px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;">
-    <p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4);">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923</p>
-  </div>
+<div style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;">
+  <p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4) !important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923</p>
+</div>
 </article>
 </div>
 
