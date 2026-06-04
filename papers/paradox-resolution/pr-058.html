@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Riemann Hypothesis | PR-058 | Christos™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}.resolution-table{border:1px solid rgba(58,175,175,0.15);}.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}.bullet-list{margin:12px 0 18px 0;list-style:none;}.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;}}</style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy · Technology · Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="paradox-index.html" class="active">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+
+<div class="paper-header"><div class="paper-header-inner">
+  <div class="ph-eyebrow">Paradox Resolution Papers &middot; PR-058 &middot; Mathematics &middot; May 2026</div>
+  <div class="open-badge">Full Paper &#8212; Open Access</div>
+  <h1 class="paper-title">The Riemann Hypothesis</h1>
+  <p class="paper-subtitle">Prime Coherence, Spectral Balance, and the Critical Line as Structural Necessity</p>
+  <div class="paper-meta">
+    <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+    <div class="pm-item"><strong>Series</strong>Paradox Resolution Papers</div>
+    <div class="pm-item"><strong>ID</strong>PR-058</div>
+    <div class="pm-item"><strong>Status</strong>Tier A/B/C</div>
+    <div class="pm-item"><strong>MSC</strong>11M26 &middot; 11N05 &middot; 81P68</div>
+  </div>
+</div></div>
+
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links">
+  <li><a href="#abstract">Abstract</a></li>
+  <li><a href="#s1">1. The Problem</a></li>
+  <li><a href="#s2">2. The Explicit Formula as Coherence Sum</a></li>
+  <li><a href="#s3">3. The Critical Line as Coherence Boundary</a></li>
+  <li><a href="#s4">4. Connection to Prime Gap Research</a></li>
+  <li><a href="#s5">5. GUE Statistics as Toroidal Phase Rigidity</a></li>
+  <li><a href="#s6">6. The Hilbert-Polya Operator</a></li>
+  <li><a href="#s7">7. Why the Proof Is Hard</a></li>
+  <li><a href="#s8">8. Falsifiable Predictions</a></li>
+  <li><a href="#s9">9. Limitations and Caveats</a></li>
+  <li><a href="#s10">10. Conclusion</a></li>
+  <li><a href="#resolution">Resolution Framework</a></li>
+  <li><a href="#references">References</a></li>
+</ul></aside>
+
+<article class="paper-body">
+<a href="paradox-index.html" class="collab-btn">&#8592; All Paradox Papers</a>
+
+<div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The Riemann Hypothesis (RH) states that all non-trivial zeros of the Riemann zeta function &#950;(s) lie on the critical line Re(s) = 1/2. Numerically verified for over 10&#185;&#179; zeros, and known to be equivalent to optimal prime distribution error bounds, RH remains unproven.</p>
+  <p class="abstract-text">This paper proposes a structural geometric interpretation within the toroidal coherence framework. The critical line Re(s) = 1/2 is not an arbitrary locus — it is the coherence boundary of the prime spectrum: the unique stability axis along which the additive and multiplicative structures of the integers achieve perfect phase balance. The zeta zeros are the phase nodes of this balance — the frequencies at which the prime coherence wave achieves constructive interference. The paper does not claim a formal proof. It proposes that RH is true because the prime coherence field has no off-line singularities — and that a proof must encode this as a spectral stability theorem about the prime phase system.</p>
+</div>
+
+<h1 class="sh" id="s1">1. The Problem</h1>
+<p class="bp">The Riemann zeta function, defined for Re(s) &gt; 1 by:</p>
+<div class="formula-block">&#950;(s) = &#8721;_{n=1}^&#8734; 1/n&#8163; = &#8719;_{p prime} (1 &#8722; p&#8315;&#8163;)&#8315;&#185;</div>
+<p class="bp">extends analytically to the entire complex plane with a simple pole at s = 1. Its non-trivial zeros are constrained by the functional equation to lie in the critical strip 0 &lt; Re(s) &lt; 1. The Riemann Hypothesis: all non-trivial zeros satisfy Re(s) = 1/2.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Known Result</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>Infinitely many zeros on the critical line</td><td>Proven (Hardy 1914, Selberg, Levinson)</td></tr>
+    <tr><td>At least 40.88% of zeros on critical line</td><td>Proven (Conrey 1989)</td></tr>
+    <tr><td>Zero-free region Re(s) &gt; 1 &#8722; c/log(Im(s))</td><td>Proven</td></tr>
+    <tr><td>First 10&#185;&#179; zeros on critical line</td><td>Numerically verified</td></tr>
+    <tr><td>RH equivalent to |&#960;(x) &#8722; Li(x)| &lt; (1/8&#960;)&#8730;x log x</td><td>Proven (von Koch 1901)</td></tr>
+  </tbody>
+</table></div>
+
+<h1 class="sh" id="s2">2. The Explicit Formula as Coherence Sum</h1>
+<p class="bp">The explicit formula for the Chebyshev prime-counting function:</p>
+<div class="formula-block">&#968;(x) = x &#8722; &#8721;_&#961; x&#8319;/&#961; &#8722; log(2&#960;) &#8722; (1/2)log(1 &#8722; x&#8315;&#178;)</div>
+<p class="bp">where &#961; runs over non-trivial zeros of &#950;(s). This is a coherence sum. The term x (representing the smooth prime distribution) is the Christos current — the direct outward expression of prime density. Each term x&#8319;/&#961; is a coherent oscillation indexed by the zero &#961; — the Saturnalia return waves that modulate the prime distribution around its smooth limit.</p>
+<p class="bp">If &#961; = 1/2 + i&#947; (on the critical line): x&#8319; = x^{1/2} &middot; e^{i&#947; log x}. The amplitude |x&#8319;| = x^{1/2} is <strong>constant</strong> — these waves oscillate without growing or decaying. The prime distribution is modulated by constant-amplitude oscillations — this is the balanced state.</p>
+<p class="bp">If &#961; = &#963; + i&#947; with &#963; &#8800; 1/2: x&#8319; = x&#963; &middot; e^{i&#947; log x}. The amplitude |x&#8319;| = x&#963; grows (&#963; &gt; 1/2) or decays (&#963; &lt; 1/2) with x. Either case disrupts the delicate balance. An off-line zero would generate a term that grows faster or slower than x^{1/2}, breaking the prime distribution error bound that RH is equivalent to. The critical line is the only axis at which the additive and multiplicative structures of the integers are in constant-amplitude phase balance.</p>
+
+<h1 class="sh" id="s3">3. The Critical Line as Coherence Boundary</h1>
+<p class="bp">Define the prime coherence function measuring the phase structure of the prime distribution:</p>
+<div class="formula-block">&#934;(t) = |&#8721;_{n &#8804; x} e^{it log n}|&#178;</div>
+<p class="bp">This function has local maxima at values of t corresponding to the imaginary parts of zeta zeros. The critical line Re(s) = 1/2 is where this coherence is maximally stable: the Christos current (multiplicative structure, primes as resonance nodes of the Euler product) and the Saturnalia current (additive structure, summation in the Dirichlet series) are in phase balance. Off the critical line, one structure dominates the other, and the balance is broken.</p>
+<p class="bp">The CTF interpretation: Re(s) = 1/2 is the coherence boundary of the prime spectrum. It is not an arbitrary axis — it is the structural necessity of a system in which multiplicative and additive arithmetic must coexist in balance. A zero off the critical line would be a coherence singularity — a point at which one structure dominates without return.</p>
+
+<h1 class="sh" id="s4">4. Connection to Prime Gap Research (Pilots 1&#8211;24)</h1>
+<p class="bp">The Christos Prime Gap Research Framework has produced a direct empirical finding relevant to RH. Across Pilots 1&#8211;24, arithmetic prime systems form coherent manifolds with 1.000 classification accuracy — perfectly separable from null (random) models even under heavy perturbation. This is direct experimental evidence that prime distribution is coherently organized at every measurable scale.</p>
+<p class="bp">The connection: if prime structure is coherently organized (empirically confirmed), then the governing spectral equation must be generated by constant-amplitude oscillations — which requires the zeros to lie on Re(s) = 1/2. The empirical prime coherence and RH are not independent claims — they are the local and global manifestations of the same organizational principle.</p>
+
+<h1 class="sh" id="s5">5. GUE Statistics as Toroidal Phase Rigidity</h1>
+<p class="bp">The zeros of the Riemann zeta function exhibit statistical properties consistent with the Gaussian Unitary Ensemble (GUE) of random matrix theory. The pair correlation of zeros matches GUE predictions to extraordinary precision (Montgomery conjecture, confirmed numerically by Odlyzko). The CTF reframes this: GUE statistics are not a coincidence — they are the signature of phase rigidity in a toroidal coherent system. The same universal statistics appear in quantum chaotic systems because they all describe the eigenvalues of self-adjoint operators on systems with toroidal phase structure. The GUE universality is the universality of toroidal coherence, not the universality of randomness.</p>
+
+<h1 class="sh" id="s6">6. The Hilbert-Polya Operator</h1>
+<p class="bp">The Hilbert-Polya conjecture proposes a self-adjoint operator whose eigenvalues are the imaginary parts of the zeta zeros. Such an operator would immediately imply RH (eigenvalues of a self-adjoint operator are real). The CTF proposes that this operator is a toroidal Laplacian on a specific arithmetic manifold whose geometry encodes the prime distribution. The eigenfunctions would be the prime phases e^{i&#947; log p}; the eigenvalues &#947; would be the zero ordinates. The self-adjointness is the mathematical expression of the Christos-Saturnalia balance — the operator commutes with its adjoint because the system is in coherence equilibrium.</p>
+
+<h1 class="sh" id="s7">7. Why the Proof Is Hard</h1>
+<p class="bp">Proving RH requires showing that the coherence balance of the prime system never breaks in the critical strip — that no zero can escape to Re(s) &#8800; 1/2 while remaining a zero of the zeta function. The CTF identifies the difficulty: we are trying to prove a global stability statement about an infinite coherence field using local analytic tools. The coherence boundary is a global geometric property; local analytic bounds provide successively better approximations but never reach the full critical line by finite extension. A proof may require a genuinely global topological or spectral argument — the kind that encodes the full Christos-Saturnalia balance rather than bounding one side at a time.</p>
+
+<h1 class="sh" id="s8">8. Falsifiable Predictions</h1>
+<ul class="bullet-list">
+  <li>The Prime Gap Research Framework prediction: high-order prime structure metrics should continue to distinguish arithmetic prime systems from null models at 1.000 classification accuracy regardless of scale extension.</li>
+  <li>New computational verification extending to 10&#185;&#8308; or beyond should continue to find all zeros on the critical line. Any deviation would falsify both RH and the coherence interpretation.</li>
+  <li>The pair correlation statistics of high zeros should continue to match GUE predictions. Deviation from GUE at extreme heights would suggest the phase rigidity interpretation breaks down at those scales.</li>
+  <li>If the Hilbert-Polya operator is eventually constructed, its spectral properties should be consistent with a toroidal arithmetic Laplacian — testable through comparison with known spectral theories of arithmetic surfaces.</li>
+</ul>
+
+<h1 class="sh" id="s9">9. Limitations and Caveats</h1>
+<ul class="bullet-list">
+  <li>The coherence interpretation explains why RH should be true and identifies what a proof must encode — it does not constitute a formal proof within analytic number theory.</li>
+  <li>The prime coherence function &#934;(t) requires rigorous definition and connection to standard zeta function theory.</li>
+  <li>The Hilbert-Polya operator remains hypothetical; its construction is equivalent in difficulty to proving RH itself.</li>
+</ul>
+
+<h1 class="sh" id="s10">10. Conclusion</h1>
+<p class="bp">The Riemann Hypothesis is the stability condition of the prime coherence field. The critical line Re(s) = 1/2 is not arbitrary — it is the unique axis at which the additive and multiplicative structures of the integers are in constant-amplitude phase balance. Zeros at this balance point are phase nodes: the frequencies at which the prime coherence wave achieves its structural resonance. The Prime Gap Research Framework provides direct empirical evidence that prime structure is coherently organized at every scale — the global expression of this coherence is RH. The prime system is not a collection of random numbers. It is a coherence field. The Riemann Hypothesis is its balance condition.</p>
+<div class="formula-block">Re(&#961;) = 1/2 &nbsp;&#8660;&nbsp; Prime coherence maximum &nbsp;&#8660;&nbsp; Christos-Saturnalia balance</div>
+
+<h1 class="sh" id="resolution">Resolution Framework — The Five Moves</h1>
+<div class="table-wrap"><table class="resolution-table">
+  <thead><tr><th>Move Applied</th><th>Application to This Paradox</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Move 1: Complete the Torus</strong></td><td>The zeta function encodes both multiplicative structure (the Euler product over primes — Christos current) and additive structure (the Dirichlet series — Saturnalia return). The zeros are the phase nodes where these two structures are in balance. Off the critical line, one structure dominates — the torus is incomplete. RH asserts that the prime coherence field always completes its torus: every zero is a phase node, not a coherence rupture.</td></tr>
+    <tr><td><strong>Move 4: Coordinate Artifact</strong></td><td>In Euclidean number-theory coordinates, the critical line appears as one of infinitely many possible axes in the complex plane. In coherence-field coordinates, it is the unique axis of arithmetic phase balance — the axis at which the amplitude of the Saturnalia oscillations exactly matches the amplitude of the Christos smooth density. The miracle of the critical line is a coordinate artifact: in the right geometry, it is the only possible axis.</td></tr>
+  </tbody>
+</table></div>
+
+<h1 class="sh" id="references">References</h1>
+<p class="bp" style="font-size:0.88rem;line-height:1.9;color:rgba(216,208,192,0.65) !important;">
+Riemann, B. (1859). &#220;ber die Anzahl der Primzahlen unter einer gegebenen Gr&#246;&#223;e. <em>Monatsberichte der Berliner Akademie.</em><br>
+Edwards, H.M. (1974). <em>Riemann's Zeta Function.</em> Academic Press.<br>
+von Koch, H. (1901). Sur la distribution des nombres premiers. <em>Acta Mathematica,</em> 24, 159&#8211;182.<br>
+Montgomery, H.L. (1973). The pair correlation of zeros of the zeta function. <em>Proceedings of Symposia in Pure Mathematics,</em> 24, 181&#8211;193.<br>
+Odlyzko, A.M. (1987). On the distribution of spacings between zeros of the zeta function. <em>Mathematics of Computation,</em> 48, 273&#8211;308.<br>
+Conrey, J.B. (1989). More than two fifths of the zeros of the Riemann zeta function are on the critical line. <em>Journal f&#252;r die reine und angewandte Mathematik,</em> 399, 1&#8211;26.<br>
+Farrior, J. (2026a). <em>Architecture of Infinity.</em> Christos&#8482; Energy.<br>
+Farrior, J. (2026b). <em>Prime Gap Research Framework — Pilots 1&#8211;24.</em> Christos&#8482; Energy.
+</p>
+<p class="bp" style="font-size:0.82rem;color:rgba(216,208,192,0.45) !important;margin-top:24px;"><strong style="color:rgba(216,208,192,0.55) !important;">Cross-References:</strong> PR-041 (Goldbach's Conjecture) &middot; PR-042 (Birch-Swinnerton-Dyer) &middot; PR-060 (Hodge Conjecture) &middot; Prime Gap Research Framework &middot; Architecture of Infinity</p>
+<div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4) !important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923</p></div>
+</article>
+</div>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button>
+<footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="paradox-index.html">All Paradox Papers</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
+</body>
+</html>
