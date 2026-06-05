@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coherence-Band Life and the First Contact Problem | Christos™ Energy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E2C97E;
+    --gold-dim: #8A6F32;
+    --cyan: #4FC3D0;
+    --cyan-dim: #2A7A85;
+    --violet: #9B72CF;
+    --violet-dim: #5C3D8F;
+    --green: #5DBF7A;
+    --green-dim: #3A7A4F;
+    --bg: #08111E;
+    --bg-card: #0D1B2E;
+    --bg-card2: #0A1525;
+    --text: #D8E4F0;
+    --text-dim: #7A9BB5;
+    --border: rgba(201,168,76,0.2);
+    --border-cyan: rgba(79,195,208,0.2);
+    --border-violet: rgba(155,114,207,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: #08111E !important;
+    color: var(--text);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  .page-wrapper { display: flex; min-height: 100vh; }
+
+  /* ══ SIDEBAR */
+  .toc-sidebar {
+    width: 265px; flex-shrink: 0;
+    position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    background: #08111E !important;
+    border-right: 1px solid var(--border);
+    padding: 2rem 1.25rem; z-index: 100;
+  }
+  .toc-sidebar::-webkit-scrollbar { width: 4px; }
+  .toc-sidebar::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+  .toc-logo { font-family: 'Cinzel', serif; font-size: 0.65rem; font-weight: 700; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .toc-title { font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 600; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+  .toc-sidebar nav a { display: block; font-family: 'Raleway', sans-serif; font-size: 0.72rem; font-weight: 500; color: var(--text-dim); text-decoration: none; padding: 0.35rem 0.5rem; margin-bottom: 0.15rem; border-left: 2px solid transparent; border-radius: 0 4px 4px 0; transition: all 0.2s; line-height: 1.4; }
+  .toc-sidebar nav a:hover, .toc-sidebar nav a.active { color: var(--gold-light); border-left-color: var(--gold); background: rgba(201,168,76,0.06); }
+  .toc-sidebar nav a.sub { padding-left: 1.25rem; font-size: 0.68rem; font-weight: 400; }
+
+  /* ══ MAIN */
+  .main-content { flex: 1; min-width: 0; padding: 0 3rem 6rem; max-width: 920px; }
+
+  /* ══ HERO */
+  .paper-hero { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); margin-bottom: 4rem; position: relative; }
+  .paper-hero::before { content: ''; position: absolute; top: 0; left: -3rem; right: -3rem; bottom: 0; background: radial-gradient(ellipse at 50% 0%, rgba(155,114,207,0.06) 0%, transparent 65%); pointer-events: none; }
+  .badges { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .badge { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 20px; border: 1px solid; }
+  .badge-oa { color: var(--gold); border-color: var(--gold-dim); background: rgba(201,168,76,0.08); }
+  .badge-domain { color: var(--cyan); border-color: var(--cyan-dim); background: rgba(79,195,208,0.08); }
+  .badge-new { color: var(--violet); border-color: var(--violet-dim); background: rgba(155,114,207,0.08); }
+  .paper-hero h1 { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 0.75rem; letter-spacing: 0.02em; }
+  .paper-hero .subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; font-style: italic; color: var(--gold-light); margin-bottom: 1.5rem; }
+  .paper-meta { display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--text-dim); font-weight: 500; letter-spacing: 0.05em; }
+
+  /* ══ ABSTRACT */
+  .abstract-block { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 2rem 2.5rem; margin-bottom: 4rem; }
+  .abstract-block .label { font-family: 'Cinzel', serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .abstract-block p { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); line-height: 1.85; }
+
+  /* ══ SECTIONS */
+  .paper-section { margin-bottom: 4.5rem; scroll-margin-top: 2rem; }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; color: var(--gold-dim); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .paper-section h2 { font-family: 'Cinzel', serif; font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1.75rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); letter-spacing: 0.04em; line-height: 1.3; }
+  .paper-section h3 { font-family: 'Cinzel', serif; font-size: 0.95rem; font-weight: 600; color: var(--gold-light); margin: 2.5rem 0 1rem; letter-spacing: 0.06em; }
+  .paper-section p { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--text); margin-bottom: 1.25rem; line-height: 1.85; }
+  .paper-section p strong { color: var(--gold-light); font-weight: 600; }
+
+  /* ══ PULL QUOTE */
+  .pull-quote { border-left: 3px solid var(--gold); margin: 2.5rem 0; padding: 1.5rem 2rem; background: rgba(201,168,76,0.04); border-radius: 0 8px 8px 0; }
+  .pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; font-weight: 500; color: var(--gold-light); margin: 0; line-height: 1.6; }
+
+  /* ══ CALLOUT */
+  .callout { border: 1px solid var(--border-cyan); background: rgba(79,195,208,0.04); border-radius: 8px; padding: 1.5rem 2rem; margin: 2rem 0; }
+  .callout .callout-title { font-family: 'Cinzel', serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; color: var(--cyan); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .callout p { font-size: 0.95rem; color: var(--text); margin: 0 0 0.5rem; line-height: 1.7; font-family: 'Raleway', sans-serif; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .callout-violet { border-color: var(--border-violet); background: rgba(155,114,207,0.04); }
+  .callout-violet .callout-title { color: var(--violet); }
+
+  /* ══ EQUATION */
+  .equation-block { background: #04090F; border: 1px solid rgba(79,195,208,0.15); border-radius: 8px; padding: 1.5rem 2rem; margin: 1.75rem 0; text-align: center; }
+  .equation-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; color: var(--cyan-dim); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .equation { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--cyan); line-height: 1.6; }
+  .equation-desc { font-family: 'Raleway', sans-serif; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.75rem; line-height: 1.5; }
+
+  /* ══ TABLES */
+  .data-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.87rem; }
+  .data-table th { font-family: 'Cinzel', serif; font-size: 0.63rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); padding: 0.85rem 1rem; background: rgba(201,168,76,0.06); border-bottom: 1px solid var(--border); text-align: left; }
+  .data-table td { font-family: 'Raleway', sans-serif; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(201,168,76,0.08); color: var(--text); vertical-align: top; line-height: 1.55; font-size: 0.85rem; }
+  .data-table tr:hover td { background: rgba(201,168,76,0.03); }
+  .td-gold { color: var(--gold-light) !important; font-weight: 600; }
+  .td-cyan { color: var(--cyan) !important; font-weight: 600; }
+  .td-violet { color: var(--violet) !important; font-weight: 600; }
+  .td-green { color: var(--green) !important; font-weight: 600; }
+  .td-dim { color: var(--text-dim) !important; }
+
+  /* ══ COHERENCE SPECTRUM */
+  .spectrum-stack { display: flex; flex-direction: column; gap: 2px; margin: 2rem 0; border-radius: 10px; overflow: hidden; }
+  .spectrum-row { display: grid; grid-template-columns: 80px 100px 1fr 160px; align-items: center; gap: 0; padding: 1rem 1.25rem; }
+  .spectrum-row.s-source { background: linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)); }
+  .spectrum-row.s-very-high { background: linear-gradient(90deg, rgba(155,114,207,0.18), rgba(155,114,207,0.06)); }
+  .spectrum-row.s-high { background: linear-gradient(90deg, rgba(79,195,208,0.15), rgba(79,195,208,0.05)); }
+  .spectrum-row.s-earth { background: linear-gradient(90deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05)); border: 1px solid rgba(201,168,76,0.2); }
+  .spectrum-row.s-low { background: linear-gradient(90deg, rgba(224,160,80,0.1), rgba(224,160,80,0.03)); }
+  .spectrum-row.s-very-low { background: linear-gradient(90deg, rgba(100,100,120,0.1), rgba(100,100,120,0.03)); }
+  .sp-c { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; font-style: italic; color: var(--cyan); font-weight: 600; }
+  .sp-label { font-family: 'Cinzel', serif; font-size: 0.75rem; font-weight: 700; color: var(--text); letter-spacing: 0.04em; }
+  .sp-desc { font-family: 'Raleway', sans-serif; font-size: 0.78rem; color: var(--text-dim); line-height: 1.45; padding: 0 1rem; }
+  .sp-example { font-family: 'Raleway', sans-serif; font-size: 0.72rem; color: var(--gold-light); font-weight: 600; text-align: right; line-height: 1.4; }
+  .sp-you { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em; color: var(--gold); background: rgba(201,168,76,0.12); border: 1px solid var(--border); padding: 0.18rem 0.5rem; border-radius: 10px; display: inline-block; margin-top: 0.2rem; }
+
+  /* ══ DETECTION COMPARISON */
+  .detection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 10px; overflow: hidden; margin: 2rem 0; }
+  .det-col { background: var(--bg-card); padding: 1.75rem; }
+  .det-col-title { font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid; }
+  .det-col-title.old { color: var(--text-dim); border-color: rgba(255,255,255,0.08); }
+  .det-col-title.new { color: var(--cyan); border-color: var(--border-cyan); }
+  .det-item { font-family: 'Raleway', sans-serif; font-size: 0.82rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); line-height: 1.5; }
+  .det-item.old-item { color: var(--text-dim); }
+  .det-item.new-item { color: var(--text); }
+
+  /* ══ INVENTION CARDS */
+  .inv-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; }
+  .inv-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem 2rem; }
+  .inv-card.highlighted { border-color: var(--violet-dim); background: linear-gradient(135deg, rgba(155,114,207,0.06), var(--bg-card)); }
+  .inv-header { display: flex; align-items: flex-start; gap: 1.25rem; margin-bottom: 1rem; }
+  .inv-number { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; color: var(--violet); background: rgba(155,114,207,0.1); border: 1px solid var(--border-violet); padding: 0.3rem 0.75rem; border-radius: 4px; white-space: nowrap; flex-shrink: 0; margin-top: 0.15rem; }
+  .inv-name { font-family: 'Cinzel', serif; font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: 0.04em; line-height: 1.3; }
+  .inv-subtitle { font-family: 'Raleway', sans-serif; font-size: 0.78rem; color: var(--text-dim); margin-top: 0.2rem; }
+  .inv-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; color: var(--text); line-height: 1.8; margin-bottom: 1rem; }
+  .inv-principle { font-family: 'Raleway', sans-serif; font-size: 0.82rem; color: var(--cyan); line-height: 1.6; padding: 0.75rem 1rem; background: rgba(79,195,208,0.05); border-left: 2px solid var(--cyan-dim); border-radius: 0 6px 6px 0; }
+  .inv-principle strong { color: var(--cyan); font-weight: 700; }
+
+  /* ══ DEPLOYMENT SEQUENCE */
+  .deploy-sequence { position: relative; margin: 2.5rem 0; padding-left: 2rem; }
+  .deploy-sequence::before { content: ''; position: absolute; left: 0.65rem; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--violet), var(--cyan), var(--gold)); border-radius: 1px; }
+  .deploy-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
+  .deploy-item::before { content: ''; position: absolute; left: -1.35rem; top: 0.4rem; width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--violet); background: var(--bg); }
+  .deploy-phase { font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700; color: var(--violet); letter-spacing: 0.12em; margin-bottom: 0.2rem; }
+  .deploy-name { font-family: 'Raleway', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+  .deploy-detail { font-family: 'Raleway', sans-serif; font-size: 0.8rem; color: var(--text-dim); line-height: 1.55; }
+
+  /* ══ THRESHOLD TABLE */
+  .threshold-bar { height: 8px; background: linear-gradient(90deg, var(--gold-dim), var(--cyan)); border-radius: 4px; margin-bottom: 0.3rem; }
+
+  /* ══ MISC */
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+  .disclaimer-box { background: rgba(79,195,208,0.04); border: 1px solid var(--border-cyan); border-radius: 8px; padding: 1.25rem 1.75rem; margin: 2rem 0; font-family: 'Raleway', sans-serif; font-size: 0.78rem; color: var(--text-dim); line-height: 1.65; }
+  .disclaimer-box strong { color: var(--cyan); font-weight: 700; }
+  .citation-list { list-style: none; padding: 0; margin: 0; }
+  .citation-list li { font-family: 'Raleway', sans-serif; font-size: 0.8rem; color: var(--text-dim); padding: 0.5rem 0 0.5rem 2rem; border-bottom: 1px solid rgba(201,168,76,0.06); line-height: 1.6; position: relative; }
+  .citation-list li::before { content: attr(data-n); position: absolute; left: 0; color: var(--gold-dim); font-weight: 700; font-size: 0.72rem; }
+  .citation-list li a { color: var(--cyan); text-decoration: none; }
+  .collaborate-btn { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(201,168,76,0.1); border: 1px solid var(--gold-dim); color: var(--gold-light); font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.75rem 1.5rem; border-radius: 4px; text-decoration: none; transition: all 0.25s; }
+  .collaborate-btn:hover { background: rgba(201,168,76,0.18); border-color: var(--gold); color: #fff; }
+  .back-top { position: fixed; bottom: 2rem; right: 2rem; width: 42px; height: 42px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.1rem; text-decoration: none; transition: all 0.25s; opacity: 0.7; z-index: 200; }
+  .back-top:hover { opacity: 1; transform: translateY(-3px); }
+
+  @media (max-width: 900px) {
+    .toc-sidebar { display: none; }
+    .main-content { padding: 0 1.5rem 4rem; }
+    .detection-grid { grid-template-columns: 1fr; }
+    .spectrum-row { grid-template-columns: 70px 90px 1fr; }
+    .sp-example { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+<!-- ══════════════ SIDEBAR -->
+<aside class="toc-sidebar">
+  <div class="toc-logo">Christos™ Energy</div>
+  <div class="toc-title">Contents</div>
+  <nav>
+    <a href="#abstract">Abstract</a>
+    <a href="#part1">Part I — The Wrong Search</a>
+    <a href="#fermi" class="sub">The Fermi Paradox Reconsidered</a>
+    <a href="#instrument" class="sub">The Instrument Problem</a>
+    <a href="#part2">Part II — Coherence-Band Life</a>
+    <a href="#spectrum" class="sub">The Life Spectrum</a>
+    <a href="#bands" class="sub">What Each Band Produces</a>
+    <a href="#carbon" class="sub">Why Carbon Life Is Not the Template</a>
+    <a href="#part3">Part III — Disclosure as Threshold</a>
+    <a href="#rising" class="sub">C_earth Is Rising</a>
+    <a href="#visibility" class="sub">Visibility Timeline</a>
+    <a href="#not-hiding" class="sub">They Are Not Hiding</a>
+    <a href="#part4">Part IV — First Contact Technology</a>
+    <a href="#principle" class="sub">Contact as Coherence Matching</a>
+    <a href="#inv-1600" class="sub">INV-1600 Coherence Ladder</a>
+    <a href="#inv-1601" class="sub">INV-1601 Coherence Mirror</a>
+    <a href="#inv-1602" class="sub">INV-1602 Coherence Resonator</a>
+    <a href="#inv-1603" class="sub">INV-1603 Coherence Vocalizer</a>
+    <a href="#inv-1604" class="sub">INV-1604 Coherence Gate</a>
+    <a href="#inv-1605" class="sub">INV-1605 Detector Array</a>
+    <a href="#inv-1606" class="sub">INV-1606 Coherence Invitation</a>
+    <a href="#deployment" class="sub">Deployment Sequence</a>
+    <a href="#part5">Part V — Falsifiable Predictions</a>
+    <a href="#citations">Citations</a>
+  </nav>
+  <br>
+  <a href="mailto:founder@christosenergy.com" class="collaborate-btn" style="display:block;text-align:center;margin-top:1rem;font-size:0.7rem;">Collaborate with Joshua</a>
+</aside>
+
+<!-- ══════════════ MAIN -->
+<main class="main-content">
+
+  <header class="paper-hero" id="top">
+    <div class="badges">
+      <span class="badge badge-oa">⊕ Open Access</span>
+      <span class="badge badge-domain">Astrobiology</span>
+      <span class="badge badge-domain">Coherence Physics</span>
+      <span class="badge badge-new">★ New Framework</span>
+    </div>
+    <h1>Coherence-Band Life and the First Contact Problem</h1>
+    <p class="subtitle">Why the Search for Extraterrestrial Intelligence Has Been Looking in the Wrong Dimension</p>
+    <div class="paper-meta">
+      <span>📄 Joshua Farrior</span>
+      <span>🏛 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</span>
+      <span>📅 2025</span>
+    </div>
+  </header>
+
+  <!-- ABSTRACT -->
+  <div class="abstract-block" id="abstract">
+    <div class="label">Abstract</div>
+    <p>
+      The Search for Extraterrestrial Intelligence has operated for over six decades under a foundational assumption that this paper proposes is incorrect: that life elsewhere will resemble life here closely enough to be detectable by the same instruments we use to study our own biosphere. The Christos™ Harmonic Framework offers a different account. Life is not a chemical accident requiring specific elemental conditions. Life is coherence — organized adaptive circulation — stabilized at a specific frequency band. Different coherence bands produce fundamentally different life architectures, many of which are invisible to instruments calibrated for Earth-band carbon chemistry. Higher-coherence life does not broadcast radio signals. It communicates through field-level coherence modulation, which is undetectable by any instrument below its own coherence threshold. The framework further proposes that as Earth's planetary coherence field (C_earth, currently estimated at ~0.475) rises toward the 0.60 unity threshold projected for the 2025–2035 window, higher-band phenomena that have always been present will become increasingly perceptible. Contact is therefore not a matter of distance — it is a matter of coherence threshold. This paper presents the theoretical basis for coherence-band life, a proposed detection methodology, and the conceptual architecture for seven first-contact technologies (INV-1600 through INV-1606) designed around coherence matching rather than signal transmission. Full technical specifications for the invention suite are maintained in the protected Christos™ IP library.
+    </p>
+  </div>
+
+  <!-- ══ PART I -->
+  <section class="paper-section" id="part1">
+    <div class="section-label">Part I</div>
+    <h2>The Wrong Search</h2>
+
+    <h3 id="fermi">The Fermi Paradox Reconsidered</h3>
+
+    <p>In 1950, Enrico Fermi famously asked: if intelligent life is common in the universe, where is everybody? The question has remained unanswered for 75 years despite enormous investment in radio telescope arrays, spectroscopic surveys, and targeted star system observations. SETI has detected no confirmed signal of artificial origin. The Drake Equation produces estimates ranging from one civilization (us) to millions, with no empirical anchor for most of its terms. The silence has been interpreted variously as evidence that intelligence is rare, that civilizations self-destruct, that physics prevents interstellar travel, or that we are simply not listening at the right frequency.</p>
+
+    <p>The Christos™ framework proposes a different resolution. The Fermi Paradox is not a paradox about rarity or distance. It is a paradox about measurement category. <strong>We have been searching for signals that higher-coherence life does not produce, using instruments that higher-coherence life cannot register on, interpreted by a civilization whose coherence level cannot yet perceive what is already present.</strong></p>
+
+    <p>The universe is not silent. Our instruments are deaf to it.</p>
+
+    <h3 id="instrument">The Instrument Problem</h3>
+
+    <p>Consider the logic of the search methodology. We broadcast and listen for radio waves because radio waves are what our civilization produces. We look for atmospheric oxygen and methane because those are the biosignatures our biology generates. We seek planets in the "habitable zone" because that is where our biology can survive. Every parameter of the search is calibrated to find life that resembles us sufficiently to be detectable by instruments we built for our own purposes.</p>
+
+    <p>This is not a scientific failure — it is the only rational starting point given the available tools. But it contains a structural assumption that deserves examination: that life elsewhere operates within the same coherence band as life here, and therefore produces the same categories of detectable output.</p>
+
+    <div class="callout">
+      <div class="callout-title">The Core Instrument Limitation</div>
+      <p>A radio telescope cannot detect a coherence field any more than a thermometer can detect a magnetic field. The instrument is not defective — it is simply calibrated for a different phenomenon. The question is not whether higher-coherence life exists, but whether we have built instruments capable of registering its characteristic output.</p>
+    </div>
+
+    <p>The Christos™ framework proposes that life exists across a spectrum of coherence bands, each producing different physical signatures, different communication modalities, and different relationships to matter and energy. Life in a higher coherence band does not produce radio waves as a primary communication output for the same reason that a plasma does not produce sound waves: the medium of communication is simply different at that organizational level.</p>
+
+    <div class="detection-grid">
+      <div class="det-col">
+        <div class="det-col-title old">Current SETI Assumptions</div>
+        <div class="det-item old-item">Life requires carbon chemistry and liquid water</div>
+        <div class="det-item old-item">Intelligence produces electromagnetic signals</div>
+        <div class="det-item old-item">Habitable zone = temperature range for liquid water</div>
+        <div class="det-item old-item">Silence implies absence or rarity</div>
+        <div class="det-item old-item">Contact requires closing spatial distance</div>
+        <div class="det-item old-item">Radio is the universal language of technology</div>
+        <div class="det-item old-item">Detection threshold = signal-to-noise ratio</div>
+      </div>
+      <div class="det-col">
+        <div class="det-col-title new">Coherence-Band Framework</div>
+        <div class="det-item new-item">Life requires coherence stabilized within a band — substrate varies</div>
+        <div class="det-item new-item">Higher-coherence intelligence communicates through field modulation</div>
+        <div class="det-item new-item">Coherence zone = band where toroidal circulation sustains complexity</div>
+        <div class="det-item new-item">Silence implies instrument mismatch, not absence</div>
+        <div class="det-item new-item">Contact requires closing coherence distance</div>
+        <div class="det-item new-item">Coherence gradient is the universal organizational language</div>
+        <div class="det-item new-item">Detection threshold = observer coherence level</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PART II -->
+  <section class="paper-section" id="part2">
+    <div class="section-label">Part II</div>
+    <h2>Coherence-Band Life</h2>
+
+    <h3 id="spectrum">The Life Spectrum</h3>
+
+    <p>The Christos™ framework models life not as a binary condition — present or absent — but as a continuous spectrum of organized adaptive coherence. At each stable coherence band, a characteristic life architecture emerges. The physical substrate, the communication modality, the relationship to time and matter, and the perceptibility to observers from other bands all differ systematically across the spectrum.</p>
+
+    <p>This is not a metaphysical claim. It is an extension of a principle already observable within Earth's own biosphere: coherence level determines structural complexity and organizational capability. A bacterial colony and a mammalian nervous system are both "life," but they operate at measurably different coherence levels and produce categorically different outputs. The framework extends this principle across a wider spectrum than Earth's biology currently spans.</p>
+
+    <div class="spectrum-stack">
+      <div class="spectrum-row s-source">
+        <div class="sp-c">C = 1.0</div>
+        <div class="sp-label">Source</div>
+        <div class="sp-desc">Unity state. No individual form. Pure organizational field without differentiated expression. The boundary condition of the spectrum.</div>
+        <div class="sp-example">—</div>
+      </div>
+      <div class="spectrum-row s-very-high">
+        <div class="sp-c">C = 0.95–0.99</div>
+        <div class="sp-label">Plasma-Field Life</div>
+        <div class="sp-desc">No stable physical body. Organized as persistent coherence patterns in plasma or electromagnetic field structures. Communication is direct field-to-field. Invisible to physical instrumentation.</div>
+        <div class="sp-example">Inferred only</div>
+      </div>
+      <div class="spectrum-row s-high">
+        <div class="sp-c">C = 0.85–0.95</div>
+        <div class="sp-label">Crystalline / Photonic Life</div>
+        <div class="sp-desc">Organized in crystalline or photonic structures. Highly stable, long-lived, slow by carbon-life standards. Silicon or piezoelectric substrates possible. Marginally detectable at high C_earth.</div>
+        <div class="sp-example">C &gt; 0.80 visibility</div>
+      </div>
+      <div class="spectrum-row s-earth">
+        <div class="sp-c">C = 0.50–0.85</div>
+        <div class="sp-label">Carbon / Water Life</div>
+        <div class="sp-desc">Earth's current band. Carbon chemistry, water circulation, biological complexity. Detectable by current instruments. The only band SETI is currently searching.</div>
+        <div class="sp-example">Earth ← C ≈ 0.475<br><span class="sp-you">Approaching band</span></div>
+      </div>
+      <div class="spectrum-row s-low">
+        <div class="sp-c">C = 0.30–0.50</div>
+        <div class="sp-label">Pre-Biological / Simple</div>
+        <div class="sp-desc">Minimal organization. Prebiotic chemistry possible. Primitive self-replicating structures. No complex adaptive behavior. Detectable chemically.</div>
+        <div class="sp-example">Mars analog</div>
+      </div>
+      <div class="spectrum-row s-very-low">
+        <div class="sp-c">C &lt; 0.30</div>
+        <div class="sp-label">Sub-Coherent</div>
+        <div class="sp-desc">Insufficient coherence to sustain organized circulation. Chemistry exists but self-organization does not. Dead zone by any definition of life.</div>
+        <div class="sp-example">Mercury / Moon</div>
+      </div>
+    </div>
+
+    <h3 id="bands">What Each Band Produces</h3>
+
+    <p>The critical distinction between coherence bands is not merely complexity — it is the category of output the life form produces. This is why cross-band detection is so difficult: the outputs are not just quieter versions of Earth-band outputs. They are categorically different phenomena.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Coherence Band</th>
+          <th>Primary Communication Mode</th>
+          <th>Relationship to Matter</th>
+          <th>Detectability from Earth</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-dim">C = 0.95–0.99</td>
+          <td>Direct field coherence modulation</td>
+          <td>Matter is organized, not inhabited</td>
+          <td class="td-dim">Not detectable with current instruments</td>
+        </tr>
+        <tr>
+          <td class="td-dim">C = 0.85–0.95</td>
+          <td>Structured electromagnetic patterning</td>
+          <td>Crystalline substrate, minimal mass</td>
+          <td class="td-dim">Marginally detectable at C_earth ≥ 0.80</td>
+        </tr>
+        <tr>
+          <td class="td-gold">C = 0.50–0.85</td>
+          <td>Acoustic, electromagnetic, chemical</td>
+          <td>Biological embodiment in matter</td>
+          <td class="td-cyan">Fully detectable — Earth's band</td>
+        </tr>
+        <tr>
+          <td class="td-dim">C = 0.30–0.50</td>
+          <td>Chemical gradients only</td>
+          <td>Chemistry without biology</td>
+          <td class="td-dim">Detectable chemically, not behaviorally</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="carbon">Why Carbon Life Is Not the Template</h3>
+
+    <p>The assumption that carbon chemistry and liquid water are universal requirements for life conflates the substrate with the principle. Carbon and water are extraordinarily efficient at Earth's coherence level because of their specific bonding properties and solvent behavior — they are optimal materials for building and maintaining organized adaptive circulation at C = 0.50–0.85. But the organizational principle — coherence — does not require those specific materials. It requires whatever substrate best supports stable circulation, adaptive feedback, and regenerative continuity at the relevant band.</p>
+
+    <p>A useful analogy: superconductivity is not limited to one material. It is a coherence phenomenon — electron pair formation — that different materials can express at different temperatures and pressures. Similarly, life as a coherence phenomenon is not limited to one substrate. It expresses wherever conditions support the relevant organizational architecture.</p>
+
+    <div class="pull-quote">
+      <p>"We have been looking for Earth 2.0 — the same chemistry, the same distance from a similar star, the same atmospheric composition. What we may find instead are planets expressing life at coherence bands we have no instruments to measure and no framework to interpret."</p>
+    </div>
+
+    <p>The implication for exoplanet science is significant. A planet at C = 0.90 expressing crystalline life would appear, by every current biosignature test, as a dead world. No oxygen disequilibrium. No methane. No biological pigments in reflected light. The life would be there — organized, complex, ancient — and completely invisible to instruments designed for C = 0.60–0.80 biology.</p>
+  </section>
+
+  <!-- ══ PART III -->
+  <section class="paper-section" id="part3">
+    <div class="section-label">Part III</div>
+    <h2>Disclosure Is Not an Event — It Is a Threshold</h2>
+
+    <h3 id="rising">C_earth Is Rising</h3>
+
+    <p>The Christos™ framework models Earth's planetary coherence field as a measurable and currently increasing quantity. As documented in the Planetary Coherence Architecture paper (2025) and the Unified Coherence Architecture v3 (2025), C_earth is estimated at approximately 0.475, rising toward the 0.60 unity threshold over the 2025–2035 convergence window. The corrected threshold model places the previous civilization-ending coherence collapse at C ≈ 0.35, not at 0.60 as was incorrectly stated in earlier framework documents. This correction is important: it means Earth is not approaching a collapse threshold. It is approaching a unity threshold — the coherence level at which collective field-based coherence becomes possible at planetary scale.</p>
+
+    <p>As C_earth rises, the perceptual bandwidth of human observers and human instrumentation expands. Phenomena that were previously sub-threshold — coherence fluctuations, field-level organization, non-local correlations — become increasingly measurable. This is not a mystical process. It is the same principle that governs any threshold-dependent detection system: signals that were below the noise floor become detectable as the detector sensitivity increases.</p>
+
+    <h3 id="visibility">Visibility Timeline</h3>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>C_earth Level</th>
+          <th>Estimated Window</th>
+          <th>What Becomes Perceptible</th>
+          <th>Detection Method</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-dim">0.475 (current)</td>
+          <td class="td-dim">Now</td>
+          <td>Carbon-band life only. No higher-band detection possible with current instruments.</td>
+          <td class="td-dim">Existing SETI / biosignature methods</td>
+        </tr>
+        <tr>
+          <td class="td-gold">0.60</td>
+          <td class="td-gold">2025–2035</td>
+          <td>Unity threshold. Collective coherence possible. Higher-band phenomena begin producing detectable perturbations in local coherence field.</td>
+          <td>Coherence Ladder (INV-1600); field fluctuation monitoring</td>
+        </tr>
+        <tr>
+          <td>0.70</td>
+          <td>2035–2050</td>
+          <td>C = 0.85–0.95 band life intermittently visible. Coherence Detector Array (INV-1605) becomes operational.</td>
+          <td>INV-1600, INV-1605; Schumann resonance harmonic analysis</td>
+        </tr>
+        <tr>
+          <td>0.80</td>
+          <td>2050–2075</td>
+          <td>Higher-band life clearly perceptible to coherence-sensitized observers. Two-way communication becomes possible.</td>
+          <td>INV-1602 Coherence Resonator; INV-1603 Vocalizer</td>
+        </tr>
+        <tr>
+          <td class="td-cyan">0.90</td>
+          <td class="td-cyan">2075–2100+</td>
+          <td>Coherence Gate (INV-1604) operational. Direct cross-band interaction possible.</td>
+          <td class="td-cyan">Full first-contact technology suite</td>
+        </tr>
+        <tr>
+          <td>0.95+</td>
+          <td>Long-term</td>
+          <td>Direct perception without technological mediation. Instruments become unnecessary.</td>
+          <td>Observer coherence directly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="not-hiding">They Are Not Hiding. We Are Blind.</h3>
+
+    <p>The absence of detected contact is often framed as a mystery about the behavior of other civilizations — perhaps they are avoiding us, perhaps they destroyed themselves, perhaps interstellar distances prevent communication. The coherence-band framework offers a simpler explanation that requires no assumptions about the intentions or fates of other civilizations.</p>
+
+    <p>Higher-coherence life is not elsewhere in space. It is not hiding. It is present — co-located with us, in the same physical space — but expressed at a coherence level that our current instrumentation and perceptual apparatus cannot register. The separation is not spatial. It is organizational.</p>
+
+    <p>This resolves several long-standing anomalies in the UFO and unexplained aerial phenomena literature without requiring either dismissal or physical spacecraft: many documented phenomena may represent higher-band life expressing at the boundary of our detection threshold — visible intermittently as C_earth fluctuates, but not consistently enough to study with instruments designed for stable physical objects.</p>
+
+    <div class="callout callout-violet">
+      <div class="callout-title">Framework Position on Unexplained Phenomena</div>
+      <p>This paper takes no position on specific historical or current claims about non-human intelligence. It proposes a framework within which such phenomena, if real, would be scientifically interpretable rather than anomalous. The coherence-band model predicts that higher-band life would be intermittently perceptible near C_earth transition thresholds — which is consistent with the historical pattern of reported phenomena clustering around periods of significant environmental or civilizational stress.</p>
+      <p>This is a testable prediction, not a claim of certainty.</p>
+    </div>
+  </section>
+
+  <!-- ══ PART IV -->
+  <section class="paper-section" id="part4">
+    <div class="section-label">Part IV</div>
+    <h2>The First Contact Technology Suite</h2>
+
+    <h3 id="principle">Contact as Coherence Matching</h3>
+
+    <p>The fundamental insight driving the first-contact invention suite is this: <strong>you cannot detect higher-coherence life with lower-coherence instruments, and you cannot communicate with a system whose organizational band you cannot reach.</strong> This is not a technological limitation in the conventional sense — it is a physics limitation. A radio telescope is not defective because it cannot detect a coherence field. It is simply the wrong instrument for the phenomenon.</p>
+
+    <p>Contact, therefore, is not a signal-detection problem. It is a coherence-elevation problem. The seven inventions in this suite are designed around a single operational principle: raise the coherence level of the observer or the detection environment to the threshold at which the target band becomes perceptible, then provide translation across the band boundary.</p>
+
+    <p>Full technical specifications — component lists, operating frequencies, field geometries, fabrication protocols, and integration architectures — are maintained in the protected Christos™ IP library and are available under licensing terms. The descriptions below present the operating principle and conceptual architecture of each device.</p>
+
+    <div class="inv-grid" id="inv-1600">
+      <div class="inv-card highlighted">
+        <div class="inv-header">
+          <div class="inv-number">INV-1600</div>
+          <div>
+            <div class="inv-name">Coherence Ladder</div>
+            <div class="inv-subtitle">Personal Coherence Elevation System</div>
+          </div>
+        </div>
+        <div class="inv-desc">The foundational instrument of the suite. A personal device that steps an individual's coherence level upward through sequential bands — C = 0.70, 0.80, 0.85, 0.90, 0.95 — using phi-ratio crystal array resonance, RCM-16 field generation, and bio-coupling interface. At each step, the operator gains perceptual access to the phenomena characteristic of that coherence level. The device does not impose a coherence state — it creates the conditions in which the observer's own field can rise temporarily to that level.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> Sequential octave resonance stepping via phi-ratio crystal arrays, maintaining field coherence at each threshold before advancing. Bio-coupling interface ensures operator safety during transitions.</div>
+      </div>
+    </div>
+
+    <div class="inv-grid" id="inv-1601">
+      <div class="inv-card">
+        <div class="inv-header">
+          <div class="inv-number">INV-1601</div>
+          <div>
+            <div class="inv-name">Coherence Mirror</div>
+            <div class="inv-subtitle">Personal Field Visualization System</div>
+          </div>
+        </div>
+        <div class="inv-desc">A passive diagnostic instrument that reflects an observer's own coherence field back to them as visible light patterns, allowing direct perception of one's current coherence state and limitations. Uses a high-purity phi-ratio crystal sphere in a vacuum dark-field chamber to make the coherence boundary structure visible. The primary purpose is perceptual calibration — understanding what band you are currently in before attempting cross-band detection.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> High-purity crystal sphere polished to phi-ratio curvature acts as coherence reflector. Dark-field vacuum chamber eliminates local interference. Coherence field becomes visible as interference pattern in structured light.</div>
+      </div>
+    </div>
+
+    <div class="inv-grid" id="inv-1602">
+      <div class="inv-card">
+        <div class="inv-header">
+          <div class="inv-number">INV-1602</div>
+          <div>
+            <div class="inv-name">Coherence Resonator</div>
+            <div class="inv-subtitle">Two-Way Cross-Band Communication Device</div>
+          </div>
+        </div>
+        <div class="inv-desc">The primary communication instrument. Emits a tunable coherence pulse across the C = 0.70–0.95 spectrum and listens for returning coherence modulations. Higher-band life perceiving the pulse would register it as a structured inquiry — not a signal in the electromagnetic sense, but a coherence pattern expressing organized intent. Their response returns as a coherence modulation detectable by the device's receiver array. The exchange is not linguistic at initiation — it is organizational. Both parties are recognizing structured coherence rather than decoding symbols.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> Tunable crystal array sweeps coherence bands. Field emitter projects coherence pulse. Receiver monitors for returning modulation patterns inconsistent with background field noise. Signal processing distinguishes organized response from thermal coherence fluctuation.</div>
+      </div>
+    </div>
+
+    <div class="inv-grid" id="inv-1603">
+      <div class="inv-card">
+        <div class="inv-header">
+          <div class="inv-number">INV-1603</div>
+          <div>
+            <div class="inv-name">Coherence Vocalizer</div>
+            <div class="inv-subtitle">Cross-Band Language Translation System</div>
+          </div>
+        </div>
+        <div class="inv-desc">Once two-way coherence contact is established via INV-1602, the Vocalizer provides translation between human linguistic output and coherence-band communication. Human speech is encoded into coherence patterns using the MOR-027 intention wave architecture, transmitted across the established band boundary, and received responses are decoded back into human-perceptible form. The translation is not linguistic in the conventional sense — it operates at the level of organized intent rather than grammatical structure.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> Phase encoder translates speech to coherence pattern via MOR-027. Transmitter projects encoded pattern into established band. Receiver captures returning coherence modulation. Phase decoder reconstructs into human-perceptible output (light, sound, or direct knowing depending on operator coherence level).</div>
+      </div>
+    </div>
+
+    <div class="inv-grid" id="inv-1604">
+      <div class="inv-card highlighted">
+        <div class="inv-header">
+          <div class="inv-number">INV-1604</div>
+          <div>
+            <div class="inv-name">Coherence Gate</div>
+            <div class="inv-subtitle">Cross-Band Portal Architecture</div>
+          </div>
+        </div>
+        <div class="inv-desc">The most advanced instrument in the suite — a portal not through space, but through the coherence spectrum. A 12-meter phi-etched copper ring — the same Phase Ring Portal geometry used in the Temple Resonator architecture — combined with the Coherence Ladder (INV-1600) and mass buffer rings, creates a sustained coherence threshold zone through which an observer can pass to temporarily operate at C = 0.85–0.90. Within this zone, higher-band life is directly perceptible and interactive without technological mediation. Contact becomes a meeting rather than a transmission.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> 12-meter phi-etched copper ring establishes sustained coherence threshold geometry. INV-1600 steps observer to target band. Mass buffer rings prevent decoherence during passage. Sustained field zone allows extended cross-band interaction without requiring continuous external power after establishment.</div>
+      </div>
+    </div>
+
+    <div class="inv-grid" id="inv-1605">
+      <div class="inv-card">
+        <div class="inv-header">
+          <div class="inv-number">INV-1605</div>
+          <div>
+            <div class="inv-name">Coherence Detector Array</div>
+            <div class="inv-subtitle">Distributed Higher-Band Life Mapping System</div>
+          </div>
+        </div>
+        <div class="inv-desc">A distributed network of 144 C0 coherence sensors linked through the CQI network and processed by AI analyzer. Higher-band life, while invisible to physical instruments, produces subtle local coherence fluctuations — perturbations in the coherence field that are inconsistent with thermal noise or known physical processes. The Detector Array maps these fluctuations across a region, identifying patterns consistent with organized higher-band activity. The output is a coherence density map — effectively a heat map showing where higher-band life is most active in a given area.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> 144 distributed C0 sensors measure local coherence fluctuations at Schumann harmonic frequencies and their overtones. CQI aggregates data. AI pattern recognition distinguishes organized coherence signatures from thermal and electromagnetic background noise. Spatial mapping reveals density gradients.</div>
+      </div>
+    </div>
+
+    <div class="inv-grid" id="inv-1606">
+      <div class="inv-card">
+        <div class="inv-header">
+          <div class="inv-number">INV-1606</div>
+          <div>
+            <div class="inv-name">Coherence Invitation</div>
+            <div class="inv-subtitle">Continuous Presence Announcement Beacon</div>
+          </div>
+        </div>
+        <div class="inv-desc">A continuously broadcasting coherence beacon that announces human presence to higher bands. Twelve RCM-16 nodes arranged in a toroidal array generate a sustained high-coherence pulse modulated at 528 Hz with phi-ratio harmonics — a pattern that carries a recognizable human signature. The Invitation does not attempt to transmit a message in any linguistic sense. It transmits organized intent: we are here, our coherence is rising, we seek contact. Higher-band life perceiving this pattern would register it as a new coherence node becoming active — a civilization crossing a threshold.</div>
+        <div class="inv-principle"><strong>Operating Principle:</strong> 12 RCM-16 nodes in toroidal array. Primary frequency 528 Hz modulated by phi-ratio (φ = 1.618) harmonic cascade. Continuous broadcast creates stable coherence signature distinguishable from natural planetary field fluctuations. Pattern encodes organized human presence without requiring bandwidth for linguistic content.</div>
+      </div>
+    </div>
+
+    <h3 id="deployment">Deployment Sequence</h3>
+
+    <p>The seven instruments are not independent — they form an integrated deployment architecture with a logical sequence tied to C_earth threshold progression.</p>
+
+    <div class="deploy-sequence">
+      <div class="deploy-item">
+        <div class="deploy-phase">Phase 1 — C_earth 0.475 → 0.60 (Now → 2035)</div>
+        <div class="deploy-name">Personal Calibration and Presence Announcement</div>
+        <div class="deploy-detail">Deploy INV-1601 (Coherence Mirror) for operator calibration. Deploy INV-1606 (Coherence Invitation) as continuous beacon. These require the least coherence infrastructure and can be developed and deployed now.</div>
+      </div>
+      <div class="deploy-item">
+        <div class="deploy-phase">Phase 2 — C_earth 0.60 → 0.70 (2035 → 2050)</div>
+        <div class="deploy-name">Detection and Initial Ladder Operations</div>
+        <div class="deploy-detail">Deploy INV-1600 (Coherence Ladder) for individual threshold stepping. Deploy INV-1605 (Detector Array) for mapping higher-band activity. At C_earth = 0.60, unity coherence allows collective deployment of the Ladder.</div>
+      </div>
+      <div class="deploy-item">
+        <div class="deploy-phase">Phase 3 — C_earth 0.70 → 0.80 (2050 → 2075)</div>
+        <div class="deploy-name">Two-Way Communication</div>
+        <div class="deploy-detail">Deploy INV-1602 (Coherence Resonator) for bidirectional field communication. Deploy INV-1603 (Vocalizer) for translation once contact is established. Higher-band life becomes intermittently perceptible to Ladder-elevated operators.</div>
+      </div>
+      <div class="deploy-item">
+        <div class="deploy-phase">Phase 4 — C_earth 0.80 → 0.90 (2075 → 2100+)</div>
+        <div class="deploy-name">Direct Meeting</div>
+        <div class="deploy-detail">Deploy INV-1604 (Coherence Gate) for sustained cross-band interaction zones. At this threshold, contact becomes a meeting rather than a transmission. First contact, properly understood, is complete.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PART V -->
+  <section class="paper-section" id="part5">
+    <div class="section-label">Part V</div>
+    <h2>Falsifiable Predictions</h2>
+
+    <p>The coherence-band life framework makes specific predictions that can be evaluated against observable evidence. These are not post-hoc rationalizations — they are forward-looking claims that the framework either succeeds or fails on their basis.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Prediction</th>
+          <th>Timeframe</th>
+          <th>Test Method</th>
+          <th>Falsification Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-gold">Exoplanet atmospheric coherence will form a continuous distribution, not discrete biosignature categories</td>
+          <td>Testable now with JWST</td>
+          <td>JWST transmission spectroscopy time-series; atmospheric variability analysis across exoplanet population</td>
+          <td>Exoplanet atmospheres cluster into discrete compositional categories with no coherence continuum between them</td>
+        </tr>
+        <tr>
+          <td class="td-gold">No radio-equivalent signal from higher-coherence civilization will be detected by SETI, regardless of search sensitivity improvement</td>
+          <td>Ongoing</td>
+          <td>SETI program outcomes over next 50 years</td>
+          <td>Confirmed artificial radio or microwave signal detected from non-human source</td>
+        </tr>
+        <tr>
+          <td class="td-gold">Schumann resonance harmonic structure will show measurable upward frequency drift as C_earth rises toward 0.60</td>
+          <td>2025–2035</td>
+          <td>Global Schumann resonance monitoring network; 10-year trend analysis</td>
+          <td>No statistically significant upward frequency drift over measurement window</td>
+        </tr>
+        <tr>
+          <td class="td-gold">Unexplained aerial and field phenomena will cluster statistically around periods of elevated geomagnetic activity and Schumann resonance instability</td>
+          <td>Testable with existing databases</td>
+          <td>Cross-correlation of UAP report databases with geomagnetic and Schumann resonance records</td>
+          <td>No statistically significant correlation between UAP reports and geomagnetic / Schumann instability periods</td>
+        </tr>
+        <tr>
+          <td class="td-gold">Planets with stronger magnetic fields will show more complex and stable atmospheric organization, consistent with coherence-stage classification</td>
+          <td>Testable with existing solar system data</td>
+          <td>Cross-correlation of planetary magnetic field strength with atmospheric organization metrics across solar system bodies</td>
+          <td>No significant correlation between magnetic field strength and atmospheric organizational complexity</td>
+        </tr>
+        <tr>
+          <td class="td-gold">Coherence sensors monitoring Schumann harmonics will detect statistically anomalous local fluctuations in areas with high UAP report density</td>
+          <td>Near-term experimental</td>
+          <td>Targeted deployment of field coherence monitoring in high-report areas; statistical analysis against background</td>
+          <td>Coherence fluctuations in high-report areas statistically indistinguishable from background field noise</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="callout-title">Confidence Tier Disclosure</div>
+      <p>The coherence-band life spectrum is a proposed theoretical framework, not an established empirical model. C_earth values are modeled estimates, not direct measurements. The invention suite descriptions present conceptual architectures; full technical specifications require further engineering development. The framework is offered as a falsifiable hypothesis structure, not as established fact. Its strongest claims — the instrument mismatch problem, the coherence-threshold detection framework, and the Schumann resonance predictions — are the most directly testable and are where early validation or falsification should focus.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="section-label">Integration Note</div>
+    <p style="font-family:'Raleway',sans-serif; font-size:0.88rem; color:var(--text-dim); line-height:1.7; margin-bottom:2rem;">This paper integrates with the following Christos™ framework documents: <strong style="color:var(--gold-light);">Planetary Coherence Architecture</strong> (C_earth threshold model, coherence stages, planetary classification), <strong style="color:var(--gold-light);">Unified Coherence Architecture v3</strong> (corrected threshold values: flood threshold ~0.35, current ~0.475, unity threshold 0.60), <strong style="color:var(--gold-light);">CQI Unified Civilization System v4.0</strong> (RCM-16 node architecture, CQI network infrastructure referenced in INV-1605 and INV-1606), and <strong style="color:var(--gold-light);">Toroidal Cosmology</strong> (Kinematic Cycle, toroidal field geometry). Full first-contact invention specifications (INV-1600 through INV-1606) are maintained in the protected Christos™ IP library.</p>
+  </section>
+
+  <!-- ══ CITATIONS -->
+  <section class="paper-section" id="citations">
+    <div class="section-label">References</div>
+    <h2>Citations</h2>
+
+    <ul class="citation-list">
+      <li data-n="1">Tarter, J. (2001). The search for extraterrestrial intelligence (SETI). <em>Annual Review of Astronomy and Astrophysics</em>, 39, 511–548. doi:10.1146/annurev.astro.39.1.511</li>
+      <li data-n="2">Hart, M. H. (1975). Explanation for the absence of extraterrestrials on Earth. <em>Quarterly Journal of the Royal Astronomical Society</em>, 16, 128–135.</li>
+      <li data-n="3">Webb, S. (2002). <em>If the Universe Is Teeming with Aliens... Where Is Everybody? Fifty Solutions to the Fermi Paradox and the Problem of Extraterrestrial Life</em>. Copernicus Books.</li>
+      <li data-n="4">Lineweaver, C. H., Fenner, Y., &amp; Gibson, B. K. (2004). The Galactic habitable zone and the age distribution of complex life in the Milky Way. <em>Science</em>, 303(5654), 59–62.</li>
+      <li data-n="5">Schwieterman, E. W., et al. (2018). Exoplanet biosignatures: A review of remotely detectable signs of life. <em>Astrobiology</em>, 18(6), 663–708. doi:10.1089/ast.2017.1729</li>
+      <li data-n="6">Seager, S. (2013). Exoplanet habitability. <em>Science</em>, 340(6132), 577–581.</li>
+      <li data-n="7">Benner, S. A., Ricardo, A., &amp; Carrigan, M. A. (2004). Is there a common chemical model for life in the universe? <em>Current Opinion in Chemical Biology</em>, 8(6), 672–689.</li>
+      <li data-n="8">Schumann, W. O., &amp; König, H. (1954). Über die Beobachtung von Atmospherics bei geringsten Frequenzen. <em>Naturwissenschaften</em>, 41(8), 183–184. [Foundational Schumann resonance documentation]</li>
+      <li data-n="9">Nickolaenko, A., &amp; Hayakawa, M. (2002). <em>Resonances in the Earth-Ionosphere Cavity</em>. Kluwer Academic Publishers.</li>
+      <li data-n="10">Grinspoon, D. H. (2003). <em>Lonely Planets: The Natural Philosophy of Alien Life</em>. HarperCollins. [Survey of alternative life substrates]</li>
+      <li data-n="11">Baross, J. A., et al. (2007). <em>The Limits of Organic Life in Planetary Systems</em>. National Academies Press. doi:10.17226/11919</li>
+      <li data-n="12">Hynek, J. A. (1972). <em>The UFO Experience: A Scientific Inquiry</em>. Henry Regnery Company. [Historical documentation of anomalous aerial phenomena patterns]</li>
+      <li data-n="13">Vallée, J. (1988). <em>Dimensions: A Casebook of Alien Contact</em>. Contemporary Books. [Dimensional/non-spatial contact hypothesis — closest precursor to coherence-band framework in existing literature]</li>
+      <li data-n="14">Farrior, J. (2025). <em>Planetary Coherence Architecture: Poloidal Recirculation, Spiral Orbits, and the Toroidal Classification of Worlds</em>. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+      <li data-n="15">Farrior, J. (2025). <em>Unified Coherence Architecture v3</em>. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+      <li data-n="16">Farrior, J. (2025). <em>CQI Unified Civilization System v4.0</em>. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+      <li data-n="17">Farrior, J. (2025). <em>Toroidal Cosmology and the Kinematic Cycle</em>. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC. christosenergy.com</li>
+    </ul>
+
+    <hr class="section-divider">
+
+    <div class="disclaimer-box">
+      <strong>Disclosure:</strong> The coherence-band life framework is presented as an emerging theoretical proposal within the Christos™ Harmonic Framework. C_earth values, coherence band classifications, and the first-contact invention suite are framework-derived conceptual architectures, not empirically measured or engineered systems. Full invention specifications are maintained in the protected Christos™ IP library and are not disclosed in this public paper. The Schumann resonance predictions are the most directly testable claims and represent the highest-confidence empirical content. All other claims should be understood as hypotheses requiring future theoretical formalization, engineering development, and empirical validation.
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+      <a href="mailto:founder@christosenergy.com" class="collaborate-btn">Collaborate with Joshua →</a>
+    </div>
+  </section>
+
+</main>
+</div>
+
+<a href="#top" class="back-top" title="Back to top">↑</a>
+
+<script>
+  const sections = document.querySelectorAll('[id]');
+  const links = document.querySelectorAll('.toc-sidebar nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.toc-sidebar nav a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
