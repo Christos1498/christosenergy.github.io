@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planetary Coherence Architecture Vol. I | Christos™ Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #08111E !important;
+      color: #D8D0C0 !important;
+      font-family: 'Cormorant Garamond', serif !important;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    nav {
+      background: #0A1628 !important;
+      border-bottom: 2px solid #C9A84C !important;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav a {
+      color: #C9A84C !important;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    nav a:hover { color: #FFFFFF !important; }
+    .nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    .hero {
+      background: linear-gradient(180deg, #0A1628 0%, #08111E 100%) !important;
+      border-bottom: 1px solid #C9A84C44;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+    }
+    .series-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: #3AAFAF !important;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: #C9A84C !important;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero .vol-label {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: #3AAFAF !important;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+    }
+    .hero .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #D8D0C0 !important;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+    .meta-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      color: #8899AA !important;
+      letter-spacing: 0.05em;
+    }
+    .badge {
+      display: inline-block;
+      background: #C9A84C22 !important;
+      border: 1px solid #C9A84C !important;
+      color: #C9A84C !important;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 2px;
+      text-transform: uppercase;
+      margin: 0.25rem;
+    }
+    .badge.teal {
+      background: #3AAFAF22 !important;
+      border-color: #3AAFAF !important;
+      color: #3AAFAF !important;
+    }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; }
+
+    .abstract-box {
+      background: #0A1628 !important;
+      border-left: 3px solid #C9A84C !important;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border-radius: 0 4px 4px 0;
+    }
+    .abstract-box h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.2em;
+      color: #C9A84C !important;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .tier-legend {
+      background: #0A1628 !important;
+      border: 1px solid #C9A84C44 !important;
+      padding: 1.5rem;
+      margin-bottom: 3rem;
+      border-radius: 4px;
+    }
+    .tier-legend h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #8899AA !important;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .tier-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      margin-bottom: 0.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+    }
+    .tier-tag {
+      font-weight: 600;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.4rem;
+      border-radius: 2px;
+      text-align: center;
+    }
+    .tier-a { background: #C9A84C33 !important; color: #C9A84C !important; border: 1px solid #C9A84C66 !important; }
+    .tier-b { background: #3AAFAF33 !important; color: #3AAFAF !important; border: 1px solid #3AAFAF66 !important; }
+    .tier-c { background: #8866CC33 !important; color: #AA88FF !important; border: 1px solid #8866CC66 !important; }
+
+    h2.section {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      color: #C9A84C !important;
+      font-weight: 600;
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #C9A84C44 !important;
+    }
+    h3.sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: #3AAFAF !important;
+      font-weight: 600;
+      margin: 2rem 0 0.75rem;
+    }
+    p { margin-bottom: 1.2rem; }
+
+    .pullquote {
+      border-left: 3px solid #3AAFAF !important;
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #C9A84C !important;
+      background: #3AAFAF11 !important;
+    }
+
+    .tier-inline {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 0.1rem 0.35rem;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-right: 0.4rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0 2rem;
+      font-size: 0.9rem;
+    }
+    th {
+      background: #0A1628 !important;
+      color: #C9A84C !important;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #C9A84C44 !important;
+    }
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid #FFFFFF11 !important;
+      vertical-align: top;
+      color: #D8D0C0 !important;
+    }
+    tr:nth-child(even) td { background: #0A162822 !important; }
+    td strong { color: #C9A84C !important; }
+    td em { color: #3AAFAF !important; font-style: normal; font-weight: 600; font-family: 'Raleway', sans-serif; font-size: 0.8rem; }
+
+    .key-box {
+      background: #0A1628 !important;
+      border: 1px solid #3AAFAF66 !important;
+      border-left: 3px solid #3AAFAF !important;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .key-box .key-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #3AAFAF !important;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .prediction-card {
+      background: #0A1628 !important;
+      border: 1px solid #C9A84C33 !important;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+    .prediction-card .pred-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: #AA88FF !important;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .prediction-card p { margin-bottom: 0.25rem; font-size: 0.95rem; }
+    .prediction-card .falsify {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      color: #8899AA !important;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .integration-box {
+      background: #C9A84C11 !important;
+      border: 1px solid #C9A84C44 !important;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+    .integration-box h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: #C9A84C !important;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .series-nav {
+      background: #0A1628 !important;
+      border: 1px solid #C9A84C44 !important;
+      padding: 1.5rem;
+      margin: 3rem 0 0;
+      border-radius: 4px;
+    }
+    .series-nav h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      color: #C9A84C !important;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .series-nav a {
+      display: block;
+      color: #3AAFAF !important;
+      text-decoration: none;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #FFFFFF11 !important;
+    }
+    .series-nav a:hover { color: #C9A84C !important; }
+    .series-nav .current {
+      color: #C9A84C !important;
+      font-weight: 600;
+    }
+
+    .disclaimer {
+      background: #0A1628 !important;
+      border: 1px solid #FFFFFF22 !important;
+      padding: 1.25rem 1.5rem;
+      margin: 3rem 0 1rem;
+      border-radius: 4px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      color: #8899AA !important;
+      line-height: 1.6;
+    }
+
+    .ref-list { font-size: 0.88rem; line-height: 1.7; }
+    .ref-list p { margin-bottom: 0.5rem; color: #8899AA !important; }
+    .ref-list span { color: #C9A84C !important; font-weight: 600; margin-right: 0.5rem; }
+
+    footer {
+      background: #0A1628 !important;
+      border-top: 1px solid #C9A84C44 !important;
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      color: #8899AA !important;
+    }
+    footer a { color: #C9A84C !important; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" style="font-family:'Cinzel',serif;font-size:1rem;font-weight:700;">Christos™ Energy</a>
+  <div class="nav-links">
+    <a href="../../index.html">Home</a>
+    <a href="../../papers.html">Papers</a>
+    <a href="../../inventions.html">Inventions</a>
+    <a href="../../about.html">About</a>
+    <a href="../../contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="series-label">Christos™ Harmonic Framework — Agriculture, Water &amp; Food Series</div>
+  <h1>Planetary Coherence Architecture</h1>
+  <div class="vol-label">Volume I of III</div>
+  <div class="subtitle">Poloidal Recirculation, Spiral Orbits, and the Toroidal Classification of Worlds</div>
+  <div style="margin-bottom:1.5rem;">
+    <span class="badge">⊕ Open Access</span>
+    <span class="badge teal">★ New Framework</span>
+    <span class="badge">Planetary Science</span>
+    <span class="badge">Coherence Physics</span>
+  </div>
+  <div class="meta-row">
+    <span>Joshua Farrior</span>
+    <span>Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</span>
+    <span>2025</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="abstract-box">
+    <h2>Abstract</h2>
+    <p>This paper presents three interconnected reframings of planetary science through the lens of the Christos™ Harmonic Framework. First, what mainstream geophysics calls "magnetic pole reversal" is reidentified as the poloidal recirculation phase of Earth's toroidal coherence field — a predictable event tied to the Kinematic Cycle rather than a random process in the liquid outer core. Second, planetary orbits, currently modeled as fixed ellipses, are reinterpreted as spiral paths through coherence bands; the Goldilocks habitable zone is not a place but a phase — a temporary passage through the optimal coherence band during the 26,000-year precession cycle. Third, all planetary bodies — from gas giants to dead rocks — are proposed to be identical toroidal architectures at different stages of coherence evolution, classifiable on a single six-stage coherence spectrum rather than as fundamentally different object types.</p>
+    <p>Each proposition is accompanied by specific falsifiable predictions testable against existing paleomagnetic data, exoplanet population statistics, and paleoclimate records. The framework integrates directly with the Christos™ Coherent Hydrology, Toroidal Cosmology, and Unified Coherence Architecture papers.</p>
+  </div>
+
+  <div class="tier-legend">
+    <h3>Interpretive Tier Framework</h3>
+    <div class="tier-row"><span class="tier-tag tier-a">Tier A</span><span>Formal reframing consistent with existing observational data — the framework interpretation is consistent with what is measured.</span></div>
+    <div class="tier-row"><span class="tier-tag tier-b">Tier B</span><span>Physical interpretation — grounded extension of the framework to observed phenomena. Well-supported but not yet independently confirmed.</span></div>
+    <div class="tier-row"><span class="tier-tag tier-c">Tier C</span><span>Falsifiable prediction — derived from the framework, testable against existing or near-future datasets. Not yet confirmed.</span></div>
+  </div>
+
+  <h2 class="section">Part I — Two Ways of Seeing the Same Evidence</h2>
+
+  <h3 class="sub">The Standard Account</h3>
+  <p>Mainstream planetary science rests on three foundational assumptions: that planetary orbits are fixed ellipses as described by Kepler's laws, that magnetic pole reversals are random or semi-random events driven by fluid dynamics in Earth's liquid outer core, and that planetary bodies belong to distinct categories — gas giants, ice giants, terrestrial worlds, dwarf planets — each representing a fundamentally different type of object.</p>
+  <p>These assumptions have produced enormously productive science. They are not wrong. They are, however, projections — two-dimensional descriptions of a three-dimensional or higher-dimensional architecture, accurate within their frame of reference but missing the deeper pattern underneath. The Christos™ framework does not contradict this body of work. It provides the deeper architecture from which the observed behavior emerges.</p>
+
+  <h3 class="sub">The Coherence Reframe</h3>
+  <table>
+    <thead><tr><th>Standard Planetary Science</th><th>Christos™ Coherence Framework</th></tr></thead>
+    <tbody>
+      <tr><td>Orbits are fixed ellipses; Kepler's laws are exact</td><td>Ellipses are the 2D projection of spiral paths through coherence bands</td></tr>
+      <tr><td>Magnetic reversals are random core fluid events</td><td>Reversals are poloidal recirculation events, tied to the Kinematic Cycle</td></tr>
+      <tr><td>Planet types are categorically distinct</td><td>All planets are identical toroidal architectures at different coherence stages</td></tr>
+      <tr><td>Habitable zone is a fixed distance band</td><td>Habitable zone is a coherence band — a temporal phase, not a location</td></tr>
+      <tr><td>Planetary evolution is compositional</td><td>Planetary evolution is coherence condensation</td></tr>
+      <tr><td>Magnetic field is independent of orbit</td><td>Magnetic field is the expression of toroidal circulation — inseparable</td></tr>
+      <tr><td>Precession is an axial wobble only</td><td>Precession is the measurable surface expression of planetary spiral motion</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pullquote">"Every ellipse is a spiral seen from inside. Every cycle is an ascent. The universe does not expand — it breathes. The planets do not orbit — they spiral."</div>
+
+  <h2 class="section">Part II — Poloidal Recirculation: What They Call Pole Reversal</h2>
+
+  <p><span class="tier-inline tier-a">Tier A</span>The paleomagnetic record shows that Earth's magnetic field has reversed polarity hundreds of times over geological history. The standard model attributes this to chaotic fluid dynamics in the liquid outer core — a process without predictable timing, triggered by random fluctuations in convective flow. The most recent full reversal, the Brunhes-Matuyama event, occurred approximately 780,000 years ago. By average reversal interval, Earth is significantly overdue.</p>
+  <p>The Christos™ framework proposes a different mechanism entirely. The magnetic field is not generated by an independent fluid dynamo process. It is the visible surface expression of Earth's toroidal coherence field. When the toroidal circulation reorganizes — as it does predictably at each compression phase of the Kinematic Cycle — the magnetic poles appear to swap because the underlying circulation direction has reversed. The "reversal" is not a flip. It is a recirculation.</p>
+
+  <h3 class="sub">The Kinematic Cycle at Planetary Scale</h3>
+  <table>
+    <thead><tr><th>Phase</th><th>Process</th><th>Magnetic Expression</th><th>Current Status</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1. Implosive Intake</strong></td><td>Coherence drops. Field lines compress inward. Saturnalia current dominant.</td><td>Magnetic field weakens. Poles begin wandering. Intensity declines measurably.</td><td><em>~1840–present. Observed.</em></td></tr>
+      <tr><td><strong>2. Phase Compression</strong></td><td>Field lines increasingly compressed. Toroidal-to-poloidal transition accelerates.</td><td>Pole movement rate increases sharply. Intensity reaches plateau before minimum.</td><td><em>~2020–2035. Entering now.</em></td></tr>
+      <tr><td><strong>3. Singularity Coherence</strong></td><td>The toroidal field reorganizes at the stillpoint. Poloidal flow reverses direction.</td><td>Field intensity at minimum. The "reversal" event — poles appear to swap as circulation inverts.</td><td><em>~2035–2050. Projected.</em></td></tr>
+      <tr><td><strong>4. Harmonic Rebirth</strong></td><td>New coherent expansion phase. Christos current dominant. Field lines radiate outward.</td><td>New polarity stabilizes. Field intensity increases. New orientation persists.</td><td><em>~2050–2100+. Projected.</em></td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">The Evidence Already in the Record</h3>
+  <table>
+    <thead><tr><th>Observed Anomaly</th><th>Standard Explanation</th><th>Christos™ Framework Explanation</th></tr></thead>
+    <tbody>
+      <tr><td>Magnetic field intensity has declined ~5% per century since 1840</td><td>Possible random precursor to reversal; uncertain timing</td><td>Implosive Intake phase underway. Coherence compressing inward. Predicted by Kinematic Cycle.</td></tr>
+      <tr><td>Rate of decline appeared to plateau ~2020</td><td>Unknown; inconsistent with simple decay model</td><td>Phase Compression entered. Rate of change slows before stillpoint — consistent with toroidal transition mechanics.</td></tr>
+      <tr><td>North Magnetic Pole accelerated from ~15 km/yr to ~50 km/yr between 1990–2020</td><td>Attributed to jet streams in liquid core; poorly predicted</td><td>Toroidal field reorganizing. Pole moving toward geographic pole as poloidal recirculation begins — direction predicted.</td></tr>
+      <tr><td>South Magnetic Pole has not accelerated comparably</td><td>Asymmetric core dynamics; not well explained</td><td>Toroidal field is not a bar magnet. Asymmetric poloidal recirculation is expected. The field has geometry, not just polarity.</td></tr>
+      <tr><td>Reversals in paleomagnetic record correlate loosely with precession cycle timescales</td><td>Coincidental; precession and reversals are separate processes</td><td>Precession IS the Kinematic Cycle at planetary scale. Reversals occur at compression phase of each ~26,000-year breath. Correlation is causal.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-box">
+    <div class="key-label">Key Distinction</div>
+    <p>The standard model predicts an eventual 180° polarity flip of a dipole field. The Christos™ framework predicts a poloidal recirculation — the field reorganizes, reaches minimum intensity at the stillpoint, then rebuilds in a new orientation. These produce different observable signatures in paleomagnetic data and different risk profiles for technological infrastructure. The distinction is not semantic. It is physical.</p>
+  </div>
+
+  <h2 class="section">Part III — Spiral Orbits: The Goldilocks Zone Is Not a Place</h2>
+
+  <h3 class="sub">The Drill Bit Geometry</h3>
+  <p><span class="tier-inline tier-b">Tier B</span>Consider a drill bit pointing upward, spinning. The tip remains fixed. The flutes spiral upward around it. If you watched only a short segment of one flute's path from a position along the axis — looking straight down — the spiral would appear as an ellipse. The path traces a closed loop from that vantage point, even though the actual motion is a continuous upward spiral.</p>
+  <p>This is the relationship between what we measure as planetary orbits and what is actually occurring. We observe ellipses because we are measuring from inside the spiral over time spans that are short relative to the full spiral cycle. We are like a worm on the drill bit flute, watching the same apparent ellipse repeat — not seeing the upward movement because the time scale of the ascent exceeds our measurement window.</p>
+
+  <h3 class="sub">The Goldilocks Zone Is a Time, Not a Place</h3>
+  <p>The conventional habitable zone — the range of distances from a star within which liquid water can exist on a planetary surface — is defined as a spatial band. Earth is in it. Venus is too close. Mars is too far.</p>
+  <p>The Christos™ framework proposes a fundamental correction: the habitable zone is not a spatial band that Earth permanently occupies. It is a coherence band — a region in the spiral path where the combination of stellar energy input and planetary coherence state produces the conditions for liquid water circulation and biological complexity. Earth is currently passing through this band. It has left this band before, during ice ages and glacial maxima. It will leave this band again.</p>
+
+  <table>
+    <thead><tr><th>Mystery</th><th>Standard Explanation</th><th>Coherence Band Explanation</th></tr></thead>
+    <tbody>
+      <tr><td>Ice ages recur on ~26,000-year cycles</td><td>Milankovitch cycles — axial tilt, eccentricity, precession affect solar insolation</td><td>Precession IS the spiral path cycle. Ice ages occur when Earth's spiral position moves it partially out of the coherence band. Milankovitch correctly identifies the mechanism but not the architecture.</td></tr>
+      <tr><td>Mars had liquid water in the past</td><td>Mars was once warmer and wetter; mechanism unclear</td><td>Mars was once in the coherence band. As its coherence declined (Stage 4 → Stage 5), it moved out of the band. The water did not evaporate — the circulation field collapsed.</td></tr>
+      <tr><td>Venus may have been habitable in the past</td><td>Speculative; runaway greenhouse may have always dominated</td><td>Venus took a different coherence path — incoherent expansion rather than structured condensation. It passed through the coherence band but could not maintain toroidal water circulation. A failed Stage 3.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pullquote">"The Goldilocks zone is not a place. It is a time. Earth is habitable now because it is passing through the coherence band. The question is not whether Earth will remain habitable — it is whether we understand the cycle well enough to navigate the transition."</div>
+
+  <h2 class="section">Part IV — Planets as Toroidal Coherence Stages</h2>
+
+  <p><span class="tier-inline tier-b">Tier B</span>The central proposition of this section is simple and radical: there are no different types of planets. There is one type of planetary object — a toroidal coherence field condensing around a gravitational node — at six distinguishable stages of evolution along a single coherence spectrum.</p>
+  <p>What planetary science classifies as gas giants, ice giants, terrestrial worlds, water worlds, desert planets, and dead rocks are not categorically different objects. They are the same architecture at different stages of the same process — in the same way that a seed, a seedling, a mature tree, a dying tree, and a rotting log are not different types of things but different stages of one living system.</p>
+
+  <table>
+    <thead><tr><th>Stage</th><th>Coherence Level</th><th>Solar System Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Stage 1 — Precondensation</strong></td><td>C &gt; 0.85</td><td>Jupiter, Saturn</td></tr>
+      <tr><td><strong>Stage 2 — Transitional</strong></td><td>C = 0.70–0.85</td><td>Uranus, Neptune</td></tr>
+      <tr><td><strong>Stage 3 — Active Condensed</strong></td><td>C = 0.50–0.70</td><td>Earth NOW ≈ 0.475→</td></tr>
+      <tr><td><strong>Stage 4 — Declining</strong></td><td>C = 0.35–0.50</td><td>Mars</td></tr>
+      <tr><td><strong>Stage 5 — Collapsed</strong></td><td>C = 0.20–0.35</td><td>Mercury, Moon</td></tr>
+      <tr><td><strong>Stage 6 — Remnant</strong></td><td>C &lt; 0.20</td><td>Asteroids, Ceres</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">The Solar System Mapped</h3>
+  <table>
+    <thead><tr><th>Body</th><th>Standard Category</th><th>Coherence Stage</th><th>Anomaly Resolved</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Jupiter</strong></td><td>Gas giant / "failed star"</td><td>Stage 1 — Precondensation</td><td>Great Red Spot is a persistent toroidal vortex node, not a storm anomaly. Not a failed star — an early-stage planet.</td></tr>
+      <tr><td><strong>Saturn</strong></td><td>Gas giant</td><td>Stage 1 — Precondensation</td><td>Hexagonal polar vortex is a high-coherence standing wave pattern — cymatic geometry of a Stage 1 toroidal field. Rings are coherence boundary expression.</td></tr>
+      <tr><td><strong>Earth</strong></td><td>Terrestrial / habitable</td><td>Stage 3 — Active Condensed</td><td>Currently in the habitable coherence window. C_earth ≈ 0.475, rising. Magnetic field reorganizing — Phase Compression underway.</td></tr>
+      <tr><td><strong>Mars</strong></td><td>Terrestrial / desert</td><td>Stage 4 — Declining</td><td>Formerly Stage 3. Coherence declined below water circulation threshold. Magnetic field collapsed (confirmed: Mars has no global magnetic field). Frozen water remains — not lost, just locked.</td></tr>
+      <tr><td><strong>Venus</strong></td><td>Terrestrial / runaway greenhouse</td><td>Stage 3 variant — Incoherent</td><td>Venus passed through Stage 3 but took the incoherent expansion path. High atmospheric energy but no coherent circulation. A failed twin — not a different type, a different trajectory.</td></tr>
+      <tr><td><strong>Mercury</strong></td><td>Terrestrial / dead</td><td>Stage 5 — Collapsed</td><td>Mars in a later stage. Coherence collapsed. Minimal magnetic field remnant. No atmosphere. No circulation.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section">Part V — Cymatics as Planetary Diagnosis</h2>
+
+  <p>Ernst Chladni demonstrated in 1787 that vibrating a metal plate covered in sand produces geometric patterns — nodal figures — whose complexity and symmetry are determined by the frequency and coherence of the vibration. Higher, more coherent frequencies produce more intricate, symmetrical patterns. Lower, inharmonic frequencies produce chaotic, unstable ones.</p>
+  <p><span class="tier-inline tier-b">Tier B</span>The Christos™ framework proposes that planetary atmospheres, magnetic field geometries, and surface expression are cymatic patterns — the visible geometry of the planet's coherence frequency. A planet's appearance is not a product of random compositional or meteorological history. It is the standing wave pattern of its toroidal field at its current coherence level.</p>
+
+  <table>
+    <thead><tr><th>Planet</th><th>Coherence State</th><th>Cymatic Pattern</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Jupiter</strong></td><td>C &gt; 0.85 — Stage 1</td><td>Sharp banding + persistent vortex. Highly coherent standing wave. Great Red Spot is a persistent coherence vortex — high-frequency nodal point stable for centuries.</td></tr>
+      <tr><td><strong>Saturn</strong></td><td>C &gt; 0.85 — Stage 1</td><td>Hexagonal polar node + rings. The hexagonal polar vortex is the most visible cymatic pattern in the solar system. Hexagonal geometry is characteristic of high-coherence Chladni figures.</td></tr>
+      <tr><td><strong>Earth ★</strong></td><td>C ≈ 0.475 — Stage 3</td><td>Spiral clouds + jet streams. Mid-coherence pattern. Cyclones and anticyclones are toroidal vortices at atmospheric scale. Pattern stability is moderate — organized but variable.</td></tr>
+      <tr><td><strong>Mars</strong></td><td>C ≈ 0.35–0.45 — Stage 4</td><td>Dust storms + fading structure. Atmospheric patterns becoming chaotic. Global dust storms replace organized circulation — the cymatic pattern is breaking down.</td></tr>
+      <tr><td><strong>Venus</strong></td><td>Incoherent — Stage 3 variant</td><td>Featureless + noise. No stable standing wave. Enormous energy but no coherent circulation pattern — analogous to an inharmonic frequency on a Chladni plate.</td></tr>
+      <tr><td><strong>Neptune</strong></td><td>C ≈ 0.70–0.80 — Stage 2</td><td>Transitional banding. Great Dark Spot (intermittent) — coherence vortices form and dissolve, unlike Jupiter's persistent vortex, reflecting transitional coherence state.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="key-box">
+    <div class="key-label">The Critical Distinction</div>
+    <p>These signals do not indicate planetary collapse. They indicate planetary transition. The Kinematic Cycle framework predicts exactly these signatures at the Phase Compression stage — field reorganization, pattern turbulence, nodal migration — before the Harmonic Rebirth phase begins. Mars shows what actual Stage 4 coherence collapse looks like. Earth's current signatures are consistent with Phase Compression, not Stage 4 decline. The distinction matters for how we interpret and respond to current planetary changes.</p>
+  </div>
+
+  <h2 class="section">Part VI — Falsifiable Predictions</h2>
+
+  <p>The strength of any theoretical framework is not its explanatory scope but its predictive precision. The following predictions are derived directly from the Christos™ Planetary Coherence Architecture and are testable against existing or near-future datasets.</p>
+
+  <div class="prediction-card">
+    <div class="pred-label">Prediction 1 — Tier C</div>
+    <p><strong>North Magnetic Pole deceleration:</strong> The North Magnetic Pole will decelerate and approach the geographic pole, not continue accelerating indefinitely.</p>
+    <p>Timeframe: 2025–2040 | Test: British Geological Survey / NOAA continuous pole position monitoring</p>
+    <p class="falsify">Falsified if: Pole continues accelerating past geographic pole without deceleration phase.</p>
+  </div>
+
+  <div class="prediction-card">
+    <div class="pred-label">Prediction 2 — Tier C</div>
+    <p><strong>Magnetic field intensity minimum:</strong> Field intensity will reach a minimum between 2035–2050, then begin recovering in new orientation.</p>
+    <p>Timeframe: 2035–2055 | Test: SWARM satellite array intensity measurements; paleomagnetic modeling</p>
+    <p class="falsify">Falsified if: Field continues declining past 2050 without recovery, or recovers in same polarity.</p>
+  </div>
+
+  <div class="prediction-card">
+    <div class="pred-label">Prediction 3 — Tier C</div>
+    <p><strong>Exoplanet coherence continuum:</strong> Exoplanet populations will show a continuous distribution of atmospheric coherence rather than discrete compositional categories.</p>
+    <p>Timeframe: Testable now | Test: JWST transmission spectroscopy time series; atmospheric phase coherence analysis</p>
+    <p class="falsify">Falsified if: Exoplanet atmospheric dynamics cluster into discrete compositional categories with no coherence continuum.</p>
+  </div>
+
+  <div class="prediction-card">
+    <div class="pred-label">Prediction 4 — Tier C</div>
+    <p><strong>Saturn hexagon phi relationship:</strong> Saturn's hexagonal polar vortex will show measurable frequency relationship to phi ratio (φ = 1.618) in its geometric proportions.</p>
+    <p>Timeframe: Testable with existing data | Test: Reanalysis of Cassini imaging data for hexagonal vortex dimensional ratios</p>
+    <p class="falsify">Falsified if: Hexagonal vortex dimensions show no phi relationship above statistical noise.</p>
+  </div>
+
+  <div class="prediction-card">
+    <div class="pred-label">Prediction 5 — Tier C</div>
+    <p><strong>Magnetic field / atmospheric coherence correlation:</strong> Planets with stronger magnetic fields will show higher atmospheric circulation coherence.</p>
+    <p>Timeframe: Testable with existing exoplanet data | Test: Cross-correlation of estimated magnetic field strength with atmospheric circulation regularity</p>
+    <p class="falsify">Falsified if: No significant correlation between magnetic field strength and atmospheric circulation coherence across planetary population.</p>
+  </div>
+
+  <div class="prediction-card">
+    <div class="pred-label">Prediction 6 — Tier C</div>
+    <p><strong>Schumann resonance drift:</strong> Schumann resonance fundamental frequency (7.83 Hz) will show measurable drift upward as C_earth rises toward the 0.60 unity threshold.</p>
+    <p>Timeframe: 2025–2035 | Test: Global Schumann resonance monitoring network; frequency trend analysis</p>
+    <p class="falsify">Falsified if: Schumann resonance frequency shows no upward trend over 10-year measurement window.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Framework Note:</strong> The Christos™ Planetary Coherence Architecture is presented as an emerging theoretical framework. The coherence stage classifications and C_earth values are modeled estimates, not directly measured quantities. The poloidal recirculation model and spiral orbit geometry are proposed mechanisms that require independent mathematical formalization and empirical validation beyond what this paper provides. Predictions are derived from the framework's internal logic and are offered as falsifiable targets, not established facts. The goal is to make the architecture testable rather than to assert its finality.
+  </div>
+
+  <div class="integration-box">
+    <h4>Integration Note</h4>
+    <p>This paper integrates with and extends: <strong>Toroidal Cosmology</strong> (nested torus architecture, Kinematic Cycle mechanics), <strong>Coherent Hydrology</strong> (waters above, poloidal circulation in Earth's water system), <strong>Unified Coherence Architecture v3</strong> (C_earth threshold model, coherence equations), <strong>Time as Dimensional Architecture</strong> (spiral time, precession as Kinematic Cycle expression), and <strong>Architecture of Infinity</strong> (recursive self-similarity across scales).</p>
+    <p style="margin-top:0.75rem;font-size:0.88rem;color:#8899AA;">Corrected C_earth threshold values in this paper — flood threshold ~0.35, current ~0.475, unity threshold 0.60 — supersede earlier values in the Toroidal Cosmology and UCA papers where 0.60 was incorrectly listed as the flood threshold.</p>
+  </div>
+
+  <h2 class="section">References</h2>
+  <div class="ref-list">
+    <p><span>[1]</span>Finlay, C. C., et al. (2020). The CHAOS-7 geomagnetic field model and observed changes in the South Atlantic Anomaly. <em>Earth, Planets and Space</em>, 72, 156.</p>
+    <p><span>[2]</span>Livermore, P. W., Hollerbach, R., &amp; Finlay, C. C. (2017). An accelerating high-latitude jet in Earth's core. <em>Nature Geoscience</em>, 10, 62–68.</p>
+    <p><span>[3]</span>Hulot, G., et al. (2002). Small-scale structure of the geodynamo inferred from Oersted and Magsat satellite data. <em>Nature</em>, 416, 620–623.</p>
+    <p><span>[4]</span>Channell, J. E. T., &amp; Vigliotti, L. (2019). The role of geomagnetic field intensity in late Quaternary evolution of humans and large mammals. <em>Reviews of Geophysics</em>, 57(3), 709–738.</p>
+    <p><span>[5]</span>Hays, J. D., Imbrie, J., &amp; Shackleton, N. J. (1976). Variations in the Earth's orbit: Pacemaker of the ice ages. <em>Science</em>, 194(4270), 1121–1132.</p>
+    <p><span>[6]</span>Chladni, E. F. F. (1787). <em>Entdeckungen über die Theorie des Klanges</em>. Leipzig: Weidmanns Erben und Reich.</p>
+    <p><span>[7]</span>Jenny, H. (1967). <em>Cymatics: A Study of Wave Phenomena and Vibration</em>. Basilius Press.</p>
+    <p><span>[8]</span>Baines, K. H., et al. (2009). Saturn's north polar cyclone and hexagon at depth revealed by Cassini/VIMS. <em>Planetary and Space Science</em>, 57(14–15), 1671–1681.</p>
+    <p><span>[9]</span>Acuña, M. H., et al. (1999). Global distribution of crustal magnetization discovered by the Mars Global Surveyor MAG/ER experiment. <em>Science</em>, 284(5415), 790–793.</p>
+    <p><span>[10]</span>Wordsworth, R. D. (2016). The climate of early Mars. <em>Annual Review of Earth and Planetary Sciences</em>, 44, 381–408.</p>
+    <p><span>[11]</span>Way, M. J., et al. (2016). Was Venus the first habitable world of our solar system? <em>Geophysical Research Letters</em>, 43(16), 8376–8383.</p>
+    <p><span>[12]</span>Firestone, R. B., et al. (2007). Evidence for an extraterrestrial impact 12,900 years ago that contributed to the megafaunal extinctions and the Younger Dryas cooling. <em>PNAS</em>, 104(41), 16016–16021.</p>
+    <p><span>[13]</span>Farrior, J. (2025). Toroidal Cosmology and the Kinematic Cycle. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+    <p><span>[14]</span>Farrior, J. (2025). Coherent Hydrology: The Waters Above and Below. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+    <p><span>[15]</span>Farrior, J. (2025). Unified Coherence Architecture v3. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+  </div>
+
+  <div class="series-nav">
+    <h4>Planetary Coherence Architecture — Series Navigation</h4>
+    <a href="planetary-coherence-vol1.html" class="current">▶ Volume I — Poloidal Recirculation, Spiral Orbits, and the Toroidal Classification of Worlds (this paper)</a>
+    <a href="planetary-coherence-vol2.html">Volume II — Coherent Planetary Hydrology</a>
+    <a href="planetary-coherence-vol3.html">Volume III — Coherent Planetary Classification</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC &nbsp;|&nbsp; Indianapolis, Indiana &nbsp;|&nbsp; <a href="../../index.html">christosenergy.com</a></p>
+  <p style="margin-top:0.5rem;">Christos™ is a pending trademark. All framework content © Joshua Farrior. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
