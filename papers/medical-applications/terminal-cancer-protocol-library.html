@@ -1,27 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terminal Cancer Reversal Protocol Library | CM-TCL-01 | Christos&#8482;</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}.resolution-table{border:1px solid rgba(58,175,175,0.15);}.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}.bullet-list{margin:12px 0 18px 0;list-style:none;}.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;}}</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal Cancer Reversal Protocol Library | Christos™ Coherence Medicine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#08111E;--nav:#0A1628;--gold:#C9A84C;--teal:#3AAFAF;--white:#FFFFFF;--body:#D8D0C0;--muted:#8A9BB0;--card:#0D1E35;--border:rgba(201,168,76,0.25);--red:#C04444;--green:#3A8F5A;--amber:#C47A20;--purple:#7A4FAF}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg)!important;color:var(--body);font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1.8}
+    a{color:var(--gold);text-decoration:none}a:hover{color:var(--teal)}
+    nav{background:var(--nav)!important;border-bottom:2px solid var(--gold);padding:0 2rem;position:sticky;top:0;z-index:100}
+    .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .nav-brand{font-family:'Cinzel',serif;color:var(--gold);font-size:1.1rem;letter-spacing:0.08em}
+    .nav-links{display:flex;gap:1.5rem;list-style:none}
+    .nav-links a{font-family:'Raleway',sans-serif;font-size:0.85rem;font-weight:500;color:var(--body);letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+    .nav-links a:hover{color:var(--gold)}
+    .hero{background:linear-gradient(160deg,#0A1628 0%,#08111E 60%,#0D1E35 100%)!important;border-bottom:1px solid var(--border);padding:5rem 2rem 4rem;text-align:center}
+    .series-tag{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+    .hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:0.75rem}
+    .hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--gold);margin-bottom:1.5rem}
+    .hero-desc{max-width:680px;margin:0 auto 2rem;color:var(--muted);font-size:1rem;line-height:1.7;font-family:'Raleway',sans-serif;font-weight:300}
+    .hero-meta{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;font-family:'Raleway',sans-serif;font-size:0.82rem;color:var(--muted)}
+    .disclaimer{background:rgba(192,68,68,0.08)!important;border:1px solid rgba(192,68,68,0.35);border-radius:8px;padding:1.5rem 2rem;margin:2rem auto;max-width:900px}
+    .disclaimer-title{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem}
+    .disclaimer p{font-size:0.92rem;color:var(--body);line-height:1.7;font-family:'Raleway',sans-serif;font-weight:300}
+    .claim-legend{background:var(--card)!important;border:1px solid var(--border);border-radius:8px;padding:1.5rem 2rem;margin:0 auto 2rem;max-width:900px}
+    .claim-legend-title{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+    .claim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.75rem}
+    .claim-item{padding:0.5rem 0.75rem;border-radius:4px;font-family:'Raleway',sans-serif;font-size:0.82rem;font-weight:500}
+    .claim-ep{background:rgba(58,143,90,0.15)!important;border-left:3px solid var(--green);color:var(--green)}
+    .claim-ed{background:rgba(58,175,175,0.12)!important;border-left:3px solid var(--teal);color:var(--teal)}
+    .claim-pr{background:rgba(196,122,32,0.15)!important;border-left:3px solid var(--amber);color:var(--amber)}
+    .claim-hy{background:rgba(122,79,175,0.15)!important;border-left:3px solid var(--purple);color:var(--purple)}
+    .content{max-width:900px;margin:0 auto;padding:3rem 2rem}
+    .content h2{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--gold);margin:3rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+    .content h3{font-family:'Cinzel',serif;font-size:1.15rem;color:var(--teal);margin:2rem 0 0.75rem}
+    .content p{margin-bottom:1.2rem;font-size:1rem;line-height:1.85;color:var(--body)}
+    .content ul,.content ol{padding-left:1.5rem;margin-bottom:1.2rem}
+    .content li{margin-bottom:0.5rem;font-size:1rem;color:var(--body);line-height:1.75}
+    .part-header{background:linear-gradient(135deg,#0D1E35 0%,#0A1628 100%)!important;border:1px solid var(--border);border-radius:8px;padding:1.5rem 2rem;margin:2.5rem 0 2rem;text-align:center}
+    .part-header h2{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold);margin:0;border:none;padding:0}
+    .part-header p{font-family:'Raleway',sans-serif;font-size:0.85rem;color:var(--muted);margin:0.4rem 0 0}
+    .data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-family:'Raleway',sans-serif;font-size:0.88rem}
+    .data-table th{background:#0A1628!important;color:var(--gold);font-weight:600;padding:0.75rem 1rem;text-align:left;border-bottom:2px solid var(--gold);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase}
+    .data-table td{padding:0.65rem 1rem;border-bottom:1px solid rgba(201,168,76,0.1);color:var(--body);vertical-align:top;line-height:1.6}
+    .data-table tr:nth-child(even) td{background:rgba(13,30,53,0.5)!important}
+    .callout{background:rgba(13,30,53,0.8)!important;border:1px solid var(--teal);border-radius:8px;padding:1.5rem 2rem;margin:2rem 0}
+    .callout-title{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.75rem}
+    .callout p{font-size:0.97rem;margin-bottom:0.5rem}
+    .callout ul{padding-left:1.25rem}
+    .callout li{font-size:0.95rem;margin-bottom:0.4rem}
+    .quote{border-left:3px solid var(--gold);padding:1rem 1.5rem;margin:2rem 0;background:rgba(201,168,76,0.05)!important;border-radius:0 6px 6px 0}
+    .quote p{font-style:italic;color:var(--gold);font-size:1.05rem;line-height:1.75;margin:0}
+    .protocol-card{background:var(--card)!important;border:1px solid var(--border);border-radius:10px;padding:1.75rem 2rem;margin:1.5rem 0}
+    .protocol-name{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--white);margin-bottom:0.4rem}
+    .protocol-tag{font-family:'Raleway',sans-serif;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;font-weight:600}
+    .protocol-card p{font-size:0.97rem;margin-bottom:0.6rem}
+    .protocol-card ul{padding-left:1.25rem}
+    .protocol-card li{font-size:0.95rem;margin-bottom:0.4rem}
+    .proprietary{background:rgba(201,168,76,0.06)!important;border:1px solid rgba(201,168,76,0.3);border-radius:6px;padding:1rem 1.5rem;margin:1rem 0;font-family:'Raleway',sans-serif;font-size:0.88rem;color:var(--gold);font-style:italic}
+    footer{background:var(--nav)!important;border-top:2px solid var(--gold);padding:3rem 2rem;text-align:center;margin-top:5rem}
+    .footer-brand{font-family:'Cinzel',serif;color:var(--gold);font-size:1.1rem;margin-bottom:0.5rem}
+    .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--teal);margin-bottom:1rem}
+    .footer-copy{font-family:'Raleway',sans-serif;font-size:0.78rem;color:var(--muted)}
+    @media(max-width:768px){.nav-links{display:none}.hero{padding:3rem 1.25rem 2.5rem}.content{padding:2rem 1.25rem}.data-table{font-size:0.78rem}.data-table th,.data-table td{padding:0.5rem 0.6rem}.claim-grid{grid-template-columns:1fr 1fr}}
+  </style>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
-<div class="paper-header"><div class="paper-header-inner">
-<div class="ph-eyebrow">Christos&#8482; Coherence Medicine Series &middot; Oncology &middot; 2026</div>
-<div class="open-badge">Abstract Only &#8212; Full Specs: NDA Required</div>
-<h1 class="paper-title">Terminal Cancer Reversal Protocol Library</h1>
-<p class="paper-subtitle">Coherence-Based Frameworks for the Most Treatment-Resistant Cancers &#8212; Covering 50+ Cancer Types Across Seven Device Family Categories</p>
-<div class="paper-meta"><div class="pm-item"><strong>Author</strong>Joshua Farriar</div><div class="pm-item"><strong>Series</strong>Christos&#8482; Coherence Medicine Series &middot; Oncology &middot; 2026</div><div class="pm-item"><strong>ID</strong>CM-TCL-01</div><div class="pm-item"><strong>Status</strong>Abstract Only</div></div>
-</div></div>
-<div class="paper-layout">
-<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links"><li><a href="#abstract">Abstract</a></li><li><a href="#access">Full Access</a></li></ul></aside>
-<article class="paper-body">
-<a href="../../library.html" class="collab-btn">&#8592; Back to Library</a><div class="abstract-block" id="abstract"><div class="abstract-label">Abstract</div><p class="abstract-text">This document presents the Christos&#8482; Terminal Cancer Reversal Protocol Library &#8212; a comprehensive coherence-based framework addressing the cancers for which conventional oncology has the fewest answers: those characterized by treatment resistance, diffuse metastatic spread, blood-brain barrier penetration challenges, dense stroma preventing drug delivery, or rapid clonal evolution that defeats targeted therapies. The library is organized in three parts. Part I presents the foundational coherence model of cancer &#8212; the unified framework through which all cancer types are understood as coherence failures at the cellular and field level. Part II presents five detailed cancer-specific protocols: Glioblastoma (GBM), Pancreatic Adenocarcinoma, Triple-Negative Breast Cancer (TNBC), Small Cell Lung Cancer (SCLC), and Hepatocellular Carcinoma (HCC). Part III presents the comprehensive taxonomy covering 50+ cancer types organized by seven device family categories, with the full engineering specification package for each device family. The unifying principle across all protocols is the five-pillar architecture: Blueprint Restoration, Field Coherence, Material Support, Localized Frequency Therapy, and Systemic Immune Restoration.</p></div><div style="background:rgba(201,168,76,0.06) !important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:18px 24px;margin-bottom:32px;"><p style="font-family:Raleway,sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;">Clinical Disclaimer</p><p style="font-family:Raleway,sans-serif;font-size:0.8rem;color:rgba(216,208,192,0.7) !important;line-height:1.7;margin:0;">This paper is intended for research, educational, and investor evaluation purposes only. It does not constitute medical advice, diagnosis, or treatment for any individual patient. No Christos&#8482; device has received regulatory clearance from any health authority. The Christos&#8482; protocol is designed as a complementary adjunct to — not a replacement for — professional medical care. All device-specific therapeutic claims carry [HY] Hypothesis classification and require experimental validation before clinical conclusions may be drawn.</p></div><div style="background:rgba(8,17,30,0.8) !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:18px 22px;margin-bottom:32px;"><p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:10px;">Claim Classification Legend</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;"><div style="font-family:Raleway,sans-serif;font-size:0.75rem;color:#D8D0C0 !important;"><strong style="color:#C9A84C !important;">[EP]</strong> Established Principle — peer-reviewed literature</div><div style="font-family:Raleway,sans-serif;font-size:0.75rem;color:#D8D0C0 !important;"><strong style="color:#C9A84C !important;">[ED]</strong> Engineering Design — specified, not yet validated</div><div style="font-family:Raleway,sans-serif;font-size:0.75rem;color:#D8D0C0 !important;"><strong style="color:#C9A84C !important;">[PR]</strong> Prototype — built or bench-tested</div><div style="font-family:Raleway,sans-serif;font-size:0.75rem;color:#D8D0C0 !important;"><strong style="color:#C9A84C !important;">[HY]</strong> Hypothesis — requires experimental validation</div></div></div><div id="access" style="background:rgba(201,168,76,0.08) !important;border:1px solid rgba(201,168,76,0.25);border-radius:6px;padding:28px 32px;margin-top:40px;text-align:center;"><p style="font-family:Cinzel,serif;font-size:1.05rem;color:#FFFFFF !important;margin-bottom:12px;">Full Technical Architecture</p><p style="font-family:Cormorant Garamond,serif;font-size:1rem;color:#D8D0C0 !important;margin-bottom:20px;">Complete engineering specifications, device schematics, protocols, and implementation architecture are available through a protected collaboration pathway.</p><a href="../../contact.html" style="font-family:Raleway,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;background:#C9A84C !important;color:#08111E !important;padding:12px 28px;border-radius:2px;text-decoration:none;display:inline-block;">Request Access</a></div><div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4) !important;">&#169; 2026 Joshua Farriar &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923</p></div>
-</article>
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">Christos™ Energy</span>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../papers.html">Papers</a></li>
+      <li><a href="../../coherence-medicine.html">Coherence Medicine</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="series-tag">Christos™ Coherence Medicine Series · Oncology · Paper 3</div>
+  <h1>Terminal Cancer Reversal Protocol Library</h1>
+  <div class="hero-sub">Coherence-Based Frameworks for the Most Treatment-Resistant Cancers</div>
+  <p class="hero-desc">Covering 50+ cancer types across seven device family categories — unified by the five-pillar coherence framework and the principle that every cancer is, at its root, a coherence failure.</p>
+  <div class="hero-meta">
+    <span>&#9632; Author: Joshua Farrior</span>
+    <span>&#9632; Christos™ Energy, LLC</span>
+    <span>&#9632; 2026</span>
+    <span>&#9632; Public Research Edition</span>
+  </div>
+</section>
+
+<div class="content">
+  <div class="disclaimer">
+    <div class="disclaimer-title">&#9888; Clinical Disclaimer</div>
+    <p>All cancers described in this document are serious medical conditions requiring immediate professional oncological care. This document must not be used as a substitute for professional medical care. The Christos™ protocols are research frameworks, not validated clinical treatments. Where conventional treatments exist and are accessible, patients should receive them. All [HY] claims require experimental validation.</p>
+  </div>
+  <div class="claim-legend">
+    <div class="claim-legend-title">Claim Classification</div>
+    <div class="claim-grid">
+      <div class="claim-item claim-ep">[EP] Established Principle</div>
+      <div class="claim-item claim-ed">[ED] Engineering Design</div>
+      <div class="claim-item claim-pr">[PR] Prototype</div>
+      <div class="claim-item claim-hy">[HY] Hypothesis</div>
+    </div>
+  </div>
+
+  <h2>Abstract</h2>
+  <p>This document presents the Christos™ Terminal Cancer Reversal Protocol Library — a comprehensive coherence-based framework addressing the cancers for which conventional oncology has the fewest answers: those characterized by treatment resistance, diffuse metastatic spread, blood-brain barrier penetration challenges, dense stroma preventing drug delivery, or rapid clonal evolution that defeats targeted therapies.</p>
+  <p>The library is organized in three parts. Part I presents the foundational coherence model of cancer. Part II presents the five most detailed protocols: Glioblastoma, Pancreatic Adenocarcinoma, Triple-Negative Breast Cancer, Small Cell Lung Cancer, and Hepatocellular Carcinoma. Part III presents the comprehensive taxonomy covering 50+ cancer types organized by seven device family categories.</p>
+
+  <div class="part-header">
+    <h2>Part I: The Coherence Model of Cancer</h2>
+    <p>The unifying principle across all 50+ cancer protocols</p>
+  </div>
+
+  <h2>A Unified Understanding of Cancer [EP/HY]</h2>
+  <p>The conventional oncological understanding of cancer is well-established: cancer arises from accumulated somatic mutations in genes controlling cell proliferation, differentiation, and apoptosis. Driver mutations in oncogenes and tumor suppressor genes disrupt normal regulatory machinery. This model has produced the targeted therapy revolution.</p>
+  <p>The Christos™ framework proposes a complementary layer: that cancer is not merely a genetic event but a field event. The genetic mutation is the molecular correlate of a deeper disruption — a loss of coherence in the biological field of the affected organ or tissue. When the organ field loses coherence below a critical threshold, cells lose their positional identity and their participation in the collective biological project of the organism. [HY]</p>
+
+  <div class="quote"><p>The conventional view asks: which gene mutated? The coherence view asks: why did the field lose the ability to correct that mutation? Both questions matter. Both approaches have a role in reversal. [HY]</p></div>
+
+  <h2>The Five Pillars — Applied Universally</h2>
+  <p>Regardless of cancer type, all Christos™ protocols are organized across the same five pillars:</p>
+  <table class="data-table">
+    <thead><tr><th>Pillar</th><th>Function</th><th>Cancer-Specific Customization</th></tr></thead>
+    <tbody>
+      <tr><td>1 — Blueprint Restoration</td><td>Restore the morphogenic field blueprint of the affected tissue</td><td>Crystal type, frequency set, and device placement vary by organ and cancer type</td></tr>
+      <tr><td>2 — Field Coherence</td><td>Restore local and systemic coherence field supporting normal cellular behavior</td><td>Chamber protocols, PEMF frequencies, and coherence lock focus vary by site</td></tr>
+      <tr><td>3 — Material Support</td><td>Provide targeted nutritional, nutraceutical, and healing fluid support</td><td>Fluid formulation and nutraceutical stack customized by organ and mechanism</td></tr>
+      <tr><td>4 — Localized Frequency Therapy</td><td>Apply targeted frequency-based interventions to tumor site and surrounding field</td><td>Frequency set, wand placement, and mat configuration vary by organ</td></tr>
+      <tr><td>5 — Systemic Immune Restoration</td><td>Restore immune coherence and activation for whole-body tumor surveillance</td><td>Thymus resonator, vitamin D3, zinc, selenium, medicinal mushrooms — consistent across all protocols</td></tr>
+    </tbody>
+  </table>
+
+  <h2>The Universal Supplement Stack [EP]</h2>
+  <p>The following nutritional foundation applies across all cancer protocols and can be initiated immediately, today:</p>
+  <table class="data-table">
+    <thead><tr><th>Supplement</th><th>Dose</th><th>Evidence Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Vitamin D3</td><td>10,000 IU daily</td><td>Regulates T-cell and NK cell function; consistently low in cancer patients</td></tr>
+      <tr><td>Omega-3 (DHA/EPA)</td><td>4g daily</td><td>Anti-inflammatory; reduces tumor microenvironment immunosuppression</td></tr>
+      <tr><td>Zinc</td><td>30mg daily</td><td>T-cell development; NK cell function; enzyme cofactor for DNA repair</td></tr>
+      <tr><td>Selenium</td><td>200mcg daily</td><td>NK cell function; antioxidant; associated with reduced cancer progression</td></tr>
+      <tr><td>Curcumin (liposomal)</td><td>2g twice daily</td><td>Inhibits NF-kB, STAT3, VEGF; pro-apoptotic across multiple cancer types</td></tr>
+      <tr><td>EGCG (Green Tea Extract)</td><td>1g twice daily</td><td>Anti-angiogenic; inhibits VEGFR; pro-apoptotic</td></tr>
+      <tr><td>Quercetin</td><td>500mg twice daily</td><td>Synergistic with curcumin; anti-inflammatory; inhibits tumor microenvironment</td></tr>
+      <tr><td>Melatonin</td><td>20mg at night</td><td>NK cell activation; apoptosis induction; enhances chemotherapy efficacy</td></tr>
+      <tr><td>Turkey Tail + Reishi</td><td>2g daily combined</td><td>Beta-glucans modulate innate immunity; PSK survival benefit data</td></tr>
+      <tr><td>Probiotics</td><td>100B CFU daily</td><td>Gut microbiome diversity associated with immunotherapy response</td></tr>
+      <tr><td>NAC</td><td>600mg daily</td><td>Glutathione precursor; antioxidant; hepatoprotective</td></tr>
+      <tr><td>Berberine</td><td>500mg 3x daily</td><td>Inhibits multiple oncogenic pathways; crosses BBB</td></tr>
+    </tbody>
+  </table>
+
+  <div class="part-header">
+    <h2>Part II: The Five Detailed Protocols</h2>
+    <p>GBM · Pancreatic · Triple-Negative Breast · Small Cell Lung · Hepatocellular Carcinoma</p>
+  </div>
+
+  <div class="protocol-card">
+    <div class="protocol-name">Protocol 1: Glioblastoma (GBM)</div>
+    <div class="protocol-tag">Grade IV Astrocytoma — The Brain's Most Aggressive Cancer</div>
+    <p><strong>Why conventional treatment struggles:</strong> The blood-brain barrier blocks most systemic drugs. The tumor is diffuse, not a single mass. Glioma stem cells (GSCs) survive surgery and radiation and drive recurrence. Median survival with standard of care is 12–18 months.</p>
+    <p><strong>Coherence framework approach:</strong> Transcranial frequency delivery bypasses BBB challenges by delivering field-based therapy through the skull. Blueprint restoration targets the neural field. GSC differentiation is proposed to be forced via frequency sweep. [HY]</p>
+    <p><strong>Key evidence-based interventions:</strong></p>
+    <ul>
+      <li>Strict Ketogenic Diet — GBM cells are highly glucose-dependent; ketones do not fuel GBM efficiently [EP]</li>
+      <li>40 Hz Gamma Stimulation — MIT research 2016–2024 documents microglial activation and amyloid clearance at 40 Hz; neural plasticity [EP]</li>
+      <li>Lion's Mane Mushroom — 2g daily; stimulates NGF; induces differentiation in glioma cells in vitro [EP]</li>
+      <li>Berberine — 500mg 3x daily; inhibits glioma proliferation; induces autophagy in GBM cells; crosses BBB [EP]</li>
+      <li>Magnesium L-Threonate — 2g daily; crosses BBB; neuroprotective [EP]</li>
+    </ul>
+    <div class="proprietary">The Christos™ NeuroBand (NB-1) device and NeuroFlux formula are proprietary. Devices described by function only. Formula composition not disclosed. Licensing inquiries through christosenergy.com.</div>
+  </div>
+
+  <div class="protocol-card">
+    <div class="protocol-name">Protocol 2: Pancreatic Adenocarcinoma</div>
+    <div class="protocol-tag">The Disease With the Worst Prognosis in Solid Tumor Oncology</div>
+    <p><strong>Why conventional treatment struggles:</strong> Dense desmoplastic stroma physically prevents drug penetration. KRAS mutation (&gt;95% of cases) has been largely undruggable. Most patients are diagnosed at Stage III or IV. Median survival for metastatic disease is 6–12 months.</p>
+    <p><strong>Coherence framework approach:</strong> Stroma disruption through frequency sweep and bromelain opens immune penetration pathways. Pancreatic field restoration via proprietary fluid support. Strict metabolic reprogramming starves cancer cells. [HY]</p>
+    <p><strong>Key evidence-based interventions:</strong></p>
+    <ul>
+      <li>Bromelain — 2g daily; proteolytic enzyme that disrupts dense stroma; enhances immune cell access [EP]</li>
+      <li>Strict Ketogenic Diet + Monthly 72-Hour Fast — starves glucose-dependent cancer cells; kills cancer stem cells [EP]</li>
+      <li>Berberine — 500mg 3x daily; inhibits KRAS downstream signaling; reduces Warburg effect [EP]</li>
+      <li>Alpha-Lipoic Acid — 600mg daily; induces apoptosis in pancreatic cancer cells; synergistic with chemotherapy [EP]</li>
+    </ul>
+    <div class="proprietary">The Christos™ OrganPatch (Pancreas variant) and PancreaFlux formula are proprietary. Licensing inquiries through christosenergy.com.</div>
+  </div>
+
+  <div class="protocol-card">
+    <div class="protocol-name">Protocol 3: Triple-Negative Breast Cancer (TNBC)</div>
+    <div class="protocol-tag">Breast Cancer Without a Target — The Most Aggressive Subtype</div>
+    <p><strong>Why conventional treatment struggles:</strong> No estrogen receptor, progesterone receptor, or HER2 amplification means no targeted hormonal or HER2-directed therapy. Aggressive biology with high rates of early metastasis to lung, brain, and liver. Chemotherapy is the primary systemic treatment.</p>
+    <p><strong>Coherence framework approach:</strong> Breast field restoration through OrganPatch. Metastatic seeding prevention via lymphatic coherence support. Immune activation to support pembrolizumab (now approved in TNBC). [HY]</p>
+    <p><strong>Key evidence-based interventions:</strong></p>
+    <ul>
+      <li>Pembrolizumab + chemotherapy (KEYNOTE-522) — FDA approved 2021; improved pCR and EFS in high-risk early TNBC [EP]</li>
+      <li>Sacituzumab govitecan (Trodelvy) — for metastatic TNBC after 2+ prior lines; FDA approved 2020 [EP]</li>
+      <li>Full universal supplement stack (above) [EP]</li>
+      <li>Ketogenic diet + exercise + sauna protocol [EP]</li>
+    </ul>
+    <div class="proprietary">The Christos™ OrganPatch (Breast variant) and DermoFlux/LymphoFlux formulas are proprietary. Licensing inquiries through christosenergy.com.</div>
+  </div>
+
+  <div class="protocol-card">
+    <div class="protocol-name">Protocol 4: Small Cell Lung Cancer (SCLC)</div>
+    <div class="protocol-tag">Fast-Growing, Early-Spreading, Chemotherapy-Resistant</div>
+    <p><strong>Why conventional treatment struggles:</strong> Extraordinary aggressiveness — doubling time can be less than 30 days. Chemotherapy initially works well but almost all patients relapse within 6–12 months with drug-resistant disease. Brain metastasis occurs in &gt;50% of patients within 2 years.</p>
+    <p><strong>Coherence framework approach:</strong> Pulmonary field restoration and brain metastasis prevention through the NeuroBand protocol. Metabolic reprogramming to starve small cells. Atezolizumab is now first-line with chemotherapy for extensive SCLC — immune support critical. [EP/HY]</p>
+    <p><strong>Key evidence-based interventions:</strong></p>
+    <ul>
+      <li>Atezolizumab + carboplatin/etoposide — FDA approved 2019 (IMpower133); standard first-line for extensive SCLC [EP]</li>
+      <li>Strict Ketogenic Diet — SCLC is highly glucose-dependent [EP]</li>
+      <li>Full immune support stack [EP]</li>
+      <li>Pre-chemotherapy 48-hour fast — differential stress sensitization [EP]</li>
+    </ul>
+    <div class="proprietary">The Christos™ OrganPatch (Lung variant) and PulmoLife formula are proprietary. Licensing inquiries through christosenergy.com.</div>
+  </div>
+
+  <div class="protocol-card">
+    <div class="protocol-name">Protocol 5: Hepatocellular Carcinoma (HCC)</div>
+    <div class="protocol-tag">Liver Cancer — Rising Global Burden, Complex Treatment Landscape</div>
+    <p><strong>Why conventional treatment struggles:</strong> HCC typically develops in the setting of cirrhosis or chronic viral hepatitis, limiting treatment options. Late diagnosis is common. Chemotherapy has minimal efficacy. The treatment landscape changed significantly with immunotherapy combinations.</p>
+    <p><strong>Coherence framework approach:</strong> Liver field restoration through HepatoFlux and the OrganPatch. Cirrhosis reversal support through NAC, milk thistle, and structured water. Viral clearance support through immune activation. [HY]</p>
+    <p><strong>Key evidence-based interventions:</strong></p>
+    <ul>
+      <li>Atezolizumab + Bevacizumab (IMbrave150) — median OS 19.2 months; FDA approved 2020; new standard of care [EP]</li>
+      <li>Milk Thistle (Silymarin) — 500mg 3x daily; hepatoprotective; anti-inflammatory in cirrhotic liver [EP]</li>
+      <li>NAC — 2g daily; glutathione precursor; hepatoprotective [EP]</li>
+      <li>Curcumin — 2g daily; reduces NF-kB in HCC; anti-fibrotic in cirrhosis [EP]</li>
+    </ul>
+    <div class="proprietary">The Christos™ OrganPatch (Liver variant) and HepatoFlux formula are proprietary. Licensing inquiries through christosenergy.com.</div>
+  </div>
+
+  <div class="part-header">
+    <h2>Part III: The Complete Cancer Taxonomy</h2>
+    <p>50+ cancers organized by seven device family categories</p>
+  </div>
+
+  <h2>The Seven Physiological Categories</h2>
+  <table class="data-table">
+    <thead><tr><th>Category</th><th>Tissue Type</th><th>Included Cancers</th><th>Primary Device</th></tr></thead>
+    <tbody>
+      <tr><td>1 — Blood/Bone Marrow</td><td>Hematopoietic cells</td><td>Multiple Myeloma, Leukemia (ALL/AML/CLL/CML), Lymphoma, MDS</td><td>MyeloPatch — sternum</td></tr>
+      <tr><td>2 — Solid Organ (Epithelial)</td><td>Epithelial cells of specific organs</td><td>Breast, Lung, Colon, Prostate, Pancreas, Liver, Ovarian, Uterine, Kidney, Thyroid, Melanoma</td><td>OrganPatch — over organ projection</td></tr>
+      <tr><td>3 — Peritoneal/Pleural Spread</td><td>Mesothelial lining cells</td><td>Peritoneal Carcinomatosis, Mesothelioma, Leptomeningeal Disease</td><td>PeritoPatch — full abdomen</td></tr>
+      <tr><td>4 — Brain/Neural</td><td>Neural and glial cells</td><td>GBM, Astrocytoma, Medulloblastoma, Brain Metastases</td><td>NeuroBand — transcranial headband</td></tr>
+      <tr><td>5 — Bone/Sarcoma</td><td>Mesenchymal bone cells</td><td>Osteosarcoma, Ewing's Sarcoma, Bone Metastases</td><td>OsteoPatch — over bone site</td></tr>
+      <tr><td>6 — Soft Tissue Sarcoma</td><td>Mesenchymal soft tissue</td><td>Liposarcoma, Leiomyosarcoma, Rhabdomyosarcoma, ASPS</td><td>SarcomaPatch — over tumor</td></tr>
+      <tr><td>7 — Endocrine</td><td>Hormone-secreting gland cells</td><td>Thyroid, Adrenal, Pituitary, Pineal, Carcinoid, NETs</td><td>EndoPatch — over gland</td></tr>
+    </tbody>
+  </table>
+
+  <div class="proprietary">All device engineering specifications, fluid formulas, and frequency configurations are proprietary to Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC. Devices are referenced by name and function only in this public edition. Licensing inquiries through christosenergy.com.</div>
+
+  <h2>The Seven Master Cancer Reversal Principles</h2>
+  <ul>
+    <li><strong>Principle 1: Coherence Collapse is the Root Condition [HY]</strong> — Every cancer arises in a tissue whose coherence has fallen below a critical threshold. Restoring coherence restores the biological environment's capacity to contain and correct it.</li>
+    <li><strong>Principle 2: Metastasis is Field Spread, Not Random Migration [HY]</strong> — Cancer cells implant preferentially in tissues whose coherence is sufficiently low to accept them. Restoring systemic coherence reduces permissive metastatic sites.</li>
+    <li><strong>Principle 3: Stroma is a Coherence Barrier [EP/HY]</strong> — Dense tumor stroma physically prevents drug penetration [EP] and represents a field disruption zone [HY]. Bromelain, frequency sweep, and PEMF are proposed stroma-disruption modalities.</li>
+    <li><strong>Principle 4: Cancer Stem Cells Are Not Immortal [HY]</strong> — Extended fasting is documented to deplete cancer stem cell populations through metabolic stress [EP]. Frequency sweep therapy is proposed to force CSC differentiation [HY].</li>
+    <li><strong>Principle 5: The Immune System Can Be Reactivated [EP/HY]</strong> — Checkpoint immunotherapy confirms the immune system retains capacity to recognize cancer cells [EP]. Coherence restoration of the immune system amplifies that capacity [HY].</li>
+    <li><strong>Principle 6: Metabolic Reprogramming Starves Cancer [EP]</strong> — Cancer cells rely disproportionately on glycolysis (Warburg effect). Ketogenic diet and fasting create metabolic conditions unfavorable to cancer survival [EP].</li>
+    <li><strong>Principle 7: The Field Remembers Health [HY]</strong> — The morphogenic field retains a template of healthy organization even when disrupted by cancer. Blueprint restoration proposes to reactivate this template [HY].</li>
+  </ul>
+
+  <h2>References</h2>
+  <ol style="padding-left:1.5rem">
+    <li>Stupp R, et al. Radiotherapy plus temozolomide for glioblastoma. <em>N Engl J Med.</em> 2005;352(10):987-996.</li>
+    <li>Conroy T, et al. FOLFIRINOX versus gemcitabine for metastatic pancreatic cancer. <em>N Engl J Med.</em> 2011;364(19):1817-1825.</li>
+    <li>Schmid P, et al. Pembrolizumab for Early Triple-Negative Breast Cancer (KEYNOTE-522). <em>N Engl J Med.</em> 2020;382(9):810-821.</li>
+    <li>Horn L, et al. Atezolizumab plus Chemotherapy in Extensive-Stage Small-Cell Lung Cancer (IMpower133). <em>N Engl J Med.</em> 2018;379(23):2220-2229.</li>
+    <li>Finn RS, et al. Atezolizumab plus Bevacizumab in Hepatocellular Carcinoma (IMbrave150). <em>N Engl J Med.</em> 2020;382(20):1894-1905.</li>
+    <li>Cheng CW, et al. Prolonged fasting reduces IGF-1/PKA to promote hematopoietic stem cell regeneration. <em>Cell Stem Cell.</em> 2014;14(6):810-823.</li>
+    <li>Aggarwal BB, Harikumar KB. Potential therapeutic effects of curcumin. <em>Int J Biochem Cell Biol.</em> 2009;41(1):40-59.</li>
+    <li>Iaccarino HF, et al. Gamma frequency entrainment attenuates amyloid load and modifies microglia. <em>Nature.</em> 2016;540(7632):230-235.</li>
+  </ol>
 </div>
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button><footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farriar &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer><script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
+
+<footer>
+  <div class="footer-brand">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+  <div class="footer-tagline">Engineered for Health. Designed for Life.</div>
+  <div class="footer-copy">christosenergy.com &nbsp;·&nbsp; © 2026 Joshua Farrior. All rights reserved. Christos™ is a pending trademark.</div>
+</footer>
 </body>
 </html>
