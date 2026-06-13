@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDC Select Agents & Pathogen Coherence Protocol | Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#08111E!important;color:#D8D0C0;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8}
+  a{color:#3AAFAF;text-decoration:none}
+  a:hover{color:#C9A84C}
+
+  /* NAV */
+  nav{background:#0A1628!important;border-bottom:2px solid #C9A84C;padding:1rem 2rem;position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+  .nav-brand{font-family:'Cinzel',serif;font-size:1.1rem;color:#C9A84C;font-weight:700;letter-spacing:0.05em}
+  .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+  .nav-links a{font-family:'Raleway',sans-serif;font-size:0.85rem;color:#D8D0C0;text-transform:uppercase;letter-spacing:0.08em;font-weight:500}
+  .nav-links a:hover{color:#C9A84C}
+
+  /* HERO */
+  .hero{background:#0A1628!important;border-bottom:2px solid #C9A84C;padding:4rem 2rem 3rem;text-align:center}
+  .paper-series{font-family:'Raleway',sans-serif;font-size:0.8rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem}
+  .paper-badge{display:inline-block;background:#08111E!important;border:1px solid #C9A84C;color:#C9A84C;font-family:'Raleway',sans-serif;font-size:0.75rem;padding:0.3rem 1rem;border-radius:2px;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.1em}
+  h1.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.6rem);color:#C9A84C;line-height:1.3;margin-bottom:1rem;max-width:900px;margin-left:auto;margin-right:auto}
+  .paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#D8D0C0;font-style:italic;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto}
+  .paper-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;font-family:'Raleway',sans-serif;font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:0.08em}
+  .paper-meta span strong{color:#3AAFAF}
+
+  /* DISCLAIMER */
+  .disclaimer-box{background:#1a0a0a!important;border:2px solid #7B241C;border-left:6px solid #7B241C;border-radius:4px;padding:1.5rem 2rem;margin:2rem auto;max-width:900px}
+  .disclaimer-box p{color:#e8c4c4;font-family:'Raleway',sans-serif;font-size:0.85rem;line-height:1.7}
+  .disclaimer-box strong{color:#ff6b6b;display:block;margin-bottom:0.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em}
+
+  /* MAIN LAYOUT */
+  .main-content{max-width:1000px;margin:0 auto;padding:3rem 2rem}
+
+  /* SECTION HEADERS */
+  .section-header{background:#0A1628!important;border-left:4px solid #C9A84C;border-bottom:1px solid #C9A84C;padding:1.2rem 1.5rem;margin:3rem 0 1.5rem;border-radius:0 4px 4px 0}
+  .section-header h2{font-family:'Cinzel',serif;font-size:1.4rem;color:#C9A84C;font-weight:600;letter-spacing:0.04em}
+  .section-header .section-num{font-family:'Raleway',sans-serif;font-size:0.75rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.3rem}
+
+  .subsection-header{border-left:3px solid #3AAFAF;padding:0.6rem 1rem;margin:2rem 0 1rem}
+  .subsection-header h3{font-family:'Cinzel',serif;font-size:1.1rem;color:#3AAFAF;font-weight:600}
+
+  .sub2-header{padding:0.4rem 0;margin:1.5rem 0 0.8rem}
+  .sub2-header h4{font-family:'Cinzel',serif;font-size:1rem;color:#D8D0C0;font-weight:600;border-bottom:1px solid #1e3a5f;padding-bottom:0.4rem}
+
+  p{margin-bottom:1.1rem}
+
+  /* TABLES */
+  .table-wrap{overflow-x:auto;margin:1.5rem 0}
+  table{width:100%;border-collapse:collapse;font-size:0.95rem}
+  thead tr{background:#0A1628!important}
+  thead th{padding:0.8rem 1rem;text-align:left;font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#C9A84C;border-bottom:2px solid #C9A84C}
+  tbody tr:nth-child(even){background:#0d1e35!important}
+  tbody tr:nth-child(odd){background:#08111E!important}
+  tbody tr:hover{background:#0f2040!important}
+  td{padding:0.7rem 1rem;border-bottom:1px solid #1e3a5f;vertical-align:top;line-height:1.6}
+  td:first-child{color:#3AAFAF;font-weight:500;font-family:'Raleway',sans-serif;font-size:0.9rem;white-space:nowrap}
+
+  /* IMPACT BOX */
+  .impact-box{background:#1a0808!important;border:1px solid #7B241C;border-left:5px solid #7B241C;padding:1.2rem 1.5rem;margin:1.5rem 0;border-radius:0 4px 4px 0}
+  .impact-box p{color:#f0c0c0;font-weight:600;margin:0}
+
+  /* NOTE BOX */
+  .note-box{background:#081828!important;border-left:4px solid #3AAFAF;padding:1rem 1.5rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+  .note-box p{color:#a0c8d8;font-style:italic;font-size:0.95rem;margin:0}
+
+  /* REDACTION BOX */
+  .redacted-box{background:#081828!important;border:1px solid #3AAFAF;border-left:4px solid #3AAFAF;padding:1rem 1.5rem;margin:1rem 0;border-radius:4px;display:flex;align-items:flex-start;gap:1rem}
+  .redacted-box .lock-icon{color:#3AAFAF;font-size:1.2rem;flex-shrink:0;margin-top:0.1rem}
+  .redacted-box p{color:#8fc8d8;font-style:italic;font-size:0.9rem;margin:0}
+  .redacted-box a{color:#C9A84C;font-style:normal}
+
+  /* PREDICTION GRID */
+  .prediction-grid{display:grid;gap:1rem;margin:1.5rem 0}
+  .prediction-card{background:#0A1628!important;border:1px solid #1e3a5f;border-left:4px solid #3AAFAF;padding:1rem 1.2rem;border-radius:0 4px 4px 0}
+  .pred-id{font-family:'Raleway',sans-serif;font-size:0.75rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;margin-bottom:0.4rem}
+  .pred-text{font-size:0.95rem;margin-bottom:0.5rem}
+  .pred-meta{display:flex;gap:1rem;flex-wrap:wrap}
+  .pred-tag{font-family:'Raleway',sans-serif;font-size:0.75rem;background:#081828!important;color:#3AAFAF;padding:0.2rem 0.6rem;border-radius:2px;border:1px solid #1e4a6a}
+
+  /* CONFIDENCE TIERS */
+  .tier-high{color:#4CAF50}
+  .tier-moderate{color:#FF9800}
+  .tier-low{color:#f44336}
+  .tier-speculative{color:#9C27B0}
+
+  /* PROTOCOL PHASES */
+  .phase-block{background:#0A1628!important;border:1px solid #1e3a5f;border-top:3px solid #C9A84C;padding:1.5rem;margin:1.2rem 0;border-radius:0 0 4px 4px}
+  .phase-label{font-family:'Raleway',sans-serif;font-size:0.75rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem}
+  .phase-title{font-family:'Cinzel',serif;font-size:1.05rem;color:#D8D0C0;margin-bottom:0.8rem}
+
+  /* SOLFEGGIO PHASES */
+  .solfeggio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.8rem;margin:1.2rem 0}
+  .solfeggio-card{background:#0A1628!important;border:1px solid #1e3a5f;padding:0.8rem 1rem;border-radius:4px;text-align:center}
+  .solfe-freq{font-family:'Cinzel',serif;font-size:1.4rem;color:#C9A84C;margin-bottom:0.3rem}
+  .solfe-name{font-family:'Raleway',sans-serif;font-size:0.75rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.3rem}
+  .solfe-action{font-size:0.85rem;color:#a0b0c0}
+
+  /* BDI TABLE special */
+  .bdi-high{color:#4CAF50;font-weight:600}
+  .bdi-very-high{color:#00E676;font-weight:700}
+  .bdi-moderate{color:#FF9800;font-weight:600}
+  .bdi-low{color:#f44336}
+
+  /* PATHOGEN GRID */
+  .pathogen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+  .pathogen-card{background:#0A1628!important;border:1px solid #1e3a5f;border-top:3px solid #C9A84C;padding:1.2rem;border-radius:0 0 4px 4px}
+  .path-bsl{font-family:'Raleway',sans-serif;font-size:0.7rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.3rem}
+  .path-name{font-family:'Cinzel',serif;font-size:1rem;color:#C9A84C;margin-bottom:0.5rem}
+  .path-cfr{font-family:'Raleway',sans-serif;font-size:0.8rem;color:#f0c0c0;margin-bottom:0.5rem}
+  .path-detail{font-size:0.9rem;color:#a0b8c8;line-height:1.6}
+
+  /* TOC */
+  .toc{background:#0A1628!important;border:1px solid #C9A84C;border-radius:4px;padding:1.5rem 2rem;margin:2rem 0}
+  .toc h3{font-family:'Cinzel',serif;color:#C9A84C;font-size:1rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.08em}
+  .toc ol{padding-left:1.5rem}
+  .toc li{margin-bottom:0.4rem}
+  .toc a{font-family:'Raleway',sans-serif;font-size:0.85rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.05em}
+  .toc a:hover{color:#C9A84C}
+
+  /* COVERAGE MATRIX */
+  .coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.5rem 0}
+  .coverage-card{background:#0A1628!important;border:1px solid #1e3a5f;padding:1rem;border-radius:4px;display:flex;align-items:flex-start;gap:0.8rem}
+  .coverage-check{color:#4CAF50;font-size:1.2rem;flex-shrink:0}
+  .coverage-label{font-family:'Raleway',sans-serif;font-size:0.85rem;color:#D8D0C0}
+  .coverage-sub{font-size:0.8rem;color:#3AAFAF;margin-top:0.2rem}
+
+  /* RESEARCH TABLE */
+  .research-priority-high td:first-child{border-left:4px solid #4CAF50}
+  .research-priority-critical td:first-child{border-left:4px solid #C9A84C}
+
+  /* FOOTER */
+  footer{background:#0A1628!important;border-top:2px solid #C9A84C;padding:3rem 2rem;text-align:center;margin-top:4rem}
+  footer p{font-family:'Raleway',sans-serif;font-size:0.8rem;color:#666;margin-bottom:0.5rem}
+  footer .copyright{color:#C9A84C;font-family:'Cinzel',serif;font-size:0.9rem;margin-bottom:0.8rem}
+  .back-link{display:inline-block;margin-top:1.5rem;font-family:'Raleway',sans-serif;font-size:0.85rem;color:#3AAFAF;border:1px solid #3AAFAF;padding:0.5rem 1.5rem;border-radius:2px;text-transform:uppercase;letter-spacing:0.08em}
+  .back-link:hover{background:#3AAFAF!important;color:#08111E}
+
+  @media(max-width:768px){
+    .main-content{padding:2rem 1rem}
+    .paper-meta{gap:1rem}
+    .nav-links{gap:1rem}
+    td:first-child{white-space:normal}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Christos™ Energy</div>
+  <div class="nav-links">
+    <a href="../../index.html">Home</a>
+    <a href="../../papers.html">Papers</a>
+    <a href="../../diagrams.html">Diagrams</a>
+    <a href="../../contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="paper-series">Christos™ Coherence Medicine Series</div>
+  <div class="paper-badge">Public Edition · Theoretical Framework · Clinical Testing Required</div>
+  <h1 class="paper-title">The Christos™ Coherence Medicine Protocol for CDC Select Agents, BSL-4 and BSL-3 Pathogens, and the Complete Pathogen Coverage Matrix</h1>
+  <div class="paper-subtitle">Viral · Bacterial · Fungal · Parasitic · Toxin · Prion — A Coherence-Based Framework for Infectious Disease and Biodefense</div>
+  <div class="paper-meta">
+    <span><strong>Author</strong> Joshua Farrior</span>
+    <span><strong>Entity</strong> Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</span>
+    <span><strong>Date</strong> June 2026</span>
+    <span><strong>Framework</strong> Christos™ Harmonic Design Framework</span>
+  </div>
+</div>
+
+<div class="main-content">
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-box">
+  <strong>⚠ Critical Medical and Legal Disclaimer</strong>
+  <p>This document is NOT medical advice. These protocols have not been approved by the FDA, have not completed clinical trials, and are not a substitute for conventional medical treatment or public health response. CDC Select Agents and BSL-3/4 pathogens are among the most dangerous biological materials known. Any research involving these agents must be conducted in registered BSL facilities by qualified personnel under institutional biosafety committee oversight in compliance with all applicable federal regulations. Expected clearance timelines are theoretical framework predictions — not validated clinical outcomes. Device specifications and fluid formulations are proprietary and available under NDA. © 2026 Joshua Farrior / Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#master-principle">The Master Principle — Coherence as Universal Pathogen Vulnerability</a></li>
+    <li><a href="#bdi">Boundary Discrimination Index by Pathogen Category</a></li>
+    <li><a href="#devices">Device Platform Overview</a></li>
+    <li><a href="#fluids">Healing Fluid Overview</a></li>
+    <li><a href="#bsl4">BSL-4 Pathogen Protocols</a></li>
+    <li><a href="#bsl3">BSL-3 Pathogen Protocols</a></li>
+    <li><a href="#toxins">Select Agent Toxins</a></li>
+    <li><a href="#matrix">Complete Pathogen Coverage Matrix</a></li>
+    <li><a href="#session">Coherence Chamber Session Architecture</a></li>
+    <li><a href="#predictions">Falsifiable Predictions</a></li>
+    <li><a href="#discussion">Discussion</a></li>
+    <li><a href="#references">References</a></li>
+  </ol>
+</div>
+
+<!-- ABSTRACT -->
+<div id="abstract">
+  <div class="section-header">
+    <div class="section-num">Abstract</div>
+    <h2>Overview</h2>
+  </div>
+  <p>The CDC Select Agent Program maintains a list of biological agents and toxins that pose the greatest risk of deliberate misuse or significant public health threats. BSL-4 pathogens — Filoviriidae (Ebola, Marburg, Sudan, Bundibugyo), Arenaviridae (Lassa, Guanarito, Junin, Machupo, Sabiá) — are among the most lethal infectious agents known, with case fatality rates of 25-90% and no FDA-approved specific antiviral therapies for most. BSL-3 pathogens including <em>Bacillus anthracis</em> (anthrax), <em>Yersinia pestis</em> (plague), Variola major (smallpox), <em>Francisella tularensis</em> (tularemia), <em>Mycobacterium tuberculosis</em>, hantaviruses, and Eastern Equine Encephalitis virus represent major biodefense challenges for which conventional pharmaceutical approaches are often inadequate.</p>
+  <p>This paper presents the Christos™ Coherence Medicine Protocol for the complete pathogen coverage matrix — a unified theoretical framework in which all known pathogen categories (enveloped RNA viruses, enveloped DNA viruses, non-enveloped viruses, gram-positive bacteria, gram-negative bacteria, acid-fast mycobacteria, spore-forming bacteria, protein toxins, fungal pathogens, protozoan parasites, helminthic parasites, and prions) are addressed through a two-component strategy: (1) targeted disruption of pathogen structural coherence using the Christos™ FSD-1 Frequency Sweep Device and Coherence Chambers; and (2) restoration of host biological coherence using frequency-imprinted healing fluids and the five-layer coherence restoration architecture from the Organ Regeneration System.</p>
+
+  <div class="impact-box">
+    <p>Every pathogen is a physical structure. Every physical structure has resonant frequencies. The coherence disruption approach targets physical structure — density, compressibility, acoustic impedance — which cannot be altered through genetic modification without fundamentally changing the organism's physical architecture. This is the structural advantage of coherence-based biodefense over pharmaceutical approaches.</p>
+  </div>
+
+  <p>The scientific foundation draws on established physics of acoustic cavitation, electromagnetic field-tissue interactions, and photobiomodulation — each with independent peer-reviewed evidence bases — applied through the resonant selectivity principle: pathogens have measurably distinct acoustic and electromagnetic resonant signatures from host tissue, providing a physical basis for selective field intervention. The Boundary Discrimination Index (BDI) quantifies this acoustic contrast for each pathogen category. Complete fluid formulations and device specifications are available to licensed manufacturers under NDA.</p>
+</div>
+
+<!-- MASTER PRINCIPLE -->
+<div id="master-principle">
+  <div class="section-header">
+    <div class="section-num">Section I</div>
+    <h2>The Master Principle: Coherence as Universal Pathogen Vulnerability</h2>
+  </div>
+
+  <div class="subsection-header"><h3>1.1 The Physical Basis</h3></div>
+  <p>Every pathogen — regardless of biological classification, evolutionary origin, or acquired resistance mechanisms — is a physical structure with three coherence-accessible properties:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th>What It Is</th><th>Therapeutic Implication</th></tr></thead>
+      <tbody>
+        <tr><td>Acoustic impedance</td><td>Determined by density and compressibility; unique to each pathogen category</td><td>Resonant frequency fields tuned to pathogen impedance apply mechanical disruption selectively at the pathogen boundary</td></tr>
+        <tr><td>Electromagnetic resonant signature</td><td>Determined by molecular composition and structural geometry</td><td>EM fields at characteristic frequencies interact with pathogen molecular architecture</td></tr>
+        <tr><td>Coherence field</td><td>The field maintaining the pathogen's functional integrity as a biological entity</td><td>When pathogen coherence falls below its own critical threshold, it cannot maintain functional architecture</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>This principle is not speculative in its physical foundation. ESWL (FDA-approved since 1984) destroys kidney stones through acoustic impedance mismatch — the same physical principle applied to a non-biological target. Histotripsy (FDA Breakthrough Device) selectively lyses soft tissue through controlled acoustic cavitation at mechanical boundary interfaces. The extension to pathogen structural disruption is a specific application of the same resonant selectivity principle.</p>
+
+  <div class="subsection-header"><h3>1.2 The Two-Component Protocol Architecture</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Mechanism</th><th>Target</th><th>Tool</th></tr></thead>
+      <tbody>
+        <tr><td>Pathogen Disruption</td><td>Resonant frequency fields tuned to pathogen structural signature disrupt pathogen coherence below its critical threshold</td><td>Envelope, capsid, cell wall, spore coat, toxin tertiary structure</td><td>Christos™ FSD-1 Frequency Sweep Device + Coherence Chamber</td></tr>
+        <tr><td>Host Coherence Restoration</td><td>Multi-frequency Solfeggio protocol restores host biological coherence (C_host) above immune activation threshold</td><td>Immune function, cellular energy, tissue integrity, inflammatory resolution</td><td>Coherence Chamber + healing fluids (AVF-1/ABF-1/DCF-1) + daily coherence practices</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>1.3 Host Coherence Threshold Model Applied to Infection</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>C_host</th><th>Vulnerability</th><th>Expected Protocol Response</th></tr></thead>
+      <tbody>
+        <tr><td>&gt; 0.70</td><td>Low — intact immune surveillance; NK cells active</td><td>Rapid clearance; protocol primarily supportive (host restoration fluids)</td></tr>
+        <tr><td>0.55–0.70</td><td>Moderate — some immune suppression</td><td>Protocol accelerates clearance; FSD-1 reduces pathogen burden; fluids restore immune competence</td></tr>
+        <tr><td>0.40–0.55</td><td>High — significant immune dysfunction</td><td>Full five-component protocol required; chamber 2x daily; extended fluid protocol</td></tr>
+        <tr><td>&lt; 0.40</td><td>Critical — immune system effectively non-functional</td><td>Immediate intensive protocol; physician-supervised; concurrent conventional treatment mandatory</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- BDI TABLE -->
+<div id="bdi">
+  <div class="section-header">
+    <div class="section-num">Section II</div>
+    <h2>Boundary Discrimination Index — Pathogen Category Analysis</h2>
+  </div>
+  <p>The Boundary Discrimination Index (BDI) quantifies the acoustic contrast between a pathogen and its surrounding biological medium. Higher BDI predicts greater resonant selectivity and stronger field intervention response.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Pathogen Category</th><th>Primary Structural Target</th><th>BDI Estimate</th><th>Selectivity Basis</th></tr></thead>
+      <tbody>
+        <tr><td>Anthrax spores (Bacillus anthracis)</td><td>Spore coat — dipicolinic acid-calcium chelate, dense protein layers</td><td class="bdi-very-high">Very High</td><td>Calcium-mineral matrix analogous to kidney stone — highest acoustic impedance of any bacterial form</td></tr>
+        <tr><td>Acid-fast mycobacteria (TB)</td><td>Mycolic acid-rich cell wall — waxy, hydrophobic, extremely dense</td><td class="bdi-high">High</td><td>Dense waxy coat creates strong acoustic contrast even at tissue depth</td></tr>
+        <tr><td>Gram-positive bacteria (Anthrax vegetative, MRSA)</td><td>Thick peptidoglycan cell wall</td><td class="bdi-high">Moderate-High</td><td>Cell wall resonance at specific kHz frequencies distinct from host tissue</td></tr>
+        <tr><td>Enveloped viruses (Ebola, Lassa, HIV, Influenza)</td><td>Lipid bilayer envelope + glycoprotein spikes</td><td class="bdi-moderate">Moderate-High</td><td>Lipid membrane resonant frequency distinct from aqueous cytoplasm</td></tr>
+        <tr><td>Large DNA viruses (Smallpox, Herpes)</td><td>Protein core + lateral bodies + lipid envelope</td><td class="bdi-moderate">Moderate-High</td><td>Dense protein core creates significant impedance contrast; large size improves BDI</td></tr>
+        <tr><td>Gram-negative bacteria (Plague, Tularemia, Q Fever)</td><td>Outer membrane + LPS layer</td><td class="bdi-moderate">Moderate</td><td>Outer membrane asymmetry produces characteristic frequency response</td></tr>
+        <tr><td>Fungal pathogens (Candida, Aspergillus)</td><td>Chitin cell wall + ergosterol membrane</td><td class="bdi-moderate">Moderate-High</td><td>Chitin structurally distinct from host tissue; ergosterol differs from cholesterol</td></tr>
+        <tr><td>Non-enveloped viruses (Norovirus, Polio)</td><td>Icosahedral protein capsid</td><td class="bdi-moderate">Moderate</td><td>Higher field amplitude required; crystalline protein structure has distinct acoustic signature</td></tr>
+        <tr><td>Protozoan parasites (Malaria, Babesia)</td><td>Parasitophorous vacuole + parasite membranes</td><td class="bdi-moderate">Moderate</td><td>Multiple membrane targets; resonant sweep covers multiple structural frequencies</td></tr>
+        <tr><td>Protein toxins (Botulinum, Ricin)</td><td>Tertiary/quaternary protein structure</td><td class="bdi-moderate">Moderate</td><td>174 Hz + 285 Hz documented to affect protein structure; Baati et al. (2021) — 528 Hz oxidative stress</td></tr>
+        <tr><td>Helminths (tapeworms, roundworms)</td><td>Tegument + neuromuscular system</td><td class="bdi-moderate">Moderate</td><td>Low-frequency sweep (1-100 Hz) targets tegument disruption and neuromuscular coordination</td></tr>
+        <tr><td>Prions (CJD, vCJD, FFI)</td><td>Misfolded PrP^Sc protein</td><td class="bdi-low">Low-Moderate</td><td>Most challenging — same amino acid sequence as host PrP^C; selectivity requires extremely precise frequency matching; highly speculative</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- DEVICES OVERVIEW -->
+<div id="devices">
+  <div class="section-header">
+    <div class="section-num">Section III</div>
+    <h2>Device Platform — Overview</h2>
+  </div>
+  <div class="note-box"><p>Complete technical specifications — including transducer specifications, crystal array configurations, frequency generation architecture, and manufacturing bills of materials — are proprietary and available to licensed manufacturers under NDA. Contact <a href="../../contact.html">christosenergy.com</a></p></div>
+
+  <div class="subsection-header"><h3>FSD-1 Frequency Sweep Device (Frequency Sweep Wand)</h3></div>
+  <p>The FSD-1 is a handheld field delivery device designed for targeted pathogen structural disruption. It delivers a continuously sweeping frequency field from 1 Hz to 1 MHz — covering the complete resonant frequency range of all known biological agents. The logarithmic sweep ensures equal dwell time per octave across all biological frequency ranges, maximizing cumulative structural disruption with each 15-minute cycle.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Frequency range</td><td>1 Hz to 1 MHz (6 decades, logarithmic sweep)</td></tr>
+        <tr><td>Sweep cycle</td><td>15 minutes per complete sweep; dual modality (acoustic + near-field EM)</td></tr>
+        <tr><td>Field output</td><td>Coupled piezoelectric acoustic + near-field electromagnetic (non-thermal)</td></tr>
+        <tr><td>Amplitude</td><td>3-level control + sweep amplitude modulation</td></tr>
+        <tr><td>Pre-programmed protocols</td><td>Full sweep; Viral targeted; Bacterial targeted; Toxin (174+285+528 Hz fixed)</td></tr>
+        <tr><td>Power</td><td>Rechargeable 18650 Li-ion; 4-hour continuous operation; USB-C</td></tr>
+        <tr><td>Full specs</td><td>Available under licensing agreement</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>Coherence Chamber — Infectious Disease Configuration</h3></div>
+  <p>The Coherence Chamber for infectious disease applications is adapted with pathogen-specific frequency protocols and enhanced with an AVF-1/ABF-1 fluid nebulization system, negative-pressure option (−12.5 Pa, HEPA exhaust), and 25-30% oxygen enrichment. It integrates PEMF, photobiomodulation (660 nm + 850 nm), Solfeggio frequency acoustics, and targeted fluid nebulization in a phase-structured 60-80 minute session.</p>
+  <div class="redacted-box">
+    <span class="lock-icon">🔒</span>
+    <p>Complete Coherence Chamber specifications — PEMF coil array design, crystal node placement (48 nodes), photobiomodulation array parameters, nebulization system, and manufacturing specifications — available to licensed manufacturers and research partners under NDA. <a href="../../contact.html">Contact Christos™ Energy</a></p>
+  </div>
+</div>
+
+<!-- FLUIDS OVERVIEW -->
+<div id="fluids">
+  <div class="section-header">
+    <div class="section-num">Section IV</div>
+    <h2>Healing Fluid Platform — Clinical Rationale</h2>
+  </div>
+  <p>Three specialized coherence fluids serve the complete pathogen coverage matrix. All are formulated on the Christos™ Ultra-Hydration Fluid (UHF) structured deuterium-depleted water base with a 24-hour Solfeggio frequency imprinting cycle during production.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Fluid</th><th>Target</th><th>Key Evidence-Based Agents</th><th>Primary Imprinting</th><th>Dosage</th></tr></thead>
+      <tbody>
+        <tr><td>AVF-1 Antiviral Coherence Fluid</td><td>All viral pathogens</td><td>Vitamin C 20g/L (antiviral — multiple RCTs); Zinc 1g/L (viral replication inhibition); Selenium 500mcg/L; Elderberry extract (Zakay-Rones 1995 RCT — 4-day vs. 8-day influenza recovery); Licorice root — glycyrrhizin (Cinatl et al. 2003 Lancet — SARS activity); NAC 5g/L; Quercetin 2g/L (zinc ionophore; Di Pierro 2021)</td><td>528 Hz (8hr) + 741 Hz (8hr) + 1Hz-1MHz sweep (8hr)</td><td>30 mL 4x daily acute; 2x daily maintenance</td></tr>
+        <tr><td>ABF-1 Antibacterial Coherence Fluid</td><td>All bacterial pathogens</td><td>Vitamin C 20g/L; Zinc 1g/L; Colloidal silver 10ppm (Chhibber 2013 — biofilm disruption); Garlic extract — allicin (Ankri & Mirelman 1999 — MRSA activity); Oregano oil — carvacrol (Ultee 2002 — gram-positive activity); Cryptolepis extract (Feng 2020 — Johns Hopkins — broad-spectrum antimicrobial); NAC 5g/L (biofilm EPS disruption)</td><td>528 Hz (8hr) + 741 Hz (8hr) + 852 Hz (8hr)</td><td>30 mL 4x daily acute; 2x daily maintenance</td></tr>
+        <tr><td>DCF-1 Detox Coherence Fluid</td><td>All protein toxins</td><td>NAC 10g/L (FDA-approved mechanism for acetaminophen toxicity — Harrison 1991 Lancet; established glutathione pathway); Alpha-lipoic acid 5g/L (universal antioxidant; mitochondrial support); Activated charcoal 10g/L (binds circulating toxins; prevents enterohepatic recirculation); Milk thistle — silymarin (Ferenci 1989 RCT — hepatoprotective); Magnesium 5g/L</td><td>174 Hz (8hr) + 285 Hz (8hr) + 528 Hz (8hr)</td><td>30 mL every 4 hours acute; 4x daily after 48hr</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="redacted-box">
+    <span class="lock-icon">🔒</span>
+    <p>Complete proprietary formulations — exact ingredient amounts, forms, preparation protocols, pH adjustment parameters, filtration specifications, and quality control testing — available under NDA. <a href="../../contact.html">Contact Christos™ Energy</a></p>
+  </div>
+</div>
+
+<!-- BSL-4 -->
+<div id="bsl4">
+  <div class="section-header">
+    <div class="section-num">Section V</div>
+    <h2>BSL-4 Pathogen Protocols</h2>
+  </div>
+  <div class="impact-box"><p>BSL-4 pathogens represent the highest biosafety risk. All research requires registered BSL-4 facilities, full positive-pressure suit protection, and IBC oversight. Protocols herein are theoretical frameworks for research investigation in appropriately equipped facilities only.</p></div>
+
+  <div class="pathogen-grid">
+    <div class="pathogen-card">
+      <div class="path-bsl">BSL-4 · Category A Select Agent</div>
+      <div class="path-name">Filoviriidae — Ebola, Marburg, Sudan, Bundibugyo</div>
+      <div class="path-cfr">CFR: 25-90% (Ebola Zaire) · No specific antiviral for most species</div>
+      <div class="path-detail">Primary target: Lipid envelope + glycoprotein (GP1,2) spike array. BDI: Moderate-High. FSD-1: 15 min 3x daily (chest, abdomen, neck). Chamber: 60 min 2x daily, AVF-1 nebulized. Fluid: AVF-1 30 mL 4x daily. Conventional: Inmazeb for Ebola Zaire if available; supportive care. Expected clearance (framework prediction): 5-10 days. <span class="tier-speculative">Confidence: SPECULATIVE</span></div>
+    </div>
+    <div class="pathogen-card">
+      <div class="path-bsl">BSL-4 · Category A Select Agent</div>
+      <div class="path-name">Lassa Virus (Arenaviridae)</div>
+      <div class="path-cfr">CFR: 15-25% hospitalized; ~80% maternal mortality (3rd trimester)</div>
+      <div class="path-detail">100,000-300,000 infections/year in West Africa. Primary target: Lipid envelope + GPC glycoprotein complex (Class I fusion protein — conformational mechanism is acoustically accessible). FSD-1: 15 min 3x daily (liver focus — hepatic tropism). Conventional: Ribavirin within 6 days of onset. Expected clearance: 7-14 days. <span class="tier-speculative">Confidence: SPECULATIVE</span></div>
+    </div>
+    <div class="pathogen-card">
+      <div class="path-bsl">BSL-4 · Category A Select Agent</div>
+      <div class="path-name">New World Arenaviruses — Guanarito, Junin, Machupo, Sabiá</div>
+      <div class="path-cfr">CFR: 15-35% · Junin: convalescent plasma reduces to ~1%</div>
+      <div class="path-detail">South American hemorrhagic fevers. Entry via transferrin receptor 1 (TfR1) — distinct from Old World arenaviruses. Same structural category, same protocol. Junin: convalescent plasma if available — mandatory first-line. ImmunoFlux added 30 mL 2x daily for immune support. Expected clearance: 7-14 days. <span class="tier-speculative">Confidence: SPECULATIVE</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- BSL-3 -->
+<div id="bsl3">
+  <div class="section-header">
+    <div class="section-num">Section VI</div>
+    <h2>BSL-3 Pathogen Protocols</h2>
+  </div>
+
+  <div class="subsection-header"><h3>6.1 Bacillus anthracis — Anthrax</h3></div>
+  <p><em>Bacillus anthracis</em> has two key structural targets: (1) the endospore — the highest-BDI target in the entire bacterial matrix, with a calcium-mineral spore coat analogous to kidney stone in relation to surrounding tissue; (2) the vegetative cell wall. The anthrax toxin components (Lethal Factor, Edema Factor) require concurrent DCF-1 detox protocol alongside ABF-1.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>BDI</td><td class="bdi-very-high">Very High (spore) / Moderate-High (vegetative)</td></tr>
+        <tr><td>FSD-1 protocol</td><td>20 min 3x daily (extended — reflecting high spore coat resistance); portal of entry focus</td></tr>
+        <tr><td>Chamber protocol</td><td>60 min 2x daily; ABF-1 nebulized; 174 Hz (inflammation) + 528 Hz (repair) + 741 Hz (toxin detox)</td></tr>
+        <tr><td>Fluid protocol</td><td>ABF-1 30 mL 4x daily + DCF-1 30 mL 2x daily (for lethal/edema toxin component)</td></tr>
+        <tr><td>Conventional — MANDATORY</td><td>Ciprofloxacin 500 mg 2x daily × 60 days (or doxycycline); anthrax antitoxin (Raxibacumab or Obiltoxaximab) for inhalation/systemic; protocol is adjunctive</td></tr>
+        <tr><td>Expected clearance</td><td>Cutaneous: 7-14 days with antibiotics + protocol. Inhalation: 14-21 days. <span class="tier-low">Confidence: LOW (cutaneous) / SPECULATIVE (inhalation)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>6.2 Yersinia pestis — Plague</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>BDI</td><td class="bdi-moderate">Moderate</td></tr>
+        <tr><td>FSD-1</td><td>20 min 3x daily; lymph nodes (bubonic), chest (pneumonic), systemic</td></tr>
+        <tr><td>Chamber + Fluid</td><td>60 min 2x daily; ABF-1 nebulized + oral 4x daily</td></tr>
+        <tr><td>Conventional — MANDATORY</td><td>Streptomycin or gentamicin IV (first-line); doxycycline oral (second-line); protocol adjunctive</td></tr>
+        <tr><td>Expected clearance</td><td>10-14 days with antibiotics + protocol. <span class="tier-low">Confidence: LOW-MODERATE</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>6.3 Variola major — Smallpox</h3></div>
+  <p>Unusually large virus (200-300 nm) — 25× larger than typical RNA viruses — creating a more favorable BDI. Eradicated 1980; remains BSL-4 level concern for biodefense. Complex structure (outer membrane + lateral bodies + biconcave core) provides multiple structural targets.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>BDI</td><td class="bdi-high">Moderate-High (large size improves BDI)</td></tr>
+        <tr><td>FSD-1</td><td>20 min 3x daily; systemic + skin application for pustular lesions</td></tr>
+        <tr><td>Topical</td><td>AVF-1 as wet compress on pustular lesions — local antiviral + cellular repair</td></tr>
+        <tr><td>Conventional</td><td>Tecovirimat (TPOXX — FDA-approved 2018) if available; protocol adjunctive</td></tr>
+        <tr><td>Expected clearance</td><td>10-14 days with antiviral + protocol. <span class="tier-low">Confidence: LOW-MODERATE</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>6.4 Mycobacterium tuberculosis — TB, MDR-TB, XDR-TB</h3></div>
+  <p>Mycobacteria have the highest BDI value in the bacterial category due to the unique mycolic acid cell wall — chemically distinct from all host tissue. This creates the coherence framework's key strategic advantage for TB: antibiotic resistance mechanisms (enzyme inactivation, target modification, efflux) do not confer protection against acoustic disruption of mycolic acid membrane integrity. MDR-TB and XDR-TB are therefore theoretically equally susceptible to field disruption as drug-sensitive TB.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>BDI</td><td class="bdi-high">High — mycolic acid layer creates strongest bacterial acoustic contrast</td></tr>
+        <tr><td>FSD-1</td><td>20 min 3x daily (extended duration — slow kill kinetics of mycobacteria); chest application</td></tr>
+        <tr><td>Chamber</td><td>60 min 2x daily; PulmoLife nebulized + ABF-1 mist; lung-focused (174+528 Hz primary)</td></tr>
+        <tr><td>Fluid</td><td>ABF-1 30 mL 4x daily + PulmoLife 30 mL 2x daily</td></tr>
+        <tr><td>MDR/XDR-TB note</td><td>Resistance to isoniazid (InhA inhibition) does NOT confer resistance to acoustic disruption of mycolic acid integrity — this is the mechanism advantage of coherence-based approach</td></tr>
+        <tr><td>Conventional — MANDATORY</td><td>Drug-sensitive: standard RIPE × 6 months. MDR/XDR-TB: specialist-managed regimen. Protocol adjunctive throughout.</td></tr>
+        <tr><td>Expected clearance</td><td>Drug-sensitive: 30-60 days with standard therapy + protocol. MDR/XDR: 60-180 days. <span class="tier-low">Confidence: LOW-MODERATE</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>6.5 Hantavirus (HPS and HFRS)</h3></div>
+  <p>Organ-specific Chamber focus is critical — HPS has pulmonary capillary endothelial tropism (PCC-1 configuration); HFRS has renal tubular tropism (UCC-1 with kidney resonator focus).</p>
+
+  <div class="subsection-header"><h3>6.6 Eastern Equine Encephalitis (EEE)</h3></div>
+  <p>CNS-tropic alphavirus; CFR 30-40%; no FDA-approved antiviral. NCC-1 Neural Chamber is the primary intervention. BBB restoration protocol (magnesium L-threonate + Gotu kola) in NeuroFlux addresses blood-brain barrier disruption from viral encephalitis.</p>
+</div>
+
+<!-- SELECT AGENT TOXINS -->
+<div id="toxins">
+  <div class="section-header">
+    <div class="section-num">Section VII</div>
+    <h2>Select Agent Toxins</h2>
+  </div>
+
+  <div class="subsection-header"><h3>7.1 Botulinum Neurotoxin (BoNT)</h3></div>
+  <p>The most toxic substance known (estimated lethal dose ~1-2 ng/kg inhalation). The coherence approach for protein toxins is fundamentally different: the target is a folded protein structure, not a living organism. The mechanism is acoustic field-induced disruption of tertiary protein structure at the characteristic resonant frequency of the BoNT fold.</p>
+  <div class="impact-box">
+    <p>HBAT (Heptavalent Botulinum Antitoxin) must be administered FIRST — before toxin internalization. After BoNT cleaves SNARE proteins, the damage to existing nerve terminals is done. Antitoxin prevents further binding; the coherence protocol supports clearance of circulating toxin and regeneration of nerve terminals. Never replace antitoxin with coherence protocol alone.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Primary coherence target</td><td>Tertiary protein structure — zinc-binding catalytic site (light chain); heavy chain receptor-binding domain</td></tr>
+        <tr><td>Physical mechanism</td><td>174+285 Hz acoustic field applies mechanical force to protein tertiary structure, potentially disrupting zinc coordination and catalytic conformation</td></tr>
+        <tr><td>Chamber protocol</td><td>60 min 2x daily; 174 Hz + 285 Hz + 528 Hz; DCF-1 nebulized</td></tr>
+        <tr><td>Fluid protocol</td><td>DCF-1 30 mL 4x daily + NAC 2 g orally separately + NeuroFlux 30 mL 2x daily (nerve terminal regeneration)</td></tr>
+        <tr><td>Conventional — FIRST LINE</td><td>HBAT (heptavalent antitoxin) immediately; ventilatory support; protocol supportive only after antitoxin</td></tr>
+        <tr><td>Expected clearance</td><td>Circulating toxin: 7-14 days with early intervention. Neuromuscular recovery: 1-3 months. <span class="tier-low">Confidence: LOW-MODERATE (clearance support)</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>7.2 Ricin</h3></div>
+  <p>Type II ribosome-inactivating protein. No FDA-approved antidote. Treatment is supportive. For ingestion: activated charcoal within 1 hour is critical (prevents absorption before systemic distribution). DCF-1 full detox protocol; route-specific: inhalation adds PulmoLife nebulization; ingestion adds immediate activated charcoal.</p>
+
+  <div class="subsection-header"><h3>7.3 Q Fever (Coxiella burnetii)</h3></div>
+  <p>Obligate intracellular gram-negative organism; SCV spore-like form. 850 nm NIR emphasis in Chamber (intracellular reach). Conventional: doxycycline 100 mg 2x daily × 14 days acute; chronic Q fever endocarditis: doxycycline + hydroxychloroquine × 18 months minimum — MANDATORY.</p>
+</div>
+
+<!-- PATHOGEN MATRIX -->
+<div id="matrix">
+  <div class="section-header">
+    <div class="section-num">Section VIII</div>
+    <h2>Complete Pathogen Coverage Matrix</h2>
+  </div>
+
+  <div class="coverage-grid">
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Enveloped RNA Viruses</div><div class="coverage-sub">Ebola, Marburg, Lassa, Influenza, SARS-CoV-2, HIV, Hantavirus, EEE, Dengue, Zika, Rabies</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Enveloped DNA Viruses</div><div class="coverage-sub">Smallpox (Variola), Herpes, Hepatitis B</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Non-Enveloped Viruses</div><div class="coverage-sub">Norovirus, Polio, Rhinovirus — higher field amplitude required</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Gram-Positive Bacteria</div><div class="coverage-sub">Anthrax, MRSA, VRE, Strep, Staph, C. diff</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Gram-Negative Bacteria</div><div class="coverage-sub">Plague, Tularemia, Q Fever, E. coli, Salmonella</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Acid-Fast Mycobacteria</div><div class="coverage-sub">TB (including MDR/XDR), Leprosy — highest bacterial BDI</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Protein Toxins</div><div class="coverage-sub">Botulinum, Ricin, Tetanus, Diphtheria — 174+285 Hz denaturation</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Fungal Pathogens</div><div class="coverage-sub">Candida, Aspergillus, Coccidioides, Cryptococcus, Mucormycosis</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Protozoan Parasites</div><div class="coverage-sub">Malaria, Babesia, Toxoplasma, Giardia, Trypanosoma, Leishmania</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">✓</span><div><div class="coverage-label">Helminths</div><div class="coverage-sub">Tapeworms, roundworms, hookworms — low-frequency (1-100 Hz) sweep</div></div></div>
+    <div class="coverage-card"><span class="coverage-check">⚠</span><div><div class="coverage-label">Prions</div><div class="coverage-sub">CJD, vCJD, FFI — 963 Hz blueprint reset hypothesis; SPECULATIVE; highest challenge category</div></div></div>
+  </div>
+
+  <div class="impact-box"><p>There is no pathogen that can be engineered that is not a coherent structure. Field-based physical disruption mechanisms do not select for biological resistance — there is no genetic mutation that makes a bacterium's cell wall acoustically invisible. This is the fundamental structural advantage of coherence-based biodefense over pharmaceutical approaches.</p></div>
+</div>
+
+<!-- SESSION ARCHITECTURE -->
+<div id="session">
+  <div class="section-header">
+    <div class="section-num">Section IX</div>
+    <h2>Coherence Chamber Session Architecture — Infectious Disease Protocol</h2>
+  </div>
+  <p>Every Coherence Chamber session for infectious disease follows a nine-phase Solfeggio architecture. The phases represent the Kinematic Cycle applied to therapeutic field delivery.</p>
+
+  <div class="solfeggio-grid">
+    <div class="solfeggio-card">
+      <div class="solfe-freq">7.83 Hz</div>
+      <div class="solfe-name">Phase 1 · Ground State · 0-5 min</div>
+      <div class="solfe-action">Schumann resonance; ANS entrainment; parasympathetic immune activation; coherence baseline</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">174 Hz</div>
+      <div class="solfe-name">Phase 2 · Anti-Inflammatory · 5-10 min</div>
+      <div class="solfe-action">Pain gate modulation; cytokine storm reduction; hemorrhagic fever protocols primary</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">285 Hz</div>
+      <div class="solfe-name">Phase 3 · Disruption + Regen · 10-15 min</div>
+      <div class="solfe-action">Gram-positive cell wall resonance; bacterial membrane disruption; tissue repair at infection sites</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">396 Hz</div>
+      <div class="solfe-name">Phase 4 · Immune Reset · 15-25 min</div>
+      <div class="solfe-action">Th1/Th2 rebalancing; NK cell activation; immune dysregulation correction</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">417 + 528 Hz</div>
+      <div class="solfe-name">Phase 5 · Primary Healing · 25-45 min</div>
+      <div class="solfe-action">Cellular cleansing; DNA repair (528 Hz — Rein 1988; Baati 2021); viral envelope coherence disruption at chamber amplitude</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">639 + 741 Hz</div>
+      <div class="solfe-name">Phase 6 · Comm. Disruption · 45-55 min</div>
+      <div class="solfe-action">741 Hz targets bacterial quorum sensing range; biofilm signaling disruption; microbial metabolite detox</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">852 Hz</div>
+      <div class="solfe-name">Phase 7 · Cellular Awakening · 55-65 min</div>
+      <div class="solfe-action">Macrophage + NK cell activation; cellular immunity support after pathogen field disruption</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">963 Hz</div>
+      <div class="solfe-name">Phase 8 · Blueprint Reset · 65-75 min</div>
+      <div class="solfe-action">Morphogenic field restoration; CNS infection recovery; prion protocols (speculative)</div>
+    </div>
+    <div class="solfeggio-card">
+      <div class="solfe-freq">7.83 Hz</div>
+      <div class="solfe-name">Phase 9 · Integration · 75-80 min</div>
+      <div class="solfe-action">Return to Schumann ground; immune surveillance maintenance; field integration for next cycle</div>
+    </div>
+  </div>
+
+  <div class="table-wrap" style="margin-top:2rem">
+    <table>
+      <thead><tr><th>Severity</th><th>Session Frequency</th><th>FSD-1</th><th>Fluid Dosing</th></tr></thead>
+      <tbody>
+        <tr><td>Prevention / low exposure</td><td>1x weekly</td><td>1x weekly, 15 min</td><td>2x daily, 30 mL</td></tr>
+        <tr><td>Active mild infection</td><td>3x weekly</td><td>2x daily, 15 min</td><td>3x daily, 30 mL</td></tr>
+        <tr><td>Active moderate infection</td><td>Daily</td><td>3x daily, 15 min</td><td>4x daily, 30 mL</td></tr>
+        <tr><td>Active severe (BSL-3/4 level)</td><td>2x daily, 60 min</td><td>4x daily, 15-20 min</td><td>4-6x daily; concurrent conventional treatment mandatory</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PREDICTIONS -->
+<div id="predictions">
+  <div class="section-header">
+    <div class="section-num">Section X</div>
+    <h2>Falsifiable Predictions and Proposed Research Program</h2>
+  </div>
+  <p>The framework stands or falls on these predictions. Studies BSL-001 through BSL-008 are proposed for investigation in appropriately registered BSL-3 and BSL-4 facilities.</p>
+
+  <div class="subsection-header"><h3>Physical/Acoustic Predictions (Foundation Layer)</h3></div>
+  <div class="prediction-grid">
+    <div class="prediction-card">
+      <div class="pred-id">BSL-P01</div>
+      <div class="pred-text">BDI values for all 12 pathogen categories rank in the order predicted (spores > mycobacteria > gram-positive > gram-negative > enveloped viruses > non-enveloped viruses > protein toxins > prions).</div>
+      <div class="pred-meta"><span class="pred-tag">Method: Acoustic impedance measurement</span><span class="pred-tag">Timeline: 6 months</span><span class="pred-tag tier-speculative">Confidence: Foundation</span></div>
+    </div>
+    <div class="prediction-card">
+      <div class="pred-id">BSL-P02</div>
+      <div class="pred-text">FSD-1 sweep (1 Hz - 1 MHz, 15 min, high amplitude) produces measurable disruption of Borrelia burgdorferi biofilm architecture in vitro (non-BSL control organism).</div>
+      <div class="pred-meta"><span class="pred-tag">Method: SEM/AFM + crystal violet assay</span><span class="pred-tag">Falsification: No significant biofilm reduction</span><span class="pred-tag">Timeline: 12 months</span></div>
+    </div>
+    <div class="prediction-card">
+      <div class="pred-id">BSL-P03</div>
+      <div class="pred-text">528 Hz acoustic field (60 min at 100 dB) produces measurable changes in EZ water fraction (UV-Vis 270 nm absorption) in AVF-1 vs. unimprinted control.</div>
+      <div class="pred-meta"><span class="pred-tag">Method: UV-Vis 270 nm; dielectric constant</span><span class="pred-tag">Falsification: p > 0.05 no difference</span><span class="pred-tag">Timeline: 3 months</span></div>
+    </div>
+  </div>
+
+  <div class="subsection-header"><h3>In Vitro Studies (BSL-Registered Facilities)</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Study ID</th><th>Pathogen</th><th>Prediction</th><th>Method</th><th>Falsification</th><th>Timeline</th></tr></thead>
+      <tbody>
+        <tr><td>BSL-001</td><td>B. anthracis Sterne (BSL-1 surrogate)</td><td>FSD-1 sweep reduces spore viability ≥ 50% vs. sham</td><td>CFU count; LIVE/DEAD staining; SEM spore coat</td><td>Viability reduction &lt; 20%</td><td>18 months</td></tr>
+        <tr><td>BSL-002</td><td>M. tuberculosis H37Rv (BSL-3)</td><td>FSD-1 reduces CFU by ≥ 3 log₁₀ after 3 sessions</td><td>CFU on Middlebrook 7H10; MGIT culture</td><td>CFU reduction &lt; 1 log₁₀</td><td>24 months</td></tr>
+        <tr><td>BSL-003</td><td>BoNT Type A (BSL-2 toxin studies)</td><td>174+285 Hz (60 min) reduces endopeptidase activity ≥ 40%</td><td>SNAP-25 cleavage assay; FRET-based or SDS-PAGE</td><td>Activity reduction &lt; 15%</td><td>12 months</td></tr>
+        <tr><td>BSL-004</td><td>VSV — Indiana (Ebola surrogate, BSL-2)</td><td>AVF-1 fluid produces ≥ 2 log₁₀ reduction in viral titer at 48 hr</td><td>PRNT; TCID50</td><td>Titer reduction &lt; 0.5 log₁₀</td><td>12 months</td></tr>
+        <tr><td>BSL-005</td><td>SARS-CoV-2 (BSL-3)</td><td>FSD-1 + AVF-1 combined produces greater titer reduction than either alone (synergy test)</td><td>TCID50 and RT-qPCR at 24/48/72 hr; 3 groups</td><td>No synergy vs. better individual component</td><td>18 months</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>Animal Model Studies</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Study</th><th>Model</th><th>Primary Outcome</th><th>Falsification</th><th>Timeline</th></tr></thead>
+      <tbody>
+        <tr><td>BSL-006 — Anthrax</td><td>Syrian hamster, B. anthracis inhalation (BSL-3)</td><td>14-day survival improved vs. untreated control (antibiotics as positive control)</td><td>Survival not significantly different from untreated</td><td>30 months</td></tr>
+        <tr><td>BSL-007 — Plague</td><td>Mouse, Y. pestis aerosol (BSL-3)</td><td>Lung CFU reduces ≥ 2 log₁₀ vs. sham at 72 hr; 14-day survival</td><td>Lung CFU reduction &lt; 0.5 log₁₀</td><td>30 months</td></tr>
+        <tr><td>BSL-008 — SARS-CoV-2</td><td>K18-hACE2 transgenic mice (BSL-3)</td><td>MoR-predicted clearance (5-7 days with full protocol) confirmed within ±3 days</td><td>MoR timeline off by &gt; 5 days</td><td>24 months</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- DISCUSSION -->
+<div id="discussion">
+  <div class="section-header">
+    <div class="section-num">Section XI</div>
+    <h2>Discussion — Honest Assessment</h2>
+  </div>
+
+  <div class="subsection-header"><h3>Evidence Strength Tiering</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Evidence Level</th><th>What Is Established</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tier-high">Strongest Physical Basis</span></td><td>The acoustic and electromagnetic disruption mechanisms are grounded in established physics. ESWL (FDA-approved 1984) proves acoustic energy can selectively destroy biological structures. Histotripsy (FDA Breakthrough Device) proves controlled cavitation lyses tissue. Photobiomodulation (Cochrane Review evidence) proves NIR light modulates cellular function. These are established clinical technologies whose extension to pathogen disruption is a physically motivated hypothesis.</td></tr>
+        <tr><td><span class="tier-moderate">Moderate Biological Basis</span></td><td>AVF-1 and ABF-1 components have documented antiviral and antibacterial activity (vitamin C, zinc, quercetin zinc ionophore, allicin, carvacrol, glycyrrhizin). These have independent evidence bases. Their delivery in structured DDW with frequency imprinting is the novel Christos™ contribution that requires validation.</td></tr>
+        <tr><td><span class="tier-speculative">Speculative</span></td><td>Application to BSL-4 pathogens in humans. Expected clearance timelines. Prion blueprint reset hypothesis. These are labeled as such throughout. No BSL-3/4 pathogen has been tested with the complete integrated protocol in any biological system.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>The Strategic Case for Coherence-Based Biodefense</h3></div>
+  <p>Conventional pharmaceutical biodefense faces three fundamental limitations that coherence medicine does not share. First, <strong>specificity constraint:</strong> every conventional antiviral targets a specific molecular pathway — new or engineered pathogens that alter these targets can evade treatment. The coherence approach targets physical structure (density, compressibility, acoustic impedance) which cannot be altered through genetic modification without fundamentally changing physical architecture.</p>
+  <p>Second, <strong>development timeline:</strong> a new conventional pharmaceutical requires 10-15 years. In biodefense scenarios involving novel engineered pathogens, this timeline is incompatible with real-time response. The Christos™ platform uses fixed hardware with software-level protocol adjustment — new pathogen categories are addressed by adjusting sweep emphasis, not developing new drugs.</p>
+  <p>Third, <strong>resistance immunity:</strong> field-based physical disruption mechanisms do not select for biological resistance in the traditional sense — there is no genetic mutation that makes a bacterium's cell wall acoustically invisible.</p>
+</div>
+
+<!-- REFERENCES -->
+<div id="references">
+  <div class="section-header">
+    <div class="section-num">References</div>
+    <h2>Selected References</h2>
+  </div>
+  <div style="font-size:0.9rem;line-height:1.9;columns:1">
+    <p>Ankri, S., &amp; Mirelman, D. (1999). Antimicrobial properties of allicin from garlic. <em>Microbes and Infection</em>, 1(2), 125-129.</p>
+    <p>Baati, T., et al. (2021). Exposure to 528 Hz sound wave represses oxidative stress in the rat brain. <em>Journal of Biomedical Science</em>, 28(1), 2.</p>
+    <p>Chaussy, C., et al. (1980). Extracorporeally induced destruction of kidney stones by shock waves. <em>The Lancet</em>, 316(8207), 1265-1268.</p>
+    <p>Cinatl, J., et al. (2003). Glycyrrhizin and replication of SARS-associated coronavirus. <em>The Lancet</em>, 361(9374), 2045-2046.</p>
+    <p>Di Pierro, F., et al. (2021). Quercetin as a complementary agent for COVID-19. <em>Microorganisms</em>, 9(2), 342.</p>
+    <p>Farrior, J. (2026). The Complete Organ Regeneration System. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+    <p>Farrior, J. (2026). Non-Invasive Surgery Through Acoustic Field Dissolution. Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+    <p>Feng, J., Leone, J., Schweig, S., &amp; Zhang, Y. (2020). Evaluation of natural and botanical medicines for activity against B. burgdorferi. <em>Frontiers in Medicine</em>, 7, 6.</p>
+    <p>Hall, T.L., et al. (2007). Histotripsy of the prostate. <em>Urology</em>, 69(4), 747-751.</p>
+    <p>Hamblin, M.R. (2017). Mechanisms and applications of photobiomodulation. <em>AIMS Biophysics</em>, 4(3), 337-361.</p>
+    <p>Harrison, P.M., et al. (1991). Improved outcome of paracetamol-induced fulminant hepatic failure by acetylcysteine. <em>Lancet</em>, 335(8705), 1572-1573.</p>
+    <p>Huggins, J.W., et al. (1991). Ribavirin therapy of hemorrhagic fever with renal syndrome. <em>Journal of Infectious Diseases</em>, 164(6), 1119-1127.</p>
+    <p>Pollack, G.H. (2013). <em>The Fourth Phase of Water: Beyond Solid, Liquid, and Vapor</em>. Ebner &amp; Sons Publishers.</p>
+    <p>Rein, G. (1988). Effect of non-Hertzian scalar waves on the immune system. <em>Journal USPA</em>, 1(1), 15-17.</p>
+    <p>Skolarikos, A., et al. (2006). Extracorporeal shock wave lithotripsy 25 years later. <em>European Urology</em>, 50(5), 981-990.</p>
+    <p>Ultee, A., et al. (2002). Carvacrol is essential for action against food-borne pathogens. <em>Applied and Environmental Microbiology</em>, 68(4), 1561-1568.</p>
+    <p>WHO. (2023). Global Tuberculosis Report 2023. World Health Organization.</p>
+    <p>Zakay-Rones, Z., et al. (1995). Elderberry extract and influenza. <em>Journal of Alternative and Complementary Medicine</em>, 1(4), 361-369.</p>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:3rem">
+  <a href="../../papers.html" class="back-link">← Back to Paper Library</a>
+</div>
+
+</div><!-- end main-content -->
+
+<footer>
+  <div class="copyright">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
+  <p>© 2026 Joshua Farrior. All rights reserved. Original work of Joshua Farrior.</p>
+  <p>Christos™ is a registered trademark of Joshua Farrior / Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+  <p style="margin-top:0.5rem;color:#3AAFAF">Formulations and device specifications available under licensing agreement · christosenergy.com</p>
+  <p style="margin-top:0.5rem">Indianapolis, Indiana · Business ID: 202511071941923</p>
+</footer>
+
+</body>
+</html>
