@@ -14,9 +14,13 @@
     nav { background: var(--nav) !important; border-bottom: 2px solid var(--gold); padding: 0 2rem; position: sticky; top: 0; z-index: 100; }
     .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 64px; }
     .nav-brand { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.1rem; letter-spacing: 0.08em; }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 500; color: var(--body); letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links { display: flex; gap: 1rem; list-style: none; align-items: center; }
+    .nav-links a { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 600; color: var(--body); letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
     .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold) !important; color: var(--bg) !important; padding: 0.4rem 0.9rem; border-radius: 4px; }
+    .nav-cta:hover { color: var(--bg) !important; opacity: 0.85; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(201,168,76,0.1) !important; border: 1px solid rgba(201,168,76,0.4); padding: 0.6rem 1.25rem; font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold) !important; border-radius: 4px; margin-bottom: 2rem; transition: background 0.2s; }
+    .back-link:hover { background: rgba(201,168,76,0.18) !important; color: var(--gold) !important; }
     .hero { background: linear-gradient(160deg,#0A1628 0%,#08111E 60%,#0D1E35 100%) !important; border-bottom: 1px solid var(--border); padding: 5rem 2rem 4rem; text-align: center; }
     .series-tag { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
     .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(1.8rem,4vw,3rem); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 0.75rem; }
@@ -70,8 +74,11 @@
     footer { background: var(--nav) !important; border-top: 2px solid var(--gold); padding: 3rem 2rem; text-align: center; margin-top: 5rem; }
     .footer-brand { font-family: 'Cinzel', serif; color: var(--gold); font-size: 1.1rem; margin-bottom: 0.5rem; }
     .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--teal); margin-bottom: 1rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin: 1rem 0; flex-wrap: wrap; }
+    .footer-links a { font-family: 'Raleway', sans-serif; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--body) !important; }
+    .footer-links a:hover { color: var(--gold) !important; }
     .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.78rem; color: var(--muted); }
-    @media(max-width:768px){.nav-links{display:none}.hero{padding:3rem 1.25rem 2.5rem}.content{padding:2rem 1.25rem}.data-table{font-size:0.78rem}.data-table th,.data-table td{padding:0.5rem 0.6rem}.claim-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.nav-inner{height:auto;flex-wrap:wrap;padding:0.75rem 0}.nav-links{display:flex;flex-wrap:wrap;gap:0.5rem;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:0.6rem;padding-top:0.6rem}.nav-links a{font-size:0.62rem;padding:0.4rem 0.5rem}.hero{padding:3rem 1.25rem 2.5rem}.content{padding:2rem 1.25rem}.data-table{font-size:0.78rem}.data-table th,.data-table td{padding:0.5rem 0.6rem}.claim-grid{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -80,9 +87,13 @@
     <span class="nav-brand">Christos™ Energy</span>
     <ul class="nav-links">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="../../papers.html">Papers</a></li>
-      <li><a href="../../coherence-medicine.html">Coherence Medicine</a></li>
-      <li><a href="../../contact.html">Contact</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -101,6 +112,8 @@
 </section>
 
 <div class="content">
+
+  <a href="../../library.html" class="back-link">&larr; Back to Library</a>
   <div class="disclaimer">
     <div class="disclaimer-title">&#9888; Clinical Disclaimer</div>
     <p>This paper is for research and educational purposes only. Peritoneal carcinomatosis is an advanced-stage cancer requiring immediate professional oncological care, preferably at a center with CRS+HIPEC expertise. No Christos™ device has regulatory clearance. The Christos™ protocol complements — it does not replace — standard oncological care. All [HY] claims require experimental validation.</p>
@@ -294,6 +307,11 @@
 <footer>
   <div class="footer-brand">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
   <div class="footer-tagline">Engineered for Health. Designed for Life.</div>
+  <ul class="footer-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../library.html">Library</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+  </ul>
   <div class="footer-copy">christosenergy.com &nbsp;·&nbsp; © 2026 Joshua Farrior. All rights reserved. Christos™ is a pending trademark.</div>
 </footer>
 </body>
