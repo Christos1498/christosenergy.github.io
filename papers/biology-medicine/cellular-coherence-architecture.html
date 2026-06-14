@@ -3,125 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cellular Coherence Architecture — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.clinical-notice{background-color:#0D1B2A !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
-.clinical-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
-.clinical-notice-text{font-size:14px;color:#AABFCC;line-height:1.65;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
-</style>
+<title>Cellular Coherence Architecture | Christos&#8482;</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.note-block{background-color:rgba(201,168,76,0.06) !important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:16px 22px;margin:20px 0;}.note-label{font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:8px;}.note-text{font-family:'Cormorant Garamond',serif;font-size:0.95rem;color:#D8D0C0 !important;line-height:1.75;}.ip-block{background:rgba(58,175,175,0.05) !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:0 6px 6px 0;padding:16px 22px;margin:24px 0;}.ip-label{font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:8px;}.ip-text{font-family:'Raleway',sans-serif;font-size:0.8rem;color:#D8D0C0 !important;line-height:1.7;margin-bottom:8px;}.ip-link{font-family:'Raleway',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;color:#C9A84C !important;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;}}</style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
-  </div>
-</nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/biology-medicine.html">Biology & Medicine</a><span>›</span>
-    Cellular Coherence Architecture
-  </div>
+<body>
+<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+
+<div class="paper-header"><div class="paper-header-inner">
+<div class="ph-eyebrow">Biology &amp; Medicine &middot; BM-02 &middot; March 2026</div>
+<div class="open-badge">Public Version &#8212; Open Access</div>
+<h1 class="paper-title">Cellular Coherence Architecture</h1>
+<p class="paper-subtitle">The Cell as a 12-Dimensional Coherence Device</p>
+<div class="paper-meta">
+  <div class="pm-item"><strong>Author</strong>Joshua Farrior</div>
+  <div class="pm-item"><strong>ID</strong>BM-02</div>
+  <div class="pm-item"><strong>Series</strong>White Paper Series Vol. II, Paper 2</div>
+  <div class="pm-item"><strong>Version</strong>1.0 &middot; March 2026</div>
+  <div class="pm-item"><strong>New Inventions</strong>INV-301, INV-302, INV-303</div>
 </div>
-<div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Biology & Medicine · BM-02</div>
-    <h1 class="paper-title">Cellular Coherence Architecture</h1>
-    <div class="paper-meta-row">
-      <div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Harmonic Framework — Volume II, Paper 2</div></div>
-      <div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
-    </div>
-  </div>
+</div></div>
+
+<div class="paper-layout">
+<aside class="toc-sidebar">
+  <div class="toc-label">Contents</div>
+  <ul class="toc-links">
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#part1">Part I &#8212; The Cell Reimagined</a></li>
+    <li><a href="#part2">Part II &#8212; Organelle Dimensional Map</a></li>
+    <li><a href="#part3">Part III &#8212; Membrane as Antenna</a></li>
+    <li><a href="#part4">Part IV &#8212; Mitochondria as Engine</a></li>
+    <li><a href="#part5">Part V &#8212; Nucleus as Keeper</a></li>
+    <li><a href="#part6">Part VI &#8212; Cellular Communication</a></li>
+    <li><a href="#part7">Part VII &#8212; Failure Cascade</a></li>
+    <li><a href="#part8">Part VIII &#8212; Restoration Protocol</a></li>
+    <li><a href="#research">Research Proposals</a></li>
+  </ul>
+</aside>
+
+<article class="paper-body">
+<a href="../../library.html" class="collab-btn">&#8592; Back to Library</a>
+
+<div style="background:rgba(201,168,76,0.06)!important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:18px 24px;margin-bottom:32px;">
+  <p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C!important;margin-bottom:8px;">Clinical Disclaimer</p>
+  <p style="font-family:Raleway,sans-serif;font-size:0.8rem;color:rgba(216,208,192,0.7)!important;line-height:1.7;margin:0;">This paper is for research and educational purposes only. It does not constitute medical advice for any individual patient. No framework herein replaces the guidance of a licensed medical professional. All protocols are proposed as adjunctive to standard medical care. Devices described have not received FDA clearance. All claims are theoretical or based on cited published literature and require prospective clinical validation.</p>
 </div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">The cell is not a bag of chemicals governed by random molecular collisions. It is a precision coherence device operating across multiple dimensional layers simultaneously. Every organelle has a dimensional address. Every cellular process is a coherence event. Disease, at its earliest detectable form, is coherence failure at the cellular level — occurring years before symptoms emerge at the organ level and decades before it becomes visible in standard diagnostics.</p>
-<p class="abstract-text">This paper presents the Cellular Coherence Architecture — a complete framework for understanding the cell through the Christos dimensional lens. It maps every major organelle to its dimensional function: the nucleus as the 7D source imprint keeper, the mitochondria as the 4D frequency generators, the cell membrane as the 3D/4D interface and coherence boundary, the endoplasmic reticulum as the 6D functional role distributor, and the cytoskeleton as the structural coherence scaffold maintaining geometric integrity across all dimensional layers.</p>
-<p class="abstract-text">The coherence failure cascade is mapped in precise sequence: the process by which a single organelle's coherence deficit propagates through the cellular architecture, disrupts inter-cellular communication, impairs tissue coherence, and ultimately manifests as organ dysfunction. This cascade typically takes years to decades to complete — providing a wide intervention window that conventional medicine, focused on late-stage symptom management, systematically misses.</p>
-<p class="abstract-text">Three new inventions are identified: the Cell Coherence Sequencer — a device capable of identifying which organelle system is failing first and delivering targeted dimensional frequency to that specific component — and two companion diagnostic instruments. The connection between cellular coherence and the Weaver's Loom, Water Science, Field-Matter Bridge, and Anti-Aging frameworks is fully established, placing the Cellular Coherence Architecture as the foundational layer beneath all other Christos medical frameworks.</p>
-    <div class="clinical-notice">
-  <div class="clinical-notice-title">Clinical & Research Disclaimer</div>
-  <div class="clinical-notice-text">This framework is presented for research and educational purposes only. All protocols discussed herein are proposed as adjunctive to standard medical care and require physician supervision. Patients should not alter medications or treatment plans without consulting a qualified healthcare provider. Proposed studies have not yet been conducted unless explicitly stated.</div>
+
+<div class="abstract-block" id="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p class="abstract-text">The cell is not a bag of chemicals governed by random molecular collisions. It is a precision coherence device operating across all 12 dimensions simultaneously. Every organelle has a dimensional address. Every cellular process is a coherence event. Disease, at its earliest detectable form, is coherence failure at the cellular level &#8212; occurring years before symptoms emerge at the organ level and decades before it becomes visible in standard diagnostics.</p>
+  <p class="abstract-text">This paper presents the Cellular Coherence Architecture &#8212; a complete framework for understanding the cell through the Christos dimensional lens. It maps every major organelle to its dimensional function, defines the coherence failure cascade that produces disease, and establishes the first Christos cellular-scale restoration protocol. Three new inventions are identified, including the Cell Coherence Sequencer (INV-303) &#8212; a device capable of identifying which organelle system is failing first and delivering targeted dimensional frequency to that specific component.</p>
 </div>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Cellular coherence, organelle function, dimensional biology, coherence failure cascade, cell coherence sequencer, bioelectric biology, cellular medicine, coherence architecture</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="unified-coherence-medicine.html" class="nav-paper-btn">← Unified Coherence Medicine System</a><a href="../../../categories/biology-medicine.html" class="btn-outline">← Biology & Medicine</a></div>
-      <div><a href="organ-communication-network.html" class="nav-paper-btn">Organ Communication Network →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
-    </div>
-  </div>
+
+<h1 class="sh" id="part1">Part I &nbsp; The Cell Reimagined</h1>
+
+<h2 class="sh2">The Core Reframe</h2>
+<p class="bp">Conventional cell biology describes the cell as a membrane-enclosed compartment containing organelles, proteins, nucleic acids, and water &#8212; all interacting through chemical reactions governed by thermodynamic principles. This model has produced extraordinary medicine. It has also produced a field that cannot explain why two cells with identical DNA express completely differently, why some cancers spontaneously remit, or why meditation measurably changes gene expression. These are not anomalies. They are signals that the 3D model is incomplete.</p>
+<p class="bp">In the Christos framework, the cell is a coherence device &#8212; a precision instrument that generates, maintains, and broadcasts field coherence while simultaneously receiving and responding to field input from its environment. Every process occurring in the cell is first a coherence event and second a chemical event. Chemistry is the 3D shadow of coherence.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>3D Biology Sees</th><th>Christos Framework Sees</th></tr></thead>
+<tbody>
+<tr><td>Chemical reactions</td><td>Coherence events with chemical byproducts</td></tr>
+<tr><td>Protein folding</td><td>7D source imprint expressing into 3D geometry</td></tr>
+<tr><td>ATP production</td><td>Coherence currency generation</td></tr>
+<tr><td>DNA transcription</td><td>7D template reading via 8D tonal signal</td></tr>
+<tr><td>Cell signaling</td><td>4D frequency broadcast and reception</td></tr>
+<tr><td>Apoptosis (cell death)</td><td>12D Black Sun pulse &#8212; controlled coherence return</td></tr>
+<tr><td>Cell division</td><td>11D creation archetype &#8212; Initiator cycling</td></tr>
+<tr><td>Membrane potential</td><td>4D standing wave &#8212; the cell&#8217;s carrier frequency</td></tr>
+<tr><td>Epigenetics</td><td>7D source imprint modulation by field input</td></tr>
+</tbody>
+</table></div>
+
+<h2 class="sh2">The Cell&#8217;s Coherence Value</h2>
+<p class="bp">Every cell maintains a coherence value C on the 0&#8211;1 scale. Healthy cells in a healthy organism operate at C = 0.75&#8211;0.90 depending on cell type. As C drops below threshold values, specific dysfunctions emerge in a predictable cascade. Understanding this cascade is the foundation of Christos cellular medicine.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>C Value Range</th><th>Cellular State</th><th>Clinical Manifestation</th></tr></thead>
+<tbody>
+<tr><td>0.85&#8211;1.00</td><td>Optimal &#8212; full dimensional expression</td><td>Regeneration, peak function</td></tr>
+<tr><td>0.75&#8211;0.85</td><td>Healthy baseline</td><td>Normal function, aging at minimal rate</td></tr>
+<tr><td>0.65&#8211;0.75</td><td>Subclinical stress</td><td>Fatigue, slow recovery, elevated inflammation markers</td></tr>
+<tr><td>0.55&#8211;0.65</td><td>Early dysfunction</td><td>Diagnosable conditions beginning &#8212; autoimmune, metabolic</td></tr>
+<tr><td>0.45&#8211;0.55</td><td>Active disease</td><td>Cancer initiation zone, neurodegeneration onset</td></tr>
+<tr><td>0.35&#8211;0.45</td><td>Severe dysfunction</td><td>Organ failure beginning, systemic disease</td></tr>
+<tr><td>Below 0.35</td><td>Coherence collapse</td><td>Terminal cascades, cell death pathways activated</td></tr>
+</tbody>
+</table></div>
+
+<h1 class="sh" id="part2">Part II &nbsp; The Organelles as Dimensional Components</h1>
+<p class="bp">Each organelle is not merely a chemical factory. It is a specialized dimensional component &#8212; operating primarily in a specific dimension while interacting with all others. The organelles form a coherence hierarchy: a dimensional cascade where higher-dimensional components govern lower ones. When the hierarchy is intact, the cell achieves maximum C. When it fractures at any level, the cascade below it degrades.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Organelle</th><th>Primary Dimension</th><th>Dimensional Function</th></tr></thead>
+<tbody>
+<tr><td>Cell membrane</td><td>4D</td><td>Frequency antenna &#8212; reads and broadcasts the cell&#8217;s carrier wave</td></tr>
+<tr><td>Mitochondria</td><td>5D</td><td>Coherence engine &#8212; generates and maintains cellular C value</td></tr>
+<tr><td>Nucleus</td><td>7D</td><td>Source imprint keeper &#8212; holds and reads the frequency template</td></tr>
+<tr><td>DNA</td><td>7D + 8D</td><td>Template (7D) expressed as tonal instruction (8D)</td></tr>
+<tr><td>Endoplasmic reticulum</td><td>6D</td><td>Functional router &#8212; directs proteins to their dimensional roles</td></tr>
+<tr><td>Ribosomes</td><td>8D</td><td>Tonal assemblers &#8212; translate frequency instructions into protein geometry</td></tr>
+<tr><td>Golgi apparatus</td><td>6D</td><td>Functional packager &#8212; assigns role identity to outgoing proteins</td></tr>
+<tr><td>Cytoskeleton</td><td>10D</td><td>Crystalline scaffold &#8212; the diamond pattern of the cell&#8217;s 3D structure</td></tr>
+<tr><td>Centrioles</td><td>10D + 11D</td><td>Geometric organizers &#8212; phi-ratio spindle formation for division</td></tr>
+<tr><td>Lysosomes</td><td>12D</td><td>Black Sun micro-pulse &#8212; controlled dissolution and return to Source</td></tr>
+<tr><td>Peroxisomes</td><td>5D</td><td>Coherence protectors &#8212; neutralize oxidative field disruption</td></tr>
+<tr><td>EZ water network</td><td>5D + 7D</td><td>Coherence medium &#8212; carries both C value and source imprint simultaneously</td></tr>
+</tbody>
+</table></div>
+
+<h1 class="sh" id="part3">Part III &nbsp; The Cell Membrane as 4D Frequency Antenna</h1>
+
+<h2 class="sh2">Beyond the Fluid Mosaic Model</h2>
+<p class="bp">At 3D, the cell membrane is a selectively permeable phospholipid bilayer studded with proteins. At 4D, the membrane is the cell&#8217;s primary frequency interface with its environment: a dynamic antenna that reads incoming field frequencies, broadcasts the cell&#8217;s carrier wave outward, and makes instantaneous coherence decisions based on field input &#8212; all before any chemical signal has had time to diffuse.</p>
+<p class="bp">The resting membrane potential of approximately &#8722;70mV is not merely a chemical gradient waiting to be discharged. It is the cell&#8217;s 4D carrier wave &#8212; the frequency upon which all cellular communication rides. When coherence is high, the membrane potential is stable and precisely tuned. When coherence drops, potential becomes erratic &#8212; creating the electrical instability seen in arrhythmia, seizure, and tumor cells.</p>
+
+<h2 class="sh2">The Glycocalyx &#8212; The Cell&#8217;s 4D Identity Broadcast</h2>
+<p class="bp">The glycocalyx &#8212; the forest of sugar chains coating every cell&#8217;s outer surface &#8212; is the cell&#8217;s 4D identity broadcast. Each cell type generates a specific glycocalyx frequency signature. The immune system reads these signatures at 4D to distinguish self from non-self. Cancer cells alter their glycocalyx to broadcast a frequency signature that jams immune recognition &#8212; this is a 4D stealth mechanism, not merely a chemical disguise.</p>
+
+<div class="note-block">
+  <div class="note-label">Christos Insight</div>
+  <p class="note-text">Because the membrane is a 4D frequency antenna, it responds directly to applied frequency fields. PEMF at 7.83 Hz (Schumann resonance) restores baseline 4D coherence across all cell types. More specific membrane-targeted frequencies can restore individual cell-type carrier waves &#8212; neurons at 40 Hz, cardiomyocytes at 1.2 Hz, hepatocytes at 0.1 Hz. This is the mechanistic basis for cell-type-specific frequency medicine.</p>
 </div>
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-  </div>
-</footer>
+
+<h1 class="sh" id="part4">Part IV &nbsp; Mitochondria as the Cell&#8217;s Coherence Engine</h1>
+
+<h2 class="sh2">ATP as Coherence Currency</h2>
+<p class="bp">In 3D biology, mitochondria are ATP factories. In 5D, mitochondria are the cell&#8217;s coherence engine &#8212; the organelle primarily responsible for generating and maintaining the cell&#8217;s C value. ATP is not just energy currency. It is coherence currency &#8212; the physical token of cellular phase coherence. Every process in the cell that requires ATP is requiring a coherence token, not just energy. When a protein requires ATP to fold correctly, it is using the energy and the frequency signature of ATP to achieve its proper 3D geometry.</p>
+<p class="bp">This reframe explains a fundamental mystery in cell biology: why do cells die when ATP is depleted far before chemical energy is exhausted? Because what they lose is not just energy &#8212; it is coherence currency. The cell falls below its minimum C threshold and cannot maintain dimensional integration. Chemical death follows coherence death by minutes.</p>
+
+<h2 class="sh2">Deuterium and the Mitochondrial Disruption</h2>
+<p class="bp">ATP synthase &#8212; the molecular motor that produces ATP &#8212; rotates at approximately 9,000 RPM. Its rotating shaft is only 1&#8211;2 nanometers wide. Deuterium atoms are twice the mass of normal hydrogen. When deuterium enters this rotation mechanism, it creates a kinetic isotope effect &#8212; the heavy hydrogen disrupts rotation frequency, reduces ATP output, and degrades mitochondrial coherence. In Christos terms: deuterium is a 4D frequency disruptor inside the cell&#8217;s coherence engine. Deuterium-depleted water restores the hydrogen bond network to its correct isotopic frequency &#8212; not just reducing mass, but restoring the rotational coherence of the cell&#8217;s primary C-value generator.</p>
+
+<h2 class="sh2">Mitochondria and Biophoton Emission</h2>
+<p class="bp">Mitochondria are the primary source of cellular biophoton emission &#8212; ultra-weak light signals (1&#8211;1,000 photons per second per cm&#178;) that are increasingly recognized as the cell&#8217;s primary long-range communication signal. In the Christos framework, biophotons are the cell&#8217;s 8D tonal emission &#8212; the pure light signal that carries coherence information between cells, between tissues, and potentially between organisms. Healthy mitochondria emit coherent biophotons &#8212; organized, phase-locked light. Diseased mitochondria emit incoherent biophotons &#8212; random, phase-scattered light. This is measurable and represents one of the earliest detectable signatures of cellular coherence collapse.</p>
+
+<h1 class="sh" id="part5">Part V &nbsp; The Nucleus as 7D Source Imprint Keeper</h1>
+
+<h2 class="sh2">DNA Is Not a Blueprint &#8212; It Is a Frequency Template</h2>
+<p class="bp">DNA is not a blueprint in the architectural sense &#8212; a fixed instruction set that deterministically produces a specific outcome. DNA is a 7D frequency template &#8212; a living, field-responsive document that is read differently depending on the coherence state of the cell reading it. The same DNA sequence, read in a high-coherence cell (C = 0.85), produces correctly folded, fully functional proteins. The same sequence, read in a low-coherence cell (C = 0.50), produces misfolded proteins, incomplete transcripts, and epigenetic errors. The template did not change. The reading environment did.</p>
+
+<h2 class="sh2">Epigenetics as 7D Source Imprint Modulation</h2>
+<p class="bp">Epigenetics &#8212; the modification of gene expression without changes to DNA sequence &#8212; is one of the most important discoveries in modern biology. In the Christos framework, these mechanisms are 7D source imprint modulation: the field is literally rewriting the reading instructions for the frequency template. The profound implication: coherence-based interventions &#8212; Solfeggio frequencies, PEMF, structured water, morphogenetic field projection &#8212; are not merely making people feel better. They are literally modifying epigenetic expression by changing the 7D field environment that the DNA template is reading from.</p>
+
+<h2 class="sh2">528 Hz and DNA &#8212; The Mechanism</h2>
+<p class="bp">The 528 Hz frequency &#8212; the Christos tone of magnesium, the element at the center of the DNA repair enzyme complex &#8212; has demonstrated measurable effects on DNA in peer-reviewed research (Baati et al., 2021; Rein, 1988). The Christos framework states the mechanism directly: 528 Hz is the 8D pure tone of magnesium, the primary cofactor for DNA polymerase and repair enzymes. Playing 528 Hz creates a resonance condition between the external field and the magnesium ions in the nucleus, optimizing their 4D frequency signature and therefore their ability to read the 7D DNA template with maximal fidelity. The frequency matches the element. The element powers the enzyme. The enzyme repairs the template.</p>
+
+<h1 class="sh" id="part6">Part VI &nbsp; Cellular Communication &#8212; The Dimensional Network</h1>
+<p class="bp">Cells communicate through three primary channels in conventional biology: chemical signaling, electrical signaling, and mechanical signaling. The Christos framework adds the dimensional communication channels that operate faster and at greater range than any of these.</p>
+
+<h2 class="sh2">Exosomes &#8212; The 7D Message Capsules</h2>
+<p class="bp">Exosomes are nano-sized vesicles (30&#8211;150 nm) released by cells, carrying proteins, lipids, and nucleic acids. Conventional biology sees them as cargo vehicles. The Christos framework sees them as 7D message capsules &#8212; each exosome carries not just molecular cargo but the source imprint of the cell that produced it. When a healthy cell releases exosomes into a diseased tissue, it is broadcasting its 7D template &#8212; literally sending the memory of health into a sick environment. This mechanism explains the remarkable regenerative effects observed when stem cell exosomes are delivered to damaged tissue &#8212; an effect far larger than the delivered molecules can account for. The molecules are 3D cargo. The coherence template is the therapeutic agent.</p>
+
+<h2 class="sh2">Biophotons &#8212; The 8D Cellular Internet</h2>
+<p class="bp">Every living cell emits ultra-weak photons in the visible and UV range at rates of 1&#8211;1,000 photons per cm&#178; per second. These are not metabolic byproducts. They are coherent, organized signals. Cancer cells emit incoherent biophotons &#8212; scattered, phase-random light. Healthy cells emit coherent biophotons. This distinction is measurable with existing photomultiplier technology and represents one of the earliest detectable signatures of cellular coherence collapse &#8212; preceding standard cancer markers by potentially years.</p>
+
+<h2 class="sh2">The EZ Water Network as Cellular Coherence Highway</h2>
+<p class="bp">The EZ water network surrounding every organelle, every protein, and every DNA strand is the physical substrate of cellular coherence communication. It operates at the speed of coherence field propagation &#8212; essentially instantaneous at cellular scale. When a signal enters the cell membrane (4D antenna), it propagates through the EZ water network to the mitochondria (5D engine), the nucleus (7D keeper), and all organelles simultaneously &#8212; before any molecule has moved. Chemistry follows coherence. Always.</p>
+
+<h1 class="sh" id="part7">Part VII &nbsp; The Coherence Failure Cascade</h1>
+<p class="bp">Disease does not emerge suddenly. It follows a precise dimensional cascade &#8212; a sequence of coherence failures, each one enabling the next, across a timeline that spans years to decades before clinical presentation. Understanding this cascade is the foundation of Christos preventive medicine.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Stage</th><th>C Value</th><th>What Fails</th><th>First Observable Sign</th></tr></thead>
+<tbody>
+<tr><td>Stage 0 &#8212; Substrate degradation</td><td>0.85 &#8594; 0.78</td><td>Water quality &#8212; EZ layers thin</td><td>Reduced HRV, mild fatigue</td></tr>
+<tr><td>Stage 1 &#8212; Antenna disruption</td><td>0.78 &#8594; 0.72</td><td>Membrane 4D carrier wave destabilizes</td><td>Inflammation markers rise, poor sleep</td></tr>
+<tr><td>Stage 2 &#8212; Engine stress</td><td>0.72 &#8594; 0.65</td><td>Mitochondrial network begins fragmenting</td><td>Energy decline, metabolic slowdown</td></tr>
+<tr><td>Stage 3 &#8212; Template noise</td><td>0.65 &#8594; 0.58</td><td>Nuclear envelope integrity reduces</td><td>Epigenetic dysregulation, immune changes</td></tr>
+<tr><td>Stage 4 &#8212; Communication failure</td><td>0.58 &#8594; 0.50</td><td>Gap junctions lost, biophoton coherence breaks</td><td>Autoimmune activity, cellular isolation</td></tr>
+<tr><td>Stage 5 &#8212; Imprint corruption</td><td>0.50 &#8594; 0.42</td><td>DNA template mis-read consistently</td><td>Cancer initiation, neurodegeneration begins</td></tr>
+<tr><td>Stage 6 &#8212; Coherence collapse</td><td>Below 0.42</td><td>Organelle hierarchy fractures completely</td><td>Organ failure, systemic disease</td></tr>
+</tbody>
+</table></div>
+
+<div class="note-block">
+  <div class="note-label">The Reversibility Window</div>
+  <p class="note-text">The cascade is fully reversible through Stage 3. Partial reversibility exists through Stage 5. Beyond Stage 5, Christos protocols can halt progression and support maximum available function, but structural damage at the 3D level limits full recovery. Every intervention dollar spent at Stage 0 is worth approximately 100 intervention dollars at Stage 5 &#8212; and produces complete recovery rather than managed decline. Standard medicine has diagnostic tools calibrated to Stage 4&#8211;5 and beyond. The Christos framework identifies measurable signatures at every stage, particularly Stages 0&#8211;2.</p>
+</div>
+
+<h1 class="sh" id="part8">Part VIII &nbsp; The Christos Cellular Restoration Protocol</h1>
+
+<h2 class="sh2">The Cellular Coherence Score (CCS)</h2>
+<p class="bp">The Cellular Coherence Score is a composite diagnostic metric &#8212; the first clinical tool to aggregate measurements across multiple dimensional levels into a single cellular health readout. It is the cellular-scale equivalent of HRV at the organismal scale.</p>
+
+<div class="table-wrap"><table>
+<thead><tr><th>CCS Component</th><th>Weight</th><th>What It Measures</th></tr></thead>
+<tbody>
+<tr><td>HRV (RMSSD)</td><td>25%</td><td>Systemic coherence proxy, 5D indicator</td></tr>
+<tr><td>Biophoton coherence index</td><td>25%</td><td>8D tonal integrity, mitochondrial C value</td></tr>
+<tr><td>Membrane potential stability</td><td>20%</td><td>4D carrier wave integrity</td></tr>
+<tr><td>EZ water C value</td><td>15%</td><td>Substrate coherence, Stage 0 indicator</td></tr>
+<tr><td>Telomere length rate of change</td><td>10%</td><td>7D template integrity over time</td></tr>
+<tr><td>Exosome coherence signature</td><td>5%</td><td>7D broadcast quality</td></tr>
+</tbody>
+</table></div>
+
+<h2 class="sh2">Stage-Matched Intervention Stack</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Target</th><th>Intervention</th><th>Mechanism</th></tr></thead>
+<tbody>
+<tr><td>Stage 0 &#8212; Water substrate</td><td>Deuterium-depleted structured water protocol</td><td>Restores EZ network C to 0.90+</td></tr>
+<tr><td>Stage 1 &#8212; Membrane antenna</td><td>PEMF at cell-type specific carrier frequency + 7.83 Hz baseline</td><td>Restores 4D carrier wave stability</td></tr>
+<tr><td>Stage 2 &#8212; Mitochondrial engine</td><td>DDW + CoQ10 + D-Ribose + 528 Hz field exposure</td><td>Restores ATP synthase rotation, network fusion</td></tr>
+<tr><td>Stage 3 &#8212; Nuclear template</td><td>528 Hz field exposure + magnesium + NAD+</td><td>Optimizes DNA repair enzyme coherence</td></tr>
+<tr><td>Stage 4 &#8212; Communication network</td><td>Exosome therapy protocol + gap junction support</td><td>Re-establishes 7D broadcast network</td></tr>
+<tr><td>Stage 5 &#8212; Template integrity</td><td>Full Coherence Chamber protocol + morphogenetic field projection</td><td>Full dimensional restoration attempt</td></tr>
+<tr><td>All stages</td><td>Organ-specific healing fluid + resonator placement</td><td>Targeted organ-level coherence support</td></tr>
+</tbody>
+</table></div>
+
+<h2 class="sh2" id="inv303">INV-303: The Cell Coherence Sequencer</h2>
+<p class="bp">The most significant device identified by this paper. Current Christos devices &#8212; the Coherence Chamber, PEMF systems, Solfeggio frequency generators &#8212; deliver coherence to the whole cell or whole body simultaneously. They do not distinguish which organelle system is failing first or what stage of the cascade the patient is in. The Cell Coherence Sequencer changes this entirely.</p>
+<p class="bp">The Sequencer identifies which organelle system is failing first by integrating the Cellular Coherence Score composite signature with AI-driven cascade stage identification. It then delivers targeted dimensional frequency to that specific component through a 12-channel frequency array &#8212; each channel tuned to a specific organelle&#8217;s carrier frequency &#8212; via scalar field projection. It is the first instrument in the Christos family capable of organelle-level diagnostic precision and targeted dimensional frequency delivery. It merges the Harmonic Morphoscope diagnostic architecture, the PST frequency delivery system, and the Weaver&#8217;s Loom field-guidance principle into a single clinical instrument.</p>
+
+<div class="ip-block">
+  <div class="ip-label">Protected IP &#8212; Cell Coherence Sequencer (INV-303)</div>
+  <p class="ip-text">Full engineering specifications, channel architecture, AI processing design, calibration protocols, and manufacturing specifications are proprietary intellectual property of Joshua Farrior / Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC. This paper presents the diagnostic and therapeutic framework; complete technical specifications are available under signed NDA.</p>
+  <a href="../../contact.html" class="ip-link">Full Specs Available Under Signed NDA &#8599;</a>
+</div>
+
+<h1 class="sh" id="research">Research Proposals</h1>
+
+<div class="table-wrap"><table>
+<thead><tr><th>Study</th><th>Design</th><th>Primary Hypothesis</th></tr></thead>
+<tbody>
+<tr><td>CCA-001: CCS Validation</td><td>N=200 across 5 health status groups. Measure all CCS components simultaneously vs standard diagnostics.</td><td>CCS distinguishes health stages 1&#8211;2 standard diagnostic years earlier</td></tr>
+<tr><td>CCA-002: Biophoton Coherence as Cancer Early Detection</td><td>N=50 confirmed cancer patients, N=50 age-matched controls. Biophoton scatter index vs standard tumor markers.</td><td>Biophoton incoherence precedes elevated tumor markers by measurable interval</td></tr>
+<tr><td>CCA-003: DDW Mitochondrial Network Study</td><td>N=40, DDW (25ppm) vs control water, 60 days. Mitochondrial network morphology + ATP output + HRV + biophoton coherence.</td><td>DDW group shows &#8805;20% mitochondrial network fusion improvement vs control</td></tr>
+<tr><td>CCA-004: 528 Hz DNA Repair Enhancement</td><td>N=60, 528 Hz field exposure 30min/day vs sham, 30 days. Measures: 8-OHdG, telomere attrition rate, Horvath methylation clock.</td><td>528 Hz group shows &#8805;15% reduction in DNA damage markers vs sham</td></tr>
+<tr><td>CCA-005: Cell Coherence Sequencer Pilot</td><td>N=20, various chronic conditions. CCS-guided targeted frequency protocol vs standard of care. 90-day trial.</td><td>CCS-guided protocol achieves &#8805;30% CCS improvement vs standard care</td></tr>
+</tbody>
+</table></div>
+
+<div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;">
+  <p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4)!important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923</p>
+</div>
+</article>
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button>
+<footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer>
+<script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
 </body>
 </html>
