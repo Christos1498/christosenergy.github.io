@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Multiple Myeloma | Christos™ Coherence Medicine</title>
+  <title>Memory Loss &amp; Early Cognitive Decline | Christos™ Coherence Medicine</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -14,9 +14,13 @@
     nav{background:var(--nav)!important;border-bottom:2px solid var(--gold);padding:0 2rem;position:sticky;top:0;z-index:100}
     .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
     .nav-brand{font-family:'Cinzel',serif;color:var(--gold);font-size:1.1rem;letter-spacing:0.08em}
-    .nav-links{display:flex;gap:1.5rem;list-style:none}
-    .nav-links a{font-family:'Raleway',sans-serif;font-size:0.85rem;font-weight:500;color:var(--body);letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+    .nav-links{display:flex;gap:1rem;list-style:none;align-items:center}
+    .nav-links a{font-family:'Raleway',sans-serif;font-size:0.7rem;font-weight:600;color:var(--body);letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;white-space:nowrap}
     .nav-links a:hover{color:var(--gold)}
+    .nav-cta{background:var(--gold)!important;color:var(--bg)!important;padding:0.4rem 0.9rem;border-radius:4px}
+    .nav-cta:hover{color:var(--bg)!important;opacity:0.85}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(201,168,76,0.1)!important;border:1px solid rgba(201,168,76,0.4);padding:0.6rem 1.25rem;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold)!important;border-radius:4px;margin-bottom:2rem;transition:background 0.2s}
+    .back-link:hover{background:rgba(201,168,76,0.18)!important;color:var(--gold)!important}
     .hero{background:linear-gradient(160deg,#0A1628 0%,#08111E 60%,#0D1E35 100%)!important;border-bottom:1px solid var(--border);padding:5rem 2rem 4rem;text-align:center}
     .series-tag{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
     .hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--white);line-height:1.2;margin-bottom:0.75rem}
@@ -67,15 +71,14 @@
     .action-num{background:var(--gold)!important;color:var(--bg);font-family:'Cinzel',serif;font-size:0.8rem;font-weight:700;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
     .action-text{font-size:0.97rem;line-height:1.65}
     .action-text strong{color:var(--white)}
-    .gap-card{background:var(--card)!important;border:1px solid var(--border);border-radius:8px;padding:1.25rem 1.5rem;margin:1rem 0}
-    .gap-label{font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:0.4rem}
-    .gap-title{font-family:'Cinzel',serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem}
-    .gap-card p{font-size:0.93rem;margin-bottom:0}
     footer{background:var(--nav)!important;border-top:2px solid var(--gold);padding:3rem 2rem;text-align:center;margin-top:5rem}
     .footer-brand{font-family:'Cinzel',serif;color:var(--gold);font-size:1.1rem;margin-bottom:0.5rem}
     .footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--teal);margin-bottom:1rem}
+    .footer-links{display:flex;justify-content:center;gap:1.5rem;list-style:none;margin:1rem 0;flex-wrap:wrap}
+    .footer-links a{font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--body)!important}
+    .footer-links a:hover{color:var(--gold)!important}
     .footer-copy{font-family:'Raleway',sans-serif;font-size:0.78rem;color:var(--muted)}
-    @media(max-width:768px){.nav-links{display:none}.hero{padding:3rem 1.25rem 2.5rem}.content{padding:2rem 1.25rem}.data-table{font-size:0.78rem}.data-table th,.data-table td{padding:0.5rem 0.6rem}.claim-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.nav-inner{height:auto;flex-wrap:wrap;padding:0.75rem 0}.nav-links{display:flex;flex-wrap:wrap;gap:0.5rem;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:0.6rem;padding-top:0.6rem}.nav-links a{font-size:0.62rem;padding:0.4rem 0.5rem}.hero{padding:3rem 1.25rem 2.5rem}.content{padding:2rem 1.25rem}.data-table{font-size:0.78rem}.data-table th,.data-table td{padding:0.5rem 0.6rem}.claim-grid{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -84,18 +87,22 @@
     <span class="nav-brand">Christos™ Energy</span>
     <ul class="nav-links">
       <li><a href="../../index.html">Home</a></li>
-      <li><a href="../../papers.html">Papers</a></li>
-      <li><a href="../../coherence-medicine.html">Coherence Medicine</a></li>
-      <li><a href="../../contact.html">Contact</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <section class="hero">
-  <div class="series-tag">Christos™ Coherence Medicine Series · Oncology · Paper 6</div>
-  <h1>Multiple Myeloma</h1>
-  <div class="hero-sub">From Remission to Resolution: A Coherence-Based Framework for Clearing the Dormant Reservoir, Protecting the Immune System, and Achieving Lasting Molecular Remission</div>
-  <p class="hero-desc">A comprehensive adjunct protocol for patients in remission or on maintenance therapy — addressing the four critical gaps that conventional treatment leaves open.</p>
+  <div class="series-tag">Christos™ Coherence Medicine Series · Neurology &amp; Cognitive Health · Paper 5</div>
+  <h1>Memory Loss and Early Cognitive Decline</h1>
+  <div class="hero-sub">Halting the Cascade, Restoring the Signal, and Reclaiming the Mind</div>
+  <p class="hero-desc">A comprehensive framework addressing the critical window of early cognitive decline — where intervention is most powerful and the brain still has sufficient plasticity to respond.</p>
   <div class="hero-meta">
     <span>&#9632; Author: Joshua Farrior</span>
     <span>&#9632; Christos™ Energy, LLC</span>
@@ -105,9 +112,11 @@
 </section>
 
 <div class="content">
+
+  <a href="../../library.html" class="back-link">&larr; Back to Library</a>
   <div class="disclaimer">
-    <div class="disclaimer-title">&#9888; Clinical Disclaimer — Important Additional Warning</div>
-    <p>Multiple myeloma requires ongoing professional oncological care. Do not modify, reduce, or discontinue any prescribed medication without explicit physician approval. <strong>Several supplements in this protocol may interact with myeloma medications — ALL supplement additions must be reviewed with the treating oncologist before implementation.</strong> The Christos™ protocol is a complementary adjunct, not a replacement for standard myeloma management. All [HY] claims require experimental validation.</p>
+    <div class="disclaimer-title">&#9888; Clinical Disclaimer</div>
+    <p>Progressive memory loss requires professional neurological evaluation. Some causes of cognitive decline — including vitamin B12 deficiency, hypothyroidism, normal pressure hydrocephalus, medication effects, depression, and sleep apnea — are reversible when identified promptly. Do not delay professional evaluation. No Christos™ device has regulatory clearance. All [HY] claims require experimental validation.</p>
   </div>
   <div class="claim-legend">
     <div class="claim-legend-title">Claim Classification</div>
@@ -120,211 +129,193 @@
   </div>
 
   <h2>Abstract</h2>
-  <p>Multiple myeloma is a plasma cell malignancy of the bone marrow that remains incurable by current standards despite dramatic advances in treatment. The introduction of immunomodulatory drugs, proteasome inhibitors, anti-CD38 antibodies, and CAR-T cell therapy has transformed myeloma from an inevitably fatal disease into a chronic, manageable condition — with median survival now exceeding 10–12 years in favorable-risk patients.</p>
-  <p>Yet the fundamental challenge remains: the disease is controlled but not eliminated. Dormant myeloma stem cells persist in bone marrow even during complete remission. This paper presents the Christos™ adjunct protocol for myeloma patients in remission or on maintenance therapy, addressing the four gaps conventional therapy leaves open: dormant myeloma stem cell persistence, immune depletion from chronic therapy, treatment neurotoxicity, and the metabolic environment that permits myeloma cell survival.</p>
+  <p>Progressive memory loss and cognitive decline represent one of the defining medical challenges of the coming decades. Alzheimer's disease alone affects over 55 million people worldwide, with incidence projected to triple by 2050. Despite decades of research, conventional pharmacology has produced only modest symptomatic treatments — though the past two years have brought the first drugs demonstrated to slow disease progression.</p>
+  <p>This paper presents the Christos™ framework for early cognitive decline — a five-pillar protocol addressing the neurobiological cascade through targeted frequency therapy, nutritional neuroprotection, metabolic intervention, and sleep architecture restoration. The paper focuses specifically on the critical window of early cognitive decline, where intervention has the greatest potential impact.</p>
 
   <div class="part-header">
-    <h2>Part I: Understanding Multiple Myeloma</h2>
-    <p>Biology, the myeloma stem cell problem, MRD monitoring, and current treatment landscape</p>
+    <h2>Part I: Understanding Memory Loss and Cognitive Decline</h2>
+    <p>The neuroscience of memory, the three causes of early decline, the critical window</p>
   </div>
 
-  <h2>The Biology of Multiple Myeloma [EP]</h2>
-  <p>Multiple myeloma is a malignancy of plasma cells — the terminally differentiated B lymphocytes whose normal function is to produce antibodies. Myeloma cells damage the body through crowding out normal bone marrow cells (causing anemia and immune deficiency), activating osteoclasts while suppressing osteoblasts (causing lytic bone lesions), producing M protein that damages kidneys, and secreting cytokines that suppress normal immune surveillance.</p>
+  <h2>How Memory Works [EP]</h2>
+  <p>Memory is a distributed system. The <strong>hippocampus</strong> acts as an indexing structure — binding together distributed cortical representations that constitute a complete memory. It is the central node and the earliest casualty in Alzheimer's disease. The <strong>entorhinal cortex</strong> is the primary gateway between hippocampus and cortex — the first region showing tau pathology in Alzheimer's, years or decades before clinical symptoms appear.</p>
+  <p>When hippocampal function is compromised, the ability to form new memories (encoding) is impaired first — which is why recent events are forgotten before remote ones.</p>
 
-  <h3>The Myeloma Stem Cell Problem [EP]</h3>
-  <p>The fundamental obstacle to cure is myeloma-initiating cells (MICs) — a small population of drug-resistant clonogenic cells that persist in the bone marrow even during deep remission. MICs can enter a quiescent state invisible to therapies targeting rapidly dividing cells. The bone marrow niche provides survival signals to myeloma cells through VLA-4/VCAM-1 adhesion (cell adhesion-mediated drug resistance) and IL-6 signaling.</p>
-  <div class="quote"><p>Remission means the fire is contained. MRD negativity means the fire is out — at least below detection threshold. But the kindling remains. The coherence framework's most specific contribution is targeting the kindling: the dormant myeloma stem cells and the niche that shelters them. [HY]</p></div>
+  <h2>The Three Most Common Causes of Early Memory Loss [EP]</h2>
+  <h3>Early-Onset Alzheimer's Disease (EOAD)</h3>
+  <p>Characterized by accumulation of amyloid-beta plaques and hyperphosphorylated tau protein. EOAD (onset before 65) accounts for approximately 5–10% of all Alzheimer's cases. Key biomarkers now include the FDA-approved phospho-tau 217 (p-tau217) blood test, amyloid PET, and hippocampal volume on MRI. The first disease-modifying drugs — lecanemab (Leqembi) and donanemab (Kisunla) — have now demonstrated meaningful slowing of progression in early-stage patients.</p>
 
-  <h3>Minimal Residual Disease (MRD) — The Key Metric [EP]</h3>
+  <h3>Vascular Cognitive Impairment (VCI)</h3>
+  <p>Caused by cerebrovascular disease including small vessel disease, lacunar infarcts, and white matter hyperintensities. The cognitive profile tends to emphasize executive function and processing speed early, with less prominent memory encoding deficits than Alzheimer's. Blood pressure control is the primary modifiable risk factor.</p>
+
+  <h3>LATE — Limbic-Predominant Age-Related TDP-43 Encephalopathy</h3>
+  <p>A newly defined neuropathological entity (formally described 2019) estimated to affect 20–40% of individuals over 85. It mimics Alzheimer's clinically but is driven by TDP-43 mislocalization rather than amyloid or tau. It may explain why some patients enrolled in amyloid-targeting trials showed no response.</p>
+
+  <h2>The Critical Window [EP]</h2>
   <table class="data-table">
-    <thead><tr><th>Response Category</th><th>Definition</th><th>Clinical Significance</th></tr></thead>
+    <thead><tr><th>Stage</th><th>Clinical Status</th><th>Intervention Opportunity</th></tr></thead>
     <tbody>
-      <tr><td>Partial Response (PR)</td><td>≥50% reduction in M protein</td><td>Adequate but not deep; progression likely within 1–3 years without escalation</td></tr>
-      <tr><td>Complete Response (CR)</td><td>Negative immunofixation + &lt;5% plasma cells in marrow</td><td>Good; but MICs may still be present</td></tr>
-      <tr><td>MRD Negative (10⁻⁵)</td><td>&lt;1 myeloma cell per 100,000 marrow cells by NGF or NGS</td><td>Strongly associated with extended PFS and OS; current deepest standard</td></tr>
-      <tr><td>Sustained MRD Negativity</td><td>MRD negative at ≥2 time points ≥12 months apart</td><td>The emerging holy grail; may define functional cure in a subset</td></tr>
+      <tr><td>Preclinical</td><td>No symptoms; normal cognition</td><td>Highest — pathology present but brain compensating</td></tr>
+      <tr><td>Subjective Cognitive Decline (SCD)</td><td>Self-reported concerns; normal on testing</td><td>Very high — self-awareness with preserved function</td></tr>
+      <tr><td>Mild Cognitive Impairment (MCI)</td><td>Measurable impairment; independent function preserved</td><td>High — approved treatments available; Christos™ protocol most applicable</td></tr>
+      <tr><td>Mild Dementia</td><td>Affects daily function; some assistance needed</td><td>Moderate — slowing progression is the goal</td></tr>
     </tbody>
   </table>
 
-  <h2>Current Treatment Landscape [EP]</h2>
+  <div class="quote"><p>The most important insight in cognitive decline: every year of delay in reaching the dementia threshold is a year of independence, relationship, work, and lived experience preserved. The minimum goal is meaningful, measurable slowing of the progression rate.</p></div>
+
+  <h2>What Conventional Medicine Offers [EP]</h2>
   <table class="data-table">
-    <thead><tr><th>Drug/Regimen</th><th>Class</th><th>Setting</th><th>Key Data</th></tr></thead>
+    <thead><tr><th>Treatment</th><th>Mechanism</th><th>Approved For</th><th>Limitations</th></tr></thead>
     <tbody>
-      <tr><td>Dara-VRd (daratumumab + bortezomib + lenalidomide + dex)</td><td>Anti-CD38 + PI + IMiD</td><td>First-line induction</td><td>Current gold standard; MRD negativity 50–60%</td></tr>
-      <tr><td>Lenalidomide maintenance</td><td>IMiD</td><td>Post-transplant maintenance</td><td>Extends PFS by 2–3 years over observation</td></tr>
-      <tr><td>Ciltacabtagene autoleucel (Carvykti)</td><td>BCMA CAR-T</td><td>1st relapse+</td><td>ORR 98%; CR 78%; MRD negativity ~60% (CARTITUDE-4)</td></tr>
-      <tr><td>Teclistamab (Tecvayli)</td><td>BCMA × CD3 bispecific</td><td>3rd+ relapse</td><td>ORR 63%; CR 39%</td></tr>
-      <tr><td>Talquetamab</td><td>GPRC5D × CD3 bispecific</td><td>3rd+ relapse</td><td>ORR 73%; novel target</td></tr>
+      <tr><td>Donepezil / Rivastigmine / Galantamine</td><td>Acetylcholinesterase inhibitor</td><td>Mild to moderate Alzheimer's</td><td>Symptomatic only; does not slow progression</td></tr>
+      <tr><td>Memantine</td><td>NMDA receptor antagonist</td><td>Moderate to severe Alzheimer's</td><td>Symptomatic only; modest benefit</td></tr>
+      <tr><td>Lecanemab (Leqembi)</td><td>Anti-amyloid monoclonal antibody</td><td>Early Alzheimer's (MCI + mild, amyloid-positive)</td><td>27% slowing of decline; ARIA risk; $26,500/year</td></tr>
+      <tr><td>Donanemab (Kisunla)</td><td>Anti-amyloid monoclonal antibody</td><td>Early Alzheimer's (biomarker-positive)</td><td>35% slowing of decline; ARIA risk; monitoring required</td></tr>
     </tbody>
   </table>
 
   <div class="part-header">
-    <h2>Part II: The Christos™ Coherence Framework for Multiple Myeloma</h2>
-    <p>Addressing the four critical gaps — specifically designed for patients in remission on maintenance therapy</p>
+    <h2>Part II: The Christos™ Coherence Framework</h2>
+    <p>Five-pillar protocol for hippocampal field restoration and cognitive decline reversal</p>
   </div>
 
-  <h2>The Four Critical Gaps [EP/HY]</h2>
-  <div class="gap-card">
-    <div class="gap-label">Gap 1</div>
-    <div class="gap-title">Dormant Myeloma Stem Cell Reservoir</div>
-    <p>No current therapy reliably eliminates MICs. Extended fasting (72-hr quarterly) is the most evidence-supported method for eliminating quiescent cancer stem cells and regenerating the immune system (Cheng et al., Cell Stem Cell 2014) [EP]. Frequency sweep and curcumin are proposed to address MIC niche adhesion [HY/EP].</p>
-  </div>
-  <div class="gap-card">
-    <div class="gap-label">Gap 2</div>
-    <div class="gap-title">Immune System Depletion from Chronic Therapy</div>
-    <p>Years of chemotherapy, corticosteroids, and proteasome inhibitors deplete T-cell, NK cell, and normal plasma cell populations. The immune support protocol rebuilds immune coherence during the maintenance phase [EP].</p>
-  </div>
-  <div class="gap-card">
-    <div class="gap-label">Gap 3</div>
-    <div class="gap-title">Treatment-Induced Peripheral Neuropathy</div>
-    <p>Bortezomib causes peripheral neuropathy in 30–40% of patients. Alpha-lipoic acid, acetyl-L-carnitine, methyl B12, and local frequency therapy address neuropathy support [EP].</p>
-  </div>
-  <div class="gap-card">
-    <div class="gap-label">Gap 4</div>
-    <div class="gap-title">Metabolic Environment Permissive to Myeloma Survival</div>
-    <p>No targeted metabolic intervention exists in standard myeloma protocols. Myeloma cells thrive in high-glucose, insulin-driven environments. Ketogenic diet + fasting + berberine create metabolic conditions unfavorable to myeloma survival [EP].</p>
-  </div>
+  <h2>The Coherence Model of Memory Loss [HY]</h2>
+  <p>The Christos™ framework proposes that progressive memory loss is a degradation of the coherence of neural signals within and between the brain regions responsible for memory. Memory is not stored in damaged neurons — it is stored in the field of coherent relationships between neurons. When those relationships lose coherence, the memory is not deleted. It is in static. Restore coherence, and the signal can be recovered. [HY]</p>
+
+  <div class="quote"><p>Memory is not a hard drive deleting files. It is a radio losing signal. The memories are there. The person is there. The signal is weakening. The question is not whether the memories exist — they do — but whether we can help the brain maintain the coherence to access them. [HY]</p></div>
 
   <h2>The Five-Pillar Protocol</h2>
 
   <div class="pillar">
     <div class="pillar-num">Pillar 1</div>
-    <div class="pillar-title">Bone Marrow Blueprint Restoration [ED/HY]</div>
-    <p>The primary device targets the sternum — overlying the largest accessible deposit of red bone marrow in adults — delivering continuous frequency to the bone marrow field:</p>
+    <div class="pillar-title">Hippocampal Field Restoration [ED/HY]</div>
     <ul>
-      <li><strong>MyeloPatch (BMP-1)</strong> — flexible patch worn 24/7 over sternum; continuous multi-frequency delivery to sternal bone marrow [ED]</li>
-      <li><strong>Frequency Sweep Wand — Weekly Sessions</strong> — 15 min over sternum, spine, and bilateral iliac crests; proposed to disrupt MIC quiescent field state [ED/HY]</li>
-      <li><strong>OsteoFlux Bone Support</strong> — daily oral supplement supporting bone marrow field integrity and osteoblast activity [EP]</li>
+      <li><strong>Hippocampal Resonator System (HRS-1)</strong> — headband-style device with rose quartz temporal nodes targeting hippocampal and entorhinal projection zones; 2-hour daily session [ED]</li>
+      <li><strong>40 Hz Gamma Audio — Daily</strong> — binaural beats (400/440 Hz); 60 min daily with headphones; MIT research documents microglial amyloid clearance [EP]</li>
+      <li><strong>40 Hz Visual Flicker (optional)</strong> — combined audio + visual produces stronger response than audio alone in animal models [EP]</li>
+      <li><strong>6 Hz Theta Audio (Pre-Sleep)</strong> — proposed hippocampal theta rhythm entrainment during pre-sleep consolidation period [HY]</li>
+      <li><strong>Coherence Lock Practice</strong> — 17-second breath hold, focus on temples (hippocampal projection), 3x daily [HY]</li>
     </ul>
-    <div class="proprietary">The MyeloPatch (BMP-1) engineering specifications and OsteoFlux formula are proprietary. Licensing inquiries through christosenergy.com.</div>
+    <div class="proprietary">The Hippocampal Resonator System (HRS-1) and Delta Sleep Pad (DSP-1) engineering specifications are proprietary. Licensing inquiries through christosenergy.com.</div>
   </div>
 
   <div class="pillar">
     <div class="pillar-num">Pillar 2</div>
-    <div class="pillar-title">Immune System Coherence Restoration [EP]</div>
-    <table class="data-table">
-      <thead><tr><th>Intervention</th><th>Dose</th><th>Evidence</th></tr></thead>
-      <tbody>
-        <tr><td>Vitamin D3</td><td>10,000 IU daily</td><td>Low D3 associated with worse myeloma outcomes; D3 receptors on plasma cells and T cells [EP]</td></tr>
-        <tr><td>Zinc</td><td>30mg daily</td><td>T-cell development; NK cell function; commonly depleted by myeloma therapy [EP]</td></tr>
-        <tr><td>Selenium</td><td>200mcg daily</td><td>NK cell function; antioxidant; reduces treatment toxicity [EP]</td></tr>
-        <tr><td>Turkey Tail + Reishi</td><td>2g daily combined</td><td>Beta-glucan immune stimulation; PSK survival data in GI cancers [EP]</td></tr>
-        <tr><td>Omega-3 (DHA/EPA)</td><td>4g daily</td><td>Anti-inflammatory; improves NK cell activity [EP]</td></tr>
-        <tr><td>Probiotics</td><td>100B CFU daily</td><td>Gut microbiome diversity associated with chemotherapy response; reduces GI toxicity [EP]</td></tr>
-        <tr><td>Melatonin</td><td>20mg at night</td><td>NK cell activation; anti-myeloma activity in vitro; reduces steroid-related sleep disruption [EP]</td></tr>
-      </tbody>
-    </table>
+    <div class="pillar-title">Neural Oscillation Support [EP/HY]</div>
+    <ul>
+      <li><strong>Neurofeedback — Theta/Alpha Training</strong> — normalizes the theta/alpha ratio abnormality seen in MCI; multiple RCTs show cognitive benefit [EP]</li>
+      <li><strong>tVNS — Vagus Nerve Stimulation</strong> — transcutaneous tragus; reduces neuroinflammation via cholinergic anti-inflammatory pathway; minimal adverse effects [EP]</li>
+      <li><strong>PEMF — Theta Range</strong> — 6–10 Hz over temporal regions, 30 min twice daily; supports synaptic plasticity [EP/ED]</li>
+    </ul>
   </div>
 
   <div class="pillar">
     <div class="pillar-num">Pillar 3</div>
-    <div class="pillar-title">Anti-Myeloma Nutraceutical Support [EP]</div>
-    <p><strong>Critical note: Review all supplements with treating oncologist before adding. Some may interact with myeloma medications.</strong></p>
+    <div class="pillar-title">Material Support: Neuroprotection Stack [EP]</div>
     <table class="data-table">
-      <thead><tr><th>Supplement</th><th>Dose</th><th>Evidence in Myeloma</th></tr></thead>
+      <thead><tr><th>Supplement</th><th>Dose</th><th>Evidence</th></tr></thead>
       <tbody>
-        <tr><td>Liposomal Curcumin</td><td>2g twice daily</td><td>Inhibits NF-kB (primary myeloma survival pathway); synergizes with bortezomib; Phase II trial: disease stabilization in MGUS/smoldering myeloma [EP]</td></tr>
-        <tr><td>EGCG (Green Tea Extract)</td><td>1g twice daily</td><td>Inhibits IL-6 signaling; pro-apoptotic in myeloma cell lines [EP]</td></tr>
-        <tr><td>Resveratrol</td><td>500mg daily</td><td>Inhibits SIRT1-dependent myeloma survival; sensitizes cells to bortezomib [EP]</td></tr>
-        <tr><td>Quercetin</td><td>500mg daily</td><td>Inhibits IL-6/JAK/STAT3 axis; inhibits myeloma cell adhesion to stromal cells [EP]</td></tr>
-        <tr><td>Berberine</td><td>500mg 3x daily</td><td>Inhibits mTOR and NF-kB in myeloma cells; anti-MIC activity [EP]</td></tr>
-        <tr><td>Sulforaphane</td><td>200mg daily</td><td>Activates Nrf2; documented anti-myeloma activity; kills myeloma stem cells in vitro [EP]</td></tr>
+        <tr><td>Lion's Mane Mushroom</td><td>3g daily</td><td>Double-blind RCT shows cognitive improvement in MCI (Mori et al.) [EP]</td></tr>
+        <tr><td>DHA Omega-3</td><td>2g daily (DHA-specific)</td><td>Primary hippocampal membrane fatty acid; anti-neuroinflammatory [EP]</td></tr>
+        <tr><td>Fisetin (liposomal)</td><td>500mg daily</td><td>Senolytic; reduces tau accumulation in Alzheimer's models; crosses BBB [EP]</td></tr>
+        <tr><td>Quercetin</td><td>500mg twice daily</td><td>Senolytic; inhibits tau aggregation; anti-neuroinflammatory [EP]</td></tr>
+        <tr><td>Phosphatidylserine</td><td>300mg daily</td><td>Shown in multiple trials to improve memory in age-related cognitive decline [EP]</td></tr>
+        <tr><td>Citicoline</td><td>500mg twice daily</td><td>Increases acetylcholine; documented cognitive benefit in MCI trials [EP]</td></tr>
+        <tr><td>Magnesium L-Threonate</td><td>2g daily</td><td>Only magnesium penetrating BBB meaningfully; increases synaptic density [EP]</td></tr>
+        <tr><td>Bacopa Monnieri</td><td>500mg daily</td><td>Reduces neuroinflammation; improves cognition in human RCTs [EP]</td></tr>
+        <tr><td>Benfotiamine</td><td>300mg twice daily</td><td>Reduces AGEs in neural tissue; reduces amyloid and tau in animal models [EP]</td></tr>
+        <tr><td>Vitamin D3</td><td>10,000 IU daily</td><td>Low D3 associated with faster cognitive decline and higher dementia risk [EP]</td></tr>
       </tbody>
     </table>
-    <div class="proprietary">The Christos™ MyeloFlux formula integrates these and additional proprietary compounds. Formula composition not disclosed. Licensing inquiries through christosenergy.com.</div>
+    <div class="proprietary">The Christos™ NeuroFlux Memory Formula integrates these compounds with proprietary frequency imprinting. Formula composition not disclosed. Licensing inquiries through christosenergy.com.</div>
   </div>
 
   <div class="pillar">
     <div class="pillar-num">Pillar 4</div>
-    <div class="pillar-title">Metabolic Reprogramming — Starving the Reservoir [EP]</div>
+    <div class="pillar-title">Metabolic Reprogramming for the Brain [EP]</div>
+    <p>Insulin resistance in the brain — sometimes called 'Type 3 Diabetes' — impairs glucose uptake in hippocampal neurons, contributing to the energy deficit that drives neurodegeneration:</p>
     <ul>
-      <li><strong>72-Hour Quarterly Water Fast</strong> — most powerful known method for eliminating cancer stem cells; simultaneously regenerates the immune system through hematopoietic stem cell renewal (Cheng et al. Cell Stem Cell 2014) [EP] — discuss timing with oncologist</li>
-      <li><strong>Ketogenic / Low-Carbohydrate Diet</strong> — net carbs &lt;50g/day; reduces glucose and insulin (myeloma growth factors); reduces IGF-1 [EP]</li>
-      <li><strong>Intermittent Fasting (16:8 minimum)</strong> — reduces insulin and IGF-1; reduces inflammatory cytokines [EP]</li>
-      <li><strong>Pre-Treatment Fast (48 hours)</strong> — before each scheduled infusion; differential stress sensitization [EP] — discuss with oncologist first</li>
-      <li><strong>Complete elimination of sugar and alcohol</strong> — directly feeds myeloma growth pathways; alcohol is immunosuppressive [EP]</li>
+      <li><strong>MCT Oil</strong> — 30–60mL daily; rapidly converts to ketones; provides immediate brain fuel for insulin-resistant hippocampal neurons [EP]</li>
+      <li><strong>Ketogenic / Low-Carbohydrate Diet</strong> — net carbs &lt;50g; clinical trial (Henderson 2004) showed cognitive improvement with MCT-induced ketosis [EP]</li>
+      <li><strong>Intermittent Fasting (16:8)</strong> — reduces insulin and IGF-1; triggers autophagy including amyloid clearing; increases BDNF [EP]</li>
+      <li><strong>Elimination of refined sugar and processed foods</strong> — reduces advanced glycation end products and neuroinflammation [EP]</li>
+      <li><strong>Blood sugar optimization</strong> — target fasting glucose &lt;90 mg/dL; chronic hyperglycemia directly damages hippocampal neurons [EP]</li>
     </ul>
   </div>
 
   <div class="pillar">
     <div class="pillar-num">Pillar 5</div>
-    <div class="pillar-title">Neuropathy Recovery and Physical Resilience [EP]</div>
-    <p>For patients who have experienced bortezomib or thalidomide-induced peripheral neuropathy:</p>
+    <div class="pillar-title">Sleep Architecture Restoration [EP]</div>
+    <p>The glymphatic system clears amyloid and tau from the brain almost exclusively during slow-wave sleep. Sleep deprivation of even one night produces measurable increases in brain amyloid. This is the most underappreciated intervention in cognitive decline prevention:</p>
     <ul>
-      <li><strong>Alpha-Lipoic Acid</strong> — 600mg daily; multiple RCTs show significant reduction in CIPN severity [EP]</li>
-      <li><strong>Acetyl-L-Carnitine (ALCAR)</strong> — 1g daily; mitochondrial support in peripheral neurons; CIPN prevention [EP]</li>
-      <li><strong>Methyl B12 (sublingual)</strong> — 5mg daily; myelin repair cofactor; neuroprotective [EP]</li>
-      <li><strong>Omega-3 (high-dose DHA)</strong> — 3g DHA-specific daily; anti-neuroinflammatory; peripheral nerve membrane support [EP]</li>
-      <li><strong>Exercise — continued daily</strong> — 5–6x weekly: cardio + yoga + strength + sauna; most evidence-supported intervention for CIPN management [EP]</li>
-      <li><strong>Local Frequency Therapy (285 Hz)</strong> — over affected hands and feet; proposed peripheral nerve field restoration [ED/HY]</li>
+      <li><strong>Melatonin</strong> — 3–10mg at bedtime; regulates circadian rhythm; anti-inflammatory; melatonin production severely impaired in Alzheimer's [EP]</li>
+      <li><strong>Sleep Hygiene</strong> — dark, cool (18°C), quiet; consistent sleep/wake times 7 days/week; no screens 2 hours before bed [EP]</li>
+      <li><strong>Sleep Apnea Treatment</strong> — if present, this may be the single highest-impact reversible intervention; untreated apnea doubles dementia risk [EP]</li>
+      <li><strong>Magnesium Glycinate</strong> — 400mg at bedtime; improves sleep quality [EP]</li>
+      <li><strong>Delta Sleep Pad (DSP-1)</strong> — 2.5 Hz frequency pad under pillow; proposed slow-wave sleep architecture support [ED/HY]</li>
     </ul>
   </div>
 
-  <h2>The 12-Month Protocol Aligned to Treatment Cycle</h2>
+  <h2>The 90-Day Protocol</h2>
   <div class="phase">
-    <div class="phase-label">Days 1–21 (Lenalidomide Cycle)</div>
-    <p>MyeloPatch 24/7; full anti-myeloma supplement stack; ketogenic diet; exercise 5–6x weekly; 48-hour pre-infusion fast if infusion scheduled.</p>
+    <div class="phase-label">Phase 1 — Stabilization (Days 1–30)</div>
+    <p>Stop the acceleration of decline by addressing neuroinflammation, metabolic dysfunction, and sleep disruption — the three most modifiable contributors. Establish the full nutritional and lifestyle foundation. Begin the Hippocampal Resonator protocol and 40 Hz gamma audio daily.</p>
   </div>
   <div class="phase">
-    <div class="phase-label">Days 22–28 (Rest Week)</div>
-    <p>All Christos™ protocols continue. Elevated energy during rest week — ideal for longer exercise sessions and cognitive engagement.</p>
+    <div class="phase-label">Phase 2 — Active Memory Restoration (Days 31–60)</div>
+    <p>With inflammatory and metabolic foundation established, intensify memory-specific interventions. Add dual n-back training (N=2 daily); memory palace construction; prospective memory training; escalate exercise to include strength training. Add 40 Hz visual flicker.</p>
   </div>
   <div class="phase">
-    <div class="phase-label">Every 3 Months (Quarterly)</div>
-    <p>72-hour water fast in the week before MRD assessment. Lab review with oncologist. Adjust supplement stack based on labs.</p>
+    <div class="phase-label">Phase 3 — Consolidation and Long-Term Maintenance (Days 61–90+)</div>
+    <p>Establish sustainable long-term practices. Assess functional gains. Establish quarterly blood test panel (vitamin D, omega-3 index, homocysteine, HbA1c, fasting glucose). Annual neuropsychological testing to monitor trajectory.</p>
   </div>
 
-  <h2>Questions to Ask the Oncologist</h2>
-  <table class="data-table">
-    <thead><tr><th>Question</th><th>Why It Matters</th></tr></thead>
-    <tbody>
-      <tr><td>"Can we test for MRD by NGF or NGS?"</td><td>MRD status is the strongest predictor of long-term outcome; standard monitoring may miss residual disease</td></tr>
-      <tr><td>"Is daratumumab maintenance an option alongside lenalidomide?"</td><td>Dara + lenalidomide improves MRD negativity rates and PFS over lenalidomide alone</td></tr>
-      <tr><td>"Am I eligible for any CAR-T trials or bispecific antibody trials?"</td><td>Carvykti has shown benefit in earlier relapse; some trials evaluating CAR-T in MRD-positive remission</td></tr>
-      <tr><td>"Can we check my vitamin D level?"</td><td>Low vitamin D is extremely common in myeloma patients and associated with worse outcomes</td></tr>
-      <tr><td>"Is there a neuropathy management plan?"</td><td>Opens conversation about ALA, ALCAR, neurology referral — many protocols are under-managed</td></tr>
-      <tr><td>"Can we review my fasting approach before each cycle?"</td><td>Pre-treatment fasting has emerging evidence; timing and safety depend on specific regimen</td></tr>
-    </tbody>
-  </table>
-
-  <h2>What a Myeloma Patient in Remission Can Do Today</h2>
+  <h2>What Someone with Early Memory Loss Can Do Today</h2>
   <div class="callout">
-    <div class="callout-title">Priority Action Protocol — Immediate, No New Devices Required</div>
-    <div class="action-item"><div class="action-num">1</div><div class="action-text"><strong>Continue the exercise routine</strong> — 5–6x weekly cardio + yoga + weights + sauna. This is your most powerful immune and anti-cancer tool. Do not reduce it.</div></div>
-    <div class="action-item"><div class="action-num">2</div><div class="action-text"><strong>Continue fasting</strong> — maintain intermittent fasting (16:8 or better). This is already your most powerful metabolic tool.</div></div>
-    <div class="action-item"><div class="action-num">3</div><div class="action-text"><strong>Add 72-hour quarterly water fast</strong> — discuss timing with oncologist; schedule around treatment cycle; ideally 1 week before MRD assessment. Cheng et al. 2014: eliminates cancer stem cells; regenerates hematopoietic immune system.</div></div>
-    <div class="action-item"><div class="action-num">4</div><div class="action-text"><strong>Add Alpha-Lipoic Acid for neuropathy</strong> — 600mg daily; multiple RCTs support CIPN benefit; minimal drug interaction risk; inform oncologist.</div></div>
-    <div class="action-item"><div class="action-num">5</div><div class="action-text"><strong>Add Acetyl-L-Carnitine for neuropathy</strong> — 1g daily; neuropathy recovery; mitochondrial support; inform oncologist.</div></div>
-    <div class="action-item"><div class="action-num">6</div><div class="action-text"><strong>Add Methyl B12 sublingual</strong> — 5mg daily under tongue; myelin repair; neuropathy recovery; generally safe.</div></div>
-    <div class="action-item"><div class="action-num">7</div><div class="action-text"><strong>Optimize Vitamin D3</strong> — 10,000 IU daily; request blood level test (target 60–80 ng/mL); inform oncologist; monitoring recommended at higher doses.</div></div>
-    <div class="action-item"><div class="action-num">8</div><div class="action-text"><strong>Ask about MRD testing</strong> — request NGF or NGS MRD assessment at next bone marrow biopsy. This is the most important conversation with your oncologist.</div></div>
-    <div class="action-item"><div class="action-num">9</div><div class="action-text"><strong>Add curcumin — review with oncologist first</strong> — 2g twice daily; direct anti-myeloma NF-kB inhibition; synergizes with bortezomib-containing regimens; potential drug interaction requires review.</div></div>
-    <div class="action-item"><div class="action-num">10</div><div class="action-text"><strong>Eliminate all alcohol</strong> — direct immunosuppression on top of treatment; metabolic impediment. No review needed — inform oncologist as a positive change.</div></div>
+    <div class="callout-title">Immediate Action Protocol — Begin Today</div>
+    <div class="action-item"><div class="action-num">1</div><div class="action-text"><strong>See a neurologist — the most important step.</strong> Request MCI screening, the p-tau217 blood test, and assessment for reversible causes (B12, thyroid, sleep apnea, medication effects, depression).</div></div>
+    <div class="action-item"><div class="action-num">2</div><div class="action-text"><strong>Start aerobic exercise today.</strong> 30 min brisk walk minimum; build to 45 min, 5x weekly. Single most powerful intervention; BDNF drives hippocampal neurogenesis. 30–45% dementia risk reduction.</div></div>
+    <div class="action-item"><div class="action-num">3</div><div class="action-text"><strong>Begin Lion's Mane Mushroom.</strong> 3g daily with food. Only natural substance with documented NGF stimulation; double-blind RCT shows cognitive improvement in MCI.</div></div>
+    <div class="action-item"><div class="action-num">4</div><div class="action-text"><strong>Add DHA Omega-3.</strong> 2g DHA-specific daily (not generic fish oil — look for DHA content on label).</div></div>
+    <div class="action-item"><div class="action-num">5</div><div class="action-text"><strong>Add Citicoline.</strong> 500mg twice daily. Increases acetylcholine; documented cognitive improvement in MCI; widely available.</div></div>
+    <div class="action-item"><div class="action-num">6</div><div class="action-text"><strong>Listen to 40 Hz gamma audio 60 min daily.</strong> Headphones required; free on YouTube. MIT research documents amyloid clearance via microglial activation; human trials showing measurable cognitive benefit. Zero risk.</div></div>
+    <div class="action-item"><div class="action-num">7</div><div class="action-text"><strong>Fix sleep — this week.</strong> Dark, cool (18°C), quiet; consistent sleep/wake times 7 days/week; no screens 2 hours before bed; melatonin 3mg. Glymphatic amyloid clearance only occurs during slow-wave sleep.</div></div>
+    <div class="action-item"><div class="action-num">8</div><div class="action-text"><strong>Get a sleep study if you snore.</strong> Untreated sleep apnea doubles dementia risk. Treating it may be the highest-impact single reversible intervention.</div></div>
+    <div class="action-item"><div class="action-num">9</div><div class="action-text"><strong>Eliminate refined sugar and alcohol completely.</strong> Sugar drives AGEs and neuroinflammation; alcohol is a direct hippocampal neurotoxin even at moderate consumption.</div></div>
+    <div class="action-item"><div class="action-num">10</div><div class="action-text"><strong>Start Memory Palace practice.</strong> Choose your childhood home; place 5 items from today in 5 specific rooms; retrieve them before bed. Activates hippocampal encoding circuits; free; immediate.</div></div>
+    <div class="action-item"><div class="action-num">11</div><div class="action-text"><strong>Schedule social engagement.</strong> Minimum 3 meaningful social interactions weekly. Loneliness increases dementia risk 50%. Social cognition networks require use-dependent activation.</div></div>
   </div>
 
-  <h2>From Steady State to Victory</h2>
-  <p>"Steady state" — an engineer understands this immediately. A system where inputs and outputs have balanced; nothing accelerating in the wrong direction. For a myeloma patient who has been through induction, a stem cell transplant, nerve damage, and a year of being sidelined — steady state is not nothing. Steady state is survival. Steady state is grace.</p>
-  <p>But the engineer also knows: steady state is not equilibrium. It is a dynamic balance. The disease is still there — in static, beneath the detection threshold, waiting. The immune system is depleted. The bone marrow is fighting on multiple fronts.</p>
-  <div class="quote"><p>Steady state is not the finish line. It is the starting point for the next phase. Forward means deeper remission. Forward means a rehabilitated immune system. Forward means MRD negativity that holds. The road runs through the 72-hour fast, the curcumin, the sauna, and the MyeloPatch. All of it together. One protocol. One direction. Forward.</p></div>
+  <h2>Memory, Identity, and What Is at Stake</h2>
+  <p>Of all the conditions addressed in the Christos™ series, progressive memory loss may carry the deepest personal weight. Cancer threatens the body. TBI disrupts function. Memory loss threatens something more intimate: the continuous narrative of a human life. The ability to remember who you are, who you love, what you have lived through — to remain the same person across time.</p>
+  <p>The critical window matters so much because in the early stages — when a person is still living independently, still connected to the people they love — the brain has sufficient plasticity to respond. Every month of stabilization is a month of relationship, of contribution, of being known.</p>
+  <div class="quote"><p>The memories are not gone. The brain remembers how to remember. Help it find its way back.</p></div>
 
   <h2>References</h2>
   <ol style="padding-left:1.5rem">
-    <li>Rajkumar SV. Multiple myeloma: 2022 update on diagnosis, risk stratification, and management. <em>Am J Hematol.</em> 2022;97(8):1086-1107.</li>
-    <li>San-Miguel J, et al. Overall survival with daratumumab, bortezomib, melphalan, and prednisone (ALCYONE). <em>N Engl J Med.</em> 2023;388:1200-1211.</li>
-    <li>San-Miguel J, et al. Ciltacabtagene autoleucel vs standard care in lenalidomide-refractory myeloma (CARTITUDE-4). <em>N Engl J Med.</em> 2023;389(4):335-347.</li>
-    <li>Landgren O, et al. MRD testing with next-generation sequencing in multiple myeloma. <em>Blood Adv.</em> 2020;4(23):5980-5987.</li>
-    <li>Cheng CW, et al. Prolonged fasting reduces IGF-1/PKA to promote hematopoietic stem cell regeneration. <em>Cell Stem Cell.</em> 2014;14(6):810-823.</li>
-    <li>Ghosh D, et al. Curcumin sensitizes multiple myeloma cells to thalidomide-induced apoptosis. <em>Blood.</em> 2009;113(25):6226-6228.</li>
-    <li>Richardson PG, et al. Peripheral neuropathy with bortezomib in myeloma. <em>Leuk Lymphoma.</em> 2010;51(2):233-243.</li>
-    <li>Rao RD, et al. Alpha-lipoic acid for prevention of peripheral neuropathy. <em>J Clin Oncol.</em> 2008;26(23):3845-3851.</li>
-    <li>Lim YC, et al. Effect of fasting on cancer immunotherapy. <em>J Clin Invest.</em> 2022;132(9):e152283.</li>
-    <li>Durie BG, et al. Vitamin D3 in multiple myeloma: impact of supplementation on outcomes. <em>J Clin Oncol.</em> 2021;39(suppl 15):abstr 8016.</li>
+    <li>GBD 2019 Dementia Collaborators. Global prevalence of dementia in 2019 and 2050. <em>Lancet Public Health.</em> 2022;7(2):e105-e125.</li>
+    <li>van Dyck CH, et al. Lecanemab in Early Alzheimer's Disease. <em>N Engl J Med.</em> 2023;388(1):9-21.</li>
+    <li>Sims JR, et al. Donanemab in Early Symptomatic Alzheimer's Disease (TRAILBLAZER-ALZ 2). <em>JAMA.</em> 2023;330(6):512-527.</li>
+    <li>Cotman CW, Berchtold NC, Christie LA. Exercise builds brain health. <em>Trends Neurosci.</em> 2007;30(9):464-472.</li>
+    <li>Ngandu T, et al. FINGER trial: 2-year multidomain intervention vs control to prevent cognitive decline. <em>Lancet.</em> 2015;385(9984):2255-2263.</li>
+    <li>Morris MC, et al. MIND diet associated with reduced incidence of Alzheimer's disease. <em>Alzheimers Dement.</em> 2015;11(9):1007-1014.</li>
+    <li>Xie L, et al. Sleep drives metabolite clearance from the adult brain. <em>Science.</em> 2013;342(6156):373-377.</li>
+    <li>Mori K, et al. Improving effects of Hericium erinaceus on mild cognitive impairment. <em>Phytother Res.</em> 2009;23(3):367-372.</li>
+    <li>Iaccarino HF, et al. Gamma frequency entrainment attenuates amyloid load. <em>Nature.</em> 2016;540(7632):230-235.</li>
+    <li>Slutsky I, et al. Enhancement of learning and memory by elevating brain magnesium. <em>Neuron.</em> 2010;65(2):165-177.</li>
+    <li>Henderson ST, et al. Study of the ketogenic agent AC-1202 in mild to moderate Alzheimer's disease. <em>Nutr Metab.</em> 2009;6:31.</li>
   </ol>
 </div>
 
 <footer>
   <div class="footer-brand">Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</div>
   <div class="footer-tagline">Engineered for Health. Designed for Life.</div>
+  <ul class="footer-links">
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../library.html">Library</a></li>
+    <li><a href="../../contact.html">Contact</a></li>
+  </ul>
   <div class="footer-copy">christosenergy.com &nbsp;·&nbsp; © 2026 Joshua Farrior. All rights reserved. Christos™ is a pending trademark.</div>
 </footer>
 </body>
