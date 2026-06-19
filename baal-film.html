@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ball Is Baal: America's Hidden Temple Exposed — Christos™ Films</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { background:#04080F; color:#FFFFFF; font-family:'Cormorant Garamond',Georgia,serif; min-height:100vh; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+
+.nav { position:fixed; top:0; left:0; right:0; z-index:1000; background:#0A1628; border-bottom:2px solid #C9A84C; padding:0 40px; display:flex; align-items:center; justify-content:space-between; height:68px; }
+.nav-logo { font-family:'Cinzel',serif; font-size:17px; font-weight:700; color:#C9A84C; letter-spacing:0.12em; }
+.nav-logo span { display:block; font-size:11px; font-weight:400; color:rgba(201,168,76,0.7); letter-spacing:0.2em; }
+.nav-links a { font-family:'Raleway',sans-serif; font-size:13px; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:#FFFFFF; margin-left:28px; transition:color 0.2s; }
+.nav-links a:hover { color:#C9A84C; }
+
+/* FILM HERO */
+.film-hero { padding:100px 40px 0; background:linear-gradient(180deg, #04080F 0%, #08111E 100%); min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end; }
+.film-hero-inner { max-width:1160px; margin:0 auto; width:100%; }
+.film-eyebrow { font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.4em; text-transform:uppercase; color:#3AAFAF; margin-bottom:20px; display:flex; align-items:center; gap:12px; }
+.film-eyebrow::before { content:'▶'; font-size:9px; }
+.film-title { font-family:'Cinzel',serif; font-size:clamp(32px,6vw,72px); font-weight:700; color:#FFFFFF; letter-spacing:0.03em; line-height:1.05; margin-bottom:16px; }
+.film-title span { color:#C9A84C; }
+.film-sub { font-family:'Cinzel',serif; font-size:clamp(16px,2vw,24px); color:rgba(201,168,76,0.7); letter-spacing:0.12em; margin-bottom:24px; font-style:italic; }
+.film-meta { display:flex; gap:32px; flex-wrap:wrap; margin-bottom:48px; }
+.film-meta-item { font-family:'Raleway',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:#5A7080; }
+.film-meta-item strong { color:#D8D0C0; display:block; font-size:13px; margin-bottom:3px; }
+
+/* VIDEO PLAYER AREA */
+.video-wrap { background:#000; border:1px solid rgba(201,168,76,0.2); border-radius:6px; overflow:hidden; margin-bottom:0; position:relative; padding-top:56.25%; }
+.video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+
+/* PLACEHOLDER for when no video URL yet */
+.video-placeholder { width:100%; aspect-ratio:16/9; background:#050C15; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; border:1px solid rgba(201,168,76,0.15); border-radius:6px; }
+.vp-icon { font-size:3rem; color:rgba(201,168,76,0.3); }
+.vp-text { font-family:'Cinzel',serif; font-size:1.2rem; color:rgba(255,255,255,0.4); letter-spacing:0.1em; }
+.vp-sub { font-family:'Raleway',sans-serif; font-size:0.8rem; color:#5A7080; letter-spacing:0.15em; text-transform:uppercase; }
+
+/* BODY */
+.film-body { background:#08111E; padding:80px 40px 120px; }
+.film-body-inner { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 340px; gap:80px; align-items:start; }
+
+/* DESCRIPTION */
+.film-desc-section {}
+.section-eyebrow { font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.4em; text-transform:uppercase; color:#3AAFAF; margin-bottom:24px; display:flex; align-items:center; gap:12px; }
+.section-eyebrow::before { content:''; width:28px; height:1px; background:#2A7F7F; }
+.desc-title { font-family:'Cinzel',serif; font-size:clamp(22px,3vw,32px); font-weight:600; color:#FFFFFF; letter-spacing:0.04em; margin-bottom:20px; line-height:1.3; }
+.desc-body { font-size:19px; color:#D8D0C0; line-height:1.9; margin-bottom:20px; }
+.desc-body-2 { font-size:17px; font-style:italic; color:rgba(240,235,224,0.55); line-height:1.85; margin-bottom:40px; }
+
+/* CHAPTER LIST */
+.chapter-list { margin-top:40px; }
+.chapter-list-title { font-family:'Cinzel',serif; font-size:16px; font-weight:600; color:#C9A84C; letter-spacing:0.08em; margin-bottom:20px; }
+.chapter-item { display:flex; gap:16px; padding:14px 0; border-bottom:1px solid rgba(201,168,76,0.08); }
+.ch-num { font-family:'Cinzel',serif; font-size:12px; color:rgba(201,168,76,0.4); letter-spacing:0.15em; min-width:32px; padding-top:2px; }
+.ch-text { font-size:16px; color:#D0C8B8; line-height:1.5; }
+
+/* SIDEBAR */
+.film-sidebar {}
+.sidebar-card { background:#0D1B2A; border:1px solid rgba(201,168,76,0.2); border-top:3px solid #C9A84C; border-radius:6px; padding:32px; margin-bottom:24px; }
+.sidebar-card-title { font-family:'Cinzel',serif; font-size:15px; font-weight:600; color:#FFFFFF; letter-spacing:0.06em; margin-bottom:16px; }
+.sidebar-book-img { width:100%; border-radius:3px; overflow:hidden; margin-bottom:16px; }
+.sidebar-book-img img { width:100%; display:block; }
+.sidebar-desc { font-size:15px; color:#D0C8B8; line-height:1.7; margin-bottom:20px; }
+.btn-get-book { display:block; text-align:center; background:#C9A84C; color:#08111E; font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; padding:14px; border-radius:2px; transition:background 0.2s; margin-bottom:8px; }
+.btn-get-book:hover { background:#E8C97A; }
+.sidebar-note { font-family:'Raleway',sans-serif; font-size:10px; color:rgba(201,168,76,0.45); letter-spacing:0.12em; text-align:center; }
+
+.sidebar-director { background:#111F30; border:1px solid rgba(201,168,76,0.12); border-radius:6px; padding:28px; }
+.director-name { font-family:'Cinzel',serif; font-size:16px; color:#FFFFFF; letter-spacing:0.05em; margin-bottom:4px; }
+.director-role { font-family:'Raleway',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,168,76,0.55); margin-bottom:14px; }
+.director-bio { font-size:14px; color:#A0A8B0; line-height:1.7; }
+
+/* QUOTE */
+.film-quote { background:#0D1B2A; border-left:3px solid #C9A84C; border-radius:4px; padding:36px 40px; margin:60px 0 0; }
+.fq-text { font-family:'Cormorant Garamond',serif; font-size:clamp(19px,2.5vw,26px); font-style:italic; color:#FFFFFF; line-height:1.75; margin-bottom:16px; }
+.fq-attr { font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.25em; text-transform:uppercase; color:rgba(201,168,76,0.6); }
+
+/* FOOTER */
+.footer { background:#0A1628; border-top:1px solid rgba(201,168,76,0.2); padding:50px 40px 36px; }
+.footer-inner { max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.footer-logo { font-family:'Cinzel',serif; font-size:18px; font-weight:700; color:#C9A84C; letter-spacing:0.1em; }
+.footer-nav { display:flex; gap:28px; flex-wrap:wrap; }
+.footer-nav a { font-family:'Raleway',sans-serif; font-size:12px; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; color:#AABFCC; }
+.footer-nav a:hover { color:#C9A84C; }
+.footer-copy { font-family:'Raleway',sans-serif; font-size:11px; color:#5A7080; letter-spacing:0.08em; width:100%; margin-top:24px; padding-top:24px; border-top:1px solid rgba(201,168,76,0.1); }
+
+@media(max-width:900px) {
+  .nav { padding:0 20px; }
+  .film-hero { padding:90px 20px 0; }
+  .film-body { padding:50px 20px 80px; }
+  .film-body-inner { grid-template-columns:1fr; gap:48px; }
+  .film-meta { gap:20px; }
+}
+@media(max-width:640px) {
+  .film-title { font-size:clamp(28px,8vw,52px); }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" style="display:flex;align-items:center;gap:12px;">
+    <img src="assets/christos-emblem.png" alt="Christos™" style="width:42px;height:42px;object-fit:cover;border-radius:50%;">
+    <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="library.html">Library</a>
+    <a href="book.html">Books</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- FILM HERO -->
+<section class="film-hero">
+  <div class="film-hero-inner">
+    <div class="film-eyebrow">Christos™ Films · Documentary · 2025</div>
+    <h1 class="film-title">The Ball Is Baal:<br><span>America's Hidden</span><br>Temple Exposed</h1>
+    <div class="film-sub">Companion Film to Starburst vs. Bastion</div>
+    <div class="film-meta">
+      <div class="film-meta-item"><strong>40 Minutes 6 Seconds</strong>Runtime</div>
+      <div class="film-meta-item"><strong>Joshua Farrior</strong>Director</div>
+      <div class="film-meta-item"><strong>2025</strong>Release Year</div>
+      <div class="film-meta-item"><strong>Free to Watch</strong>Access</div>
+    </div>
+
+    <!-- VIDEO — replace YOUR_VIDEO_ID with your YouTube/Vimeo ID -->
+    <div class="video-wrap">
+            <iframe 
+        width="100%" 
+        height="100%"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+        src="https://www.youtube.com/embed/cFc2TnoF_VQ" 
+        title="The Ball Is Baal: America's Hidden Temple Exposed"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="film-body">
+  <div class="film-body-inner">
+
+    <!-- DESCRIPTION -->
+    <div class="film-desc-section">
+      <div class="section-eyebrow">About This Film</div>
+      <h2 class="desc-title">The Same Current Has Been Running for 3,000 Years</h2>
+      <p class="desc-body">The word "Baal" means lord. The word "ball" means object of obsession. They are the same word. And when you understand what Baal worship actually was — not mythology, but architecture, economics, entertainment, and social control — you realize it never stopped. It just changed its name.</p>
+      <p class="desc-body">This film is the companion to Chapter 31 of Starburst vs. Bastion. It covers approximately 60% of the full BAAL chapter in visual documentary form — the obelisk, the dome, the stadium, the economy, the seven faces, and the final choice between the two civilizational currents.</p>
+      <p class="desc-body-2">"I didn't solve these problems. I completed the questions. And once you see the architecture, you cannot unsee it."</p>
+
+      <!-- CHAPTER LIST -->
+      <div class="chapter-list">
+        <div class="chapter-list-title">What This Film Covers</div>
+        <div class="chapter-item"><div class="ch-num">01</div><div class="ch-text">America, the Hidden Temple — How Rome never left, it just renamed itself</div></div>
+        <div class="chapter-item"><div class="ch-num">02</div><div class="ch-text">The Obelisk — What it is, what it does, why it's everywhere</div></div>
+        <div class="chapter-item"><div class="ch-num">03</div><div class="ch-text">Government as Rome Reborn — The SPQR pattern in the American republic</div></div>
+        <div class="chapter-item"><div class="ch-num">04</div><div class="ch-text">BAAL → BALL — The etymology that changes how you watch every game</div></div>
+        <div class="chapter-item"><div class="ch-num">05</div><div class="ch-text">The Ball as the False Sun — Attention, worship, and the solar replacement</div></div>
+        <div class="chapter-item"><div class="ch-num">06</div><div class="ch-text">The Stadium as the Modern Temple — Spectacle is ritual. Attention is sacrifice.</div></div>
+        <div class="chapter-item"><div class="ch-num">07</div><div class="ch-text">The Economy of Baal — The bull, the eye, the pyramid, the Federal Reserve</div></div>
+        <div class="chapter-item"><div class="ch-num">08</div><div class="ch-text">The Seven Faces — How the seven masks operate in modern life</div></div>
+        <div class="chapter-item"><div class="ch-num">09</div><div class="ch-text">The Baal Continuum — How the world learned to worship the ball</div></div>
+        <div class="chapter-item"><div class="ch-num">10</div><div class="ch-text">The Final Choice — The two architectures, the two directions, the decision</div></div>
+      </div>
+
+      <div class="film-quote">
+        <div class="fq-text">"Entertain. Distract. Control. Obey. That is not a conspiracy theory. That is an operating manual. And it has been running since before Rome."</div>
+        <div class="fq-attr">— Joshua Farrior · Starburst vs. Bastion, Chapter 31</div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="film-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Read the Full Book</div>
+        <div class="sidebar-book-img">
+          <img src="assets/book-starburst.png" alt="Starburst vs. Bastion">
+        </div>
+        <p class="sidebar-desc">This film covers 60% of Chapter 31. The complete book contains 32 chapters, 92 illustrations, a full glossary, three appendices, and the Author's Blessing.</p>
+        <a href="https://buy.stripe.com/4gMeVcgQx7Il5NI1dU6AM00" target="_blank" class="btn-get-book">Get the Book — $5 Donation</a>
+        <div class="sidebar-note">Minimum $5 · Supports independent research</div>
+      </div>
+
+      <div class="sidebar-director">
+        <div class="director-name">Joshua Farrior</div>
+        <div class="director-role">Director · Author · Founder</div>
+        <p class="director-bio">24 years in business, most recently as Group Vice President of Sales. Independent researcher, inventor, and founder of Christos™ Energy, Technology & Harmonic Design Consulting, LLC. Author of Magnus Opus, Sovereign Logos Prime, and Starburst vs. Bastion.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+      <a href="book.html">Books</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="text-align:center;padding-bottom:20px;border-top:1px solid rgba(201,168,76,0.1);padding-top:20px;margin-top:6px;">
+      <img src="assets/christos-emblem.png" alt="Christos™" style="width:60px;height:60px;object-fit:cover;border-radius:50%;opacity:0.85;">
+    </div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
+</footer>
+
+</body>
+</html>
