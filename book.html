@@ -30,25 +30,17 @@ a { text-decoration: none; color: inherit; }
 .body-wrap { background-color: #08111E !important; padding: 80px 40px 120px; }
 .body-inner { max-width: 1160px; margin: 0 auto; }
 
-/* SECTION LABEL */
 .section-eyebrow { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 40px; display: flex; align-items: center; gap: 12px; }
 .section-eyebrow::before { content: ''; width: 28px; height: 1px; background: #2A7F7F; flex-shrink: 0; }
 
-/* ── FEATURED BOOK — MAGNUS OPUS ── */
 .featured-wrap { margin-bottom: 100px; }
 .featured-book { background-color: #0D1B2A !important; border: 1px solid rgba(201,168,76,0.3); border-top: 3px solid #C9A84C; border-radius: 8px; padding: 56px; display: grid; grid-template-columns: 260px 1fr; gap: 60px; align-items: start; }
 
-/* Book spine / cover mock */
 .book-cover { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.25); border-radius: 4px; min-height: 360px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 36px 28px; position: relative; overflow: hidden; }
 .book-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.07), transparent 70%); }
 .book-cover::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, #C9A84C, #7A5E28, #C9A84C); }
-.bc-available { position: absolute; top: 14px; right: 14px; background-color: #C9A84C; color: #08111E; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 10px; border-radius: 2px; }
-.bc-title { font-family: 'Cinzel', serif; font-size: 20px; font-weight: 700; color: #C9A84C; letter-spacing: 0.08em; text-align: center; line-height: 1.35; position: relative; z-index: 1; }
-.bc-rule { width: 44px; height: 1px; background: rgba(201,168,76,0.45); position: relative; z-index: 1; }
-.bc-author { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(201,168,76,0.65); position: relative; z-index: 1; }
-.bc-sub { font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic; color: rgba(240,235,224,0.45); text-align: center; line-height: 1.5; position: relative; z-index: 1; }
+.bc-available { position: absolute; top: 14px; right: 14px; background-color: #C9A84C; color: #08111E; font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 10px; border-radius: 2px; z-index: 2; }
 
-/* Book info */
 .bi-status { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 18px; }
 .bi-status::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #3AAFAF; flex-shrink: 0; }
 .bi-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,36px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.04em; line-height: 1.2; margin-bottom: 10px; }
@@ -66,7 +58,9 @@ a { text-decoration: none; color: inherit; }
 .btn-outline { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; display: inline-block; transition: all 0.2s; }
 .btn-outline:hover { background-color: rgba(201,168,76,0.1); }
 
-/* ── BOOKS GRID ── */
+/* DONATION NOTE */
+.donation-note { margin-top: 16px; font-family: 'Raleway', sans-serif; font-size: 11px; color: rgba(201,168,76,0.55); letter-spacing: 0.12em; }
+
 .coming-soon-wrap { margin-bottom: 40px; }
 .coming-soon-title { font-family: 'Cinzel', serif; font-size: clamp(22px,3vw,32px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 14px; }
 .coming-soon-sub { font-size: 18px; color: #D0C8B8; line-height: 1.8; max-width: 760px; margin-bottom: 48px; }
@@ -79,40 +73,37 @@ a { text-decoration: none; color: inherit; }
 .cs-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(201,168,76,0.04), transparent 70%); }
 .cs-cover::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, rgba(201,168,76,0.4), rgba(201,168,76,0.1), rgba(201,168,76,0.4)); }
 
-/* Released badge (gold) */
-.cs-badge-released { position: absolute; top: 10px; right: 10px; background-color: #C9A84C; color: #08111E; font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; }
-/* Coming soon badge (teal) */
-.cs-badge { position: absolute; top: 10px; right: 10px; background-color: rgba(42,127,127,0.2); border: 1px solid rgba(42,127,127,0.4); color: #3AAFAF; font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; }
+.cs-badge-released { position: absolute; top: 10px; right: 10px; background-color: #C9A84C; color: #08111E; font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; z-index: 2; }
+.cs-badge { position: absolute; top: 10px; right: 10px; background-color: rgba(42,127,127,0.2); border: 1px solid rgba(42,127,127,0.4); color: #3AAFAF; font-family: 'Raleway', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 4px 8px; border-radius: 2px; z-index: 2; }
 
-.cs-cover-title { font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; color: rgba(201,168,76,0.7); letter-spacing: 0.07em; text-align: center; line-height: 1.4; position: relative; z-index: 1; }
-.cs-cover-rule { width: 30px; height: 1px; background: rgba(201,168,76,0.3); position: relative; z-index: 1; }
-.cs-cover-author { font-family: 'Raleway', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.4); position: relative; z-index: 1; text-align: center; }
-
-.cs-info {}
-/* Released status (teal dot filled) */
 .cs-status-released { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; }
 .cs-status-released::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #3AAFAF; flex-shrink: 0; }
-/* Coming soon status (teal dot hollow) */
 .cs-status { display: inline-flex; align-items: center; gap: 8px; font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; }
 .cs-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: rgba(42,127,127,0.4); border: 1px solid #3AAFAF; flex-shrink: 0; }
 
 .cs-title { font-family: 'Cinzel', serif; font-size: clamp(16px,1.8vw,21px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.03em; line-height: 1.3; margin-bottom: 8px; }
 .cs-author { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 18px; }
 .cs-desc { font-size: 16px; color: #D0C8B8; line-height: 1.75; margin-bottom: 22px; }
-.cs-notify { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,168,76,0.55); display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(201,168,76,0.2); padding: 10px 18px; border-radius: 2px; }
 
-/* QUOTE BLOCK */
+/* FILM BANNER */
+.film-banner { background: linear-gradient(135deg, #0D1B2A 0%, #111F30 50%, #0A1628 100%); border: 1px solid rgba(201,168,76,0.3); border-left: 4px solid #C9A84C; border-radius: 8px; padding: 48px 56px; margin: 80px 0; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+.film-banner-eyebrow { font-family: 'Raleway', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.35em; text-transform: uppercase; color: #3AAFAF; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.film-banner-eyebrow::before { content: '▶'; font-size: 8px; }
+.film-banner-title { font-family: 'Cinzel', serif; font-size: clamp(20px,2.8vw,32px); font-weight: 700; color: #FFFFFF; letter-spacing: 0.04em; margin-bottom: 14px; line-height: 1.25; }
+.film-banner-sub { font-size: 17px; color: #D0C8B8; line-height: 1.75; max-width: 620px; }
+.film-banner-meta { font-family: 'Raleway', sans-serif; font-size: 11px; color: rgba(201,168,76,0.6); letter-spacing: 0.15em; margin-top: 12px; }
+.btn-film { font-family: 'Raleway', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; background: transparent; border: 2px solid #C9A84C; color: #C9A84C; padding: 14px 32px; border-radius: 2px; white-space: nowrap; transition: all 0.2s; display: inline-block; }
+.btn-film:hover { background: rgba(201,168,76,0.12); }
+
 .quote-block { background-color: #0D1B2A !important; border-left: 3px solid #C9A84C; border-radius: 4px; padding: 36px 40px; margin: 80px 0; }
 .quote-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,2.5vw,28px); font-style: italic; font-weight: 400; color: #FFFFFF; line-height: 1.75; margin-bottom: 18px; }
 .quote-attr { font-family: 'Raleway', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(201,168,76,0.65); }
 
-/* NOTIFY STRIP */
 .notify-strip { background-color: #111F30 !important; border: 1px solid rgba(201,168,76,0.2); border-radius: 8px; padding: 44px; text-align: center; margin-top: 60px; }
 .notify-strip-title { font-family: 'Cinzel', serif; font-size: clamp(20px,2.8vw,30px); font-weight: 600; color: #FFFFFF; letter-spacing: 0.05em; margin-bottom: 14px; }
 .notify-strip-body { font-size: 18px; color: #D0C8B8; line-height: 1.8; max-width: 600px; margin: 0 auto 28px; }
 .notify-email { font-family: 'Cinzel', serif; font-size: 17px; color: #C9A84C; letter-spacing: 0.05em; }
 
-/* FOOTER */
 .footer { background-color: #0A1628 !important; border-top: 1px solid rgba(201,168,76,0.2); padding: 50px 40px 36px; }
 .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
 .footer-logo { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: #C9A84C; letter-spacing: 0.1em; }
@@ -121,267 +112,167 @@ a { text-decoration: none; color: inherit; }
 .footer-nav a:hover { color: #C9A84C; }
 .footer-copy { font-family: 'Raleway', sans-serif; font-size: 11px; color: #5A7080; letter-spacing: 0.08em; width: 100%; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(201,168,76,0.1); }
 
-/* RESPONSIVE */
-
-@media(max-width:640px) {
-.nav { padding: 0 20px; } .page-header { padding: 190px 20px 50px; }
-.body-wrap { padding: 50px 20px 80px; }
-.featured-book { padding: 32px 24px; }
-.bi-meta { grid-template-columns: 1fr; }
-.btn-gold { margin-right: 0; margin-bottom: 12px; display: block; text-align: center; }
-.btn-outline { display: block; text-align: center; }
-.notify-strip { padding: 32px 20px; }
-.quote-block { padding: 24px; }
-}
-
-
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200;}
-.hamburger span{display:block;width:24px;height:2px;background-color:#C9A84C;transition:all 0.3s ease;border-radius:2px;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:20px 24px;z-index:150;flex-direction:column;gap:4px;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Raleway',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#D8D0C0 !important;text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(201,168,76,0.1);transition:color 0.2s;}
-.mobile-menu a:hover{color:#C9A84C !important;}
-.mobile-menu a:last-child{border-bottom:none;}
-.mobile-menu .mob-cta{background-color:#C9A84C !important;color:#08111E !important;text-align:center;padding:14px;margin-top:8px;border-bottom:none !important;}
-}
-
-
-/* ── MOBILE NAV ── */
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:200;flex-shrink:0;}
-.hamburger span{display:block;width:26px;height:2px;background-color:#C9A84C !important;transition:all 0.3s ease;border-radius:2px;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:16px 24px;z-index:999;flex-direction:column;gap:0;box-shadow:0 8px 32px rgba(0,0,0,0.6);}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'Raleway',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#D8D0C0 !important;text-decoration:none;padding:15px 8px;border-bottom:1px solid rgba(201,168,76,0.12);transition:color 0.2s;display:block;}
-.mobile-menu a:hover{color:#C9A84C !important;}
-.mobile-menu a:last-child{border-bottom:none;}
-.mobile-menu .mob-cta{background-color:#C9A84C !important;color:#08111E !important;text-align:center;padding:15px;margin-top:10px;font-weight:700;}
-
-
 @media(max-width:900px){
-.nav{
-height:auto !important;
-flex-wrap:wrap;
-padding:12px 20px !important;
-gap:0;
+  .nav { height:auto !important; flex-wrap:wrap; padding:12px 20px !important; }
+  .nav-logo { flex:1; padding:4px 0; }
+  .nav-links { display:flex !important; flex-wrap:wrap; gap:0; width:100%; border-top:1px solid rgba(201,168,76,0.15); margin-top:10px; padding-top:10px; }
+  .nav-links a { font-size:0.62rem !important; letter-spacing:0.12em !important; padding:8px 10px !important; }
+  .featured-book { grid-template-columns: 1fr; }
+  .coming-grid { grid-template-columns: 1fr; }
+  .film-banner { grid-template-columns: 1fr; }
+  .bi-meta { grid-template-columns: 1fr; }
 }
-.nav-logo{
-flex:1;
-padding:4px 0;
+@media(max-width:640px){
+  .page-header { padding: 140px 20px 50px; }
+  .body-wrap { padding: 50px 20px 80px; }
+  .featured-book { padding: 28px 20px; }
+  .film-banner { padding: 32px 24px; }
+  .btn-gold { display:block; text-align:center; margin-right:0; margin-bottom:12px; }
+  .btn-outline { display:block; text-align:center; }
 }
-.hamburger{display:none !important;}
-.nav-links{
-display:flex !important;
-flex-wrap:wrap;
-gap:0;
-width:100%;
-border-top:1px solid rgba(201,168,76,0.15);
-margin-top:10px;
-padding-top:10px;
-}
-.nav-links a{
-font-size:0.62rem !important;
-letter-spacing:0.12em !important;
-padding:8px 10px !important;
-white-space:nowrap;
-color:#D8D0C0 !important;
-}
-.nav-links a:hover{color:#C9A84C !important;}
-.nav-cta{
-background-color:#C9A84C !important;
-color:#08111E !important;
-padding:8px 14px !important;
-border-radius:2px;
-}
-.mobile-menu{display:none !important;}
-}
-
-.nav-links a{padding:9px 10px !important;}
-.nav-links{padding-bottom:4px;}
-
-@media(max-width:480px){
-.nav-links a{
-font-size:0.58rem !important;
-padding:7px 8px !important;
-}
-}
-
 </style>
 </head>
 <body style="background-color:#08111E !important;">
 
-<!-- NAV -->
 <nav class="nav">
-<a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:12px;"><img src="assets/christos-emblem.png" alt="Christos™" style="width:42px;height:42px;object-fit:cover;border-radius:50%;flex-shrink:0;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="library.html">Library</a>
-<a href="diagrams.html">Diagrams</a>
-<a href="economy.html">Economy</a>
-<a href="book.html" class="active">Book</a>
-<a href="the-case.html">The Case</a>
-<li><a href="papers/paradox-resolution/paradox-index.html">Paradox</a></li>
-<li><a href="contact.html" class="nav-cta">Contact</a>
-</div>
-
-<button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:12px;"><img src="assets/christos-emblem.png" alt="Christos™" style="width:42px;height:42px;object-fit:cover;border-radius:50%;flex-shrink:0;"><div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="library.html">Library</a>
+    <a href="diagrams.html">Diagrams</a>
+    <a href="economy.html">Economy</a>
+    <a href="book.html" class="active">Book</a>
+    <a href="the-case.html">The Case</a>
+    <a href="papers/paradox-resolution/paradox-index.html">Paradox</a>
+    <a href="contact.html" class="nav-cta">Contact</a>
+  </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-<a href="index.html">Home</a>
-<a href="library.html">Library</a>
-<a href="diagrams.html">Diagrams</a>
-<a href="economy.html">Economy</a>
-<a href="book.html">Book</a>
-<a href="the-case.html">The Case</a>
-<a href="contact.html" class="mob-cta">Contact</a>
-</div>
 
-<!-- PAGE HEADER -->
 <div class="page-header">
-<div class="page-header-inner">
-<div class="eyebrow">Christos™ Publications</div>
-<h1 class="page-title">Books by Joshua Farrior</h1>
-<p class="page-sub">Three works spanning the full range of the Christos vision — from the foundational unified framework of the Magnus Opus to the civilizational and philosophical writings yet to come.</p>
-</div>
+  <div class="page-header-inner">
+    <div class="eyebrow">Christos™ Publications</div>
+    <h1 class="page-title">Books by Joshua Farrior</h1>
+    <p class="page-sub">Three works spanning the full range of the Christos vision — from the foundational unified framework of the Magnus Opus to the civilizational architecture of Starburst vs. Bastion.</p>
+  </div>
 </div>
 
-<!-- BODY -->
 <div class="body-wrap">
 <div class="body-inner">
 
-<!-- ── MAGNUS OPUS — AVAILABLE NOW ── -->
-<div class="featured-wrap">
-<div class="section-eyebrow">Available Now</div>
-<div class="featured-book">
+  <!-- MAGNUS OPUS -->
+  <div class="featured-wrap">
+    <div class="section-eyebrow">Available Now</div>
+    <div class="featured-book">
+      <div class="book-cover" style="padding:0; overflow:hidden; position:relative;">
+        <div class="bc-available">Available Now</div>
+        <img src="assets/book-magnus-opus.png" alt="Magnus Opus by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
+      </div>
+      <div class="book-info">
+        <div class="bi-status">Available Now</div>
+        <div class="bi-title">Magnus Opus</div>
+        <div class="bi-author">Joshua Farrior</div>
+        <p class="bi-desc">The foundational text of the Christos framework. Magnus Opus presents a unified architecture integrating physics, consciousness, geometry, and biological systems into a single coherent model of reality — one that treats these not as separate disciplines but as interconnected expressions of a single underlying principle.</p>
+        <p class="bi-desc-2">"The book that started everything. The theoretical foundation every other paper in the Christos library is built upon."</p>
+        <div class="bi-meta">
+          <div class="bi-meta-item"><div class="bi-meta-label">Author</div><div class="bi-meta-value">Joshua Farrior</div></div>
+          <div class="bi-meta-item"><div class="bi-meta-label">Status</div><div class="bi-meta-value">Released</div></div>
+          <div class="bi-meta-item"><div class="bi-meta-label">Publisher</div><div class="bi-meta-value">Christos™ Publications</div></div>
+        </div>
+        <a href="Magnus_Opus_Joshua_Farrior.pdf" target="_blank" class="btn-gold">Read the Magnus Opus</a>
+        <a href="contact.html" class="btn-outline">Contact About This Work</a>
+      </div>
+    </div>
+  </div>
 
-<!-- Cover Image -->
-<div class="book-cover" style="padding:0; overflow:hidden; position:relative;">
-<div class="bc-available">Available Now</div>
-<img src="assets/book-magnus-opus.png" alt="Magnus Opus by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
-</div>
+  <!-- QUOTE -->
+  <div class="quote-block">
+    <div class="quote-text">"What began as a unified framework has grown into a 267-paper research platform, 1,000+ inventions, and 105 newly formalized fields of scientific inquiry. The Magnus Opus is where that journey began — and where the foundation for all of it was laid."</div>
+    <div class="quote-attr">— Joshua Farrior, Founder · Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div>
+  </div>
 
-<!-- Info -->
-<div class="book-info">
-<div class="bi-status">Available Now</div>
-<div class="bi-title">Magnus Opus</div>
-<div class="bi-author">Joshua Farrior</div>
-<p class="bi-desc">The foundational text of the Christos framework. Magnus Opus presents a unified architecture integrating physics, consciousness, geometry, and biological systems into a single coherent model of reality — one that treats these not as separate disciplines but as interconnected expressions of a single underlying principle.</p>
-<p class="bi-desc-2">"The book that started everything. The theoretical foundation every other paper in the Christos library is built upon."</p>
-<div class="bi-meta">
-<div class="bi-meta-item">
-<div class="bi-meta-label">Author</div>
-<div class="bi-meta-value">Joshua Farrior</div>
-</div>
-<div class="bi-meta-item">
-<div class="bi-meta-label">Status</div>
-<div class="bi-meta-value">Released</div>
-</div>
-<div class="bi-meta-item">
-<div class="bi-meta-label">Publisher</div>
-<div class="bi-meta-value">Christos™ Publications</div>
-</div>
-</div>
-<a href="Magnus_Opus_Joshua_Farrior.pdf" target="_blank" class="btn-gold">Read the Magnus Opus</a>
-<a href="contact.html" class="btn-outline">Contact About This Work</a>
-</div>
-</div>
-</div>
+  <!-- FILM BANNER -->
+  <div class="film-banner">
+    <div>
+      <div class="film-banner-eyebrow">Now Streaming · Documentary Film</div>
+      <div class="film-banner-title">The Ball Is Baal: America's Hidden Temple Exposed</div>
+      <p class="film-banner-sub">A 40-minute documentary companion to Starburst vs. Bastion. From the ancient temples of Baal to the stadiums, screens, and financial systems of modern America — the same current runs through all of it. Watch before you read.</p>
+      <div class="film-banner-meta">40 Minutes · Directed by Joshua Farrior · Christos™ Films · 2025</div>
+    </div>
+    <a href="baal-film.html" class="btn-film">Watch the Film →</a>
+  </div>
 
-<!-- QUOTE — updated paper count to 113 -->
-<div class="quote-block">
-<div class="quote-text">"What began as a unified framework has grown into a 267-paper research platform, 1,000+ inventions, and 105 newly formalized fields of scientific inquiry. The Magnus Opus is where that journey began — and where the foundation for all of it was laid."</div>
-<div class="quote-attr">— Joshua Farrior, Founder · Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div>
-</div>
+  <!-- ALL PUBLICATIONS GRID -->
+  <div class="coming-soon-wrap">
+    <div class="section-eyebrow">All Publications</div>
+    <div class="coming-soon-title">Additional Works</div>
+    <p class="coming-soon-sub">Two additional books extend the Christos framework — one a complete practical guide to the Sovereign Logos Prime coherence language system, the other a full civilizational investigation into the forces shaping modern America.</p>
 
-<!-- ── BOOKS GRID ── -->
-<div class="coming-soon-wrap">
-<div class="section-eyebrow">All Publications</div>
-<div class="coming-soon-title">Additional Works</div>
-<p class="coming-soon-sub">Two additional books extend the Christos framework into new territory — one a complete practical guide to the Sovereign Logos Prime coherence language system, the other exploring the civilizational and historical forces shaping the present moment.</p>
+    <div class="coming-grid">
 
-<div class="coming-grid">
+      <!-- SOVEREIGN LOGOS PRIME -->
+      <div class="cs-book">
+        <div class="cs-cover" style="padding:0; overflow:hidden;">
+          <div class="cs-badge-released" style="z-index:2;">Available Now</div>
+          <img src="assets/book-slp.png" alt="Sovereign Logos Prime by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
+        </div>
+        <div class="cs-info">
+          <div class="cs-status-released">Available Now</div>
+          <div class="cs-title">Sovereign Logos Prime</div>
+          <div class="cs-author">Joshua Farrior</div>
+          <p class="cs-desc">A complete guide to the coherence communication system your nervous system was always meant to speak. Covers the full SLP architecture — 12 Currents, 144 terms, 12 Dialects, breath geometries, and the five training phases from foundation breath to silent field transmission.</p>
+          <a href="slp-book.html" class="btn-gold" style="font-size:11px; padding:12px 24px;">Read the Book</a>
+        </div>
+      </div>
 
-<!-- BOOK 2: SOVEREIGN LOGOS PRIME — NOW RELEASED -->
-<div class="cs-book">
-<div class="cs-cover" style="padding:0; overflow:hidden;">
-<div class="cs-badge-released" style="z-index:2;">Available Now</div>
-<img src="assets/book-slp.png" alt="Sovereign Logos Prime by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
-</div>
-<div class="cs-info">
-<div class="cs-status-released">Available Now</div>
-<div class="cs-title">Sovereign Logos Prime</div>
-<div class="cs-author">Joshua Farrior</div>
-<p class="cs-desc">A complete guide to the coherence communication system your nervous system was always meant to speak. Covers the full SLP architecture — 12 Currents, 144 terms, 12 Dialects, breath geometries, tone intensities, inter-species communication, and the five training phases from foundation breath to silent field transmission.</p>
-<a href="slp-book.html" class="btn-gold" style="font-size:11px; padding:12px 24px;">Read the Book</a>
-</div>
-</div>
+      <!-- BOOK 3: STARBURST VS BASTION — AVAILABLE NOW -->
+      <div class="cs-book" style="border-color:rgba(201,168,76,0.3);">
+        <div class="cs-cover" style="padding:0; overflow:hidden;">
+          <div class="cs-badge-released" style="z-index:2;">Available Now</div>
+          <img src="assets/book-starburst.png" alt="Starburst vs Bastion by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
+        </div>
+        <div class="cs-info">
+          <div class="cs-status-released">Available Now</div>
+          <div class="cs-title">Starburst vs. Bastion, Christos vs Saturnalia in America</div>
+          <div class="cs-author">Joshua Farrior</div>
+          <p class="cs-desc">A research and educational work exploring architecture, symbolism, civilization, coherence, and the competing systems shaping America. Available as a digital book with a minimum $5 donation.</p>
+          <a href="https://buy.stripe.com/4gMeVcgQx7Il5NI1dU6AM00" target="_blank" class="btn-gold" style="font-size:11px; padding:12px 24px;">Donate $5+ &amp; Get the Book</a>
+          <div class="donation-note">Minimum $5 · Includes both phone &amp; desktop versions · All proceeds support independent research</div>
+        </div>
+      </div>
 
-<!-- BOOK 3: STARBURST VS BASTION — COMING SOON -->
-<div class="cs-book">
-<div class="cs-cover" style="padding:0; overflow:hidden;">
-<div class="cs-badge" style="z-index:2;">Coming Soon</div>
-<img src="assets/book-starburst.png" alt="Starburst vs Bastion by Joshua Farrior" style="width:100%; height:100%; object-fit:cover; display:block; border-radius:4px;">
-</div>
-<div class="cs-info">
-<div class="cs-status">Not Yet Released</div>
-<div class="cs-title">Starburst vs Bastion, Christos vs Saturnalia in America</div>
-<div class="cs-author">Joshua Farrior</div>
-<p class="cs-desc">A forthcoming work exploring the clash of civilizational forces — coherence versus entropy, expansion versus control, the Christos framework versus the Saturnine structures that have shaped modern America. Details and release information to be announced.</p>
-<div class="cs-notify">Notify Me at Release</div>
-</div>
-</div>
+    </div>
+  </div>
+
+  <!-- NOTIFY STRIP -->
+  <div class="notify-strip">
+    <div class="notify-strip-title">Stay Informed on New Releases</div>
+    <p class="notify-strip-body">To be notified when forthcoming works are released or to inquire about the research platform, reach out directly. All correspondence is handled personally by Joshua Farrior.</p>
+    <div class="notify-email">founder@christosenergy.com</div>
+  </div>
 
 </div>
 </div>
 
-<!-- NOTIFY STRIP -->
-<div class="notify-strip">
-<div class="notify-strip-title">Stay Informed on New Releases</div>
-<p class="notify-strip-body">To be notified when forthcoming books are released or to inquire about the research platform, reach out directly. All correspondence is handled personally by Joshua Farrior.</p>
-<div class="notify-email">founder@christosenergy.com</div>
-</div>
-
-</div>
-</div>
-
-<!-- FOOTER -->
 <footer class="footer">
-<div class="footer-inner">
-<div class="footer-logo">CHRISTOS™</div>
-<div class="footer-nav">
-<a href="index.html">Home</a>
-<a href="library.html">Library</a>
-<a href="diagrams.html">Diagrams</a>
-<a href="economy.html">Economy</a>
-<a href="book.html">Book</a>
-<a href="contact.html">Contact</a>
-</div>
-<div style="text-align:center;padding-bottom:20px;border-top:1px solid rgba(201,168,76,0.1);padding-top:20px;margin-top:6px;"><img src="assets/christos-emblem.png" alt="Christos™" style="width:60px;height:60px;object-fit:cover;border-radius:50%;opacity:0.85;"></div><div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-</div>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS™</div>
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="library.html">Library</a>
+      <a href="diagrams.html">Diagrams</a>
+      <a href="economy.html">Economy</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="text-align:center;padding-bottom:20px;border-top:1px solid rgba(201,168,76,0.1);padding-top:20px;margin-top:6px;"><img src="assets/christos-emblem.png" alt="Christos™" style="width:60px;height:60px;object-fit:cover;border-radius:50%;opacity:0.85;"></div>
+    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
+  </div>
 </footer>
 
-
 <script>
-function toggleMenu(){
-var m=document.getElementById('mobileMenu');
-var b=document.getElementById('hamburger');
-if(m&&b){m.classList.toggle('open');b.classList.toggle('open');}
-}
 document.addEventListener('DOMContentLoaded',function(){
-var links=document.querySelectorAll('.mobile-menu a');
-links.forEach(function(a){
-a.addEventListener('click',function(){
-var m=document.getElementById('mobileMenu');
-var b=document.getElementById('hamburger');
-if(m)m.classList.remove('open');
-if(b)b.classList.remove('open');
-});
-});
+  var links=document.querySelectorAll('.mobile-menu a');
+  links.forEach(function(a){ a.addEventListener('click',function(){ var m=document.getElementById('mobileMenu'); var b=document.getElementById('hamburger'); if(m)m.classList.remove('open'); if(b)b.classList.remove('open'); }); });
 });
 </script>
 </body>
