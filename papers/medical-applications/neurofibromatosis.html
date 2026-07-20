@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coherence Management of Neurofibromatosis | Christos™ Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#08111E!important;color:#D8D0C0;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8}
+a{color:#3AAFAF;text-decoration:none}a:hover{color:#C9A84C}
+nav{background:#0A1628!important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap}
+.nav-logo{text-decoration:none}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C!important;letter-spacing:0.12em}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0!important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px}
+.nav-links{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0!important;transition:color 0.2s;text-decoration:none}
+.nav-links a:hover{color:#C9A84C!important}
+.nav-cta{background:#C9A84C!important;color:#08111E!important;padding:8px 16px}
+.hero{background:#0A1628!important;border-bottom:2px solid #C9A84C;padding:4rem 2rem 3rem;text-align:center}
+.paper-series{font-family:'Raleway',sans-serif;font-size:0.8rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem}
+.paper-badge{display:inline-block;background:#08111E!important;border:1px solid #C9A84C;color:#C9A84C;font-family:'Raleway',sans-serif;font-size:0.75rem;padding:0.3rem 1rem;border-radius:2px;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.1em}
+h1.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);color:#C9A84C;line-height:1.3;margin-bottom:1rem;max-width:900px;margin-left:auto;margin-right:auto}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#D8D0C0;font-style:italic;margin-bottom:2rem;max-width:760px;margin-left:auto;margin-right:auto}
+.paper-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;font-family:'Raleway',sans-serif;font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:0.08em}
+.paper-meta span strong{color:#3AAFAF}
+.disclaimer-box{background:#1a0a0a!important;border:2px solid #7B241C;border-left:6px solid #7B241C;border-radius:4px;padding:1.5rem 2rem;margin:2rem auto;max-width:960px}
+.disclaimer-box p{color:#e8c4c4;font-family:'Raleway',sans-serif;font-size:0.85rem;line-height:1.7}
+.disclaimer-box strong{color:#ff6b6b;display:block;margin-bottom:0.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em}
+.main-content{max-width:1000px;margin:0 auto;padding:3rem 2rem}
+.section-header{background:#0A1628!important;border-left:4px solid #C9A84C;border-bottom:1px solid #C9A84C;padding:1.2rem 1.5rem;margin:3rem 0 1.5rem;border-radius:0 4px 4px 0}
+.section-header h2{font-family:'Cinzel',serif;font-size:1.4rem;color:#C9A84C;font-weight:600}
+.section-header .section-num{font-family:'Raleway',sans-serif;font-size:0.75rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.3rem}
+.subsection-header{border-left:3px solid #3AAFAF;padding:0.6rem 1rem;margin:2rem 0 1rem}
+.subsection-header h3{font-family:'Cinzel',serif;font-size:1.1rem;color:#3AAFAF;font-weight:600}
+p{margin-bottom:1.1rem}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+table{width:100%;border-collapse:collapse;font-size:0.95rem}
+thead tr{background:#0A1628!important}
+thead th{padding:0.8rem 1rem;text-align:left;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#C9A84C;border-bottom:2px solid #C9A84C}
+tbody tr:nth-child(even){background:#0d1e35!important}
+tbody tr:nth-child(odd){background:#08111E!important}
+tbody tr:hover{background:#0f2040!important}
+td{padding:0.7rem 1rem;border-bottom:1px solid #1e3a5f;vertical-align:top;line-height:1.6}
+td:first-child{color:#3AAFAF;font-weight:500;font-family:'Raleway',sans-serif;font-size:0.88rem}
+.impact-box{background:#1a0808!important;border:1px solid #7B241C;border-left:5px solid #7B241C;padding:1.2rem 1.5rem;margin:1.5rem 0;border-radius:0 4px 4px 0}
+.impact-box p{color:#f0c0c0;font-weight:600;margin:0}
+.note-box{background:#081828!important;border-left:4px solid #3AAFAF;padding:1rem 1.5rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+.note-box p{color:#a0c8d8;font-style:italic;font-size:0.95rem;margin:0}
+.caution-box{background:#0f1a00!important;border-left:4px solid #8BC34A;padding:1rem 1.5rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+.caution-box p{color:#c8d8a0;font-size:0.95rem;margin:0}
+.redacted-box{background:#081828!important;border:1px solid #3AAFAF;border-left:4px solid #3AAFAF;padding:1rem 1.5rem;margin:1rem 0;border-radius:4px;display:flex;align-items:flex-start;gap:1rem}
+.redacted-box .lock-icon{color:#3AAFAF;font-size:1.2rem;flex-shrink:0}
+.redacted-box p{color:#8fc8d8;font-style:italic;font-size:0.9rem;margin:0}
+.redacted-box a{color:#C9A84C;font-style:normal}
+.connection-card{background:#0A1628!important;border:1px solid #1e3a5f;border-top:3px solid #C9A84C;padding:1.2rem;border-radius:0 0 4px 4px;margin:1.5rem 0}
+.conn-num{font-family:'Raleway',sans-serif;font-size:0.7rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.4rem}
+.conn-title{font-family:'Cinzel',serif;font-size:0.95rem;color:#D8D0C0;margin-bottom:0.6rem}
+.conn-text{font-size:0.9rem;color:#a0b8c8;line-height:1.6}
+.prediction-card{background:#0A1628!important;border:1px solid #1e3a5f;border-left:4px solid #3AAFAF;padding:1rem 1.2rem;margin:0.8rem 0;border-radius:0 4px 4px 0}
+.pred-id{font-family:'Raleway',sans-serif;font-size:0.72rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;font-weight:600}
+.pred-meta{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.5rem}
+.pred-tag{font-family:'Raleway',sans-serif;font-size:0.72rem;background:#081828!important;color:#3AAFAF;padding:0.2rem 0.5rem;border-radius:2px;border:1px solid #1e4a6a}
+.toc{background:#0A1628!important;border:1px solid #C9A84C;border-radius:4px;padding:1.5rem 2rem;margin:2rem 0}
+.toc h3{font-family:'Cinzel',serif;color:#C9A84C;font-size:1rem;margin-bottom:1rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.3rem 2rem}
+.toc a{font-family:'Raleway',sans-serif;font-size:0.82rem;color:#3AAFAF;display:block;padding:0.2rem 0;border-bottom:1px solid #0d2040}
+.toc a:hover{color:#C9A84C}
+.type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.5rem 0}
+.type-card{background:#0A1628!important;border:1px solid #1e3a5f;padding:1.2rem;border-radius:4px}
+.type-card .type-label{font-family:'Raleway',sans-serif;font-size:0.72rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;font-weight:600}
+.type-card h4{font-family:'Cinzel',serif;font-size:1rem;color:#D8D0C0;margin-bottom:0.5rem}
+.type-card p{font-size:0.9rem;color:#a0b0c0;margin:0}
+footer{background:#0A1628!important;border-top:2px solid #C9A84C;padding:36px 40px;margin-top:4rem}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C!important}
+.footer-links{display:flex;gap:20px;list-style:none}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0!important;text-decoration:none}
+.footer-links a:hover{color:#C9A84C!important}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4)!important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em}
+.back-link{display:inline-block;margin-top:1.5rem;font-family:'Raleway',sans-serif;font-size:0.85rem;color:#3AAFAF;border:1px solid #3AAFAF;padding:0.5rem 1.5rem;border-radius:2px;text-transform:uppercase;letter-spacing:0.08em}
+.back-link:hover{background:#3AAFAF!important;color:#08111E}
+@media(max-width:900px){nav,footer{padding-left:20px;padding-right:20px}.nav-inner{height:auto;padding:12px 0}.nav-links{flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px}.nav-links a{font-size:0.62rem!important;padding:8px 10px!important}.main-content{padding:2rem 1rem}td:first-child{white-space:normal}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS&#8482;</span>
+      <span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="paper-series">Christos™ Coherence Medicine Series</div>
+  <div class="paper-badge">Public Edition · Theoretical Framework · Clinical Testing Required · Not FDA Approved</div>
+  <h1 class="paper-title">Coherence Management of Neurofibromatosis</h1>
+  <div class="paper-subtitle">NF1 · NF2 · Schwannomatosis — Tumor Growth Suppression, Neural Coherence Restoration, Pain Management, and Quality of Life</div>
+  <div class="paper-meta">
+    <span><strong>Author</strong> Joshua Farrior</span>
+    <span><strong>Entity</strong> Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC</span>
+    <span><strong>Date</strong> July 2026</span>
+    <span><strong>Focus</strong> RAS/mTOR Suppression · Pain · NF1/NF2/Schwannomatosis</span>
+  </div>
+</div>
+
+<div class="main-content">
+
+<div class="disclaimer-box">
+  <strong>⚠ Medical and Legal Disclaimer</strong>
+  <p>This document is NOT medical advice. Neurofibromatosis requires specialist management (neurology, oncology, ophthalmology, genetics). Do NOT stop prescribed medications or delay cancer surveillance. MPNSTs are life-threatening and require IMMEDIATE oncology evaluation. All protocols are adjunctive to specialist NF management. Not FDA approved. © 2026 Joshua Farrior / Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+</div>
+
+<div class="toc">
+  <h3>Table of Contents</h3>
+  <div class="toc-grid">
+    <div>
+      <a href="#abstract">Abstract</a>
+      <a href="#s1">I. Three Disorders, One Framework</a>
+      <a href="#s2">II. The 14-Modality Protocol</a>
+      <a href="#s3">III. Type-Specific Priorities</a>
+      <a href="#s4">IV. Fluid and Device Platform</a>
+    </div>
+    <div>
+      <a href="#s5">V. Falsifiable Predictions</a>
+      <a href="#s6">VI. Objections and Discussion</a>
+      <a href="#references">References</a>
+    </div>
+  </div>
+</div>
+
+<div id="abstract">
+  <div class="section-header">
+    <div class="section-num">Abstract</div>
+    <h2>Overview — Three NF Disorders, Multi-Node Pathway Suppression</h2>
+  </div>
+  <p>Neurofibromatosis encompasses three genetically distinct tumor predisposition syndromes. NF1 (1 in 3,000; neurofibromin/RAS-GAP) causes neurofibromas, plexiform tumors, and an 8-13% lifetime MPNST risk. NF2 (1 in 25,000; merlin/Hippo pathway) causes bilateral vestibular schwannomas with progressive hearing loss. Schwannomatosis (1 in 40,000; SMARCB1/LZTR1) is defined primarily by chronic severe pain. No cure exists for any of the three; FDA approval of selumetinib for NF1 in 2020 demonstrated that downstream signaling is pharmacologically addressable.</p>
+
+  <div class="type-grid">
+    <div class="type-card">
+      <div class="type-label">NF1</div>
+      <h4>RAS/MAPK Coherence Collapse</h4>
+      <p>Neurofibromin is a RAS-GAP — the molecular coherence gate for neural crest proliferation. Loss drives constitutive RAS → MAPK/ERK + PI3K/mTOR signaling. Protocol: multi-node pathway suppression through curcumin (upstream) + quercetin (midstream) + resveratrol (downstream mTOR).</p>
+    </div>
+    <div class="type-card">
+      <div class="type-label">NF2</div>
+      <h4>Hippo Pathway / Contact Inhibition Loss</h4>
+      <p>Merlin activates Hippo pathway — enforcing contact inhibition and density coherence. Loss drives schwannoma and meningioma formation. Protocol: resveratrol (NF2-specific evidence — Giovannini 2014); hearing preservation PBM; bevacizumab compatible.</p>
+    </div>
+    <div class="type-card">
+      <div class="type-label">Schwannomatosis</div>
+      <h4>Pain-First Protocol</h4>
+      <p>Defined by chronic severe pain — often refractory to standard analgesics. Protocol priority: LDN 4.5 mg nightly + alpha-lipoic acid + 174 Hz pain gate + PBM over painful territories + modified coherence lock 4-6× daily. Pain reduction is the primary endpoint.</p>
+    </div>
+  </div>
+
+  <p>The Christos™ framework proposes NF is a neural coherence architecture disorder. This paper uses 'management' — not 'reversal' — reflecting the genetic reality. The protocol targets tumor growth rate reduction, pain reduction, and hearing stability through 14 modalities. Thirteen falsifiable predictions are provided. Proprietary specifications available under NDA.</p>
+</div>
+
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">Section I</div>
+    <h2>Three Disorders, One Coherence Framework</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Feature</th><th>NF1</th><th>NF2</th><th>Schwannomatosis</th></tr></thead>
+      <tbody>
+        <tr><td>Gene / Protein</td><td>NF1 / Neurofibromin (RAS-GAP)</td><td>NF2 / Merlin (Hippo pathway)</td><td>SMARCB1 or LZTR1</td></tr>
+        <tr><td>Prevalence</td><td>1 in 3,000</td><td>1 in 25,000</td><td>1 in 40,000</td></tr>
+        <tr><td>Primary tumors</td><td>Cutaneous + plexiform neurofibromas; optic gliomas; MPNSTs</td><td>Bilateral vestibular schwannomas; spinal schwannomas; meningiomas</td><td>Multiple schwannomas (NOT bilateral vestibular); pain-dominant</td></tr>
+        <tr><td>Primary burden</td><td>Tumor burden; disfigurement; pain; MPNST risk 8-13% lifetime</td><td>Hearing loss; tinnitus; balance problems; facial nerve dysfunction</td><td>Chronic severe pain — primary presenting symptom</td></tr>
+        <tr><td>FDA-approved treatment</td><td>Selumetinib (Koselugi, 2020) for pediatric plexiform NF; surgery</td><td>Bevacizumab off-label; surgery; stereotactic radiosurgery</td><td>Surgery; pain management — no FDA-approved drug</td></tr>
+        <tr><td>C_neural threshold</td><td>&le; 0.45 (active plexiform growth)</td><td>&le; 0.40 (bilateral schwannomas)</td><td>&le; 0.50 (more limited coherence collapse)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="impact-box"><p>MPNST WARNING: 8-13% lifetime MPNST risk in NF1; 5-year survival 20-50%; leading cause of NF1 mortality. Any rapidly growing, newly painful, or consistency-changing mass in NF1 requires IMMEDIATE oncology evaluation. Annual whole-body MRI (WB-MRI) is mandatory surveillance.</p></div>
+
+  <div class="subsection-header"><h3>The Coherence Architecture of RAS/MAPK and Hippo Pathways</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Gene Product</th><th>Coherence Function</th><th>Coherence Collapse Consequence</th><th>Protocol Response</th></tr></thead>
+      <tbody>
+        <tr><td>Neurofibromin (NF1)</td><td>RAS-GAP — gates neural crest cell proliferation; turns off RAS after growth signal</td><td>Constitutive RAS-MAPK-ERK + PI3K-mTOR activation; progressive neurofibroma accumulation</td><td>Curcumin (RAS processing) + quercetin (PI3K) + resveratrol (mTOR) — three-node suppression</td></tr>
+        <tr><td>Merlin (NF2)</td><td>Hippo pathway activator — enforces contact inhibition; maintains cell density coherence</td><td>Loss of contact inhibition; schwannoma and meningioma formation; constitutive mTOR</td><td>Resveratrol (Giovannini 2014 NF2 evidence); curcumin; bevacizumab compatible</td></tr>
+        <tr><td>SNF5/SMARCB1</td><td>Chromatin remodeling — maintains epigenetic coherence of neural crest identity</td><td>Neural crest identity loss; pain-generating schwannomas</td><td>Full protocol with pain emphasis; SMARCB1 loss also seen in some MPNSTs — surveillance critical</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">Section II</div>
+    <h2>The 14-Modality NF Coherence Protocol</h2>
+  </div>
+
+  <div class="subsection-header"><h3>2.1 Protocol Matrix</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Modality</th><th>Phase 0</th><th>Phase 1 (Wks 1-12)</th><th>Phase 2 (Wks 13-24)</th><th>Phase 3 (Wks 25-52)</th><th>Phase 4 (Wk 53+)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Specialist surveillance</td><td>Baseline imaging</td><td>Continue per specialist</td><td>Annual minimum</td><td>Annual</td><td>Annual + PRN</td></tr>
+        <tr><td>2</td><td>Selumetinib (if prescribed)</td><td>Continue</td><td>Continue</td><td>Continue</td><td>Per oncologist</td><td>Per oncologist</td></tr>
+        <tr><td>3</td><td>Curcumin BCM-95</td><td>2 g/day</td><td>2-4 g/day</td><td>2-4 g/day</td><td>1-2 g/day</td><td>1-2 g/day</td></tr>
+        <tr><td>4</td><td>Resveratrol micronized</td><td>500 mg/day</td><td>500-1000 mg/day</td><td>500-1000 mg/day</td><td>500 mg/day</td><td>500 mg/day</td></tr>
+        <tr><td>5</td><td>Quercetin</td><td>500 mg/day</td><td>500-1000 mg/day</td><td>500-1000 mg/day</td><td>500 mg/day</td><td>500 mg/day</td></tr>
+        <tr><td>6</td><td>LDN (pain; NF2; schwannomatosis)</td><td>—</td><td>1.5-4.5 mg nightly</td><td>3.0-4.5 mg nightly</td><td>Maintain</td><td>Continue</td></tr>
+        <tr><td>7</td><td>Alpha-lipoic acid R-ALA</td><td>600 mg/day</td><td>600-1200 mg/day</td><td>1200 mg/day</td><td>600 mg/day</td><td>600 mg/day</td></tr>
+        <tr><td>8</td><td>Christos™ NeuroFlux-NF</td><td>—</td><td>30 mL 2× daily</td><td>30 mL 3× daily</td><td>30 mL 2× daily</td><td>30 mL 2× daily</td></tr>
+        <tr><td>9</td><td>Transcranial/neural PBM 850 nm</td><td>—</td><td>5× weekly</td><td>5× weekly</td><td>3-5× weekly</td><td>3× weekly</td></tr>
+        <tr><td>10</td><td>PEMF 7.83+528 Hz</td><td>—</td><td>2× daily 30 min</td><td>2× daily</td><td>1× daily</td><td>1× daily</td></tr>
+        <tr><td>11</td><td>NCC-1 Chamber</td><td>—</td><td>3× weekly</td><td>3-5× weekly</td><td>2× weekly</td><td>1-2× weekly</td></tr>
+        <tr><td>12</td><td>NeuroBand</td><td>—</td><td>24/7</td><td>24/7</td><td>Overnight</td><td>5 nights/week</td></tr>
+        <tr><td>13</td><td>Modified coherence lock (NO HOLD)</td><td>3× daily</td><td>3× daily</td><td>3× daily</td><td>2× daily</td><td>1-2× daily</td></tr>
+        <tr><td>14</td><td>Vitamin D3 + omega-3 + NAC</td><td>Begin immediately</td><td>Full doses</td><td>Full doses</td><td>Maintenance</td><td>Continue</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>2.2 RAS/MAPK/mTOR Three-Node Suppression</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Agent</th><th>Pathway Node</th><th>NF Evidence</th><th>Rationale vs. Selumetinib</th></tr></thead>
+      <tbody>
+        <tr><td>Curcumin BCM-95 (2-4 g/day)</td><td>RAS farnesylation (upstream); NF-κB; direct anti-proliferative in NF1-null Schwann cells</td><td>Ly 2010 — reduces neurofibroma growth in NF1 mouse model; BCM-95 6.93× bioavailability</td><td>Targets RAS processing upstream of MEK — complementary node to selumetinib</td></tr>
+        <tr><td>Resveratrol micronized (500-1000 mg/day)</td><td>mTOR via AMPK (downstream); NF2 schwannoma growth; SIRT1 epigenetic</td><td>Giovannini 2014 — reduces NF2 schwannoma growth; Bhatt 2018 NF1 models</td><td>mTOR — downstream convergence of both NF1 and NF2 pathways; not targeted by selumetinib</td></tr>
+        <tr><td>Quercetin (500-1000 mg/day)</td><td>PI3K (midstream); VEGF reduction; anti-proliferative in schwannoma cell lines</td><td>Multiple in vitro studies; PI3K inhibition well-documented</td><td>PI3K sits between RAS and mTOR — creates three-node simultaneous pathway suppression</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note-box"><p>Multi-node rationale: curcumin (RAS upstream) + quercetin (PI3K midstream) + resveratrol (mTOR downstream) creates three-point simultaneous suppression of the same pathway selumetinib targets at a single MEK node. Prediction NF-4 tests additive effect with selumetinib in pediatric NF1.</p></div>
+
+  <div class="caution-box"><p><strong>NO BREATH-HOLD</strong> in NF patients with spinal tumors, cord compression, or balance impairment from vestibular schwannomas. Pursed-lip adapted coherence lock throughout all phases — same modification as GBM and COPD protocols.</p></div>
+</div>
+
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">Section III</div>
+    <h2>Type-Specific Priorities</h2>
+  </div>
+
+  <div class="subsection-header"><h3>3.1 NF1 — Plexiform Suppression and MPNST Prevention</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Priority</th><th>Protocol Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Plexiform neurofibroma suppression</td><td>Full RAS/mTOR stack; NeuroFlux-NF 3× daily; selumetinib if oncologist prescribes (compatible with coherence protocol); annual WB-MRI mandatory</td></tr>
+        <tr><td>MPNST surveillance</td><td>Annual whole-body MRI; immediate oncology referral for rapid growth, new pain, or consistency change — MPNST risk is real and primary mortality cause</td></tr>
+        <tr><td>Optic pathway glioma (NF1)</td><td>Annual ophthalmology; visual acuity monitoring; systemic curcumin + resveratrol; PBM periorbital with ophthalmologist clearance</td></tr>
+        <tr><td>Cognitive support (NF1-associated)</td><td>Omega-3 DHA 2-3 g/day; lion's mane extract (NGF); PEMF 7.83 Hz; NeuroBand overnight</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>3.2 NF2 — Hearing Preservation Protocol</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Priority</th><th>Protocol Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Vestibular schwannoma suppression</td><td>Resveratrol 1000 mg/day (Giovannini 2014 — NF2-specific evidence); curcumin 4 g/day; bevacizumab if prescribed (compatible); everolimus off-label per physician</td></tr>
+        <tr><td>Hearing preservation</td><td>Retroauricular PBM (850 nm, 5 J/cm2, 5× weekly); NeuroFlux-NF NAC + DHA + citicoline cochlear neuroprotection; avoid ototoxic agents where possible</td></tr>
+        <tr><td>Balance rehabilitation</td><td>Vestibular PT 2-3× weekly (essential, not replaceable by coherence protocol); PEMF 7.83 Hz neural circuit stabilization</td></tr>
+        <tr><td>Post-acoustic neuroma surgery</td><td>Pre-op: PBM 850 nm retroauricular 5× weekly × 4 weeks; Post-op from day 3; NeuroFlux-NF citicoline + lion's mane for facial nerve regeneration support</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection-header"><h3>3.3 Schwannomatosis — Pain-First Protocol</h3></div>
+  <p>Pain is the primary strategic goal — chronic, severe, often refractory to standard analgesics. Protocol priority: LDN 4.5 mg nightly (maximum dose — pain is the primary indication); alpha-lipoic acid 1200 mg/day; magnesium glycinate 800 mg/day; PBM 850 nm over each painful schwannoma territory; 174 Hz continuous audio during pain episodes; modified coherence lock 4-6× daily. Use validated pain scales (NRS 0-10, Brief Pain Inventory) weekly — pain reduction is the primary efficacy endpoint for schwannomatosis.</p>
+</div>
+
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">Section IV</div>
+    <h2>Christos™ Fluid and Device Platform — Overview</h2>
+  </div>
+  <div class="note-box"><p>Complete formulations, device specifications, crystal array configurations, and manufacturing details are proprietary and available under NDA. Contact <a href="../../contact.html">christosenergy.com</a> for licensing inquiries.</p></div>
+
+  <div class="subsection-header"><h3>4.1 Christos™ NeuroFlux-NF — Oral Coherence Fluid</h3></div>
+  <p>NeuroFlux-NF targets three simultaneous NF dimensions: RAS/mTOR pathway suppression, neural coherence field restoration in neural crest tissue, and pain modulation. Key evidence-based agents: Curcumin BCM-95 liposomal (RAS farnesylation; NF1 mouse model — Ly 2010); Resveratrol micronized trans (mTOR/AMPK; NF2 schwannoma model — Giovannini 2014); Quercetin (PI3K inhibition; VEGF reduction); DHA high-dose algal (neural membrane coherence; anti-neuroinflammatory); Citicoline (neuroprotection for compressed nerves; cochlear protection in NF2; Saver 2008 Cochrane); Lion's mane extract (NGF stimulation — erinacines cross BBB; facial nerve regeneration; Mori 2009 RCT); Alpha-lipoic acid R-ALA (neuropathic pain — Ziegler 2011 RCT; nerve antioxidant); NAC (glutathione restoration; oxidative stress in tumor-compressed neural tissue); Magnesium L-threonate (NMDA modulation; superior BBB penetrance; central pain); CoQ10 ubiquinol (mitochondrial restoration in compressed neural tissue).</p>
+  <p>24-hour imprinting: 174 Hz (3hr pain gate) + 285 Hz (2hr neural regeneration) + 396 Hz (3hr RAS pattern release; immune reset) + 417 Hz (2hr debris clearing) + 528 Hz (8hr primary healing; mTOR suppression coherence; longest window) + 639 Hz (2hr neural network communication) + 741 Hz (2hr NGF pathway restoration) + 852 Hz (2hr Schwann cell identity awakening). Dosage: 30 mL 3× daily Phase 2; 30 mL 2× daily otherwise.</p>
+  <div class="redacted-box">
+    <span class="lock-icon">🔒</span>
+    <p>NeuroFlux-NF — Complete formulation: exact agent amounts, preparation protocol, imprinting cycle specifications, QC testing. <a href="../../contact.html">Available under NDA — christosenergy.com</a></p>
+  </div>
+
+  <div class="subsection-header"><h3>4.2 NCC-1 Neural Coherence Chamber — NF Configuration</h3></div>
+  <p>PEMF (7.83+528 Hz); transcranial + peripheral nerve territory PBM arrays (850+660 nm, adjustable positioning for tumor sites); 5-phase Solfeggio acoustic (174 Hz extended for pain — 15 min; phases through 963 Hz); NeuroFlux-NF nebulization 1 mL/min throughout; 48 crystal nodes (amethyst × 24 primary for neural frequency range; clear quartz × 24 supplementary). Sessions 75-90 min (90 min for schwannomatosis pain emphasis), 3-5× weekly.</p>
+  <div class="redacted-box">
+    <span class="lock-icon">🔒</span>
+    <p>NCC-1 NF Configuration — Complete device specifications: PEMF array, PBM fields, 48-node crystal placement, nebulization specs, manufacturing details. <a href="../../contact.html">Available under NDA</a></p>
+  </div>
+
+  <div class="subsection-header"><h3>4.3 Christos™ NeuroBand — NF Adaptation</h3></div>
+  <p>12-node adjustable headband (amethyst × 8 primary, clear quartz × 4); EEG-aligned placement: F3/F4 (cognitive support NF1), T3/T4 (vestibular schwannoma territory NF2), C3/C4 (motor zones), Cz (central integration). Frequencies: 174+285+528+741 Hz cycling. 24/7 Phase 1-2; overnight Phase 3-4. NF2 post-surgical: begin only after wound healed (3-4 weeks); neurosurgeon clearance required before initiating.</p>
+  <div class="redacted-box">
+    <span class="lock-icon">🔒</span>
+    <p>NeuroBand NF — Crystal specifications, frequency parameters, manufacturing specifications. <a href="../../contact.html">Available under NDA</a></p>
+  </div>
+</div>
+
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">Section V</div>
+    <h2>Falsifiable Predictions — 13 Total</h2>
+  </div>
+  <p>Predictions are realistic about the genetic ceiling: tumor growth rate reduction (not elimination), pain reduction (not abolition), hearing stability (not restoration).</p>
+
+  <div class="prediction-card"><div class="pred-id">NF-1</div>C_neural &lt; 0.50 in NF1 with active plexiform growth (n≥15) vs. healthy controls ≥ 0.65.<div class="pred-meta"><span class="pred-tag">C0 Diagnostician or HRV coherence surrogate</span><span class="pred-tag">Falsified: C_neural &gt; 0.55 or no significant difference</span><span class="pred-tag">6 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-2</div>C_neural increases ≥ 0.08 after 12 weeks of full protocol.<div class="pred-meta"><span class="pred-tag">C0 Diagnostician at baseline and 12 weeks</span><span class="pred-tag">Falsified: increase &lt; 0.03</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-3</div>Plexiform neurofibroma growth rate reduces ≥ 25% from pre-protocol rate in NF1 (n≥20, MRI at 6+12 months vs. prior 12-month growth rate).<div class="pred-meta"><span class="pred-tag">Volumetric MRI; same scanner; blinded radiologist</span><span class="pred-tag">Falsified: reduction &lt; 10%</span><span class="pred-tag">12 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-4</div>Selumetinib + curcumin/resveratrol/quercetin shows ≥ 15% greater tumor volume reduction than selumetinib alone in pediatric NF1 (n≥15/group).<div class="pred-meta"><span class="pred-tag">Volumetric MRI; same scanner; blinded radiologist</span><span class="pred-tag">Falsified: no additive effect vs. selumetinib alone</span><span class="pred-tag">6 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-5</div>NF2 vestibular schwannoma growth rate reduces ≥ 20% from pre-protocol rate (n≥15) on resveratrol + curcumin + coherence protocol.<div class="pred-meta"><span class="pred-tag">Annual MRI volumetrics; blinded neuroradiologist</span><span class="pred-tag">Falsified: reduction &lt; 10%</span><span class="pred-tag">12 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-6</div>NF2 hearing stability (word recognition score) maintained or improved in ≥ 55% at 12 months (vs. historical ~30-40% without treatment).<div class="pred-meta"><span class="pred-tag">Audiological evaluation at baseline and 12 months</span><span class="pred-tag">Falsified: stability &lt; 35%</span><span class="pred-tag">12 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-7</div>Schwannomatosis pain (NRS 0-10) reduces ≥ 2 points (MCID for chronic pain) at 12 weeks (n≥20).<div class="pred-meta"><span class="pred-tag">NRS daily diary; Brief Pain Inventory at baseline and 12 weeks</span><span class="pred-tag">Falsified: reduction &lt; 1 point (no better than placebo)</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-8</div>Schwannomatosis Pain Disability Index improves ≥ 25% at 12 months.<div class="pred-meta"><span class="pred-tag">PDI at baseline and 12 months</span><span class="pred-tag">Falsified: improvement &lt; 10%</span><span class="pred-tag">12 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-9</div>LDN + alpha-lipoic acid + PBM reduces schwannomatosis pain ≥ 2.5 points more than standard pain management alone (n≥15/group).<div class="pred-meta"><span class="pred-tag">NRS diary; BPI at baseline, 6 weeks, 12 weeks</span><span class="pred-tag">Falsified: no significant difference from standard pain management</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-10</div>MPNST incidence in protocol patients followed ≥ 5 years is ≤ 4% vs. historical 8-13% lifetime rate in NF1.<div class="pred-meta"><span class="pred-tag">Annual WB-MRI surveillance; pathology-confirmed MPNST diagnosis</span><span class="pred-tag">Falsified: MPNST rate ≥ 8% (no prevention signal)</span><span class="pred-tag">5 years</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-11</div>Quality of life (PROMIS Global Health + NF2-REiNS battery) improves ≥ 20% at 12 months.<div class="pred-meta"><span class="pred-tag">PROMIS Global Health at baseline and 12 months</span><span class="pred-tag">Falsified: improvement &lt; 10%</span><span class="pred-tag">12 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-12</div>Systemic inflammation (hs-CRP, IL-6) reduces ≥ 25% from elevated baseline at 12 weeks.<div class="pred-meta"><span class="pred-tag">hs-CRP; serum IL-6 ELISA</span><span class="pred-tag">Falsified: reduction &lt; 10%</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">NF-13</div>Protocol response correlates with baseline C_neural (r ≥ 0.45, n≥25).<div class="pred-meta"><span class="pred-tag">C0 at baseline; primary outcomes at 12 months; Pearson r</span><span class="pred-tag">Falsified: r &lt; 0.20</span><span class="pred-tag">12 months</span></div></div>
+</div>
+
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">Section VI</div>
+    <h2>Objections and Evidence Hierarchy</h2>
+  </div>
+
+  <div class="subsection-header"><h3>"NF is genetic — coherence cannot change the genome."</h3></div>
+  <p>Correct — the protocol does not alter NF1/NF2/SMARCB1 mutations. It targets downstream signaling consequences. This is exactly what selumetinib (FDA-approved 2020) does: it does not correct the NF1 mutation; it inhibits MEK downstream of constitutive RAS. The Christos protocol targets the same pathway through natural multi-node modulators. The title says 'management' — not 'reversal' — for this reason.</p>
+
+  <div class="subsection-header"><h3>"Natural agents cannot match pharmaceutical MEK inhibitors."</h3></div>
+  <p>Not necessarily true in all contexts. Curcumin reduces neurofibroma growth in NF1 mouse models (Ly 2010); resveratrol reduces NF2 schwannoma growth in the merlin-null model (Giovannini 2014). The hypothesis is additive/complementary effect — not equivalence with selumetinib. Prediction NF-4 tests this directly in pediatric NF1.</p>
+
+  <div class="subsection-header"><h3>Evidence Hierarchy</h3></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Level</th><th>What Is Established</th></tr></thead>
+      <tbody>
+        <tr><td>Strongest</td><td>Selumetinib in NF1 plexiform (Gross 2020 NEJM RCT); bevacizumab in NF2 vestibular schwannomas (Plotkin 2012 NEJM); LDN in chronic neuropathic pain (Younger 2014 RCT); alpha-lipoic acid in neuropathy (Ziegler 2011 RCT); lion's mane NGF stimulation (Mori 2009 RCT); PBM neuroprotection (multiple RCTs)</td></tr>
+        <tr><td>Moderate</td><td>Curcumin in NF1 mouse model (Ly 2010); resveratrol in NF2 merlin-null model (Giovannini 2014); quercetin PI3K inhibition (in vitro literature); magnesium and neuropathic pain (Begon 2002)</td></tr>
+        <tr><td>Framework-level</td><td>NeuroFlux-NF as integrated neural crest coherence fluid; NCC-1 NF chamber protocol; NeuroBand; C_neural measurement; all 13 outcome timelines. Tested by Section V predictions.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="references">
+  <div class="section-header">
+    <div class="section-num">References</div>
+    <h2>Selected References</h2>
+  </div>
+  <div style="font-size:0.88rem;line-height:1.9">
+    <p>Begon, S., et al. (2002). Magnesium and neuropathic pain. <em>British Journal of Pharmacology</em>, 136(8), 1235.</p>
+    <p>Bhatt, D., et al. (2018). Resveratrol in NF1-associated tumors. <em>Neuro-Oncology</em>, 20(4), 523.</p>
+    <p>Cotler, H.B., et al. (2015). Low level laser therapy for musculoskeletal pain. <em>MOJ Orthopedics &amp; Rheumatology</em>, 2(5), 188.</p>
+    <p>Farriar, J. (2026). Complete Reversal of Glioblastoma (GBM). Christos™ Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+    <p>Gaffney, K., &amp; Martin, R. (2020). Low-dose naltrexone in autoimmune disease. <em>Journal of Autoimmunity</em>, 112, 102476.</p>
+    <p>Giovannini, M., et al. (2014). Resveratrol reduces schwannoma tumor growth in NF2. <em>Cancer Research</em>, 74(3), 1009.</p>
+    <p>Gross, A.M., et al. (2020). Selumetinib in children with inoperable plexiform neurofibromas. <em>New England Journal of Medicine</em>, 382(15), 1430.</p>
+    <p>Ly, K.I., et al. (2010). Curcumin inhibits tumor growth in neurofibromatosis 1 preclinical models. <em>Cancer Biology &amp; Therapy</em>, 9(10), 807.</p>
+    <p>Mori, K., et al. (2009). Improving effects of lion's mane mushroom on cognitive function. <em>Phytotherapy Research</em>, 23(3), 367.</p>
+    <p>Plotkin, S.R., et al. (2012). Hearing improvement after bevacizumab in neurofibromatosis type 2. <em>New England Journal of Medicine</em>, 361(4), 358.</p>
+    <p>Saver, J.L. (2008). Citicoline: Update on a neuroprotective agent. <em>Reviews in Neurological Diseases</em>, 5(4), 167.</p>
+    <p>Smith, M.J., et al. (2022). Schwannomatosis: A clinical overview. <em>Neurology</em>, 98(14), 590.</p>
+    <p>Younger, J., et al. (2014). Low-dose naltrexone for fibromyalgia. <em>Pain Medicine</em>, 14(6), 895.</p>
+    <p>Ziegler, D., et al. (2011). Alpha-lipoic acid in symptomatic diabetic polyneuropathy. <em>Diabetes Care</em>, 34(9), 2054.</p>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:3rem">
+  <a href="../../library.html" class="back-link">← Back to Library</a>
+</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS&#8482;</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923 &middot; Christos&#8482; trademark registered on the USPTO Principal Register.</div>
+  </div>
+</footer>
+</body>
+</html>
