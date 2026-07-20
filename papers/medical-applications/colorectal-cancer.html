@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coherence Management of Colorectal Cancer | Christos&#8482; Energy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#08111E!important;color:#D8D0C0;font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.8}
+a{color:#3AAFAF;text-decoration:none}a:hover{color:#C9A84C}
+nav{background:#0A1628!important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap}
+.nav-logo{text-decoration:none}
+.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C!important;letter-spacing:0.12em}
+.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0!important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px}
+.nav-links{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0!important;transition:color 0.2s;text-decoration:none}
+.nav-links a:hover{color:#C9A84C!important}
+.nav-cta{background:#C9A84C!important;color:#08111E!important;padding:8px 16px}
+.hero{background:#0A1628!important;border-bottom:2px solid #C9A84C;padding:4rem 2rem 3rem;text-align:center}
+.paper-series{font-family:'Raleway',sans-serif;font-size:0.8rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem}
+.paper-badge{display:inline-block;background:#08111E!important;border:1px solid #C9A84C;color:#C9A84C;font-family:'Raleway',sans-serif;font-size:0.75rem;padding:0.3rem 1rem;border-radius:2px;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:0.1em}
+h1.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.6rem,3.5vw,2.8rem);color:#C9A84C;line-height:1.3;margin-bottom:1rem;max-width:900px;margin-left:auto;margin-right:auto}
+.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#D8D0C0;font-style:italic;margin-bottom:2rem;max-width:760px;margin-left:auto;margin-right:auto}
+.paper-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;font-family:'Raleway',sans-serif;font-size:0.8rem;color:#888;text-transform:uppercase;letter-spacing:0.08em}
+.paper-meta span strong{color:#3AAFAF}
+.disclaimer-box{background:#1a0a0a!important;border:2px solid #7B241C;border-left:6px solid #7B241C;border-radius:4px;padding:1.5rem 2rem;margin:2rem auto;max-width:960px}
+.disclaimer-box p{color:#e8c4c4;font-family:'Raleway',sans-serif;font-size:0.85rem;line-height:1.7}
+.disclaimer-box strong{color:#ff6b6b;display:block;margin-bottom:0.5rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em}
+.main-content{max-width:1000px;margin:0 auto;padding:3rem 2rem}
+.section-header{background:#0A1628!important;border-left:4px solid #C9A84C;border-bottom:1px solid #C9A84C;padding:1.2rem 1.5rem;margin:3rem 0 1.5rem;border-radius:0 4px 4px 0}
+.section-header h2{font-family:'Cinzel',serif;font-size:1.4rem;color:#C9A84C;font-weight:600}
+.section-header .section-num{font-family:'Raleway',sans-serif;font-size:0.75rem;color:#3AAFAF;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.3rem}
+.subsection-header{border-left:3px solid #3AAFAF;padding:0.6rem 1rem;margin:2rem 0 1rem}
+.subsection-header h3{font-family:'Cinzel',serif;font-size:1.1rem;color:#3AAFAF;font-weight:600}
+p{margin-bottom:1.1rem}
+.table-wrap{overflow-x:auto;margin:1.5rem 0}
+table{width:100%;border-collapse:collapse;font-size:0.95rem}
+thead tr{background:#0A1628!important}
+thead th{padding:0.8rem 1rem;text-align:left;font-family:'Raleway',sans-serif;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:#C9A84C;border-bottom:2px solid #C9A84C}
+tbody tr:nth-child(even){background:#0d1e35!important}
+tbody tr:nth-child(odd){background:#08111E!important}
+tbody tr:hover{background:#0f2040!important}
+td{padding:0.7rem 1rem;border-bottom:1px solid #1e3a5f;vertical-align:top;line-height:1.6}
+td:first-child{color:#3AAFAF;font-weight:500;font-family:'Raleway',sans-serif;font-size:0.88rem}
+.impact-box{background:#1a0808!important;border:1px solid #7B241C;border-left:5px solid #7B241C;padding:1.2rem 1.5rem;margin:1.5rem 0;border-radius:0 4px 4px 0}
+.impact-box p{color:#f0c0c0;font-weight:600;margin:0}
+.note-box{background:#081828!important;border-left:4px solid #3AAFAF;padding:1rem 1.5rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+.note-box p{color:#a0c8d8;font-style:italic;font-size:0.95rem;margin:0}
+.caution-box{background:#0f1a00!important;border-left:4px solid #8BC34A;padding:1rem 1.5rem;margin:1.2rem 0;border-radius:0 4px 4px 0}
+.caution-box p{color:#c8d8a0;font-size:0.95rem;margin:0}
+.redacted-box{background:#081828!important;border:1px solid #3AAFAF;border-left:4px solid #3AAFAF;padding:1rem 1.5rem;margin:1rem 0;border-radius:4px;display:flex;align-items:flex-start;gap:1rem}
+.redacted-box .lock-icon{color:#3AAFAF;font-size:1.2rem;flex-shrink:0}
+.redacted-box p{color:#8fc8d8;font-style:italic;font-size:0.9rem;margin:0}
+.redacted-box a{color:#C9A84C;font-style:normal}
+.connection-card{background:#0A1628!important;border:1px solid #1e3a5f;border-top:3px solid #C9A84C;padding:1.2rem;border-radius:0 0 4px 4px;margin:1.5rem 0}
+.conn-num{font-family:'Raleway',sans-serif;font-size:0.7rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.4rem}
+.conn-title{font-family:'Cinzel',serif;font-size:0.95rem;color:#D8D0C0;margin-bottom:0.6rem}
+.conn-text{font-size:0.9rem;color:#a0b8c8;line-height:1.6}
+.prediction-card{background:#0A1628!important;border:1px solid #1e3a5f;border-left:4px solid #3AAFAF;padding:1rem 1.2rem;margin:0.8rem 0;border-radius:0 4px 4px 0}
+.prediction-card.primary{border-left-color:#C9A84C;border-width:5px}
+.pred-id{font-family:'Raleway',sans-serif;font-size:0.72rem;color:#C9A84C;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.4rem;font-weight:600}
+.pred-meta{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.5rem}
+.pred-tag{font-family:'Raleway',sans-serif;font-size:0.72rem;background:#081828!important;color:#3AAFAF;padding:0.2rem 0.5rem;border-radius:2px;border:1px solid #1e4a6a}
+.toc{background:#0A1628!important;border:1px solid #C9A84C;border-radius:4px;padding:1.5rem 2rem;margin:2rem 0}
+.toc h3{font-family:'Cinzel',serif;color:#C9A84C;font-size:1rem;margin-bottom:1rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.3rem 2rem}
+.toc a{font-family:'Raleway',sans-serif;font-size:0.82rem;color:#3AAFAF;display:block;padding:0.2rem 0;border-bottom:1px solid #0d2040}
+.toc a:hover{color:#C9A84C}
+footer{background:#0A1628!important;border-top:2px solid #C9A84C;padding:36px 40px;margin-top:4rem}
+.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C!important}
+.footer-links{display:flex;gap:20px;list-style:none}
+.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0!important;text-decoration:none}
+.footer-links a:hover{color:#C9A84C!important}
+.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4)!important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em}
+.back-link{display:inline-block;margin-top:1.5rem;font-family:'Raleway',sans-serif;font-size:0.85rem;color:#3AAFAF;border:1px solid #3AAFAF;padding:0.5rem 1.5rem;border-radius:2px;text-transform:uppercase;letter-spacing:0.08em}
+.back-link:hover{background:#3AAFAF!important;color:#08111E}
+@media(max-width:900px){nav,footer{padding-left:20px;padding-right:20px}.nav-inner{height:auto;padding:12px 0}.nav-links{flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px}.nav-links a{font-size:0.62rem!important;padding:8px 10px!important}.main-content{padding:2rem 1rem}td:first-child{white-space:normal}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <span class="logo-main">CHRISTOS&#8482;</span>
+      <span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../diagrams.html">Diagrams</a></li>
+      <li><a href="../../economy.html">Economy</a></li>
+      <li><a href="../../book.html">Book</a></li>
+      <li><a href="../../the-case.html">The Case</a></li>
+      <li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li>
+      <li><a href="../../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="paper-series">Christos&#8482; Coherence Medicine Series</div>
+  <div class="paper-badge">Public Edition &middot; Adjunctive Only &middot; Does NOT Replace Oncology Care &middot; Not FDA Approved</div>
+  <h1 class="paper-title">Coherence Management of Colorectal Cancer</h1>
+  <div class="paper-subtitle">Tumor Microenvironment Disruption &middot; Gut Microbiome Coherence &middot; Wnt/&beta;-Catenin Suppression &middot; Pembrolizumab Augmentation in MSI-H CRC</div>
+  <div class="paper-meta">
+    <span><strong>Author</strong> Joshua Farrior</span>
+    <span><strong>Entity</strong> Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC</span>
+    <span><strong>Date</strong> July 2026</span>
+    <span><strong>Approach</strong> Adjunctive to Standard Oncology</span>
+  </div>
+</div>
+
+<div class="main-content">
+
+<div class="disclaimer-box">
+  <strong>&#9888; Critical Oncology Disclaimer</strong>
+  <p>This protocol is STRICTLY ADJUNCTIVE to standard oncology care. Do NOT delay, modify, or refuse surgery, chemotherapy, radiation, or immunotherapy. This paper does not claim to cure colorectal cancer. ALL supplement-drug interactions must be reviewed with the treating oncologist BEFORE initiating any component of this protocol. Not FDA approved. &copy; 2026 Joshua Farrior / Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+</div>
+
+<div class="toc">
+  <h3>Table of Contents</h3>
+  <div class="toc-grid">
+    <div>
+      <a href="#abstract">Abstract</a>
+      <a href="#s1">I. Molecular Biology and Gut Coherence Model</a>
+      <a href="#s2">II. The TGF-&#946; Duality -- Critical Distinction</a>
+      <a href="#s3">III. The Three CRC-Promoting Microbes</a>
+      <a href="#s4">IV. Tumor Microenvironment Disruption</a>
+    </div>
+    <div>
+      <a href="#s5">V. The Complete Protocol Matrix</a>
+      <a href="#s6">VI. Fluid and Device Platform</a>
+      <a href="#s7">VII. MSI-H/dMMR -- Highest Opportunity</a>
+      <a href="#s8">VIII. Falsifiable Predictions</a>
+      <a href="#references">References</a>
+    </div>
+  </div>
+</div>
+
+<div id="abstract">
+  <div class="section-header">
+    <div class="section-num">Abstract</div>
+    <h2>Three CRC-Specific Coherence Mechanisms</h2>
+  </div>
+  <p>Colorectal cancer kills 935,000 people annually globally (WHO 2022). Standard oncology is the treatment -- this protocol augments it. Three Christos&#8482; framework mechanisms apply with direct evidence in CRC:</p>
+
+  <div class="connection-card">
+    <div class="conn-num">Mechanism 1</div>
+    <div class="conn-title">Wnt/&#946;-Catenin Pathway Suppression -- the Primary CRC Driver</div>
+    <div class="conn-text">APC mutation activates Wnt/&beta;-catenin constitutively in 80% of CRC. Curcumin, EGCG, resveratrol, berberine, and sulforaphane each suppress nuclear &beta;-catenin through mechanism-specific evidence -- not extrapolation. Additionally: <em>Fusobacterium nucleatum</em> provides pharmacological APC-mutation equivalence in colonocytes through FadA/E-cadherin binding, activating &beta;-catenin signaling in cells with intact APC -- and drives FOLFOX chemotherapy resistance (Gao 2023, <em>Cancer Cell</em>). Eliminating Fusobacterium is directly anti-CRC.</div>
+  </div>
+  <div class="connection-card">
+    <div class="conn-num">Mechanism 2</div>
+    <div class="conn-title">Gut Microbiome Coherence -- Three Established CRC-Promoting Microbes</div>
+    <div class="conn-text"><em>Fusobacterium nucleatum</em> (Wnt/&beta;-catenin; chemo resistance -- Gao 2023), ETBF / <em>Bacteroides fragilis</em> toxin (E-cadherin cleavage; STAT3 activation), and colibactin-producing <em>E. coli</em> (direct DNA double-strand breaks -- Arthur 2012; Dejea 2018) are established CRC-promoting microbes with documented mechanisms. Berberine, curcumin, gut barrier repair, and the Warburg-butyrate paradox target all three simultaneously.</div>
+  </div>
+  <div class="connection-card">
+    <div class="conn-num">Mechanism 3 -- Primary Prediction</div>
+    <div class="conn-title">Pembrolizumab + Coherence Immune Activation in MSI-H CRC (Prediction CRC-6)</div>
+    <div class="conn-text">MSI-H/dMMR CRC (15% of cases) responds to pembrolizumab at 45% ORR (KEYNOTE-158, FDA approved). The anti-tumor T cells are present -- pembrolizumab removes the PD-1/PD-L1 brake. The coherence protocol adds fuel: 40 Hz Gamma PEMF (NK cell and M1 macrophage activation), LDN (TME Treg reduction), vitamin D3 (anti-tumor immune activation), curcumin (PD-L1 reduction). Prediction CRC-6: >= 15% higher ORR with pembrolizumab + coherence vs. pembrolizumab alone.</div>
+  </div>
+</div>
+
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">Section I</div>
+    <h2>Molecular Biology and Gut Coherence Model</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td>Global burden</td><td>1.9 million new cases/year; 935,000 deaths/year (WHO 2022); second leading cause of cancer death worldwide</td></tr>
+        <tr><td>5-year survival</td><td>Stage I: 90%; Stage II: 72%; Stage III: 55%; Stage IV: 14%</td></tr>
+        <tr><td>Primary molecular drivers</td><td>APC mutation (80% -- Wnt/&beta;-catenin); KRAS (45% -- RAS/MAPK); SMAD4 loss (25% -- TGF-&beta; tumor suppression lost); TP53 (60%)</td></tr>
+        <tr><td>Molecular subtypes</td><td>CIN pathway (85%): APC&rarr;KRAS&rarr;SMAD4&rarr;TP53 sequence; MSI/dMMR (15%): mismatch repair deficiency, high TMB, pembrolizumab-sensitive</td></tr>
+        <tr><td>Gut microbiome CRC drivers</td><td><em>F. nucleatum</em> (Wnt/&beta;-catenin; chemo resistance); ETBF/BFT (E-cadherin cleavage; STAT3); pks+ <em>E. coli</em> (colibactin DNA damage) -- all enriched in CRC tissue vs. normal colon</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note-box"><p>The Warburg-butyrate paradox: CRC cells use glucose preferentially (Warburg effect) and import little butyrate -- but butyrate accumulation in CRC cells causes HDAC inhibition activating tumor suppressor genes and inducing CRC cell apoptosis. Normal colonocytes metabolize butyrate normally. High dietary fiber &rarr; butyrate-producing Firmicutes &rarr; selective CRC cell apoptosis through this Warburg paradox (Donohoe 2012, <em>Molecular Cell</em>). Target: 35-50 g dietary fiber/day + sodium butyrate 2-4 g/day.</p></div>
+</div>
+
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">Section II</div>
+    <h2>The TGF-&#946; Duality -- The Most Important Framework Distinction</h2>
+  </div>
+  <div class="impact-box"><p>TGF-&beta; has OPPOSING roles in CRC. The Christos anti-fibrotic mechanism (528 Hz PBM suppressing TGF-&beta;1 Smad2/3) must be applied based on SMAD4 status. Applying it incorrectly in SMAD4-intact CRC could theoretically suppress tumor suppressor signaling.</p></div>
+  <div class="table-wrap" style="margin-top:1.5rem">
+    <table>
+      <thead><tr><th>Stage/Context</th><th>TGF-&beta; Role</th><th>Protocol Implication</th></tr></thead>
+      <tbody>
+        <tr><td>Early CRC / SMAD4 intact</td><td>TUMOR SUPPRESSOR -- TGF-&beta;/SMAD4 suppresses colonocyte proliferation; pathway loss enables progression</td><td>Preserve TGF-&beta;/SMAD4 tumor suppression. Prioritize Wnt/&beta;-catenin suppression and gut microbiome coherence. 528 Hz PBM used conservatively; target stromal CAFs specifically, not tumor suppressor pathway.</td></tr>
+        <tr><td>Advanced CRC / SMAD4 loss (25% of cases)</td><td>TUMOR PROMOTER -- residual TGF-&beta; drives CAF activation, EMT, immunosuppression, metastasis through non-canonical pathways; SMAD4 tumor suppression already gone</td><td>Apply full anti-fibrotic protocol targeting CAF-driven stromal fibrosis. 528 Hz PBM appropriate -- the tumor suppression function is already lost; remaining TGF-&beta; signaling is primarily driving progression.</td></tr>
+        <tr><td>Tumor stroma (all stages)</td><td>ALWAYS tumor-promoting -- TGF-&beta; from tumor drives CAF differentiation, collagen matrix exclusion of immune cells, immunosuppressive barrier</td><td>Anti-fibrotic 528 Hz PBM is ALWAYS appropriate targeting stromal CAF fibrosis -- this is not tumor suppressor signaling, it is TME fibrosis.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">Section III</div>
+    <h2>The Three CRC-Promoting Microbes -- Direct Intervention Targets</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Microbe</th><th>CRC Mechanism</th><th>Christos&#8482; Intervention</th></tr></thead>
+      <tbody>
+        <tr><td><em>Fusobacterium nucleatum</em></td><td>FadA adhesin binds E-cadherin &rarr; nuclear &beta;-catenin activation (pharmacological APC-mutation equivalent); drives FOLFOX chemotherapy resistance (Gao 2023, <em>Cancer Cell</em>); enriched in CRC tissue vs. normal colon (Castellarin 2012)</td><td>Berberine -- direct antimicrobial against <em>F. nucleatum</em> (Wang 2020 -- berberine reduces <em>F. nucleatum</em> in CRC models); curcumin antimicrobial; gut barrier repair (glutamine + zinc -- restores E-cadherin/barrier preventing FadA access)</td></tr>
+        <tr><td>ETBF (<em>B. fragilis</em> toxin/BFT)</td><td>Metalloprotease cleaves E-cadherin; activates STAT3 signaling; Th17 inflammation; promotes IBD-associated CRC</td><td>Quercetin (STAT3 inhibition -- targets downstream BFT signaling); gut barrier repair (prevents BFT mucosal access); berberine anti-ETBF; anti-inflammatory protocol</td></tr>
+        <tr><td>pks+ <em>E. coli</em> (colibactin)</td><td>Encodes colibactin -- direct DNA double-strand breaks in colonocytes; genotoxin found in polyps and CRC tissue (Arthur 2012; Dejea 2018)</td><td>NAC (antioxidant against colibactin ROS-mediated DNA damage); curcumin (DNA repair NER pathway activation); butyrate (selective pre-neoplastic cell apoptosis via Warburg paradox); gut barrier repair (reduces E. coli mucosal adherence)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">Section IV</div>
+    <h2>Tumor Microenvironment Disruption</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>TME Component</th><th>Immunosuppressive Mechanism</th><th>Coherence Intervention</th></tr></thead>
+      <tbody>
+        <tr><td>M2 tumor-associated macrophages</td><td>Secrete IL-10, TGF-&beta;, VEGF; suppress CD8+ T cell function; promote angiogenesis</td><td>40 Hz Gamma PEMF (Iaccarino 2019 -- 40 Hz shifts macrophage phenotype); berberine M2&rarr;M1 polarization (Wang 2021); curcumin TAM modulation</td></tr>
+        <tr><td>Cancer-associated fibroblasts (CAFs)</td><td>Dense collagen ECM physically excludes immune cells; secretes immunosuppressive cytokines; promotes invasion</td><td>528 Hz PBM -- TGF-&beta; Smad2/3 anti-fibrotic targeting CAF-driven stromal fibrosis (Wang 2018; Chen 2019); resveratrol reduces CAF activation</td></tr>
+        <tr><td>TME regulatory T cells</td><td>Suppress anti-tumor CD8+ cytotoxicity; accumulate in CRC TME in high TGF-&beta; environment</td><td>LDN (TLR4 &rarr; Treg/Th17 rebalancing); vitamin D3 (reduces TME Tregs via non-classical VDR pathway); butyrate (reduces FOXP3 expression in TME Tregs via HDAC inhibition)</td></tr>
+        <tr><td>PD-L1 upregulation / CD8+ T cell exhaustion</td><td>Tumor PD-L1 binds PD-1 on CD8+ T cells &rarr; exhaustion; primary immune escape mechanism</td><td>Pembrolizumab (PD-1 inhibitor -- FDA approved MSI-H/dMMR CRC); curcumin reduces PD-L1 expression; coherence immune activation amplifies pembrolizumab efficacy (Prediction CRC-6)</td></tr>
+        <tr><td>Hypoxic tumor core / VEGF overproduction</td><td>HIF-1&alpha; &rarr; VEGF; leaky immunosuppressive vasculature; treatment resistance</td><td>HBOT (reverses tumor hypoxia; suppresses HIF-1&alpha; and VEGF; improves chemotherapy delivery to hypoxic tumor regions; complementary to bevacizumab)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="caution-box"><p><strong>HBOT ONCOLOGY TIMING:</strong> HBOT must NOT be administered during active radiation therapy sessions (changes tumor oxygenation outside of planned radiation parameters). Appropriate between chemotherapy cycles, before surgery, and in the pre-operative period. Radiation oncologist coordination mandatory if patient is receiving radiation.</p></div>
+</div>
+
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">Section V</div>
+    <h2>The Complete Adjunctive Protocol</h2>
+  </div>
+  <div class="impact-box"><p>ALL supplement-drug interactions must be reviewed with the treating oncologist BEFORE initiating. Curcumin: hold 2 weeks pre-surgery (anti-platelet); reduce dose during chemotherapy (CYP3A4). Berberine: consider holding during chemotherapy cycles (CYP3A4). LDN: incompatible with opioid analgesics -- hold during opioid use. HBOT: not during active radiation therapy.</p></div>
+  <div class="table-wrap" style="margin-top:1.5rem">
+    <table>
+      <thead><tr><th>#</th><th>Modality</th><th>Phase 0 (Pre-op)</th><th>Phase 1 (Active Treatment)</th><th>Phase 2 (Surveillance)</th><th>Phase 3 (Prevention)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Standard oncology care</td><td>Per oncologist</td><td>ALL STANDARD CARE UNCHANGED</td><td>Surveillance per guidelines</td><td>Ongoing monitoring</td></tr>
+        <tr><td>2</td><td>OncoFlux-CRC oral</td><td>30 mL 2&times; daily</td><td>30 mL 2&times; daily (oncologist review)</td><td>30 mL 2&times; daily</td><td>30 mL 1-2&times; daily</td></tr>
+        <tr><td>3</td><td>HBOT 2.0-2.4 ATA</td><td>5&times; weekly &times;2 weeks pre-op</td><td>Between chemo cycles ONLY</td><td>Weekly</td><td>Monthly</td></tr>
+        <tr><td>4</td><td>PBM 850 nm abdominal</td><td>5&times; weekly</td><td>5&times; weekly between chemo</td><td>5&times; weekly</td><td>3&times; weekly</td></tr>
+        <tr><td>5</td><td>PEMF 7.83+40 Hz Gamma</td><td>Daily</td><td>Daily between chemo</td><td>Daily</td><td>Daily</td></tr>
+        <tr><td>6</td><td>Curcumin BCM-95</td><td>4 g/day (HOLD 2 wk pre-surgery)</td><td>500-1000 mg/day during chemo (oncologist)</td><td>2-4 g/day</td><td>1-2 g/day</td></tr>
+        <tr><td>7</td><td>Berberine</td><td>1500 mg/day</td><td>Hold during chemo cycles; resume between</td><td>1000-1500 mg/day</td><td>1000 mg/day</td></tr>
+        <tr><td>8</td><td>Dietary fiber 35-50 g/day</td><td>Begin immediately</td><td>Continue</td><td>Maintain permanently</td><td>Maintain permanently</td></tr>
+        <tr><td>9</td><td>Sodium butyrate</td><td>2 g/day</td><td>2-4 g/day</td><td>2-4 g/day</td><td>2 g/day</td></tr>
+        <tr><td>10</td><td>LDN 1.5-4.5 mg nightly</td><td>Begin 1.5 mg (NOT with opioids)</td><td>Continue if NOT on opioids; hold during opioid use</td><td>4.5 mg nightly</td><td>Continue</td></tr>
+        <tr><td>11</td><td>Vitamin D3</td><td>10,000 IU + K2</td><td>10,000 IU</td><td>5,000-10,000 IU</td><td>5,000 IU</td></tr>
+        <tr><td>12</td><td>Red/processed meat elimination</td><td>Permanently</td><td>Permanently</td><td>Permanently</td><td>Permanently</td></tr>
+        <tr><td>13</td><td>Coherence lock</td><td>3&times; daily</td><td>3&times; daily</td><td>2-3&times; daily</td><td>Daily</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">Section VI</div>
+    <h2>Christos&#8482; Fluid and Device Platform -- Overview</h2>
+  </div>
+  <div class="note-box"><p>Complete formulations, device specifications, and manufacturing details are proprietary and available under NDA. Contact <a href="../../contact.html">christosenergy.com</a> for licensing inquiries.</p></div>
+
+  <div class="subsection-header"><h3>OncoFlux-CRC -- Oral Coherence Fluid</h3></div>
+  <p>OncoFlux-CRC targets four simultaneous CRC mechanisms: Wnt/&beta;-catenin suppression, gut microbiome coherence (all three CRC-promoting microbes), TME immune activation, and gut barrier repair. Key evidence-based agents: Curcumin BCM-95 liposomal (Wnt/&beta;-catenin; NF-&kappa;B; anti-<em>Fusobacterium</em>; PD-L1 reduction); EGCG (Wnt/&beta;-catenin; VEGF; M1 macrophage); Resveratrol micronized (SIRT1; CAF reduction; anti-angiogenic); Berberine (AMPK anti-Warburg; <em>F. nucleatum</em> suppression -- Wang 2020; STAT3 inhibition; M1 polarization -- Wang 2021); Sodium butyrate (HDAC inhibition; Warburg paradox CRC vulnerability; Wnt suppression -- Donohoe 2012); Quercetin (PI3K; NF-&kappa;B; STAT3/ETBF downstream; senolytic); Sulforaphane broccoli sprout extract (NRF2 -- most potent natural activator; Wnt suppression; HDAC inhibition -- Clarke 2008); NAC (colibactin ROS protection); Omega-3 EPA/DHA (anti-inflammatory TME; prostaglandin E2 reduction; COX-2 -- Cheng 2020 meta-analysis).</p>
+  <p>Imprinting: 285 Hz (3hr colonic epithelial regeneration -- extended); 396 Hz (3hr Wnt pattern release + gut dysbiosis disruption); 528 Hz (7hr primary -- CAF fibrosis suppression; MOR_40 Healing Resonance Match; M1 macrophage activation coherence); 852 Hz (3hr colonocyte stem cell niche restoration). Dosage: 30 mL 2&times; daily.</p>
+  <div class="redacted-box">
+    <span class="lock-icon">&#128274;</span>
+    <p>OncoFlux-CRC + OCC-1 Oncology Coherence Chamber -- Complete proprietary specifications. <a href="../../contact.html">Available under NDA -- christosenergy.com</a></p>
+  </div>
+</div>
+
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">Section VII</div>
+    <h2>MSI-H / dMMR CRC -- The Highest Opportunity Subgroup</h2>
+  </div>
+  <p>MSI-H/dMMR CRC (15% of cases) has 10-100&times; higher tumor mutational burden, an already-active T cell infiltrate, and documented pembrolizumab sensitivity (45% ORR -- KEYNOTE-158, FDA approved for Stage IV MSI-H CRC). The coherence protocol has maximum potential here because the anti-tumor T cells are present but suppressed.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>MSI-H Specific Priority</th><th>Specification</th></tr></thead>
+      <tbody>
+        <tr><td>Pembrolizumab (standard of care)</td><td>Continue exactly as prescribed; coherence protocol designed to be compatible and potentially synergistic in MSI-H</td></tr>
+        <tr><td>40 Hz Gamma PEMF extended to 60 min/day</td><td>NK cell and M1 macrophage activation is the primary endpoint in MSI-H where immune cells are present but PD-1/TME-suppressed</td></tr>
+        <tr><td>LDN 4.5 mg nightly -- priority in MSI-H</td><td>High TME Treg content in MSI-H makes LDN Treg reduction particularly impactful; Th1-skewed MSI-H microenvironment responds well to Treg reduction</td></tr>
+        <tr><td>Curcumin at full dose (4 g/day) during immunotherapy</td><td>PD-L1 reduction by curcumin is specifically relevant in MSI-H; reduces the same immunosuppressive mechanism pembrolizumab targets -- potentially synergistic</td></tr>
+        <tr><td>Lynch syndrome patients</td><td>Genetic counseling for all family members; annual colonoscopy mandatory; coherence protocol most impactful for prevention in mutation carriers</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">Section VIII</div>
+    <h2>Falsifiable Predictions -- 13 Total</h2>
+  </div>
+  <div class="note-box"><p>These predictions use precise oncology outcome measures. None claim cure. All are adjunctive outcome measures tested alongside standard oncology care.</p></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-1</div>C_gut &lt; 0.40 in established CRC (n&ge;20) vs. healthy controls &ge; 0.65; C_gut correlates with CRC stage (r &ge; 0.50).<div class="pred-meta"><span class="pred-tag">C0 Diagnostician or HRV coherence surrogate</span><span class="pred-tag">Falsified: C_gut &gt; 0.55 or no stage correlation</span><span class="pred-tag">6 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-2</div>Fecal <em>F. nucleatum</em> load reduces &ge; 50% at 12 weeks on berberine + OncoFlux-CRC.<div class="pred-meta"><span class="pred-tag">Quantitative PCR for F. nucleatum in stool at baseline and 12 weeks</span><span class="pred-tag">Falsified: &lt; 25% reduction</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-3</div>CEA stabilizes or reduces in protocol patients in Stage II-III surveillance at 12 months vs. matched historical controls.<div class="pred-meta"><span class="pred-tag">Serum CEA monthly surveillance</span><span class="pred-tag">Falsified: CEA trajectory equivalent to or worse than matched controls</span><span class="pred-tag">12 months</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-4</div>Serum VEGF reduces &ge; 25% at 12 weeks on OncoFlux-CRC + HBOT vs. OncoFlux alone.<div class="pred-meta"><span class="pred-tag">Serum VEGF ELISA; two arms</span><span class="pred-tag">Falsified: &lt; 10% reduction or no HBOT additive effect</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-5</div>Chemotherapy-induced gut toxicity (CTCAE Grade 2+ diarrhea, mucositis) reduces &ge; 30% in protocol patients vs. matched controls on same chemo.<div class="pred-meta"><span class="pred-tag">CTCAE grading at each chemo cycle; physician assessment</span><span class="pred-tag">Falsified: &lt; 15% reduction (no gut-protective effect)</span><span class="pred-tag">Per chemo cycle</span></div></div>
+
+  <div class="prediction-card primary"><div class="pred-id" style="color:#C9A84C">CRC-6 &mdash; PRIMARY HYPOTHESIS -- MSI-H SUBGROUP</div>Pembrolizumab + coherence immune activation shows &ge; 15% higher objective response rate (ORR) in MSI-H/dMMR CRC vs. pembrolizumab alone (n&ge;30 per group).<div class="pred-meta"><span class="pred-tag">RECIST 1.1 response assessment at 12 weeks; two arms</span><span class="pred-tag">Falsified: ORR difference &lt; 5% (no additive immune effect)</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-7</div>Tumor-infiltrating CD8+ T cell density increases &ge; 30% in protocol patients vs. controls (where biopsy clinically indicated).<div class="pred-meta"><span class="pred-tag">IHC CD8+ on paired biopsies; blinded pathologist</span><span class="pred-tag">Falsified: &lt; 15% increase in CD8+ TIL density</span><span class="pred-tag">Per biopsy opportunity</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-8</div>Fecal butyrate levels increase &ge; 40% at 8 weeks on fiber protocol + sodium butyrate.<div class="pred-meta"><span class="pred-tag">Fecal SCFA quantification at baseline and 8 weeks</span><span class="pred-tag">Falsified: &lt; 20% increase</span><span class="pred-tag">8 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-9</div>hs-CRP reduces &ge; 35% from elevated baseline at 12 weeks.<div class="pred-meta"><span class="pred-tag">Serum hs-CRP at baseline and 12 weeks</span><span class="pred-tag">Falsified: &lt; 15% reduction</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-10</div>EORTC QLQ-C30 + QLQ-CR29 quality of life improves &ge; 10 points at 12 weeks.<div class="pred-meta"><span class="pred-tag">EORTC questionnaires at baseline and 12 weeks</span><span class="pred-tag">Falsified: &lt; 5 points improvement</span><span class="pred-tag">12 weeks</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-11</div>5-year RFS improves in Stage III protocol patients (&ge; 70% vs. historical ~55% after FOLFOX).<div class="pred-meta"><span class="pred-tag">5-year RFS from surgery date; Kaplan-Meier</span><span class="pred-tag">Falsified: 5-year RFS &lt; 60% (no improvement)</span><span class="pred-tag">5 years</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-12</div>Adenoma recurrence reduces &ge; 30% at 3-year colonoscopy vs. matched non-protocol controls.<div class="pred-meta"><span class="pred-tag">Colonoscopy at 3 years post-resection; blinded endoscopist</span><span class="pred-tag">Falsified: recurrence reduction &lt; 15%</span><span class="pred-tag">3 years</span></div></div>
+
+  <div class="prediction-card"><div class="pred-id">CRC-13</div>C_gut correlates with treatment response across CRC stages (r &ge; 0.55, n&ge;30).<div class="pred-meta"><span class="pred-tag">C0 at baseline; primary oncology outcomes at 12 months; Pearson r</span><span class="pred-tag">Falsified: r &lt; 0.20</span><span class="pred-tag">12 months</span></div></div>
+</div>
+
+<div id="references">
+  <div class="section-header"><div class="section-num">References</div><h2>Selected References</h2></div>
+  <div style="font-size:0.88rem;line-height:1.9">
+    <p>Arthur, J.C., et al. (2012). Intestinal inflammation targets cancer-inducing activity of the microbiota. <em>Science</em>, 338(6103), 120.</p>
+    <p>Bennett, M.H., et al. (2012). Hyperbaric oxygenation for tumour sensitisation to radiotherapy. <em>Cochrane Database of Systematic Reviews</em>, (4), CD005007.</p>
+    <p>Castellarin, M., et al. (2012). Fusobacterium nucleatum infection is prevalent in human colorectal carcinoma. <em>Genome Research</em>, 22(2), 299.</p>
+    <p>Chen, C.H., et al. (2019). Photobiomodulation reduces renal fibrosis via TGF-&beta;1 Smad2/3. <em>Lasers in Medical Science</em>, 34(6), 1133.</p>
+    <p>Cheng, J., et al. (2020). Omega-3 fatty acids and colorectal cancer risk. <em>International Journal of Cancer</em>, 146(6), 1586.</p>
+    <p>Clarke, J.D., et al. (2008). Sulforaphane inhibits histone deacetylase in prostate cancer cells. <em>Molecular Nutrition &amp; Food Research</em>, 52(11), 1476.</p>
+    <p>Dejea, C.M., et al. (2018). Patients with familial adenomatous polyposis harbor colonic biofilms with tumorigenic bacteria. <em>Science</em>, 359(6375), 592.</p>
+    <p>Donohoe, D.R., et al. (2012). The Warburg effect dictates the mechanism of butyrate-mediated histone acetylation. <em>Molecular Cell</em>, 48(4), 612.</p>
+    <p>Gao, Y., et al. (2023). Fusobacterium nucleatum drives chemotherapy resistance in colorectal cancer. <em>Cancer Cell</em>, 41(4), 690.</p>
+    <p>Iaccarino, H.F., et al. (2019). Gamma frequency entrainment attenuates amyloid load and modifies microglia. <em>Nature</em>, 540(7632), 230.</p>
+    <p>Khor, T.O., et al. (2011). Dietary cancer chemopreventive agents targeting Wnt/&beta;-catenin. <em>Current Drug Targets</em>, 12(13), 1944.</p>
+    <p>Rubinstein, M.R., et al. (2013). Fusobacterium nucleatum promotes CRC via FadA adhesin. <em>Cell Host &amp; Microbe</em>, 14(2), 195.</p>
+    <p>Wang, T., et al. (2018). Photobiomodulation in pulmonary fibrosis. <em>Lasers in Medical Science</em>, 33(8), 1713.</p>
+    <p>Wang, Y., et al. (2020). Berberine reduces Fusobacterium nucleatum-associated colorectal cancer. <em>Oncology Letters</em>, 19(4), 2842.</p>
+    <p>Wang, Z., et al. (2021). Berberine repolarizes tumor-associated macrophages toward M1 phenotype. <em>Journal of Cellular Physiology</em>, 236(8), 5984.</p>
+    <p>WHO. (2022). Global cancer statistics 2022. World Health Organization / IARC.</p>
+    <p>Younger, J., et al. (2014). Low-dose naltrexone for fibromyalgia. <em>Pain Medicine</em>, 14(6), 895.</p>
+  </div>
+</div>
+
+<div style="text-align:center;margin-top:3rem">
+  <a href="../../library.html" class="back-link">&larr; Back to Library</a>
+</div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">CHRISTOS&#8482;</div>
+    <ul class="footer-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../library.html">Library</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923 &middot; Christos&#8482; trademark registered on the USPTO Principal Register.</div>
+  </div>
+</footer>
+</body>
+</html>
