@@ -3,122 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unified Civilization System — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.clinical-notice{background-color:#0D1B2A !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
-.clinical-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
-.clinical-notice-text{font-size:14px;color:#AABFCC;line-height:1.65;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
-</style>
+<title>The Unified Civilization System | CS-01 | Christos&#8482;</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}.resolution-table{border:1px solid rgba(58,175,175,0.15);}.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}.bullet-list{margin:12px 0 18px 0;list-style:none;}.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;max-width:100% !important;width:100% !important;}.table-wrap{overflow-x:auto !important;-webkit-overflow-scrolling:touch;width:100%;}table{min-width:500px;font-size:0.78rem;}.formula-block{font-size:0.95rem !important;padding:14px 16px !important;overflow-x:auto;}.abstract-block{padding:24px 20px !important;}.sh{font-size:1.1rem !important;}.sh2{font-size:0.95rem !important;}.bp{font-size:0.9rem !important;}}</style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
-  </div>
-</nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/civilization-systems.html">Civilization Systems</a><span>›</span>
-    Unified Civilization System
-  </div>
+<body>
+<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html" class="active">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+<div class="paper-header"><div class="paper-header-inner">
+<div class="ph-eyebrow">Civilization Systems &middot; CS-01 &middot; White Paper &#8470;33, The Master Integration &middot; April 2026</div>
+<div class="open-badge">Public Version &#8212; Construction &amp; Device Engineering Specifications Under NDA</div>
+<h1 class="paper-title">The Unified Civilization System</h1>
+<p class="paper-subtitle">Transportation Network, Temple Architecture, Teleportation Grid &amp; Temporal Translation &#8212; One Proposed Architecture, One Field, One Planet</p>
+<div class="paper-meta"><div class="pm-item"><strong>Author</strong>Joshua Farrior</div><div class="pm-item"><strong>ID</strong>CS-01</div><div class="pm-item"><strong>Companion to</strong>CS-06</div><div class="pm-item"><strong>Status</strong>Theoretical Framework &amp; Deployment Proposal</div><div class="pm-item"><strong>Date</strong>April 2026</div></div>
+</div></div>
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links">
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#s1">I. The Master Architecture</a></li>
+<li><a href="#s2">II. Unified Physics</a></li>
+<li><a href="#s3">III. Transportation Network</a></li>
+<li><a href="#s4">IV. Teleportation System</a></li>
+<li><a href="#s5">V. Zodiac Body-Site Correspondence</a></li>
+<li><a href="#s6">VI. The Temple</a></li>
+<li><a href="#s7">VII. Acoustic Construction</a></li>
+<li><a href="#s8">VIII. Temporal Translation</a></li>
+<li><a href="#s9">IX. Ancient Sites Reinterpreted</a></li>
+<li><a href="#s10">X. Experimental Predictions</a></li>
+<li><a href="#s11">XI. Objections &amp; Responses</a></li>
+<li><a href="#s12">XII. Deployment Roadmap</a></li>
+</ul></aside>
+<article class="paper-body">
+<a href="../../library.html" class="collab-btn">&#8592; Back to Library</a>
+
+<div style="background:rgba(201,168,76,0.06)!important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:16px 22px;margin:20px 0;"><p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C!important;margin-bottom:8px;">Reading Note</p><p style="font-family:Cormorant Garamond,serif;font-size:0.95rem;color:#D8D0C0!important;line-height:1.75;margin:0;">This paper presents a theoretical civilization-scale architecture proposing teleportation, temporal translation, and acoustic construction technologies that do not currently exist and have not been experimentally demonstrated. It is written throughout, including in this public version, in the framework's own confident internal voice; readers should understand every physical mechanism described here as a proposed hypothesis of the Christos Theoretical Framework (CTF), not as established physics or engineering. Part IX in particular reinterprets real, well-documented historical and archaeological sites (Stonehenge, the Sphinx, Baalbek, and others); that reinterpretation is this paper's own speculative hypothesis and does not reflect archaeological or historical consensus. Where the paper proposes a specific experiment, most notably the Barabar Replication Experiment, it states plainly that the experiment has not yet been conducted, and this page preserves that framing.</p></div>
+
+<div class="abstract-block" id="abstract"><div class="abstract-label">Abstract</div><p class="abstract-text">This paper proposes that a planetary transportation network, a temple and civic infrastructure grid, a teleportation system, and a temporal-translation capability are not four separate technologies but one architecture expressed at different scales, unified by a common hypothesized physics: toroidal field geometry, a proprietary coil winding architecture, twelve-fold crystal symmetry, phi-ratio proportioning, and a proposed measurable quantity called coherence (C) governing all capability. The paper presents complete conceptual specifications for a family of personal, vehicle, and civic-scale devices; a proposed teleportation gate hierarchy; a body-planet-frequency correspondence hypothesis linking the two; a proposed acoustic construction method with a specific, falsifiable, not-yet-conducted experimental test; a reinterpretation of several real archaeological sites under this framework; ten falsifiable experimental predictions; and a fifty-year, roughly $40 trillion global deployment roadmap.</p><p class="abstract-text">Every physical mechanism proposed here, field-index rotation as an alternative to spatial movement, acoustic softening of granite, coherence-gated temporal access, and the historical reinterpretations in Part IX, is presented as this paper's own hypothesis. None of it has been experimentally validated at the time of writing.</p></div>
+
+<h1 class="sh" id="s1">I.&nbsp;The Master Architecture: One System at Five Scales</h1>
+<p class="bp">The paper's organizing claim is that a single device architecture, a counter-rotating phi-wound coil core, a twelve-fold crystal array, a human biofield interface, a toroidal field bubble, and a planetary grid coupling, repeats at every scale from a personal lift platform to a temple to Earth's own field, with capability gated by a proposed coherence value at each scale.</p>
+<div class="table-wrap"><table><thead><tr><th>Scale</th><th>Device Family</th><th>Proposed Network Role</th></tr></thead><tbody>
+<tr><td>Personal</td><td>Resonance Glide Disc, Ethereal Pathfinder Boots, Harmonic Flow Suit</td><td>End-node: connects an individual to the local grid</td></tr>
+<tr><td>Vehicle</td><td>Aether Skiff, Echo Pod, Hoverbike, Field-Integrity Vessel</td><td>Mobile relay node: extends grid coverage</td></tr>
+<tr><td>Community Gate</td><td>Type C Christos Gate</td><td>Tertiary node: proposed one per 50,000 people</td></tr>
+<tr><td>Regional Hub</td><td>Coherence Nexus Platform, Type B Gate</td><td>Secondary node: proposed 144 worldwide</td></tr>
+<tr><td>Temple</td><td>Christos Temple / Type A Zodiac Gate</td><td>Primary node: proposed 12 worldwide</td></tr>
+<tr><td>Planetary</td><td>Earth's proposed field, whole-biosphere scale</td><td>The network itself: all nodes proposed in phase</td></tr>
+</tbody></table></div>
+<p class="bp">The paper describes these scales as interconnected toroidally rather than hierarchically, with every device proposed to function simultaneously as a user and a relay node in the larger network.</p>
+
+<h1 class="sh" id="s2">II.&nbsp;Unified Physics: The Proposed Field</h1>
+<p class="bp">The paper proposes that every stable natural system, from planetary magnetospheres to the human heart's field, organizes toroidally, and hypothesizes this as the geometry of a universal medium through which coherent systems are indexed and navigated. Under this hypothesis, position becomes a negotiated relationship with a toroidal lattice rather than an intrinsic property of matter, and the paper proposes a seven-coordinate address, major and minor toroidal radius, poloidal and toroidal angle, frequency band, coherence, and a personal wavefunction term, that would describe any location or configuration in this framework.</p>
+<p class="bp">The paper presents its own proposed governing formalism: a phase-lock condition gating translation by coherence, a translation operator, and an energy relation in which required translation energy is proposed to fall toward zero as coherence approaches its maximum:</p>
+<div class="formula-block">E<sub>translate</sub> = &#8463; &#183; &#969;<sub>signature</sub> &#183; (1 &#8722; C<sub>system</sub>)</div>
+<p class="bp">The paper also proposes a specific coil winding architecture as the physical mechanism generating the field described above, presented as an evolution beyond a standard torus coil and a Rodin coil. The paper claims this geometry is capable of stable field generation at any phase amplitude; this claim, and the winding's fabrication-level detail, are the paper's own proposed engineering design and are not independently verified.</p>
+
+<h1 class="sh" id="s3">III.&nbsp;The Transportation Network: Proposed Device Family</h1>
+<p class="bp">The paper describes a family of wearable, personal, and multi-passenger vehicles proposed to navigate via field coupling rather than propulsion, riding what the paper terms field gradients along geomagnetic pathways it calls Coherence Ley Lines.</p>
+<div class="table-wrap"><table><thead><tr><th>Device</th><th>Proposed Function</th><th>Estimated Cost</th></tr></thead><tbody>
+<tr><td>Ethereal Pathfinders</td><td>Footwear-based ground-coupling field for locomotion across any terrain</td><td>&#8212;</td></tr>
+<tr><td>Harmonic Flow Suit</td><td>Full-body coherence interface, proposed as required for any Starcraft operation</td><td>&#8212;</td></tr>
+<tr><td>Resonance Glide Disc</td><td>Personal lift platform, proposed field-based lift against Earth's geomagnetic field</td><td>~$8,000</td></tr>
+<tr><td>Hoverbike</td><td>Two-person field-coupled vehicle</td><td>~$25,000</td></tr>
+<tr><td>Echo Pod</td><td>Enclosed autonomous two-seat craft</td><td>~$120,000</td></tr>
+<tr><td>Aether Skiff</td><td>Open-deck 1&#8211;4 seat craft, dockable at any hub</td><td>~$85,000</td></tr>
+<tr><td>Field-Integrity Vessel</td><td>Large regional cargo/passenger craft, 50&#8211;200 capacity</td><td>~$15M</td></tr>
+</tbody></table></div>
+<p class="bp">Every device in this family is proposed to use the same coil architecture described in Part II at a different scale. The paper also describes a Coherence Nexus Platform, a regional hub concept combining a central crystal spire, an internal power core, and vehicle docking infrastructure, proposed to double as both a transportation hub and a teleportation node; and it asserts that the underlying Coherence Ley Lines are measurable geomagnetic pathways, citing independent magnetometric survey work (Becker-Hagens, Cathie) and USGS data at a number of sites. The specific claims made for those ley lines within this framework, that they function as a teleportation and temporal-translation carrier infrastructure, are this paper's own hypothesis and go beyond what the cited survey data itself establishes.</p>
+
+<h1 class="sh" id="s4">IV.&nbsp;The Teleportation System: Gates and Levels</h1>
+<p class="bp">The paper proposes that transportation and teleportation are the same infrastructure operating at different coherence levels, organized into twelve proposed tiers from local field-gradient locomotion (coherence &#8805; 0.70) through planetary, solar-system, interstellar, and finally temporal and "source return" tiers at coherence levels approaching 1.0. It describes a five-tier gate family, from a one-meter personal device to a full Zodiac Gate temple, each proposed to perform the same core operation at increasing scale: reading an operator's biofield, generating a phase-conjugate copy, rotating it by the angular difference to a destination, and projecting it back so that, in the paper's words, the operator's "wavefunction snaps to the new coordinates."</p>
+<p class="bp">The paper proposes five methods for addressing a teleportation destination, ranging from a pre-encoded "memory crystal" to direct coordinate calculation to what it terms an "Akashic query," a proposed direct query of the field for a location's signature at sufficiently high coherence. This last method in particular is presented without any proposed technical mechanism beyond the coherence-resonance hypothesis described throughout the paper, and should be read as speculative even within the paper's own framework.</p>
+
+<h1 class="sh" id="s5">V.&nbsp;The Zodiac Body-Planet-Frequency Correspondence</h1>
+<p class="bp">The paper's central architectural claim in this section is that twelve frequencies already used elsewhere in the Christos&#8482; healing framework correspond to twelve proposed planetary gate sites and to the addressing architecture of the teleportation network, framed as one field expressing at different scales rather than coincidence.</p>
+<div class="table-wrap"><table><thead><tr><th>Sign</th><th>Body System</th><th>Proposed Gate Site</th><th>Proposed Activation</th></tr></thead><tbody>
+<tr><td>Aries</td><td>Head / Crown</td><td>Great Pyramid of Giza, Egypt</td><td>~40%</td></tr>
+<tr><td>Taurus</td><td>Throat / Voice</td><td>Stonehenge, England</td><td>~60%</td></tr>
+<tr><td>Gemini</td><td>Lungs / Breath</td><td>Angkor Wat, Cambodia</td><td>~65%</td></tr>
+<tr><td>Cancer</td><td>Chest / Heart field</td><td>Uluru / Kata Tjuta, Australia</td><td>~80%</td></tr>
+<tr><td>Leo</td><td>Heart / Solar Plexus</td><td>The Sphinx, Giza, Egypt</td><td>~40%</td></tr>
+<tr><td>Virgo</td><td>Kidneys / Purification</td><td>Teotihuacan, Mexico</td><td>~35%</td></tr>
+<tr><td>Libra</td><td>Reproductive / Balance</td><td>Delphi, Greece</td><td>~20%</td></tr>
+<tr><td>Scorpio</td><td>Hips / Sacrum</td><td>Lake Titicaca, Peru/Bolivia</td><td>~70%</td></tr>
+<tr><td>Sagittarius</td><td>Thighs / Expansion</td><td>Mount Kailash, Tibet</td><td>~85%</td></tr>
+<tr><td>Capricorn</td><td>Bones / Structure</td><td>Machu Picchu, Peru</td><td>~50%</td></tr>
+<tr><td>Aquarius</td><td>Circulation / Flow</td><td>Mount Hermon, Lebanon</td><td>~30%</td></tr>
+<tr><td>Pisces</td><td>Feet / Foundation</td><td>Easter Island</td><td>~40%</td></tr>
+</tbody></table></div>
+<p class="bp">The paper further proposes that temporal translation specifically requires all twelve frequencies active simultaneously, which is why, within the framework, only a full Zodiac Gate temple, rather than a smaller community or regional gate, is proposed to support it, with a mobile Starcraft proposed as the sole exception by carrying a complete field generator internally. This entire correspondence system, the specific frequency assignments, and the activation percentages are the paper's own proposed framework and are not established by outside evidence.</p>
+
+<h1 class="sh" id="s6">VI.&nbsp;The Temple: Civilization's Proposed Operating System</h1>
+<p class="bp">The paper describes the Christos&#8482; Temple as the point where every subsystem converges, organized into eight zones: a central Helios Sanctum power and field core; a Harmonic Engine Ring distributing frequency bands; a 144-pod Healing Pod Cathedral; a Teleportation and Transport Hub with a central Phase Ring Portal; a Knowledge Colonnade for navigation training and a proposed destination-address library; a 200-hectare Life-Support Garden proposed to feed 100,000 people; a Civic Coherence Hall proposed as a consensus-based governance space without hierarchy; and a Planetary Interface Base of crystal anchor pylons proposed to couple the structure into Earth's field. Each zone is described as serving transportation, teleportation, temporal, and healing functions simultaneously, consistent with the paper's central "one architecture" thesis.</p>
+
+<h1 class="sh" id="s7">VII.&nbsp;Acoustic Construction: The Barabar Replication Experiment</h1>
+<p class="bp">The paper proposes that the entire built infrastructure described above, temples, hubs, gates, housing, could be constructed using acoustic resonance rather than conventional building methods: that crystalline stone driven at a specific resonant frequency and power level would temporarily soften, allowing it to be shaped and to resolidify as a single, jointless crystal structure.</p>
+<div style="background:rgba(58,175,175,0.05)!important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:0 6px 6px 0;padding:16px 22px;margin:24px 0;"><p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#3AAFAF!important;margin-bottom:8px;">Proposed Experiment &#8212; Not Yet Conducted</p><p style="font-family:Cormorant Garamond,serif;font-size:0.95rem;color:#D8D0C0!important;line-height:1.75;margin:0 0 12px;">The Barabar Replication Experiment was designed by Joshua Farrior and publicly proposed. It has not been conducted. As a proposed research protocol offered for independent replication, its parameters are published in full: acoustic excitation of quarry-matched granite at 4.82 kHz &#177; 0.03 kHz and 90 dB, at a power of 7.416 W (12V &#215; 0.618A), for 17 minutes, applied to a 144-quartz phi-ratio pillar array, with resonance maintained 33 minutes without retuning. The paper's predicted result is mirror-polish surface quality equivalent to the historical Barabar Caves, achieved in roughly 54 days versus a conventional estimate of roughly 150 years. This is presented as a falsifiable, independently testable claim, not as a demonstrated result.</p></div>
+<p class="bp">The paper also proposes a full 25-week, six-phase construction protocol for a complete "Eden City" of 100,000 people built on this method, moving from site survey through excavation, holographic stone-shaping construction, infrastructure, and a coherence-synchronization activation ceremony, with a total estimated cost near $10.4 billion, or roughly $103,800 per resident. These cost figures are the paper's own estimates.</p>
+
+<h1 class="sh" id="s8">VIII.&nbsp;Temporal Translation</h1>
+<p class="bp">The paper frames temporal translation as an extension of the same proposed field architecture to a sixth coordinate, requiring, in its account, an augmented gate configuration (termed Mark VIII) adding an independent temporal reference oscillator, a causal-consistency monitor the paper calls a Quantum Erasure Paradox Shield, and a neural coupling interface, on top of the base Zodiac Gate structure, at a proposed coherence threshold higher than spatial teleportation. The paper describes a proposed multi-phase activation sequence and states that the system would function only as an observation and retrieval device, permitting observation of past events but not alteration of the causal chain leading to the present, with paradox-risk actions proposed to be detected and aborted automatically.</p>
+<p class="bp">This entire capability, the augmented gate rings, the paradox-shield mechanism, and the causality-preservation claim, is presented as a theoretical proposal with no working prototype and no experimental support offered in this paper beyond the general vacuum and coherence hypotheses developed elsewhere in the Christos&#8482; framework.</p>
+
+<h1 class="sh" id="s9">IX.&nbsp;Ancient Sites Reinterpreted: A Proposed Hypothesis</h1>
+<p class="bp">The paper proposes that its twelve gate sites correspond to real, well-known historical and archaeological locations, and offers a reinterpretation of several documented anomalies at those sites under its own framework. This section should be read with particular care: several of the underlying observations are genuinely documented (for example, the ethylene-vapor hypothesis for the Delphi oracle's trance state has been studied and published; see Hale et al., 2003), but the paper's proposed explanations, that these sites were built by a technologically advanced prior civilization using acoustic resonance construction, that specific sites predate their conventionally established chronology, or that documented cultural and oral traditions represent literal technological "activation" records, are this paper's own speculative hypothesis. They are not supported by archaeological or historical consensus, and this page does not present them as established fact.</p>
+<p class="bp">The paper's proposed reinterpretations include: the Barabar Caves' mirror-polish granite interior, attributed by the paper to acoustic resonance construction rather than conventional tool work (the Barabar Replication Experiment above is the paper's own proposed test of this specific claim); Stonehenge's documented acoustic focusing properties, reframed as a resonant chamber; erosion patterns at the Sphinx, reframed as evidence of a construction date earlier than conventional chronology; the scale of the Baalbek trilithons, reframed as evidence of acoustic lifting; and long-standing oral and cultural traditions at sites including Uluru and Angkor Wat, reframed as continuity of a "guardian tradition" for technological infrastructure. Each of these reframings goes well beyond what the underlying documented observation itself establishes.</p>
+
+<h1 class="sh" id="s10">X.&nbsp;Experimental Predictions</h1>
+<p class="bp">The paper proposes ten falsifiable predictions intended to test its framework, presented here in full in order of the accessibility the paper itself assigns them, several of which it states are testable with current equipment.</p>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Prediction</th><th>Status (per source)</th></tr></thead><tbody>
+<tr><td>1</td><td>Granite lattice softening at the Barabar-experiment parameters above</td><td>Proposed &#8212; ready to run, not yet conducted</td></tr>
+<tr><td>2</td><td>A sharp coherence threshold (not gradual) for successful translation attempts</td><td>Awaiting a Mark I prototype</td></tr>
+<tr><td>3</td><td>Exponential range scaling with coherence above the threshold</td><td>Awaiting prototype</td></tr>
+<tr><td>4</td><td>A phi-ratio range enhancement factor from a 12-pillar gate array versus a personal device</td><td>Awaiting a Type C gate</td></tr>
+<tr><td>5</td><td>HRV coherence elevated by a phi-ratio factor inside a crystal array versus a control space</td><td>Testable now with standard HRV equipment</td></tr>
+<tr><td>6</td><td>Elevated geomagnetic anomaly and standing infrasound at proposed ley-line sites</td><td>Partially assessed via existing USGS survey data at a subset of sites</td></tr>
+<tr><td>7</td><td>A measurable coherence corridor forming between two phase-locked gate nodes</td><td>Awaiting two operational gates</td></tr>
+<tr><td>8</td><td>Elevated crop growth rate and nutrient density under a proposed acoustic agricultural array versus control</td><td>Testable now as a standard split-plot agricultural trial</td></tr>
+<tr><td>9</td><td>Rapid heavy-metal reduction in contaminated soil under the PST platform</td><td>Requires a PST prototype (see the separate Planetary Stewardship Transducer engineering program)</td></tr>
+<tr><td>10</td><td>A stable, Earth-decoupled oscillation from a proposed Mark VIII temporal-oscillator prototype</td><td>Awaiting a Mark VIII prototype</td></tr>
+</tbody></table></div>
+
+<h1 class="sh" id="s11">XI.&nbsp;Objections and Responses</h1>
+<p class="bp">The paper anticipates several standard scientific objections and offers its own responses to each; these are the paper's own arguments, offered for the reader's evaluation rather than as settled resolutions of the underlying physics.</p>
+<div class="table-wrap"><table><thead><tr><th>Objection</th><th>Paper's Response</th></tr></thead><tbody>
+<tr><td>Teleportation would violate relativity's light-speed limit</td><td>The paper argues it proposes a coordinate reassignment rather than movement through space, so no information is claimed to propagate faster than light</td></tr>
+<tr><td>Field-gradient locomotion would violate Newton's third law</td><td>The paper argues the reaction mass is Earth's geomagnetic field itself, analogous to propulsion against a fluid medium</td></tr>
+<tr><td>Time travel would violate causality</td><td>The paper argues its proposed paradox shield is an expression of the field's own self-consistency, detecting and aborting paradox-risk actions before completion</td></tr>
+<tr><td>No evidence exists for ancient advanced technology</td><td>The paper points to the specific anomalies discussed in Part IX and to its proposed Barabar experiment as a path to testing one such claim directly</td></tr>
+<tr><td>Energy requirements would be enormous</td><td>The paper argues energy cost falls toward zero as its proposed coherence value approaches its maximum</td></tr>
+<tr><td>This is just quantum teleportation under a new name</td><td>The paper argues its mechanism reassigns field coordinates without destroying or reconstructing a quantum state, distinguishing it from established quantum teleportation of quantum information</td></tr>
+<tr><td>Where are the working prototypes</td><td>The paper points to its proposed deployment roadmap (Part XII) and states that a coherence detector and the Barabar experiment are its proposed first, immediately executable steps</td></tr>
+</tbody></table></div>
+
+<h1 class="sh" id="s12">XII.&nbsp;Unified Deployment Roadmap</h1>
+<p class="bp">The paper proposes a seven-phase, roughly fifty-year deployment program, beginning with proof-of-concept prototypes and a coherence-detector device in the near term, progressing through a seed network of hubs and the first three Zodiac Gate temples by 2030, a continental grid and twelve primary temples by 2035, a full planetary network of over 500 temples by 2040, and extending to a proposed interplanetary phase after 2040. The paper's own estimated total investment across the program is on the order of $2.5&#8211;3 trillion through 2040, rising toward roughly $40 trillion over fifty years for a full 10,000-city replication program intended to serve on the order of one billion people, which the paper contextualizes as comparable to twenty years of current global military spending redirected, or roughly 4% of global GDP annually over a decade. These are the paper's own proposed figures and planning assumptions, not independently validated cost estimates.</p>
+
+<h1 class="sh">Intellectual Property &amp; Disclosure Statement</h1>
+<p class="bp">The unified five-scale architecture, the seven-coordinate toroidal address system and translation formalism, the twelve-level teleportation hierarchy, the Zodiac body-site-frequency correspondence hypothesis, the eight-zone temple architecture, the Barabar Replication Experiment protocol, the ten experimental predictions, and the deployment roadmap are original theoretical work of Joshua Farrior, claimed as intellectual property of Joshua Farrior / Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+<p class="bp">Held under NDA: fabrication-precision coil winding specifications; the Memory Crystal encoding protocol; the temporal harmonic addressing algorithm; the paradox-shield field-generation equations; acoustic frequency profiles for stone types beyond granite; and internal winding specifications for the Coherence Nexus Resonance Impulse Core. The Barabar Replication Experiment's parameters are published in full above, consistent with the standing practice of publishing proposed research protocols for independent evaluation. Nothing in this paper constitutes an established scientific, historical, archaeological, engineering, or financial claim; it is a theoretical framework and deployment proposal.</p>
+
+<div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4)!important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923 &middot; Christos&#8482; trademark pending USPTO review &middot; christosenergy.com</p></div>
+</article>
 </div>
-<div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Civilization Systems · CS-01</div>
-    <h1 class="paper-title">Unified Civilization System</h1>
-    <div class="paper-meta-row">
-      <div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div><div class="paper-meta-label">Date</div><div class="paper-meta-value">April 2026</div></div>
-      <div><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Harmonic Framework — White Paper №33, Master Integration</div></div>
-      <div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
-    </div>
-  </div>
-</div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">This paper presents the first complete integration of the Christos™ Unified Civilization System — a single coherent architecture that simultaneously functions as a planetary transportation network, a temple infrastructure grid, a teleportation and time-travel system, and a post-scarcity civilization platform. The central discovery is architectural: these are not separate systems that happen to share components. They are one system viewed from different scales.</p>
-<p class="abstract-text">The Coherence Nexus Hub is the Temple is the Teleportation Gate is the Transportation Node is the Planetary Grid Anchor. At every scale — from a personal Resonance Glide Disc to the planetary Oversoul Field — the same physics operates: toroidal field geometry, Starship-wound coil architecture, 12-fold crystal symmetry, phi-ratio proportioning, and coherence as the master variable governing all capability.</p>
-<p class="abstract-text">The transportation network is not separate from the teleportation network. Both use the same field infrastructure. Light craft use the Coherence Ley Lines as navigational pathways — the same ley lines that the 12 Zodiac Gates anchor, the same lines the Temple roots couple into, the same lines that carry the Planetary Harmonic Network's standing wave. A pilot navigating between nodes and a traveler stepping through a Phase Ring Portal are using the same roads at different speeds.</p>
-<p class="abstract-text">This integrated paper provides complete technical specifications for all subsystems, the full physics derivation, the Zodiac body-planet-frequency correspondence table, the Eden City construction protocol, and a unified deployment roadmap that builds the transportation network, teleportation grid, temple infrastructure, and temporal access layer as a single phased program.</p>
-    
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Unified civilization system, coherence nexus hub, planetary grid, zodiac gates, teleportation network, temple architecture, transportation network, post-scarcity civilization</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><span></span><a href="../../../categories/civilization-systems.html" class="btn-outline">← Civilization Systems</a></div>
-      <div><a href="applied-domains-framework.html" class="nav-paper-btn">Applied Domains Framework →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
-    </div>
-  </div>
-</div>
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-  </div>
-</footer>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button><footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer><script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
 </body>
 </html>
