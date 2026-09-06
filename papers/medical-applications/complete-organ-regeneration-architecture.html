@@ -3,125 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complete Organ Regeneration Architecture — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.clinical-notice{background-color:#0D1B2A !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
-.clinical-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
-.clinical-notice-text{font-size:14px;color:#AABFCC;line-height:1.65;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
-</style>
+<title>Complete Organ Regeneration Architecture | MA-02 | Christos&#8482;</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}.resolution-table{border:1px solid rgba(58,175,175,0.15);}.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}.bullet-list{margin:12px 0 18px 0;list-style:none;}.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;max-width:100% !important;width:100% !important;}.table-wrap{overflow-x:auto !important;-webkit-overflow-scrolling:touch;width:100%;}table{min-width:500px;font-size:0.78rem;}.formula-block{font-size:0.95rem !important;padding:14px 16px !important;overflow-x:auto;}.abstract-block{padding:24px 20px !important;}.sh{font-size:1.1rem !important;}.sh2{font-size:0.95rem !important;}.bp{font-size:0.9rem !important;}}</style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
-  </div>
-</nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/medical-applications.html">Medical Applications</a><span>›</span>
-    Complete Organ Regeneration Architecture
-  </div>
+<body>
+<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html" class="active">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+<div class="paper-header"><div class="paper-header-inner">
+<div class="ph-eyebrow">Medical Applications &middot; MA-02 &middot; Internal Manufacturing &amp; Clinical Reference &middot; March 2026</div>
+<div class="open-badge">Public Version &#8212; Complete Catalog Under NDA</div>
+<h1 class="paper-title">Complete Organ Regeneration Architecture</h1>
+<p class="paper-subtitle">All 80 Organs &middot; Every Fluid &middot; Every Gel &middot; Every Resonator &middot; Every Frequency &middot; Every Protocol</p>
+<div class="paper-meta"><div class="pm-item"><strong>Author</strong>Joshua Farrior</div><div class="pm-item"><strong>ID</strong>MA-02</div><div class="pm-item"><strong>Companion to</strong>MA-01</div><div class="pm-item"><strong>Status</strong>Internal Reference Catalog</div><div class="pm-item"><strong>Date</strong>March 2026</div></div>
+</div></div>
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links">
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#s1">I. What This Document Is</a></li>
+<li><a href="#s2">II. The Organ Master List</a></li>
+<li><a href="#s3">III. Healing Fluids &amp; Gels</a></li>
+<li><a href="#s4">IV. Morphogenic Resonators</a></li>
+<li><a href="#s5">V. Chamber Protocol Directory</a></li>
+<li><a href="#s6">VI. Reference Tables</a></li>
+</ul></aside>
+<article class="paper-body">
+<a href="../../library.html" class="collab-btn">&#8592; Back to Library</a>
+
+<div style="background:rgba(201,168,76,0.06)!important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:16px 22px;margin:20px 0;"><p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C!important;margin-bottom:8px;">Clinical Disclaimer</p><p style="font-family:Cormorant Garamond,serif;font-size:0.95rem;color:#D8D0C0!important;line-height:1.75;margin:0;">This page describes the existence and scope of an internal manufacturing and clinical specification catalog. It is not FDA approved, is not a treatment protocol, and nothing here constitutes medical advice. No frequency, formulation, ingredient, dose, or protocol timing from this catalog is disclosed in this public version, since these require clinical validation, professional manufacturing oversight, and individualized physician guidance. This catalog should never be used to attempt self-directed compounding, dosing, or device construction; several of its internal formulations specify concentrations meant for professional batch production, not personal use, and misreading a batch-scale specification as a personal dose could be genuinely harmful.</p></div>
+
+<div style="background:rgba(201,168,76,0.06)!important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:16px 22px;margin:20px 0;"><p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C!important;margin-bottom:8px;">Companion Paper</p><p style="font-family:Cormorant Garamond,serif;font-size:0.95rem;color:#D8D0C0!important;line-height:1.75;margin:0;">This is the complete internal manufacturing catalog underlying the [[organ-regeneration-system]] (MA-01) framework. MA-01 presents the scientific rationale, evidence base, and honest evidence-tiering for the underlying approach; this page describes the scope of the complete specification built on top of it, without reproducing its contents.</p></div>
+
+<div class="abstract-block" id="abstract"><div class="abstract-label">Abstract</div><p class="abstract-text">This document is the complete internal manufacturing and clinical reference for the Christos&#8482; Organ Regeneration System described in the companion paper MA-01: an exhaustive catalog covering all major organs of the human body across eleven biological systems, a corresponding structured-water healing fluid and gel formulary, a full set of organ-specific morphogenic resonator device specifications, a directory of coherence chamber protocols including an eleven-phase, full-body session sequence, and consolidated master reference tables.</p><p class="abstract-text">Unlike MA-01, this document is a pure specification catalog rather than a narrative scientific paper: it contains no discussion of evidence, no citations, and no research proposals of its own. Its entire content, every frequency assignment, every fluid and gel formulation, every resonator specification, and every protocol timing, is held under NDA and is not disclosed in this public version.</p></div>
+
+<h1 class="sh" id="s1">I.&nbsp;What This Document Is</h1>
+<p class="bp">Where MA-01 makes the scientific case for the Organ Regeneration System, drawing on a substantial peer-reviewed evidence base across acoustic, photonic, electromagnetic, and structured-water regenerative medicine, this document is its complete internal build-out: the specific catalog a manufacturer or clinician would need to actually produce every fluid, gel, and device, and run every protocol, described at full implementation detail. It is organized as a pure reference catalog rather than an argued paper, and this page presents it accordingly, describing its scope and structure without reproducing its contents.</p>
+
+<h1 class="sh" id="s2">II.&nbsp;The Organ Master List</h1>
+<p class="bp">The catalog opens with a master list of the body's major organs, organized across eleven biological systems: circulatory and lymphatic, digestive, nervous, endocrine, respiratory, urinary, male reproductive, female reproductive, integumentary, skeletal and muscular, and sensory. For each organ, the source material assigns a proposed primary regenerative frequency and a qualitative regenerative-capacity assessment (high, moderate, or limited), forming the organizing reference that every fluid, gel, resonator, and chamber protocol in the rest of the document is built around. <strong>The complete organ list with its specific frequency assignments is not reproduced in this public version.</strong></p>
+
+<h1 class="sh" id="s3">III.&nbsp;Healing Fluids and Gels</h1>
+<p class="bp">The catalog specifies a complete formulary of organ-specific healing fluids and companion gels, each named for its target organ or system, built on the same structured, deuterium-depleted water base and Solfeggio frequency-imprinting approach described conceptually in MA-01. Each formulation combines specific botanical extracts and nutritional compounds with a specific frequency-imprinting sequence and a specific dosing and application protocol. <strong>Every formulation's complete ingredient list, exact concentrations, frequency-imprinting sequence, and dosing protocol is a trade secret and is not disclosed in this public version.</strong> This information is not appropriate for self-directed compounding or dosing under any circumstance; formulation and dosing decisions require professional manufacturing oversight and individualized physician guidance.</p>
+
+<h1 class="sh" id="s4">IV.&nbsp;Morphogenic Resonators</h1>
+<p class="bp">The catalog specifies a complete set of organ-specific resonator devices, each defined by a proposed crystal type, a proposed center frequency, a specific body placement location, and a specific recommended wear duration, extending the general Morphogenic Resonator concept described in MA-01 to essentially every major organ and organ group in the body. <strong>The complete resonator specification table, including every crystal type, frequency, placement, and duration, is a trade secret and is not disclosed in this public version.</strong></p>
+
+<h1 class="sh" id="s5">V.&nbsp;Chamber Protocol Directory</h1>
+<p class="bp">The catalog specifies a directory of coherence chamber protocols organized by organ system, plus a flagship eleven-phase, full-body regeneration protocol intended to sequence all nine Solfeggio frequencies and the Schumann resonance in a single extended session addressing every organ system in sequence. Each phase specifies a particular frequency, target organs, and coordinated fluid or environmental delivery, and the full protocol specifies detailed chamber environmental parameters (water bath conditions, mineral content, acoustic and photonic array specifications, and electromagnetic field generation equipment). <strong>The complete phase-by-phase protocol, every session timing, frequency, and environmental specification, is a trade secret and is not disclosed in this public version.</strong></p>
+
+<h1 class="sh" id="s6">VI.&nbsp;Reference Tables</h1>
+<p class="bp">The catalog closes with consolidated master reference tables: a frequency map cross-referencing every organ system, a regeneration-capacity reference summarizing the qualitative assessments from Part II, and a proposed regeneration timeline reference. These are internal cross-reference tools built entirely from the specific, protected content described above, and are not reproduced in this public version.</p>
+
+<h1 class="sh">Intellectual Property &amp; Disclosure Statement</h1>
+<p class="bp">The complete Organ Regeneration Architecture catalog, including its organ master list, healing fluid and gel formulary, morphogenic resonator specifications, and chamber protocol directory, is original work of Joshua Farrior, claimed as intellectual property of Joshua Farrior / Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+<p class="bp">Held under NDA in full: every organ-specific frequency assignment; every healing fluid and gel formulation, including ingredients, concentrations, frequency-imprinting sequences, and dosing protocols; every morphogenic resonator's crystal type, frequency, placement, and duration specification; and every chamber protocol's phase timing, frequency sequence, and environmental parameters, including the complete eleven-phase full-body protocol. This entire catalog requires clinical validation and individualized physician guidance and is not published in any Christos&#8482; paper. Nothing in this document constitutes medical advice, and none of its contents should be used for self-directed compounding, dosing, or device construction.</p>
+
+<div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4)!important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923 &middot; Christos&#8482; trademark pending USPTO review &middot; Not FDA approved &middot; Not a substitute for professional medical advice &middot; christosenergy.com</p></div>
+</article>
 </div>
-<div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Medical Applications · MA-02</div>
-    <h1 class="paper-title">Complete Organ Regeneration Architecture</h1>
-    <div class="paper-meta-row">
-      <div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div><div class="paper-meta-label">Series</div><div class="paper-meta-value">Christos™ Energy, Technology & Harmonic Design Consulting, LLC</div></div>
-      <div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
-    </div>
-  </div>
-</div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">The Complete Organ Regeneration Architecture is the most comprehensive coherence-based biological restoration document ever assembled — a complete specification covering all 80 organs across 11 biological systems, with every therapeutic fluid, gel, resonator, frequency, and protocol specified for every organ in the human body.</p>
-<p class="abstract-text">The architecture consists of: 11 complete organ systems, 80+ individual organs with primary regeneration frequency and regeneration capacity assessment for each, 35+ healing fluids formulated on structured deuterium-depleted water base with organ-specific Solfeggio imprinting, 40+ healing gels in Universal and Penetration-Enhanced base formulations, 28 Morphogenic Resonators with organ-specific crystal selection and 12-node array specifications, 12 chamber programs for organ-system-specific coherence restoration, and the 11-phase full-body chamber protocol delivering every organ system's therapeutic frequency in sequence.</p>
-<p class="abstract-text">The full-body protocol is a 100-minute coherence session moving through the complete dimensional stack from 7.83 Hz Schumann grounding through 963 Hz Source connection, delivering every organ system's therapeutic frequency in sequence while simultaneously immersing the body in the DDW fluid mist of each organ's healing formula. The protocol addresses all 11 major organ systems in a single integrated session.</p>
-<p class="abstract-text">The document concludes with the pregnancy restoration protocols — the most sensitive and highest-stakes application of the entire system, addressing birth defect prevention and correction, stillbirth prevention, and full-term coherence optimization for both mother and developing child. All protocols are presented as theoretical frameworks requiring clinical validation before therapeutic claims can be made.</p>
-    <div class="clinical-notice">
-  <div class="clinical-notice-title">Clinical & Research Disclaimer</div>
-  <div class="clinical-notice-text">This framework is presented for research and educational purposes only. All protocols discussed herein are proposed as adjunctive to standard medical care and require physician supervision. Patients should not alter medications or treatment plans without consulting a qualified healthcare provider. Proposed studies have not yet been conducted unless explicitly stated.</div>
-</div>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Complete organ regeneration, 80 organs, healing fluids, healing gels, morphogenic resonators, 11-phase chamber protocol, DDW, Solfeggio frequencies, organ frequency map</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="organ-regeneration-system.html" class="nav-paper-btn">← Organ Regeneration System</a><a href="../../../categories/medical-applications.html" class="btn-outline">← Medical Applications</a></div>
-      <div><a href="field-guided-tissue-regeneration.html" class="nav-paper-btn">Field-Guided Tissue Regeneration →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
-    </div>
-  </div>
-</div>
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-  </div>
-</footer>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button><footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer><script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
 </body>
 </html>
