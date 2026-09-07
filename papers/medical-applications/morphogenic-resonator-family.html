@@ -3,125 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morphogenic Resonator Family — Christos™ Research Library</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{background-color:#08111E !important;}
-body{background-color:#08111E !important;color:#FFFFFF;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.12em;}
-.nav-logo span{display:block;font-size:11px;font-weight:400;color:rgba(201,168,76,0.7);letter-spacing:0.2em;}
-.nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{font-family:'Raleway',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#FFFFFF;transition:color 0.2s;}
-.nav-links a:hover{color:#C9A84C;}
-.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:10px 22px;border-radius:2px;font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;}
-.breadcrumb{background-color:#0D1B2A !important;padding:14px 40px;border-bottom:1px solid rgba(201,168,76,0.1);margin-top:68px;}
-.breadcrumb-inner{max-width:1000px;margin:0 auto;font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:#5A7080;}
-.breadcrumb a{color:#AABFCC;}.breadcrumb a:hover{color:#C9A84C;}.breadcrumb span{color:#5A7080;margin:0 8px;}
-.paper-header{background-color:#08111E !important;padding:60px 40px 50px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.paper-header-inner{max-width:1000px;margin:0 auto;}
-.paper-tag{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
-.paper-tag::before{content:'';width:28px;height:1px;background:#2A7F7F;flex-shrink:0;}
-.paper-title{font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,40px);font-weight:700;color:#FFFFFF;letter-spacing:0.04em;line-height:1.2;margin-bottom:16px;}
-.paper-meta-row{display:flex;gap:32px;flex-wrap:wrap;margin-top:20px;}
-.paper-meta-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#5A7080;margin-bottom:3px;}
-.paper-meta-value{font-family:'Raleway',sans-serif;font-size:13px;color:#AABFCC;font-weight:500;}
-.paper-body{background-color:#08111E !important;padding:60px 40px 100px;}
-.paper-body-inner{max-width:1000px;margin:0 auto;}
-.abstract-label{font-family:'Raleway',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#C9A84C;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid rgba(201,168,76,0.2);}
-.abstract-text{font-size:19px;color:#D8D0C0;line-height:1.9;margin-bottom:20px;}
-.keywords-block{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-radius:6px;padding:20px 24px;margin:36px 0;}
-.keywords-label{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;}
-.keywords-text{font-size:15px;color:#AABFCC;line-height:1.6;}
-.clinical-notice{background-color:#0D1B2A !important;border:1px solid rgba(58,175,175,0.2);border-left:3px solid #3AAFAF;border-radius:4px;padding:18px 22px;margin:30px 0;}
-.clinical-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#3AAFAF;margin-bottom:7px;}
-.clinical-notice-text{font-size:14px;color:#AABFCC;line-height:1.65;}
-.ip-notice{background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);border-left:3px solid #C9A84C;border-radius:4px;padding:20px 24px;margin:36px 0;}
-.ip-notice-title{font-family:'Raleway',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.ip-notice-text{font-size:15px;color:#D0C8B8;line-height:1.65;}
-.paper-nav{display:flex;justify-content:space-between;align-items:center;padding-top:48px;border-top:1px solid rgba(201,168,76,0.15);flex-wrap:wrap;gap:16px;margin-top:48px;}
-.btn-gold{font-family:'Raleway',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;background-color:#C9A84C;color:#08111E;padding:13px 28px;border-radius:2px;display:inline-block;}
-.btn-outline{font-family:'Raleway',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:2px solid rgba(201,168,76,0.4);color:#C9A84C;padding:13px 28px;border-radius:2px;display:inline-block;}
-.nav-paper-btn{font-family:'Raleway',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;background-color:#0D1B2A !important;border:1px solid rgba(201,168,76,0.15);color:#AABFCC;padding:10px 16px;border-radius:2px;display:inline-block;}
-.nav-paper-btn:hover{border-color:#C9A84C;color:#C9A84C;}
-.footer{background-color:#0A1628 !important;border-top:1px solid rgba(201,168,76,0.2);padding:44px 40px 32px;}
-.footer-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-.footer-logo{font-family:'Cinzel',serif;font-size:17px;font-weight:700;color:#C9A84C;letter-spacing:0.1em;}
-.footer-nav{display:flex;gap:24px;flex-wrap:wrap;}
-.footer-nav a{font-family:'Raleway',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:#AABFCC;}
-.footer-nav a:hover{color:#C9A84C;}
-.footer-copy{font-family:'Raleway',sans-serif;font-size:11px;color:#5A7080;letter-spacing:0.07em;width:100%;margin-top:20px;padding-top:20px;border-top:1px solid rgba(201,168,76,0.1);}
-@media(max-width:768px){.nav{padding:0 20px;}.nav-links{display:none;}.paper-header{padding:50px 20px 40px;}.breadcrumb{padding:12px 20px;}.paper-body{padding:40px 20px 80px;}.paper-meta-row{gap:20px;}.paper-nav{flex-direction:column;align-items:flex-start;}.footer{padding:36px 20px 24px;}}
-</style>
+<title>The Morphogenic Resonator Family | MA-08 | Christos&#8482;</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background-color:#08111E !important;color:#D8D0C0 !important;font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.85;}a{text-decoration:none;color:inherit;}nav{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;position:sticky;top:0;z-index:100;padding:0 40px;}.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;flex-wrap:wrap;}.nav-logo .logo-main{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#C9A84C !important;letter-spacing:0.12em;}.nav-logo .logo-sub{font-family:'Raleway',sans-serif;font-size:0.58rem;color:#D8D0C0 !important;letter-spacing:0.28em;text-transform:uppercase;display:block;margin-top:-2px;}.nav-links{display:flex;gap:18px;list-style:none;align-items:center;}.nav-links a{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#D8D0C0 !important;transition:color 0.2s;}.nav-links a:hover,.nav-links a.active{color:#C9A84C !important;}.nav-cta{background-color:#C9A84C !important;color:#08111E !important;padding:8px 16px;}.paper-header{background-color:#0A1628 !important;border-bottom:2px solid #C9A84C;padding:80px 40px 50px;}.paper-header-inner{max-width:900px;margin:0 auto;}.ph-eyebrow{font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.35em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:14px;display:flex;align-items:center;gap:12px;}.ph-eyebrow::before{content:'';width:28px;height:1px;background:#2A7F7F;}.open-badge{display:inline-flex;align-items:center;gap:8px;background-color:rgba(58,175,175,0.12);border:1px solid rgba(58,175,175,0.4);padding:5px 12px;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#3AAFAF !important;margin-bottom:18px;}.open-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:#3AAFAF;flex-shrink:0;}.paper-title{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:700;color:#FFFFFF !important;line-height:1.15;margin-bottom:8px;}.paper-subtitle{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:#C9A84C !important;margin-bottom:20px;line-height:1.5;}.paper-meta{display:flex;gap:24px;flex-wrap:wrap;}.pm-item{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(216,208,192,0.6) !important;}.pm-item strong{color:#D8D0C0 !important;display:block;margin-bottom:2px;}.paper-layout{display:grid;grid-template-columns:200px 1fr;gap:0;max-width:1100px;margin:0 auto;padding:0 40px;}.toc-sidebar{padding:40px 0 80px;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;scrollbar-width:thin;}.toc-label{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.5) !important;margin-bottom:12px;}.toc-links{list-style:none;}.toc-links li{margin-bottom:2px;}.toc-links a{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.07em;color:rgba(216,208,192,0.5) !important;transition:color 0.2s;display:block;padding:3px 0 3px 10px;border-left:2px solid transparent;}.toc-links a:hover{color:#C9A84C !important;border-left-color:#C9A84C;}.paper-body{padding:44px 0 100px 44px;border-left:1px solid rgba(201,168,76,0.1);max-width:800px;}.abstract-block{background-color:#0A1628 !important;border-left:4px solid #C9A84C;padding:24px 28px;margin-bottom:40px;}.abstract-label{font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:12px;}.abstract-text{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:12px;}.abstract-text:last-child{margin-bottom:0;}h1.sh{font-family:'Cinzel',serif;font-size:1.25rem;font-weight:700;color:#FFFFFF !important;margin:44px 0 14px;border-bottom:1px solid rgba(201,168,76,0.18);padding-bottom:10px;scroll-margin-top:80px;}h2.sh2{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:#C9A84C !important;margin:28px 0 10px;scroll-margin-top:80px;}h3.sh3{font-family:'Cinzel',serif;font-size:0.88rem;font-weight:600;color:rgba(201,168,76,0.75) !important;margin:20px 0 8px;}p.bp{font-size:1rem;line-height:1.85;color:#D8D0C0 !important;margin-bottom:14px;}p.bp strong{color:#FFFFFF !important;}.formula-block{background-color:#04090F !important;border:1px solid rgba(58,175,175,0.15);border-left:3px solid #3AAFAF;padding:14px 20px;margin:16px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:#3AAFAF !important;line-height:1.7;}.table-wrap{overflow-x:auto;margin:18px 0;}table{width:100%;border-collapse:collapse;font-size:0.82rem;}th{font-family:'Raleway',sans-serif;font-size:0.55rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,168,76,0.7) !important;border-bottom:1px solid rgba(201,168,76,0.2);padding:8px 10px;text-align:left;background-color:#0A1628 !important;}td{padding:8px 10px;border-bottom:1px solid rgba(201,168,76,0.07);color:#D8D0C0 !important;line-height:1.55;vertical-align:top;font-family:'Cormorant Garamond',serif;font-size:0.95rem;}.resolution-table th{color:rgba(58,175,175,0.7) !important;background-color:#04090F !important;}.resolution-table{border:1px solid rgba(58,175,175,0.15);}.resolution-table td{border-bottom-color:rgba(58,175,175,0.07);}.bullet-list{margin:12px 0 18px 0;list-style:none;}.bullet-list li{font-size:1rem;color:#D8D0C0 !important;padding:5px 0 5px 18px;border-left:2px solid rgba(201,168,76,0.15);margin-bottom:6px;line-height:1.75;}.collab-btn{display:inline-flex;align-items:center;gap:8px;background-color:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:10px 20px;font-family:'Raleway',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#C9A84C !important;margin-bottom:32px;}.back-top{position:fixed;bottom:32px;right:32px;background-color:#C9A84C !important;color:#08111E !important;font-family:'Raleway',sans-serif;font-size:0.56rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:10px 14px;cursor:pointer;border:none;z-index:50;display:none;}footer{background-color:#0A1628 !important;border-top:2px solid #C9A84C;padding:36px 40px;}.footer-inner{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}.footer-logo{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:#C9A84C !important;}.footer-links{display:flex;gap:20px;list-style:none;}.footer-links a{font-family:'Raleway',sans-serif;font-size:0.58rem;font-weight:600;letter-spacing:0.13em;color:#D8D0C0 !important;}.footer-links a:hover{color:#C9A84C !important;}.footer-copy{font-family:'Raleway',sans-serif;font-size:0.55rem;color:rgba(216,208,192,0.4) !important;width:100%;border-top:1px solid rgba(201,168,76,0.1);padding-top:16px;margin-top:6px;text-align:center;letter-spacing:0.1em;}@media(max-width:900px){nav,.paper-header,footer{padding-left:20px;padding-right:20px;}.paper-header{padding-top:120px;}.nav-inner{height:auto;padding:12px 0;}.nav-links{display:flex !important;flex-wrap:wrap;gap:0;width:100%;border-top:1px solid rgba(201,168,76,0.15);margin-top:10px;padding-top:10px;}.nav-links a{font-size:0.62rem !important;padding:8px 10px !important;white-space:nowrap;}.paper-layout{grid-template-columns:1fr;padding:0 20px;}.toc-sidebar{display:none;}.paper-body{padding:40px 0 80px;border-left:none;max-width:100% !important;width:100% !important;}.table-wrap{overflow-x:auto !important;-webkit-overflow-scrolling:touch;width:100%;}table{min-width:500px;font-size:0.78rem;}.formula-block{font-size:0.95rem !important;padding:14px 16px !important;overflow-x:auto;}.abstract-block{padding:24px 20px !important;}.sh{font-size:1.1rem !important;}.sh2{font-size:0.95rem !important;}.bp{font-size:0.9rem !important;}}</style>
 </head>
-<body style="background-color:#08111E !important;">
-<nav class="nav">
-  <div class="nav-logo">CHRISTOS™<span>Energy · Technology · Harmonic Design</span></div>
-  <div class="nav-links">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../library.html">Research Library</a>
-    <a href="../../../diagrams.html">System Diagrams</a>
-    <a href="../../../book.html">Book</a>
-    <a href="../../../contact.html" class="nav-cta">Request Access</a>
-  </div>
-</nav>
-<div class="breadcrumb">
-  <div class="breadcrumb-inner">
-    <a href="../../../index.html">Home</a><span>›</span>
-    <a href="../../../library.html">Research Library</a><span>›</span>
-    <a href="../../../categories/medical-applications.html">Medical Applications</a><span>›</span>
-    Morphogenic Resonator Family
-  </div>
+<body>
+<nav><div class="nav-inner"><a href="../../index.html" class="nav-logo"><span class="logo-main">CHRISTOS&#8482;</span><span class="logo-sub">Energy &middot; Technology &middot; Harmonic Design</span></a><ul class="nav-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html" class="active">Library</a></li><li><a href="../../diagrams.html">Diagrams</a></li><li><a href="../../economy.html">Economy</a></li><li><a href="../../book.html">Book</a></li><li><a href="../../the-case.html">The Case</a></li><li><a href="../../papers/paradox-resolution/paradox-index.html">Paradox</a></li><li><a href="../../contact.html" class="nav-cta">Contact</a></li></ul></div></nav>
+<div class="paper-header"><div class="paper-header-inner">
+<div class="ph-eyebrow">Medical Applications &middot; MA-08 &middot; Singularis Series, Paper 24 &middot; March 2026</div>
+<div class="open-badge">Public Version &#8212; Complete Device Specifications Under NDA</div>
+<h1 class="paper-title">The Morphogenic Resonator Family</h1>
+<p class="paper-subtitle">Wearable Crystal-Piezoelectric Field Devices &#8212; The Concept in Full, the Build Withheld</p>
+<div class="paper-meta"><div class="pm-item"><strong>Author</strong>Joshua Farrior</div><div class="pm-item"><strong>ID</strong>MA-08</div><div class="pm-item"><strong>Companion to</strong>MA-01, MA-06, MA-07</div><div class="pm-item"><strong>Status</strong>Theoretical Design, Unbuilt</div><div class="pm-item"><strong>Date</strong>March 2026</div></div>
+</div></div>
+<div class="paper-layout">
+<aside class="toc-sidebar"><div class="toc-label">Contents</div><ul class="toc-links">
+<li><a href="#abstract">Abstract</a></li>
+<li><a href="#s1">I. The Core Idea</a></li>
+<li><a href="#s2">II. The Real Science Underneath</a></li>
+<li><a href="#s3">III. Where the Paper Extends Beyond the Science</a></li>
+<li><a href="#s4">IV. Design Architecture, in Concept</a></li>
+<li><a href="#s5">V. The Twenty-One Resonators</a></li>
+<li><a href="#s6">VI. The Three-Product System</a></li>
+<li><a href="#s7">VII. Manufacturing Discipline</a></li>
+<li><a href="#refs">References</a></li>
+</ul></aside>
+<article class="paper-body">
+<a href="../../library.html" class="collab-btn">&#8592; Back to Library</a>
+
+<div style="background:rgba(201,168,76,0.06)!important;border:1px solid rgba(201,168,76,0.2);border-left:3px solid #C9A84C;border-radius:0 6px 6px 0;padding:16px 22px;margin:20px 0;"><p style="font-family:Raleway,sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:#C9A84C!important;margin-bottom:8px;">Clinical Disclaimer</p><p style="font-family:Cormorant Garamond,serif;font-size:0.95rem;color:#D8D0C0!important;line-height:1.75;margin:0;">This paper describes a theoretical device design. None of the twenty-one resonators described here have been built, tested, or clinically evaluated. They are not FDA approved, are not diagnostic or treatment devices, and nothing in this paper constitutes medical advice. No dimension, material specification, crystal parameter, frequency assignment, or manufacturing protocol is disclosed in this public version.</p></div>
+
+<div class="abstract-block" id="abstract"><div class="abstract-label">Abstract</div><p class="abstract-text">This paper describes the Morphogenic Resonator Family, a proposed line of twenty-one wearable, crystal-based devices, each designed around a real physical principle, that crystalline minerals generate a weak electrical field when mechanically flexed, and that the body's own movement, breathing, and heartbeat could in principle provide that flexing without any battery. Each device is proposed to target a specific organ or system, worn against the skin, requiring no external power in its base configuration.</p><p class="abstract-text">The underlying physics of piezoelectric crystals and the underlying biology of bioelectric tissue signaling are both real and independently documented. What this paper proposes on top of that foundation, that a specific crystal-and-frequency combination could reliably deliver organ-specific therapeutic instruction through this mechanism, is this paper's own hypothesis and has not been tested. This page describes what the concept is and what it draws on in real detail; it does not describe how to build it.</p></div>
+
+<h1 class="sh" id="s1">I.&nbsp;The Core Idea</h1>
+<p class="bp">The proposal is genuinely elegant as a piece of design thinking, whatever one makes of its therapeutic claims: a small crystal, worn against the skin, mechanically flexes very slightly with every heartbeat, breath, and movement. Certain crystals, quartz being the best known, convert that mechanical flex into a tiny electrical signal, a real and well-understood physical property called piezoelectricity. The proposal is that a crystal selected and shaped to generate that signal at a frequency meaningful to a specific organ, worn continuously over that organ, could function as a passive, self-powered field source, no battery required in its base configuration, continuously "reminding" the tissue beneath it of a healthier state.</p>
+<p class="bp">The paper frames this as fundamentally different from a pharmaceutical, which delivers a compound on a dosing schedule: this device is proposed to deliver a continuous, low-level field cue for as long as it is worn, on the theory that biological tissue responds to steady, ambient information rather than only to discrete doses.</p>
+
+<h1 class="sh" id="s2">II.&nbsp;The Real Science Underneath</h1>
+<p class="bp">Three genuinely real bodies of research anchor this idea. First, piezoelectricity in biological tissue is real and well-established: Fukada and Yasuda's landmark 1957 paper demonstrated that bone itself is piezoelectric, generating an electrical signal under mechanical stress that is now understood to help direct bone remodeling (this is part of the real mechanism behind Wolff's Law, the well-known principle that bone adapts its structure to the loads placed on it). Collagen, present throughout the body's connective tissue, shares this property. Robert Becker's decades of clinical and laboratory research, summarized in his well-known 1985 book <em>The Body Electric</em>, documented a genuine bioelectric "current of injury" signaling system involved in tissue repair, and demonstrated that externally applied weak electromagnetic fields could measurably influence that repair process; this line of work is also the scientific basis for FDA-cleared pulsed electromagnetic field (PEMF) bone-healing devices in real clinical use today (Bassett, 1982).</p>
+<p class="bp">Second, and most significantly, the paper draws on Michael Levin's laboratory at Tufts University, whose research program is genuinely one of the more important developments in developmental biology in the past two decades. Levin et al. (2012, <em>Development</em>) demonstrated that planarian flatworms' regenerated anatomy is governed by measurable bioelectric voltage gradients across the organism, not by genetic instruction alone, and that experimentally altering those gradients changed the regenerated anatomy accordingly, including producing genuinely observed two-headed regeneration without any genetic modification. Beane et al. (2013) extended this finding. <strong>This research is real, rigorous, peer-reviewed, and genuinely remarkable</strong>, and it has meaningfully shifted how developmental biologists think about the relationship between bioelectric signaling and biological form.</p>
+<p class="bp">Third, gamma-frequency neural entrainment has real, striking published support: Iaccarino et al.'s (2016) paper in <em>Nature</em> found that entraining mouse brains to a 40 Hz rhythm using light flicker measurably reduced amyloid plaque burden, a genuinely influential finding in Alzheimer's research. Zhao et al.'s (2006) <em>Nature</em> paper demonstrating that endogenous electric fields guide wound healing, and that externally applied fields can accelerate it, is likewise real and well-cited.</p>
+
+<h1 class="sh" id="s3">III.&nbsp;Where the Paper Extends Beyond the Science</h1>
+<p class="bp">Here is where care matters most, precisely because the underlying science is so genuinely strong. <strong>None of the research described above involved a crystal pendant, a specific Solfeggio frequency, or a specific gemstone-organ pairing.</strong> Levin's bioelectric gradients are measured directly in living tissue using electrodes and voltage-sensitive dyes, and manipulated using ion channel drugs and genetic tools, not by wearing a piece of jewelry. Iaccarino's gamma entrainment used calibrated light and sound flicker in a controlled lab setting, not a mineral's natural vibration. The paper's proposal, that a specific crystal type, cut and worn over a specific organ, will passively deliver that organ's own "correct" frequency and produce a comparable effect, is this paper's own hypothesis, built by analogy to this real research rather than demonstrated by it.</p>
+<p class="bp">The paper also draws on traditional and cultural crystal-healing associations (for example, specific gemstone-to-organ correspondences with historical or folk origins) alongside its scientific citations. This page is explicit that those traditional associations are cultural and historical claims, not scientific findings, and treats them as such rather than presenting them with the same evidentiary weight as the peer-reviewed research cited above.</p>
+
+<h1 class="sh" id="s4">IV.&nbsp;Design Architecture, in Concept</h1>
+<p class="bp">Every resonator in the family is proposed to share a common architecture: a primary crystal selected for the target organ, shaped to optimize its piezoelectric output, set in a biocompatible metal frame designed not to interfere with the crystal's electrical properties, worn against the skin via a cord or adhesive patch depending on the body location involved. Each device additionally proposes a small array of secondary crystal points arranged around the primary crystal, most tuned to a shared set of general frequencies common to every resonator in the family, with one node carrying the frequency specific to that resonator's target organ.</p>
+<p class="bp">An optional low-power mode is proposed for use during sleep, when body movement (and therefore passive piezoelectric output) is naturally reduced. <strong>The device's exact dimensions, weight, materials, crystal cut geometry, array layout, node count, specific frequency assignments, and optional power-mode specifications are trade secrets and are not disclosed in this public version.</strong></p>
+
+<h1 class="sh" id="s5">V.&nbsp;The Twenty-One Resonators</h1>
+<p class="bp">The family includes nineteen organ-specific resonators plus two special-purpose resonators proposed for use in a companion pregnancy and prenatal protocol described elsewhere in this library. The names and target areas are listed here in full so the product line and its naming are a matter of public record; no crystal type, frequency, placement, or mechanism accompanies any entry below.</p>
+<div class="table-wrap"><table><thead><tr><th>Resonator</th><th>Target Area</th></tr></thead><tbody>
+<tr><td>Lung Resonator</td><td>Respiratory system</td></tr>
+<tr><td>Heart Resonator</td><td>Cardiovascular system</td></tr>
+<tr><td>Brain Resonator</td><td>Brain and cognitive function</td></tr>
+<tr><td>Liver Resonator</td><td>Liver</td></tr>
+<tr><td>Kidneys Resonator</td><td>Kidneys (worn bilaterally)</td></tr>
+<tr><td>Bone Resonator</td><td>Skeletal system</td></tr>
+<tr><td>Joints Resonator</td><td>Joints</td></tr>
+<tr><td>Skin Resonator</td><td>Skin, wounds, and scars</td></tr>
+<tr><td>Eyes Resonator</td><td>Vision support (temple placement)</td></tr>
+<tr><td>Ears Resonator</td><td>Hearing support (mastoid placement)</td></tr>
+<tr><td>Nervous System Resonator</td><td>Full-body nervous system, including spine</td></tr>
+<tr><td>Digestive System Resonator</td><td>Stomach and intestines</td></tr>
+<tr><td>Pancreas Resonator</td><td>Pancreas and blood sugar regulation</td></tr>
+<tr><td>Thyroid Resonator</td><td>Thyroid gland</td></tr>
+<tr><td>Adrenals Resonator</td><td>Adrenal glands (worn bilaterally)</td></tr>
+<tr><td>Female Reproductive Resonator</td><td>Uterus and ovaries</td></tr>
+<tr><td>Male Reproductive Resonator</td><td>Prostate and reproductive support</td></tr>
+<tr><td>Blood Resonator</td><td>Circulatory and hematologic support</td></tr>
+<tr><td>Lymphatic System Resonator</td><td>Lymphatic drainage and immune support</td></tr>
+<tr><td>Spleen Resonator</td><td>Spleen and immune function</td></tr>
+<tr><td>Blueprint Resonator (special)</td><td>General field/meditative use; companion pregnancy protocol</td></tr>
+<tr><td>Womb Resonator (special)</td><td>Pregnancy support</td></tr>
+</tbody></table></div>
+
+<h1 class="sh" id="s6">VI.&nbsp;The Three-Product System</h1>
+<p class="bp">The resonators are proposed as the third and continuous layer of a three-part topical delivery concept, alongside the companion Healing Fluid line (MA-06) and Healing Gel line (MA-07): the fluid proposed for internal, systemic support; the gel proposed for concentrated, localized topical delivery; and the resonator proposed for continuous, passive field presence at the same site. The paper proposes these three working together, with the gel applied at the same body location the resonator is worn over. <strong>Specific combined-use timing, sequencing, and dosing recommendations across the three products are not disclosed in this public version</strong>, consistent with the standing policy applied to the fluid and gel papers themselves.</p>
+
+<h1 class="sh" id="s7">VII.&nbsp;Manufacturing Discipline</h1>
+<p class="bp">The design proposes real, sensible manufacturing quality-control categories for a device of this kind: crystal identity verification, piezoelectric output verification under controlled mechanical testing, verification that any frequency-programming step actually took effect, geometric accuracy checks, biocompatibility testing consistent with the real ISO 10993 standard used for skin-contact medical devices, and water-resistance testing. This page presents the existence and structure of this quality framework as a reasonable manufacturing discipline, without reproducing its specific numeric pass criteria or test protocols, none of which have been applied to an actual built device.</p>
+
+<h1 class="sh" id="refs">References (Selected)</h1>
+<p class="bp" style="font-size:0.82rem;line-height:2;color:rgba(216,208,192,0.65)!important;">Bassett, C.A.L. (1982). Pulsing electromagnetic fields: a new method to modify cell behavior in calcified and noncalcified tissues. <em>Calcified Tissue International</em>, 34(1), 1&#8211;8.<br>Beane, W.S., Morokuma, J., Adams, D.S., &amp; Levin, M. (2013). A chemical genetics approach reveals H,K-ATPase-mediated membrane voltage is required for planarian head regeneration. <em>Chemistry &amp; Biology</em>, 18(1), 77&#8211;89.<br>Becker, R.O., &amp; Selden, G. (1985). <em>The Body Electric: Electromagnetism and the Foundation of Life.</em> William Morrow.<br>Busse, J.W., Bhandari, M., Kulkarni, A.V., &amp; Tunks, E. (2002). The effect of low-intensity pulsed ultrasound therapy on time to fracture healing. <em>CMAJ</em>, 166(4), 437&#8211;441.<br>Fukada, E., &amp; Yasuda, I. (1957). On the piezoelectric effect of bone. <em>Journal of the Physical Society of Japan</em>, 12(10), 1158&#8211;1162.<br>Iaccarino, H.F., et al. (2016). Gamma frequency entrainment attenuates amyloid load and modifies microglia. <em>Nature</em>, 540(7632), 230&#8211;235.<br>Kirschvink, J.L., Kobayashi-Kirschvink, A., &amp; Woodford, B.J. (1992). Magnetite biomineralization in the human brain. <em>Proceedings of the National Academy of Sciences</em>, 89(16), 7683&#8211;7687.<br>Levin, M. (2012). Molecular bioelectricity: how endogenous voltage potentials control cell behavior and instruct pattern regulation in vivo. <em>Molecular Biology of the Cell</em>, 25(24), 3835&#8211;3850.<br>Pilla, A.A. (2013). Electromagnetic fields instantaneously modulate nitric oxide signaling in challenged biological systems. <em>Biochemical and Biophysical Research Communications</em>, 426(3), 330&#8211;333.<br>Woodruff, L.D., et al. (2004). The efficacy of laser therapy in wound repair. <em>Photomedicine and Laser Surgery</em>, 22(3), 241&#8211;247.<br>Zhao, M., et al. (2006). Electrical signals control wound healing through phosphatidylinositol-3-OH kinase-gamma and PTEN. <em>Nature</em>, 442(7101), 457&#8211;460.</p>
+
+<h1 class="sh">Intellectual Property &amp; Disclosure Statement</h1>
+<p class="bp">The Morphogenic Resonator concept, the twenty-one-device family and their names, the crystal-selection framework, the shared design architecture, and the three-product system integration are original work of Joshua Farrior, claimed as intellectual property of Joshua Farrior / Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC.</p>
+<p class="bp">Withheld in full: every device's physical dimensions, materials, crystal cut geometry, secondary crystal array layout and node count, frequency assignments, placement instructions, wearing durations, and manufacturing and quality-verification protocols. No image, diagram, or schematic of any resonator is included in this public version. None of these devices have been built or tested. Nothing in this paper constitutes medical advice.</p>
+
+<div style="margin-top:36px;padding-top:24px;border-top:1px solid rgba(201,168,76,0.15);text-align:center;"><p style="font-family:Raleway,sans-serif;font-size:0.6rem;letter-spacing:0.14em;color:rgba(216,208,192,0.4)!important;">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved &middot; Business ID: 202511071941923 &middot; Christos&#8482; trademark pending USPTO review &middot; Not FDA approved &middot; Not a substitute for professional medical advice &middot; christosenergy.com</p></div>
+</article>
 </div>
-<div class="paper-header">
-  <div class="paper-header-inner">
-    <div class="paper-tag">Medical Applications · MA-08</div>
-    <h1 class="paper-title">Morphogenic Resonator Family</h1>
-    <div class="paper-meta-row">
-      <div><div class="paper-meta-label">Author</div><div class="paper-meta-value">Joshua Farrior</div></div>
-      <div><div class="paper-meta-label">Date</div><div class="paper-meta-value">March 2026</div></div>
-      <div><div class="paper-meta-label">Series</div><div class="paper-meta-value">The Singularis Series — Paper 24, Christos™ Organ Regeneration System Volume IV</div></div>
-      <div><div class="paper-meta-label">Access</div><div class="paper-meta-value">Abstract Only — NDA Required for Full Access</div></div>
-    </div>
-  </div>
-</div>
-<div class="paper-body" style="background-color:#08111E !important;">
-  <div class="paper-body-inner">
-    <div class="abstract-label">Abstract</div>
-    <p class="abstract-text">Every organ in the human body maintains a morphogenetic field — a coherent electromagnetic template that encodes the organ's structural and functional blueprint. This field is not a metaphor; it is measurable via SQUID magnetometry, biophoton spectroscopy, and bioimpedance analysis. When the field degrades, disease follows. When it is restored, regeneration follows.</p>
-<p class="abstract-text">The Christos™ Morphogenic Resonator Family is a system of 19 wearable organ-specific devices, each containing a primary healing crystal and a 12-node piezoelectric array, designed to continuously broadcast the organ's correct coherence frequency into the body's biofield 24 hours per day. Unlike pharmaceutical interventions that operate on fixed dosing schedules, the Resonators provide continuous low-level field instruction — the same way the body's own morphogenetic fields operate. They do not force tissue to change. They remind it what it is.</p>
-<p class="abstract-text">The Resonators are built on three converging scientific foundations: the well-documented piezoelectric properties of quartz and other crystalline materials; the established bioelectric influence of weak electromagnetic fields on tissue repair, cellular behavior, and gene expression; and the morphogenetic field hypothesis — supported by substantial bioelectric research from Michael Levin's laboratory at Tufts — that biological form and repair are governed by electromagnetic field templates rather than solely by genetic instruction.</p>
-<p class="abstract-text">This paper presents all 19 Morphogenic Resonators in complete specification: the universal resonator design architecture, the 12-node crystal array system, organ-specific primary crystal selection with mineralogical rationale, frequency specifications, wearing protocols, and the peer-reviewed evidence base for piezoelectric biomedical applications. A special section covers the Blueprint Resonator and Womb Resonator, used in the Pregnancy and Birth Defect Correction protocols.</p>
-    <div class="clinical-notice">
-  <div class="clinical-notice-title">Clinical & Research Disclaimer</div>
-  <div class="clinical-notice-text">This framework is presented for research and educational purposes only. All protocols discussed herein are proposed as adjunctive to standard medical care and require physician supervision. Patients should not alter medications or treatment plans without consulting a qualified healthcare provider. Proposed studies have not yet been conducted unless explicitly stated.</div>
-</div>
-    <div class="keywords-block"><div class="keywords-label">Keywords</div><div class="keywords-text">Morphogenic resonator, piezoelectric crystal array, morphogenetic field, SQUID magnetometry, bioelectric medicine, wearable coherence device, organ-specific resonator, crystal healing science, continuous field instruction</div></div>
-    <div class="ip-notice">
-      <div class="ip-notice-title">Intellectual Property Notice</div>
-      <div class="ip-notice-text">Full technical architecture, mathematical specifications, implementation protocols, and proprietary system detail are not published on this site. Complete materials are available through protected collaboration pathways following NDA execution.</div>
-    </div>
-    <div class="paper-nav">
-      <div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="healing-gel-line.html" class="nav-paper-btn">← Healing Gel Line</a><a href="../../../categories/medical-applications.html" class="btn-outline">← Medical Applications</a></div>
-      <div><a href="maternal-child-coherence-medicine.html" class="nav-paper-btn">Maternal & Child Coherence Medicine →</a></div>
-      <a href="../../../contact.html" class="btn-gold">Request Full Access</a>
-    </div>
-  </div>
-</div>
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-logo">CHRISTOS™</div>
-    <div class="footer-nav">
-      <a href="../../../index.html">Home</a>
-      <a href="../../../library.html">Library</a>
-      <a href="../../../diagrams.html">Diagrams</a>
-      <a href="../../../book.html">Book</a>
-      <a href="../../../contact.html">Contact</a>
-    </div>
-    <div class="footer-copy">© 2026 Christos™ Energy, Technology & Harmonic Design Consulting, LLC · Indiana · ID: 202511071941923 · Christos™ Trademark Pending USPTO · All Rights Reserved</div>
-  </div>
-</footer>
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593; Top</button><footer><div class="footer-inner"><div class="footer-logo">CHRISTOS&#8482;</div><ul class="footer-links"><li><a href="../../index.html">Home</a></li><li><a href="../../library.html">Library</a></li><li><a href="../../contact.html">Contact</a></li></ul><div class="footer-copy">&#169; 2026 Joshua Farrior &middot; Christos&#8482; Energy, Technology &amp; Harmonic Design Consulting, LLC &middot; All Rights Reserved</div></div></footer><script>window.addEventListener("scroll",()=>{document.getElementById("backTop").style.display=window.scrollY>600?"block":"none";});</script>
 </body>
 </html>
